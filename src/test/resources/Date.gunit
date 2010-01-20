@@ -1,0 +1,72 @@
+gunit Date;
+@header{package com.nattyparse.date;}
+
+relative_date:
+"yesterday" -> (RELATIVE_DATE BACKWARD 1)
+"tomorrow" ->(RELATIVE_DATE FORWARD 1)
+"next monday" -> (RELATIVE_DATE FORWARD monday)
+"last monday" -> (RELATIVE_DATE BACKWARD monday)
+"last mon" -> (RELATIVE_DATE BACKWARD monday)
+"next thurs" -> (RELATIVE_DATE FORWARD thursday)
+"next month" -> (RELATIVE_DATE FORWARD month)
+"last month" -> (RELATIVE_DATE BACKWARD month)
+"next week" -> (RELATIVE_DATE FORWARD week)
+"last week" -> (RELATIVE_DATE BACKWARD week)
+"next year" -> (RELATIVE_DATE FORWARD year)
+"last year" -> (RELATIVE_DATE BACKWARD year)
+
+explicit_date:
+"2009-10-10" -> (EXPLICIT_DATE 10 10 2009)
+"2009-12-31" -> (EXPLICIT_DATE 12 31 2009)
+"09-12-31" -> (EXPLICIT_DATE 09 12 31)
+"10/10/1970" -> (EXPLICIT_DATE 10 10 1970)
+"10/10" -> (EXPLICIT_DATE 10 10)
+"12/31" -> (EXPLICIT_DATE 12 31)
+"10/2" -> (EXPLICIT_DATE 10 2)
+"10/02" -> (EXPLICIT_DATE 10 02)
+"28th of february, 1979" -> (EXPLICIT_DATE 2 28 1979)
+"28th of february 1979" -> (EXPLICIT_DATE 2 28 1979)
+"28th of february in the year 1979" -> (EXPLICIT_DATE 2 28 1979)
+"28th of february in the year 1979" -> (EXPLICIT_DATE 2 28 1979)
+"february 28th, 1979" -> (EXPLICIT_DATE 2 28 1979)
+"feb 28th, 1979" -> (EXPLICIT_DATE 2 28 1979)
+"february 28th 1979" -> (EXPLICIT_DATE 2 28 1979)
+"feb 28th 1979" -> (EXPLICIT_DATE 2 28 1979)
+"feb 28th" -> (EXPLICIT_DATE 2 28)
+"feb twentieth" -> (EXPLICIT_DATE 2 20)
+"feb twenty first" -> (EXPLICIT_DATE 2 21)
+"feb twenty-first" -> (EXPLICIT_DATE 2 21)
+"feb twentyfirst" -> (EXPLICIT_DATE 2 21)
+
+day_identifier:
+"today" -> (RELATIVE_DATE FORWARD 0)
+"yesterday" -> (RELATIVE_DATE BACKWARD 1)
+"the day after tomorrow" -> (RELATIVE_DATE FORWARD 2)
+"the day before yesterday" -> (RELATIVE_DATE BACKWARD 2)
+
+tomorrow:
+"tomorow" -> (RELATIVE_DATE FORWARD 1)
+"tommorow" -> (RELATIVE_DATE FORWARD 1)
+"tomorrow" -> (RELATIVE_DATE FORWARD 1)
+"tommorrow" -> (RELATIVE_DATE FORWARD 1)
+
+//"2009-10-10", "(EXPLICIT_DATE 10 10 2009)"
+//"2009-12-31", "(EXPLICIT_DATE 12 31 2009)"
+//"09-12-31", "(EXPLICIT_DATE 09 12 31)"
+//"10/10/1970", "(EXPLICIT_DATE 10 10 1970)"
+//"10/10", "(EXPLICIT_DATE 10 10)"
+//"12/31", "(EXPLICIT_DATE 12 31)"
+//"10/2", "(EXPLICIT_DATE 10 2)"
+//"10/02", "(EXPLICIT_DATE 10 02)"
+//"28th of february, 1979", "(EXPLICIT_DATE 2 28 1979)"
+//"28th of february 1979", "(EXPLICIT_DATE 2 28 1979)"
+//"28th of february in the year 1979", "(EXPLICIT_DATE 2 28 1979)"
+//"february 28th, 1979", "(EXPLICIT_DATE 2 28 1979)"
+//"feb 28th, 1979", "(EXPLICIT_DATE 2 28 1979)"
+//"february 28th 1979", "(EXPLICIT_DATE 2 28 1979)"
+//"feb 28th 1979", "(EXPLICIT_DATE 2 28 1979)"
+//"feb 28th", "(EXPLICIT_DATE 2 28)"
+//"feb twentieth", "(EXPLICIT_DATE 2 20)"
+//"feb twenty first", "(EXPLICIT_DATE 2 21)"
+//"feb twenty-first", "(EXPLICIT_DATE 2 21)"
+//"feb twentyfirst", "(EXPLICIT_DATE 2 21)"
