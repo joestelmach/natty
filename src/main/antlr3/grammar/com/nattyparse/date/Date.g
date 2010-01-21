@@ -18,9 +18,9 @@ tokens {
   INTEGER;
 }
 
-@header { package com.nattyparse.date; }
+@header { package com.natty.parse; }
 
-@lexer::header { package com.nattyparse.date; }
+@lexer::header { package com.natty.parse; }
 
 datetime 
   // time first: 10 am next wednesday
