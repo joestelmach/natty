@@ -1,5 +1,5 @@
 gunit Date;
-@header{package com.nattyparse.date;}
+@header{package com.natty.parse;}
 
 explicit_time:
 "10:00am" -> (EXPLICIT_TIME 10 00 am)
