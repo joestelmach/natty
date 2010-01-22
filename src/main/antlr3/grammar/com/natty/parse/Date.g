@@ -9,11 +9,12 @@ tokens {
   RELATIVE_DATE;
   EXPLICIT_DATE;
   AM_PM;
+  ERA;
   EXPLICIT_TIME;
-  FORWARD;
-  BACKWARD;
+  DIRECTION;
   MONTH;
   DAY;
+  YEAR;
   DAY_OF_WEEK;
   INTEGER;
 }
@@ -30,7 +31,7 @@ datetime
   | date 'at'? time -> ^(DATE_TIME date time)
   
   // time only, we use today for the date
-  | time -> ^(DATE_TIME ^(RELATIVE_DATE FORWARD INTEGER["0"]) time)
+  | time -> ^(DATE_TIME ^(RELATIVE_DATE DIRECTION[">"] INTEGER["0"]) time)
   ;
 
 date
@@ -66,10 +67,17 @@ relative_date
   : day_identifier -> day_identifier
   
   // this monday, tuesday
-  | 'this'? day_of_week -> ^(RELATIVE_DATE FORWARD day_of_week)
+  | 'this'? day_of_week -> ^(RELATIVE_DATE DIRECTION[">"] day_of_week)
   
   // next month, last tuesday
   | relative_prefix prefixable_target -> ^(RELATIVE_DATE relative_prefix prefixable_target)
+  
+  // in 3 days, 6 days from now
+  | 'in' integer 'days' -> ^(RELATIVE_DATE DIRECTION[">"] integer) 
+  | integer 'days' 'from now'? -> ^(RELATIVE_DATE DIRECTION[">"] integer) 
+  
+  // 2 days ago
+  | integer 'days' 'ago' -> ^(RELATIVE_DATE DIRECTION["<"] integer)
   ;
   
 // an explicit time with implicit minutes when omitted 
@@ -97,13 +105,14 @@ date_separator
   ;
   
 relative_prefix
-  : 'last' -> BACKWARD
-  | 'next' -> FORWARD
+  : 'last' -> DIRECTION["<"] 
+  | 'next' -> DIRECTION[">"] 
   ;
   
 prefixable_target
   : day_of_week 
   | DATE_FRAME
+  | YEAR_DATE_FRAME
   ;
   
 // a regular language day of the month
@@ -201,40 +210,40 @@ month
   
 // a regular language, possibly shortened day of the week
 day_of_week
-  : 'monday'    -> DAY_OF_WEEK["monday"]
-  | 'mon'       -> DAY_OF_WEEK["monday"]
-  | 'tuesday'   -> DAY_OF_WEEK["tuesday"]
-  | 'tue'       -> DAY_OF_WEEK["tuesday"]
-  | 'tues'      -> DAY_OF_WEEK["tuesday"]
-  | 'wednesday' -> DAY_OF_WEEK["wednesday"]
-  | 'wed'       -> DAY_OF_WEEK["wednesday"]
-  | 'thursday'  -> DAY_OF_WEEK["thursday"]
-  | 'thur'      -> DAY_OF_WEEK["thursday"]
-  | 'thurs'     -> DAY_OF_WEEK["thursday"]
-  | 'friday'    -> DAY_OF_WEEK["friday"]
-  | 'fri'       -> DAY_OF_WEEK["friday"]
-  | 'saturday'  -> DAY_OF_WEEK["saturday"]
-  | 'sat'       -> DAY_OF_WEEK["saturday"]
-  | 'sunday'    -> DAY_OF_WEEK["sunday"]
-  | 'sun'       -> DAY_OF_WEEK["sunday"]
+  : 'monday'    -> DAY_OF_WEEK["2"]
+  | 'mon'       -> DAY_OF_WEEK["2"]
+  | 'tuesday'   -> DAY_OF_WEEK["3"]
+  | 'tue'       -> DAY_OF_WEEK["3"]
+  | 'tues'      -> DAY_OF_WEEK["3"]
+  | 'wednesday' -> DAY_OF_WEEK["4"]
+  | 'wed'       -> DAY_OF_WEEK["4"]
+  | 'thursday'  -> DAY_OF_WEEK["5"]
+  | 'thur'      -> DAY_OF_WEEK["5"]
+  | 'thurs'     -> DAY_OF_WEEK["5"]
+  | 'friday'    -> DAY_OF_WEEK["6"]
+  | 'fri'       -> DAY_OF_WEEK["6"]
+  | 'saturday'  -> DAY_OF_WEEK["7"]
+  | 'sat'       -> DAY_OF_WEEK["7"]
+  | 'sunday'    -> DAY_OF_WEEK["1"]
+  | 'sun'       -> DAY_OF_WEEK["1"]
   ;
   
 // common day identifiers (today, tomorrow, etc)
 day_identifier
-  : 'today' -> ^(RELATIVE_DATE FORWARD INTEGER["0"])
+  : 'today' -> ^(RELATIVE_DATE DIRECTION[">"] INTEGER["0"])
   | tomorrow
   
   // yesterday
-  | 'yesterday' -> ^(RELATIVE_DATE BACKWARD INTEGER["1"])
+  | 'yesterday' -> ^(RELATIVE_DATE DIRECTION["<"] INTEGER["1"])
   
   // to humor the end of the world theorists
-  | 'the'? 'day after ' tomorrow -> ^(RELATIVE_DATE FORWARD INTEGER["2"])
-  | 'the'? 'day before yesterday' -> ^(RELATIVE_DATE BACKWARD INTEGER["2"])
+  | 'the'? 'day after ' tomorrow -> ^(RELATIVE_DATE DIRECTION[">"] INTEGER["2"])
+  | 'the'? 'day before yesterday' -> ^(RELATIVE_DATE DIRECTION["<"] INTEGER["2"])
   ;
   
 tomorrow
   : ('tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow') 
-    -> ^(RELATIVE_DATE FORWARD INTEGER["1"])
+    -> ^(RELATIVE_DATE DIRECTION[">"] INTEGER["1"])
   ;
 
 // common time identifiers (noon, midnight, etc)
@@ -255,10 +264,17 @@ numeric_month
   : ONE_TO_TWELVE
   ;
   
-// a number between 1 and 9999, 0 prefix(es) optional for numbers 1 through 999
+// a number between 1 and 9999, 0 prefix(es) optional for numbers 1 through 999.
+// additionally, two digit years may have an optional ' prefix, and four digit 
+// years may have an optional ad/bc suffux
 numeric_year
-  : '\''? two_digits -> two_digits
-  | 'in the year'? FOUR_DIGITS  -> FOUR_DIGITS
+  : '\''? up_to_two_digits -> YEAR[$up_to_two_digits.text]
+  | ('in' 'the' YEAR_DATE_FRAME)? up_to_four_digits era? -> YEAR[$up_to_four_digits.text] era?
+  ;
+
+era
+  : 'ad' -> ERA["ad"]
+  | 'bc' -> ERA["bc"]
   ;
   
 hours
@@ -276,7 +292,7 @@ minutes
   ;
   
 // any two subsequnt digits
-two_digits
+up_to_two_digits
   : TWO_ZEROS
   | ONE_TO_TWELVE
   | THIRTEEN_TO_TWENTY_FOUR
@@ -285,10 +301,24 @@ two_digits
   | SIXTY_TO_NINETY_NINE
   ;
   
+up_to_four_digits
+  : up_to_two_digits
+  | THREE_DIGITS
+  | FOUR_DIGITS
+  ;
+  
+integer
+  : up_to_two_digits -> INTEGER[$up_to_two_digits.text]
+  | digits=(DIGIT DIGIT DIGIT+) -> INTEGER[$digits.text]
+  ;
+  
 DATE_FRAME
   : 'week'
   | 'month'
-  | 'year'
+  ;
+  
+YEAR_DATE_FRAME
+  : 'year'  
   ;
   
 // two subsequent zeros
@@ -328,6 +358,11 @@ SIXTY_TO_NINETY_NINE
 // any four subsequent digits
 FOUR_DIGITS
   : DIGIT DIGIT DIGIT DIGIT
+  ;
+  
+// any three subsequent digits
+THREE_DIGITS
+  : DIGIT DIGIT DIGIT
   ;
   
 WHITE_SPACE

@@ -13,18 +13,18 @@ explicit_time:
 "midnight" -> (EXPLICIT_TIME 12 0 am)
 
 relative_date:
-"yesterday" -> (RELATIVE_DATE BACKWARD 1)
-"tomorrow" ->(RELATIVE_DATE FORWARD 1)
-"next monday" -> (RELATIVE_DATE FORWARD monday)
-"last monday" -> (RELATIVE_DATE BACKWARD monday)
-"last mon" -> (RELATIVE_DATE BACKWARD monday)
-"next thurs" -> (RELATIVE_DATE FORWARD thursday)
-"next month" -> (RELATIVE_DATE FORWARD month)
-"last month" -> (RELATIVE_DATE BACKWARD month)
-"next week" -> (RELATIVE_DATE FORWARD week)
-"last week" -> (RELATIVE_DATE BACKWARD week)
-"next year" -> (RELATIVE_DATE FORWARD year)
-"last year" -> (RELATIVE_DATE BACKWARD year)
+"yesterday" -> (RELATIVE_DATE < 1)
+"tomorrow" ->(RELATIVE_DATE > 1)
+"next monday" -> (RELATIVE_DATE > 2)
+"last monday" -> (RELATIVE_DATE < 2)
+"last mon" -> (RELATIVE_DATE < 2)
+"next thurs" -> (RELATIVE_DATE > 5)
+"next month" -> (RELATIVE_DATE > month)
+"last month" -> (RELATIVE_DATE < month)
+"next week" -> (RELATIVE_DATE > week)
+"last week" -> (RELATIVE_DATE < week)
+"next year" -> (RELATIVE_DATE > year)
+"last year" -> (RELATIVE_DATE < year)
 
 explicit_date:
 "2009-10-10" -> (EXPLICIT_DATE 10 10 2009)
@@ -50,13 +50,13 @@ explicit_date:
 "feb twentyfirst" -> (EXPLICIT_DATE 2 21)
 
 day_identifier:
-"today" -> (RELATIVE_DATE FORWARD 0)
-"yesterday" -> (RELATIVE_DATE BACKWARD 1)
-"the day after tomorrow" -> (RELATIVE_DATE FORWARD 2)
-"the day before yesterday" -> (RELATIVE_DATE BACKWARD 2)
+"today" -> (RELATIVE_DATE > 0)
+"yesterday" -> (RELATIVE_DATE < 1)
+"the day after tomorrow" -> (RELATIVE_DATE > 2)
+"the day before yesterday" -> (RELATIVE_DATE < 2)
 
 tomorrow:
-"tomorow" -> (RELATIVE_DATE FORWARD 1)
-"tommorow" -> (RELATIVE_DATE FORWARD 1)
-"tomorrow" -> (RELATIVE_DATE FORWARD 1)
-"tommorrow" -> (RELATIVE_DATE FORWARD 1)
+"tomorow" -> (RELATIVE_DATE > 1)
+"tommorow" -> (RELATIVE_DATE > 1)
+"tomorrow" -> (RELATIVE_DATE > 1)
+"tommorrow" -> (RELATIVE_DATE > 1)

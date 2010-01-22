@@ -20,7 +20,7 @@ public class ParserTest {
     // lex input
     //ANTLRInputStream input = new ANTLRInputStream(new FileInputStream("src/test/resources/test_input.txt"));
     //String inputString = "twenty-second of jun, 1967 11p";
-    String inputString = "tommorow";
+    String inputString = "next monday";
     ANTLRInputStream input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
     DateLexer lexer = new DateLexer(input);
     CommonTokenStream tokens = new CommonTokenStream(lexer);
