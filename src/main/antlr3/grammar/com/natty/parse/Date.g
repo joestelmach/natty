@@ -17,6 +17,8 @@ tokens {
   YEAR;
   DAY_OF_WEEK;
   INTEGER;
+  DAY_SEEK;
+  WEEK_SEEK;
 }
 
 @header { package com.natty.parse; }
@@ -64,20 +66,17 @@ explicit_date
 
 //a date relative to the current date
 relative_date
-  : day_identifier -> day_identifier
+  // today, tomorrow, yesterday, day after tomorrow
+  : today_or_tomorrow
   
-  // this monday, tuesday
-  | 'this'? day_of_week -> ^(RELATIVE_DATE DIRECTION[">"] day_of_week)
-  
-  // next month, last tuesday
-  | relative_prefix prefixable_target -> ^(RELATIVE_DATE relative_prefix prefixable_target)
+  | 'this'? relative_prefix prefixable_target -> ^(RELATIVE_DATE relative_prefix prefixable_target)
   
   // in 3 days, 6 days from now
-  | 'in' integer 'days' -> ^(RELATIVE_DATE DIRECTION[">"] integer) 
-  | integer 'days' 'from now'? -> ^(RELATIVE_DATE DIRECTION[">"] integer) 
+  //| 'in' integer 'days' -> ^(RELATIVE_DATE DIRECTION[">"] integer) 
+  //| integer 'days' 'from now'? -> ^(RELATIVE_DATE DIRECTION[">"] integer) 
   
   // 2 days ago
-  | integer 'days' 'ago' -> ^(RELATIVE_DATE DIRECTION["<"] integer)
+  //| integer 'days' 'ago' -> ^(RELATIVE_DATE DIRECTION["<"] integer)
   ;
   
 // an explicit time with implicit minutes when omitted 
@@ -105,14 +104,37 @@ date_separator
   ;
   
 relative_prefix
-  : 'last' -> DIRECTION["<"] 
-  | 'next' -> DIRECTION[">"] 
+  : 'last'     -> DIRECTION["<"] WEEK_SEEK
+  | 'next'     -> DIRECTION[">"] WEEK_SEEK
+  | 'past'     -> DIRECTION["<"] DAY_SEEK
+  | 'coming'   -> DIRECTION[">"] DAY_SEEK
+  | 'upcoming' -> DIRECTION[">"] DAY_SEEK
   ;
   
 prefixable_target
   : day_of_week 
-  | DATE_FRAME
-  | YEAR_DATE_FRAME
+  | date_frame 
+  ;
+  
+// a regular language, possibly shortened day of the week
+day_of_week
+  : 'monday'    -> DAY_OF_WEEK["2"]
+  | 'mon'       -> DAY_OF_WEEK["2"]
+  | 'tuesday'   -> DAY_OF_WEEK["3"]
+  | 'tue'       -> DAY_OF_WEEK["3"]
+  | 'tues'      -> DAY_OF_WEEK["3"]
+  | 'wednesday' -> DAY_OF_WEEK["4"]
+  | 'wed'       -> DAY_OF_WEEK["4"]
+  | 'thursday'  -> DAY_OF_WEEK["5"]
+  | 'thur'      -> DAY_OF_WEEK["5"]
+  | 'thurs'     -> DAY_OF_WEEK["5"]
+  | 'friday'    -> DAY_OF_WEEK["6"]
+  | 'fri'       -> DAY_OF_WEEK["6"]
+  | 'saturday'  -> DAY_OF_WEEK["7"]
+  | 'sat'       -> DAY_OF_WEEK["7"]
+  | 'weekend'   -> DAY_OF_WEEK["7"]
+  | 'sunday'    -> DAY_OF_WEEK["1"]
+  | 'sun'       -> DAY_OF_WEEK["1"]
   ;
   
 // a regular language day of the month
@@ -208,28 +230,8 @@ month
   | 'dec'      -> MONTH["12"]
   ;
   
-// a regular language, possibly shortened day of the week
-day_of_week
-  : 'monday'    -> DAY_OF_WEEK["2"]
-  | 'mon'       -> DAY_OF_WEEK["2"]
-  | 'tuesday'   -> DAY_OF_WEEK["3"]
-  | 'tue'       -> DAY_OF_WEEK["3"]
-  | 'tues'      -> DAY_OF_WEEK["3"]
-  | 'wednesday' -> DAY_OF_WEEK["4"]
-  | 'wed'       -> DAY_OF_WEEK["4"]
-  | 'thursday'  -> DAY_OF_WEEK["5"]
-  | 'thur'      -> DAY_OF_WEEK["5"]
-  | 'thurs'     -> DAY_OF_WEEK["5"]
-  | 'friday'    -> DAY_OF_WEEK["6"]
-  | 'fri'       -> DAY_OF_WEEK["6"]
-  | 'saturday'  -> DAY_OF_WEEK["7"]
-  | 'sat'       -> DAY_OF_WEEK["7"]
-  | 'sunday'    -> DAY_OF_WEEK["1"]
-  | 'sun'       -> DAY_OF_WEEK["1"]
-  ;
-  
 // common day identifiers (today, tomorrow, etc)
-day_identifier
+today_or_tomorrow
   : 'today' -> ^(RELATIVE_DATE DIRECTION[">"] INTEGER["0"])
   | tomorrow
   
@@ -312,9 +314,10 @@ integer
   | digits=(DIGIT DIGIT DIGIT+) -> INTEGER[$digits.text]
   ;
   
-DATE_FRAME
+date_frame
   : 'week'
   | 'month'
+  | YEAR_DATE_FRAME
   ;
   
 YEAR_DATE_FRAME

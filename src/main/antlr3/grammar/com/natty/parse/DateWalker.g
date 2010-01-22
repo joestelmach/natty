@@ -34,20 +34,26 @@ explicit_date
 
 relative_date
   // a direction and number of days to move from the current day
-  : ^(RELATIVE_DATE DIRECTION INTEGER) 
+  : ^(RELATIVE_DATE DIRECTION seek INTEGER) 
     {System.out.println($DIRECTION + " " + $INTEGER + " days");}
     
   // a direction and a day of week integer, starting with a 1 for Sunday
-  | ^(RELATIVE_DATE DIRECTION DAY_OF_WEEK)
+  | ^(RELATIVE_DATE DIRECTION seek DAY_OF_WEEK)
     {dateTime.moveToDayOfWeek($DIRECTION.text, $DAY_OF_WEEK.text);}
   
   // a direction and a date frame (week, month, year)
-  | ^(RELATIVE_DATE DIRECTION date_frame)
+  | ^(RELATIVE_DATE DIRECTION seek date_frame)
     {System.out.println($DIRECTION + " one " + $date_frame.text);}
   ;
   
+seek
+  : DAY_SEEK
+  | WEEK_SEEK
+  ;
+  
 date_frame
-  : DATE_FRAME
+  : 'week'
+  | 'month'
   | YEAR_DATE_FRAME
   ;
   
