@@ -13,18 +13,18 @@ explicit_time:
 "midnight" -> (EXPLICIT_TIME 12 0 am)
 
 relative_date:
-"yesterday" -> (RELATIVE_DATE < 1)
-"tomorrow" ->(RELATIVE_DATE > 1)
-"next monday" -> (RELATIVE_DATE > 2)
-"last monday" -> (RELATIVE_DATE < 2)
-"last mon" -> (RELATIVE_DATE < 2)
-"next thurs" -> (RELATIVE_DATE > 5)
-"next month" -> (RELATIVE_DATE > month)
-"last month" -> (RELATIVE_DATE < month)
-"next week" -> (RELATIVE_DATE > week)
-"last week" -> (RELATIVE_DATE < week)
-"next year" -> (RELATIVE_DATE > year)
-"last year" -> (RELATIVE_DATE < year)
+"yesterday" -> (RELATIVE_DATE < SEEK_BY_DAY 1)
+"tomorrow" ->(RELATIVE_DATE > SEEK_BY_DAY 1)
+"next monday" -> (RELATIVE_DATE > SEEK_BY_WEEK 1 2)
+"last monday" -> (RELATIVE_DATE < SEEK_BY_WEEK 1 2)
+"last mon" -> (RELATIVE_DATE < SEEK_BY_WEEK 1 2)
+"next thurs" -> (RELATIVE_DATE > SEEK_BY_WEEK 1 5)
+"next month" -> (RELATIVE_DATE > SEEK_BY_WEEK 1 month)
+"last month" -> (RELATIVE_DATE < SEEK_BY_WEEK 1 month)
+"next week" -> (RELATIVE_DATE > SEEK_BY_WEEK 1 week)
+"last week" -> (RELATIVE_DATE < SEEK_BY_WEEK 1 week)
+"next year" -> (RELATIVE_DATE > SEEK_BY_WEEK 1 year)
+"last year" -> (RELATIVE_DATE < SEEK_BY_WEEK 1 year)
 
 explicit_date:
 "2009-10-10" -> (EXPLICIT_DATE 10 10 2009)
@@ -49,14 +49,8 @@ explicit_date:
 "feb twenty-first" -> (EXPLICIT_DATE 2 21)
 "feb twentyfirst" -> (EXPLICIT_DATE 2 21)
 
-day_identifier:
-"today" -> (RELATIVE_DATE > 0)
-"yesterday" -> (RELATIVE_DATE < 1)
-"the day after tomorrow" -> (RELATIVE_DATE > 2)
-"the day before yesterday" -> (RELATIVE_DATE < 2)
-
 tomorrow:
-"tomorow" -> (RELATIVE_DATE > 1)
-"tommorow" -> (RELATIVE_DATE > 1)
-"tomorrow" -> (RELATIVE_DATE > 1)
-"tommorrow" -> (RELATIVE_DATE > 1)
+"tomorow" -> (RELATIVE_DATE > SEEK_BY_DAY 1)
+"tommorow" -> (RELATIVE_DATE > SEEK_BY_DAY 1)
+"tomorrow" -> (RELATIVE_DATE > SEEK_BY_DAY 1)
+"tommorrow" -> (RELATIVE_DATE > SEEK_BY_DAY 1)

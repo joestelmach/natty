@@ -33,35 +33,21 @@ explicit_date
   ;
 
 relative_date
-  // a direction and number of days to move from the current day
-  : ^(RELATIVE_DATE DIRECTION seek INTEGER) 
-    {System.out.println($DIRECTION + " " + $INTEGER + " days");}
+  // a direction and number of days to seek
+  : ^(RELATIVE_DATE SEEK_DIRECTION INTEGER) 
+    {dateTime.seek($SEEK_DIRECTION.text, $INTEGER.text);}
+  
+  // a direction, seek type (day to day, or a week at a time), an amount to seek by, 
+  // and a day of week to seek to
+  | ^(RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER DAY_OF_WEEK) 
+    {dateTime.seekToDayOfWeek($SEEK_DIRECTION.text, $SEEK_TYPE.text, $INTEGER.text, $DAY_OF_WEEK.text);}
     
-  // a direction and a day of week integer, starting with a 1 for Sunday
-  | ^(RELATIVE_DATE DIRECTION seek DAY_OF_WEEK)
-    {dateTime.moveToDayOfWeek($DIRECTION.text, $DAY_OF_WEEK.text);}
-  
-  // a direction and a date frame (week, month, year)
-  | ^(RELATIVE_DATE DIRECTION seek date_frame)
-    {System.out.println($DIRECTION + " one " + $date_frame.text);}
-  ;
-  
-seek
-  : DAY_SEEK
-  | WEEK_SEEK
-  ;
-  
-date_frame
-  : 'week'
-  | 'month'
-  | YEAR_DATE_FRAME
+  // a direction, seek type (which is ignored in this case) an amount to seek by, 
+  // and an amount multipler span of time (day, week, month, year)
+  | ^(RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER SPAN) 
+    {dateTime.seekBySpan($SEEK_DIRECTION.text, $INTEGER.text, $SPAN.text);}
   ;
   
 explicit_time 
   : ^(EXPLICIT_TIME INTEGER INTEGER AM_PM?)
-  ;
-  
-prefixable_target
-  : DAY_OF_WEEK
-  | DATE_FRAME
   ;

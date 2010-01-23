@@ -8,17 +8,37 @@ tokens {
   DATE_TIME;
   RELATIVE_DATE;
   EXPLICIT_DATE;
-  AM_PM;
-  ERA;
+  
   EXPLICIT_TIME;
-  DIRECTION;
+  
+  // a meridian indicator (am or pm)
+  AM_PM;
+  
+  // represents a month (1 - 12)
   MONTH;
-  DAY;
-  YEAR;
+  
+  // represents a day of the week (1-7)
   DAY_OF_WEEK;
+  
+  // represents a day of the month (1-31)
+  DAY_OF_MONTH;
+  
+  // represents a span of time (day, week, month, or year)
+  SPAN;
+  
+  // represents a year (0 - 9999)
+  YEAR;
+  
+  // represents a year's era (ad or bc)
+  ERA;
+  
   INTEGER;
-  DAY_SEEK;
-  WEEK_SEEK;
+  
+  // the direction to seek (< or >)
+  SEEK_DIRECTION;
+  
+  // the seek type (by_day, by_week)
+  SEEK_TYPE;
 }
 
 @header { package com.natty.parse; }
@@ -33,7 +53,7 @@ datetime
   | date 'at'? time -> ^(DATE_TIME date time)
   
   // time only, we use today for the date
-  | time -> ^(DATE_TIME ^(RELATIVE_DATE DIRECTION[">"] INTEGER["0"]) time)
+  | time -> ^(DATE_TIME ^(RELATIVE_DATE SEEK_DIRECTION[">"] INTEGER["0"]) time)
   ;
 
 date
@@ -69,14 +89,16 @@ relative_date
   // today, tomorrow, yesterday, day after tomorrow
   : today_or_tomorrow
   
-  | 'this'? relative_prefix prefixable_target -> ^(RELATIVE_DATE relative_prefix prefixable_target)
+  // next monday, this upcoming thursday, next week, last tuesday, past wed
+  | relative_prefix prefixable_target -> ^(RELATIVE_DATE relative_prefix prefixable_target)
   
-  // in 3 days, 6 days from now
-  //| 'in' integer 'days' -> ^(RELATIVE_DATE DIRECTION[">"] integer) 
-  //| integer 'days' 'from now'? -> ^(RELATIVE_DATE DIRECTION[">"] integer) 
+  // 6 days from now, seven days ago
+  | number prefixable_target relative_suffix -> ^(RELATIVE_DATE relative_suffix number prefixable_target)
+  ;
   
-  // 2 days ago
-  //| integer 'days' 'ago' -> ^(RELATIVE_DATE DIRECTION["<"] integer)
+relative_suffix
+  : 'from now' -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"]
+  | 'ago'      -> SEEK_DIRECTION["<"] SEEK_TYPE["by_week"]
   ;
   
 // an explicit time with implicit minutes when omitted 
@@ -104,16 +126,24 @@ date_separator
   ;
   
 relative_prefix
-  : 'last'     -> DIRECTION["<"] WEEK_SEEK
-  | 'next'     -> DIRECTION[">"] WEEK_SEEK
-  | 'past'     -> DIRECTION["<"] DAY_SEEK
-  | 'coming'   -> DIRECTION[">"] DAY_SEEK
-  | 'upcoming' -> DIRECTION[">"] DAY_SEEK
+  : 'this'? 'last'     -> SEEK_DIRECTION["<"] SEEK_TYPE["by_week"] INTEGER["1"]
+  | 'this'? 'next'     -> SEEK_DIRECTION[">"] SEEK_TYPE["by_week"] INTEGER["1"]
+  | 'this'? 'past'     -> SEEK_DIRECTION["<"] SEEK_TYPE["by_day"] INTEGER["1"]
+  | 'this'? 'coming'   -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] INTEGER["1"]
+  | 'this'? 'upcoming' -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] INTEGER["1"]
+  | 'in' number        -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] number
   ;
   
 prefixable_target
   : day_of_week 
-  | date_frame 
+  | date_span
+  ;
+  
+date_span
+  : 'day' 's'?           -> SPAN["day"]
+  | 'week' 's'?          -> SPAN["week"]
+  | 'month' 's'?         -> SPAN["month"]
+  | YEAR_DATE_SPAN 's'?  -> SPAN["year"]
   ;
   
 // a regular language, possibly shortened day of the week
@@ -139,68 +169,68 @@ day_of_week
   
 // a regular language day of the month
 day
-  : 'first'                 -> DAY["1"]
-  | '1st'                   -> DAY["1"]
-  | 'second'                -> DAY["2"]
-  | '2nd'                   -> DAY["2"]
-  | 'third'                 -> DAY["3"]
-  | '3rd'                   -> DAY["3"]
-  | 'fourth'                -> DAY["4"]
-  | '4th'                   -> DAY["4"]
-  | 'fifth'                 -> DAY["5"]
-  | '5th'                   -> DAY["5"]
-  | 'sixth'                 -> DAY["6"]
-  | '6th'                   -> DAY["6"]
-  | 'seventh'               -> DAY["7"]
-  | '7th'                   -> DAY["7"]
-  | 'eighth'                -> DAY["8"]
-  | '8th'                   -> DAY["8"]
-  | 'ninth'                 -> DAY["9"]
-  | '9th'                   -> DAY["9"]
-  | 'tenth'                 -> DAY["10"]
-  | '10th'                  -> DAY["10"]
-  | 'eleventh'              -> DAY["11"]
-  | '11th'                  -> DAY["11"]
-  | 'twelfth'               -> DAY["12"]
-  | '12th'                  -> DAY["12"]
-  | 'thirteenth'            -> DAY["13"]
-  | '13th'                  -> DAY["13"]
-  | 'fourteenth'            -> DAY["14"]
-  | '14th'                  -> DAY["14"]
-  | 'fifteenth'             -> DAY["15"]
-  | '15th'                  -> DAY["15"]
-  | 'sixteenth'             -> DAY["16"]
-  | '16th'                  -> DAY["16"]
-  | 'seventeenth'           -> DAY["17"]
-  | '17th'                  -> DAY["17"]
-  | 'eighteenth'            -> DAY["18"]
-  | '18th'                  -> DAY["18"]
-  | 'nineteenth'            -> DAY["19"]
-  | '19th'                  -> DAY["19"]
-  | 'twentieth'             -> DAY["20"]
-  | '20th'                  -> DAY["20"]
-  | 'twenty' '-'? 'first'   -> DAY["21"]
-  | '21st'                  -> DAY["21"]
-  | 'twenty' '-'? 'second'  -> DAY["22"]
-  | '22nd'                  -> DAY["22"]
-  | 'twenty' '-'? 'third'   -> DAY["23"]
-  | '23rd'                  -> DAY["23"]
-  | 'twenty' '-'? 'fourth'  -> DAY["24"]
-  | '24th'                  -> DAY["24"]
-  | 'twenty' '-'? 'fifth'   -> DAY["25"]
-  | '25th'                  -> DAY["25"]
-  | 'twenty' '-'? 'sixth'   -> DAY["26"]
-  | '26th'                  -> DAY["26"]
-  | 'twenty' '-'? 'seventh' -> DAY["27"]
-  | '27th'                  -> DAY["27"]
-  | 'twenty' '-'? 'eighth'  -> DAY["28"]
-  | '28th'                  -> DAY["28"]
-  | 'twenty' '-'? 'ninth'   -> DAY["29"]
-  | '29th'                  -> DAY["29"]
-  | 'thirtieth'             -> DAY["30"]
-  | '30th'                  -> DAY["30"]
-  | 'thirty' '-'? 'first'   -> DAY["31"]
-  | '31st'                  -> DAY["31"]
+  : 'first'                 -> DAY_OF_MONTH["1"]
+  | '1st'                   -> DAY_OF_MONTH["1"]
+  | 'second'                -> DAY_OF_MONTH["2"]
+  | '2nd'                   -> DAY_OF_MONTH["2"]
+  | 'third'                 -> DAY_OF_MONTH["3"]
+  | '3rd'                   -> DAY_OF_MONTH["3"]
+  | 'fourth'                -> DAY_OF_MONTH["4"]
+  | '4th'                   -> DAY_OF_MONTH["4"]
+  | 'fifth'                 -> DAY_OF_MONTH["5"]
+  | '5th'                   -> DAY_OF_MONTH["5"]
+  | 'sixth'                 -> DAY_OF_MONTH["6"]
+  | '6th'                   -> DAY_OF_MONTH["6"]
+  | 'seventh'               -> DAY_OF_MONTH["7"]
+  | '7th'                   -> DAY_OF_MONTH["7"]
+  | 'eighth'                -> DAY_OF_MONTH["8"]
+  | '8th'                   -> DAY_OF_MONTH["8"]
+  | 'ninth'                 -> DAY_OF_MONTH["9"]
+  | '9th'                   -> DAY_OF_MONTH["9"]
+  | 'tenth'                 -> DAY_OF_MONTH["10"]
+  | '10th'                  -> DAY_OF_MONTH["10"]
+  | 'eleventh'              -> DAY_OF_MONTH["11"]
+  | '11th'                  -> DAY_OF_MONTH["11"]
+  | 'twelfth'               -> DAY_OF_MONTH["12"]
+  | '12th'                  -> DAY_OF_MONTH["12"]
+  | 'thirteenth'            -> DAY_OF_MONTH["13"]
+  | '13th'                  -> DAY_OF_MONTH["13"]
+  | 'fourteenth'            -> DAY_OF_MONTH["14"]
+  | '14th'                  -> DAY_OF_MONTH["14"]
+  | 'fifteenth'             -> DAY_OF_MONTH["15"]
+  | '15th'                  -> DAY_OF_MONTH["15"]
+  | 'sixteenth'             -> DAY_OF_MONTH["16"]
+  | '16th'                  -> DAY_OF_MONTH["16"]
+  | 'seventeenth'           -> DAY_OF_MONTH["17"]
+  | '17th'                  -> DAY_OF_MONTH["17"]
+  | 'eighteenth'            -> DAY_OF_MONTH["18"]
+  | '18th'                  -> DAY_OF_MONTH["18"]
+  | 'nineteenth'            -> DAY_OF_MONTH["19"]
+  | '19th'                  -> DAY_OF_MONTH["19"]
+  | 'twentieth'             -> DAY_OF_MONTH["20"]
+  | '20th'                  -> DAY_OF_MONTH["20"]
+  | 'twenty' '-'? 'first'   -> DAY_OF_MONTH["21"]
+  | '21st'                  -> DAY_OF_MONTH["21"]
+  | 'twenty' '-'? 'second'  -> DAY_OF_MONTH["22"]
+  | '22nd'                  -> DAY_OF_MONTH["22"]
+  | 'twenty' '-'? 'third'   -> DAY_OF_MONTH["23"]
+  | '23rd'                  -> DAY_OF_MONTH["23"]
+  | 'twenty' '-'? 'fourth'  -> DAY_OF_MONTH["24"]
+  | '24th'                  -> DAY_OF_MONTH["24"]
+  | 'twenty' '-'? 'fifth'   -> DAY_OF_MONTH["25"]
+  | '25th'                  -> DAY_OF_MONTH["25"]
+  | 'twenty' '-'? 'sixth'   -> DAY_OF_MONTH["26"]
+  | '26th'                  -> DAY_OF_MONTH["26"]
+  | 'twenty' '-'? 'seventh' -> DAY_OF_MONTH["27"]
+  | '27th'                  -> DAY_OF_MONTH["27"]
+  | 'twenty' '-'? 'eighth'  -> DAY_OF_MONTH["28"]
+  | '28th'                  -> DAY_OF_MONTH["28"]
+  | 'twenty' '-'? 'ninth'   -> DAY_OF_MONTH["29"]
+  | '29th'                  -> DAY_OF_MONTH["29"]
+  | 'thirtieth'             -> DAY_OF_MONTH["30"]
+  | '30th'                  -> DAY_OF_MONTH["30"]
+  | 'thirty' '-'? 'first'   -> DAY_OF_MONTH["31"]
+  | '31st'                  -> DAY_OF_MONTH["31"]
   ;
 
 // a regular language, possibly shortened month name
@@ -232,20 +262,20 @@ month
   
 // common day identifiers (today, tomorrow, etc)
 today_or_tomorrow
-  : 'today' -> ^(RELATIVE_DATE DIRECTION[">"] INTEGER["0"])
+  : 'today' -> ^(RELATIVE_DATE SEEK_DIRECTION[">"] INTEGER["0"])
   | tomorrow
   
   // yesterday
-  | 'yesterday' -> ^(RELATIVE_DATE DIRECTION["<"] INTEGER["1"])
+  | 'yesterday' -> ^(RELATIVE_DATE SEEK_DIRECTION["<"] INTEGER["1"])
   
   // to humor the end of the world theorists
-  | 'the'? 'day after ' tomorrow -> ^(RELATIVE_DATE DIRECTION[">"] INTEGER["2"])
-  | 'the'? 'day before yesterday' -> ^(RELATIVE_DATE DIRECTION["<"] INTEGER["2"])
+  | 'the'? 'day after ' tomorrow -> ^(RELATIVE_DATE SEEK_DIRECTION[">"] INTEGER["2"])
+  | 'the'? 'day before yesterday' -> ^(RELATIVE_DATE SEEK_DIRECTION["<"] INTEGER["2"])
   ;
   
 tomorrow
   : ('tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow') 
-    -> ^(RELATIVE_DATE DIRECTION[">"] INTEGER["1"])
+    -> ^(RELATIVE_DATE SEEK_DIRECTION[">"] INTEGER["1"])
   ;
 
 // common time identifiers (noon, midnight, etc)
@@ -271,7 +301,7 @@ numeric_month
 // years may have an optional ad/bc suffux
 numeric_year
   : '\''? up_to_two_digits -> YEAR[$up_to_two_digits.text]
-  | ('in' 'the' YEAR_DATE_FRAME)? up_to_four_digits era? -> YEAR[$up_to_four_digits.text] era?
+  | ('in' 'the' YEAR_DATE_SPAN)? up_to_four_digits era? -> YEAR[$up_to_four_digits.text] era?
   ;
 
 era
@@ -309,18 +339,36 @@ up_to_four_digits
   | FOUR_DIGITS
   ;
   
-integer
+number
   : up_to_two_digits -> INTEGER[$up_to_two_digits.text]
   | digits=(DIGIT DIGIT DIGIT+) -> INTEGER[$digits.text]
+  | number_string 
   ;
   
-date_frame
-  : 'week'
-  | 'month'
-  | YEAR_DATE_FRAME
+number_string
+  : 'one'       -> INTEGER["1"]
+  | 'two'       -> INTEGER["2"]
+  | 'three'     -> INTEGER["3"]
+  | 'four'      -> INTEGER["4"]
+  | 'five'      -> INTEGER["5"]
+  | 'six'       -> INTEGER["6"]
+  | 'seven'     -> INTEGER["7"]
+  | 'eight'     -> INTEGER["8"]
+  | 'nine'      -> INTEGER["9"]
+  | 'ten'       -> INTEGER["10"]
+  | 'eleven'    -> INTEGER["11"]
+  | 'twelve'    -> INTEGER["12"]
+  | 'thirteen'  -> INTEGER["13"]
+  | 'fourteen'  -> INTEGER["14"]
+  | 'fifteen'   -> INTEGER["15"]
+  | 'sixteen'   -> INTEGER["16"]
+  | 'seventeen' -> INTEGER["17"]
+  | 'eighteen'  -> INTEGER["18"]
+  | 'nineteen'  -> INTEGER["19"]
+  | 'twenty'    -> INTEGER["20"]
   ;
   
-YEAR_DATE_FRAME
+YEAR_DATE_SPAN
   : 'year'  
   ;
   

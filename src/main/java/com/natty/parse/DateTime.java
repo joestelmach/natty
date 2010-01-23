@@ -11,29 +11,74 @@ public class DateTime {
   }
   
   /**
-   * moves to the last or next day of the week specified.  We first move to the 
-   * day in the current week, then add or subtract a week based on the direction
-   * 
-   * @param direction the direction to move: three possibilities 
-       '<' go backward 
-       '>' go forward
-       '-' stay in the current week
-   * @param dayOfWeek should be guaranteed to parse as an Integer 
+   * seeks the specified amount of days, in the specified direction
+   * @param direction the direction to seek: two possibilities 
+   *    '<' go backward 
+   *    '>' go forward
+   *    
+   * @param amount the amount to seek.  should be guaranteed to parse as an integer
    */
-  public void moveToDayOfWeek(String direction, String dayOfWeek) {
-    int requestedDay = Integer.parseInt(dayOfWeek);
-    int amount = direction.equals("-") ? 0 : direction.equals("<") ? -1 : 1;
-    _calendar.set(Calendar.DAY_OF_WEEK, requestedDay);
-    _calendar.add(Calendar.WEEK_OF_YEAR, amount);
+  public void seek(String direction, String amount) {
+    assert(direction.equals("<") || direction.equals(">"));
+    
   }
   
-  public void moveByDays(char direction, String numDays) {
-    if(direction == '<') {
-      
+  /**
+   * seeks to a specified day of the week in the past or future.
+   * 
+   * @param direction the direction to seek: two possibilities 
+   *    '<' go backward 
+   *    '>' go forward
+   *    
+   * @param seekType the type of seek to perform (by_day or by_week)
+   *     by_day means we seek to the very next occurrence of the given day
+   *     by_week means we seek to the first occurrence of the given day week in the
+   *     next (or previous,) week (or multiple of next or previous week depending
+   *     on the seek amount.)
+   *     
+   * @param amount the amount to seek.  Must be guaranteed to parse as an integer
+   *     
+   * @param dayOfWeek the day of the week to seek to, represented as an integer from 
+   *     1 to 7 (1 being Sunday, 7 being Saturday.) Must be guaranteed to parse as an Integer
+   */
+  public void seekToDayOfWeek(String direction, String seekType, String seekAmount, String dayOfWeek) {
+    assert(direction.equals("<") || direction.equals(">"));
+    assert(seekType.equals("by_day") || seekType.equals("by_week"));
+    
+    int requestedDay = Integer.parseInt(dayOfWeek);
+    assert(requestedDay >= 1 && requestedDay <= 7);
+    
+    boolean isForward = direction.equals(">");
+    
+    int seekMultiplier = Integer.parseInt(seekAmount) * (isForward ? -1 : 1);
+    if(seekType.equals("by_week")) {
+      _calendar.set(Calendar.DAY_OF_WEEK, requestedDay);
+      _calendar.add(Calendar.WEEK_OF_YEAR, seekMultiplier * 7);
+    }
+    
+    else if(seekType.equals("by_day")) {
+      int currentDay = _calendar.get(Calendar.DAY_OF_WEEK);
+      while(currentDay != requestedDay) {
+        _calendar.roll(Calendar.DAY_OF_YEAR, seekMultiplier);
+        
+      }
     }
   }
   
-  public void useExplicitDate(int month, int day, int year, String era) {
+  /**
+   * seeks by a span of time (weeks, months, etc)
+   * 
+   * @param direction the direction to seek: two possibilities 
+   *    '<' go backward 
+   *    '>' go forward
+   *    
+   * @param amount the amount to seek.  Must be guaranteed to parse as an integer
+   *     
+   * @param span
+   */
+  public void seekBySpan(String direction, String seekAmount, String span) {
+    assert(direction.equals("<") || direction.equals(">"));
+    assert(span.equals("day") || span.equals("week") || span.equals("month") || span.equals("year"));
     
   }
   
