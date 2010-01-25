@@ -50,18 +50,16 @@ public class DateTime {
     
     boolean isForward = direction.equals(">");
     
-    int seekMultiplier = Integer.parseInt(seekAmount) * (isForward ? -1 : 1);
+    int seekMultiplier = Integer.parseInt(seekAmount) * (isForward ? 1 : -1);
     if(seekType.equals("by_week")) {
       _calendar.set(Calendar.DAY_OF_WEEK, requestedDay);
       _calendar.add(Calendar.WEEK_OF_YEAR, seekMultiplier * 7);
     }
     
     else if(seekType.equals("by_day")) {
-      int currentDay = _calendar.get(Calendar.DAY_OF_WEEK);
-      while(currentDay != requestedDay) {
+      do {
         _calendar.roll(Calendar.DAY_OF_YEAR, seekMultiplier);
-        
-      }
+      } while(_calendar.get(Calendar.DAY_OF_WEEK) != requestedDay - 1);
     }
   }
   
