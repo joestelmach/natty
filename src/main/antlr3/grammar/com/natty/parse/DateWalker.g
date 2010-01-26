@@ -8,7 +8,7 @@ options {
 @header { package com.natty.parse; }
 
 @members {
-  DateTime dateTime = new DateTime();
+  SeekableDateTime dateTime = new SeekableDateTime();
 }
 
 datetime 
