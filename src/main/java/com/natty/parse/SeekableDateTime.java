@@ -1,7 +1,9 @@
 package com.natty.parse;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 /**
  * Represents a seek-able date and time.
@@ -12,10 +14,21 @@ public class SeekableDateTime {
   private GregorianCalendar _calendar;
   
   /**
-   * Creates a new SeekableDateTime from the current date and time
+   * Creates a new SeekableDateTime representing the start of u
+   * the next hour from the current time
    */
   public SeekableDateTime() {
     _calendar = new GregorianCalendar();
+    _calendar.setTimeZone(TimeZone.getTimeZone("US/Eastern"));
+    _calendar.roll(Calendar.HOUR, true);
+    _calendar.set(Calendar.MINUTE, 0);
+    _calendar.set(Calendar.SECOND, 0);
+    _calendar.set(Calendar.MILLISECOND, 0);
+    
+    for(String id:TimeZone.getAvailableIDs()) {
+      //System.out.println(id);
+    }
+    
   }
   
   /**
@@ -106,8 +119,80 @@ public class SeekableDateTime {
   
   /**
    * 
+   * @param month the month to set.  Must be guaranteed to parse as an integer
+   *     between 1 and 12
+   *     
+   * @param day the day of month to set.  Must be guaranteed to parse as an
+   *     integer between 1 and 31
+   *     
+   * @param year the year to set (optional).  If present, must be guaranteed to 
+   *     parse as an integer between 0 and 9999
+   *     
+   * @param era the time era to set (optional) If present, must either be 'bc' or 'ad'
    */
-  public void getDate() {
-    System.out.println(_calendar.getTime());
+  public void setExplicitDate(String month, String day, String year, String era) {
+    int monthInt = Integer.parseInt(month);
+    assert(monthInt > 0 && monthInt <= 12);
+    
+    int dayInt = Integer.parseInt(day);
+    assert(dayInt > 0 && dayInt <= 31);
+    
+    int yearInt = -1;
+    if(year != null) {
+      yearInt = Integer.parseInt(year);
+      assert(yearInt > 0 && yearInt < 9999);
+    }
+    
+    if(era != null) {
+      assert(era.equals("bc") || era.equals("ad"));
+    }
+    
+    _calendar.set(Calendar.MONTH, monthInt - 1);
+    _calendar.set(Calendar.DAY_OF_MONTH, dayInt);
+    if(yearInt > 0) _calendar.set(Calendar.YEAR, yearInt);
+    if(era != null) _calendar.set(Calendar.ERA, era.equals("bc") ? 
+        GregorianCalendar.BC : GregorianCalendar.AD);
+  }
+  
+  /**
+   * Sets the the time of day
+   * 
+   * @param hours the hours to set.  Must be guaranteed to parse as an 
+   *     integer between 0 and 23
+   *     
+   * @param minutes the minutes to set.  Must be guaranteed to parse as
+   *     an integer between 0 and 59
+   *     
+   * @param amPm the meridian indicator to use.  Must be either 'am' or 'pm'
+   */
+  public void setExplicitTime(String hours, String minutes, String amPm) {
+    int hoursInt = Integer.parseInt(hours);
+    int minutesInt = Integer.parseInt(minutes);
+    assert(amPm == null || amPm.equals("am") || amPm.equals("pm"));
+    assert(hoursInt >= 0 && hoursInt <= 23); 
+    assert(minutesInt >= 0 && minutesInt < 60); 
+    
+    // hours greater than 12 are in 24-hour time
+    if(hoursInt > 12) {
+      _calendar.set(Calendar.HOUR_OF_DAY, hoursInt);
+    }
+    
+    // otherwise, we specify the meridian indicator. PM is used when 
+    // no indicator is given
+    else {
+      _calendar.set(Calendar.HOUR, hoursInt);
+      _calendar.set(Calendar.AM_PM, 
+          (amPm == null || amPm.equals("pm")) ? Calendar.PM : Calendar.AM);
+    }
+    
+    _calendar.set(Calendar.MINUTE, minutesInt);
+  }
+  
+  /**
+   * Return the date currently represented
+   */
+  public Date getDate() {
+    System.out.println(_calendar.getTime().getTime());
+    return _calendar.getTime();
   }
 }

@@ -9,12 +9,13 @@ options {
 
 @members {
   SeekableDateTime dateTime = new SeekableDateTime();
+  
+  public java.util.Date getDate() {
+    return dateTime.getDate(); 
+  }
 }
 
 datetime 
-  @after {
-    dateTime.getDate();  
-  }
   : ^(DATE_TIME date time?) 
   ;
 
@@ -28,8 +29,8 @@ time
   ;
 
 explicit_date
-  : ^(EXPLICIT_DATE MONTH DAY YEAR? ERA?)
-    {System.out.println($MONTH.text);}
+  : ^(EXPLICIT_DATE MONTH DAY_OF_MONTH YEAR? ERA?)
+    {dateTime.setExplicitDate($MONTH.text, $DAY_OF_MONTH.text, $YEAR.text, $ERA.text);}
   ;
 
 relative_date
@@ -49,5 +50,6 @@ relative_date
   ;
   
 explicit_time 
-  : ^(EXPLICIT_TIME INTEGER INTEGER AM_PM?)
+  : ^(EXPLICIT_TIME hours=INTEGER minutes=INTEGER AM_PM?)
+    {dateTime.setExplicitTime($hours.text, $minutes.text, $AM_PM.text);}
   ;

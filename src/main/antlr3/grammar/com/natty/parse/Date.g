@@ -73,15 +73,15 @@ explicit_date
   // 28th of February 1979
   | day 'of' month ','? numeric_year? -> ^(EXPLICIT_DATE month day numeric_year?)
   
-  // month before year
-  // 1979-2-28, 02/28, etc.
-  | (FOUR_DIGITS date_separator)? numeric_month date_separator numeric_day -> 
-    ^(EXPLICIT_DATE numeric_month numeric_day FOUR_DIGITS?)
-  
-  // year before month 
+  // year last 
   // 10/10/2009, 10-10-09, etc.
   | numeric_month date_separator numeric_day date_separator numeric_year -> 
     ^(EXPLICIT_DATE numeric_month numeric_day numeric_year)
+  
+  // year first
+  // 1979-2-28, 02/28, etc.
+  | (numeric_year date_separator)? numeric_month date_separator numeric_day -> 
+    ^(EXPLICIT_DATE numeric_month numeric_day numeric_year?)
   ;
 
 //a date relative to the current date
@@ -94,11 +94,6 @@ relative_date
   
   // 6 days from now, seven days ago
   | number prefixable_target relative_suffix -> ^(RELATIVE_DATE relative_suffix number prefixable_target)
-  ;
-  
-relative_suffix
-  : 'from now' -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"]
-  | 'ago'      -> SEEK_DIRECTION["<"] SEEK_TYPE["by_day"]
   ;
   
 // an explicit time with implicit minutes when omitted 
@@ -114,10 +109,12 @@ explicit_time
 
 // relaxed am or pm meridian indicator
 meridian_indicator
-  : 'am' -> AM_PM["am"]
-  | 'a'  -> AM_PM["am"]
-  | 'pm' -> AM_PM["pm"]
-  | 'p'  -> AM_PM["pm"]
+  : 'am'   -> AM_PM["am"]
+  | 'a.m.' -> AM_PM["am"]
+  | 'a'    -> AM_PM["am"]
+  | 'pm'   -> AM_PM["pm"]
+  | 'p.m.' -> AM_PM["pm"]
+  | 'p'    -> AM_PM["pm"]
   ;
 
 date_separator
@@ -132,6 +129,11 @@ relative_prefix
   | 'this'? 'coming'   -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] INTEGER["1"]
   | 'this'? 'upcoming' -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] INTEGER["1"]
   | 'in' number        -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] number
+  ;
+  
+relative_suffix
+  : 'from now' -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"]
+  | 'ago'      -> SEEK_DIRECTION["<"] SEEK_TYPE["by_day"]
   ;
   
 prefixable_target
@@ -286,62 +288,64 @@ time_identifier
 
 // a number between 1 and 31, 0 prefix optional for numbers 1 through 9
 numeric_day
-  : ONE_TO_TWELVE
-  | THIRTEEN_TO_TWENTY_FOUR
-  | TWENTY_FIVE_TO_THIRTY_ONE
+  : ONE_TO_TWELVE             -> DAY_OF_MONTH[$ONE_TO_TWELVE.text]
+  | THIRTEEN_TO_TWENTY_FOUR   -> DAY_OF_MONTH[$THIRTEEN_TO_TWENTY_FOUR.text]
+  | TWENTY_FIVE_TO_THIRTY_ONE -> DAY_OF_MONTH[$TWENTY_FIVE_TO_THIRTY_ONE.text]
   ;
 
 // a number between 1 and 12, 0 prefix optional for numbers 1 through 9
 numeric_month
-  : ONE_TO_TWELVE
+  : ONE_TO_TWELVE -> MONTH[$ONE_TO_TWELVE.text]
   ;
   
 // a number between 1 and 9999, 0 prefix(es) optional for numbers 1 through 999.
 // additionally, two digit years may have an optional ' prefix, and four digit 
 // years may have an optional ad/bc suffux
 numeric_year
-  : '\''? up_to_two_digits -> YEAR[$up_to_two_digits.text]
+  : '\''? up_to_two_digits                              -> YEAR[$up_to_two_digits.text]
   | ('in' 'the' YEAR_DATE_SPAN)? up_to_four_digits era? -> YEAR[$up_to_four_digits.text] era?
   ;
 
 era
   : 'ad' -> ERA["ad"]
+  | 'a.d.' -> ERA["ad"]
   | 'bc' -> ERA["bc"]
+  | 'b.c.' -> ERA["bc"]
   ;
   
 hours
-  : TWO_ZEROS
-  | ONE_TO_TWELVE
-  | THIRTEEN_TO_TWENTY_FOUR
+  : TWO_ZEROS -> INTEGER[$TWO_ZEROS.text]
+  | ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text]
+  | THIRTEEN_TO_TWENTY_FOUR -> INTEGER[$THIRTEEN_TO_TWENTY_FOUR.text]
   ;
   
 minutes
-  : TWO_ZEROS
-  | ONE_TO_TWELVE
-  | THIRTEEN_TO_TWENTY_FOUR
-  | TWENTY_FIVE_TO_THIRTY_ONE
-  | THIRTY_TWO_TO_FIFTY_NINE
+  : TWO_ZEROS                 -> INTEGER["0"]
+  | ONE_TO_TWELVE             -> INTEGER[$ONE_TO_TWELVE.text]
+  | THIRTEEN_TO_TWENTY_FOUR   -> INTEGER[$THIRTEEN_TO_TWENTY_FOUR.text]
+  | TWENTY_FIVE_TO_THIRTY_ONE -> INTEGER[$TWENTY_FIVE_TO_THIRTY_ONE.text]
+  | THIRTY_TWO_TO_FIFTY_NINE  -> INTEGER[$THIRTY_TWO_TO_FIFTY_NINE.text]
   ;
   
 // any two subsequnt digits
 up_to_two_digits
-  : TWO_ZEROS
-  | ONE_TO_TWELVE
-  | THIRTEEN_TO_TWENTY_FOUR
-  | TWENTY_FIVE_TO_THIRTY_ONE
-  | THIRTY_TWO_TO_FIFTY_NINE
-  | SIXTY_TO_NINETY_NINE
+  : TWO_ZEROS                 -> INTEGER[$TWO_ZEROS.text]
+  | ONE_TO_TWELVE             -> INTEGER[$ONE_TO_TWELVE.text]
+  | THIRTEEN_TO_TWENTY_FOUR   -> INTEGER[$THIRTEEN_TO_TWENTY_FOUR.text]
+  | TWENTY_FIVE_TO_THIRTY_ONE -> INTEGER[$TWENTY_FIVE_TO_THIRTY_ONE.text]
+  | THIRTY_TWO_TO_FIFTY_NINE  -> INTEGER[$THIRTY_TWO_TO_FIFTY_NINE.text]
+  | SIXTY_TO_NINETY_NINE      -> INTEGER[$SIXTY_TO_NINETY_NINE.text]
   ;
   
 up_to_four_digits
   : up_to_two_digits
-  | THREE_DIGITS
-  | FOUR_DIGITS
+  | THREE_DIGITS -> INTEGER[$THREE_DIGITS.text]
+  | FOUR_DIGITS  -> INTEGER[$FOUR_DIGITS.text]
   ;
   
 number
-  : up_to_two_digits -> INTEGER[$up_to_two_digits.text]
-  | digits=(DIGIT DIGIT DIGIT+) -> INTEGER[$digits.text]
+  : up_to_four_digits                 -> INTEGER[$up_to_four_digits.text]
+  | digits=(DIGIT DIGIT DIGIT DIGIT+) -> INTEGER[$digits.text]
   | number_string 
   ;
   

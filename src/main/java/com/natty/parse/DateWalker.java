@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g 2010-01-26 09:07:06
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g 2010-01-26 16:35:31
  package com.natty.parse; 
 
 import org.antlr.runtime.*;
@@ -8,13 +8,12 @@ import java.util.ArrayList;
 
 public class DateWalker extends TreeParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DATE_TIME", "RELATIVE_DATE", "EXPLICIT_DATE", "EXPLICIT_TIME", "AM_PM", "MONTH", "DAY_OF_WEEK", "DAY_OF_MONTH", "SPAN", "YEAR", "ERA", "INTEGER", "SEEK_DIRECTION", "SEEK_TYPE", "FOUR_DIGITS", "YEAR_DATE_SPAN", "ONE_TO_TWELVE", "THIRTEEN_TO_TWENTY_FOUR", "TWENTY_FIVE_TO_THIRTY_ONE", "TWO_ZEROS", "THIRTY_TWO_TO_FIFTY_NINE", "SIXTY_TO_NINETY_NINE", "THREE_DIGITS", "DIGIT", "WHITE_SPACE", "'on'", "'at'", "','", "'of'", "'from now'", "'ago'", "':'", "'am'", "'a'", "'pm'", "'p'", "'-'", "'/'", "'this'", "'last'", "'next'", "'past'", "'coming'", "'upcoming'", "'in'", "'day'", "'s'", "'week'", "'month'", "'monday'", "'mon'", "'tuesday'", "'tue'", "'tues'", "'wednesday'", "'wed'", "'thursday'", "'thur'", "'thurs'", "'friday'", "'fri'", "'saturday'", "'sat'", "'weekend'", "'sunday'", "'sun'", "'first'", "'1st'", "'second'", "'2nd'", "'third'", "'3rd'", "'fourth'", "'4th'", "'fifth'", "'5th'", "'sixth'", "'6th'", "'seventh'", "'7th'", "'eighth'", "'8th'", "'ninth'", "'9th'", "'tenth'", "'10th'", "'eleventh'", "'11th'", "'twelfth'", "'12th'", "'thirteenth'", "'13th'", "'fourteenth'", "'14th'", "'fifteenth'", "'15th'", "'sixteenth'", "'16th'", "'seventeenth'", "'17th'", "'eighteenth'", "'18th'", "'nineteenth'", "'19th'", "'twentieth'", "'20th'", "'twenty'", "'21st'", "'22nd'", "'23rd'", "'24th'", "'25th'", "'26th'", "'27th'", "'28th'", "'29th'", "'thirtieth'", "'30th'", "'thirty'", "'31st'", "'january'", "'jan'", "'february'", "'feb'", "'march'", "'mar'", "'april'", "'apr'", "'may'", "'june'", "'jun'", "'july'", "'jul'", "'august'", "'aug'", "'september'", "'sep'", "'october'", "'oct'", "'november'", "'nov'", "'december'", "'dec'", "'today'", "'yesterday'", "'the'", "'day after '", "'day before yesterday'", "'tomorow'", "'tomorrow'", "'tommorow'", "'tommorrow'", "'midnight'", "'noon'", "'''", "'ad'", "'bc'", "'one'", "'two'", "'three'", "'four'", "'five'", "'six'", "'seven'", "'eight'", "'nine'", "'ten'", "'eleven'", "'twelve'", "'thirteen'", "'fourteen'", "'fifteen'", "'sixteen'", "'seventeen'", "'eighteen'", "'nineteen'", "DAY"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DATE_TIME", "RELATIVE_DATE", "EXPLICIT_DATE", "EXPLICIT_TIME", "AM_PM", "MONTH", "DAY_OF_WEEK", "DAY_OF_MONTH", "SPAN", "YEAR", "ERA", "INTEGER", "SEEK_DIRECTION", "SEEK_TYPE", "FOUR_DIGITS", "YEAR_DATE_SPAN", "ONE_TO_TWELVE", "THIRTEEN_TO_TWENTY_FOUR", "TWENTY_FIVE_TO_THIRTY_ONE", "TWO_ZEROS", "THIRTY_TWO_TO_FIFTY_NINE", "SIXTY_TO_NINETY_NINE", "THREE_DIGITS", "DIGIT", "WHITE_SPACE", "'on'", "'at'", "','", "'of'", "':'", "'am'", "'a.m.'", "'a'", "'pm'", "'p.m.'", "'p'", "'-'", "'/'", "'this'", "'last'", "'next'", "'past'", "'coming'", "'upcoming'", "'in'", "'from now'", "'ago'", "'day'", "'s'", "'week'", "'month'", "'monday'", "'mon'", "'tuesday'", "'tue'", "'tues'", "'wednesday'", "'wed'", "'thursday'", "'thur'", "'thurs'", "'friday'", "'fri'", "'saturday'", "'sat'", "'weekend'", "'sunday'", "'sun'", "'first'", "'1st'", "'second'", "'2nd'", "'third'", "'3rd'", "'fourth'", "'4th'", "'fifth'", "'5th'", "'sixth'", "'6th'", "'seventh'", "'7th'", "'eighth'", "'8th'", "'ninth'", "'9th'", "'tenth'", "'10th'", "'eleventh'", "'11th'", "'twelfth'", "'12th'", "'thirteenth'", "'13th'", "'fourteenth'", "'14th'", "'fifteenth'", "'15th'", "'sixteenth'", "'16th'", "'seventeenth'", "'17th'", "'eighteenth'", "'18th'", "'nineteenth'", "'19th'", "'twentieth'", "'20th'", "'twenty'", "'21st'", "'22nd'", "'23rd'", "'24th'", "'25th'", "'26th'", "'27th'", "'28th'", "'29th'", "'thirtieth'", "'30th'", "'thirty'", "'31st'", "'january'", "'jan'", "'february'", "'feb'", "'march'", "'mar'", "'april'", "'apr'", "'may'", "'june'", "'jun'", "'july'", "'jul'", "'august'", "'aug'", "'september'", "'sep'", "'october'", "'oct'", "'november'", "'nov'", "'december'", "'dec'", "'today'", "'yesterday'", "'the'", "'day after '", "'day before yesterday'", "'tomorow'", "'tomorrow'", "'tommorow'", "'tommorrow'", "'midnight'", "'noon'", "'''", "'ad'", "'a.d.'", "'bc'", "'b.c.'", "'one'", "'two'", "'three'", "'four'", "'five'", "'six'", "'seven'", "'eight'", "'nine'", "'ten'", "'eleven'", "'twelve'", "'thirteen'", "'fourteen'", "'fifteen'", "'sixteen'", "'seventeen'", "'eighteen'", "'nineteen'"
     };
     public static final int T__29=29;
     public static final int T__159=159;
     public static final int T__158=158;
     public static final int T__160=160;
-    public static final int DAY=180;
     public static final int T__167=167;
     public static final int EOF=-1;
     public static final int T__168=168;
@@ -151,6 +150,7 @@ public class DateWalker extends TreeParser {
     public static final int T__42=42;
     public static final int INTEGER=15;
     public static final int T__43=43;
+    public static final int T__183=183;
     public static final int T__40=40;
     public static final int T__41=41;
     public static final int T__46=46;
@@ -159,6 +159,9 @@ public class DateWalker extends TreeParser {
     public static final int T__45=45;
     public static final int T__48=48;
     public static final int T__49=49;
+    public static final int T__180=180;
+    public static final int T__182=182;
+    public static final int T__181=181;
     public static final int SEEK_DIRECTION=16;
     public static final int T__102=102;
     public static final int T__101=101;
@@ -207,25 +210,29 @@ public class DateWalker extends TreeParser {
 
 
       SeekableDateTime dateTime = new SeekableDateTime();
+      
+      public java.util.Date getDate() {
+        return dateTime.getDate(); 
+      }
 
 
 
     // $ANTLR start "datetime"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:14:1: datetime : ^( DATE_TIME date ( time )? ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:18:1: datetime : ^( DATE_TIME date ( time )? ) ;
     public final void datetime() throws RecognitionException {
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:18:3: ( ^( DATE_TIME date ( time )? ) )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:18:5: ^( DATE_TIME date ( time )? )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:19:3: ( ^( DATE_TIME date ( time )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:19:5: ^( DATE_TIME date ( time )? )
             {
-            match(input,DATE_TIME,FOLLOW_DATE_TIME_in_datetime54); 
+            match(input,DATE_TIME,FOLLOW_DATE_TIME_in_datetime47); 
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_date_in_datetime56);
+            pushFollow(FOLLOW_date_in_datetime49);
             date();
 
             state._fsp--;
 
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:18:22: ( time )?
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:19:22: ( time )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -234,9 +241,9 @@ public class DateWalker extends TreeParser {
             }
             switch (alt1) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:18:22: time
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:19:22: time
                     {
-                    pushFollow(FOLLOW_time_in_datetime58);
+                    pushFollow(FOLLOW_time_in_datetime51);
                     time();
 
                     state._fsp--;
@@ -252,9 +259,6 @@ public class DateWalker extends TreeParser {
 
             }
 
-
-                dateTime.getDate();  
-              
         }
         catch (RecognitionException re) {
             reportError(re);
@@ -268,10 +272,10 @@ public class DateWalker extends TreeParser {
 
 
     // $ANTLR start "date"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:21:1: date : ( relative_date | explicit_date );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:22:1: date : ( relative_date | explicit_date );
     public final void date() throws RecognitionException {
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:22:3: ( relative_date | explicit_date )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:23:3: ( relative_date | explicit_date )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -289,9 +293,9 @@ public class DateWalker extends TreeParser {
             }
             switch (alt2) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:22:5: relative_date
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:23:5: relative_date
                     {
-                    pushFollow(FOLLOW_relative_date_in_date74);
+                    pushFollow(FOLLOW_relative_date_in_date67);
                     relative_date();
 
                     state._fsp--;
@@ -300,9 +304,9 @@ public class DateWalker extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:23:5: explicit_date
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:24:5: explicit_date
                     {
-                    pushFollow(FOLLOW_explicit_date_in_date81);
+                    pushFollow(FOLLOW_explicit_date_in_date74);
                     explicit_date();
 
                     state._fsp--;
@@ -325,13 +329,13 @@ public class DateWalker extends TreeParser {
 
 
     // $ANTLR start "time"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:26:1: time : explicit_time ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:27:1: time : explicit_time ;
     public final void time() throws RecognitionException {
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:27:3: ( explicit_time )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:27:5: explicit_time
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:28:3: ( explicit_time )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:28:5: explicit_time
             {
-            pushFollow(FOLLOW_explicit_time_in_time96);
+            pushFollow(FOLLOW_explicit_time_in_time89);
             explicit_time();
 
             state._fsp--;
@@ -352,20 +356,23 @@ public class DateWalker extends TreeParser {
 
 
     // $ANTLR start "explicit_date"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:30:1: explicit_date : ^( EXPLICIT_DATE MONTH DAY ( YEAR )? ( ERA )? ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:31:1: explicit_date : ^( EXPLICIT_DATE MONTH DAY_OF_MONTH ( YEAR )? ( ERA )? ) ;
     public final void explicit_date() throws RecognitionException {
         CommonTree MONTH1=null;
+        CommonTree DAY_OF_MONTH2=null;
+        CommonTree YEAR3=null;
+        CommonTree ERA4=null;
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:31:3: ( ^( EXPLICIT_DATE MONTH DAY ( YEAR )? ( ERA )? ) )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:31:5: ^( EXPLICIT_DATE MONTH DAY ( YEAR )? ( ERA )? )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:32:3: ( ^( EXPLICIT_DATE MONTH DAY_OF_MONTH ( YEAR )? ( ERA )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:32:5: ^( EXPLICIT_DATE MONTH DAY_OF_MONTH ( YEAR )? ( ERA )? )
             {
-            match(input,EXPLICIT_DATE,FOLLOW_EXPLICIT_DATE_in_explicit_date110); 
+            match(input,EXPLICIT_DATE,FOLLOW_EXPLICIT_DATE_in_explicit_date103); 
 
             match(input, Token.DOWN, null); 
-            MONTH1=(CommonTree)match(input,MONTH,FOLLOW_MONTH_in_explicit_date112); 
-            match(input,DAY,FOLLOW_DAY_in_explicit_date114); 
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:31:31: ( YEAR )?
+            MONTH1=(CommonTree)match(input,MONTH,FOLLOW_MONTH_in_explicit_date105); 
+            DAY_OF_MONTH2=(CommonTree)match(input,DAY_OF_MONTH,FOLLOW_DAY_OF_MONTH_in_explicit_date107); 
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:32:40: ( YEAR )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -374,16 +381,16 @@ public class DateWalker extends TreeParser {
             }
             switch (alt3) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:31:31: YEAR
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:32:40: YEAR
                     {
-                    match(input,YEAR,FOLLOW_YEAR_in_explicit_date116); 
+                    YEAR3=(CommonTree)match(input,YEAR,FOLLOW_YEAR_in_explicit_date109); 
 
                     }
                     break;
 
             }
 
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:31:37: ( ERA )?
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:32:46: ( ERA )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -392,9 +399,9 @@ public class DateWalker extends TreeParser {
             }
             switch (alt4) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:31:37: ERA
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:32:46: ERA
                     {
-                    match(input,ERA,FOLLOW_ERA_in_explicit_date119); 
+                    ERA4=(CommonTree)match(input,ERA,FOLLOW_ERA_in_explicit_date112); 
 
                     }
                     break;
@@ -403,7 +410,7 @@ public class DateWalker extends TreeParser {
 
 
             match(input, Token.UP, null); 
-            System.out.println((MONTH1!=null?MONTH1.getText():null));
+            dateTime.setExplicitDate((MONTH1!=null?MONTH1.getText():null), (DAY_OF_MONTH2!=null?DAY_OF_MONTH2.getText():null), (YEAR3!=null?YEAR3.getText():null), (ERA4!=null?ERA4.getText():null));
 
             }
 
@@ -420,20 +427,20 @@ public class DateWalker extends TreeParser {
 
 
     // $ANTLR start "relative_date"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:35:1: relative_date : ( ^( RELATIVE_DATE SEEK_DIRECTION INTEGER ) | ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER DAY_OF_WEEK ) | ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER SPAN ) );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:36:1: relative_date : ( ^( RELATIVE_DATE SEEK_DIRECTION INTEGER ) | ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER DAY_OF_WEEK ) | ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER SPAN ) );
     public final void relative_date() throws RecognitionException {
-        CommonTree SEEK_DIRECTION2=null;
-        CommonTree INTEGER3=null;
-        CommonTree SEEK_DIRECTION4=null;
-        CommonTree SEEK_TYPE5=null;
+        CommonTree SEEK_DIRECTION5=null;
         CommonTree INTEGER6=null;
-        CommonTree DAY_OF_WEEK7=null;
-        CommonTree SEEK_DIRECTION8=null;
+        CommonTree SEEK_DIRECTION7=null;
+        CommonTree SEEK_TYPE8=null;
         CommonTree INTEGER9=null;
-        CommonTree SPAN10=null;
+        CommonTree DAY_OF_WEEK10=null;
+        CommonTree SEEK_DIRECTION11=null;
+        CommonTree INTEGER12=null;
+        CommonTree SPAN13=null;
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:37:3: ( ^( RELATIVE_DATE SEEK_DIRECTION INTEGER ) | ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER DAY_OF_WEEK ) | ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER SPAN ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:38:3: ( ^( RELATIVE_DATE SEEK_DIRECTION INTEGER ) | ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER DAY_OF_WEEK ) | ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER SPAN ) )
             int alt5=3;
             int LA5_0 = input.LA(1);
 
@@ -504,48 +511,48 @@ public class DateWalker extends TreeParser {
             }
             switch (alt5) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:37:5: ^( RELATIVE_DATE SEEK_DIRECTION INTEGER )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:38:5: ^( RELATIVE_DATE SEEK_DIRECTION INTEGER )
                     {
-                    match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date144); 
+                    match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date137); 
 
                     match(input, Token.DOWN, null); 
-                    SEEK_DIRECTION2=(CommonTree)match(input,SEEK_DIRECTION,FOLLOW_SEEK_DIRECTION_in_relative_date146); 
-                    INTEGER3=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_relative_date148); 
+                    SEEK_DIRECTION5=(CommonTree)match(input,SEEK_DIRECTION,FOLLOW_SEEK_DIRECTION_in_relative_date139); 
+                    INTEGER6=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_relative_date141); 
 
                     match(input, Token.UP, null); 
-                    dateTime.seek((SEEK_DIRECTION2!=null?SEEK_DIRECTION2.getText():null), (INTEGER3!=null?INTEGER3.getText():null));
+                    dateTime.seek((SEEK_DIRECTION5!=null?SEEK_DIRECTION5.getText():null), (INTEGER6!=null?INTEGER6.getText():null));
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:42:5: ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER DAY_OF_WEEK )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:43:5: ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER DAY_OF_WEEK )
                     {
-                    match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date172); 
+                    match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date165); 
 
                     match(input, Token.DOWN, null); 
-                    SEEK_DIRECTION4=(CommonTree)match(input,SEEK_DIRECTION,FOLLOW_SEEK_DIRECTION_in_relative_date174); 
-                    SEEK_TYPE5=(CommonTree)match(input,SEEK_TYPE,FOLLOW_SEEK_TYPE_in_relative_date176); 
-                    INTEGER6=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_relative_date178); 
-                    DAY_OF_WEEK7=(CommonTree)match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_relative_date180); 
+                    SEEK_DIRECTION7=(CommonTree)match(input,SEEK_DIRECTION,FOLLOW_SEEK_DIRECTION_in_relative_date167); 
+                    SEEK_TYPE8=(CommonTree)match(input,SEEK_TYPE,FOLLOW_SEEK_TYPE_in_relative_date169); 
+                    INTEGER9=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_relative_date171); 
+                    DAY_OF_WEEK10=(CommonTree)match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_relative_date173); 
 
                     match(input, Token.UP, null); 
-                    dateTime.seekToDayOfWeek((SEEK_DIRECTION4!=null?SEEK_DIRECTION4.getText():null), (SEEK_TYPE5!=null?SEEK_TYPE5.getText():null), (INTEGER6!=null?INTEGER6.getText():null), (DAY_OF_WEEK7!=null?DAY_OF_WEEK7.getText():null));
+                    dateTime.seekToDayOfWeek((SEEK_DIRECTION7!=null?SEEK_DIRECTION7.getText():null), (SEEK_TYPE8!=null?SEEK_TYPE8.getText():null), (INTEGER9!=null?INTEGER9.getText():null), (DAY_OF_WEEK10!=null?DAY_OF_WEEK10.getText():null));
 
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:47:5: ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER SPAN )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:48:5: ^( RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER SPAN )
                     {
-                    match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date206); 
+                    match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date199); 
 
                     match(input, Token.DOWN, null); 
-                    SEEK_DIRECTION8=(CommonTree)match(input,SEEK_DIRECTION,FOLLOW_SEEK_DIRECTION_in_relative_date208); 
-                    match(input,SEEK_TYPE,FOLLOW_SEEK_TYPE_in_relative_date210); 
-                    INTEGER9=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_relative_date212); 
-                    SPAN10=(CommonTree)match(input,SPAN,FOLLOW_SPAN_in_relative_date214); 
+                    SEEK_DIRECTION11=(CommonTree)match(input,SEEK_DIRECTION,FOLLOW_SEEK_DIRECTION_in_relative_date201); 
+                    match(input,SEEK_TYPE,FOLLOW_SEEK_TYPE_in_relative_date203); 
+                    INTEGER12=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_relative_date205); 
+                    SPAN13=(CommonTree)match(input,SPAN,FOLLOW_SPAN_in_relative_date207); 
 
                     match(input, Token.UP, null); 
-                    dateTime.seekBySpan((SEEK_DIRECTION8!=null?SEEK_DIRECTION8.getText():null), (INTEGER9!=null?INTEGER9.getText():null), (SPAN10!=null?SPAN10.getText():null));
+                    dateTime.seekBySpan((SEEK_DIRECTION11!=null?SEEK_DIRECTION11.getText():null), (INTEGER12!=null?INTEGER12.getText():null), (SPAN13!=null?SPAN13.getText():null));
 
                     }
                     break;
@@ -564,18 +571,22 @@ public class DateWalker extends TreeParser {
 
 
     // $ANTLR start "explicit_time"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:51:1: explicit_time : ^( EXPLICIT_TIME INTEGER INTEGER ( AM_PM )? ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:52:1: explicit_time : ^( EXPLICIT_TIME hours= INTEGER minutes= INTEGER ( AM_PM )? ) ;
     public final void explicit_time() throws RecognitionException {
+        CommonTree hours=null;
+        CommonTree minutes=null;
+        CommonTree AM_PM14=null;
+
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:52:3: ( ^( EXPLICIT_TIME INTEGER INTEGER ( AM_PM )? ) )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:52:5: ^( EXPLICIT_TIME INTEGER INTEGER ( AM_PM )? )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:3: ( ^( EXPLICIT_TIME hours= INTEGER minutes= INTEGER ( AM_PM )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:5: ^( EXPLICIT_TIME hours= INTEGER minutes= INTEGER ( AM_PM )? )
             {
-            match(input,EXPLICIT_TIME,FOLLOW_EXPLICIT_TIME_in_explicit_time239); 
+            match(input,EXPLICIT_TIME,FOLLOW_EXPLICIT_TIME_in_explicit_time232); 
 
             match(input, Token.DOWN, null); 
-            match(input,INTEGER,FOLLOW_INTEGER_in_explicit_time241); 
-            match(input,INTEGER,FOLLOW_INTEGER_in_explicit_time243); 
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:52:37: ( AM_PM )?
+            hours=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_explicit_time236); 
+            minutes=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_explicit_time240); 
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:51: ( AM_PM )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -584,9 +595,9 @@ public class DateWalker extends TreeParser {
             }
             switch (alt6) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:52:37: AM_PM
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:51: AM_PM
                     {
-                    match(input,AM_PM,FOLLOW_AM_PM_in_explicit_time245); 
+                    AM_PM14=(CommonTree)match(input,AM_PM,FOLLOW_AM_PM_in_explicit_time242); 
 
                     }
                     break;
@@ -595,6 +606,7 @@ public class DateWalker extends TreeParser {
 
 
             match(input, Token.UP, null); 
+            dateTime.setExplicitTime((hours!=null?hours.getText():null), (minutes!=null?minutes.getText():null), (AM_PM14!=null?AM_PM14.getText():null));
 
             }
 
@@ -614,33 +626,33 @@ public class DateWalker extends TreeParser {
 
  
 
-    public static final BitSet FOLLOW_DATE_TIME_in_datetime54 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_date_in_datetime56 = new BitSet(new long[]{0x0000000000000088L});
-    public static final BitSet FOLLOW_time_in_datetime58 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_relative_date_in_date74 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_explicit_date_in_date81 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_explicit_time_in_time96 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXPLICIT_DATE_in_explicit_date110 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_MONTH_in_explicit_date112 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0010000000000000L});
-    public static final BitSet FOLLOW_DAY_in_explicit_date114 = new BitSet(new long[]{0x0000000000006008L});
-    public static final BitSet FOLLOW_YEAR_in_explicit_date116 = new BitSet(new long[]{0x0000000000004008L});
-    public static final BitSet FOLLOW_ERA_in_explicit_date119 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date144 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date146 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_INTEGER_in_relative_date148 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date172 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date174 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_SEEK_TYPE_in_relative_date176 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_INTEGER_in_relative_date178 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_DAY_OF_WEEK_in_relative_date180 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date206 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date208 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_SEEK_TYPE_in_relative_date210 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_INTEGER_in_relative_date212 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_SPAN_in_relative_date214 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_EXPLICIT_TIME_in_explicit_time239 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INTEGER_in_explicit_time241 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_INTEGER_in_explicit_time243 = new BitSet(new long[]{0x0000000000000108L});
-    public static final BitSet FOLLOW_AM_PM_in_explicit_time245 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_DATE_TIME_in_datetime47 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_date_in_datetime49 = new BitSet(new long[]{0x0000000000000088L});
+    public static final BitSet FOLLOW_time_in_datetime51 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_relative_date_in_date67 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_explicit_date_in_date74 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_explicit_time_in_time89 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXPLICIT_DATE_in_explicit_date103 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_MONTH_in_explicit_date105 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_DAY_OF_MONTH_in_explicit_date107 = new BitSet(new long[]{0x0000000000006008L});
+    public static final BitSet FOLLOW_YEAR_in_explicit_date109 = new BitSet(new long[]{0x0000000000004008L});
+    public static final BitSet FOLLOW_ERA_in_explicit_date112 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date137 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date139 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_INTEGER_in_relative_date141 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date165 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date167 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_SEEK_TYPE_in_relative_date169 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_INTEGER_in_relative_date171 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_DAY_OF_WEEK_in_relative_date173 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date199 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date201 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_SEEK_TYPE_in_relative_date203 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_INTEGER_in_relative_date205 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_SPAN_in_relative_date207 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_EXPLICIT_TIME_in_explicit_time232 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INTEGER_in_explicit_time236 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_INTEGER_in_explicit_time240 = new BitSet(new long[]{0x0000000000000108L});
+    public static final BitSet FOLLOW_AM_PM_in_explicit_time242 = new BitSet(new long[]{0x0000000000000008L});
 
 }
