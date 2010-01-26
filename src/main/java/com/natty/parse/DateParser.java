@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g 2010-01-25 22:59:42
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g 2010-01-26 10:24:31
  package com.natty.parse; 
 
 import org.antlr.runtime.*;
@@ -955,11 +955,11 @@ public class DateParser extends Parser {
                     if ( ((LA11_5>=ONE_TO_TWELVE && LA11_5<=TWENTY_FIVE_TO_THIRTY_ONE)) ) {
                         int LA11_6 = input.LA(4);
 
-                        if ( (LA11_6==EOF||(LA11_6>=ONE_TO_TWELVE && LA11_6<=THIRTEEN_TO_TWENTY_FOUR)||LA11_6==TWO_ZEROS||LA11_6==30||(LA11_6>=156 && LA11_6<=157)) ) {
-                            alt11=3;
-                        }
-                        else if ( ((LA11_6>=40 && LA11_6<=41)) ) {
+                        if ( ((LA11_6>=40 && LA11_6<=41)) ) {
                             alt11=4;
+                        }
+                        else if ( (LA11_6==EOF||(LA11_6>=ONE_TO_TWELVE && LA11_6<=THIRTEEN_TO_TWENTY_FOUR)||LA11_6==TWO_ZEROS||LA11_6==30||(LA11_6>=156 && LA11_6<=157)) ) {
+                            alt11=3;
                         }
                         else {
                             NoViableAltException nvae =
@@ -1595,7 +1595,7 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "relative_suffix"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:99:1: relative_suffix : ( 'from now' -> SEEK_DIRECTION[\">\"] SEEK_TYPE[\"by_day\"] | 'ago' -> SEEK_DIRECTION[\"<\"] SEEK_TYPE[\"by_week\"] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:99:1: relative_suffix : ( 'from now' -> SEEK_DIRECTION[\">\"] SEEK_TYPE[\"by_day\"] | 'ago' -> SEEK_DIRECTION[\"<\"] SEEK_TYPE[\"by_day\"] );
     public final DateParser.relative_suffix_return relative_suffix() throws RecognitionException {
         DateParser.relative_suffix_return retval = new DateParser.relative_suffix_return();
         retval.start = input.LT(1);
@@ -1611,7 +1611,7 @@ public class DateParser extends Parser {
         RewriteRuleTokenStream stream_34=new RewriteRuleTokenStream(adaptor,"token 34");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:100:3: ( 'from now' -> SEEK_DIRECTION[\">\"] SEEK_TYPE[\"by_day\"] | 'ago' -> SEEK_DIRECTION[\"<\"] SEEK_TYPE[\"by_week\"] )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:100:3: ( 'from now' -> SEEK_DIRECTION[\">\"] SEEK_TYPE[\"by_day\"] | 'ago' -> SEEK_DIRECTION[\"<\"] SEEK_TYPE[\"by_day\"] )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1676,10 +1676,10 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 101:16: -> SEEK_DIRECTION[\"<\"] SEEK_TYPE[\"by_week\"]
+                    // 101:16: -> SEEK_DIRECTION[\"<\"] SEEK_TYPE[\"by_day\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIRECTION, "<"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_week"));
+                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_day"));
 
                     }
 
@@ -1747,11 +1747,11 @@ public class DateParser extends Parser {
             if ( ((LA16_0>=ONE_TO_TWELVE && LA16_0<=THIRTEEN_TO_TWENTY_FOUR)||LA16_0==TWO_ZEROS) ) {
                 int LA16_1 = input.LA(2);
 
-                if ( (LA16_1==35) ) {
-                    alt16=2;
-                }
-                else if ( (LA16_1==EOF||LA16_1==FOUR_DIGITS||(LA16_1>=ONE_TO_TWELVE && LA16_1<=SIXTY_TO_NINETY_NINE)||LA16_1==DIGIT||LA16_1==29||(LA16_1>=36 && LA16_1<=39)||(LA16_1>=42 && LA16_1<=48)||(LA16_1>=70 && LA16_1<=155)||(LA16_1>=161 && LA16_1<=179)) ) {
+                if ( (LA16_1==EOF||LA16_1==FOUR_DIGITS||(LA16_1>=ONE_TO_TWELVE && LA16_1<=SIXTY_TO_NINETY_NINE)||LA16_1==DIGIT||LA16_1==29||(LA16_1>=36 && LA16_1<=39)||(LA16_1>=42 && LA16_1<=48)||(LA16_1>=70 && LA16_1<=155)||(LA16_1>=161 && LA16_1<=179)) ) {
                     alt16=1;
+                }
+                else if ( (LA16_1==35) ) {
+                    alt16=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -3016,7 +3016,7 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "day_of_week"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:150:1: day_of_week : ( 'monday' ( 's' )? -> DAY_OF_WEEK[\"2\"] | 'mon' -> DAY_OF_WEEK[\"2\"] | 'tuesday' ( 's' )? -> DAY_OF_WEEK[\"3\"] | 'tue' ( 's' )? -> DAY_OF_WEEK[\"3\"] | 'tues' -> DAY_OF_WEEK[\"3\"] | 'wednesday' ( 's' )? -> DAY_OF_WEEK[\"4\"] | 'wed' -> DAY_OF_WEEK[\"4\"] | 'thursday' ( 's' )? -> DAY_OF_WEEK[\"5\"] | 'thur' -> DAY_OF_WEEK[\"5\"] | 'thurs' -> DAY_OF_WEEK[\"5\"] | 'friday' ( 's' )? -> DAY_OF_WEEK[\"6\"] | 'fri' -> DAY_OF_WEEK[\"6\"] | 'saturday' ( 's' )? -> DAY_OF_WEEK[\"7\"] | 'sat' -> DAY_OF_WEEK[\"7\"] | 'weekend' 's' -> DAY_OF_WEEK[\"7\"] | 'sunday' 's' -> DAY_OF_WEEK[\"1\"] | 'sun' -> DAY_OF_WEEK[\"1\"] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:150:1: day_of_week : ( 'monday' ( 's' )? -> DAY_OF_WEEK[\"2\"] | 'mon' -> DAY_OF_WEEK[\"2\"] | 'tuesday' ( 's' )? -> DAY_OF_WEEK[\"3\"] | 'tue' ( 's' )? -> DAY_OF_WEEK[\"3\"] | 'tues' -> DAY_OF_WEEK[\"3\"] | 'wednesday' ( 's' )? -> DAY_OF_WEEK[\"4\"] | 'wed' -> DAY_OF_WEEK[\"4\"] | 'thursday' ( 's' )? -> DAY_OF_WEEK[\"5\"] | 'thur' -> DAY_OF_WEEK[\"5\"] | 'thurs' -> DAY_OF_WEEK[\"5\"] | 'friday' ( 's' )? -> DAY_OF_WEEK[\"6\"] | 'fri' -> DAY_OF_WEEK[\"6\"] | 'saturday' ( 's' )? -> DAY_OF_WEEK[\"7\"] | 'sat' -> DAY_OF_WEEK[\"7\"] | 'weekend' ( 's' )? -> DAY_OF_WEEK[\"7\"] | 'sunday' ( 's' )? -> DAY_OF_WEEK[\"1\"] | 'sun' -> DAY_OF_WEEK[\"1\"] );
     public final DateParser.day_of_week_return day_of_week() throws RecognitionException {
         DateParser.day_of_week_return retval = new DateParser.day_of_week_return();
         retval.start = input.LT(1);
@@ -3096,102 +3096,102 @@ public class DateParser extends Parser {
         RewriteRuleTokenStream stream_50=new RewriteRuleTokenStream(adaptor,"token 50");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:151:3: ( 'monday' ( 's' )? -> DAY_OF_WEEK[\"2\"] | 'mon' -> DAY_OF_WEEK[\"2\"] | 'tuesday' ( 's' )? -> DAY_OF_WEEK[\"3\"] | 'tue' ( 's' )? -> DAY_OF_WEEK[\"3\"] | 'tues' -> DAY_OF_WEEK[\"3\"] | 'wednesday' ( 's' )? -> DAY_OF_WEEK[\"4\"] | 'wed' -> DAY_OF_WEEK[\"4\"] | 'thursday' ( 's' )? -> DAY_OF_WEEK[\"5\"] | 'thur' -> DAY_OF_WEEK[\"5\"] | 'thurs' -> DAY_OF_WEEK[\"5\"] | 'friday' ( 's' )? -> DAY_OF_WEEK[\"6\"] | 'fri' -> DAY_OF_WEEK[\"6\"] | 'saturday' ( 's' )? -> DAY_OF_WEEK[\"7\"] | 'sat' -> DAY_OF_WEEK[\"7\"] | 'weekend' 's' -> DAY_OF_WEEK[\"7\"] | 'sunday' 's' -> DAY_OF_WEEK[\"1\"] | 'sun' -> DAY_OF_WEEK[\"1\"] )
-            int alt37=17;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:151:3: ( 'monday' ( 's' )? -> DAY_OF_WEEK[\"2\"] | 'mon' -> DAY_OF_WEEK[\"2\"] | 'tuesday' ( 's' )? -> DAY_OF_WEEK[\"3\"] | 'tue' ( 's' )? -> DAY_OF_WEEK[\"3\"] | 'tues' -> DAY_OF_WEEK[\"3\"] | 'wednesday' ( 's' )? -> DAY_OF_WEEK[\"4\"] | 'wed' -> DAY_OF_WEEK[\"4\"] | 'thursday' ( 's' )? -> DAY_OF_WEEK[\"5\"] | 'thur' -> DAY_OF_WEEK[\"5\"] | 'thurs' -> DAY_OF_WEEK[\"5\"] | 'friday' ( 's' )? -> DAY_OF_WEEK[\"6\"] | 'fri' -> DAY_OF_WEEK[\"6\"] | 'saturday' ( 's' )? -> DAY_OF_WEEK[\"7\"] | 'sat' -> DAY_OF_WEEK[\"7\"] | 'weekend' ( 's' )? -> DAY_OF_WEEK[\"7\"] | 'sunday' ( 's' )? -> DAY_OF_WEEK[\"1\"] | 'sun' -> DAY_OF_WEEK[\"1\"] )
+            int alt39=17;
             switch ( input.LA(1) ) {
             case 53:
                 {
-                alt37=1;
+                alt39=1;
                 }
                 break;
             case 54:
                 {
-                alt37=2;
+                alt39=2;
                 }
                 break;
             case 55:
                 {
-                alt37=3;
+                alt39=3;
                 }
                 break;
             case 56:
                 {
-                alt37=4;
+                alt39=4;
                 }
                 break;
             case 57:
                 {
-                alt37=5;
+                alt39=5;
                 }
                 break;
             case 58:
                 {
-                alt37=6;
+                alt39=6;
                 }
                 break;
             case 59:
                 {
-                alt37=7;
+                alt39=7;
                 }
                 break;
             case 60:
                 {
-                alt37=8;
+                alt39=8;
                 }
                 break;
             case 61:
                 {
-                alt37=9;
+                alt39=9;
                 }
                 break;
             case 62:
                 {
-                alt37=10;
+                alt39=10;
                 }
                 break;
             case 63:
                 {
-                alt37=11;
+                alt39=11;
                 }
                 break;
             case 64:
                 {
-                alt37=12;
+                alt39=12;
                 }
                 break;
             case 65:
                 {
-                alt37=13;
+                alt39=13;
                 }
                 break;
             case 66:
                 {
-                alt37=14;
+                alt39=14;
                 }
                 break;
             case 67:
                 {
-                alt37=15;
+                alt39=15;
                 }
                 break;
             case 68:
                 {
-                alt37=16;
+                alt39=16;
                 }
                 break;
             case 69:
                 {
-                alt37=17;
+                alt39=17;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 37, 0, input);
+                    new NoViableAltException("", 39, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt37) {
+            switch (alt39) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:151:5: 'monday' ( 's' )?
                     {
@@ -3725,13 +3725,30 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 15 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:165:5: 'weekend' 's'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:165:5: 'weekend' ( 's' )?
                     {
                     string_literal93=(Token)match(input,67,FOLLOW_67_in_day_of_week1253);  
                     stream_67.add(string_literal93);
 
-                    char_literal94=(Token)match(input,50,FOLLOW_50_in_day_of_week1255);  
-                    stream_50.add(char_literal94);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:165:15: ( 's' )?
+                    int alt37=2;
+                    int LA37_0 = input.LA(1);
+
+                    if ( (LA37_0==50) ) {
+                        alt37=1;
+                    }
+                    switch (alt37) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:165:15: 's'
+                            {
+                            char_literal94=(Token)match(input,50,FOLLOW_50_in_day_of_week1255);  
+                            stream_50.add(char_literal94);
+
+
+                            }
+                            break;
+
+                    }
 
 
 
@@ -3756,13 +3773,30 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 16 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:166:5: 'sunday' 's'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:166:5: 'sunday' ( 's' )?
                     {
                     string_literal95=(Token)match(input,68,FOLLOW_68_in_day_of_week1269);  
                     stream_68.add(string_literal95);
 
-                    char_literal96=(Token)match(input,50,FOLLOW_50_in_day_of_week1271);  
-                    stream_50.add(char_literal96);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:166:14: ( 's' )?
+                    int alt38=2;
+                    int LA38_0 = input.LA(1);
+
+                    if ( (LA38_0==50) ) {
+                        alt38=1;
+                    }
+                    switch (alt38) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:166:14: 's'
+                            {
+                            char_literal96=(Token)match(input,50,FOLLOW_50_in_day_of_week1271);  
+                            stream_50.add(char_literal96);
+
+
+                            }
+                            break;
+
+                    }
 
 
 
@@ -4070,9 +4104,9 @@ public class DateParser extends Parser {
 
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:172:3: ( 'first' -> DAY_OF_MONTH[\"1\"] | '1st' -> DAY_OF_MONTH[\"1\"] | 'second' -> DAY_OF_MONTH[\"2\"] | '2nd' -> DAY_OF_MONTH[\"2\"] | 'third' -> DAY_OF_MONTH[\"3\"] | '3rd' -> DAY_OF_MONTH[\"3\"] | 'fourth' -> DAY_OF_MONTH[\"4\"] | '4th' -> DAY_OF_MONTH[\"4\"] | 'fifth' -> DAY_OF_MONTH[\"5\"] | '5th' -> DAY_OF_MONTH[\"5\"] | 'sixth' -> DAY_OF_MONTH[\"6\"] | '6th' -> DAY_OF_MONTH[\"6\"] | 'seventh' -> DAY_OF_MONTH[\"7\"] | '7th' -> DAY_OF_MONTH[\"7\"] | 'eighth' -> DAY_OF_MONTH[\"8\"] | '8th' -> DAY_OF_MONTH[\"8\"] | 'ninth' -> DAY_OF_MONTH[\"9\"] | '9th' -> DAY_OF_MONTH[\"9\"] | 'tenth' -> DAY_OF_MONTH[\"10\"] | '10th' -> DAY_OF_MONTH[\"10\"] | 'eleventh' -> DAY_OF_MONTH[\"11\"] | '11th' -> DAY_OF_MONTH[\"11\"] | 'twelfth' -> DAY_OF_MONTH[\"12\"] | '12th' -> DAY_OF_MONTH[\"12\"] | 'thirteenth' -> DAY_OF_MONTH[\"13\"] | '13th' -> DAY_OF_MONTH[\"13\"] | 'fourteenth' -> DAY_OF_MONTH[\"14\"] | '14th' -> DAY_OF_MONTH[\"14\"] | 'fifteenth' -> DAY_OF_MONTH[\"15\"] | '15th' -> DAY_OF_MONTH[\"15\"] | 'sixteenth' -> DAY_OF_MONTH[\"16\"] | '16th' -> DAY_OF_MONTH[\"16\"] | 'seventeenth' -> DAY_OF_MONTH[\"17\"] | '17th' -> DAY_OF_MONTH[\"17\"] | 'eighteenth' -> DAY_OF_MONTH[\"18\"] | '18th' -> DAY_OF_MONTH[\"18\"] | 'nineteenth' -> DAY_OF_MONTH[\"19\"] | '19th' -> DAY_OF_MONTH[\"19\"] | 'twentieth' -> DAY_OF_MONTH[\"20\"] | '20th' -> DAY_OF_MONTH[\"20\"] | 'twenty' ( '-' )? 'first' -> DAY_OF_MONTH[\"21\"] | '21st' -> DAY_OF_MONTH[\"21\"] | 'twenty' ( '-' )? 'second' -> DAY_OF_MONTH[\"22\"] | '22nd' -> DAY_OF_MONTH[\"22\"] | 'twenty' ( '-' )? 'third' -> DAY_OF_MONTH[\"23\"] | '23rd' -> DAY_OF_MONTH[\"23\"] | 'twenty' ( '-' )? 'fourth' -> DAY_OF_MONTH[\"24\"] | '24th' -> DAY_OF_MONTH[\"24\"] | 'twenty' ( '-' )? 'fifth' -> DAY_OF_MONTH[\"25\"] | '25th' -> DAY_OF_MONTH[\"25\"] | 'twenty' ( '-' )? 'sixth' -> DAY_OF_MONTH[\"26\"] | '26th' -> DAY_OF_MONTH[\"26\"] | 'twenty' ( '-' )? 'seventh' -> DAY_OF_MONTH[\"27\"] | '27th' -> DAY_OF_MONTH[\"27\"] | 'twenty' ( '-' )? 'eighth' -> DAY_OF_MONTH[\"28\"] | '28th' -> DAY_OF_MONTH[\"28\"] | 'twenty' ( '-' )? 'ninth' -> DAY_OF_MONTH[\"29\"] | '29th' -> DAY_OF_MONTH[\"29\"] | 'thirtieth' -> DAY_OF_MONTH[\"30\"] | '30th' -> DAY_OF_MONTH[\"30\"] | 'thirty' ( '-' )? 'first' -> DAY_OF_MONTH[\"31\"] | '31st' -> DAY_OF_MONTH[\"31\"] )
-            int alt48=62;
-            alt48 = dfa48.predict(input);
-            switch (alt48) {
+            int alt50=62;
+            alt50 = dfa50.predict(input);
+            switch (alt50) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:172:5: 'first'
                     {
@@ -5200,13 +5234,13 @@ public class DateParser extends Parser {
                     stream_110.add(string_literal138);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:212:14: ( '-' )?
-                    int alt38=2;
-                    int LA38_0 = input.LA(1);
+                    int alt40=2;
+                    int LA40_0 = input.LA(1);
 
-                    if ( (LA38_0==40) ) {
-                        alt38=1;
+                    if ( (LA40_0==40) ) {
+                        alt40=1;
                     }
-                    switch (alt38) {
+                    switch (alt40) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:212:14: '-'
                             {
@@ -5279,13 +5313,13 @@ public class DateParser extends Parser {
                     stream_110.add(string_literal142);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:214:14: ( '-' )?
-                    int alt39=2;
-                    int LA39_0 = input.LA(1);
+                    int alt41=2;
+                    int LA41_0 = input.LA(1);
 
-                    if ( (LA39_0==40) ) {
-                        alt39=1;
+                    if ( (LA41_0==40) ) {
+                        alt41=1;
                     }
-                    switch (alt39) {
+                    switch (alt41) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:214:14: '-'
                             {
@@ -5358,13 +5392,13 @@ public class DateParser extends Parser {
                     stream_110.add(string_literal146);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:216:14: ( '-' )?
-                    int alt40=2;
-                    int LA40_0 = input.LA(1);
+                    int alt42=2;
+                    int LA42_0 = input.LA(1);
 
-                    if ( (LA40_0==40) ) {
-                        alt40=1;
+                    if ( (LA42_0==40) ) {
+                        alt42=1;
                     }
-                    switch (alt40) {
+                    switch (alt42) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:216:14: '-'
                             {
@@ -5437,13 +5471,13 @@ public class DateParser extends Parser {
                     stream_110.add(string_literal150);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:218:14: ( '-' )?
-                    int alt41=2;
-                    int LA41_0 = input.LA(1);
+                    int alt43=2;
+                    int LA43_0 = input.LA(1);
 
-                    if ( (LA41_0==40) ) {
-                        alt41=1;
+                    if ( (LA43_0==40) ) {
+                        alt43=1;
                     }
-                    switch (alt41) {
+                    switch (alt43) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:218:14: '-'
                             {
@@ -5516,13 +5550,13 @@ public class DateParser extends Parser {
                     stream_110.add(string_literal154);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:220:14: ( '-' )?
-                    int alt42=2;
-                    int LA42_0 = input.LA(1);
+                    int alt44=2;
+                    int LA44_0 = input.LA(1);
 
-                    if ( (LA42_0==40) ) {
-                        alt42=1;
+                    if ( (LA44_0==40) ) {
+                        alt44=1;
                     }
-                    switch (alt42) {
+                    switch (alt44) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:220:14: '-'
                             {
@@ -5595,13 +5629,13 @@ public class DateParser extends Parser {
                     stream_110.add(string_literal158);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:222:14: ( '-' )?
-                    int alt43=2;
-                    int LA43_0 = input.LA(1);
+                    int alt45=2;
+                    int LA45_0 = input.LA(1);
 
-                    if ( (LA43_0==40) ) {
-                        alt43=1;
+                    if ( (LA45_0==40) ) {
+                        alt45=1;
                     }
-                    switch (alt43) {
+                    switch (alt45) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:222:14: '-'
                             {
@@ -5674,13 +5708,13 @@ public class DateParser extends Parser {
                     stream_110.add(string_literal162);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:224:14: ( '-' )?
-                    int alt44=2;
-                    int LA44_0 = input.LA(1);
+                    int alt46=2;
+                    int LA46_0 = input.LA(1);
 
-                    if ( (LA44_0==40) ) {
-                        alt44=1;
+                    if ( (LA46_0==40) ) {
+                        alt46=1;
                     }
-                    switch (alt44) {
+                    switch (alt46) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:224:14: '-'
                             {
@@ -5753,13 +5787,13 @@ public class DateParser extends Parser {
                     stream_110.add(string_literal166);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:226:14: ( '-' )?
-                    int alt45=2;
-                    int LA45_0 = input.LA(1);
+                    int alt47=2;
+                    int LA47_0 = input.LA(1);
 
-                    if ( (LA45_0==40) ) {
-                        alt45=1;
+                    if ( (LA47_0==40) ) {
+                        alt47=1;
                     }
-                    switch (alt45) {
+                    switch (alt47) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:226:14: '-'
                             {
@@ -5832,13 +5866,13 @@ public class DateParser extends Parser {
                     stream_110.add(string_literal170);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:228:14: ( '-' )?
-                    int alt46=2;
-                    int LA46_0 = input.LA(1);
+                    int alt48=2;
+                    int LA48_0 = input.LA(1);
 
-                    if ( (LA46_0==40) ) {
-                        alt46=1;
+                    if ( (LA48_0==40) ) {
+                        alt48=1;
                     }
-                    switch (alt46) {
+                    switch (alt48) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:228:14: '-'
                             {
@@ -5967,13 +6001,13 @@ public class DateParser extends Parser {
                     stream_122.add(string_literal176);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:232:14: ( '-' )?
-                    int alt47=2;
-                    int LA47_0 = input.LA(1);
+                    int alt49=2;
+                    int LA49_0 = input.LA(1);
 
-                    if ( (LA47_0==40) ) {
-                        alt47=1;
+                    if ( (LA49_0==40) ) {
+                        alt49=1;
                     }
-                    switch (alt47) {
+                    switch (alt49) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:232:14: '-'
                             {
@@ -6145,131 +6179,131 @@ public class DateParser extends Parser {
 
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:238:3: ( 'january' -> MONTH[\"1\"] | 'jan' -> MONTH[\"1\"] | 'february' -> MONTH[\"2\"] | 'feb' -> MONTH[\"2\"] | 'march' -> MONTH[\"3\"] | 'mar' -> MONTH[\"3\"] | 'april' -> MONTH[\"4\"] | 'apr' -> MONTH[\"4\"] | 'may' -> MONTH[\"5\"] | 'june' -> MONTH[\"6\"] | 'jun' -> MONTH[\"6\"] | 'july' -> MONTH[\"7\"] | 'jul' -> MONTH[\"7\"] | 'august' -> MONTH[\"8\"] | 'aug' -> MONTH[\"8\"] | 'september' -> MONTH[\"9\"] | 'sep' -> MONTH[\"9\"] | 'october' -> MONTH[\"10\"] | 'oct' -> MONTH[\"10\"] | 'november' -> MONTH[\"11\"] | 'nov' -> MONTH[\"11\"] | 'december' -> MONTH[\"12\"] | 'dec' -> MONTH[\"12\"] )
-            int alt49=23;
+            int alt51=23;
             switch ( input.LA(1) ) {
             case 124:
                 {
-                alt49=1;
+                alt51=1;
                 }
                 break;
             case 125:
                 {
-                alt49=2;
+                alt51=2;
                 }
                 break;
             case 126:
                 {
-                alt49=3;
+                alt51=3;
                 }
                 break;
             case 127:
                 {
-                alt49=4;
+                alt51=4;
                 }
                 break;
             case 128:
                 {
-                alt49=5;
+                alt51=5;
                 }
                 break;
             case 129:
                 {
-                alt49=6;
+                alt51=6;
                 }
                 break;
             case 130:
                 {
-                alt49=7;
+                alt51=7;
                 }
                 break;
             case 131:
                 {
-                alt49=8;
+                alt51=8;
                 }
                 break;
             case 132:
                 {
-                alt49=9;
+                alt51=9;
                 }
                 break;
             case 133:
                 {
-                alt49=10;
+                alt51=10;
                 }
                 break;
             case 134:
                 {
-                alt49=11;
+                alt51=11;
                 }
                 break;
             case 135:
                 {
-                alt49=12;
+                alt51=12;
                 }
                 break;
             case 136:
                 {
-                alt49=13;
+                alt51=13;
                 }
                 break;
             case 137:
                 {
-                alt49=14;
+                alt51=14;
                 }
                 break;
             case 138:
                 {
-                alt49=15;
+                alt51=15;
                 }
                 break;
             case 139:
                 {
-                alt49=16;
+                alt51=16;
                 }
                 break;
             case 140:
                 {
-                alt49=17;
+                alt51=17;
                 }
                 break;
             case 141:
                 {
-                alt49=18;
+                alt51=18;
                 }
                 break;
             case 142:
                 {
-                alt49=19;
+                alt51=19;
                 }
                 break;
             case 143:
                 {
-                alt49=20;
+                alt51=20;
                 }
                 break;
             case 144:
                 {
-                alt49=21;
+                alt51=21;
                 }
                 break;
             case 145:
                 {
-                alt49=22;
+                alt51=22;
                 }
                 break;
             case 146:
                 {
-                alt49=23;
+                alt51=23;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 49, 0, input);
+                    new NoViableAltException("", 51, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt49) {
+            switch (alt51) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:238:5: 'january'
                     {
@@ -6972,11 +7006,11 @@ public class DateParser extends Parser {
         RewriteRuleSubtreeStream stream_tomorrow=new RewriteRuleSubtreeStream(adaptor,"rule tomorrow");
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:3: ( 'today' -> ^( RELATIVE_DATE SEEK_DIRECTION[\">\"] INTEGER[\"0\"] ) | tomorrow | 'yesterday' -> ^( RELATIVE_DATE SEEK_DIRECTION[\"<\"] INTEGER[\"1\"] ) | ( 'the' )? 'day after ' tomorrow -> ^( RELATIVE_DATE SEEK_DIRECTION[\">\"] INTEGER[\"2\"] ) | ( 'the' )? 'day before yesterday' -> ^( RELATIVE_DATE SEEK_DIRECTION[\"<\"] INTEGER[\"2\"] ) )
-            int alt52=5;
+            int alt54=5;
             switch ( input.LA(1) ) {
             case 147:
                 {
-                alt52=1;
+                alt54=1;
                 }
                 break;
             case 152:
@@ -6984,27 +7018,27 @@ public class DateParser extends Parser {
             case 154:
             case 155:
                 {
-                alt52=2;
+                alt54=2;
                 }
                 break;
             case 148:
                 {
-                alt52=3;
+                alt54=3;
                 }
                 break;
             case 149:
                 {
-                int LA52_4 = input.LA(2);
+                int LA54_4 = input.LA(2);
 
-                if ( (LA52_4==150) ) {
-                    alt52=4;
+                if ( (LA54_4==151) ) {
+                    alt54=5;
                 }
-                else if ( (LA52_4==151) ) {
-                    alt52=5;
+                else if ( (LA54_4==150) ) {
+                    alt54=4;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 52, 4, input);
+                        new NoViableAltException("", 54, 4, input);
 
                     throw nvae;
                 }
@@ -7012,22 +7046,22 @@ public class DateParser extends Parser {
                 break;
             case 150:
                 {
-                alt52=4;
+                alt54=4;
                 }
                 break;
             case 151:
                 {
-                alt52=5;
+                alt54=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 52, 0, input);
+                    new NoViableAltException("", 54, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt52) {
+            switch (alt54) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:5: 'today'
                     {
@@ -7120,13 +7154,13 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:272:5: ( 'the' )? 'day after ' tomorrow
                     {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:272:5: ( 'the' )?
-                    int alt50=2;
-                    int LA50_0 = input.LA(1);
+                    int alt52=2;
+                    int LA52_0 = input.LA(1);
 
-                    if ( (LA50_0==149) ) {
-                        alt50=1;
+                    if ( (LA52_0==149) ) {
+                        alt52=1;
                     }
-                    switch (alt50) {
+                    switch (alt52) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:272:5: 'the'
                             {
@@ -7183,13 +7217,13 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:273:5: ( 'the' )? 'day before yesterday'
                     {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:273:5: ( 'the' )?
-                    int alt51=2;
-                    int LA51_0 = input.LA(1);
+                    int alt53=2;
+                    int LA53_0 = input.LA(1);
 
-                    if ( (LA51_0==149) ) {
-                        alt51=1;
+                    if ( (LA53_0==149) ) {
+                        alt53=1;
                     }
-                    switch (alt51) {
+                    switch (alt53) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:273:5: 'the'
                             {
@@ -7288,36 +7322,36 @@ public class DateParser extends Parser {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:277:5: ( 'tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow' )
             {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:277:5: ( 'tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow' )
-            int alt53=4;
+            int alt55=4;
             switch ( input.LA(1) ) {
             case 152:
                 {
-                alt53=1;
+                alt55=1;
                 }
                 break;
             case 153:
                 {
-                alt53=2;
+                alt55=2;
                 }
                 break;
             case 154:
                 {
-                alt53=3;
+                alt55=3;
                 }
                 break;
             case 155:
                 {
-                alt53=4;
+                alt55=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 53, 0, input);
+                    new NoViableAltException("", 55, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt53) {
+            switch (alt55) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:277:6: 'tomorow'
                     {
@@ -7429,22 +7463,22 @@ public class DateParser extends Parser {
 
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:283:3: ( 'midnight' -> ^( EXPLICIT_TIME INTEGER[\"12\"] INTEGER[\"0\"] AM_PM[\"am\"] ) | 'noon' -> ^( EXPLICIT_TIME INTEGER[\"12\"] INTEGER[\"0\"] AM_PM[\"pm\"] ) )
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            int alt56=2;
+            int LA56_0 = input.LA(1);
 
-            if ( (LA54_0==156) ) {
-                alt54=1;
+            if ( (LA56_0==156) ) {
+                alt56=1;
             }
-            else if ( (LA54_0==157) ) {
-                alt54=2;
+            else if ( (LA56_0==157) ) {
+                alt56=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 54, 0, input);
+                    new NoViableAltException("", 56, 0, input);
 
                 throw nvae;
             }
-            switch (alt54) {
+            switch (alt56) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:283:5: 'midnight'
                     {
@@ -7681,11 +7715,11 @@ public class DateParser extends Parser {
         RewriteRuleSubtreeStream stream_up_to_two_digits=new RewriteRuleSubtreeStream(adaptor,"rule up_to_two_digits");
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:303:3: ( ( '\\'' )? up_to_two_digits -> YEAR[$up_to_two_digits.text] | ( 'in' 'the' YEAR_DATE_SPAN )? up_to_four_digits ( era )? -> YEAR[$up_to_four_digits.text] ( era )? )
-            int alt58=2;
+            int alt60=2;
             switch ( input.LA(1) ) {
             case 158:
                 {
-                alt58=1;
+                alt60=1;
                 }
                 break;
             case ONE_TO_TWELVE:
@@ -7695,35 +7729,35 @@ public class DateParser extends Parser {
             case THIRTY_TWO_TO_FIFTY_NINE:
             case SIXTY_TO_NINETY_NINE:
                 {
-                alt58=1;
+                alt60=1;
                 }
                 break;
             case FOUR_DIGITS:
             case THREE_DIGITS:
             case 48:
                 {
-                alt58=2;
+                alt60=2;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 58, 0, input);
+                    new NoViableAltException("", 60, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt58) {
+            switch (alt60) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:303:5: ( '\\'' )? up_to_two_digits
                     {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:303:5: ( '\\'' )?
-                    int alt55=2;
-                    int LA55_0 = input.LA(1);
+                    int alt57=2;
+                    int LA57_0 = input.LA(1);
 
-                    if ( (LA55_0==158) ) {
-                        alt55=1;
+                    if ( (LA57_0==158) ) {
+                        alt57=1;
                     }
-                    switch (alt55) {
+                    switch (alt57) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:303:5: '\\''
                             {
@@ -7768,13 +7802,13 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:304:5: ( 'in' 'the' YEAR_DATE_SPAN )? up_to_four_digits ( era )?
                     {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:304:5: ( 'in' 'the' YEAR_DATE_SPAN )?
-                    int alt56=2;
-                    int LA56_0 = input.LA(1);
+                    int alt58=2;
+                    int LA58_0 = input.LA(1);
 
-                    if ( (LA56_0==48) ) {
-                        alt56=1;
+                    if ( (LA58_0==48) ) {
+                        alt58=1;
                     }
-                    switch (alt56) {
+                    switch (alt58) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:304:6: 'in' 'the' YEAR_DATE_SPAN
                             {
@@ -7800,13 +7834,13 @@ public class DateParser extends Parser {
 
                     stream_up_to_four_digits.add(up_to_four_digits224.getTree());
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:304:52: ( era )?
-                    int alt57=2;
-                    int LA57_0 = input.LA(1);
+                    int alt59=2;
+                    int LA59_0 = input.LA(1);
 
-                    if ( ((LA57_0>=159 && LA57_0<=160)) ) {
-                        alt57=1;
+                    if ( ((LA59_0>=159 && LA59_0<=160)) ) {
+                        alt59=1;
                     }
-                    switch (alt57) {
+                    switch (alt59) {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:304:52: era
                             {
@@ -7893,22 +7927,22 @@ public class DateParser extends Parser {
 
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:308:3: ( 'ad' -> ERA[\"ad\"] | 'bc' -> ERA[\"bc\"] )
-            int alt59=2;
-            int LA59_0 = input.LA(1);
+            int alt61=2;
+            int LA61_0 = input.LA(1);
 
-            if ( (LA59_0==159) ) {
-                alt59=1;
+            if ( (LA61_0==159) ) {
+                alt61=1;
             }
-            else if ( (LA59_0==160) ) {
-                alt59=2;
+            else if ( (LA61_0==160) ) {
+                alt61=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 59, 0, input);
+                    new NoViableAltException("", 61, 0, input);
 
                 throw nvae;
             }
-            switch (alt59) {
+            switch (alt61) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:308:5: 'ad'
                     {
@@ -8173,7 +8207,7 @@ public class DateParser extends Parser {
 
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:337:3: ( up_to_two_digits | THREE_DIGITS | FOUR_DIGITS )
-            int alt60=3;
+            int alt62=3;
             switch ( input.LA(1) ) {
             case ONE_TO_TWELVE:
             case THIRTEEN_TO_TWENTY_FOUR:
@@ -8182,27 +8216,27 @@ public class DateParser extends Parser {
             case THIRTY_TWO_TO_FIFTY_NINE:
             case SIXTY_TO_NINETY_NINE:
                 {
-                alt60=1;
+                alt62=1;
                 }
                 break;
             case THREE_DIGITS:
                 {
-                alt60=2;
+                alt62=2;
                 }
                 break;
             case FOUR_DIGITS:
                 {
-                alt60=3;
+                alt62=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 60, 0, input);
+                    new NoViableAltException("", 62, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt60) {
+            switch (alt62) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:337:5: up_to_two_digits
                     {
@@ -8291,7 +8325,7 @@ public class DateParser extends Parser {
         RewriteRuleSubtreeStream stream_up_to_two_digits=new RewriteRuleSubtreeStream(adaptor,"rule up_to_two_digits");
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:343:3: ( up_to_two_digits -> INTEGER[$up_to_two_digits.text] | digits= ( DIGIT DIGIT ( DIGIT )+ ) -> INTEGER[$digits.text] | number_string )
-            int alt62=3;
+            int alt64=3;
             switch ( input.LA(1) ) {
             case ONE_TO_TWELVE:
             case THIRTEEN_TO_TWENTY_FOUR:
@@ -8300,12 +8334,12 @@ public class DateParser extends Parser {
             case THIRTY_TWO_TO_FIFTY_NINE:
             case SIXTY_TO_NINETY_NINE:
                 {
-                alt62=1;
+                alt64=1;
                 }
                 break;
             case DIGIT:
                 {
-                alt62=2;
+                alt64=2;
                 }
                 break;
             case 110:
@@ -8329,17 +8363,17 @@ public class DateParser extends Parser {
             case 178:
             case 179:
                 {
-                alt62=3;
+                alt64=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 62, 0, input);
+                    new NoViableAltException("", 64, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt62) {
+            switch (alt64) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:343:5: up_to_two_digits
                     {
@@ -8384,18 +8418,18 @@ public class DateParser extends Parser {
                     stream_DIGIT.add(DIGIT236);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:344:25: ( DIGIT )+
-                    int cnt61=0;
-                    loop61:
+                    int cnt63=0;
+                    loop63:
                     do {
-                        int alt61=2;
-                        int LA61_0 = input.LA(1);
+                        int alt63=2;
+                        int LA63_0 = input.LA(1);
 
-                        if ( (LA61_0==DIGIT) ) {
-                            alt61=1;
+                        if ( (LA63_0==DIGIT) ) {
+                            alt63=1;
                         }
 
 
-                        switch (alt61) {
+                        switch (alt63) {
                     	case 1 :
                     	    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:344:25: DIGIT
                     	    {
@@ -8407,12 +8441,12 @@ public class DateParser extends Parser {
                     	    break;
 
                     	default :
-                    	    if ( cnt61 >= 1 ) break loop61;
+                    	    if ( cnt63 >= 1 ) break loop63;
                                 EarlyExitException eee =
-                                    new EarlyExitException(61, input);
+                                    new EarlyExitException(63, input);
                                 throw eee;
                         }
-                        cnt61++;
+                        cnt63++;
                     } while (true);
 
 
@@ -8551,116 +8585,116 @@ public class DateParser extends Parser {
 
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:349:3: ( 'one' -> INTEGER[\"1\"] | 'two' -> INTEGER[\"2\"] | 'three' -> INTEGER[\"3\"] | 'four' -> INTEGER[\"4\"] | 'five' -> INTEGER[\"5\"] | 'six' -> INTEGER[\"6\"] | 'seven' -> INTEGER[\"7\"] | 'eight' -> INTEGER[\"8\"] | 'nine' -> INTEGER[\"9\"] | 'ten' -> INTEGER[\"10\"] | 'eleven' -> INTEGER[\"11\"] | 'twelve' -> INTEGER[\"12\"] | 'thirteen' -> INTEGER[\"13\"] | 'fourteen' -> INTEGER[\"14\"] | 'fifteen' -> INTEGER[\"15\"] | 'sixteen' -> INTEGER[\"16\"] | 'seventeen' -> INTEGER[\"17\"] | 'eighteen' -> INTEGER[\"18\"] | 'nineteen' -> INTEGER[\"19\"] | 'twenty' -> INTEGER[\"20\"] )
-            int alt63=20;
+            int alt65=20;
             switch ( input.LA(1) ) {
             case 161:
                 {
-                alt63=1;
+                alt65=1;
                 }
                 break;
             case 162:
                 {
-                alt63=2;
+                alt65=2;
                 }
                 break;
             case 163:
                 {
-                alt63=3;
+                alt65=3;
                 }
                 break;
             case 164:
                 {
-                alt63=4;
+                alt65=4;
                 }
                 break;
             case 165:
                 {
-                alt63=5;
+                alt65=5;
                 }
                 break;
             case 166:
                 {
-                alt63=6;
+                alt65=6;
                 }
                 break;
             case 167:
                 {
-                alt63=7;
+                alt65=7;
                 }
                 break;
             case 168:
                 {
-                alt63=8;
+                alt65=8;
                 }
                 break;
             case 169:
                 {
-                alt63=9;
+                alt65=9;
                 }
                 break;
             case 170:
                 {
-                alt63=10;
+                alt65=10;
                 }
                 break;
             case 171:
                 {
-                alt63=11;
+                alt65=11;
                 }
                 break;
             case 172:
                 {
-                alt63=12;
+                alt65=12;
                 }
                 break;
             case 173:
                 {
-                alt63=13;
+                alt65=13;
                 }
                 break;
             case 174:
                 {
-                alt63=14;
+                alt65=14;
                 }
                 break;
             case 175:
                 {
-                alt63=15;
+                alt65=15;
                 }
                 break;
             case 176:
                 {
-                alt63=16;
+                alt65=16;
                 }
                 break;
             case 177:
                 {
-                alt63=17;
+                alt65=17;
                 }
                 break;
             case 178:
                 {
-                alt63=18;
+                alt65=18;
                 }
                 break;
             case 179:
                 {
-                alt63=19;
+                alt65=19;
                 }
                 break;
             case 110:
                 {
-                alt63=20;
+                alt65=20;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 63, 0, input);
+                    new NoViableAltException("", 65, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt63) {
+            switch (alt65) {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:349:5: 'one'
                     {
@@ -9245,40 +9279,39 @@ public class DateParser extends Parser {
 
 
     protected DFA4 dfa4 = new DFA4(this);
-    protected DFA48 dfa48 = new DFA48(this);
+    protected DFA50 dfa50 = new DFA50(this);
     static final String DFA4_eotS =
         "\u017b\uffff";
     static final String DFA4_eofS =
-        "\1\uffff\3\176\1\uffff\6\4\2\uffff\1\4\152\uffff\1\176\1\uffff\4"+
-        "\176\30\uffff\22\4\2\uffff\5\4\41\uffff\50\u012c\1\uffff\13\u012c"+
-        "\1\uffff\1\u012c\4\uffff\1\176\1\u012c\1\uffff\2\u012c\14\uffff"+
-        "\15\u012c\2\uffff\1\u012c\3\uffff\3\u012c\1\uffff\11\u012c\1\uffff"+
-        "\1\u012c\27\u0161\1\uffff\4\176\2\uffff\1\u0161\1\uffff\3\u0161"+
-        "\3\uffff\3\u0161\2\uffff\1\u0161\1\uffff\2\u0161\1\uffff\1\u0161"+
-        "\1\uffff\6\u0161\1\uffff\1\u0161\2\uffff\2\u0161";
+        "\1\uffff\3\u0094\1\uffff\6\4\2\uffff\1\4\152\uffff\1\u0094\27\uffff"+
+        "\4\u0094\2\uffff\31\4\41\uffff\50\u012c\1\uffff\13\u012c\1\uffff"+
+        "\1\u012c\4\uffff\1\u012c\1\uffff\2\u012c\14\uffff\1\u0094\15\u012c"+
+        "\2\uffff\1\u012c\3\uffff\3\u012c\1\uffff\11\u012c\1\uffff\1\u012c"+
+        "\27\u0161\2\uffff\4\u0094\1\uffff\1\u0161\1\uffff\3\u0161\3\uffff"+
+        "\3\u0161\2\uffff\1\u0161\1\uffff\2\u0161\1\uffff\1\u0161\1\uffff"+
+        "\6\u0161\1\uffff\1\u0161\2\uffff\2\u0161";
     static final String DFA4_minS =
         "\4\22\1\uffff\6\24\1\u0096\1\u0098\1\24\1\53\5\23\1\24\1\23\1\33"+
-        "\24\23\27\106\63\40\1\50\1\40\1\50\1\22\1\24\4\22\1\uffff\1\24\16"+
-        "\41\2\62\5\41\1\uffff\22\24\2\62\5\24\1\23\1\33\24\23\1\33\1\106"+
-        "\11\40\50\22\1\50\13\22\1\50\1\22\1\174\1\106\1\40\1\24\1\22\1\24"+
-        "\1\41\2\24\14\41\15\24\1\33\1\23\1\22\1\24\1\uffff\1\u0095\3\24"+
-        "\1\106\11\22\1\106\30\22\1\50\5\22\1\23\1\24\1\23\2\24\1\22\1\24"+
-        "\1\uffff\1\u0095\6\24\1\u0095\2\24\1\22\1\24\1\23\6\24\1\23\1\24"+
-        "\2\22\2\24";
+        "\24\23\27\106\63\40\1\50\1\40\1\50\1\22\1\24\25\41\1\24\4\22\2\uffff"+
+        "\31\24\1\23\1\33\24\23\1\33\1\106\11\40\50\22\1\50\13\22\1\50\1"+
+        "\22\1\174\1\106\1\40\2\24\1\41\2\24\14\41\1\22\15\24\1\33\1\23\1"+
+        "\22\1\24\1\uffff\1\u0095\3\24\1\106\11\22\1\106\30\22\1\50\5\22"+
+        "\1\23\1\24\1\23\2\24\1\22\1\24\1\uffff\1\u0095\6\24\1\u0095\2\24"+
+        "\1\22\1\24\1\23\6\24\1\23\1\24\2\22\2\24";
     static final String DFA4_maxS =
         "\4\u00b3\1\uffff\6\u009d\1\u0097\1\u009b\1\u009d\1\57\5\105\1\u00b3"+
         "\1\105\1\33\23\105\1\126\27\173\63\40\1\106\1\40\1\51\1\u00b3\1"+
-        "\30\4\u00b3\1\uffff\1\26\1\62\1\42\2\62\1\42\1\62\1\42\1\62\2\42"+
-        "\1\62\1\42\1\62\1\42\2\62\1\42\4\62\1\uffff\22\u009d\2\62\5\u009d"+
-        "\1\105\1\33\24\105\1\33\1\126\11\40\50\u009e\1\126\13\u009e\1\106"+
-        "\1\u009e\1\u0092\1\106\1\40\1\24\1\u00b3\1\u009d\1\42\2\u009d\14"+
-        "\42\15\u009d\1\33\1\105\1\u009e\1\31\1\uffff\1\u0095\3\u00a0\1\126"+
-        "\11\u009e\1\106\30\u009e\1\51\4\u00b3\1\u009e\1\105\1\u009d\1\23"+
-        "\2\u009d\1\u009e\1\31\1\uffff\1\u0095\3\u00a0\1\26\1\31\1\u00a0"+
-        "\1\u0095\2\u00a0\1\32\1\u009d\1\23\6\u009d\1\23\1\u00a0\2\32\2\u00a0";
+        "\26\1\62\1\42\2\62\1\42\1\62\1\42\1\62\2\42\1\62\1\42\1\62\1\42"+
+        "\2\62\1\42\4\62\1\30\4\u00b3\2\uffff\31\u009d\1\105\1\33\24\105"+
+        "\1\33\1\126\11\40\50\u009e\1\126\13\u009e\1\106\1\u009e\1\u0092"+
+        "\1\106\1\40\1\24\1\u009d\1\42\2\u009d\14\42\1\u00b3\15\u009d\1\33"+
+        "\1\105\1\u009e\1\31\1\uffff\1\u0095\3\u00a0\1\126\11\u009e\1\106"+
+        "\30\u009e\1\51\1\u009e\4\u00b3\1\105\1\u009d\1\23\2\u009d\1\u009e"+
+        "\1\31\1\uffff\1\u0095\3\u00a0\1\26\1\31\1\u00a0\1\u0095\2\u00a0"+
+        "\1\32\1\u009d\1\23\6\u009d\1\23\1\u00a0\2\32\2\u00a0";
     static final String DFA4_acceptS =
-        "\4\uffff\1\1\171\uffff\1\3\26\uffff\1\2\u0096\uffff\1\1\64\uffff"+
-        "\1\1\31\uffff";
+        "\4\uffff\1\1\u008f\uffff\1\3\1\2\u0096\uffff\1\1\64\uffff\1\1\31"+
+        "\uffff";
     static final String DFA4_specialS =
         "\u017b\uffff}>";
     static final String[] DFA4_transitionS = {
@@ -9294,11 +9327,11 @@ public class DateParser extends Parser {
             "\76\1\77\1\100\1\101\1\5\1\12\1\13\1\14\1\15\1\6\1\7\1\10\1"+
             "\11\1\2\1\3\3\uffff\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36"+
             "\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46\1\47\1\50\1\51",
-            "\1\4\1\u0094\6\4\1\uffff\1\4\1\uffff\1\4\5\uffff\1\171\1\172"+
-            "\1\173\1\174\1\175\2\177\7\4\1\u0091\1\uffff\1\u0092\1\u0093"+
-            "\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087"+
-            "\1\u0088\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f"+
-            "\1\u0090\126\4\5\uffff\23\4",
+            "\1\4\1\u008e\6\4\1\uffff\1\4\1\uffff\1\4\5\uffff\1\u008f\1"+
+            "\u0090\1\u0091\1\u0092\1\u0093\2\171\7\4\1\u008b\1\uffff\1\u008c"+
+            "\1\u008d\1\172\1\173\1\174\1\175\1\176\1\177\1\u0080\1\u0081"+
+            "\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089"+
+            "\1\u008a\126\4\5\uffff\23\4",
             "\1\4\1\uffff\6\4\1\uffff\1\4\1\uffff\1\4\14\uffff\7\4\25\uffff"+
             "\126\4\5\uffff\23\4",
             "\1\4\1\uffff\6\4\1\uffff\1\4\1\uffff\1\4\14\uffff\7\4\25\uffff"+
@@ -9333,73 +9366,73 @@ public class DateParser extends Parser {
             "\1\u00b2\1\u00b3\1\u00b4\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9"+
             "\1\u00ba\1\u00bb\1\u00bc\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1"+
             "\1\u00c2\1\u00c3",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
             "\1\u00c5",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\35\uffff\1\u0091\1\uffff\1\u0092\1\u0093\1\u0080\1"+
-            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
-            "\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090",
-            "\1\u0094\24\uffff\1\u00c6\10\uffff\1\u0091\1\uffff\1\u0092"+
-            "\1\u0093\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086"+
-            "\1\u0087\1\u0088\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e"+
-            "\1\u008f\1\u0090\1\u00ce\1\uffff\1\u00cc\1\uffff\1\u00cb\1\uffff"+
-            "\1\u00c7\1\uffff\1\u00ca\1\uffff\1\u00cd\1\uffff\1\u00c8\1\uffff"+
-            "\1\u00c9\1\uffff\1\u00cf",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\35\uffff\1\u008b\1\uffff\1\u008c\1\u008d\1\172\1\173"+
+            "\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084"+
+            "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
+            "\1\u008e\24\uffff\1\u00c6\10\uffff\1\u008b\1\uffff\1\u008c"+
+            "\1\u008d\1\172\1\173\1\174\1\175\1\176\1\177\1\u0080\1\u0081"+
+            "\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089"+
+            "\1\u008a\1\u00cc\1\uffff\1\u00cf\1\uffff\1\u00ca\1\uffff\1\u00c7"+
+            "\1\uffff\1\u00ce\1\uffff\1\u00c9\1\uffff\1\u00cb\1\uffff\1\u00cd"+
+            "\1\uffff\1\u00c8",
             "\1\u00d0\1\u00d1\1\u00d2\1\u00d3\1\u00d4\1\u00d5\1\u00d6\1"+
             "\u00d7\1\u00d8\1\u00d9\1\u00da\1\u00db\1\u00dc\1\u00dd\1\u00de"+
             "\1\u00df\1\u00e0\1\u00e1\1\u00e2\1\u00e3\1\u00e4\1\u00e5\1\u00e6"+
@@ -9615,12 +9648,34 @@ public class DateParser extends Parser {
             "\1\u0107\35\uffff\1\u0108",
             "\1\u0106",
             "\2\u0109",
-            "\1\4\1\u0094\6\4\1\uffff\1\4\1\uffff\1\4\5\uffff\1\171\1\172"+
-            "\1\173\1\174\1\175\2\uffff\7\4\1\u0091\1\uffff\1\u0092\1\u0093"+
-            "\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087"+
-            "\1\u0088\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f"+
-            "\1\u0090\126\4\5\uffff\23\4",
-            "\5\u010a",
+            "\1\4\1\u008e\6\4\1\uffff\1\4\1\uffff\1\4\5\uffff\1\u008f\1"+
+            "\u0090\1\u0091\1\u0092\1\u0093\2\uffff\7\4\1\u008b\1\uffff\1"+
+            "\u008c\1\u008d\1\172\1\173\1\174\1\175\1\176\1\177\1\u0080\1"+
+            "\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088"+
+            "\1\u0089\1\u008a\126\4\5\uffff\23\4",
+            "\3\u010a",
+            "\1\u010c\1\u010d\17\uffff\1\u010b",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d\17\uffff\1\u010e",
+            "\1\u010c\1\u010d\17\uffff\1\u010f",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d\17\uffff\1\u0110",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d\17\uffff\1\u0111",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d\17\uffff\1\u0112",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d\17\uffff\1\u0113",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d\17\uffff\1\u0114",
+            "\1\u010c\1\u010d\17\uffff\1\u0115",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d\17\uffff\1\u0116",
+            "\1\u010c\1\u010d\17\uffff\1\u0117",
+            "\1\u010c\1\u010d\17\uffff\1\u0118",
+            "\1\u010c\1\u010d\17\uffff\1\u0119",
+            "\5\u011a",
             "\1\4\1\uffff\6\4\1\uffff\1\4\1\uffff\1\4\14\uffff\7\4\25\uffff"+
             "\126\4\5\uffff\23\4",
             "\1\4\1\uffff\6\4\1\uffff\1\4\1\uffff\1\4\14\uffff\7\4\25\uffff"+
@@ -9630,28 +9685,6 @@ public class DateParser extends Parser {
             "\1\4\1\uffff\6\4\1\uffff\1\4\1\uffff\1\4\14\uffff\7\4\25\uffff"+
             "\126\4\5\uffff\23\4",
             "",
-            "\3\u010b",
-            "\1\u010d\1\u010e\17\uffff\1\u010c",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e\17\uffff\1\u010f",
-            "\1\u010d\1\u010e\17\uffff\1\u0110",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e\17\uffff\1\u0111",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e\17\uffff\1\u0112",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e\17\uffff\1\u0113",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e\17\uffff\1\u0114",
-            "\1\u010d\1\u010e",
-            "\1\u0115",
-            "\1\u0116",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e\17\uffff\1\u0117",
-            "\1\u010d\1\u010e\17\uffff\1\u0118",
-            "\1\u010d\1\u010e\17\uffff\1\u0119",
-            "\1\u010d\1\u010e\17\uffff\1\u011a",
             "",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
@@ -9678,8 +9711,10 @@ public class DateParser extends Parser {
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\23\uffff\1\u0121\151"+
             "\uffff\2\u0095",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
-            "\1\u0122",
-            "\1\u0123",
+            "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\23\uffff\1\u0122\151"+
+            "\uffff\2\u0095",
+            "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\23\uffff\1\u0123\151"+
+            "\uffff\2\u0095",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\23\uffff\1\u0124\151"+
             "\uffff\2\u0095",
@@ -9754,9 +9789,9 @@ public class DateParser extends Parser {
             "\u009b\1\u009c\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2"+
             "\1\u00a3\1\u00a4\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa",
             "\1\u0129",
-            "\1\u00ce\1\uffff\1\u00cc\1\uffff\1\u00cb\1\uffff\1\u00c7\1"+
-            "\uffff\1\u00ca\1\uffff\1\u00cd\1\uffff\1\u00c8\1\uffff\1\u00c9"+
-            "\1\uffff\1\u00cf",
+            "\1\u00cc\1\uffff\1\u00cf\1\uffff\1\u00ca\1\uffff\1\u00c7\1"+
+            "\uffff\1\u00ce\1\uffff\1\u00c9\1\uffff\1\u00cb\1\uffff\1\u00cd"+
+            "\1\uffff\1\u00c8",
             "\1\u0106",
             "\1\u0106",
             "\1\u0106",
@@ -9886,9 +9921,9 @@ public class DateParser extends Parser {
             "\1\u012f\1\uffff\2\u012c\1\u0130\1\u012c\2\u0130\1\u012e\3"+
             "\uffff\1\u0095\1\u012a\20\uffff\1\u012d\153\uffff\2\u0095\1"+
             "\u012b",
-            "\1\u0131\35\uffff\1\u0135\1\uffff\1\u0134\1\uffff\1\u013a\1"+
-            "\uffff\1\u0139\1\uffff\1\u0133\1\uffff\1\u0136\1\uffff\1\u0138"+
-            "\1\uffff\1\u0132\1\uffff\1\u0137",
+            "\1\u0131\35\uffff\1\u0133\1\uffff\1\u0136\1\uffff\1\u0138\1"+
+            "\uffff\1\u0139\1\uffff\1\u0132\1\uffff\1\u0135\1\uffff\1\u013a"+
+            "\1\uffff\1\u0134\1\uffff\1\u0137",
             "\1\u012f\1\uffff\2\u012c\1\u0130\1\u012c\2\u0130\1\u012e\3"+
             "\uffff\1\u0095\1\u012a\20\uffff\1\u012d\153\uffff\2\u0095\1"+
             "\u012b",
@@ -9932,26 +9967,26 @@ public class DateParser extends Parser {
             "\1\u0108",
             "\1\u0106",
             "\1\u0154",
-            "\1\u012c\1\uffff\6\u012c\1\uffff\1\u012c\1\uffff\1\4\6\uffff"+
-            "\1\u0155\1\u0156\1\u0157\1\u0158\2\uffff\7\u012c\25\uffff\126"+
-            "\u012c\5\uffff\23\u012c",
-            "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\11\uffff\2\u0159\162"+
+            "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\11\uffff\2\u0155\162"+
             "\uffff\2\u0095",
-            "\1\u010d\1\u010e",
+            "\1\u010c\1\u010d",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
-            "\1\u010d\1\u010e",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u010c\1\u010d",
+            "\1\u012c\1\uffff\6\u012c\1\uffff\1\u012c\1\uffff\1\4\6\uffff"+
+            "\1\u0156\1\u0157\1\u0158\1\u0159\2\uffff\7\u012c\25\uffff\126"+
+            "\u012c\5\uffff\23\u012c",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
@@ -9966,10 +10001,10 @@ public class DateParser extends Parser {
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095",
             "\1\u015a",
-            "\1\u0094\7\uffff\1\u0129\25\uffff\1\u0091\1\uffff\1\u0092\1"+
-            "\u0093\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086"+
-            "\1\u0087\1\u0088\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e"+
-            "\1\u008f\1\u0090",
+            "\1\u008e\7\uffff\1\u0129\25\uffff\1\u008b\1\uffff\1\u008c\1"+
+            "\u008d\1\172\1\173\1\174\1\175\1\176\1\177\1\u0080\1\u0081\1"+
+            "\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089"+
+            "\1\u008a",
             "\1\u012f\1\uffff\2\u012c\1\u0130\1\u012c\2\u0130\1\u012e\3"+
             "\uffff\1\u0095\21\uffff\1\u012d\153\uffff\2\u0095\1\u012b",
             "\6\u015b",
@@ -9981,8 +10016,8 @@ public class DateParser extends Parser {
             "\1\uffff\1\u015d\1\u015e",
             "\2\u0095\1\uffff\1\u0095\6\uffff\1\u0095\175\uffff\2\u0095"+
             "\1\uffff\1\u015d\1\u015e",
-            "\1\u0135\1\uffff\1\u0134\1\uffff\1\u013a\1\uffff\1\u0139\1"+
-            "\uffff\1\u0133\1\uffff\1\u0136\1\uffff\1\u0138\1\uffff\1\u0132"+
+            "\1\u0133\1\uffff\1\u0136\1\uffff\1\u0138\1\uffff\1\u0139\1"+
+            "\uffff\1\u0132\1\uffff\1\u0135\1\uffff\1\u013a\1\uffff\1\u0134"+
             "\1\uffff\1\u0137",
             "\1\u012f\1\uffff\2\u012c\1\u0130\1\u012c\2\u0130\1\u012e\3"+
             "\uffff\1\u0095\1\u012a\20\uffff\1\u012d\153\uffff\2\u0095\1"+
@@ -10085,16 +10120,16 @@ public class DateParser extends Parser {
             "\uffff\1\u0095\1\u015f\20\uffff\1\u0162\153\uffff\2\u0095\1"+
             "\u0160",
             "\2\u0166",
-            "\1\u0161\1\uffff\6\u0161\1\uffff\1\u0161\1\uffff\1\4\14\uffff"+
-            "\7\u0161\25\uffff\126\u0161\5\uffff\23\u0161",
-            "\1\u0161\1\uffff\6\u0161\1\uffff\1\u0161\1\uffff\1\4\14\uffff"+
-            "\7\u0161\25\uffff\126\u0161\5\uffff\23\u0161",
-            "\1\u0161\1\uffff\6\u0161\1\uffff\1\u0161\1\uffff\1\4\14\uffff"+
-            "\7\u0161\25\uffff\126\u0161\5\uffff\23\u0161",
-            "\1\u0161\1\uffff\6\u0161\1\uffff\1\u0161\1\uffff\1\4\14\uffff"+
-            "\7\u0161\25\uffff\126\u0161\5\uffff\23\u0161",
             "\1\u016b\1\uffff\6\u0168\1\u016a\25\uffff\1\u0169\155\uffff"+
             "\1\u0167",
+            "\1\u0161\1\uffff\6\u0161\1\uffff\1\u0161\1\uffff\1\4\14\uffff"+
+            "\7\u0161\25\uffff\126\u0161\5\uffff\23\u0161",
+            "\1\u0161\1\uffff\6\u0161\1\uffff\1\u0161\1\uffff\1\4\14\uffff"+
+            "\7\u0161\25\uffff\126\u0161\5\uffff\23\u0161",
+            "\1\u0161\1\uffff\6\u0161\1\uffff\1\u0161\1\uffff\1\4\14\uffff"+
+            "\7\u0161\25\uffff\126\u0161\5\uffff\23\u0161",
+            "\1\u0161\1\uffff\6\u0161\1\uffff\1\u0161\1\uffff\1\4\14\uffff"+
+            "\7\u0161\25\uffff\126\u0161\5\uffff\23\u0161",
             "\1\u00ae\7\uffff\1\u015a\25\uffff\1\u00ab\1\uffff\1\u00ac\1"+
             "\u00ad\1\u009a\1\u009b\1\u009c\1\u009d\1\u009e\1\u009f\1\u00a0"+
             "\1\u00a1\1\u00a2\1\u00a3\1\u00a4\1\u00a5\1\u00a6\1\u00a7\1\u00a8"+
@@ -10176,24 +10211,24 @@ public class DateParser extends Parser {
             return "48:1: datetime : ( ( time )? ( 'on' )? date -> ^( DATE_TIME date ( time )? ) | date ( 'at' )? time -> ^( DATE_TIME date time ) | time -> ^( DATE_TIME ^( RELATIVE_DATE SEEK_DIRECTION[\">\"] INTEGER[\"0\"] ) time ) );";
         }
     }
-    static final String DFA48_eotS =
+    static final String DFA50_eotS =
         "\101\uffff";
-    static final String DFA48_eofS =
+    static final String DFA50_eofS =
         "\101\uffff";
-    static final String DFA48_minS =
+    static final String DFA50_minS =
         "\1\106\50\uffff\1\50\15\uffff\1\106\11\uffff";
-    static final String DFA48_maxS =
+    static final String DFA50_maxS =
         "\1\173\50\uffff\1\126\15\uffff\1\126\11\uffff";
-    static final String DFA48_acceptS =
+    static final String DFA50_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1"+
         "\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
         "\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46"+
         "\1\47\1\50\1\uffff\1\52\1\54\1\56\1\60\1\62\1\64\1\66\1\70\1\72"+
-        "\1\73\1\74\1\75\1\76\1\uffff\1\63\1\51\1\61\1\71\1\53\1\55\1\67"+
-        "\1\65\1\57";
-    static final String DFA48_specialS =
+        "\1\73\1\74\1\75\1\76\1\uffff\1\67\1\53\1\51\1\55\1\65\1\63\1\57"+
+        "\1\61\1\71";
+    static final String DFA50_specialS =
         "\101\uffff}>";
-    static final String[] DFA48_transitionS = {
+    static final String[] DFA50_transitionS = {
             "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1"+
             "\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1"+
             "\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1"+
@@ -10239,9 +10274,9 @@ public class DateParser extends Parser {
             "",
             "",
             "",
-            "\1\67\35\uffff\1\71\1\uffff\1\74\1\uffff\1\75\1\uffff\1\100"+
-            "\1\uffff\1\72\1\uffff\1\70\1\uffff\1\77\1\uffff\1\76\1\uffff"+
-            "\1\73",
+            "\1\67\35\uffff\1\72\1\uffff\1\71\1\uffff\1\73\1\uffff\1\76"+
+            "\1\uffff\1\77\1\uffff\1\75\1\uffff\1\74\1\uffff\1\70\1\uffff"+
+            "\1\100",
             "",
             "",
             "",
@@ -10255,8 +10290,8 @@ public class DateParser extends Parser {
             "",
             "",
             "",
-            "\1\71\1\uffff\1\74\1\uffff\1\75\1\uffff\1\100\1\uffff\1\72"+
-            "\1\uffff\1\70\1\uffff\1\77\1\uffff\1\76\1\uffff\1\73",
+            "\1\72\1\uffff\1\71\1\uffff\1\73\1\uffff\1\76\1\uffff\1\77\1"+
+            "\uffff\1\75\1\uffff\1\74\1\uffff\1\70\1\uffff\1\100",
             "",
             "",
             "",
@@ -10268,34 +10303,34 @@ public class DateParser extends Parser {
             ""
     };
 
-    static final short[] DFA48_eot = DFA.unpackEncodedString(DFA48_eotS);
-    static final short[] DFA48_eof = DFA.unpackEncodedString(DFA48_eofS);
-    static final char[] DFA48_min = DFA.unpackEncodedStringToUnsignedChars(DFA48_minS);
-    static final char[] DFA48_max = DFA.unpackEncodedStringToUnsignedChars(DFA48_maxS);
-    static final short[] DFA48_accept = DFA.unpackEncodedString(DFA48_acceptS);
-    static final short[] DFA48_special = DFA.unpackEncodedString(DFA48_specialS);
-    static final short[][] DFA48_transition;
+    static final short[] DFA50_eot = DFA.unpackEncodedString(DFA50_eotS);
+    static final short[] DFA50_eof = DFA.unpackEncodedString(DFA50_eofS);
+    static final char[] DFA50_min = DFA.unpackEncodedStringToUnsignedChars(DFA50_minS);
+    static final char[] DFA50_max = DFA.unpackEncodedStringToUnsignedChars(DFA50_maxS);
+    static final short[] DFA50_accept = DFA.unpackEncodedString(DFA50_acceptS);
+    static final short[] DFA50_special = DFA.unpackEncodedString(DFA50_specialS);
+    static final short[][] DFA50_transition;
 
     static {
-        int numStates = DFA48_transitionS.length;
-        DFA48_transition = new short[numStates][];
+        int numStates = DFA50_transitionS.length;
+        DFA50_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA48_transition[i] = DFA.unpackEncodedString(DFA48_transitionS[i]);
+            DFA50_transition[i] = DFA.unpackEncodedString(DFA50_transitionS[i]);
         }
     }
 
-    class DFA48 extends DFA {
+    class DFA50 extends DFA {
 
-        public DFA48(BaseRecognizer recognizer) {
+        public DFA50(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 48;
-            this.eot = DFA48_eot;
-            this.eof = DFA48_eof;
-            this.min = DFA48_min;
-            this.max = DFA48_max;
-            this.accept = DFA48_accept;
-            this.special = DFA48_special;
-            this.transition = DFA48_transition;
+            this.decisionNumber = 50;
+            this.eot = DFA50_eot;
+            this.eof = DFA50_eof;
+            this.min = DFA50_min;
+            this.max = DFA50_max;
+            this.accept = DFA50_accept;
+            this.special = DFA50_special;
+            this.transition = DFA50_transition;
         }
         public String getDescription() {
             return "171:1: day : ( 'first' -> DAY_OF_MONTH[\"1\"] | '1st' -> DAY_OF_MONTH[\"1\"] | 'second' -> DAY_OF_MONTH[\"2\"] | '2nd' -> DAY_OF_MONTH[\"2\"] | 'third' -> DAY_OF_MONTH[\"3\"] | '3rd' -> DAY_OF_MONTH[\"3\"] | 'fourth' -> DAY_OF_MONTH[\"4\"] | '4th' -> DAY_OF_MONTH[\"4\"] | 'fifth' -> DAY_OF_MONTH[\"5\"] | '5th' -> DAY_OF_MONTH[\"5\"] | 'sixth' -> DAY_OF_MONTH[\"6\"] | '6th' -> DAY_OF_MONTH[\"6\"] | 'seventh' -> DAY_OF_MONTH[\"7\"] | '7th' -> DAY_OF_MONTH[\"7\"] | 'eighth' -> DAY_OF_MONTH[\"8\"] | '8th' -> DAY_OF_MONTH[\"8\"] | 'ninth' -> DAY_OF_MONTH[\"9\"] | '9th' -> DAY_OF_MONTH[\"9\"] | 'tenth' -> DAY_OF_MONTH[\"10\"] | '10th' -> DAY_OF_MONTH[\"10\"] | 'eleventh' -> DAY_OF_MONTH[\"11\"] | '11th' -> DAY_OF_MONTH[\"11\"] | 'twelfth' -> DAY_OF_MONTH[\"12\"] | '12th' -> DAY_OF_MONTH[\"12\"] | 'thirteenth' -> DAY_OF_MONTH[\"13\"] | '13th' -> DAY_OF_MONTH[\"13\"] | 'fourteenth' -> DAY_OF_MONTH[\"14\"] | '14th' -> DAY_OF_MONTH[\"14\"] | 'fifteenth' -> DAY_OF_MONTH[\"15\"] | '15th' -> DAY_OF_MONTH[\"15\"] | 'sixteenth' -> DAY_OF_MONTH[\"16\"] | '16th' -> DAY_OF_MONTH[\"16\"] | 'seventeenth' -> DAY_OF_MONTH[\"17\"] | '17th' -> DAY_OF_MONTH[\"17\"] | 'eighteenth' -> DAY_OF_MONTH[\"18\"] | '18th' -> DAY_OF_MONTH[\"18\"] | 'nineteenth' -> DAY_OF_MONTH[\"19\"] | '19th' -> DAY_OF_MONTH[\"19\"] | 'twentieth' -> DAY_OF_MONTH[\"20\"] | '20th' -> DAY_OF_MONTH[\"20\"] | 'twenty' ( '-' )? 'first' -> DAY_OF_MONTH[\"21\"] | '21st' -> DAY_OF_MONTH[\"21\"] | 'twenty' ( '-' )? 'second' -> DAY_OF_MONTH[\"22\"] | '22nd' -> DAY_OF_MONTH[\"22\"] | 'twenty' ( '-' )? 'third' -> DAY_OF_MONTH[\"23\"] | '23rd' -> DAY_OF_MONTH[\"23\"] | 'twenty' ( '-' )? 'fourth' -> DAY_OF_MONTH[\"24\"] | '24th' -> DAY_OF_MONTH[\"24\"] | 'twenty' ( '-' )? 'fifth' -> DAY_OF_MONTH[\"25\"] | '25th' -> DAY_OF_MONTH[\"25\"] | 'twenty' ( '-' )? 'sixth' -> DAY_OF_MONTH[\"26\"] | '26th' -> DAY_OF_MONTH[\"26\"] | 'twenty' ( '-' )? 'seventh' -> DAY_OF_MONTH[\"27\"] | '27th' -> DAY_OF_MONTH[\"27\"] | 'twenty' ( '-' )? 'eighth' -> DAY_OF_MONTH[\"28\"] | '28th' -> DAY_OF_MONTH[\"28\"] | 'twenty' ( '-' )? 'ninth' -> DAY_OF_MONTH[\"29\"] | '29th' -> DAY_OF_MONTH[\"29\"] | 'thirtieth' -> DAY_OF_MONTH[\"30\"] | '30th' -> DAY_OF_MONTH[\"30\"] | 'thirty' ( '-' )? 'first' -> DAY_OF_MONTH[\"31\"] | '31st' -> DAY_OF_MONTH[\"31\"] );";
@@ -10395,9 +10430,9 @@ public class DateParser extends Parser {
     public static final BitSet FOLLOW_65_in_day_of_week1216 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_50_in_day_of_week1218 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_66_in_day_of_week1231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_day_of_week1253 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_67_in_day_of_week1253 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_50_in_day_of_week1255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_day_of_week1269 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_68_in_day_of_week1269 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_50_in_day_of_week1271 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_69_in_day_of_week1286 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_70_in_day1318 = new BitSet(new long[]{0x0000000000000002L});

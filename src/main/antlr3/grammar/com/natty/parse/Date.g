@@ -98,7 +98,7 @@ relative_date
   
 relative_suffix
   : 'from now' -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"]
-  | 'ago'      -> SEEK_DIRECTION["<"] SEEK_TYPE["by_week"]
+  | 'ago'      -> SEEK_DIRECTION["<"] SEEK_TYPE["by_day"]
   ;
   
 // an explicit time with implicit minutes when omitted 
@@ -162,8 +162,8 @@ day_of_week
   | 'fri'            -> DAY_OF_WEEK["6"]
   | 'saturday' 's'?  -> DAY_OF_WEEK["7"]
   | 'sat'            -> DAY_OF_WEEK["7"]
-  | 'weekend' 's'    -> DAY_OF_WEEK["7"]
-  | 'sunday' 's'     -> DAY_OF_WEEK["1"]
+  | 'weekend' 's'?   -> DAY_OF_WEEK["7"]
+  | 'sunday' 's'?    -> DAY_OF_WEEK["1"]
   | 'sun'            -> DAY_OF_WEEK["1"]
   ;
   
