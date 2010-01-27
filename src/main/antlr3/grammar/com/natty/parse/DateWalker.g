@@ -50,6 +50,6 @@ relative_date
   ;
   
 explicit_time 
-  : ^(EXPLICIT_TIME hours=INTEGER minutes=INTEGER AM_PM?)
-    {dateTime.setExplicitTime($hours.text, $minutes.text, $AM_PM.text);}
+  : ^(EXPLICIT_TIME HOURS MINUTES AM_PM?)
+    {dateTime.setExplicitTime($HOURS.text, $MINUTES.text, $AM_PM.text);}
   ;

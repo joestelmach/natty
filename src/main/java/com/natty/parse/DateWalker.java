@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g 2010-01-26 19:03:19
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g 2010-01-26 23:37:38
  package com.natty.parse; 
 
 import org.antlr.runtime.*;
@@ -8,9 +8,8 @@ import java.util.ArrayList;
 
 public class DateWalker extends TreeParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DATE_TIME", "RELATIVE_DATE", "EXPLICIT_DATE", "EXPLICIT_TIME", "AM_PM", "MONTH", "DAY_OF_WEEK", "DAY_OF_MONTH", "SPAN", "YEAR", "ERA", "INTEGER", "SEEK_DIRECTION", "SEEK_TYPE", "YEAR_DATE_SPAN", "ONE_TO_TWELVE", "THIRTEEN_TO_TWENTY_FOUR", "TWENTY_FIVE_TO_THIRTY_ONE", "TWO_ZEROS", "THIRTY_TWO_TO_FIFTY_NINE", "SIXTY_TO_NINETY_NINE", "THREE_DIGITS", "FOUR_DIGITS", "DIGIT", "WHITE_SPACE", "'on'", "'at'", "','", "'of'", "':'", "'am'", "'a.m.'", "'a'", "'pm'", "'p.m.'", "'p'", "'-'", "'/'", "'this'", "'last'", "'next'", "'past'", "'coming'", "'upcoming'", "'in'", "'from now'", "'ago'", "'day'", "'s'", "'week'", "'month'", "'monday'", "'mon'", "'tuesday'", "'tue'", "'tues'", "'wednesday'", "'wed'", "'thursday'", "'thur'", "'thurs'", "'friday'", "'fri'", "'saturday'", "'sat'", "'weekend'", "'sunday'", "'sun'", "'first'", "'1st'", "'second'", "'2nd'", "'third'", "'3rd'", "'fourth'", "'4th'", "'fifth'", "'5th'", "'sixth'", "'6th'", "'seventh'", "'7th'", "'eighth'", "'8th'", "'ninth'", "'9th'", "'tenth'", "'10th'", "'eleventh'", "'11th'", "'twelfth'", "'12th'", "'thirteenth'", "'13th'", "'fourteenth'", "'14th'", "'fifteenth'", "'15th'", "'sixteenth'", "'16th'", "'seventeenth'", "'17th'", "'eighteenth'", "'18th'", "'nineteenth'", "'19th'", "'twentieth'", "'20th'", "'twenty'", "'21st'", "'22nd'", "'23rd'", "'24th'", "'25th'", "'26th'", "'27th'", "'28th'", "'29th'", "'thirtieth'", "'30th'", "'thirty'", "'31st'", "'january'", "'jan'", "'february'", "'feb'", "'march'", "'mar'", "'april'", "'apr'", "'may'", "'june'", "'jun'", "'july'", "'jul'", "'august'", "'aug'", "'september'", "'sep'", "'october'", "'oct'", "'november'", "'nov'", "'december'", "'dec'", "'today'", "'yesterday'", "'the'", "'day after '", "'day before yesterday'", "'tomorow'", "'tomorrow'", "'tommorow'", "'tommorrow'", "'midnight'", "'noon'", "'''", "'ad'", "'a.d.'", "'bc'", "'b.c.'", "'one'", "'two'", "'three'", "'four'", "'five'", "'six'", "'seven'", "'eight'", "'nine'", "'ten'", "'eleven'", "'twelve'", "'thirteen'", "'fourteen'", "'fifteen'", "'sixteen'", "'seventeen'", "'eighteen'", "'nineteen'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DATE_TIME", "EXPLICIT_DATE", "RELATIVE_DATE", "EXPLICIT_TIME", "AM_PM", "MONTH", "DAY_OF_WEEK", "DAY_OF_MONTH", "YEAR", "SPAN", "ERA", "HOURS", "MINUTES", "INTEGER", "SEEK_DIRECTION", "SEEK_TYPE", "ONE_TO_TWELVE", "DASH", "THIRTEEN_TO_TWENTY_FOUR", "TWENTY_FIVE_TO_THIRTY_ONE", "TWO_ZEROS", "THIRTY_TWO_TO_FIFTY_NINE", "SIXTY_TO_NINETY_NINE", "THREE_DIGIT", "FOUR_DIGIT", "DIGIT", "SLASH", "WHITE_SPACE", "'at'", "'on'", "','", "'of'", "':'", "'midnight'", "'noon'", "'s'", "'this'", "'last'", "'next'", "'past'", "'coming'", "'upcoming'", "'in'", "'from now'", "'ago'", "'day'", "'week'", "'month'", "'year'", "'january'", "'jan'", "'february'", "'feb'", "'march'", "'mar'", "'april'", "'apr'", "'may'", "'june'", "'jun'", "'july'", "'jul'", "'august'", "'aug'", "'september'", "'sep'", "'october'", "'oct'", "'november'", "'nov'", "'december'", "'dec'", "'monday'", "'mon'", "'tuesday'", "'tue'", "'tues'", "'wednesday'", "'wed'", "'thursday'", "'thur'", "'thurs'", "'friday'", "'fri'", "'saturday'", "'sat'", "'weekend'", "'sunday'", "'sun'", "'first'", "'1st'", "'second'", "'2nd'", "'third'", "'3rd'", "'fourth'", "'4th'", "'fifth'", "'5th'", "'sixth'", "'6th'", "'seventh'", "'7th'", "'eighth'", "'8th'", "'ninth'", "'9th'", "'tenth'", "'10th'", "'eleventh'", "'11th'", "'twelfth'", "'12th'", "'thirteenth'", "'13th'", "'fourteenth'", "'14th'", "'fifteenth'", "'15th'", "'sixteenth'", "'16th'", "'seventeenth'", "'17th'", "'eighteenth'", "'18th'", "'nineteenth'", "'19th'", "'twentieth'", "'20th'", "'twenty'", "'21st'", "'22nd'", "'23rd'", "'24th'", "'25th'", "'26th'", "'27th'", "'28th'", "'29th'", "'thirtieth'", "'30th'", "'thirty'", "'31st'", "'''", "'the'", "'am'", "'a.m.'", "'a'", "'pm'", "'p.m.'", "'p'", "'today'", "'yesterday'", "'day after '", "'day before yesterday'", "'tomorow'", "'tomorrow'", "'tommorow'", "'tommorrow'", "'one'", "'two'", "'three'", "'four'", "'five'", "'six'", "'seven'", "'eight'", "'nine'", "'ten'", "'eleven'", "'twelve'", "'thirteen'", "'fourteen'", "'fifteen'", "'sixteen'", "'seventeen'", "'eighteen'", "'nineteen'"
     };
-    public static final int T__29=29;
     public static final int T__159=159;
     public static final int T__158=158;
     public static final int T__160=160;
@@ -31,12 +30,11 @@ public class DateWalker extends TreeParser {
     public static final int T__92=92;
     public static final int AM_PM=8;
     public static final int T__148=148;
-    public static final int SIXTY_TO_NINETY_NINE=24;
+    public static final int SIXTY_TO_NINETY_NINE=26;
     public static final int T__90=90;
     public static final int T__147=147;
     public static final int T__149=149;
-    public static final int YEAR_DATE_SPAN=18;
-    public static final int SPAN=12;
+    public static final int SPAN=13;
     public static final int T__154=154;
     public static final int T__155=155;
     public static final int T__156=156;
@@ -50,8 +48,9 @@ public class DateWalker extends TreeParser {
     public static final int T__152=152;
     public static final int T__95=95;
     public static final int T__153=153;
-    public static final int RELATIVE_DATE=5;
+    public static final int RELATIVE_DATE=6;
     public static final int T__139=139;
+    public static final int FOUR_DIGIT=28;
     public static final int T__138=138;
     public static final int T__137=137;
     public static final int T__136=136;
@@ -60,7 +59,7 @@ public class DateWalker extends TreeParser {
     public static final int T__82=82;
     public static final int T__83=83;
     public static final int DAY_OF_WEEK=10;
-    public static final int EXPLICIT_DATE=6;
+    public static final int EXPLICIT_DATE=5;
     public static final int T__141=141;
     public static final int T__85=85;
     public static final int T__142=142;
@@ -90,8 +89,8 @@ public class DateWalker extends TreeParser {
     public static final int T__131=131;
     public static final int T__73=73;
     public static final int T__132=132;
-    public static final int THIRTY_TWO_TO_FIFTY_NINE=23;
-    public static final int TWENTY_FIVE_TO_THIRTY_ONE=21;
+    public static final int THIRTY_TWO_TO_FIFTY_NINE=25;
+    public static final int TWENTY_FIVE_TO_THIRTY_ONE=23;
     public static final int T__133=133;
     public static final int T__79=79;
     public static final int T__134=134;
@@ -100,14 +99,13 @@ public class DateWalker extends TreeParser {
     public static final int T__77=77;
     public static final int T__68=68;
     public static final int T__69=69;
-    public static final int FOUR_DIGITS=26;
     public static final int T__66=66;
     public static final int T__67=67;
     public static final int T__64=64;
     public static final int T__65=65;
     public static final int T__62=62;
     public static final int T__63=63;
-    public static final int YEAR=13;
+    public static final int YEAR=12;
     public static final int T__118=118;
     public static final int T__119=119;
     public static final int T__116=116;
@@ -119,16 +117,17 @@ public class DateWalker extends TreeParser {
     public static final int T__122=122;
     public static final int T__121=121;
     public static final int T__120=120;
-    public static final int THREE_DIGITS=25;
     public static final int T__61=61;
     public static final int T__60=60;
-    public static final int WHITE_SPACE=28;
-    public static final int SEEK_TYPE=17;
+    public static final int THREE_DIGIT=27;
+    public static final int WHITE_SPACE=31;
+    public static final int SEEK_TYPE=19;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
     public static final int T__58=58;
     public static final int T__51=51;
+    public static final int SLASH=30;
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
@@ -144,32 +143,30 @@ public class DateWalker extends TreeParser {
     public static final int T__110=110;
     public static final int T__113=113;
     public static final int T__112=112;
-    public static final int TWO_ZEROS=22;
-    public static final int DIGIT=27;
+    public static final int TWO_ZEROS=24;
+    public static final int DIGIT=29;
     public static final int T__50=50;
     public static final int T__42=42;
-    public static final int INTEGER=15;
+    public static final int INTEGER=17;
     public static final int T__43=43;
-    public static final int T__183=183;
     public static final int T__40=40;
     public static final int T__41=41;
     public static final int T__46=46;
     public static final int T__47=47;
     public static final int T__44=44;
     public static final int T__45=45;
+    public static final int DASH=21;
     public static final int T__48=48;
     public static final int T__49=49;
     public static final int T__180=180;
-    public static final int T__182=182;
     public static final int T__181=181;
-    public static final int SEEK_DIRECTION=16;
+    public static final int SEEK_DIRECTION=18;
     public static final int T__102=102;
     public static final int T__101=101;
     public static final int T__100=100;
     public static final int T__175=175;
-    public static final int T__30=30;
+    public static final int MINUTES=16;
     public static final int T__174=174;
-    public static final int T__31=31;
     public static final int T__173=173;
     public static final int T__32=32;
     public static final int T__172=172;
@@ -181,7 +178,7 @@ public class DateWalker extends TreeParser {
     public static final int T__177=177;
     public static final int T__36=36;
     public static final int T__176=176;
-    public static final int THIRTEEN_TO_TWENTY_FOUR=20;
+    public static final int THIRTEEN_TO_TWENTY_FOUR=22;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
@@ -190,7 +187,8 @@ public class DateWalker extends TreeParser {
     public static final int T__170=170;
     public static final int DAY_OF_MONTH=11;
     public static final int T__169=169;
-    public static final int ONE_TO_TWELVE=19;
+    public static final int ONE_TO_TWELVE=20;
+    public static final int HOURS=15;
 
     // delegates
     // delegators
@@ -571,22 +569,22 @@ public class DateWalker extends TreeParser {
 
 
     // $ANTLR start "explicit_time"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:52:1: explicit_time : ^( EXPLICIT_TIME hours= INTEGER minutes= INTEGER ( AM_PM )? ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:52:1: explicit_time : ^( EXPLICIT_TIME HOURS MINUTES ( AM_PM )? ) ;
     public final void explicit_time() throws RecognitionException {
-        CommonTree hours=null;
-        CommonTree minutes=null;
-        CommonTree AM_PM14=null;
+        CommonTree HOURS14=null;
+        CommonTree MINUTES15=null;
+        CommonTree AM_PM16=null;
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:3: ( ^( EXPLICIT_TIME hours= INTEGER minutes= INTEGER ( AM_PM )? ) )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:5: ^( EXPLICIT_TIME hours= INTEGER minutes= INTEGER ( AM_PM )? )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:3: ( ^( EXPLICIT_TIME HOURS MINUTES ( AM_PM )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:5: ^( EXPLICIT_TIME HOURS MINUTES ( AM_PM )? )
             {
             match(input,EXPLICIT_TIME,FOLLOW_EXPLICIT_TIME_in_explicit_time232); 
 
             match(input, Token.DOWN, null); 
-            hours=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_explicit_time236); 
-            minutes=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_explicit_time240); 
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:51: ( AM_PM )?
+            HOURS14=(CommonTree)match(input,HOURS,FOLLOW_HOURS_in_explicit_time234); 
+            MINUTES15=(CommonTree)match(input,MINUTES,FOLLOW_MINUTES_in_explicit_time236); 
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:35: ( AM_PM )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -595,9 +593,9 @@ public class DateWalker extends TreeParser {
             }
             switch (alt6) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:51: AM_PM
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:53:35: AM_PM
                     {
-                    AM_PM14=(CommonTree)match(input,AM_PM,FOLLOW_AM_PM_in_explicit_time242); 
+                    AM_PM16=(CommonTree)match(input,AM_PM,FOLLOW_AM_PM_in_explicit_time238); 
 
                     }
                     break;
@@ -606,7 +604,7 @@ public class DateWalker extends TreeParser {
 
 
             match(input, Token.UP, null); 
-            dateTime.setExplicitTime((hours!=null?hours.getText():null), (minutes!=null?minutes.getText():null), (AM_PM14!=null?AM_PM14.getText():null));
+            dateTime.setExplicitTime((HOURS14!=null?HOURS14.getText():null), (MINUTES15!=null?MINUTES15.getText():null), (AM_PM16!=null?AM_PM16.getText():null));
 
             }
 
@@ -634,25 +632,25 @@ public class DateWalker extends TreeParser {
     public static final BitSet FOLLOW_explicit_time_in_time89 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_EXPLICIT_DATE_in_explicit_date103 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_MONTH_in_explicit_date105 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_DAY_OF_MONTH_in_explicit_date107 = new BitSet(new long[]{0x0000000000006008L});
+    public static final BitSet FOLLOW_DAY_OF_MONTH_in_explicit_date107 = new BitSet(new long[]{0x0000000000005008L});
     public static final BitSet FOLLOW_YEAR_in_explicit_date109 = new BitSet(new long[]{0x0000000000004008L});
     public static final BitSet FOLLOW_ERA_in_explicit_date112 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date137 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date139 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date139 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_INTEGER_in_relative_date141 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date165 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date167 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_SEEK_TYPE_in_relative_date169 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date167 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_SEEK_TYPE_in_relative_date169 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_INTEGER_in_relative_date171 = new BitSet(new long[]{0x0000000000000400L});
     public static final BitSet FOLLOW_DAY_OF_WEEK_in_relative_date173 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date199 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date201 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_SEEK_TYPE_in_relative_date203 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_INTEGER_in_relative_date205 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_SEEK_DIRECTION_in_relative_date201 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_SEEK_TYPE_in_relative_date203 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_INTEGER_in_relative_date205 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_SPAN_in_relative_date207 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_EXPLICIT_TIME_in_explicit_time232 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INTEGER_in_explicit_time236 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_INTEGER_in_explicit_time240 = new BitSet(new long[]{0x0000000000000108L});
-    public static final BitSet FOLLOW_AM_PM_in_explicit_time242 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_HOURS_in_explicit_time234 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_MINUTES_in_explicit_time236 = new BitSet(new long[]{0x0000000000000108L});
+    public static final BitSet FOLLOW_AM_PM_in_explicit_time238 = new BitSet(new long[]{0x0000000000000008L});
 
 }
