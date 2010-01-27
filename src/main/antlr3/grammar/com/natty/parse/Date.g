@@ -83,7 +83,7 @@ explicit_date
   | (numeric_year date_separator)? numeric_month date_separator numeric_day -> 
     ^(EXPLICIT_DATE numeric_month numeric_day numeric_year?)
   ;
-
+  
 //a date relative to the current date
 relative_date
   // today, tomorrow, yesterday, day after tomorrow
@@ -233,6 +233,7 @@ day
   | '30th'                  -> DAY_OF_MONTH["30"]
   | 'thirty' '-'? 'first'   -> DAY_OF_MONTH["31"]
   | '31st'                  -> DAY_OF_MONTH["31"]
+  | numeric_day
   ;
 
 // a regular language, possibly shortened month name

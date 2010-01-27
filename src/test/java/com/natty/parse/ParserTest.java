@@ -11,7 +11,7 @@ import com.natty.Parser;
  */
 public class ParserTest {
   public static void main(String[] args) throws Exception {
-    Date date = Parser.parseDate("last oct 10");
+    Date date = Parser.parseDate("in 3 wed");
     System.out.println(date);
   }
 }

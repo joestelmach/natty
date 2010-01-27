@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g 2010-01-26 16:35:31
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g 2010-01-26 19:03:19
  package com.natty.parse; 
 
 import org.antlr.runtime.*;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class DateWalker extends TreeParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DATE_TIME", "RELATIVE_DATE", "EXPLICIT_DATE", "EXPLICIT_TIME", "AM_PM", "MONTH", "DAY_OF_WEEK", "DAY_OF_MONTH", "SPAN", "YEAR", "ERA", "INTEGER", "SEEK_DIRECTION", "SEEK_TYPE", "FOUR_DIGITS", "YEAR_DATE_SPAN", "ONE_TO_TWELVE", "THIRTEEN_TO_TWENTY_FOUR", "TWENTY_FIVE_TO_THIRTY_ONE", "TWO_ZEROS", "THIRTY_TWO_TO_FIFTY_NINE", "SIXTY_TO_NINETY_NINE", "THREE_DIGITS", "DIGIT", "WHITE_SPACE", "'on'", "'at'", "','", "'of'", "':'", "'am'", "'a.m.'", "'a'", "'pm'", "'p.m.'", "'p'", "'-'", "'/'", "'this'", "'last'", "'next'", "'past'", "'coming'", "'upcoming'", "'in'", "'from now'", "'ago'", "'day'", "'s'", "'week'", "'month'", "'monday'", "'mon'", "'tuesday'", "'tue'", "'tues'", "'wednesday'", "'wed'", "'thursday'", "'thur'", "'thurs'", "'friday'", "'fri'", "'saturday'", "'sat'", "'weekend'", "'sunday'", "'sun'", "'first'", "'1st'", "'second'", "'2nd'", "'third'", "'3rd'", "'fourth'", "'4th'", "'fifth'", "'5th'", "'sixth'", "'6th'", "'seventh'", "'7th'", "'eighth'", "'8th'", "'ninth'", "'9th'", "'tenth'", "'10th'", "'eleventh'", "'11th'", "'twelfth'", "'12th'", "'thirteenth'", "'13th'", "'fourteenth'", "'14th'", "'fifteenth'", "'15th'", "'sixteenth'", "'16th'", "'seventeenth'", "'17th'", "'eighteenth'", "'18th'", "'nineteenth'", "'19th'", "'twentieth'", "'20th'", "'twenty'", "'21st'", "'22nd'", "'23rd'", "'24th'", "'25th'", "'26th'", "'27th'", "'28th'", "'29th'", "'thirtieth'", "'30th'", "'thirty'", "'31st'", "'january'", "'jan'", "'february'", "'feb'", "'march'", "'mar'", "'april'", "'apr'", "'may'", "'june'", "'jun'", "'july'", "'jul'", "'august'", "'aug'", "'september'", "'sep'", "'october'", "'oct'", "'november'", "'nov'", "'december'", "'dec'", "'today'", "'yesterday'", "'the'", "'day after '", "'day before yesterday'", "'tomorow'", "'tomorrow'", "'tommorow'", "'tommorrow'", "'midnight'", "'noon'", "'''", "'ad'", "'a.d.'", "'bc'", "'b.c.'", "'one'", "'two'", "'three'", "'four'", "'five'", "'six'", "'seven'", "'eight'", "'nine'", "'ten'", "'eleven'", "'twelve'", "'thirteen'", "'fourteen'", "'fifteen'", "'sixteen'", "'seventeen'", "'eighteen'", "'nineteen'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DATE_TIME", "RELATIVE_DATE", "EXPLICIT_DATE", "EXPLICIT_TIME", "AM_PM", "MONTH", "DAY_OF_WEEK", "DAY_OF_MONTH", "SPAN", "YEAR", "ERA", "INTEGER", "SEEK_DIRECTION", "SEEK_TYPE", "YEAR_DATE_SPAN", "ONE_TO_TWELVE", "THIRTEEN_TO_TWENTY_FOUR", "TWENTY_FIVE_TO_THIRTY_ONE", "TWO_ZEROS", "THIRTY_TWO_TO_FIFTY_NINE", "SIXTY_TO_NINETY_NINE", "THREE_DIGITS", "FOUR_DIGITS", "DIGIT", "WHITE_SPACE", "'on'", "'at'", "','", "'of'", "':'", "'am'", "'a.m.'", "'a'", "'pm'", "'p.m.'", "'p'", "'-'", "'/'", "'this'", "'last'", "'next'", "'past'", "'coming'", "'upcoming'", "'in'", "'from now'", "'ago'", "'day'", "'s'", "'week'", "'month'", "'monday'", "'mon'", "'tuesday'", "'tue'", "'tues'", "'wednesday'", "'wed'", "'thursday'", "'thur'", "'thurs'", "'friday'", "'fri'", "'saturday'", "'sat'", "'weekend'", "'sunday'", "'sun'", "'first'", "'1st'", "'second'", "'2nd'", "'third'", "'3rd'", "'fourth'", "'4th'", "'fifth'", "'5th'", "'sixth'", "'6th'", "'seventh'", "'7th'", "'eighth'", "'8th'", "'ninth'", "'9th'", "'tenth'", "'10th'", "'eleventh'", "'11th'", "'twelfth'", "'12th'", "'thirteenth'", "'13th'", "'fourteenth'", "'14th'", "'fifteenth'", "'15th'", "'sixteenth'", "'16th'", "'seventeenth'", "'17th'", "'eighteenth'", "'18th'", "'nineteenth'", "'19th'", "'twentieth'", "'20th'", "'twenty'", "'21st'", "'22nd'", "'23rd'", "'24th'", "'25th'", "'26th'", "'27th'", "'28th'", "'29th'", "'thirtieth'", "'30th'", "'thirty'", "'31st'", "'january'", "'jan'", "'february'", "'feb'", "'march'", "'mar'", "'april'", "'apr'", "'may'", "'june'", "'jun'", "'july'", "'jul'", "'august'", "'aug'", "'september'", "'sep'", "'october'", "'oct'", "'november'", "'nov'", "'december'", "'dec'", "'today'", "'yesterday'", "'the'", "'day after '", "'day before yesterday'", "'tomorow'", "'tomorrow'", "'tommorow'", "'tommorrow'", "'midnight'", "'noon'", "'''", "'ad'", "'a.d.'", "'bc'", "'b.c.'", "'one'", "'two'", "'three'", "'four'", "'five'", "'six'", "'seven'", "'eight'", "'nine'", "'ten'", "'eleven'", "'twelve'", "'thirteen'", "'fourteen'", "'fifteen'", "'sixteen'", "'seventeen'", "'eighteen'", "'nineteen'"
     };
     public static final int T__29=29;
     public static final int T__159=159;
@@ -31,11 +31,11 @@ public class DateWalker extends TreeParser {
     public static final int T__92=92;
     public static final int AM_PM=8;
     public static final int T__148=148;
-    public static final int SIXTY_TO_NINETY_NINE=25;
+    public static final int SIXTY_TO_NINETY_NINE=24;
     public static final int T__90=90;
     public static final int T__147=147;
     public static final int T__149=149;
-    public static final int YEAR_DATE_SPAN=19;
+    public static final int YEAR_DATE_SPAN=18;
     public static final int SPAN=12;
     public static final int T__154=154;
     public static final int T__155=155;
@@ -90,8 +90,8 @@ public class DateWalker extends TreeParser {
     public static final int T__131=131;
     public static final int T__73=73;
     public static final int T__132=132;
-    public static final int THIRTY_TWO_TO_FIFTY_NINE=24;
-    public static final int TWENTY_FIVE_TO_THIRTY_ONE=22;
+    public static final int THIRTY_TWO_TO_FIFTY_NINE=23;
+    public static final int TWENTY_FIVE_TO_THIRTY_ONE=21;
     public static final int T__133=133;
     public static final int T__79=79;
     public static final int T__134=134;
@@ -100,7 +100,7 @@ public class DateWalker extends TreeParser {
     public static final int T__77=77;
     public static final int T__68=68;
     public static final int T__69=69;
-    public static final int FOUR_DIGITS=18;
+    public static final int FOUR_DIGITS=26;
     public static final int T__66=66;
     public static final int T__67=67;
     public static final int T__64=64;
@@ -119,7 +119,7 @@ public class DateWalker extends TreeParser {
     public static final int T__122=122;
     public static final int T__121=121;
     public static final int T__120=120;
-    public static final int THREE_DIGITS=26;
+    public static final int THREE_DIGITS=25;
     public static final int T__61=61;
     public static final int T__60=60;
     public static final int WHITE_SPACE=28;
@@ -144,7 +144,7 @@ public class DateWalker extends TreeParser {
     public static final int T__110=110;
     public static final int T__113=113;
     public static final int T__112=112;
-    public static final int TWO_ZEROS=23;
+    public static final int TWO_ZEROS=22;
     public static final int DIGIT=27;
     public static final int T__50=50;
     public static final int T__42=42;
@@ -181,7 +181,7 @@ public class DateWalker extends TreeParser {
     public static final int T__177=177;
     public static final int T__36=36;
     public static final int T__176=176;
-    public static final int THIRTEEN_TO_TWENTY_FOUR=21;
+    public static final int THIRTEEN_TO_TWENTY_FOUR=20;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
@@ -190,7 +190,7 @@ public class DateWalker extends TreeParser {
     public static final int T__170=170;
     public static final int DAY_OF_MONTH=11;
     public static final int T__169=169;
-    public static final int ONE_TO_TWELVE=20;
+    public static final int ONE_TO_TWELVE=19;
 
     // delegates
     // delegators
