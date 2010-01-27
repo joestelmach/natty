@@ -19,7 +19,6 @@ public class Parser {
     Date date = null;
     ANTLRInputStream input = null;
     try {
-      long start = System.currentTimeMillis();
       // lex
       input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
       DateLexer lexer = new DateLexer(input);
@@ -38,7 +37,6 @@ public class Parser {
       DateWalker walker = new DateWalker(nodes);
       walker.datetime();
       date = walker.getDate();
-      System.out.println(System.currentTimeMillis() - start);
       
     } catch (IOException e) {
       e.printStackTrace();

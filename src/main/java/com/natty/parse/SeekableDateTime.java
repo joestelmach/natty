@@ -92,6 +92,35 @@ public class SeekableDateTime {
   }
   
   /**
+   * seeks to a particular month
+   * 
+   * @param direction the direction to seek: two possibilities 
+   *    '<' go backward 
+   *    '>' go forward
+   *    
+   * @param amount the amount to seek.  Must be guaranteed to parse as an integer
+   *     
+   * @param month the month to seek to.  Must be guaranteed to parse as an integer
+   *     between 1 and 12 
+   */
+  public void seekToMonth(String direction, String seekAmount, String month) {
+    int seekAmountInt = Integer.parseInt(seekAmount);
+    int monthInt = Integer.parseInt(month);
+    assert(direction.equals("<") || direction.equals(">"));
+    assert(monthInt >= 1 && monthInt <= 12);
+    
+    // seek to the appropriate year
+    int currentMonth = _calendar.get(Calendar.MONTH) + 1;
+    int sign = direction.equals(">") ? 1 : -1;
+    int numYearsToShift = seekAmountInt + 
+      (currentMonth <= monthInt ? sign > 0 ? -1 : 0 : sign > 0 ? 0 : -1);
+    _calendar.add(Calendar.YEAR, (numYearsToShift * sign));
+    
+    // now set the month
+    _calendar.set(Calendar.MONTH, monthInt -1);
+  }
+  
+  /**
    * seeks by a span of time (weeks, months, etc)
    * 
    * @param direction the direction to seek: two possibilities 
@@ -192,7 +221,6 @@ public class SeekableDateTime {
    * Return the date currently represented
    */
   public Date getDate() {
-    System.out.println(_calendar.getTime().getTime());
     return _calendar.getTime();
   }
 }

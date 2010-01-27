@@ -120,7 +120,7 @@ relative_prefix
   | 'this'? 'past'     -> SEEK_DIRECTION["<"] SEEK_TYPE["by_day"] INTEGER["1"]
   | 'this'? 'coming'   -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] INTEGER["1"]
   | 'this'? 'upcoming' -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] INTEGER["1"]
-  | 'in' numeric_or_natural_integer -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] numeric_or_natural_integer
+  | 'in'? numeric_or_natural_integer -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] numeric_or_natural_integer
   ;
   
 relative_suffix
@@ -231,27 +231,27 @@ day_of_month
   | '19th'                  -> DAY_OF_MONTH["19"]
   | 'twentieth'             -> DAY_OF_MONTH["20"]
   | '20th'                  -> DAY_OF_MONTH["20"]
-  | 'twenty' DASH? 'first'   -> DAY_OF_MONTH["21"]
+  | 'twenty' DASH? 'first'  -> DAY_OF_MONTH["21"]
   | '21st'                  -> DAY_OF_MONTH["21"]
-  | 'twenty' DASH? 'second'  -> DAY_OF_MONTH["22"]
+  | 'twenty' DASH? 'second' -> DAY_OF_MONTH["22"]
   | '22nd'                  -> DAY_OF_MONTH["22"]
-  | 'twenty' DASH? 'third'   -> DAY_OF_MONTH["23"]
+  | 'twenty' DASH? 'third'  -> DAY_OF_MONTH["23"]
   | '23rd'                  -> DAY_OF_MONTH["23"]
-  | 'twenty' DASH? 'fourth'  -> DAY_OF_MONTH["24"]
+  | 'twenty' DASH? 'fourth' -> DAY_OF_MONTH["24"]
   | '24th'                  -> DAY_OF_MONTH["24"]
-  | 'twenty' DASH? 'fifth'   -> DAY_OF_MONTH["25"]
+  | 'twenty' DASH? 'fifth'  -> DAY_OF_MONTH["25"]
   | '25th'                  -> DAY_OF_MONTH["25"]
-  | 'twenty' DASH? 'sixth'   -> DAY_OF_MONTH["26"]
+  | 'twenty' DASH? 'sixth'  -> DAY_OF_MONTH["26"]
   | '26th'                  -> DAY_OF_MONTH["26"]
-  | 'twenty' DASH? 'seventh' -> DAY_OF_MONTH["27"]
+  | 'twenty' DASH? 'seventh'-> DAY_OF_MONTH["27"]
   | '27th'                  -> DAY_OF_MONTH["27"]
-  | 'twenty' DASH? 'eighth'  -> DAY_OF_MONTH["28"]
+  | 'twenty' DASH? 'eighth' -> DAY_OF_MONTH["28"]
   | '28th'                  -> DAY_OF_MONTH["28"]
-  | 'twenty' DASH? 'ninth'   -> DAY_OF_MONTH["29"]
+  | 'twenty' DASH? 'ninth'  -> DAY_OF_MONTH["29"]
   | '29th'                  -> DAY_OF_MONTH["29"]
   | 'thirtieth'             -> DAY_OF_MONTH["30"]
   | '30th'                  -> DAY_OF_MONTH["30"]
-  | 'thirty' DASH? 'first'   -> DAY_OF_MONTH["31"]
+  | 'thirty' DASH? 'first'  -> DAY_OF_MONTH["31"]
   | '31st'                  -> DAY_OF_MONTH["31"]
   | numeric_day_of_month
   ;

@@ -44,6 +44,10 @@ relative_date:
 "last week" -> (RELATIVE_DATE < by_week 1 week)
 "next year" -> (RELATIVE_DATE > by_week 1 year)
 "last year" -> (RELATIVE_DATE < by_week 1 year)
+"next october" -> (RELATIVE_DATE > by_week 1 10)
+"in 3 octs" -> (RELATIVE_DATE > by_day 3 10)
+"last october" -> (RELATIVE_DATE < by_week 1 10)
+"four octobers ago" -> (RELATIVE_DATE < by_day 4 10)
 
 explicit_date:
 "2009-10-10" -> (EXPLICIT_DATE 10 10 2009)

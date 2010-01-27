@@ -47,6 +47,11 @@ relative_date
   // and an amount multipler span of time (day, week, month, year)
   | ^(RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER SPAN) 
     {dateTime.seekBySpan($SEEK_DIRECTION.text, $INTEGER.text, $SPAN.text);}
+  
+  // a direction, seek type (which is ignored in this case) an amount to seek by, 
+  // and a month to seek to
+  | ^(RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER MONTH) 
+    {dateTime.seekToMonth($SEEK_DIRECTION.text, $INTEGER.text, $MONTH.text);}
   ;
   
 explicit_time 
