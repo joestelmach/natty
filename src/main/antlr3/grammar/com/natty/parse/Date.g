@@ -49,12 +49,14 @@ tokens {
 @lexer::header { package com.natty.parse; }
 
 datetime 
+  options {backtrack=true;}
   : date 'at'? time? -> ^(DATE_TIME date time?)
   | time 'on'? date -> ^(DATE_TIME date time)
   | time -> ^(DATE_TIME ^(RELATIVE_DATE SEEK_DIRECTION[">"] INTEGER["0"]) time)
   ;
-
+  
 date
+  options {backtrack=true;}
   : relative_date 
   | explicit_date
   ;
