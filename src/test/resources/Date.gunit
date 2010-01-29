@@ -1,79 +1,122 @@
 gunit Date;
 @header{package com.natty.parse;}
 
-explicit_time:
-"10:00am" -> (EXPLICIT_TIME 10 0 am)
-"10a" -> (EXPLICIT_TIME 10 0 am)
-"10am" -> (EXPLICIT_TIME 10 0 am)
-"10" -> (EXPLICIT_TIME 10 0)
-"8p" -> (EXPLICIT_TIME 8 0 pm)
-"8pm" -> (EXPLICIT_TIME 8 0 pm)
-"8 pm" -> (EXPLICIT_TIME 8 0 pm)
-"noon" -> (EXPLICIT_TIME 12 0 pm)
-"midnight" -> (EXPLICIT_TIME 12 0 am)
+//explicit_time:
+//"10:00am" -> (EXPLICIT_TIME 10 0 am)
+//"10a" -> (EXPLICIT_TIME 10 0 am)
+//"10am" -> (EXPLICIT_TIME 10 0 am)
+//"10" -> (EXPLICIT_TIME 10 0)
+//"8p" -> (EXPLICIT_TIME 8 0 pm)
+//"8pm" -> (EXPLICIT_TIME 8 0 pm)
+//"8 pm" -> (EXPLICIT_TIME 8 0 pm)
+//"noon" -> (EXPLICIT_TIME 12 0 pm)
+//"midnight" -> (EXPLICIT_TIME 12 0 am)
 
-relative_date:
-"yesterday" -> (RELATIVE_DATE < 1)
-"day before yesterday" -> (RELATIVE_DATE < 2)
-"the day before yesterday" -> (RELATIVE_DATE < 2)
-"tomorrow" ->(RELATIVE_DATE > 1)
-"day after tomorrow" ->(RELATIVE_DATE > 2)
-"the day after tomorrow" ->(RELATIVE_DATE > 2)
-"in 3 days" ->(RELATIVE_DATE > by_day 3 day)
-"3 days ago" ->(RELATIVE_DATE < by_day 3 day)
-"in 3 weeks" ->(RELATIVE_DATE > by_day 3 week)
-"four weeks ago" ->(RELATIVE_DATE < by_day 4 week)
-"in 3 months" ->(RELATIVE_DATE > by_day 3 month)
-"three months ago" ->(RELATIVE_DATE < by_day 3 month)
-"in 3 years" ->(RELATIVE_DATE > by_day 3 year)
-"seven years ago" ->(RELATIVE_DATE < by_day 7 year)
-"next monday" -> (RELATIVE_DATE > by_week 1 2)
-"next mon" -> (RELATIVE_DATE > by_week 1 2)
-"4 mondays from now" -> (RELATIVE_DATE > by_day 4 2)
-"next weekend" -> (RELATIVE_DATE > by_week 1 7)
-"six mondays ago" -> (RELATIVE_DATE < by_day 6 2)
-"last monday" -> (RELATIVE_DATE < by_week 1 2)
-"last mon" -> (RELATIVE_DATE < by_week 1 2)
-"this past mon" -> (RELATIVE_DATE < by_day 1 2)
-"this coming mon" -> (RELATIVE_DATE > by_day 1 2)
-"this upcoming mon" -> (RELATIVE_DATE > by_day 1 2)
-"next thurs" -> (RELATIVE_DATE > by_week 1 5)
-"next month" -> (RELATIVE_DATE > by_week 1 month)
-"last month" -> (RELATIVE_DATE < by_week 1 month)
-"next week" -> (RELATIVE_DATE > by_week 1 week)
-"last week" -> (RELATIVE_DATE < by_week 1 week)
-"next year" -> (RELATIVE_DATE > by_week 1 year)
-"last year" -> (RELATIVE_DATE < by_week 1 year)
-"next october" -> (RELATIVE_DATE > by_week 1 10)
-"in 3 octs" -> (RELATIVE_DATE > by_day 3 10)
-"last october" -> (RELATIVE_DATE < by_week 1 10)
-"four octobers ago" -> (RELATIVE_DATE < by_day 4 10)
+//relative_date:
+//"yesterday" -> (RELATIVE_DATE < 1)
+//"day before yesterday" -> (RELATIVE_DATE < 2)
+//"the day before yesterday" -> (RELATIVE_DATE < 2)
+//"tomorrow" ->(RELATIVE_DATE > 1)
+//"day after tomorrow" ->(RELATIVE_DATE > 2)
+//"the day after tomorrow" ->(RELATIVE_DATE > 2)
+//"in 3 days" ->(RELATIVE_DATE > by_day 3 day)
+//"3 days ago" ->(RELATIVE_DATE < by_day 3 day)
+//"in 3 weeks" ->(RELATIVE_DATE > by_day 3 week)
+//"four weeks ago" ->(RELATIVE_DATE < by_day 4 week)
+//"in 3 months" ->(RELATIVE_DATE > by_day 3 month)
+//"three months ago" ->(RELATIVE_DATE < by_day 3 month)
+//"in 3 years" ->(RELATIVE_DATE > by_day 3 year)
+//"seven years ago" ->(RELATIVE_DATE < by_day 7 year)
+//"next monday" -> (RELATIVE_DATE > by_week 1 2)
+//"next mon" -> (RELATIVE_DATE > by_week 1 2)
+//"4 mondays from now" -> (RELATIVE_DATE > by_day 4 2)
+//"next weekend" -> (RELATIVE_DATE > by_week 1 7)
+//"six mondays ago" -> (RELATIVE_DATE < by_day 6 2)
+//"last monday" -> (RELATIVE_DATE < by_week 1 2)
+//"last mon" -> (RELATIVE_DATE < by_week 1 2)
+//"this past mon" -> (RELATIVE_DATE < by_day 1 2)
+//"this coming mon" -> (RELATIVE_DATE > by_day 1 2)
+//"this upcoming mon" -> (RELATIVE_DATE > by_day 1 2)
+//"next thurs" -> (RELATIVE_DATE > by_week 1 5)
+//"next month" -> (RELATIVE_DATE > by_week 1 month)
+//"last month" -> (RELATIVE_DATE < by_week 1 month)
+//"next week" -> (RELATIVE_DATE > by_week 1 week)
+//"last week" -> (RELATIVE_DATE < by_week 1 week)
+//"next year" -> (RELATIVE_DATE > by_week 1 year)
+//"last year" -> (RELATIVE_DATE < by_week 1 year)
+//"next october" -> (RELATIVE_DATE > by_week 1 10)
+//"in 3 octs" -> (RELATIVE_DATE > by_day 3 10)
+//"last october" -> (RELATIVE_DATE < by_week 1 10)
+//"four octobers ago" -> (RELATIVE_DATE < by_day 4 10)
 
-explicit_date:
-"2009-10-10" -> (EXPLICIT_DATE 10 10 2009)
-"2009-12-31" -> (EXPLICIT_DATE 12 31 2009)
-"09-12-31" -> (EXPLICIT_DATE 09 12 31)
-"10/10/1970" -> (EXPLICIT_DATE 10 10 1970)
-"10/10" -> (EXPLICIT_DATE 10 10)
-"12/31" -> (EXPLICIT_DATE 12 31)
-"10/2" -> (EXPLICIT_DATE 10 2)
-"10/02" -> (EXPLICIT_DATE 10 02)
-"28th of february, 1979" -> (EXPLICIT_DATE 2 28 1979)
-"28th of february 1979" -> (EXPLICIT_DATE 2 28 1979)
-"28th of february in the year 1979" -> (EXPLICIT_DATE 2 28 1979)
-"28th of february in the year 1979" -> (EXPLICIT_DATE 2 28 1979)
-"february 28th, 1979" -> (EXPLICIT_DATE 2 28 1979)
-"feb 28th, 1979" -> (EXPLICIT_DATE 2 28 1979)
-"february 28th 1979" -> (EXPLICIT_DATE 2 28 1979)
-"feb 28th 1979" -> (EXPLICIT_DATE 2 28 1979)
-"feb 28th" -> (EXPLICIT_DATE 2 28)
-"feb twentieth" -> (EXPLICIT_DATE 2 20)
-"feb twenty first" -> (EXPLICIT_DATE 2 21)
-"feb twenty-first" -> (EXPLICIT_DATE 2 21)
-"feb twentyfirst" -> (EXPLICIT_DATE 2 21)
+//explicit_date:
+//"2009-10-10" -> (EXPLICIT_DATE 10 10 2009)
+//"2009-12-31" -> (EXPLICIT_DATE 12 31 2009)
+//"09-12-31" -> (EXPLICIT_DATE 09 12 31)
+//"10/10/1970" -> (EXPLICIT_DATE 10 10 1970)
+//"10/10" -> (EXPLICIT_DATE 10 10)
+//"12/31" -> (EXPLICIT_DATE 12 31)
+//"10/2" -> (EXPLICIT_DATE 10 2)
+//"10/02" -> (EXPLICIT_DATE 10 02)
+//"28th of february, 1979" -> (EXPLICIT_DATE 2 28 1979)
+//"28th of february 1979" -> (EXPLICIT_DATE 2 28 1979)
+//"28th of february in the year 1979" -> (EXPLICIT_DATE 2 28 1979)
+//"28th of february in the year 1979" -> (EXPLICIT_DATE 2 28 1979)
+//"february 28th, 1979" -> (EXPLICIT_DATE 2 28 1979)
+//"feb 28th, 1979" -> (EXPLICIT_DATE 2 28 1979)
+//"february 28th 1979" -> (EXPLICIT_DATE 2 28 1979)
+//"feb 28th 1979" -> (EXPLICIT_DATE 2 28 1979)
+//"feb 28th" -> (EXPLICIT_DATE 2 28)
+//"feb twentieth" -> (EXPLICIT_DATE 2 20)
+//"feb twenty first" -> (EXPLICIT_DATE 2 21)
+//"feb twenty-first" -> (EXPLICIT_DATE 2 21)
+//"feb twentyfirst" -> (EXPLICIT_DATE 2 21)
 
-tomorrow:
-"tomorow" -> (RELATIVE_DATE > 1)
-"tommorow" -> (RELATIVE_DATE > 1)
-"tomorrow" -> (RELATIVE_DATE > 1)
-"tommorrow" -> (RELATIVE_DATE > 1)
+//tomorrow:
+//"tomorow" -> (RELATIVE_DATE > 1)
+//"tommorow" -> (RELATIVE_DATE > 1)
+//"tomorrow" -> (RELATIVE_DATE > 1)
+//"tommorrow" -> (RELATIVE_DATE > 1)
+
+spelled_number:
+"one" -> "1"
+"two" -> "2"
+"three" -> "3"
+"four" -> "4"
+"five" -> "5"
+"six" -> "6"
+"seven" -> "7"
+"eight" -> "8"
+"nine" -> "9"
+"ten" -> "10"
+"eleven" -> "11"
+"twelve" -> "12"
+"thirteen" -> "13"
+"fourteen" -> "14"
+"fifteen" -> "15"
+"sixteen" -> "16"
+"seventeen" -> "17"
+"eighteen" -> "18"
+"nineteen" -> "19"
+"twenty" -> "20"
+"twenty one" -> "21"
+"twenty-one" -> "21"
+"twenty two" -> "22"
+"twenty-two" -> "22"
+"twenty three" -> "23"
+"twenty-three" -> "23"
+"twenty four" -> "24"
+"twenty-four" -> "24"
+"twenty five" -> "25"
+"twenty-five" -> "25"
+"twenty six" -> "26"
+"twenty-six" -> "26"
+"twenty seven" -> "27"
+"twenty-seven" -> "27"
+"twenty eight" -> "28"
+"twenty-eight" -> "28"
+"twenty nine" -> "29"
+"twenty-nine" -> "29"
+"thirty" -> "30"
+"thirty one" -> "31"
+"thirty-one" -> "31"
