@@ -45,18 +45,18 @@ relative_date
   | relative_prefix modifiable_target 
     -> ^(RELATIVE_DATE relative_prefix modifiable_target)
     
-  | spelled_or_natural_number modifiable_target relative_suffix 
-    -> ^(RELATIVE_DATE relative_suffix spelled_or_natural_number modifiable_target)
+  | spelled_or_numeric_1_to_31 modifiable_target relative_suffix 
+    -> ^(RELATIVE_DATE relative_suffix spelled_or_numeric_1_to_31 modifiable_target)
   ;
 
 // an explicit date with month, day, and year
 explicit_date
   options{backtrack=true;}
-  : one_to_twelve date_separator one_to_thirty_one (date_separator four_digits)?
-    -> ^(EXPLICIT_DATE one_to_thirty_one one_to_thirty_one four_digits?)
+  : numeric_1_to_12 date_separator numeric_1_to_31 (date_separator four_digits)?
+    -> ^(EXPLICIT_DATE numeric_1_to_31 numeric_1_to_31 four_digits?)
     
-  | four_digits date_separator one_to_twelve date_separator one_to_thirty_one
-    -> ^(EXPLICIT_DATE one_to_twelve one_to_thirty_one four_digits)
+  | four_digits date_separator numeric_1_to_12 date_separator numeric_1_to_31
+    -> ^(EXPLICIT_DATE numeric_1_to_12 numeric_1_to_31 four_digits)
     
   | month day_of_month (','? year)? 
     -> ^(EXPLICIT_DATE month day_of_month year?) 
@@ -68,12 +68,12 @@ explicit_date
 // an explicit time with implicit minutes when omitted 
 explicit_time 
   // no minutes with optional indicator: 10 a, 12pm, 10
-  : zero_to_twenty_three meridian_indicator? 
-    -> ^(EXPLICIT_TIME zero_to_twenty_three MINUTES["0"] meridian_indicator?)
+  : numeric_0_to_23 meridian_indicator? 
+    -> ^(EXPLICIT_TIME numeric_0_to_23 MINUTES["0"] meridian_indicator?)
   
   //  separator and minutes with optional indicator: 10:05 a, 12:10 pm, 10:00
-  | zero_to_twenty_three ':' zero_to_fifty_nine meridian_indicator? 
-    -> ^(EXPLICIT_TIME zero_to_twenty_three zero_to_fifty_nine meridian_indicator?)
+  | numeric_0_to_23 ':' numeric_0_to_59 meridian_indicator? 
+    -> ^(EXPLICIT_TIME numeric_0_to_23 numeric_0_to_59 meridian_indicator?)
   
   | time_identifier
   ;
@@ -92,11 +92,11 @@ month
   | NOVEMBER  -> MONTH["11"]
   | DECEMBER  -> MONTH["12"]
   ;
-
+  
 day_of_month
-  : spelled_number    -> DAY_OF_MONTH[$spelled_number.text]
-  | sequence_number   -> DAY_OF_MONTH[$sequence_number.text]
-  | one_to_thirty_one -> DAY_OF_MONTH[$one_to_thirty_one.text]
+  : spelled_number_1_to_31    -> DAY_OF_MONTH[$spelled_number_1_to_31.text]
+  | spelled_sequence_1_to_31   -> DAY_OF_MONTH[$spelled_sequence_1_to_31.text]
+  | numeric_1_to_31 -> DAY_OF_MONTH[$numeric_1_to_31.text]
   ;
   
 day_of_week
@@ -155,7 +155,7 @@ relative_suffix
   
 year
   options{backtrack=true;}
-  : '\''? zero_to_ninety_nine -> YEAR[$zero_to_ninety_nine.text]
+  : '\''? numeric_0_to_99 -> YEAR[$numeric_0_to_99.text]
   | ('in the' YEAR)? four_digits -> YEAR[$four_digits.text]
   ;
   
@@ -165,11 +165,11 @@ date_separator
   ;
 
 hours
-  : zero_to_twenty_three -> HOURS[$zero_to_twenty_three.text]
+  : numeric_0_to_23 -> HOURS[$numeric_0_to_23.text]
   ;
   
 minutes
-  : zero_to_fifty_nine -> MINUTES[$zero_to_fifty_nine.text]
+  : numeric_0_to_59 -> MINUTES[$numeric_0_to_59.text]
   ;
   
 meridian_indicator
@@ -178,7 +178,7 @@ meridian_indicator
   ;
 
 // a number between 1 and 31 spelled-out (one, twenty-eight, etc.)
-spelled_number
+spelled_number_1_to_31
   : ONE        -> INTEGER["1"]
   | TWO        -> INTEGER["2"]
   | THREE      -> INTEGER["3"]
@@ -212,14 +212,14 @@ spelled_number
   | THIRTY DASH? ONE   -> INTEGER["31"]
   ;
   
-spelled_or_natural_number
-  : spelled_number
-  | one_to_thirty_one
+spelled_or_numeric_1_to_31
+  : spelled_number_1_to_31
+  | numeric_1_to_31
   ;
   
 // a number in sequence between 1 and 31, either spelled-out
 // or suffixed (first, 2nd, twenty-first, etc)
-sequence_number
+spelled_sequence_1_to_31
   : FIRST       -> INTEGER["1"]
   | SECOND      -> INTEGER["2"]
   | THIRD       -> INTEGER["3"]
@@ -255,24 +255,24 @@ sequence_number
   
 // any 4 subsequent digits
 four_digits
-  : zero_to_ninety_nine
+  : numeric_0_to_99
   | THREE_DIGIT -> INTEGER[$THREE_DIGIT.text]
   | FOUR_DIGIT  -> INTEGER[$FOUR_DIGIT.text]
   ;
   
-one_to_twelve
-  : ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text]
+numeric_1_to_12
+  : ONE_TO_TWELVE -> INTEGER[$numeric_1_to_12.text]
   ;
   
 // number between 0 and 23 with an optional 0 prefix for numbers 0-9
-zero_to_twenty_three
+numeric_0_to_23
   : TWO_ZEROS                -> INTEGER[$TWO_ZEROS.text]
   | ONE_TO_TWELVE            -> INTEGER[$ONE_TO_TWELVE.text]
   | THIRTEEN_TO_TWENTY_THREE -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text]
   ;
   
 // number between 0 and 59 with an optional 0 prefix for numbers 0-9
-zero_to_fifty_nine
+numeric_0_to_59
   : TWO_ZEROS                 -> INTEGER["0"]
   | ONE_TO_TWELVE             -> INTEGER[$ONE_TO_TWELVE.text]
   | THIRTEEN_TO_TWENTY_THREE  -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text]
@@ -281,7 +281,7 @@ zero_to_fifty_nine
   ;
   
 // number between 0 and 99 with an optional 0 prefix for numbers 0-9
-zero_to_ninety_nine
+numeric_0_to_99
   : TWO_ZEROS                 -> INTEGER[$TWO_ZEROS.text]
   | ONE_TO_TWELVE             -> INTEGER[$ONE_TO_TWELVE.text]
   | THIRTEEN_TO_TWENTY_THREE  -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text]
@@ -291,7 +291,7 @@ zero_to_ninety_nine
   ;
   
 // number between 1 and 31 with an optional 0 prefix for numbers 0-9
-one_to_thirty_one
+numeric_1_to_31
   : ONE_TO_TWELVE             -> INTEGER[$ONE_TO_TWELVE.text]
   | THIRTEEN_TO_TWENTY_THREE  -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text]
   | TWENTY_FOUR_TO_THIRTY_ONE -> INTEGER[$TWENTY_FOUR_TO_THIRTY_ONE.text]

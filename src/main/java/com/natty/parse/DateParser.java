@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g 2010-01-29 00:57:21
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g 2010-01-29 13:56:24
  package com.natty.parse; 
 
 import org.antlr.runtime.*;
@@ -330,7 +330,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: time, date
+                    // elements: date, time
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -563,7 +563,7 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "relative_date"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:42:1: relative_date : ( today_or_tomorrow | relative_prefix modifiable_target -> ^( RELATIVE_DATE relative_prefix modifiable_target ) | spelled_or_natural_number modifiable_target relative_suffix -> ^( RELATIVE_DATE relative_suffix spelled_or_natural_number modifiable_target ) );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:42:1: relative_date : ( today_or_tomorrow | relative_prefix modifiable_target -> ^( RELATIVE_DATE relative_prefix modifiable_target ) | spelled_or_numeric_1_to_31 modifiable_target relative_suffix -> ^( RELATIVE_DATE relative_suffix spelled_or_numeric_1_to_31 modifiable_target ) );
     public final DateParser.relative_date_return relative_date() throws RecognitionException {
         DateParser.relative_date_return retval = new DateParser.relative_date_return();
         retval.start = input.LT(1);
@@ -576,7 +576,7 @@ public class DateParser extends Parser {
 
         DateParser.modifiable_target_return modifiable_target13 = null;
 
-        DateParser.spelled_or_natural_number_return spelled_or_natural_number14 = null;
+        DateParser.spelled_or_numeric_1_to_31_return spelled_or_numeric_1_to_3114 = null;
 
         DateParser.modifiable_target_return modifiable_target15 = null;
 
@@ -585,10 +585,10 @@ public class DateParser extends Parser {
 
         RewriteRuleSubtreeStream stream_relative_suffix=new RewriteRuleSubtreeStream(adaptor,"rule relative_suffix");
         RewriteRuleSubtreeStream stream_relative_prefix=new RewriteRuleSubtreeStream(adaptor,"rule relative_prefix");
-        RewriteRuleSubtreeStream stream_spelled_or_natural_number=new RewriteRuleSubtreeStream(adaptor,"rule spelled_or_natural_number");
+        RewriteRuleSubtreeStream stream_spelled_or_numeric_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule spelled_or_numeric_1_to_31");
         RewriteRuleSubtreeStream stream_modifiable_target=new RewriteRuleSubtreeStream(adaptor,"rule modifiable_target");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:43:3: ( today_or_tomorrow | relative_prefix modifiable_target -> ^( RELATIVE_DATE relative_prefix modifiable_target ) | spelled_or_natural_number modifiable_target relative_suffix -> ^( RELATIVE_DATE relative_suffix spelled_or_natural_number modifiable_target ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:43:3: ( today_or_tomorrow | relative_prefix modifiable_target -> ^( RELATIVE_DATE relative_prefix modifiable_target ) | spelled_or_numeric_1_to_31 modifiable_target relative_suffix -> ^( RELATIVE_DATE relative_suffix spelled_or_numeric_1_to_31 modifiable_target ) )
             int alt6=3;
             switch ( input.LA(1) ) {
             case TODAY:
@@ -680,7 +680,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: modifiable_target, relative_prefix
+                    // elements: relative_prefix, modifiable_target
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -710,14 +710,14 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:48:5: spelled_or_natural_number modifiable_target relative_suffix
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:48:5: spelled_or_numeric_1_to_31 modifiable_target relative_suffix
                     {
-                    pushFollow(FOLLOW_spelled_or_natural_number_in_relative_date268);
-                    spelled_or_natural_number14=spelled_or_natural_number();
+                    pushFollow(FOLLOW_spelled_or_numeric_1_to_31_in_relative_date268);
+                    spelled_or_numeric_1_to_3114=spelled_or_numeric_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_spelled_or_natural_number.add(spelled_or_natural_number14.getTree());
+                    if ( state.backtracking==0 ) stream_spelled_or_numeric_1_to_31.add(spelled_or_numeric_1_to_3114.getTree());
                     pushFollow(FOLLOW_modifiable_target_in_relative_date270);
                     modifiable_target15=modifiable_target();
 
@@ -733,7 +733,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: spelled_or_natural_number, modifiable_target, relative_suffix
+                    // elements: relative_suffix, spelled_or_numeric_1_to_31, modifiable_target
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -744,15 +744,15 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 49:5: -> ^( RELATIVE_DATE relative_suffix spelled_or_natural_number modifiable_target )
+                    // 49:5: -> ^( RELATIVE_DATE relative_suffix spelled_or_numeric_1_to_31 modifiable_target )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:49:8: ^( RELATIVE_DATE relative_suffix spelled_or_natural_number modifiable_target )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:49:8: ^( RELATIVE_DATE relative_suffix spelled_or_numeric_1_to_31 modifiable_target )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(RELATIVE_DATE, "RELATIVE_DATE"), root_1);
 
                         adaptor.addChild(root_1, stream_relative_suffix.nextTree());
-                        adaptor.addChild(root_1, stream_spelled_or_natural_number.nextTree());
+                        adaptor.addChild(root_1, stream_spelled_or_numeric_1_to_31.nextTree());
                         adaptor.addChild(root_1, stream_modifiable_target.nextTree());
 
                         adaptor.addChild(root_0, root_1);
@@ -791,7 +791,7 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "explicit_date"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:53:1: explicit_date options {backtrack=true; } : ( one_to_twelve date_separator one_to_thirty_one ( date_separator four_digits )? -> ^( EXPLICIT_DATE one_to_thirty_one one_to_thirty_one ( four_digits )? ) | four_digits date_separator one_to_twelve date_separator one_to_thirty_one -> ^( EXPLICIT_DATE one_to_twelve one_to_thirty_one four_digits ) | month day_of_month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) | day_of_month ( 'of' )? month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:53:1: explicit_date options {backtrack=true; } : ( numeric_1_to_12 date_separator numeric_1_to_31 ( date_separator four_digits )? -> ^( EXPLICIT_DATE numeric_1_to_31 numeric_1_to_31 ( four_digits )? ) | four_digits date_separator numeric_1_to_12 date_separator numeric_1_to_31 -> ^( EXPLICIT_DATE numeric_1_to_12 numeric_1_to_31 four_digits ) | month day_of_month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) | day_of_month ( 'of' )? month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) );
     public final DateParser.explicit_date_return explicit_date() throws RecognitionException {
         DateParser.explicit_date_return retval = new DateParser.explicit_date_return();
         retval.start = input.LT(1);
@@ -801,11 +801,11 @@ public class DateParser extends Parser {
         Token char_literal29=null;
         Token string_literal32=null;
         Token char_literal34=null;
-        DateParser.one_to_twelve_return one_to_twelve17 = null;
+        DateParser.numeric_1_to_12_return numeric_1_to_1217 = null;
 
         DateParser.date_separator_return date_separator18 = null;
 
-        DateParser.one_to_thirty_one_return one_to_thirty_one19 = null;
+        DateParser.numeric_1_to_31_return numeric_1_to_3119 = null;
 
         DateParser.date_separator_return date_separator20 = null;
 
@@ -815,11 +815,11 @@ public class DateParser extends Parser {
 
         DateParser.date_separator_return date_separator23 = null;
 
-        DateParser.one_to_twelve_return one_to_twelve24 = null;
+        DateParser.numeric_1_to_12_return numeric_1_to_1224 = null;
 
         DateParser.date_separator_return date_separator25 = null;
 
-        DateParser.one_to_thirty_one_return one_to_thirty_one26 = null;
+        DateParser.numeric_1_to_31_return numeric_1_to_3126 = null;
 
         DateParser.month_return month27 = null;
 
@@ -841,37 +841,37 @@ public class DateParser extends Parser {
         RewriteRuleTokenStream stream_113=new RewriteRuleTokenStream(adaptor,"token 113");
         RewriteRuleSubtreeStream stream_four_digits=new RewriteRuleSubtreeStream(adaptor,"rule four_digits");
         RewriteRuleSubtreeStream stream_month=new RewriteRuleSubtreeStream(adaptor,"rule month");
-        RewriteRuleSubtreeStream stream_one_to_thirty_one=new RewriteRuleSubtreeStream(adaptor,"rule one_to_thirty_one");
         RewriteRuleSubtreeStream stream_year=new RewriteRuleSubtreeStream(adaptor,"rule year");
         RewriteRuleSubtreeStream stream_day_of_month=new RewriteRuleSubtreeStream(adaptor,"rule day_of_month");
-        RewriteRuleSubtreeStream stream_one_to_twelve=new RewriteRuleSubtreeStream(adaptor,"rule one_to_twelve");
+        RewriteRuleSubtreeStream stream_numeric_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule numeric_1_to_31");
+        RewriteRuleSubtreeStream stream_numeric_1_to_12=new RewriteRuleSubtreeStream(adaptor,"rule numeric_1_to_12");
         RewriteRuleSubtreeStream stream_date_separator=new RewriteRuleSubtreeStream(adaptor,"rule date_separator");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:55:3: ( one_to_twelve date_separator one_to_thirty_one ( date_separator four_digits )? -> ^( EXPLICIT_DATE one_to_thirty_one one_to_thirty_one ( four_digits )? ) | four_digits date_separator one_to_twelve date_separator one_to_thirty_one -> ^( EXPLICIT_DATE one_to_twelve one_to_thirty_one four_digits ) | month day_of_month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) | day_of_month ( 'of' )? month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:55:3: ( numeric_1_to_12 date_separator numeric_1_to_31 ( date_separator four_digits )? -> ^( EXPLICIT_DATE numeric_1_to_31 numeric_1_to_31 ( four_digits )? ) | four_digits date_separator numeric_1_to_12 date_separator numeric_1_to_31 -> ^( EXPLICIT_DATE numeric_1_to_12 numeric_1_to_31 four_digits ) | month day_of_month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) | day_of_month ( 'of' )? month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) )
             int alt13=4;
             alt13 = dfa13.predict(input);
             switch (alt13) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:55:5: one_to_twelve date_separator one_to_thirty_one ( date_separator four_digits )?
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:55:5: numeric_1_to_12 date_separator numeric_1_to_31 ( date_separator four_digits )?
                     {
-                    pushFollow(FOLLOW_one_to_twelve_in_explicit_date312);
-                    one_to_twelve17=one_to_twelve();
+                    pushFollow(FOLLOW_numeric_1_to_12_in_explicit_date312);
+                    numeric_1_to_1217=numeric_1_to_12();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_one_to_twelve.add(one_to_twelve17.getTree());
+                    if ( state.backtracking==0 ) stream_numeric_1_to_12.add(numeric_1_to_1217.getTree());
                     pushFollow(FOLLOW_date_separator_in_explicit_date314);
                     date_separator18=date_separator();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_date_separator.add(date_separator18.getTree());
-                    pushFollow(FOLLOW_one_to_thirty_one_in_explicit_date316);
-                    one_to_thirty_one19=one_to_thirty_one();
+                    pushFollow(FOLLOW_numeric_1_to_31_in_explicit_date316);
+                    numeric_1_to_3119=numeric_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_one_to_thirty_one.add(one_to_thirty_one19.getTree());
+                    if ( state.backtracking==0 ) stream_numeric_1_to_31.add(numeric_1_to_3119.getTree());
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:55:52: ( date_separator four_digits )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
@@ -904,7 +904,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: four_digits, one_to_thirty_one, one_to_thirty_one
+                    // elements: numeric_1_to_31, four_digits, numeric_1_to_31
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -915,16 +915,16 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 56:5: -> ^( EXPLICIT_DATE one_to_thirty_one one_to_thirty_one ( four_digits )? )
+                    // 56:5: -> ^( EXPLICIT_DATE numeric_1_to_31 numeric_1_to_31 ( four_digits )? )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:56:8: ^( EXPLICIT_DATE one_to_thirty_one one_to_thirty_one ( four_digits )? )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:56:8: ^( EXPLICIT_DATE numeric_1_to_31 numeric_1_to_31 ( four_digits )? )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_DATE, "EXPLICIT_DATE"), root_1);
 
-                        adaptor.addChild(root_1, stream_one_to_thirty_one.nextTree());
-                        adaptor.addChild(root_1, stream_one_to_thirty_one.nextTree());
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:56:60: ( four_digits )?
+                        adaptor.addChild(root_1, stream_numeric_1_to_31.nextTree());
+                        adaptor.addChild(root_1, stream_numeric_1_to_31.nextTree());
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:56:56: ( four_digits )?
                         if ( stream_four_digits.hasNext() ) {
                             adaptor.addChild(root_1, stream_four_digits.nextTree());
 
@@ -940,7 +940,7 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:58:5: four_digits date_separator one_to_twelve date_separator one_to_thirty_one
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:58:5: four_digits date_separator numeric_1_to_12 date_separator numeric_1_to_31
                     {
                     pushFollow(FOLLOW_four_digits_in_explicit_date351);
                     four_digits22=four_digits();
@@ -954,28 +954,28 @@ public class DateParser extends Parser {
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_date_separator.add(date_separator23.getTree());
-                    pushFollow(FOLLOW_one_to_twelve_in_explicit_date355);
-                    one_to_twelve24=one_to_twelve();
+                    pushFollow(FOLLOW_numeric_1_to_12_in_explicit_date355);
+                    numeric_1_to_1224=numeric_1_to_12();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_one_to_twelve.add(one_to_twelve24.getTree());
+                    if ( state.backtracking==0 ) stream_numeric_1_to_12.add(numeric_1_to_1224.getTree());
                     pushFollow(FOLLOW_date_separator_in_explicit_date357);
                     date_separator25=date_separator();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_date_separator.add(date_separator25.getTree());
-                    pushFollow(FOLLOW_one_to_thirty_one_in_explicit_date359);
-                    one_to_thirty_one26=one_to_thirty_one();
+                    pushFollow(FOLLOW_numeric_1_to_31_in_explicit_date359);
+                    numeric_1_to_3126=numeric_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_one_to_thirty_one.add(one_to_thirty_one26.getTree());
+                    if ( state.backtracking==0 ) stream_numeric_1_to_31.add(numeric_1_to_3126.getTree());
 
 
                     // AST REWRITE
-                    // elements: one_to_twelve, four_digits, one_to_thirty_one
+                    // elements: numeric_1_to_31, numeric_1_to_12, four_digits
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -986,15 +986,15 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 59:5: -> ^( EXPLICIT_DATE one_to_twelve one_to_thirty_one four_digits )
+                    // 59:5: -> ^( EXPLICIT_DATE numeric_1_to_12 numeric_1_to_31 four_digits )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:59:8: ^( EXPLICIT_DATE one_to_twelve one_to_thirty_one four_digits )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:59:8: ^( EXPLICIT_DATE numeric_1_to_12 numeric_1_to_31 four_digits )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_DATE, "EXPLICIT_DATE"), root_1);
 
-                        adaptor.addChild(root_1, stream_one_to_twelve.nextTree());
-                        adaptor.addChild(root_1, stream_one_to_thirty_one.nextTree());
+                        adaptor.addChild(root_1, stream_numeric_1_to_12.nextTree());
+                        adaptor.addChild(root_1, stream_numeric_1_to_31.nextTree());
                         adaptor.addChild(root_1, stream_four_digits.nextTree());
 
                         adaptor.addChild(root_0, root_1);
@@ -1091,7 +1091,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: day_of_month, year, month
+                    // elements: year, month, day_of_month
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1232,7 +1232,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: day_of_month, year, month
+                    // elements: month, year, day_of_month
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1295,7 +1295,7 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "explicit_time"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:69:1: explicit_time : ( zero_to_twenty_three ( meridian_indicator )? -> ^( EXPLICIT_TIME zero_to_twenty_three MINUTES[\"0\"] ( meridian_indicator )? ) | zero_to_twenty_three ':' zero_to_fifty_nine ( meridian_indicator )? -> ^( EXPLICIT_TIME zero_to_twenty_three zero_to_fifty_nine ( meridian_indicator )? ) | time_identifier );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:69:1: explicit_time : ( numeric_0_to_23 ( meridian_indicator )? -> ^( EXPLICIT_TIME numeric_0_to_23 MINUTES[\"0\"] ( meridian_indicator )? ) | numeric_0_to_23 ':' numeric_0_to_59 ( meridian_indicator )? -> ^( EXPLICIT_TIME numeric_0_to_23 numeric_0_to_59 ( meridian_indicator )? ) | time_identifier );
     public final DateParser.explicit_time_return explicit_time() throws RecognitionException {
         DateParser.explicit_time_return retval = new DateParser.explicit_time_return();
         retval.start = input.LT(1);
@@ -1303,13 +1303,13 @@ public class DateParser extends Parser {
         Object root_0 = null;
 
         Token char_literal39=null;
-        DateParser.zero_to_twenty_three_return zero_to_twenty_three36 = null;
+        DateParser.numeric_0_to_23_return numeric_0_to_2336 = null;
 
         DateParser.meridian_indicator_return meridian_indicator37 = null;
 
-        DateParser.zero_to_twenty_three_return zero_to_twenty_three38 = null;
+        DateParser.numeric_0_to_23_return numeric_0_to_2338 = null;
 
-        DateParser.zero_to_fifty_nine_return zero_to_fifty_nine40 = null;
+        DateParser.numeric_0_to_59_return numeric_0_to_5940 = null;
 
         DateParser.meridian_indicator_return meridian_indicator41 = null;
 
@@ -1319,10 +1319,10 @@ public class DateParser extends Parser {
         Object char_literal39_tree=null;
         RewriteRuleTokenStream stream_115=new RewriteRuleTokenStream(adaptor,"token 115");
         RewriteRuleSubtreeStream stream_meridian_indicator=new RewriteRuleSubtreeStream(adaptor,"rule meridian_indicator");
-        RewriteRuleSubtreeStream stream_zero_to_twenty_three=new RewriteRuleSubtreeStream(adaptor,"rule zero_to_twenty_three");
-        RewriteRuleSubtreeStream stream_zero_to_fifty_nine=new RewriteRuleSubtreeStream(adaptor,"rule zero_to_fifty_nine");
+        RewriteRuleSubtreeStream stream_numeric_0_to_59=new RewriteRuleSubtreeStream(adaptor,"rule numeric_0_to_59");
+        RewriteRuleSubtreeStream stream_numeric_0_to_23=new RewriteRuleSubtreeStream(adaptor,"rule numeric_0_to_23");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:71:3: ( zero_to_twenty_three ( meridian_indicator )? -> ^( EXPLICIT_TIME zero_to_twenty_three MINUTES[\"0\"] ( meridian_indicator )? ) | zero_to_twenty_three ':' zero_to_fifty_nine ( meridian_indicator )? -> ^( EXPLICIT_TIME zero_to_twenty_three zero_to_fifty_nine ( meridian_indicator )? ) | time_identifier )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:71:3: ( numeric_0_to_23 ( meridian_indicator )? -> ^( EXPLICIT_TIME numeric_0_to_23 MINUTES[\"0\"] ( meridian_indicator )? ) | numeric_0_to_23 ':' numeric_0_to_59 ( meridian_indicator )? -> ^( EXPLICIT_TIME numeric_0_to_23 numeric_0_to_59 ( meridian_indicator )? ) | time_identifier )
             int alt16=3;
             switch ( input.LA(1) ) {
             case TWO_ZEROS:
@@ -1398,15 +1398,15 @@ public class DateParser extends Parser {
 
             switch (alt16) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:71:5: zero_to_twenty_three ( meridian_indicator )?
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:71:5: numeric_0_to_23 ( meridian_indicator )?
                     {
-                    pushFollow(FOLLOW_zero_to_twenty_three_in_explicit_time476);
-                    zero_to_twenty_three36=zero_to_twenty_three();
+                    pushFollow(FOLLOW_numeric_0_to_23_in_explicit_time476);
+                    numeric_0_to_2336=numeric_0_to_23();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_zero_to_twenty_three.add(zero_to_twenty_three36.getTree());
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:71:26: ( meridian_indicator )?
+                    if ( state.backtracking==0 ) stream_numeric_0_to_23.add(numeric_0_to_2336.getTree());
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:71:21: ( meridian_indicator )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -1415,7 +1415,7 @@ public class DateParser extends Parser {
                     }
                     switch (alt14) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:71:26: meridian_indicator
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:71:21: meridian_indicator
                             {
                             pushFollow(FOLLOW_meridian_indicator_in_explicit_time478);
                             meridian_indicator37=meridian_indicator();
@@ -1432,7 +1432,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: meridian_indicator, zero_to_twenty_three
+                    // elements: meridian_indicator, numeric_0_to_23
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1443,16 +1443,16 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 72:5: -> ^( EXPLICIT_TIME zero_to_twenty_three MINUTES[\"0\"] ( meridian_indicator )? )
+                    // 72:5: -> ^( EXPLICIT_TIME numeric_0_to_23 MINUTES[\"0\"] ( meridian_indicator )? )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:72:8: ^( EXPLICIT_TIME zero_to_twenty_three MINUTES[\"0\"] ( meridian_indicator )? )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:72:8: ^( EXPLICIT_TIME numeric_0_to_23 MINUTES[\"0\"] ( meridian_indicator )? )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_TIME, "EXPLICIT_TIME"), root_1);
 
-                        adaptor.addChild(root_1, stream_zero_to_twenty_three.nextTree());
+                        adaptor.addChild(root_1, stream_numeric_0_to_23.nextTree());
                         adaptor.addChild(root_1, (Object)adaptor.create(MINUTES, "0"));
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:72:58: ( meridian_indicator )?
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:72:53: ( meridian_indicator )?
                         if ( stream_meridian_indicator.hasNext() ) {
                             adaptor.addChild(root_1, stream_meridian_indicator.nextTree());
 
@@ -1468,24 +1468,24 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:75:5: zero_to_twenty_three ':' zero_to_fifty_nine ( meridian_indicator )?
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:75:5: numeric_0_to_23 ':' numeric_0_to_59 ( meridian_indicator )?
                     {
-                    pushFollow(FOLLOW_zero_to_twenty_three_in_explicit_time510);
-                    zero_to_twenty_three38=zero_to_twenty_three();
+                    pushFollow(FOLLOW_numeric_0_to_23_in_explicit_time510);
+                    numeric_0_to_2338=numeric_0_to_23();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_zero_to_twenty_three.add(zero_to_twenty_three38.getTree());
+                    if ( state.backtracking==0 ) stream_numeric_0_to_23.add(numeric_0_to_2338.getTree());
                     char_literal39=(Token)match(input,115,FOLLOW_115_in_explicit_time512); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_115.add(char_literal39);
 
-                    pushFollow(FOLLOW_zero_to_fifty_nine_in_explicit_time514);
-                    zero_to_fifty_nine40=zero_to_fifty_nine();
+                    pushFollow(FOLLOW_numeric_0_to_59_in_explicit_time514);
+                    numeric_0_to_5940=numeric_0_to_59();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_zero_to_fifty_nine.add(zero_to_fifty_nine40.getTree());
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:75:49: ( meridian_indicator )?
+                    if ( state.backtracking==0 ) stream_numeric_0_to_59.add(numeric_0_to_5940.getTree());
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:75:41: ( meridian_indicator )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -1494,7 +1494,7 @@ public class DateParser extends Parser {
                     }
                     switch (alt15) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:75:49: meridian_indicator
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:75:41: meridian_indicator
                             {
                             pushFollow(FOLLOW_meridian_indicator_in_explicit_time516);
                             meridian_indicator41=meridian_indicator();
@@ -1511,7 +1511,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: meridian_indicator, zero_to_fifty_nine, zero_to_twenty_three
+                    // elements: numeric_0_to_59, numeric_0_to_23, meridian_indicator
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1522,16 +1522,16 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 76:5: -> ^( EXPLICIT_TIME zero_to_twenty_three zero_to_fifty_nine ( meridian_indicator )? )
+                    // 76:5: -> ^( EXPLICIT_TIME numeric_0_to_23 numeric_0_to_59 ( meridian_indicator )? )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:76:8: ^( EXPLICIT_TIME zero_to_twenty_three zero_to_fifty_nine ( meridian_indicator )? )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:76:8: ^( EXPLICIT_TIME numeric_0_to_23 numeric_0_to_59 ( meridian_indicator )? )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_TIME, "EXPLICIT_TIME"), root_1);
 
-                        adaptor.addChild(root_1, stream_zero_to_twenty_three.nextTree());
-                        adaptor.addChild(root_1, stream_zero_to_fifty_nine.nextTree());
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:76:64: ( meridian_indicator )?
+                        adaptor.addChild(root_1, stream_numeric_0_to_23.nextTree());
+                        adaptor.addChild(root_1, stream_numeric_0_to_59.nextTree());
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:76:56: ( meridian_indicator )?
                         if ( stream_meridian_indicator.hasNext() ) {
                             adaptor.addChild(root_1, stream_meridian_indicator.nextTree());
 
@@ -2082,25 +2082,25 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "day_of_month"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:96:1: day_of_month : ( spelled_number -> DAY_OF_MONTH[$spelled_number.text] | sequence_number -> DAY_OF_MONTH[$sequence_number.text] | one_to_thirty_one -> DAY_OF_MONTH[$one_to_thirty_one.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:96:1: day_of_month : ( spelled_number_1_to_31 -> DAY_OF_MONTH[$spelled_number_1_to_31.text] | spelled_sequence_1_to_31 -> DAY_OF_MONTH[$spelled_sequence_1_to_31.text] | numeric_1_to_31 -> DAY_OF_MONTH[$numeric_1_to_31.text] );
     public final DateParser.day_of_month_return day_of_month() throws RecognitionException {
         DateParser.day_of_month_return retval = new DateParser.day_of_month_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        DateParser.spelled_number_return spelled_number55 = null;
+        DateParser.spelled_number_1_to_31_return spelled_number_1_to_3155 = null;
 
-        DateParser.sequence_number_return sequence_number56 = null;
+        DateParser.spelled_sequence_1_to_31_return spelled_sequence_1_to_3156 = null;
 
-        DateParser.one_to_thirty_one_return one_to_thirty_one57 = null;
+        DateParser.numeric_1_to_31_return numeric_1_to_3157 = null;
 
 
-        RewriteRuleSubtreeStream stream_sequence_number=new RewriteRuleSubtreeStream(adaptor,"rule sequence_number");
-        RewriteRuleSubtreeStream stream_one_to_thirty_one=new RewriteRuleSubtreeStream(adaptor,"rule one_to_thirty_one");
-        RewriteRuleSubtreeStream stream_spelled_number=new RewriteRuleSubtreeStream(adaptor,"rule spelled_number");
+        RewriteRuleSubtreeStream stream_spelled_sequence_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule spelled_sequence_1_to_31");
+        RewriteRuleSubtreeStream stream_spelled_number_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule spelled_number_1_to_31");
+        RewriteRuleSubtreeStream stream_numeric_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule numeric_1_to_31");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:97:3: ( spelled_number -> DAY_OF_MONTH[$spelled_number.text] | sequence_number -> DAY_OF_MONTH[$sequence_number.text] | one_to_thirty_one -> DAY_OF_MONTH[$one_to_thirty_one.text] )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:97:3: ( spelled_number_1_to_31 -> DAY_OF_MONTH[$spelled_number_1_to_31.text] | spelled_sequence_1_to_31 -> DAY_OF_MONTH[$spelled_sequence_1_to_31.text] | numeric_1_to_31 -> DAY_OF_MONTH[$numeric_1_to_31.text] )
             int alt18=3;
             switch ( input.LA(1) ) {
             case ONE:
@@ -2334,14 +2334,14 @@ public class DateParser extends Parser {
 
             switch (alt18) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:97:5: spelled_number
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:97:5: spelled_number_1_to_31
                     {
-                    pushFollow(FOLLOW_spelled_number_in_day_of_month732);
-                    spelled_number55=spelled_number();
+                    pushFollow(FOLLOW_spelled_number_1_to_31_in_day_of_month734);
+                    spelled_number_1_to_3155=spelled_number_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_spelled_number.add(spelled_number55.getTree());
+                    if ( state.backtracking==0 ) stream_spelled_number_1_to_31.add(spelled_number_1_to_3155.getTree());
 
 
                     // AST REWRITE
@@ -2356,9 +2356,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 97:23: -> DAY_OF_MONTH[$spelled_number.text]
+                    // 97:31: -> DAY_OF_MONTH[$spelled_number_1_to_31.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(DAY_OF_MONTH, (spelled_number55!=null?input.toString(spelled_number55.start,spelled_number55.stop):null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(DAY_OF_MONTH, (spelled_number_1_to_3155!=null?input.toString(spelled_number_1_to_3155.start,spelled_number_1_to_3155.stop):null)));
 
                     }
 
@@ -2366,14 +2366,14 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:98:5: sequence_number
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:98:5: spelled_sequence_1_to_31
                     {
-                    pushFollow(FOLLOW_sequence_number_in_day_of_month746);
-                    sequence_number56=sequence_number();
+                    pushFollow(FOLLOW_spelled_sequence_1_to_31_in_day_of_month748);
+                    spelled_sequence_1_to_3156=spelled_sequence_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_sequence_number.add(sequence_number56.getTree());
+                    if ( state.backtracking==0 ) stream_spelled_sequence_1_to_31.add(spelled_sequence_1_to_3156.getTree());
 
 
                     // AST REWRITE
@@ -2388,9 +2388,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 98:23: -> DAY_OF_MONTH[$sequence_number.text]
+                    // 98:32: -> DAY_OF_MONTH[$spelled_sequence_1_to_31.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(DAY_OF_MONTH, (sequence_number56!=null?input.toString(sequence_number56.start,sequence_number56.stop):null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(DAY_OF_MONTH, (spelled_sequence_1_to_3156!=null?input.toString(spelled_sequence_1_to_3156.start,spelled_sequence_1_to_3156.stop):null)));
 
                     }
 
@@ -2398,14 +2398,14 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:99:5: one_to_thirty_one
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:99:5: numeric_1_to_31
                     {
-                    pushFollow(FOLLOW_one_to_thirty_one_in_day_of_month759);
-                    one_to_thirty_one57=one_to_thirty_one();
+                    pushFollow(FOLLOW_numeric_1_to_31_in_day_of_month761);
+                    numeric_1_to_3157=numeric_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_one_to_thirty_one.add(one_to_thirty_one57.getTree());
+                    if ( state.backtracking==0 ) stream_numeric_1_to_31.add(numeric_1_to_3157.getTree());
 
 
                     // AST REWRITE
@@ -2420,9 +2420,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 99:23: -> DAY_OF_MONTH[$one_to_thirty_one.text]
+                    // 99:21: -> DAY_OF_MONTH[$numeric_1_to_31.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(DAY_OF_MONTH, (one_to_thirty_one57!=null?input.toString(one_to_thirty_one57.start,one_to_thirty_one57.stop):null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(DAY_OF_MONTH, (numeric_1_to_3157!=null?input.toString(numeric_1_to_3157.start,numeric_1_to_3157.stop):null)));
 
                     }
 
@@ -2538,7 +2538,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:103:5: SUNDAY
                     {
-                    SUNDAY58=(Token)match(input,SUNDAY,FOLLOW_SUNDAY_in_day_of_week779); if (state.failed) return retval; 
+                    SUNDAY58=(Token)match(input,SUNDAY,FOLLOW_SUNDAY_in_day_of_week781); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SUNDAY.add(SUNDAY58);
 
 
@@ -2567,7 +2567,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:104:5: MONDAY
                     {
-                    MONDAY59=(Token)match(input,MONDAY,FOLLOW_MONDAY_in_day_of_week793); if (state.failed) return retval; 
+                    MONDAY59=(Token)match(input,MONDAY,FOLLOW_MONDAY_in_day_of_week795); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_MONDAY.add(MONDAY59);
 
 
@@ -2596,7 +2596,7 @@ public class DateParser extends Parser {
                 case 3 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:105:5: TUESDAY
                     {
-                    TUESDAY60=(Token)match(input,TUESDAY,FOLLOW_TUESDAY_in_day_of_week807); if (state.failed) return retval; 
+                    TUESDAY60=(Token)match(input,TUESDAY,FOLLOW_TUESDAY_in_day_of_week809); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TUESDAY.add(TUESDAY60);
 
 
@@ -2625,7 +2625,7 @@ public class DateParser extends Parser {
                 case 4 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:106:5: WEDNESDAY
                     {
-                    WEDNESDAY61=(Token)match(input,WEDNESDAY,FOLLOW_WEDNESDAY_in_day_of_week820); if (state.failed) return retval; 
+                    WEDNESDAY61=(Token)match(input,WEDNESDAY,FOLLOW_WEDNESDAY_in_day_of_week822); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_WEDNESDAY.add(WEDNESDAY61);
 
 
@@ -2654,7 +2654,7 @@ public class DateParser extends Parser {
                 case 5 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:107:5: THURSDAY
                     {
-                    THURSDAY62=(Token)match(input,THURSDAY,FOLLOW_THURSDAY_in_day_of_week831); if (state.failed) return retval; 
+                    THURSDAY62=(Token)match(input,THURSDAY,FOLLOW_THURSDAY_in_day_of_week833); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THURSDAY.add(THURSDAY62);
 
 
@@ -2683,7 +2683,7 @@ public class DateParser extends Parser {
                 case 6 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:108:5: FRIDAY
                     {
-                    FRIDAY63=(Token)match(input,FRIDAY,FOLLOW_FRIDAY_in_day_of_week843); if (state.failed) return retval; 
+                    FRIDAY63=(Token)match(input,FRIDAY,FOLLOW_FRIDAY_in_day_of_week845); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FRIDAY.add(FRIDAY63);
 
 
@@ -2712,7 +2712,7 @@ public class DateParser extends Parser {
                 case 7 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:109:5: SATURDAY
                     {
-                    SATURDAY64=(Token)match(input,SATURDAY,FOLLOW_SATURDAY_in_day_of_week857); if (state.failed) return retval; 
+                    SATURDAY64=(Token)match(input,SATURDAY,FOLLOW_SATURDAY_in_day_of_week859); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SATURDAY.add(SATURDAY64);
 
 
@@ -2859,7 +2859,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:113:5: TODAY
                     {
-                    TODAY65=(Token)match(input,TODAY,FOLLOW_TODAY_in_today_or_tomorrow878); if (state.failed) return retval; 
+                    TODAY65=(Token)match(input,TODAY,FOLLOW_TODAY_in_today_or_tomorrow880); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TODAY.add(TODAY65);
 
 
@@ -2897,7 +2897,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:114:5: TOMORROW
                     {
-                    TOMORROW66=(Token)match(input,TOMORROW,FOLLOW_TOMORROW_in_today_or_tomorrow896); if (state.failed) return retval; 
+                    TOMORROW66=(Token)match(input,TOMORROW,FOLLOW_TOMORROW_in_today_or_tomorrow898); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TOMORROW.add(TOMORROW66);
 
 
@@ -2935,7 +2935,7 @@ public class DateParser extends Parser {
                 case 3 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:115:5: YESTERDAY
                     {
-                    YESTERDAY67=(Token)match(input,YESTERDAY,FOLLOW_YESTERDAY_in_today_or_tomorrow914); if (state.failed) return retval; 
+                    YESTERDAY67=(Token)match(input,YESTERDAY,FOLLOW_YESTERDAY_in_today_or_tomorrow916); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_YESTERDAY.add(YESTERDAY67);
 
 
@@ -2984,7 +2984,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:118:5: 'the'
                             {
-                            string_literal68=(Token)match(input,116,FOLLOW_116_in_today_or_tomorrow938); if (state.failed) return retval; 
+                            string_literal68=(Token)match(input,116,FOLLOW_116_in_today_or_tomorrow940); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_116.add(string_literal68);
 
 
@@ -2993,10 +2993,10 @@ public class DateParser extends Parser {
 
                     }
 
-                    string_literal69=(Token)match(input,117,FOLLOW_117_in_today_or_tomorrow941); if (state.failed) return retval; 
+                    string_literal69=(Token)match(input,117,FOLLOW_117_in_today_or_tomorrow943); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_117.add(string_literal69);
 
-                    TOMORROW70=(Token)match(input,TOMORROW,FOLLOW_TOMORROW_in_today_or_tomorrow943); if (state.failed) return retval; 
+                    TOMORROW70=(Token)match(input,TOMORROW,FOLLOW_TOMORROW_in_today_or_tomorrow945); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TOMORROW.add(TOMORROW70);
 
 
@@ -3045,7 +3045,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:119:5: 'the'
                             {
-                            string_literal71=(Token)match(input,116,FOLLOW_116_in_today_or_tomorrow961); if (state.failed) return retval; 
+                            string_literal71=(Token)match(input,116,FOLLOW_116_in_today_or_tomorrow963); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_116.add(string_literal71);
 
 
@@ -3054,10 +3054,10 @@ public class DateParser extends Parser {
 
                     }
 
-                    string_literal72=(Token)match(input,118,FOLLOW_118_in_today_or_tomorrow964); if (state.failed) return retval; 
+                    string_literal72=(Token)match(input,118,FOLLOW_118_in_today_or_tomorrow966); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_118.add(string_literal72);
 
-                    YESTERDAY73=(Token)match(input,YESTERDAY,FOLLOW_YESTERDAY_in_today_or_tomorrow966); if (state.failed) return retval; 
+                    YESTERDAY73=(Token)match(input,YESTERDAY,FOLLOW_YESTERDAY_in_today_or_tomorrow968); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_YESTERDAY.add(YESTERDAY73);
 
 
@@ -3177,7 +3177,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:123:5: DAY
                     {
-                    DAY74=(Token)match(input,DAY,FOLLOW_DAY_in_date_span993); if (state.failed) return retval; 
+                    DAY74=(Token)match(input,DAY,FOLLOW_DAY_in_date_span995); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_DAY.add(DAY74);
 
 
@@ -3206,7 +3206,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:124:5: WEEK
                     {
-                    WEEK75=(Token)match(input,WEEK,FOLLOW_WEEK_in_date_span1006); if (state.failed) return retval; 
+                    WEEK75=(Token)match(input,WEEK,FOLLOW_WEEK_in_date_span1008); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_WEEK.add(WEEK75);
 
 
@@ -3235,7 +3235,7 @@ public class DateParser extends Parser {
                 case 3 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:125:5: MONTH
                     {
-                    MONTH76=(Token)match(input,MONTH,FOLLOW_MONTH_in_date_span1018); if (state.failed) return retval; 
+                    MONTH76=(Token)match(input,MONTH,FOLLOW_MONTH_in_date_span1020); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_MONTH.add(MONTH76);
 
 
@@ -3264,7 +3264,7 @@ public class DateParser extends Parser {
                 case 4 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:126:5: YEAR
                     {
-                    YEAR77=(Token)match(input,YEAR,FOLLOW_YEAR_in_date_span1029); if (state.failed) return retval; 
+                    YEAR77=(Token)match(input,YEAR,FOLLOW_YEAR_in_date_span1031); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_YEAR.add(YEAR77);
 
 
@@ -3355,7 +3355,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:131:5: MIDNIGHT
                     {
-                    MIDNIGHT78=(Token)match(input,MIDNIGHT,FOLLOW_MIDNIGHT_in_time_identifier1051); if (state.failed) return retval; 
+                    MIDNIGHT78=(Token)match(input,MIDNIGHT,FOLLOW_MIDNIGHT_in_time_identifier1053); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_MIDNIGHT.add(MIDNIGHT78);
 
 
@@ -3394,7 +3394,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:132:5: NOON
                     {
-                    NOON79=(Token)match(input,NOON,FOLLOW_NOON_in_time_identifier1072); if (state.failed) return retval; 
+                    NOON79=(Token)match(input,NOON,FOLLOW_NOON_in_time_identifier1074); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NOON.add(NOON79);
 
 
@@ -3526,7 +3526,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_day_of_week_in_modifiable_target1107);
+                    pushFollow(FOLLOW_day_of_week_in_modifiable_target1109);
                     day_of_week80=day_of_week();
 
                     state._fsp--;
@@ -3540,7 +3540,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_date_span_in_modifiable_target1114);
+                    pushFollow(FOLLOW_date_span_in_modifiable_target1116);
                     date_span81=date_span();
 
                     state._fsp--;
@@ -3554,7 +3554,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_month_in_modifiable_target1120);
+                    pushFollow(FOLLOW_month_in_modifiable_target1122);
                     month82=month();
 
                     state._fsp--;
@@ -3716,7 +3716,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:143:5: 'this'
                             {
-                            string_literal83=(Token)match(input,119,FOLLOW_119_in_relative_prefix1135); if (state.failed) return retval; 
+                            string_literal83=(Token)match(input,119,FOLLOW_119_in_relative_prefix1137); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_119.add(string_literal83);
 
 
@@ -3725,7 +3725,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    string_literal84=(Token)match(input,120,FOLLOW_120_in_relative_prefix1138); if (state.failed) return retval; 
+                    string_literal84=(Token)match(input,120,FOLLOW_120_in_relative_prefix1140); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_120.add(string_literal84);
 
 
@@ -3767,7 +3767,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:144:5: 'this'
                             {
-                            string_literal85=(Token)match(input,119,FOLLOW_119_in_relative_prefix1159); if (state.failed) return retval; 
+                            string_literal85=(Token)match(input,119,FOLLOW_119_in_relative_prefix1161); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_119.add(string_literal85);
 
 
@@ -3776,7 +3776,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    string_literal86=(Token)match(input,121,FOLLOW_121_in_relative_prefix1162); if (state.failed) return retval; 
+                    string_literal86=(Token)match(input,121,FOLLOW_121_in_relative_prefix1164); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_121.add(string_literal86);
 
 
@@ -3818,7 +3818,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:145:5: 'this'
                             {
-                            string_literal87=(Token)match(input,119,FOLLOW_119_in_relative_prefix1183); if (state.failed) return retval; 
+                            string_literal87=(Token)match(input,119,FOLLOW_119_in_relative_prefix1185); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_119.add(string_literal87);
 
 
@@ -3827,7 +3827,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    string_literal88=(Token)match(input,122,FOLLOW_122_in_relative_prefix1186); if (state.failed) return retval; 
+                    string_literal88=(Token)match(input,122,FOLLOW_122_in_relative_prefix1188); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_122.add(string_literal88);
 
 
@@ -3869,7 +3869,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:146:5: 'this'
                             {
-                            string_literal89=(Token)match(input,119,FOLLOW_119_in_relative_prefix1207); if (state.failed) return retval; 
+                            string_literal89=(Token)match(input,119,FOLLOW_119_in_relative_prefix1209); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_119.add(string_literal89);
 
 
@@ -3878,7 +3878,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    string_literal90=(Token)match(input,123,FOLLOW_123_in_relative_prefix1210); if (state.failed) return retval; 
+                    string_literal90=(Token)match(input,123,FOLLOW_123_in_relative_prefix1212); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_123.add(string_literal90);
 
 
@@ -3920,7 +3920,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:147:5: 'this'
                             {
-                            string_literal91=(Token)match(input,119,FOLLOW_119_in_relative_prefix1229); if (state.failed) return retval; 
+                            string_literal91=(Token)match(input,119,FOLLOW_119_in_relative_prefix1231); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_119.add(string_literal91);
 
 
@@ -3929,7 +3929,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    string_literal92=(Token)match(input,124,FOLLOW_124_in_relative_prefix1232); if (state.failed) return retval; 
+                    string_literal92=(Token)match(input,124,FOLLOW_124_in_relative_prefix1234); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_124.add(string_literal92);
 
 
@@ -4022,7 +4022,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:152:5: 'from now'
                     {
-                    string_literal93=(Token)match(input,125,FOLLOW_125_in_relative_suffix1261); if (state.failed) return retval; 
+                    string_literal93=(Token)match(input,125,FOLLOW_125_in_relative_suffix1263); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_125.add(string_literal93);
 
 
@@ -4052,7 +4052,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:153:5: 'ago'
                     {
-                    string_literal94=(Token)match(input,126,FOLLOW_126_in_relative_suffix1275); if (state.failed) return retval; 
+                    string_literal94=(Token)match(input,126,FOLLOW_126_in_relative_suffix1277); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_126.add(string_literal94);
 
 
@@ -4107,7 +4107,7 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "year"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:156:1: year options {backtrack=true; } : ( ( '\\'' )? zero_to_ninety_nine -> YEAR[$zero_to_ninety_nine.text] | ( 'in the' YEAR )? four_digits -> YEAR[$four_digits.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:156:1: year options {backtrack=true; } : ( ( '\\'' )? numeric_0_to_99 -> YEAR[$numeric_0_to_99.text] | ( 'in the' YEAR )? four_digits -> YEAR[$four_digits.text] );
     public final DateParser.year_return year() throws RecognitionException {
         DateParser.year_return retval = new DateParser.year_return();
         retval.start = input.LT(1);
@@ -4117,7 +4117,7 @@ public class DateParser extends Parser {
         Token char_literal95=null;
         Token string_literal97=null;
         Token YEAR98=null;
-        DateParser.zero_to_ninety_nine_return zero_to_ninety_nine96 = null;
+        DateParser.numeric_0_to_99_return numeric_0_to_9996 = null;
 
         DateParser.four_digits_return four_digits99 = null;
 
@@ -4129,9 +4129,9 @@ public class DateParser extends Parser {
         RewriteRuleTokenStream stream_128=new RewriteRuleTokenStream(adaptor,"token 128");
         RewriteRuleTokenStream stream_YEAR=new RewriteRuleTokenStream(adaptor,"token YEAR");
         RewriteRuleSubtreeStream stream_four_digits=new RewriteRuleSubtreeStream(adaptor,"rule four_digits");
-        RewriteRuleSubtreeStream stream_zero_to_ninety_nine=new RewriteRuleSubtreeStream(adaptor,"rule zero_to_ninety_nine");
+        RewriteRuleSubtreeStream stream_numeric_0_to_99=new RewriteRuleSubtreeStream(adaptor,"rule numeric_0_to_99");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:3: ( ( '\\'' )? zero_to_ninety_nine -> YEAR[$zero_to_ninety_nine.text] | ( 'in the' YEAR )? four_digits -> YEAR[$four_digits.text] )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:3: ( ( '\\'' )? numeric_0_to_99 -> YEAR[$numeric_0_to_99.text] | ( 'in the' YEAR )? four_digits -> YEAR[$four_digits.text] )
             int alt35=2;
             switch ( input.LA(1) ) {
             case 127:
@@ -4270,7 +4270,7 @@ public class DateParser extends Parser {
 
             switch (alt35) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:5: ( '\\'' )? zero_to_ninety_nine
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:5: ( '\\'' )? numeric_0_to_99
                     {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:5: ( '\\'' )?
                     int alt33=2;
@@ -4283,7 +4283,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:5: '\\''
                             {
-                            char_literal95=(Token)match(input,127,FOLLOW_127_in_year1312); if (state.failed) return retval; 
+                            char_literal95=(Token)match(input,127,FOLLOW_127_in_year1314); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_127.add(char_literal95);
 
 
@@ -4292,12 +4292,12 @@ public class DateParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_zero_to_ninety_nine_in_year1315);
-                    zero_to_ninety_nine96=zero_to_ninety_nine();
+                    pushFollow(FOLLOW_numeric_0_to_99_in_year1317);
+                    numeric_0_to_9996=numeric_0_to_99();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_zero_to_ninety_nine.add(zero_to_ninety_nine96.getTree());
+                    if ( state.backtracking==0 ) stream_numeric_0_to_99.add(numeric_0_to_9996.getTree());
 
 
                     // AST REWRITE
@@ -4312,9 +4312,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 158:31: -> YEAR[$zero_to_ninety_nine.text]
+                    // 158:27: -> YEAR[$numeric_0_to_99.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(YEAR, (zero_to_ninety_nine96!=null?input.toString(zero_to_ninety_nine96.start,zero_to_ninety_nine96.stop):null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(YEAR, (numeric_0_to_9996!=null?input.toString(numeric_0_to_9996.start,numeric_0_to_9996.stop):null)));
 
                     }
 
@@ -4335,10 +4335,10 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:159:6: 'in the' YEAR
                             {
-                            string_literal97=(Token)match(input,128,FOLLOW_128_in_year1327); if (state.failed) return retval; 
+                            string_literal97=(Token)match(input,128,FOLLOW_128_in_year1329); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_128.add(string_literal97);
 
-                            YEAR98=(Token)match(input,YEAR,FOLLOW_YEAR_in_year1329); if (state.failed) return retval; 
+                            YEAR98=(Token)match(input,YEAR,FOLLOW_YEAR_in_year1331); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_YEAR.add(YEAR98);
 
 
@@ -4347,7 +4347,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_four_digits_in_year1333);
+                    pushFollow(FOLLOW_four_digits_in_year1335);
                     four_digits99=four_digits();
 
                     state._fsp--;
@@ -4462,27 +4462,27 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "hours"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:167:1: hours : zero_to_twenty_three -> HOURS[$zero_to_twenty_three.text] ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:167:1: hours : numeric_0_to_23 -> HOURS[$numeric_0_to_23.text] ;
     public final DateParser.hours_return hours() throws RecognitionException {
         DateParser.hours_return retval = new DateParser.hours_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        DateParser.zero_to_twenty_three_return zero_to_twenty_three101 = null;
+        DateParser.numeric_0_to_23_return numeric_0_to_23101 = null;
 
 
-        RewriteRuleSubtreeStream stream_zero_to_twenty_three=new RewriteRuleSubtreeStream(adaptor,"rule zero_to_twenty_three");
+        RewriteRuleSubtreeStream stream_numeric_0_to_23=new RewriteRuleSubtreeStream(adaptor,"rule numeric_0_to_23");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:168:3: ( zero_to_twenty_three -> HOURS[$zero_to_twenty_three.text] )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:168:5: zero_to_twenty_three
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:168:3: ( numeric_0_to_23 -> HOURS[$numeric_0_to_23.text] )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:168:5: numeric_0_to_23
             {
-            pushFollow(FOLLOW_zero_to_twenty_three_in_hours1372);
-            zero_to_twenty_three101=zero_to_twenty_three();
+            pushFollow(FOLLOW_numeric_0_to_23_in_hours1374);
+            numeric_0_to_23101=numeric_0_to_23();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_zero_to_twenty_three.add(zero_to_twenty_three101.getTree());
+            if ( state.backtracking==0 ) stream_numeric_0_to_23.add(numeric_0_to_23101.getTree());
 
 
             // AST REWRITE
@@ -4497,9 +4497,9 @@ public class DateParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 168:26: -> HOURS[$zero_to_twenty_three.text]
+            // 168:21: -> HOURS[$numeric_0_to_23.text]
             {
-                adaptor.addChild(root_0, (Object)adaptor.create(HOURS, (zero_to_twenty_three101!=null?input.toString(zero_to_twenty_three101.start,zero_to_twenty_three101.stop):null)));
+                adaptor.addChild(root_0, (Object)adaptor.create(HOURS, (numeric_0_to_23101!=null?input.toString(numeric_0_to_23101.start,numeric_0_to_23101.stop):null)));
 
             }
 
@@ -4532,27 +4532,27 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "minutes"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:171:1: minutes : zero_to_fifty_nine -> MINUTES[$zero_to_fifty_nine.text] ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:171:1: minutes : numeric_0_to_59 -> MINUTES[$numeric_0_to_59.text] ;
     public final DateParser.minutes_return minutes() throws RecognitionException {
         DateParser.minutes_return retval = new DateParser.minutes_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        DateParser.zero_to_fifty_nine_return zero_to_fifty_nine102 = null;
+        DateParser.numeric_0_to_59_return numeric_0_to_59102 = null;
 
 
-        RewriteRuleSubtreeStream stream_zero_to_fifty_nine=new RewriteRuleSubtreeStream(adaptor,"rule zero_to_fifty_nine");
+        RewriteRuleSubtreeStream stream_numeric_0_to_59=new RewriteRuleSubtreeStream(adaptor,"rule numeric_0_to_59");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:172:3: ( zero_to_fifty_nine -> MINUTES[$zero_to_fifty_nine.text] )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:172:5: zero_to_fifty_nine
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:172:3: ( numeric_0_to_59 -> MINUTES[$numeric_0_to_59.text] )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:172:5: numeric_0_to_59
             {
-            pushFollow(FOLLOW_zero_to_fifty_nine_in_minutes1392);
-            zero_to_fifty_nine102=zero_to_fifty_nine();
+            pushFollow(FOLLOW_numeric_0_to_59_in_minutes1394);
+            numeric_0_to_59102=numeric_0_to_59();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_zero_to_fifty_nine.add(zero_to_fifty_nine102.getTree());
+            if ( state.backtracking==0 ) stream_numeric_0_to_59.add(numeric_0_to_59102.getTree());
 
 
             // AST REWRITE
@@ -4567,9 +4567,9 @@ public class DateParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 172:24: -> MINUTES[$zero_to_fifty_nine.text]
+            // 172:21: -> MINUTES[$numeric_0_to_59.text]
             {
-                adaptor.addChild(root_0, (Object)adaptor.create(MINUTES, (zero_to_fifty_nine102!=null?input.toString(zero_to_fifty_nine102.start,zero_to_fifty_nine102.stop):null)));
+                adaptor.addChild(root_0, (Object)adaptor.create(MINUTES, (numeric_0_to_59102!=null?input.toString(numeric_0_to_59102.start,numeric_0_to_59102.stop):null)));
 
             }
 
@@ -4639,7 +4639,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:176:5: AM
                     {
-                    AM103=(Token)match(input,AM,FOLLOW_AM_in_meridian_indicator1412); if (state.failed) return retval; 
+                    AM103=(Token)match(input,AM,FOLLOW_AM_in_meridian_indicator1414); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AM.add(AM103);
 
 
@@ -4668,7 +4668,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:177:5: PM
                     {
-                    PM104=(Token)match(input,PM,FOLLOW_PM_in_meridian_indicator1423); if (state.failed) return retval; 
+                    PM104=(Token)match(input,PM,FOLLOW_PM_in_meridian_indicator1425); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PM.add(PM104);
 
 
@@ -4716,15 +4716,15 @@ public class DateParser extends Parser {
     }
     // $ANTLR end "meridian_indicator"
 
-    public static class spelled_number_return extends ParserRuleReturnScope {
+    public static class spelled_number_1_to_31_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "spelled_number"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:181:1: spelled_number : ( ONE -> INTEGER[\"1\"] | TWO -> INTEGER[\"2\"] | THREE -> INTEGER[\"3\"] | FOUR -> INTEGER[\"4\"] | FIVE -> INTEGER[\"5\"] | SIX -> INTEGER[\"6\"] | SEVEN -> INTEGER[\"7\"] | EIGHT -> INTEGER[\"8\"] | NINE -> INTEGER[\"9\"] | TEN -> INTEGER[\"10\"] | ELEVEN -> INTEGER[\"11\"] | TWELVE -> INTEGER[\"12\"] | THIRTEEN -> INTEGER[\"13\"] | FOURTEEN -> INTEGER[\"14\"] | FIFTEEN -> INTEGER[\"15\"] | SIXTEEN -> INTEGER[\"16\"] | SEVENTEEN -> INTEGER[\"17\"] | EIGHTEEN -> INTEGER[\"18\"] | NINETEEN -> INTEGER[\"19\"] | TWENTY -> INTEGER[\"20\"] | TWENTY ( DASH )? ONE -> INTEGER[\"21\"] | TWENTY ( DASH )? TWO -> INTEGER[\"22\"] | TWENTY ( DASH )? THREE -> INTEGER[\"23\"] | TWENTY ( DASH )? FOUR -> INTEGER[\"24\"] | TWENTY ( DASH )? FIVE -> INTEGER[\"25\"] | TWENTY ( DASH )? SIX -> INTEGER[\"26\"] | TWENTY ( DASH )? SEVEN -> INTEGER[\"27\"] | TWENTY ( DASH )? EIGHT -> INTEGER[\"28\"] | TWENTY ( DASH )? NINE -> INTEGER[\"29\"] | THIRTY -> INTEGER[\"30\"] | THIRTY ( DASH )? ONE -> INTEGER[\"31\"] );
-    public final DateParser.spelled_number_return spelled_number() throws RecognitionException {
-        DateParser.spelled_number_return retval = new DateParser.spelled_number_return();
+    // $ANTLR start "spelled_number_1_to_31"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:181:1: spelled_number_1_to_31 : ( ONE -> INTEGER[\"1\"] | TWO -> INTEGER[\"2\"] | THREE -> INTEGER[\"3\"] | FOUR -> INTEGER[\"4\"] | FIVE -> INTEGER[\"5\"] | SIX -> INTEGER[\"6\"] | SEVEN -> INTEGER[\"7\"] | EIGHT -> INTEGER[\"8\"] | NINE -> INTEGER[\"9\"] | TEN -> INTEGER[\"10\"] | ELEVEN -> INTEGER[\"11\"] | TWELVE -> INTEGER[\"12\"] | THIRTEEN -> INTEGER[\"13\"] | FOURTEEN -> INTEGER[\"14\"] | FIFTEEN -> INTEGER[\"15\"] | SIXTEEN -> INTEGER[\"16\"] | SEVENTEEN -> INTEGER[\"17\"] | EIGHTEEN -> INTEGER[\"18\"] | NINETEEN -> INTEGER[\"19\"] | TWENTY -> INTEGER[\"20\"] | TWENTY ( DASH )? ONE -> INTEGER[\"21\"] | TWENTY ( DASH )? TWO -> INTEGER[\"22\"] | TWENTY ( DASH )? THREE -> INTEGER[\"23\"] | TWENTY ( DASH )? FOUR -> INTEGER[\"24\"] | TWENTY ( DASH )? FIVE -> INTEGER[\"25\"] | TWENTY ( DASH )? SIX -> INTEGER[\"26\"] | TWENTY ( DASH )? SEVEN -> INTEGER[\"27\"] | TWENTY ( DASH )? EIGHT -> INTEGER[\"28\"] | TWENTY ( DASH )? NINE -> INTEGER[\"29\"] | THIRTY -> INTEGER[\"30\"] | THIRTY ( DASH )? ONE -> INTEGER[\"31\"] );
+    public final DateParser.spelled_number_1_to_31_return spelled_number_1_to_31() throws RecognitionException {
+        DateParser.spelled_number_1_to_31_return retval = new DateParser.spelled_number_1_to_31_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -4863,7 +4863,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:182:5: ONE
                     {
-                    ONE105=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_number1442); if (state.failed) return retval; 
+                    ONE105=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_number_1_to_311444); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ONE.add(ONE105);
 
 
@@ -4892,7 +4892,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:183:5: TWO
                     {
-                    TWO106=(Token)match(input,TWO,FOLLOW_TWO_in_spelled_number1460); if (state.failed) return retval; 
+                    TWO106=(Token)match(input,TWO,FOLLOW_TWO_in_spelled_number_1_to_311462); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWO.add(TWO106);
 
 
@@ -4921,7 +4921,7 @@ public class DateParser extends Parser {
                 case 3 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:5: THREE
                     {
-                    THREE107=(Token)match(input,THREE,FOLLOW_THREE_in_spelled_number1478); if (state.failed) return retval; 
+                    THREE107=(Token)match(input,THREE,FOLLOW_THREE_in_spelled_number_1_to_311480); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THREE.add(THREE107);
 
 
@@ -4950,7 +4950,7 @@ public class DateParser extends Parser {
                 case 4 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:185:5: FOUR
                     {
-                    FOUR108=(Token)match(input,FOUR,FOLLOW_FOUR_in_spelled_number1494); if (state.failed) return retval; 
+                    FOUR108=(Token)match(input,FOUR,FOLLOW_FOUR_in_spelled_number_1_to_311496); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FOUR.add(FOUR108);
 
 
@@ -4979,7 +4979,7 @@ public class DateParser extends Parser {
                 case 5 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:186:5: FIVE
                     {
-                    FIVE109=(Token)match(input,FIVE,FOLLOW_FIVE_in_spelled_number1511); if (state.failed) return retval; 
+                    FIVE109=(Token)match(input,FIVE,FOLLOW_FIVE_in_spelled_number_1_to_311513); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FIVE.add(FIVE109);
 
 
@@ -5008,7 +5008,7 @@ public class DateParser extends Parser {
                 case 6 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:187:5: SIX
                     {
-                    SIX110=(Token)match(input,SIX,FOLLOW_SIX_in_spelled_number1528); if (state.failed) return retval; 
+                    SIX110=(Token)match(input,SIX,FOLLOW_SIX_in_spelled_number_1_to_311530); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SIX.add(SIX110);
 
 
@@ -5037,7 +5037,7 @@ public class DateParser extends Parser {
                 case 7 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:5: SEVEN
                     {
-                    SEVEN111=(Token)match(input,SEVEN,FOLLOW_SEVEN_in_spelled_number1546); if (state.failed) return retval; 
+                    SEVEN111=(Token)match(input,SEVEN,FOLLOW_SEVEN_in_spelled_number_1_to_311548); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SEVEN.add(SEVEN111);
 
 
@@ -5066,7 +5066,7 @@ public class DateParser extends Parser {
                 case 8 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:189:5: EIGHT
                     {
-                    EIGHT112=(Token)match(input,EIGHT,FOLLOW_EIGHT_in_spelled_number1562); if (state.failed) return retval; 
+                    EIGHT112=(Token)match(input,EIGHT,FOLLOW_EIGHT_in_spelled_number_1_to_311564); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EIGHT.add(EIGHT112);
 
 
@@ -5095,7 +5095,7 @@ public class DateParser extends Parser {
                 case 9 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:190:5: NINE
                     {
-                    NINE113=(Token)match(input,NINE,FOLLOW_NINE_in_spelled_number1578); if (state.failed) return retval; 
+                    NINE113=(Token)match(input,NINE,FOLLOW_NINE_in_spelled_number_1_to_311580); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NINE.add(NINE113);
 
 
@@ -5124,7 +5124,7 @@ public class DateParser extends Parser {
                 case 10 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:191:5: TEN
                     {
-                    TEN114=(Token)match(input,TEN,FOLLOW_TEN_in_spelled_number1595); if (state.failed) return retval; 
+                    TEN114=(Token)match(input,TEN,FOLLOW_TEN_in_spelled_number_1_to_311597); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TEN.add(TEN114);
 
 
@@ -5153,7 +5153,7 @@ public class DateParser extends Parser {
                 case 11 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:192:5: ELEVEN
                     {
-                    ELEVEN115=(Token)match(input,ELEVEN,FOLLOW_ELEVEN_in_spelled_number1613); if (state.failed) return retval; 
+                    ELEVEN115=(Token)match(input,ELEVEN,FOLLOW_ELEVEN_in_spelled_number_1_to_311615); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ELEVEN.add(ELEVEN115);
 
 
@@ -5182,7 +5182,7 @@ public class DateParser extends Parser {
                 case 12 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:193:5: TWELVE
                     {
-                    TWELVE116=(Token)match(input,TWELVE,FOLLOW_TWELVE_in_spelled_number1628); if (state.failed) return retval; 
+                    TWELVE116=(Token)match(input,TWELVE,FOLLOW_TWELVE_in_spelled_number_1_to_311630); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWELVE.add(TWELVE116);
 
 
@@ -5211,7 +5211,7 @@ public class DateParser extends Parser {
                 case 13 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:194:5: THIRTEEN
                     {
-                    THIRTEEN117=(Token)match(input,THIRTEEN,FOLLOW_THIRTEEN_in_spelled_number1643); if (state.failed) return retval; 
+                    THIRTEEN117=(Token)match(input,THIRTEEN,FOLLOW_THIRTEEN_in_spelled_number_1_to_311645); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTEEN.add(THIRTEEN117);
 
 
@@ -5240,7 +5240,7 @@ public class DateParser extends Parser {
                 case 14 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:195:5: FOURTEEN
                     {
-                    FOURTEEN118=(Token)match(input,FOURTEEN,FOLLOW_FOURTEEN_in_spelled_number1656); if (state.failed) return retval; 
+                    FOURTEEN118=(Token)match(input,FOURTEEN,FOLLOW_FOURTEEN_in_spelled_number_1_to_311658); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FOURTEEN.add(FOURTEEN118);
 
 
@@ -5269,7 +5269,7 @@ public class DateParser extends Parser {
                 case 15 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:196:5: FIFTEEN
                     {
-                    FIFTEEN119=(Token)match(input,FIFTEEN,FOLLOW_FIFTEEN_in_spelled_number1669); if (state.failed) return retval; 
+                    FIFTEEN119=(Token)match(input,FIFTEEN,FOLLOW_FIFTEEN_in_spelled_number_1_to_311671); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FIFTEEN.add(FIFTEEN119);
 
 
@@ -5298,7 +5298,7 @@ public class DateParser extends Parser {
                 case 16 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:197:5: SIXTEEN
                     {
-                    SIXTEEN120=(Token)match(input,SIXTEEN,FOLLOW_SIXTEEN_in_spelled_number1683); if (state.failed) return retval; 
+                    SIXTEEN120=(Token)match(input,SIXTEEN,FOLLOW_SIXTEEN_in_spelled_number_1_to_311685); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SIXTEEN.add(SIXTEEN120);
 
 
@@ -5327,7 +5327,7 @@ public class DateParser extends Parser {
                 case 17 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:198:5: SEVENTEEN
                     {
-                    SEVENTEEN121=(Token)match(input,SEVENTEEN,FOLLOW_SEVENTEEN_in_spelled_number1697); if (state.failed) return retval; 
+                    SEVENTEEN121=(Token)match(input,SEVENTEEN,FOLLOW_SEVENTEEN_in_spelled_number_1_to_311699); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SEVENTEEN.add(SEVENTEEN121);
 
 
@@ -5356,7 +5356,7 @@ public class DateParser extends Parser {
                 case 18 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:199:5: EIGHTEEN
                     {
-                    EIGHTEEN122=(Token)match(input,EIGHTEEN,FOLLOW_EIGHTEEN_in_spelled_number1709); if (state.failed) return retval; 
+                    EIGHTEEN122=(Token)match(input,EIGHTEEN,FOLLOW_EIGHTEEN_in_spelled_number_1_to_311711); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EIGHTEEN.add(EIGHTEEN122);
 
 
@@ -5385,7 +5385,7 @@ public class DateParser extends Parser {
                 case 19 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:200:5: NINETEEN
                     {
-                    NINETEEN123=(Token)match(input,NINETEEN,FOLLOW_NINETEEN_in_spelled_number1722); if (state.failed) return retval; 
+                    NINETEEN123=(Token)match(input,NINETEEN,FOLLOW_NINETEEN_in_spelled_number_1_to_311724); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NINETEEN.add(NINETEEN123);
 
 
@@ -5414,7 +5414,7 @@ public class DateParser extends Parser {
                 case 20 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:201:5: TWENTY
                     {
-                    TWENTY124=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number1735); if (state.failed) return retval; 
+                    TWENTY124=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number_1_to_311737); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY124);
 
 
@@ -5443,7 +5443,7 @@ public class DateParser extends Parser {
                 case 21 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:202:5: TWENTY ( DASH )? ONE
                     {
-                    TWENTY125=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number1750); if (state.failed) return retval; 
+                    TWENTY125=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number_1_to_311752); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY125);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:202:12: ( DASH )?
@@ -5457,7 +5457,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:202:12: DASH
                             {
-                            DASH126=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number1752); if (state.failed) return retval; 
+                            DASH126=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number_1_to_311754); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH126);
 
 
@@ -5466,7 +5466,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    ONE127=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_number1755); if (state.failed) return retval; 
+                    ONE127=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_number_1_to_311757); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ONE.add(ONE127);
 
 
@@ -5495,7 +5495,7 @@ public class DateParser extends Parser {
                 case 22 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:203:5: TWENTY ( DASH )? TWO
                     {
-                    TWENTY128=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number1768); if (state.failed) return retval; 
+                    TWENTY128=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number_1_to_311770); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY128);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:203:12: ( DASH )?
@@ -5509,7 +5509,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:203:12: DASH
                             {
-                            DASH129=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number1770); if (state.failed) return retval; 
+                            DASH129=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number_1_to_311772); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH129);
 
 
@@ -5518,7 +5518,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    TWO130=(Token)match(input,TWO,FOLLOW_TWO_in_spelled_number1773); if (state.failed) return retval; 
+                    TWO130=(Token)match(input,TWO,FOLLOW_TWO_in_spelled_number_1_to_311775); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWO.add(TWO130);
 
 
@@ -5547,7 +5547,7 @@ public class DateParser extends Parser {
                 case 23 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:204:5: TWENTY ( DASH )? THREE
                     {
-                    TWENTY131=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number1786); if (state.failed) return retval; 
+                    TWENTY131=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number_1_to_311788); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY131);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:204:12: ( DASH )?
@@ -5561,7 +5561,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:204:12: DASH
                             {
-                            DASH132=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number1788); if (state.failed) return retval; 
+                            DASH132=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number_1_to_311790); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH132);
 
 
@@ -5570,7 +5570,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    THREE133=(Token)match(input,THREE,FOLLOW_THREE_in_spelled_number1791); if (state.failed) return retval; 
+                    THREE133=(Token)match(input,THREE,FOLLOW_THREE_in_spelled_number_1_to_311793); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THREE.add(THREE133);
 
 
@@ -5599,7 +5599,7 @@ public class DateParser extends Parser {
                 case 24 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:205:5: TWENTY ( DASH )? FOUR
                     {
-                    TWENTY134=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number1802); if (state.failed) return retval; 
+                    TWENTY134=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number_1_to_311804); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY134);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:205:12: ( DASH )?
@@ -5613,7 +5613,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:205:12: DASH
                             {
-                            DASH135=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number1804); if (state.failed) return retval; 
+                            DASH135=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number_1_to_311806); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH135);
 
 
@@ -5622,7 +5622,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    FOUR136=(Token)match(input,FOUR,FOLLOW_FOUR_in_spelled_number1807); if (state.failed) return retval; 
+                    FOUR136=(Token)match(input,FOUR,FOLLOW_FOUR_in_spelled_number_1_to_311809); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FOUR.add(FOUR136);
 
 
@@ -5651,7 +5651,7 @@ public class DateParser extends Parser {
                 case 25 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:206:5: TWENTY ( DASH )? FIVE
                     {
-                    TWENTY137=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number1819); if (state.failed) return retval; 
+                    TWENTY137=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number_1_to_311821); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY137);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:206:12: ( DASH )?
@@ -5665,7 +5665,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:206:12: DASH
                             {
-                            DASH138=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number1821); if (state.failed) return retval; 
+                            DASH138=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number_1_to_311823); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH138);
 
 
@@ -5674,7 +5674,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    FIVE139=(Token)match(input,FIVE,FOLLOW_FIVE_in_spelled_number1824); if (state.failed) return retval; 
+                    FIVE139=(Token)match(input,FIVE,FOLLOW_FIVE_in_spelled_number_1_to_311826); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FIVE.add(FIVE139);
 
 
@@ -5703,7 +5703,7 @@ public class DateParser extends Parser {
                 case 26 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:207:5: TWENTY ( DASH )? SIX
                     {
-                    TWENTY140=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number1836); if (state.failed) return retval; 
+                    TWENTY140=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number_1_to_311838); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY140);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:207:12: ( DASH )?
@@ -5717,7 +5717,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:207:12: DASH
                             {
-                            DASH141=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number1838); if (state.failed) return retval; 
+                            DASH141=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number_1_to_311840); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH141);
 
 
@@ -5726,7 +5726,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    SIX142=(Token)match(input,SIX,FOLLOW_SIX_in_spelled_number1841); if (state.failed) return retval; 
+                    SIX142=(Token)match(input,SIX,FOLLOW_SIX_in_spelled_number_1_to_311843); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SIX.add(SIX142);
 
 
@@ -5755,7 +5755,7 @@ public class DateParser extends Parser {
                 case 27 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:208:5: TWENTY ( DASH )? SEVEN
                     {
-                    TWENTY143=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number1854); if (state.failed) return retval; 
+                    TWENTY143=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number_1_to_311856); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY143);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:208:12: ( DASH )?
@@ -5769,7 +5769,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:208:12: DASH
                             {
-                            DASH144=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number1856); if (state.failed) return retval; 
+                            DASH144=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number_1_to_311858); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH144);
 
 
@@ -5778,7 +5778,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    SEVEN145=(Token)match(input,SEVEN,FOLLOW_SEVEN_in_spelled_number1859); if (state.failed) return retval; 
+                    SEVEN145=(Token)match(input,SEVEN,FOLLOW_SEVEN_in_spelled_number_1_to_311861); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SEVEN.add(SEVEN145);
 
 
@@ -5807,7 +5807,7 @@ public class DateParser extends Parser {
                 case 28 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:209:5: TWENTY ( DASH )? EIGHT
                     {
-                    TWENTY146=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number1870); if (state.failed) return retval; 
+                    TWENTY146=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number_1_to_311872); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY146);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:209:12: ( DASH )?
@@ -5821,7 +5821,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:209:12: DASH
                             {
-                            DASH147=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number1872); if (state.failed) return retval; 
+                            DASH147=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number_1_to_311874); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH147);
 
 
@@ -5830,7 +5830,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    EIGHT148=(Token)match(input,EIGHT,FOLLOW_EIGHT_in_spelled_number1875); if (state.failed) return retval; 
+                    EIGHT148=(Token)match(input,EIGHT,FOLLOW_EIGHT_in_spelled_number_1_to_311877); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EIGHT.add(EIGHT148);
 
 
@@ -5859,7 +5859,7 @@ public class DateParser extends Parser {
                 case 29 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:210:5: TWENTY ( DASH )? NINE
                     {
-                    TWENTY149=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number1886); if (state.failed) return retval; 
+                    TWENTY149=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_number_1_to_311888); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY149);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:210:12: ( DASH )?
@@ -5873,7 +5873,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:210:12: DASH
                             {
-                            DASH150=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number1888); if (state.failed) return retval; 
+                            DASH150=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number_1_to_311890); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH150);
 
 
@@ -5882,7 +5882,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    NINE151=(Token)match(input,NINE,FOLLOW_NINE_in_spelled_number1891); if (state.failed) return retval; 
+                    NINE151=(Token)match(input,NINE,FOLLOW_NINE_in_spelled_number_1_to_311893); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NINE.add(NINE151);
 
 
@@ -5911,7 +5911,7 @@ public class DateParser extends Parser {
                 case 30 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:211:5: THIRTY
                     {
-                    THIRTY152=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_number1903); if (state.failed) return retval; 
+                    THIRTY152=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_number_1_to_311905); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTY.add(THIRTY152);
 
 
@@ -5940,7 +5940,7 @@ public class DateParser extends Parser {
                 case 31 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:212:5: THIRTY ( DASH )? ONE
                     {
-                    THIRTY153=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_number1926); if (state.failed) return retval; 
+                    THIRTY153=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_number_1_to_311928); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTY.add(THIRTY153);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:212:12: ( DASH )?
@@ -5954,7 +5954,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:212:12: DASH
                             {
-                            DASH154=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number1928); if (state.failed) return retval; 
+                            DASH154=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_number_1_to_311930); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH154);
 
 
@@ -5963,7 +5963,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    ONE155=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_number1931); if (state.failed) return retval; 
+                    ONE155=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_number_1_to_311933); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ONE.add(ONE155);
 
 
@@ -6009,29 +6009,29 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "spelled_number"
+    // $ANTLR end "spelled_number_1_to_31"
 
-    public static class spelled_or_natural_number_return extends ParserRuleReturnScope {
+    public static class spelled_or_numeric_1_to_31_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "spelled_or_natural_number"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:215:1: spelled_or_natural_number : ( spelled_number | one_to_thirty_one );
-    public final DateParser.spelled_or_natural_number_return spelled_or_natural_number() throws RecognitionException {
-        DateParser.spelled_or_natural_number_return retval = new DateParser.spelled_or_natural_number_return();
+    // $ANTLR start "spelled_or_numeric_1_to_31"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:215:1: spelled_or_numeric_1_to_31 : ( spelled_number_1_to_31 | numeric_1_to_31 );
+    public final DateParser.spelled_or_numeric_1_to_31_return spelled_or_numeric_1_to_31() throws RecognitionException {
+        DateParser.spelled_or_numeric_1_to_31_return retval = new DateParser.spelled_or_numeric_1_to_31_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        DateParser.spelled_number_return spelled_number156 = null;
+        DateParser.spelled_number_1_to_31_return spelled_number_1_to_31156 = null;
 
-        DateParser.one_to_thirty_one_return one_to_thirty_one157 = null;
+        DateParser.numeric_1_to_31_return numeric_1_to_31157 = null;
 
 
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:216:3: ( spelled_number | one_to_thirty_one )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:216:3: ( spelled_number_1_to_31 | numeric_1_to_31 )
             int alt48=2;
             int LA48_0 = input.LA(1);
 
@@ -6050,30 +6050,30 @@ public class DateParser extends Parser {
             }
             switch (alt48) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:216:5: spelled_number
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:216:5: spelled_number_1_to_31
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_spelled_number_in_spelled_or_natural_number1953);
-                    spelled_number156=spelled_number();
+                    pushFollow(FOLLOW_spelled_number_1_to_31_in_spelled_or_numeric_1_to_311955);
+                    spelled_number_1_to_31156=spelled_number_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, spelled_number156.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, spelled_number_1_to_31156.getTree());
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:217:5: one_to_thirty_one
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:217:5: numeric_1_to_31
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_one_to_thirty_one_in_spelled_or_natural_number1959);
-                    one_to_thirty_one157=one_to_thirty_one();
+                    pushFollow(FOLLOW_numeric_1_to_31_in_spelled_or_numeric_1_to_311961);
+                    numeric_1_to_31157=numeric_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, one_to_thirty_one157.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, numeric_1_to_31157.getTree());
 
                     }
                     break;
@@ -6097,17 +6097,17 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "spelled_or_natural_number"
+    // $ANTLR end "spelled_or_numeric_1_to_31"
 
-    public static class sequence_number_return extends ParserRuleReturnScope {
+    public static class spelled_sequence_1_to_31_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "sequence_number"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:222:1: sequence_number : ( FIRST -> INTEGER[\"1\"] | SECOND -> INTEGER[\"2\"] | THIRD -> INTEGER[\"3\"] | FOURTH -> INTEGER[\"4\"] | FIFTH -> INTEGER[\"5\"] | SIXTH -> INTEGER[\"6\"] | SEVENTH -> INTEGER[\"7\"] | EIGHTH -> INTEGER[\"8\"] | NINTH -> INTEGER[\"9\"] | TENTH -> INTEGER[\"10\"] | ELEVENTH -> INTEGER[\"11\"] | TWELFTH -> INTEGER[\"12\"] | THIRTEENTH -> INTEGER[\"13\"] | FOURTEENTH -> INTEGER[\"14\"] | FIFTEENTH -> INTEGER[\"15\"] | SIXTEENTH -> INTEGER[\"16\"] | SEVENTEENTH -> INTEGER[\"17\"] | EIGHTEENTH -> INTEGER[\"18\"] | NINETEENTH -> INTEGER[\"19\"] | TWENTIETH -> INTEGER[\"20\"] | TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) -> INTEGER[\"21\"] | TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) -> INTEGER[\"22\"] | TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) -> INTEGER[\"23\"] | TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) -> INTEGER[\"24\"] | TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) -> INTEGER[\"25\"] | TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) -> INTEGER[\"26\"] | TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) -> INTEGER[\"27\"] | TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) -> INTEGER[\"28\"] | TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) -> INTEGER[\"29\"] | THIRTIETH -> INTEGER[\"30\"] | THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) -> INTEGER[\"31\"] );
-    public final DateParser.sequence_number_return sequence_number() throws RecognitionException {
-        DateParser.sequence_number_return retval = new DateParser.sequence_number_return();
+    // $ANTLR start "spelled_sequence_1_to_31"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:222:1: spelled_sequence_1_to_31 : ( FIRST -> INTEGER[\"1\"] | SECOND -> INTEGER[\"2\"] | THIRD -> INTEGER[\"3\"] | FOURTH -> INTEGER[\"4\"] | FIFTH -> INTEGER[\"5\"] | SIXTH -> INTEGER[\"6\"] | SEVENTH -> INTEGER[\"7\"] | EIGHTH -> INTEGER[\"8\"] | NINTH -> INTEGER[\"9\"] | TENTH -> INTEGER[\"10\"] | ELEVENTH -> INTEGER[\"11\"] | TWELFTH -> INTEGER[\"12\"] | THIRTEENTH -> INTEGER[\"13\"] | FOURTEENTH -> INTEGER[\"14\"] | FIFTEENTH -> INTEGER[\"15\"] | SIXTEENTH -> INTEGER[\"16\"] | SEVENTEENTH -> INTEGER[\"17\"] | EIGHTEENTH -> INTEGER[\"18\"] | NINETEENTH -> INTEGER[\"19\"] | TWENTIETH -> INTEGER[\"20\"] | TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) -> INTEGER[\"21\"] | TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) -> INTEGER[\"22\"] | TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) -> INTEGER[\"23\"] | TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) -> INTEGER[\"24\"] | TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) -> INTEGER[\"25\"] | TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) -> INTEGER[\"26\"] | TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) -> INTEGER[\"27\"] | TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) -> INTEGER[\"28\"] | TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) -> INTEGER[\"29\"] | THIRTIETH -> INTEGER[\"30\"] | THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) -> INTEGER[\"31\"] );
+    public final DateParser.spelled_sequence_1_to_31_return spelled_sequence_1_to_31() throws RecognitionException {
+        DateParser.spelled_sequence_1_to_31_return retval = new DateParser.spelled_sequence_1_to_31_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -6268,7 +6268,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:223:5: FIRST
                     {
-                    FIRST158=(Token)match(input,FIRST,FOLLOW_FIRST_in_sequence_number1976); if (state.failed) return retval; 
+                    FIRST158=(Token)match(input,FIRST,FOLLOW_FIRST_in_spelled_sequence_1_to_311978); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FIRST.add(FIRST158);
 
 
@@ -6297,7 +6297,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:224:5: SECOND
                     {
-                    SECOND159=(Token)match(input,SECOND,FOLLOW_SECOND_in_sequence_number1993); if (state.failed) return retval; 
+                    SECOND159=(Token)match(input,SECOND,FOLLOW_SECOND_in_spelled_sequence_1_to_311995); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SECOND.add(SECOND159);
 
 
@@ -6326,7 +6326,7 @@ public class DateParser extends Parser {
                 case 3 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:225:5: THIRD
                     {
-                    THIRD160=(Token)match(input,THIRD,FOLLOW_THIRD_in_sequence_number2009); if (state.failed) return retval; 
+                    THIRD160=(Token)match(input,THIRD,FOLLOW_THIRD_in_spelled_sequence_1_to_312011); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRD.add(THIRD160);
 
 
@@ -6355,7 +6355,7 @@ public class DateParser extends Parser {
                 case 4 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:226:5: FOURTH
                     {
-                    FOURTH161=(Token)match(input,FOURTH,FOLLOW_FOURTH_in_sequence_number2026); if (state.failed) return retval; 
+                    FOURTH161=(Token)match(input,FOURTH,FOLLOW_FOURTH_in_spelled_sequence_1_to_312028); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FOURTH.add(FOURTH161);
 
 
@@ -6384,7 +6384,7 @@ public class DateParser extends Parser {
                 case 5 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:227:5: FIFTH
                     {
-                    FIFTH162=(Token)match(input,FIFTH,FOLLOW_FIFTH_in_sequence_number2042); if (state.failed) return retval; 
+                    FIFTH162=(Token)match(input,FIFTH,FOLLOW_FIFTH_in_spelled_sequence_1_to_312044); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FIFTH.add(FIFTH162);
 
 
@@ -6413,7 +6413,7 @@ public class DateParser extends Parser {
                 case 6 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:228:5: SIXTH
                     {
-                    SIXTH163=(Token)match(input,SIXTH,FOLLOW_SIXTH_in_sequence_number2059); if (state.failed) return retval; 
+                    SIXTH163=(Token)match(input,SIXTH,FOLLOW_SIXTH_in_spelled_sequence_1_to_312061); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SIXTH.add(SIXTH163);
 
 
@@ -6442,7 +6442,7 @@ public class DateParser extends Parser {
                 case 7 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:229:5: SEVENTH
                     {
-                    SEVENTH164=(Token)match(input,SEVENTH,FOLLOW_SEVENTH_in_sequence_number2076); if (state.failed) return retval; 
+                    SEVENTH164=(Token)match(input,SEVENTH,FOLLOW_SEVENTH_in_spelled_sequence_1_to_312078); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SEVENTH.add(SEVENTH164);
 
 
@@ -6471,7 +6471,7 @@ public class DateParser extends Parser {
                 case 8 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:230:5: EIGHTH
                     {
-                    EIGHTH165=(Token)match(input,EIGHTH,FOLLOW_EIGHTH_in_sequence_number2091); if (state.failed) return retval; 
+                    EIGHTH165=(Token)match(input,EIGHTH,FOLLOW_EIGHTH_in_spelled_sequence_1_to_312093); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EIGHTH.add(EIGHTH165);
 
 
@@ -6500,7 +6500,7 @@ public class DateParser extends Parser {
                 case 9 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:231:5: NINTH
                     {
-                    NINTH166=(Token)match(input,NINTH,FOLLOW_NINTH_in_sequence_number2107); if (state.failed) return retval; 
+                    NINTH166=(Token)match(input,NINTH,FOLLOW_NINTH_in_spelled_sequence_1_to_312109); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NINTH.add(NINTH166);
 
 
@@ -6529,7 +6529,7 @@ public class DateParser extends Parser {
                 case 10 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:232:5: TENTH
                     {
-                    TENTH167=(Token)match(input,TENTH,FOLLOW_TENTH_in_sequence_number2124); if (state.failed) return retval; 
+                    TENTH167=(Token)match(input,TENTH,FOLLOW_TENTH_in_spelled_sequence_1_to_312126); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TENTH.add(TENTH167);
 
 
@@ -6558,7 +6558,7 @@ public class DateParser extends Parser {
                 case 11 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:233:5: ELEVENTH
                     {
-                    ELEVENTH168=(Token)match(input,ELEVENTH,FOLLOW_ELEVENTH_in_sequence_number2141); if (state.failed) return retval; 
+                    ELEVENTH168=(Token)match(input,ELEVENTH,FOLLOW_ELEVENTH_in_spelled_sequence_1_to_312143); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ELEVENTH.add(ELEVENTH168);
 
 
@@ -6587,7 +6587,7 @@ public class DateParser extends Parser {
                 case 12 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:234:5: TWELFTH
                     {
-                    TWELFTH169=(Token)match(input,TWELFTH,FOLLOW_TWELFTH_in_sequence_number2155); if (state.failed) return retval; 
+                    TWELFTH169=(Token)match(input,TWELFTH,FOLLOW_TWELFTH_in_spelled_sequence_1_to_312157); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWELFTH.add(TWELFTH169);
 
 
@@ -6616,7 +6616,7 @@ public class DateParser extends Parser {
                 case 13 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:235:5: THIRTEENTH
                     {
-                    THIRTEENTH170=(Token)match(input,THIRTEENTH,FOLLOW_THIRTEENTH_in_sequence_number2170); if (state.failed) return retval; 
+                    THIRTEENTH170=(Token)match(input,THIRTEENTH,FOLLOW_THIRTEENTH_in_spelled_sequence_1_to_312172); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTEENTH.add(THIRTEENTH170);
 
 
@@ -6645,7 +6645,7 @@ public class DateParser extends Parser {
                 case 14 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:236:5: FOURTEENTH
                     {
-                    FOURTEENTH171=(Token)match(input,FOURTEENTH,FOLLOW_FOURTEENTH_in_sequence_number2182); if (state.failed) return retval; 
+                    FOURTEENTH171=(Token)match(input,FOURTEENTH,FOLLOW_FOURTEENTH_in_spelled_sequence_1_to_312184); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FOURTEENTH.add(FOURTEENTH171);
 
 
@@ -6674,7 +6674,7 @@ public class DateParser extends Parser {
                 case 15 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:237:5: FIFTEENTH
                     {
-                    FIFTEENTH172=(Token)match(input,FIFTEENTH,FOLLOW_FIFTEENTH_in_sequence_number2194); if (state.failed) return retval; 
+                    FIFTEENTH172=(Token)match(input,FIFTEENTH,FOLLOW_FIFTEENTH_in_spelled_sequence_1_to_312196); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FIFTEENTH.add(FIFTEENTH172);
 
 
@@ -6703,7 +6703,7 @@ public class DateParser extends Parser {
                 case 16 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:238:5: SIXTEENTH
                     {
-                    SIXTEENTH173=(Token)match(input,SIXTEENTH,FOLLOW_SIXTEENTH_in_sequence_number2207); if (state.failed) return retval; 
+                    SIXTEENTH173=(Token)match(input,SIXTEENTH,FOLLOW_SIXTEENTH_in_spelled_sequence_1_to_312209); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SIXTEENTH.add(SIXTEENTH173);
 
 
@@ -6732,7 +6732,7 @@ public class DateParser extends Parser {
                 case 17 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:239:5: SEVENTEENTH
                     {
-                    SEVENTEENTH174=(Token)match(input,SEVENTEENTH,FOLLOW_SEVENTEENTH_in_sequence_number2220); if (state.failed) return retval; 
+                    SEVENTEENTH174=(Token)match(input,SEVENTEENTH,FOLLOW_SEVENTEENTH_in_spelled_sequence_1_to_312222); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SEVENTEENTH.add(SEVENTEENTH174);
 
 
@@ -6761,7 +6761,7 @@ public class DateParser extends Parser {
                 case 18 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:240:5: EIGHTEENTH
                     {
-                    EIGHTEENTH175=(Token)match(input,EIGHTEENTH,FOLLOW_EIGHTEENTH_in_sequence_number2231); if (state.failed) return retval; 
+                    EIGHTEENTH175=(Token)match(input,EIGHTEENTH,FOLLOW_EIGHTEENTH_in_spelled_sequence_1_to_312233); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EIGHTEENTH.add(EIGHTEENTH175);
 
 
@@ -6790,7 +6790,7 @@ public class DateParser extends Parser {
                 case 19 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:241:5: NINETEENTH
                     {
-                    NINETEENTH176=(Token)match(input,NINETEENTH,FOLLOW_NINETEENTH_in_sequence_number2243); if (state.failed) return retval; 
+                    NINETEENTH176=(Token)match(input,NINETEENTH,FOLLOW_NINETEENTH_in_spelled_sequence_1_to_312245); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NINETEENTH.add(NINETEENTH176);
 
 
@@ -6819,7 +6819,7 @@ public class DateParser extends Parser {
                 case 20 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:242:5: TWENTIETH
                     {
-                    TWENTIETH177=(Token)match(input,TWENTIETH,FOLLOW_TWENTIETH_in_sequence_number2255); if (state.failed) return retval; 
+                    TWENTIETH177=(Token)match(input,TWENTIETH,FOLLOW_TWENTIETH_in_spelled_sequence_1_to_312257); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTIETH.add(TWENTIETH177);
 
 
@@ -6850,7 +6850,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    TWENTY_FIRST178=(Token)match(input,TWENTY_FIRST,FOLLOW_TWENTY_FIRST_in_sequence_number2268); if (state.failed) return retval;
+                    TWENTY_FIRST178=(Token)match(input,TWENTY_FIRST,FOLLOW_TWENTY_FIRST_in_spelled_sequence_1_to_312270); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     TWENTY_FIRST178_tree = (Object)adaptor.create(TWENTY_FIRST178);
                     adaptor.addChild(root_0, TWENTY_FIRST178_tree);
@@ -6864,7 +6864,7 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:243:22: ( TWENTY ( DASH )? FIRST )
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:243:23: TWENTY ( DASH )? FIRST
                     {
-                    TWENTY179=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_sequence_number2275); if (state.failed) return retval; 
+                    TWENTY179=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312277); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY179);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:243:30: ( DASH )?
@@ -6878,7 +6878,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:243:30: DASH
                             {
-                            DASH180=(Token)match(input,DASH,FOLLOW_DASH_in_sequence_number2277); if (state.failed) return retval; 
+                            DASH180=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312279); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH180);
 
 
@@ -6887,7 +6887,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    FIRST181=(Token)match(input,FIRST,FOLLOW_FIRST_in_sequence_number2280); if (state.failed) return retval; 
+                    FIRST181=(Token)match(input,FIRST,FOLLOW_FIRST_in_spelled_sequence_1_to_312282); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FIRST.add(FIRST181);
 
 
@@ -6921,7 +6921,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    TWENTY_SECOND182=(Token)match(input,TWENTY_SECOND,FOLLOW_TWENTY_SECOND_in_sequence_number2294); if (state.failed) return retval;
+                    TWENTY_SECOND182=(Token)match(input,TWENTY_SECOND,FOLLOW_TWENTY_SECOND_in_spelled_sequence_1_to_312296); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     TWENTY_SECOND182_tree = (Object)adaptor.create(TWENTY_SECOND182);
                     adaptor.addChild(root_0, TWENTY_SECOND182_tree);
@@ -6935,7 +6935,7 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:244:22: ( TWENTY ( DASH )? SECOND )
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:244:23: TWENTY ( DASH )? SECOND
                     {
-                    TWENTY183=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_sequence_number2300); if (state.failed) return retval; 
+                    TWENTY183=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312302); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY183);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:244:30: ( DASH )?
@@ -6949,7 +6949,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:244:30: DASH
                             {
-                            DASH184=(Token)match(input,DASH,FOLLOW_DASH_in_sequence_number2302); if (state.failed) return retval; 
+                            DASH184=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312304); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH184);
 
 
@@ -6958,7 +6958,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    SECOND185=(Token)match(input,SECOND,FOLLOW_SECOND_in_sequence_number2305); if (state.failed) return retval; 
+                    SECOND185=(Token)match(input,SECOND,FOLLOW_SECOND_in_spelled_sequence_1_to_312307); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SECOND.add(SECOND185);
 
 
@@ -6992,7 +6992,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    TWENTY_THIRD186=(Token)match(input,TWENTY_THIRD,FOLLOW_TWENTY_THIRD_in_sequence_number2318); if (state.failed) return retval;
+                    TWENTY_THIRD186=(Token)match(input,TWENTY_THIRD,FOLLOW_TWENTY_THIRD_in_spelled_sequence_1_to_312320); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     TWENTY_THIRD186_tree = (Object)adaptor.create(TWENTY_THIRD186);
                     adaptor.addChild(root_0, TWENTY_THIRD186_tree);
@@ -7006,7 +7006,7 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:245:22: ( TWENTY ( DASH )? THIRD )
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:245:23: TWENTY ( DASH )? THIRD
                     {
-                    TWENTY187=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_sequence_number2325); if (state.failed) return retval; 
+                    TWENTY187=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312327); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY187);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:245:30: ( DASH )?
@@ -7020,7 +7020,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:245:30: DASH
                             {
-                            DASH188=(Token)match(input,DASH,FOLLOW_DASH_in_sequence_number2327); if (state.failed) return retval; 
+                            DASH188=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312329); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH188);
 
 
@@ -7029,7 +7029,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    THIRD189=(Token)match(input,THIRD,FOLLOW_THIRD_in_sequence_number2330); if (state.failed) return retval; 
+                    THIRD189=(Token)match(input,THIRD,FOLLOW_THIRD_in_spelled_sequence_1_to_312332); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRD.add(THIRD189);
 
 
@@ -7063,7 +7063,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    TWENTY_FOURTH190=(Token)match(input,TWENTY_FOURTH,FOLLOW_TWENTY_FOURTH_in_sequence_number2344); if (state.failed) return retval;
+                    TWENTY_FOURTH190=(Token)match(input,TWENTY_FOURTH,FOLLOW_TWENTY_FOURTH_in_spelled_sequence_1_to_312346); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     TWENTY_FOURTH190_tree = (Object)adaptor.create(TWENTY_FOURTH190);
                     adaptor.addChild(root_0, TWENTY_FOURTH190_tree);
@@ -7077,7 +7077,7 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:246:22: ( TWENTY ( DASH )? FOURTH )
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:246:23: TWENTY ( DASH )? FOURTH
                     {
-                    TWENTY191=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_sequence_number2350); if (state.failed) return retval; 
+                    TWENTY191=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312352); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY191);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:246:30: ( DASH )?
@@ -7091,7 +7091,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:246:30: DASH
                             {
-                            DASH192=(Token)match(input,DASH,FOLLOW_DASH_in_sequence_number2352); if (state.failed) return retval; 
+                            DASH192=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312354); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH192);
 
 
@@ -7100,7 +7100,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    FOURTH193=(Token)match(input,FOURTH,FOLLOW_FOURTH_in_sequence_number2355); if (state.failed) return retval; 
+                    FOURTH193=(Token)match(input,FOURTH,FOLLOW_FOURTH_in_spelled_sequence_1_to_312357); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FOURTH.add(FOURTH193);
 
 
@@ -7134,7 +7134,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    TWENTY_FIFTH194=(Token)match(input,TWENTY_FIFTH,FOLLOW_TWENTY_FIFTH_in_sequence_number2368); if (state.failed) return retval;
+                    TWENTY_FIFTH194=(Token)match(input,TWENTY_FIFTH,FOLLOW_TWENTY_FIFTH_in_spelled_sequence_1_to_312370); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     TWENTY_FIFTH194_tree = (Object)adaptor.create(TWENTY_FIFTH194);
                     adaptor.addChild(root_0, TWENTY_FIFTH194_tree);
@@ -7148,7 +7148,7 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:247:22: ( TWENTY ( DASH )? FIFTH )
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:247:23: TWENTY ( DASH )? FIFTH
                     {
-                    TWENTY195=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_sequence_number2375); if (state.failed) return retval; 
+                    TWENTY195=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312377); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY195);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:247:30: ( DASH )?
@@ -7162,7 +7162,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:247:30: DASH
                             {
-                            DASH196=(Token)match(input,DASH,FOLLOW_DASH_in_sequence_number2377); if (state.failed) return retval; 
+                            DASH196=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312379); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH196);
 
 
@@ -7171,7 +7171,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    FIFTH197=(Token)match(input,FIFTH,FOLLOW_FIFTH_in_sequence_number2380); if (state.failed) return retval; 
+                    FIFTH197=(Token)match(input,FIFTH,FOLLOW_FIFTH_in_spelled_sequence_1_to_312382); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FIFTH.add(FIFTH197);
 
 
@@ -7205,7 +7205,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    TWENTY_SIXTH198=(Token)match(input,TWENTY_SIXTH,FOLLOW_TWENTY_SIXTH_in_sequence_number2394); if (state.failed) return retval;
+                    TWENTY_SIXTH198=(Token)match(input,TWENTY_SIXTH,FOLLOW_TWENTY_SIXTH_in_spelled_sequence_1_to_312396); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     TWENTY_SIXTH198_tree = (Object)adaptor.create(TWENTY_SIXTH198);
                     adaptor.addChild(root_0, TWENTY_SIXTH198_tree);
@@ -7219,7 +7219,7 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:248:22: ( TWENTY ( DASH )? SIXTH )
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:248:23: TWENTY ( DASH )? SIXTH
                     {
-                    TWENTY199=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_sequence_number2401); if (state.failed) return retval; 
+                    TWENTY199=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312403); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY199);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:248:30: ( DASH )?
@@ -7233,7 +7233,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:248:30: DASH
                             {
-                            DASH200=(Token)match(input,DASH,FOLLOW_DASH_in_sequence_number2403); if (state.failed) return retval; 
+                            DASH200=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312405); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH200);
 
 
@@ -7242,7 +7242,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    SIXTH201=(Token)match(input,SIXTH,FOLLOW_SIXTH_in_sequence_number2406); if (state.failed) return retval; 
+                    SIXTH201=(Token)match(input,SIXTH,FOLLOW_SIXTH_in_spelled_sequence_1_to_312408); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SIXTH.add(SIXTH201);
 
 
@@ -7276,7 +7276,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    TWENTY_SEVENTH202=(Token)match(input,TWENTY_SEVENTH,FOLLOW_TWENTY_SEVENTH_in_sequence_number2420); if (state.failed) return retval;
+                    TWENTY_SEVENTH202=(Token)match(input,TWENTY_SEVENTH,FOLLOW_TWENTY_SEVENTH_in_spelled_sequence_1_to_312422); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     TWENTY_SEVENTH202_tree = (Object)adaptor.create(TWENTY_SEVENTH202);
                     adaptor.addChild(root_0, TWENTY_SEVENTH202_tree);
@@ -7290,7 +7290,7 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:249:22: ( TWENTY ( DASH )? SEVENTH )
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:249:23: TWENTY ( DASH )? SEVENTH
                     {
-                    TWENTY203=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_sequence_number2425); if (state.failed) return retval; 
+                    TWENTY203=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312427); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY203);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:249:30: ( DASH )?
@@ -7304,7 +7304,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:249:30: DASH
                             {
-                            DASH204=(Token)match(input,DASH,FOLLOW_DASH_in_sequence_number2427); if (state.failed) return retval; 
+                            DASH204=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312429); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH204);
 
 
@@ -7313,7 +7313,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    SEVENTH205=(Token)match(input,SEVENTH,FOLLOW_SEVENTH_in_sequence_number2430); if (state.failed) return retval; 
+                    SEVENTH205=(Token)match(input,SEVENTH,FOLLOW_SEVENTH_in_spelled_sequence_1_to_312432); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SEVENTH.add(SEVENTH205);
 
 
@@ -7347,7 +7347,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    TWENTY_EIGHTH206=(Token)match(input,TWENTY_EIGHTH,FOLLOW_TWENTY_EIGHTH_in_sequence_number2442); if (state.failed) return retval;
+                    TWENTY_EIGHTH206=(Token)match(input,TWENTY_EIGHTH,FOLLOW_TWENTY_EIGHTH_in_spelled_sequence_1_to_312444); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     TWENTY_EIGHTH206_tree = (Object)adaptor.create(TWENTY_EIGHTH206);
                     adaptor.addChild(root_0, TWENTY_EIGHTH206_tree);
@@ -7361,7 +7361,7 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:250:22: ( TWENTY ( DASH )? EIGHTH )
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:250:23: TWENTY ( DASH )? EIGHTH
                     {
-                    TWENTY207=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_sequence_number2448); if (state.failed) return retval; 
+                    TWENTY207=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312450); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY207);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:250:30: ( DASH )?
@@ -7375,7 +7375,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:250:30: DASH
                             {
-                            DASH208=(Token)match(input,DASH,FOLLOW_DASH_in_sequence_number2450); if (state.failed) return retval; 
+                            DASH208=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312452); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH208);
 
 
@@ -7384,7 +7384,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    EIGHTH209=(Token)match(input,EIGHTH,FOLLOW_EIGHTH_in_sequence_number2453); if (state.failed) return retval; 
+                    EIGHTH209=(Token)match(input,EIGHTH,FOLLOW_EIGHTH_in_spelled_sequence_1_to_312455); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_EIGHTH.add(EIGHTH209);
 
 
@@ -7418,7 +7418,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    TWENTY_NINTH210=(Token)match(input,TWENTY_NINTH,FOLLOW_TWENTY_NINTH_in_sequence_number2466); if (state.failed) return retval;
+                    TWENTY_NINTH210=(Token)match(input,TWENTY_NINTH,FOLLOW_TWENTY_NINTH_in_spelled_sequence_1_to_312468); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     TWENTY_NINTH210_tree = (Object)adaptor.create(TWENTY_NINTH210);
                     adaptor.addChild(root_0, TWENTY_NINTH210_tree);
@@ -7432,7 +7432,7 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:251:22: ( TWENTY ( DASH )? NINTH )
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:251:23: TWENTY ( DASH )? NINTH
                     {
-                    TWENTY211=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_sequence_number2473); if (state.failed) return retval; 
+                    TWENTY211=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312475); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY211);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:251:30: ( DASH )?
@@ -7446,7 +7446,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:251:30: DASH
                             {
-                            DASH212=(Token)match(input,DASH,FOLLOW_DASH_in_sequence_number2475); if (state.failed) return retval; 
+                            DASH212=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312477); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH212);
 
 
@@ -7455,7 +7455,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    NINTH213=(Token)match(input,NINTH,FOLLOW_NINTH_in_sequence_number2478); if (state.failed) return retval; 
+                    NINTH213=(Token)match(input,NINTH,FOLLOW_NINTH_in_spelled_sequence_1_to_312480); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NINTH.add(NINTH213);
 
 
@@ -7487,7 +7487,7 @@ public class DateParser extends Parser {
                 case 39 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:252:5: THIRTIETH
                     {
-                    THIRTIETH214=(Token)match(input,THIRTIETH,FOLLOW_THIRTIETH_in_sequence_number2492); if (state.failed) return retval; 
+                    THIRTIETH214=(Token)match(input,THIRTIETH,FOLLOW_THIRTIETH_in_spelled_sequence_1_to_312494); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTIETH.add(THIRTIETH214);
 
 
@@ -7518,7 +7518,7 @@ public class DateParser extends Parser {
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    THIRTY_FIRST215=(Token)match(input,THIRTY_FIRST,FOLLOW_THIRTY_FIRST_in_sequence_number2533); if (state.failed) return retval;
+                    THIRTY_FIRST215=(Token)match(input,THIRTY_FIRST,FOLLOW_THIRTY_FIRST_in_spelled_sequence_1_to_312535); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     THIRTY_FIRST215_tree = (Object)adaptor.create(THIRTY_FIRST215);
                     adaptor.addChild(root_0, THIRTY_FIRST215_tree);
@@ -7532,7 +7532,7 @@ public class DateParser extends Parser {
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:253:22: ( THIRTY ( DASH )? FIRST )
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:253:23: THIRTY ( DASH )? FIRST
                     {
-                    THIRTY216=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_sequence_number2540); if (state.failed) return retval; 
+                    THIRTY216=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_sequence_1_to_312542); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTY.add(THIRTY216);
 
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:253:30: ( DASH )?
@@ -7546,7 +7546,7 @@ public class DateParser extends Parser {
                         case 1 :
                             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:253:30: DASH
                             {
-                            DASH217=(Token)match(input,DASH,FOLLOW_DASH_in_sequence_number2542); if (state.failed) return retval; 
+                            DASH217=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312544); if (state.failed) return retval; 
                             if ( state.backtracking==0 ) stream_DASH.add(DASH217);
 
 
@@ -7555,7 +7555,7 @@ public class DateParser extends Parser {
 
                     }
 
-                    FIRST218=(Token)match(input,FIRST,FOLLOW_FIRST_in_sequence_number2545); if (state.failed) return retval; 
+                    FIRST218=(Token)match(input,FIRST,FOLLOW_FIRST_in_spelled_sequence_1_to_312547); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FIRST.add(FIRST218);
 
 
@@ -7604,7 +7604,7 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "sequence_number"
+    // $ANTLR end "spelled_sequence_1_to_31"
 
     public static class four_digits_return extends ParserRuleReturnScope {
         Object tree;
@@ -7612,7 +7612,7 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "four_digits"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:1: four_digits : ( zero_to_ninety_nine | THREE_DIGIT -> INTEGER[$THREE_DIGIT.text] | FOUR_DIGIT -> INTEGER[$FOUR_DIGIT.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:1: four_digits : ( numeric_0_to_99 | THREE_DIGIT -> INTEGER[$THREE_DIGIT.text] | FOUR_DIGIT -> INTEGER[$FOUR_DIGIT.text] );
     public final DateParser.four_digits_return four_digits() throws RecognitionException {
         DateParser.four_digits_return retval = new DateParser.four_digits_return();
         retval.start = input.LT(1);
@@ -7621,7 +7621,7 @@ public class DateParser extends Parser {
 
         Token THREE_DIGIT220=null;
         Token FOUR_DIGIT221=null;
-        DateParser.zero_to_ninety_nine_return zero_to_ninety_nine219 = null;
+        DateParser.numeric_0_to_99_return numeric_0_to_99219 = null;
 
 
         Object THREE_DIGIT220_tree=null;
@@ -7630,7 +7630,7 @@ public class DateParser extends Parser {
         RewriteRuleTokenStream stream_THREE_DIGIT=new RewriteRuleTokenStream(adaptor,"token THREE_DIGIT");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:3: ( zero_to_ninety_nine | THREE_DIGIT -> INTEGER[$THREE_DIGIT.text] | FOUR_DIGIT -> INTEGER[$FOUR_DIGIT.text] )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:3: ( numeric_0_to_99 | THREE_DIGIT -> INTEGER[$THREE_DIGIT.text] | FOUR_DIGIT -> INTEGER[$FOUR_DIGIT.text] )
             int alt60=3;
             switch ( input.LA(1) ) {
             case ONE_TO_TWELVE:
@@ -7663,23 +7663,23 @@ public class DateParser extends Parser {
 
             switch (alt60) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:5: zero_to_ninety_nine
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:5: numeric_0_to_99
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_zero_to_ninety_nine_in_four_digits2569);
-                    zero_to_ninety_nine219=zero_to_ninety_nine();
+                    pushFollow(FOLLOW_numeric_0_to_99_in_four_digits2571);
+                    numeric_0_to_99219=numeric_0_to_99();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, zero_to_ninety_nine219.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, numeric_0_to_99219.getTree());
 
                     }
                     break;
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:259:5: THREE_DIGIT
                     {
-                    THREE_DIGIT220=(Token)match(input,THREE_DIGIT,FOLLOW_THREE_DIGIT_in_four_digits2575); if (state.failed) return retval; 
+                    THREE_DIGIT220=(Token)match(input,THREE_DIGIT,FOLLOW_THREE_DIGIT_in_four_digits2577); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THREE_DIGIT.add(THREE_DIGIT220);
 
 
@@ -7708,7 +7708,7 @@ public class DateParser extends Parser {
                 case 3 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:260:5: FOUR_DIGIT
                     {
-                    FOUR_DIGIT221=(Token)match(input,FOUR_DIGIT,FOLLOW_FOUR_DIGIT_in_four_digits2586); if (state.failed) return retval; 
+                    FOUR_DIGIT221=(Token)match(input,FOUR_DIGIT,FOLLOW_FOUR_DIGIT_in_four_digits2588); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FOUR_DIGIT.add(FOUR_DIGIT221);
 
 
@@ -7756,15 +7756,15 @@ public class DateParser extends Parser {
     }
     // $ANTLR end "four_digits"
 
-    public static class one_to_twelve_return extends ParserRuleReturnScope {
+    public static class numeric_1_to_12_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "one_to_twelve"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:263:1: one_to_twelve : ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text] ;
-    public final DateParser.one_to_twelve_return one_to_twelve() throws RecognitionException {
-        DateParser.one_to_twelve_return retval = new DateParser.one_to_twelve_return();
+    // $ANTLR start "numeric_1_to_12"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:263:1: numeric_1_to_12 : ONE_TO_TWELVE -> INTEGER[$numeric_1_to_12.text] ;
+    public final DateParser.numeric_1_to_12_return numeric_1_to_12() throws RecognitionException {
+        DateParser.numeric_1_to_12_return retval = new DateParser.numeric_1_to_12_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -7775,10 +7775,10 @@ public class DateParser extends Parser {
         RewriteRuleTokenStream stream_ONE_TO_TWELVE=new RewriteRuleTokenStream(adaptor,"token ONE_TO_TWELVE");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:264:3: ( ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text] )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:264:3: ( ONE_TO_TWELVE -> INTEGER[$numeric_1_to_12.text] )
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:264:5: ONE_TO_TWELVE
             {
-            ONE_TO_TWELVE222=(Token)match(input,ONE_TO_TWELVE,FOLLOW_ONE_TO_TWELVE_in_one_to_twelve2607); if (state.failed) return retval; 
+            ONE_TO_TWELVE222=(Token)match(input,ONE_TO_TWELVE,FOLLOW_ONE_TO_TWELVE_in_numeric_1_to_122609); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_ONE_TO_TWELVE.add(ONE_TO_TWELVE222);
 
 
@@ -7795,9 +7795,9 @@ public class DateParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 264:19: -> INTEGER[$ONE_TO_TWELVE.text]
+            // 264:19: -> INTEGER[$numeric_1_to_12.text]
             {
-                adaptor.addChild(root_0, (Object)adaptor.create(INTEGER, (ONE_TO_TWELVE222!=null?ONE_TO_TWELVE222.getText():null)));
+                adaptor.addChild(root_0, (Object)adaptor.create(INTEGER, input.toString(retval.start,input.LT(-1))));
 
             }
 
@@ -7822,17 +7822,17 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "one_to_twelve"
+    // $ANTLR end "numeric_1_to_12"
 
-    public static class zero_to_twenty_three_return extends ParserRuleReturnScope {
+    public static class numeric_0_to_23_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "zero_to_twenty_three"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:268:1: zero_to_twenty_three : ( TWO_ZEROS -> INTEGER[$TWO_ZEROS.text] | ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text] );
-    public final DateParser.zero_to_twenty_three_return zero_to_twenty_three() throws RecognitionException {
-        DateParser.zero_to_twenty_three_return retval = new DateParser.zero_to_twenty_three_return();
+    // $ANTLR start "numeric_0_to_23"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:268:1: numeric_0_to_23 : ( TWO_ZEROS -> INTEGER[$TWO_ZEROS.text] | ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text] );
+    public final DateParser.numeric_0_to_23_return numeric_0_to_23() throws RecognitionException {
+        DateParser.numeric_0_to_23_return retval = new DateParser.numeric_0_to_23_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -7879,7 +7879,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:269:5: TWO_ZEROS
                     {
-                    TWO_ZEROS223=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_zero_to_twenty_three2628); if (state.failed) return retval; 
+                    TWO_ZEROS223=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_numeric_0_to_232630); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWO_ZEROS.add(TWO_ZEROS223);
 
 
@@ -7908,7 +7908,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:270:5: ONE_TO_TWELVE
                     {
-                    ONE_TO_TWELVE224=(Token)match(input,ONE_TO_TWELVE,FOLLOW_ONE_TO_TWELVE_in_zero_to_twenty_three2654); if (state.failed) return retval; 
+                    ONE_TO_TWELVE224=(Token)match(input,ONE_TO_TWELVE,FOLLOW_ONE_TO_TWELVE_in_numeric_0_to_232656); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ONE_TO_TWELVE.add(ONE_TO_TWELVE224);
 
 
@@ -7937,7 +7937,7 @@ public class DateParser extends Parser {
                 case 3 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:271:5: THIRTEEN_TO_TWENTY_THREE
                     {
-                    THIRTEEN_TO_TWENTY_THREE225=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_zero_to_twenty_three2676); if (state.failed) return retval; 
+                    THIRTEEN_TO_TWENTY_THREE225=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_numeric_0_to_232678); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE225);
 
 
@@ -7983,17 +7983,17 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "zero_to_twenty_three"
+    // $ANTLR end "numeric_0_to_23"
 
-    public static class zero_to_fifty_nine_return extends ParserRuleReturnScope {
+    public static class numeric_0_to_59_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "zero_to_fifty_nine"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:275:1: zero_to_fifty_nine : ( TWO_ZEROS -> INTEGER[\"0\"] | ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INTEGER[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INTEGER[$THIRTY_TWO_TO_FIFTY_NINE.text] );
-    public final DateParser.zero_to_fifty_nine_return zero_to_fifty_nine() throws RecognitionException {
-        DateParser.zero_to_fifty_nine_return retval = new DateParser.zero_to_fifty_nine_return();
+    // $ANTLR start "numeric_0_to_59"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:275:1: numeric_0_to_59 : ( TWO_ZEROS -> INTEGER[\"0\"] | ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INTEGER[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INTEGER[$THIRTY_TWO_TO_FIFTY_NINE.text] );
+    public final DateParser.numeric_0_to_59_return numeric_0_to_59() throws RecognitionException {
+        DateParser.numeric_0_to_59_return retval = new DateParser.numeric_0_to_59_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -8056,7 +8056,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:276:5: TWO_ZEROS
                     {
-                    TWO_ZEROS226=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_zero_to_fifty_nine2697); if (state.failed) return retval; 
+                    TWO_ZEROS226=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_numeric_0_to_592699); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWO_ZEROS.add(TWO_ZEROS226);
 
 
@@ -8085,7 +8085,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:277:5: ONE_TO_TWELVE
                     {
-                    ONE_TO_TWELVE227=(Token)match(input,ONE_TO_TWELVE,FOLLOW_ONE_TO_TWELVE_in_zero_to_fifty_nine2724); if (state.failed) return retval; 
+                    ONE_TO_TWELVE227=(Token)match(input,ONE_TO_TWELVE,FOLLOW_ONE_TO_TWELVE_in_numeric_0_to_592726); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ONE_TO_TWELVE.add(ONE_TO_TWELVE227);
 
 
@@ -8114,7 +8114,7 @@ public class DateParser extends Parser {
                 case 3 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:278:5: THIRTEEN_TO_TWENTY_THREE
                     {
-                    THIRTEEN_TO_TWENTY_THREE228=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_zero_to_fifty_nine2747); if (state.failed) return retval; 
+                    THIRTEEN_TO_TWENTY_THREE228=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_numeric_0_to_592749); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE228);
 
 
@@ -8143,7 +8143,7 @@ public class DateParser extends Parser {
                 case 4 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:279:5: TWENTY_FOUR_TO_THIRTY_ONE
                     {
-                    TWENTY_FOUR_TO_THIRTY_ONE229=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_zero_to_fifty_nine2759); if (state.failed) return retval; 
+                    TWENTY_FOUR_TO_THIRTY_ONE229=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_numeric_0_to_592761); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY_FOUR_TO_THIRTY_ONE.add(TWENTY_FOUR_TO_THIRTY_ONE229);
 
 
@@ -8172,7 +8172,7 @@ public class DateParser extends Parser {
                 case 5 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:280:5: THIRTY_TWO_TO_FIFTY_NINE
                     {
-                    THIRTY_TWO_TO_FIFTY_NINE230=(Token)match(input,THIRTY_TWO_TO_FIFTY_NINE,FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_zero_to_fifty_nine2770); if (state.failed) return retval; 
+                    THIRTY_TWO_TO_FIFTY_NINE230=(Token)match(input,THIRTY_TWO_TO_FIFTY_NINE,FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_numeric_0_to_592772); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTY_TWO_TO_FIFTY_NINE.add(THIRTY_TWO_TO_FIFTY_NINE230);
 
 
@@ -8218,17 +8218,17 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "zero_to_fifty_nine"
+    // $ANTLR end "numeric_0_to_59"
 
-    public static class zero_to_ninety_nine_return extends ParserRuleReturnScope {
+    public static class numeric_0_to_99_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "zero_to_ninety_nine"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:284:1: zero_to_ninety_nine : ( TWO_ZEROS -> INTEGER[$TWO_ZEROS.text] | ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INTEGER[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INTEGER[$THIRTY_TWO_TO_FIFTY_NINE.text] | SIXTY_TO_NINETY_NINE -> INTEGER[$SIXTY_TO_NINETY_NINE.text] );
-    public final DateParser.zero_to_ninety_nine_return zero_to_ninety_nine() throws RecognitionException {
-        DateParser.zero_to_ninety_nine_return retval = new DateParser.zero_to_ninety_nine_return();
+    // $ANTLR start "numeric_0_to_99"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:284:1: numeric_0_to_99 : ( TWO_ZEROS -> INTEGER[$TWO_ZEROS.text] | ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INTEGER[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INTEGER[$THIRTY_TWO_TO_FIFTY_NINE.text] | SIXTY_TO_NINETY_NINE -> INTEGER[$SIXTY_TO_NINETY_NINE.text] );
+    public final DateParser.numeric_0_to_99_return numeric_0_to_99() throws RecognitionException {
+        DateParser.numeric_0_to_99_return retval = new DateParser.numeric_0_to_99_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -8299,7 +8299,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:285:5: TWO_ZEROS
                     {
-                    TWO_ZEROS231=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_zero_to_ninety_nine2792); if (state.failed) return retval; 
+                    TWO_ZEROS231=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_numeric_0_to_992794); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWO_ZEROS.add(TWO_ZEROS231);
 
 
@@ -8328,7 +8328,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:286:5: ONE_TO_TWELVE
                     {
-                    ONE_TO_TWELVE232=(Token)match(input,ONE_TO_TWELVE,FOLLOW_ONE_TO_TWELVE_in_zero_to_ninety_nine2819); if (state.failed) return retval; 
+                    ONE_TO_TWELVE232=(Token)match(input,ONE_TO_TWELVE,FOLLOW_ONE_TO_TWELVE_in_numeric_0_to_992821); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ONE_TO_TWELVE.add(ONE_TO_TWELVE232);
 
 
@@ -8357,7 +8357,7 @@ public class DateParser extends Parser {
                 case 3 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:287:5: THIRTEEN_TO_TWENTY_THREE
                     {
-                    THIRTEEN_TO_TWENTY_THREE233=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_zero_to_ninety_nine2842); if (state.failed) return retval; 
+                    THIRTEEN_TO_TWENTY_THREE233=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_numeric_0_to_992844); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE233);
 
 
@@ -8386,7 +8386,7 @@ public class DateParser extends Parser {
                 case 4 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:288:5: TWENTY_FOUR_TO_THIRTY_ONE
                     {
-                    TWENTY_FOUR_TO_THIRTY_ONE234=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_zero_to_ninety_nine2854); if (state.failed) return retval; 
+                    TWENTY_FOUR_TO_THIRTY_ONE234=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_numeric_0_to_992856); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY_FOUR_TO_THIRTY_ONE.add(TWENTY_FOUR_TO_THIRTY_ONE234);
 
 
@@ -8415,7 +8415,7 @@ public class DateParser extends Parser {
                 case 5 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:289:5: THIRTY_TWO_TO_FIFTY_NINE
                     {
-                    THIRTY_TWO_TO_FIFTY_NINE235=(Token)match(input,THIRTY_TWO_TO_FIFTY_NINE,FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_zero_to_ninety_nine2865); if (state.failed) return retval; 
+                    THIRTY_TWO_TO_FIFTY_NINE235=(Token)match(input,THIRTY_TWO_TO_FIFTY_NINE,FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_numeric_0_to_992867); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTY_TWO_TO_FIFTY_NINE.add(THIRTY_TWO_TO_FIFTY_NINE235);
 
 
@@ -8444,7 +8444,7 @@ public class DateParser extends Parser {
                 case 6 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:290:5: SIXTY_TO_NINETY_NINE
                     {
-                    SIXTY_TO_NINETY_NINE236=(Token)match(input,SIXTY_TO_NINETY_NINE,FOLLOW_SIXTY_TO_NINETY_NINE_in_zero_to_ninety_nine2877); if (state.failed) return retval; 
+                    SIXTY_TO_NINETY_NINE236=(Token)match(input,SIXTY_TO_NINETY_NINE,FOLLOW_SIXTY_TO_NINETY_NINE_in_numeric_0_to_992879); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SIXTY_TO_NINETY_NINE.add(SIXTY_TO_NINETY_NINE236);
 
 
@@ -8490,17 +8490,17 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "zero_to_ninety_nine"
+    // $ANTLR end "numeric_0_to_99"
 
-    public static class one_to_thirty_one_return extends ParserRuleReturnScope {
+    public static class numeric_1_to_31_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "one_to_thirty_one"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:294:1: one_to_thirty_one : ( ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INTEGER[$TWENTY_FOUR_TO_THIRTY_ONE.text] );
-    public final DateParser.one_to_thirty_one_return one_to_thirty_one() throws RecognitionException {
-        DateParser.one_to_thirty_one_return retval = new DateParser.one_to_thirty_one_return();
+    // $ANTLR start "numeric_1_to_31"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:294:1: numeric_1_to_31 : ( ONE_TO_TWELVE -> INTEGER[$ONE_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INTEGER[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INTEGER[$TWENTY_FOUR_TO_THIRTY_ONE.text] );
+    public final DateParser.numeric_1_to_31_return numeric_1_to_31() throws RecognitionException {
+        DateParser.numeric_1_to_31_return retval = new DateParser.numeric_1_to_31_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
@@ -8547,7 +8547,7 @@ public class DateParser extends Parser {
                 case 1 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:295:5: ONE_TO_TWELVE
                     {
-                    ONE_TO_TWELVE237=(Token)match(input,ONE_TO_TWELVE,FOLLOW_ONE_TO_TWELVE_in_one_to_thirty_one2903); if (state.failed) return retval; 
+                    ONE_TO_TWELVE237=(Token)match(input,ONE_TO_TWELVE,FOLLOW_ONE_TO_TWELVE_in_numeric_1_to_312905); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ONE_TO_TWELVE.add(ONE_TO_TWELVE237);
 
 
@@ -8576,7 +8576,7 @@ public class DateParser extends Parser {
                 case 2 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:296:5: THIRTEEN_TO_TWENTY_THREE
                     {
-                    THIRTEEN_TO_TWENTY_THREE238=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_one_to_thirty_one2926); if (state.failed) return retval; 
+                    THIRTEEN_TO_TWENTY_THREE238=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_numeric_1_to_312928); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE238);
 
 
@@ -8605,7 +8605,7 @@ public class DateParser extends Parser {
                 case 3 :
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:297:5: TWENTY_FOUR_TO_THIRTY_ONE
                     {
-                    TWENTY_FOUR_TO_THIRTY_ONE239=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_one_to_thirty_one2938); if (state.failed) return retval; 
+                    TWENTY_FOUR_TO_THIRTY_ONE239=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_numeric_1_to_312940); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TWENTY_FOUR_TO_THIRTY_ONE.add(TWENTY_FOUR_TO_THIRTY_ONE239);
 
 
@@ -8651,7 +8651,7 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "one_to_thirty_one"
+    // $ANTLR end "numeric_1_to_31"
 
     // $ANTLR start synpred1_Date
     public final void synpred1_Date_fragment() throws RecognitionException {   
@@ -8748,11 +8748,11 @@ public class DateParser extends Parser {
 
     // $ANTLR start synpred3_Date
     public final void synpred3_Date_fragment() throws RecognitionException {   
-        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:55:5: ( one_to_twelve date_separator one_to_thirty_one ( date_separator four_digits )? )
-        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:55:5: one_to_twelve date_separator one_to_thirty_one ( date_separator four_digits )?
+        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:55:5: ( numeric_1_to_12 date_separator numeric_1_to_31 ( date_separator four_digits )? )
+        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:55:5: numeric_1_to_12 date_separator numeric_1_to_31 ( date_separator four_digits )?
         {
-        pushFollow(FOLLOW_one_to_twelve_in_synpred3_Date312);
-        one_to_twelve();
+        pushFollow(FOLLOW_numeric_1_to_12_in_synpred3_Date312);
+        numeric_1_to_12();
 
         state._fsp--;
         if (state.failed) return ;
@@ -8761,8 +8761,8 @@ public class DateParser extends Parser {
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_one_to_thirty_one_in_synpred3_Date316);
-        one_to_thirty_one();
+        pushFollow(FOLLOW_numeric_1_to_31_in_synpred3_Date316);
+        numeric_1_to_31();
 
         state._fsp--;
         if (state.failed) return ;
@@ -8800,8 +8800,8 @@ public class DateParser extends Parser {
 
     // $ANTLR start synpred4_Date
     public final void synpred4_Date_fragment() throws RecognitionException {   
-        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:58:5: ( four_digits date_separator one_to_twelve date_separator one_to_thirty_one )
-        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:58:5: four_digits date_separator one_to_twelve date_separator one_to_thirty_one
+        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:58:5: ( four_digits date_separator numeric_1_to_12 date_separator numeric_1_to_31 )
+        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:58:5: four_digits date_separator numeric_1_to_12 date_separator numeric_1_to_31
         {
         pushFollow(FOLLOW_four_digits_in_synpred4_Date351);
         four_digits();
@@ -8813,8 +8813,8 @@ public class DateParser extends Parser {
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_one_to_twelve_in_synpred4_Date355);
-        one_to_twelve();
+        pushFollow(FOLLOW_numeric_1_to_12_in_synpred4_Date355);
+        numeric_1_to_12();
 
         state._fsp--;
         if (state.failed) return ;
@@ -8823,8 +8823,8 @@ public class DateParser extends Parser {
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_one_to_thirty_one_in_synpred4_Date359);
-        one_to_thirty_one();
+        pushFollow(FOLLOW_numeric_1_to_31_in_synpred4_Date359);
+        numeric_1_to_31();
 
         state._fsp--;
         if (state.failed) return ;
@@ -8835,8 +8835,8 @@ public class DateParser extends Parser {
 
     // $ANTLR start synpred6_Date
     public final void synpred6_Date_fragment() throws RecognitionException {   
-        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:5: ( ( '\\'' )? zero_to_ninety_nine )
-        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:5: ( '\\'' )? zero_to_ninety_nine
+        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:5: ( ( '\\'' )? numeric_0_to_99 )
+        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:5: ( '\\'' )? numeric_0_to_99
         {
         // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:5: ( '\\'' )?
         int alt71=2;
@@ -8849,15 +8849,15 @@ public class DateParser extends Parser {
             case 1 :
                 // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:5: '\\''
                 {
-                match(input,127,FOLLOW_127_in_synpred6_Date1312); if (state.failed) return ;
+                match(input,127,FOLLOW_127_in_synpred6_Date1314); if (state.failed) return ;
 
                 }
                 break;
 
         }
 
-        pushFollow(FOLLOW_zero_to_ninety_nine_in_synpred6_Date1315);
-        zero_to_ninety_nine();
+        pushFollow(FOLLOW_numeric_0_to_99_in_synpred6_Date1317);
+        numeric_0_to_99();
 
         state._fsp--;
         if (state.failed) return ;
@@ -9320,7 +9320,7 @@ public class DateParser extends Parser {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "53:1: explicit_date options {backtrack=true; } : ( one_to_twelve date_separator one_to_thirty_one ( date_separator four_digits )? -> ^( EXPLICIT_DATE one_to_thirty_one one_to_thirty_one ( four_digits )? ) | four_digits date_separator one_to_twelve date_separator one_to_thirty_one -> ^( EXPLICIT_DATE one_to_twelve one_to_thirty_one four_digits ) | month day_of_month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) | day_of_month ( 'of' )? month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) );";
+            return "53:1: explicit_date options {backtrack=true; } : ( numeric_1_to_12 date_separator numeric_1_to_31 ( date_separator four_digits )? -> ^( EXPLICIT_DATE numeric_1_to_31 numeric_1_to_31 ( four_digits )? ) | four_digits date_separator numeric_1_to_12 date_separator numeric_1_to_31 -> ^( EXPLICIT_DATE numeric_1_to_12 numeric_1_to_31 four_digits ) | month day_of_month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) | day_of_month ( 'of' )? month ( ( ',' )? year )? -> ^( EXPLICIT_DATE month day_of_month ( year )? ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -9465,7 +9465,7 @@ public class DateParser extends Parser {
             this.transition = DFA47_transition;
         }
         public String getDescription() {
-            return "181:1: spelled_number : ( ONE -> INTEGER[\"1\"] | TWO -> INTEGER[\"2\"] | THREE -> INTEGER[\"3\"] | FOUR -> INTEGER[\"4\"] | FIVE -> INTEGER[\"5\"] | SIX -> INTEGER[\"6\"] | SEVEN -> INTEGER[\"7\"] | EIGHT -> INTEGER[\"8\"] | NINE -> INTEGER[\"9\"] | TEN -> INTEGER[\"10\"] | ELEVEN -> INTEGER[\"11\"] | TWELVE -> INTEGER[\"12\"] | THIRTEEN -> INTEGER[\"13\"] | FOURTEEN -> INTEGER[\"14\"] | FIFTEEN -> INTEGER[\"15\"] | SIXTEEN -> INTEGER[\"16\"] | SEVENTEEN -> INTEGER[\"17\"] | EIGHTEEN -> INTEGER[\"18\"] | NINETEEN -> INTEGER[\"19\"] | TWENTY -> INTEGER[\"20\"] | TWENTY ( DASH )? ONE -> INTEGER[\"21\"] | TWENTY ( DASH )? TWO -> INTEGER[\"22\"] | TWENTY ( DASH )? THREE -> INTEGER[\"23\"] | TWENTY ( DASH )? FOUR -> INTEGER[\"24\"] | TWENTY ( DASH )? FIVE -> INTEGER[\"25\"] | TWENTY ( DASH )? SIX -> INTEGER[\"26\"] | TWENTY ( DASH )? SEVEN -> INTEGER[\"27\"] | TWENTY ( DASH )? EIGHT -> INTEGER[\"28\"] | TWENTY ( DASH )? NINE -> INTEGER[\"29\"] | THIRTY -> INTEGER[\"30\"] | THIRTY ( DASH )? ONE -> INTEGER[\"31\"] );";
+            return "181:1: spelled_number_1_to_31 : ( ONE -> INTEGER[\"1\"] | TWO -> INTEGER[\"2\"] | THREE -> INTEGER[\"3\"] | FOUR -> INTEGER[\"4\"] | FIVE -> INTEGER[\"5\"] | SIX -> INTEGER[\"6\"] | SEVEN -> INTEGER[\"7\"] | EIGHT -> INTEGER[\"8\"] | NINE -> INTEGER[\"9\"] | TEN -> INTEGER[\"10\"] | ELEVEN -> INTEGER[\"11\"] | TWELVE -> INTEGER[\"12\"] | THIRTEEN -> INTEGER[\"13\"] | FOURTEEN -> INTEGER[\"14\"] | FIFTEEN -> INTEGER[\"15\"] | SIXTEEN -> INTEGER[\"16\"] | SEVENTEEN -> INTEGER[\"17\"] | EIGHTEEN -> INTEGER[\"18\"] | NINETEEN -> INTEGER[\"19\"] | TWENTY -> INTEGER[\"20\"] | TWENTY ( DASH )? ONE -> INTEGER[\"21\"] | TWENTY ( DASH )? TWO -> INTEGER[\"22\"] | TWENTY ( DASH )? THREE -> INTEGER[\"23\"] | TWENTY ( DASH )? FOUR -> INTEGER[\"24\"] | TWENTY ( DASH )? FIVE -> INTEGER[\"25\"] | TWENTY ( DASH )? SIX -> INTEGER[\"26\"] | TWENTY ( DASH )? SEVEN -> INTEGER[\"27\"] | TWENTY ( DASH )? EIGHT -> INTEGER[\"28\"] | TWENTY ( DASH )? NINE -> INTEGER[\"29\"] | THIRTY -> INTEGER[\"30\"] | THIRTY ( DASH )? ONE -> INTEGER[\"31\"] );";
         }
     }
     static final String DFA59_eotS =
@@ -9562,7 +9562,7 @@ public class DateParser extends Parser {
             this.transition = DFA59_transition;
         }
         public String getDescription() {
-            return "222:1: sequence_number : ( FIRST -> INTEGER[\"1\"] | SECOND -> INTEGER[\"2\"] | THIRD -> INTEGER[\"3\"] | FOURTH -> INTEGER[\"4\"] | FIFTH -> INTEGER[\"5\"] | SIXTH -> INTEGER[\"6\"] | SEVENTH -> INTEGER[\"7\"] | EIGHTH -> INTEGER[\"8\"] | NINTH -> INTEGER[\"9\"] | TENTH -> INTEGER[\"10\"] | ELEVENTH -> INTEGER[\"11\"] | TWELFTH -> INTEGER[\"12\"] | THIRTEENTH -> INTEGER[\"13\"] | FOURTEENTH -> INTEGER[\"14\"] | FIFTEENTH -> INTEGER[\"15\"] | SIXTEENTH -> INTEGER[\"16\"] | SEVENTEENTH -> INTEGER[\"17\"] | EIGHTEENTH -> INTEGER[\"18\"] | NINETEENTH -> INTEGER[\"19\"] | TWENTIETH -> INTEGER[\"20\"] | TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) -> INTEGER[\"21\"] | TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) -> INTEGER[\"22\"] | TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) -> INTEGER[\"23\"] | TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) -> INTEGER[\"24\"] | TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) -> INTEGER[\"25\"] | TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) -> INTEGER[\"26\"] | TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) -> INTEGER[\"27\"] | TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) -> INTEGER[\"28\"] | TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) -> INTEGER[\"29\"] | THIRTIETH -> INTEGER[\"30\"] | THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) -> INTEGER[\"31\"] );";
+            return "222:1: spelled_sequence_1_to_31 : ( FIRST -> INTEGER[\"1\"] | SECOND -> INTEGER[\"2\"] | THIRD -> INTEGER[\"3\"] | FOURTH -> INTEGER[\"4\"] | FIFTH -> INTEGER[\"5\"] | SIXTH -> INTEGER[\"6\"] | SEVENTH -> INTEGER[\"7\"] | EIGHTH -> INTEGER[\"8\"] | NINTH -> INTEGER[\"9\"] | TENTH -> INTEGER[\"10\"] | ELEVENTH -> INTEGER[\"11\"] | TWELFTH -> INTEGER[\"12\"] | THIRTEENTH -> INTEGER[\"13\"] | FOURTEENTH -> INTEGER[\"14\"] | FIFTEENTH -> INTEGER[\"15\"] | SIXTEENTH -> INTEGER[\"16\"] | SEVENTEENTH -> INTEGER[\"17\"] | EIGHTEENTH -> INTEGER[\"18\"] | NINETEENTH -> INTEGER[\"19\"] | TWENTIETH -> INTEGER[\"20\"] | TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) -> INTEGER[\"21\"] | TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) -> INTEGER[\"22\"] | TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) -> INTEGER[\"23\"] | TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) -> INTEGER[\"24\"] | TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) -> INTEGER[\"25\"] | TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) -> INTEGER[\"26\"] | TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) -> INTEGER[\"27\"] | TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) -> INTEGER[\"28\"] | TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) -> INTEGER[\"29\"] | THIRTIETH -> INTEGER[\"30\"] | THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) -> INTEGER[\"31\"] );";
         }
     }
  
@@ -9580,19 +9580,19 @@ public class DateParser extends Parser {
     public static final BitSet FOLLOW_today_or_tomorrow_in_relative_date231 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_relative_prefix_in_relative_date240 = new BitSet(new long[]{0x0000078FFFFE0000L});
     public static final BitSet FOLLOW_modifiable_target_in_relative_date242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_spelled_or_natural_number_in_relative_date268 = new BitSet(new long[]{0x0000078FFFFE0000L});
+    public static final BitSet FOLLOW_spelled_or_numeric_1_to_31_in_relative_date268 = new BitSet(new long[]{0x0000078FFFFE0000L});
     public static final BitSet FOLLOW_modifiable_target_in_relative_date270 = new BitSet(new long[]{0x0000000000000000L,0x6000000000000000L});
     public static final BitSet FOLLOW_relative_suffix_in_relative_date272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_one_to_twelve_in_explicit_date312 = new BitSet(new long[]{0x0000600000000000L});
+    public static final BitSet FOLLOW_numeric_1_to_12_in_explicit_date312 = new BitSet(new long[]{0x0000600000000000L});
     public static final BitSet FOLLOW_date_separator_in_explicit_date314 = new BitSet(new long[]{0xFFFE007000000000L,0x1FF006800000003FL});
-    public static final BitSet FOLLOW_one_to_thirty_one_in_explicit_date316 = new BitSet(new long[]{0x0000600000000002L});
+    public static final BitSet FOLLOW_numeric_1_to_31_in_explicit_date316 = new BitSet(new long[]{0x0000600000000002L});
     public static final BitSet FOLLOW_date_separator_in_explicit_date319 = new BitSet(new long[]{0x0000000000000000L,0x00001FE000000000L});
     public static final BitSet FOLLOW_four_digits_in_explicit_date321 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_four_digits_in_explicit_date351 = new BitSet(new long[]{0x0000600000000000L});
     public static final BitSet FOLLOW_date_separator_in_explicit_date353 = new BitSet(new long[]{0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_one_to_twelve_in_explicit_date355 = new BitSet(new long[]{0x0000600000000000L});
+    public static final BitSet FOLLOW_numeric_1_to_12_in_explicit_date355 = new BitSet(new long[]{0x0000600000000000L});
     public static final BitSet FOLLOW_date_separator_in_explicit_date357 = new BitSet(new long[]{0xFFFE007000000000L,0x1FF006800000003FL});
-    public static final BitSet FOLLOW_one_to_thirty_one_in_explicit_date359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_numeric_1_to_31_in_explicit_date359 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_month_in_explicit_date386 = new BitSet(new long[]{0xFFFE00701FFE0000L,0x1FF11FFFFFFFFFFFL});
     public static final BitSet FOLLOW_day_of_month_in_explicit_date388 = new BitSet(new long[]{0x0000000000000002L,0x80021FE000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_113_in_explicit_date391 = new BitSet(new long[]{0x0000000000000000L,0x80021FE000000000L,0x0000000000000001L});
@@ -9602,11 +9602,11 @@ public class DateParser extends Parser {
     public static final BitSet FOLLOW_month_in_explicit_date429 = new BitSet(new long[]{0x0000000000000002L,0x80021FE000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_113_in_explicit_date432 = new BitSet(new long[]{0x0000000000000000L,0x80021FE000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_year_in_explicit_date435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_zero_to_twenty_three_in_explicit_time476 = new BitSet(new long[]{0x0001800000000002L});
+    public static final BitSet FOLLOW_numeric_0_to_23_in_explicit_time476 = new BitSet(new long[]{0x0001800000000002L});
     public static final BitSet FOLLOW_meridian_indicator_in_explicit_time478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_zero_to_twenty_three_in_explicit_time510 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_numeric_0_to_23_in_explicit_time510 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
     public static final BitSet FOLLOW_115_in_explicit_time512 = new BitSet(new long[]{0x0000000000000000L,0x00000F8000000000L});
-    public static final BitSet FOLLOW_zero_to_fifty_nine_in_explicit_time514 = new BitSet(new long[]{0x0001800000000002L});
+    public static final BitSet FOLLOW_numeric_0_to_59_in_explicit_time514 = new BitSet(new long[]{0x0001800000000002L});
     public static final BitSet FOLLOW_meridian_indicator_in_explicit_time516 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_time_identifier_in_explicit_time544 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_JANUARY_in_month559 = new BitSet(new long[]{0x0000000000000002L});
@@ -9621,208 +9621,208 @@ public class DateParser extends Parser {
     public static final BitSet FOLLOW_OCTOBER_in_month688 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_NOVEMBER_in_month701 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_DECEMBER_in_month713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_spelled_number_in_day_of_month732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_sequence_number_in_day_of_month746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_one_to_thirty_one_in_day_of_month759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SUNDAY_in_day_of_week779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MONDAY_in_day_of_week793 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TUESDAY_in_day_of_week807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WEDNESDAY_in_day_of_week820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THURSDAY_in_day_of_week831 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FRIDAY_in_day_of_week843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SATURDAY_in_day_of_week857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TODAY_in_today_or_tomorrow878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TOMORROW_in_today_or_tomorrow896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_YESTERDAY_in_today_or_tomorrow914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_116_in_today_or_tomorrow938 = new BitSet(new long[]{0x0000000000000000L,0x0020000000000000L});
-    public static final BitSet FOLLOW_117_in_today_or_tomorrow941 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_TOMORROW_in_today_or_tomorrow943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_116_in_today_or_tomorrow961 = new BitSet(new long[]{0x0000000000000000L,0x0040000000000000L});
-    public static final BitSet FOLLOW_118_in_today_or_tomorrow964 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_YESTERDAY_in_today_or_tomorrow966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DAY_in_date_span993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WEEK_in_date_span1006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MONTH_in_date_span1018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_YEAR_in_date_span1029 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MIDNIGHT_in_time_identifier1051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOON_in_time_identifier1072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_day_of_week_in_modifiable_target1107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_date_span_in_modifiable_target1114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_month_in_modifiable_target1120 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_relative_prefix1135 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_120_in_relative_prefix1138 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_relative_prefix1159 = new BitSet(new long[]{0x0000000000000000L,0x0200000000000000L});
-    public static final BitSet FOLLOW_121_in_relative_prefix1162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_relative_prefix1183 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
-    public static final BitSet FOLLOW_122_in_relative_prefix1186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_relative_prefix1207 = new BitSet(new long[]{0x0000000000000000L,0x0800000000000000L});
-    public static final BitSet FOLLOW_123_in_relative_prefix1210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_relative_prefix1229 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
-    public static final BitSet FOLLOW_124_in_relative_prefix1232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_125_in_relative_suffix1261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_126_in_relative_suffix1275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_127_in_year1312 = new BitSet(new long[]{0x0000000000000000L,0x00001F8000000000L});
-    public static final BitSet FOLLOW_zero_to_ninety_nine_in_year1315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_128_in_year1327 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_YEAR_in_year1329 = new BitSet(new long[]{0x0000000000000000L,0x00001FE000000000L});
-    public static final BitSet FOLLOW_four_digits_in_year1333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_spelled_number_1_to_31_in_day_of_month734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_spelled_sequence_1_to_31_in_day_of_month748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_numeric_1_to_31_in_day_of_month761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SUNDAY_in_day_of_week781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MONDAY_in_day_of_week795 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TUESDAY_in_day_of_week809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WEDNESDAY_in_day_of_week822 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THURSDAY_in_day_of_week833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FRIDAY_in_day_of_week845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SATURDAY_in_day_of_week859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TODAY_in_today_or_tomorrow880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TOMORROW_in_today_or_tomorrow898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_YESTERDAY_in_today_or_tomorrow916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_116_in_today_or_tomorrow940 = new BitSet(new long[]{0x0000000000000000L,0x0020000000000000L});
+    public static final BitSet FOLLOW_117_in_today_or_tomorrow943 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_TOMORROW_in_today_or_tomorrow945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_116_in_today_or_tomorrow963 = new BitSet(new long[]{0x0000000000000000L,0x0040000000000000L});
+    public static final BitSet FOLLOW_118_in_today_or_tomorrow966 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_YESTERDAY_in_today_or_tomorrow968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DAY_in_date_span995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WEEK_in_date_span1008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MONTH_in_date_span1020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_YEAR_in_date_span1031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MIDNIGHT_in_time_identifier1053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOON_in_time_identifier1074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_day_of_week_in_modifiable_target1109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_date_span_in_modifiable_target1116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_month_in_modifiable_target1122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_relative_prefix1137 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_120_in_relative_prefix1140 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_relative_prefix1161 = new BitSet(new long[]{0x0000000000000000L,0x0200000000000000L});
+    public static final BitSet FOLLOW_121_in_relative_prefix1164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_relative_prefix1185 = new BitSet(new long[]{0x0000000000000000L,0x0400000000000000L});
+    public static final BitSet FOLLOW_122_in_relative_prefix1188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_relative_prefix1209 = new BitSet(new long[]{0x0000000000000000L,0x0800000000000000L});
+    public static final BitSet FOLLOW_123_in_relative_prefix1212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_relative_prefix1231 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_124_in_relative_prefix1234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_125_in_relative_suffix1263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_relative_suffix1277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_year1314 = new BitSet(new long[]{0x0000000000000000L,0x00001F8000000000L});
+    public static final BitSet FOLLOW_numeric_0_to_99_in_year1317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_128_in_year1329 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_YEAR_in_year1331 = new BitSet(new long[]{0x0000000000000000L,0x00001FE000000000L});
+    public static final BitSet FOLLOW_four_digits_in_year1335 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_date_separator0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_zero_to_twenty_three_in_hours1372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_zero_to_fifty_nine_in_minutes1392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AM_in_meridian_indicator1412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PM_in_meridian_indicator1423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_in_spelled_number1442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWO_in_spelled_number1460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THREE_in_spelled_number1478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOUR_in_spelled_number1494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FIVE_in_spelled_number1511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIX_in_spelled_number1528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SEVEN_in_spelled_number1546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EIGHT_in_spelled_number1562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NINE_in_spelled_number1578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEN_in_spelled_number1595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELEVEN_in_spelled_number1613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWELVE_in_spelled_number1628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_in_spelled_number1643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOURTEEN_in_spelled_number1656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FIFTEEN_in_spelled_number1669 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIXTEEN_in_spelled_number1683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SEVENTEEN_in_spelled_number1697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EIGHTEEN_in_spelled_number1709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NINETEEN_in_spelled_number1722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_number1735 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_number1750 = new BitSet(new long[]{0x0002200000000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_number1752 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_ONE_in_spelled_number1755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_number1768 = new BitSet(new long[]{0x0004200000000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_number1770 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_TWO_in_spelled_number1773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_number1786 = new BitSet(new long[]{0x0008200000000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_number1788 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_THREE_in_spelled_number1791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_number1802 = new BitSet(new long[]{0x0010200000000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_number1804 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_FOUR_in_spelled_number1807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_number1819 = new BitSet(new long[]{0x0020200000000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_number1821 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_FIVE_in_spelled_number1824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_number1836 = new BitSet(new long[]{0x0040200000000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_number1838 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_SIX_in_spelled_number1841 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_number1854 = new BitSet(new long[]{0x0080200000000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_number1856 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_SEVEN_in_spelled_number1859 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_number1870 = new BitSet(new long[]{0x0100200000000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_number1872 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_EIGHT_in_spelled_number1875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_number1886 = new BitSet(new long[]{0x0200200000000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_number1888 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_NINE_in_spelled_number1891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_in_spelled_number1903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_in_spelled_number1926 = new BitSet(new long[]{0x0002200000000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_number1928 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_ONE_in_spelled_number1931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_spelled_number_in_spelled_or_natural_number1953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_one_to_thirty_one_in_spelled_or_natural_number1959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FIRST_in_sequence_number1976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SECOND_in_sequence_number1993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRD_in_sequence_number2009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOURTH_in_sequence_number2026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FIFTH_in_sequence_number2042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIXTH_in_sequence_number2059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SEVENTH_in_sequence_number2076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EIGHTH_in_sequence_number2091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NINTH_in_sequence_number2107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TENTH_in_sequence_number2124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELEVENTH_in_sequence_number2141 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWELFTH_in_sequence_number2155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEENTH_in_sequence_number2170 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOURTEENTH_in_sequence_number2182 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FIFTEENTH_in_sequence_number2194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIXTEENTH_in_sequence_number2207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SEVENTEENTH_in_sequence_number2220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EIGHTEENTH_in_sequence_number2231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NINETEENTH_in_sequence_number2243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTIETH_in_sequence_number2255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FIRST_in_sequence_number2268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_sequence_number2275 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_DASH_in_sequence_number2277 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_FIRST_in_sequence_number2280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_SECOND_in_sequence_number2294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_sequence_number2300 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_DASH_in_sequence_number2302 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_SECOND_in_sequence_number2305 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_THIRD_in_sequence_number2318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_sequence_number2325 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_DASH_in_sequence_number2327 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_THIRD_in_sequence_number2330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FOURTH_in_sequence_number2344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_sequence_number2350 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_DASH_in_sequence_number2352 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_FOURTH_in_sequence_number2355 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FIFTH_in_sequence_number2368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_sequence_number2375 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_DASH_in_sequence_number2377 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_FIFTH_in_sequence_number2380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_SIXTH_in_sequence_number2394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_sequence_number2401 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_DASH_in_sequence_number2403 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_SIXTH_in_sequence_number2406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_SEVENTH_in_sequence_number2420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_sequence_number2425 = new BitSet(new long[]{0x0000200000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_DASH_in_sequence_number2427 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_SEVENTH_in_sequence_number2430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_EIGHTH_in_sequence_number2442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_sequence_number2448 = new BitSet(new long[]{0x0000200000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_DASH_in_sequence_number2450 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_EIGHTH_in_sequence_number2453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_NINTH_in_sequence_number2466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_sequence_number2473 = new BitSet(new long[]{0x0000200000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_DASH_in_sequence_number2475 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_NINTH_in_sequence_number2478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTIETH_in_sequence_number2492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_FIRST_in_sequence_number2533 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_in_sequence_number2540 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_DASH_in_sequence_number2542 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_FIRST_in_sequence_number2545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_zero_to_ninety_nine_in_four_digits2569 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THREE_DIGIT_in_four_digits2575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOUR_DIGIT_in_four_digits2586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_TWELVE_in_one_to_twelve2607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWO_ZEROS_in_zero_to_twenty_three2628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_TWELVE_in_zero_to_twenty_three2654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_zero_to_twenty_three2676 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWO_ZEROS_in_zero_to_fifty_nine2697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_TWELVE_in_zero_to_fifty_nine2724 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_zero_to_fifty_nine2747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_zero_to_fifty_nine2759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_zero_to_fifty_nine2770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWO_ZEROS_in_zero_to_ninety_nine2792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_TWELVE_in_zero_to_ninety_nine2819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_zero_to_ninety_nine2842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_zero_to_ninety_nine2854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_zero_to_ninety_nine2865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIXTY_TO_NINETY_NINE_in_zero_to_ninety_nine2877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_TWELVE_in_one_to_thirty_one2903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_one_to_thirty_one2926 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_one_to_thirty_one2938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_numeric_0_to_23_in_hours1374 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_numeric_0_to_59_in_minutes1394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AM_in_meridian_indicator1414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PM_in_meridian_indicator1425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_in_spelled_number_1_to_311444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWO_in_spelled_number_1_to_311462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THREE_in_spelled_number_1_to_311480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOUR_in_spelled_number_1_to_311496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FIVE_in_spelled_number_1_to_311513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIX_in_spelled_number_1_to_311530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SEVEN_in_spelled_number_1_to_311548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EIGHT_in_spelled_number_1_to_311564 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NINE_in_spelled_number_1_to_311580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEN_in_spelled_number_1_to_311597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELEVEN_in_spelled_number_1_to_311615 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWELVE_in_spelled_number_1_to_311630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEEN_in_spelled_number_1_to_311645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOURTEEN_in_spelled_number_1_to_311658 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FIFTEEN_in_spelled_number_1_to_311671 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIXTEEN_in_spelled_number_1_to_311685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SEVENTEEN_in_spelled_number_1_to_311699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EIGHTEEN_in_spelled_number_1_to_311711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NINETEEN_in_spelled_number_1_to_311724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_number_1_to_311737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_number_1_to_311752 = new BitSet(new long[]{0x0002200000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_number_1_to_311754 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ONE_in_spelled_number_1_to_311757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_number_1_to_311770 = new BitSet(new long[]{0x0004200000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_number_1_to_311772 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_TWO_in_spelled_number_1_to_311775 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_number_1_to_311788 = new BitSet(new long[]{0x0008200000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_number_1_to_311790 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_THREE_in_spelled_number_1_to_311793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_number_1_to_311804 = new BitSet(new long[]{0x0010200000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_number_1_to_311806 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_FOUR_in_spelled_number_1_to_311809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_number_1_to_311821 = new BitSet(new long[]{0x0020200000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_number_1_to_311823 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_FIVE_in_spelled_number_1_to_311826 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_number_1_to_311838 = new BitSet(new long[]{0x0040200000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_number_1_to_311840 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_SIX_in_spelled_number_1_to_311843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_number_1_to_311856 = new BitSet(new long[]{0x0080200000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_number_1_to_311858 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_SEVEN_in_spelled_number_1_to_311861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_number_1_to_311872 = new BitSet(new long[]{0x0100200000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_number_1_to_311874 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_EIGHT_in_spelled_number_1_to_311877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_number_1_to_311888 = new BitSet(new long[]{0x0200200000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_number_1_to_311890 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_NINE_in_spelled_number_1_to_311893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_in_spelled_number_1_to_311905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_in_spelled_number_1_to_311928 = new BitSet(new long[]{0x0002200000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_number_1_to_311930 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_ONE_in_spelled_number_1_to_311933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_spelled_number_1_to_31_in_spelled_or_numeric_1_to_311955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_numeric_1_to_31_in_spelled_or_numeric_1_to_311961 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FIRST_in_spelled_sequence_1_to_311978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SECOND_in_spelled_sequence_1_to_311995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRD_in_spelled_sequence_1_to_312011 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOURTH_in_spelled_sequence_1_to_312028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FIFTH_in_spelled_sequence_1_to_312044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIXTH_in_spelled_sequence_1_to_312061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SEVENTH_in_spelled_sequence_1_to_312078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EIGHTH_in_spelled_sequence_1_to_312093 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NINTH_in_spelled_sequence_1_to_312109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TENTH_in_spelled_sequence_1_to_312126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELEVENTH_in_spelled_sequence_1_to_312143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWELFTH_in_spelled_sequence_1_to_312157 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEENTH_in_spelled_sequence_1_to_312172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOURTEENTH_in_spelled_sequence_1_to_312184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FIFTEENTH_in_spelled_sequence_1_to_312196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIXTEENTH_in_spelled_sequence_1_to_312209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SEVENTEENTH_in_spelled_sequence_1_to_312222 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EIGHTEENTH_in_spelled_sequence_1_to_312233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NINETEENTH_in_spelled_sequence_1_to_312245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTIETH_in_spelled_sequence_1_to_312257 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FIRST_in_spelled_sequence_1_to_312270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312277 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312279 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_FIRST_in_spelled_sequence_1_to_312282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_SECOND_in_spelled_sequence_1_to_312296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312302 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312304 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_SECOND_in_spelled_sequence_1_to_312307 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_THIRD_in_spelled_sequence_1_to_312320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312327 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312329 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_THIRD_in_spelled_sequence_1_to_312332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FOURTH_in_spelled_sequence_1_to_312346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312352 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312354 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_FOURTH_in_spelled_sequence_1_to_312357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FIFTH_in_spelled_sequence_1_to_312370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312377 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312379 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_FIFTH_in_spelled_sequence_1_to_312382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_SIXTH_in_spelled_sequence_1_to_312396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312403 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312405 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_SIXTH_in_spelled_sequence_1_to_312408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_SEVENTH_in_spelled_sequence_1_to_312422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312427 = new BitSet(new long[]{0x0000200000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312429 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_SEVENTH_in_spelled_sequence_1_to_312432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_EIGHTH_in_spelled_sequence_1_to_312444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312450 = new BitSet(new long[]{0x0000200000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312452 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_EIGHTH_in_spelled_sequence_1_to_312455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_NINTH_in_spelled_sequence_1_to_312468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312475 = new BitSet(new long[]{0x0000200000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312477 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_NINTH_in_spelled_sequence_1_to_312480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTIETH_in_spelled_sequence_1_to_312494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_FIRST_in_spelled_sequence_1_to_312535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_in_spelled_sequence_1_to_312542 = new BitSet(new long[]{0x0000200000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312544 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_FIRST_in_spelled_sequence_1_to_312547 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_numeric_0_to_99_in_four_digits2571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THREE_DIGIT_in_four_digits2577 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOUR_DIGIT_in_four_digits2588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_TO_TWELVE_in_numeric_1_to_122609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWO_ZEROS_in_numeric_0_to_232630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_TO_TWELVE_in_numeric_0_to_232656 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_numeric_0_to_232678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWO_ZEROS_in_numeric_0_to_592699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_TO_TWELVE_in_numeric_0_to_592726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_numeric_0_to_592749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_numeric_0_to_592761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_numeric_0_to_592772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWO_ZEROS_in_numeric_0_to_992794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_TO_TWELVE_in_numeric_0_to_992821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_numeric_0_to_992844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_numeric_0_to_992856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_numeric_0_to_992867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIXTY_TO_NINETY_NINE_in_numeric_0_to_992879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_TO_TWELVE_in_numeric_1_to_312905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_numeric_1_to_312928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_numeric_1_to_312940 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_date_in_synpred1_Date118 = new BitSet(new long[]{0x0000180000000002L,0x0000838000000000L});
     public static final BitSet FOLLOW_111_in_synpred1_Date120 = new BitSet(new long[]{0x0000180000000002L,0x0000038000000000L});
     public static final BitSet FOLLOW_time_in_synpred1_Date123 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_time_in_synpred2_Date141 = new BitSet(new long[]{0xFFFE00701FFE0000L,0x1FF11FFFFFFFFFFFL});
     public static final BitSet FOLLOW_112_in_synpred2_Date143 = new BitSet(new long[]{0xFFFE00701FFE0000L,0x1FF11FFFFFFFFFFFL});
     public static final BitSet FOLLOW_date_in_synpred2_Date146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_one_to_twelve_in_synpred3_Date312 = new BitSet(new long[]{0x0000600000000000L});
+    public static final BitSet FOLLOW_numeric_1_to_12_in_synpred3_Date312 = new BitSet(new long[]{0x0000600000000000L});
     public static final BitSet FOLLOW_date_separator_in_synpred3_Date314 = new BitSet(new long[]{0xFFFE007000000000L,0x1FF006800000003FL});
-    public static final BitSet FOLLOW_one_to_thirty_one_in_synpred3_Date316 = new BitSet(new long[]{0x0000600000000002L});
+    public static final BitSet FOLLOW_numeric_1_to_31_in_synpred3_Date316 = new BitSet(new long[]{0x0000600000000002L});
     public static final BitSet FOLLOW_date_separator_in_synpred3_Date319 = new BitSet(new long[]{0x0000000000000000L,0x00001FE000000000L});
     public static final BitSet FOLLOW_four_digits_in_synpred3_Date321 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_four_digits_in_synpred4_Date351 = new BitSet(new long[]{0x0000600000000000L});
     public static final BitSet FOLLOW_date_separator_in_synpred4_Date353 = new BitSet(new long[]{0x0000000000000000L,0x0000008000000000L});
-    public static final BitSet FOLLOW_one_to_twelve_in_synpred4_Date355 = new BitSet(new long[]{0x0000600000000000L});
+    public static final BitSet FOLLOW_numeric_1_to_12_in_synpred4_Date355 = new BitSet(new long[]{0x0000600000000000L});
     public static final BitSet FOLLOW_date_separator_in_synpred4_Date357 = new BitSet(new long[]{0xFFFE007000000000L,0x1FF006800000003FL});
-    public static final BitSet FOLLOW_one_to_thirty_one_in_synpred4_Date359 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_127_in_synpred6_Date1312 = new BitSet(new long[]{0x0000000000000000L,0x00001F8000000000L});
-    public static final BitSet FOLLOW_zero_to_ninety_nine_in_synpred6_Date1315 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_numeric_1_to_31_in_synpred4_Date359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_synpred6_Date1314 = new BitSet(new long[]{0x0000000000000000L,0x00001F8000000000L});
+    public static final BitSet FOLLOW_numeric_0_to_99_in_synpred6_Date1317 = new BitSet(new long[]{0x0000000000000002L});
 
 }
