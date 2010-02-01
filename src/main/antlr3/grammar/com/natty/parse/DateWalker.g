@@ -34,8 +34,14 @@ explicit_date
   ;
 
 relative_date
+  // a date relative to another relative date
+  : ^(RELATIVE_DATE SEEK_DIRECTION RELATIVE_DATE) 
+  
+  // a date relative to an explicit date
+  | ^(RELATIVE_DATE SEEK_DIRECTION EXPLICIT_DATE) 
+  
   // a direction and number of days to seek
-  : ^(RELATIVE_DATE SEEK_DIRECTION INTEGER) 
+  | ^(RELATIVE_DATE SEEK_DIRECTION INTEGER) 
     {dateTime.seek($SEEK_DIRECTION.text, $INTEGER.text);}
   
   // a direction, seek type (day to day, or a week at a time), an amount to seek by, 
