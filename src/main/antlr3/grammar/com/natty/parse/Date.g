@@ -27,26 +27,44 @@ tokens {
 
 datetime 
   options{backtrack=true;}
-  : date (AT | COMMA)? time? -> ^(DATE_TIME date time?)
-  | time ON? date            -> ^(DATE_TIME date time)
-  | time                     -> ^(DATE_TIME ^(RELATIVE_DATE SEEK_DIR[">"] INT["0"]) time)
+  : (relative_date date_time_sep? time)=> relative_date date_time_sep? time
+    -> ^(DATE_TIME relative_date time)
+    
+  | (explicit_day_and_month year date_time_sep? time)=> 
+      explicit_day_and_month year date_time_sep? time
+    -> ^(DATE_TIME ^(EXPLICIT_DATE explicit_day_and_month year) time)
+    
+  | date_prefix explicit_day_and_month year? date_time_sep? time
+    -> ^(DATE_TIME ^(RELATIVE_DATE date_prefix ^(EXPLICIT_DATE explicit_day_and_month year?)) time)
+    
+  | date_prefix explicit_day_and_month year? date_time_sep?
+    -> ^(DATE_TIME ^(RELATIVE_DATE date_prefix ^(EXPLICIT_DATE explicit_day_and_month year?)))
+      
+  | date_prefix? explicit_day_and_month date_time_sep? time?
+    -> ^(DATE_TIME ^(EXPLICIT_DATE explicit_day_and_month) time?)
+  
+  | time time_date_sep? date_prefix? explicit_day_and_month year?  
+    -> ^(DATE_TIME ^(EXPLICIT_DATE explicit_day_and_month year) time?)
+  
+  | date_prefix? relative_date date_time_sep? time? 
+    -> ^(DATE_TIME relative_date time)
+  
+  | time time_date_sep? date_prefix? relative_date            
+    -> ^(DATE_TIME relative_date time)
+  
+  | time
+    -> ^(DATE_TIME time)
   ;
   
-date
-  options{backtrack=true;} 
-  : date_prefix explicit_date -> ^(RELATIVE_DATE date_prefix explicit_date)
-  | explicit_date
-  | date_prefix relative_date -> ^(RELATIVE_DATE date_prefix relative_date)
-  | relative_date
+date_time_sep
+  : AT
+  | COMMA
   ;
   
-time 
-  : hours (COLON minutes)? meridian_indicator?
-    -> ^(EXPLICIT_TIME hours minutes? meridian_indicator?)
-  
-  | time_identifier
+time_date_sep
+  : ON
   ;
-
+  
 relative_date
   // today, yesterday, tomorrow, etc
   : named_relative_date
@@ -69,10 +87,19 @@ named_relative_date
   | TOMORROW  -> ^(RELATIVE_DATE SEEK_DIR[">"] INT["1"])
   | YESTERDAY -> ^(RELATIVE_DATE SEEK_DIR["<"] INT["1"])
   ;
+    
+explicit_day_and_month
+  // spelled out month with a day and optional year: oct first, january 2, 1980, feb 28, '79
+  : month day_of_month 
+    -> month day_of_month
+  
+  // day before spelled out month with an optional year: 2 of january, 1980
+  | day_of_month 'of'? month 
+    -> month day_of_month
+  ;
 
 // an explicit date with month, day, and year
-explicit_date
-  options{backtrack=true;}
+formal_explicit_date
   // year first: 1979-02-28, 1980/01/02, etc.  full 4 digit year required to match
   : int_4_digits date_separator int_1_to_12 date_separator int_1_to_31
     -> ^(EXPLICIT_DATE ^(MONTH_OF int_1_to_12) ^(DAY_OF_MONTH int_1_to_31) ^(YEAR_OF int_4_digits))
@@ -80,14 +107,6 @@ explicit_date
   // year last: 1/02/1980, 2/28/79.  1 to 4 digit year is acceptable 
   | int_1_to_12 date_separator int_1_to_31 (date_separator int_up_to_4_digits)?
     -> ^(EXPLICIT_DATE ^(MONTH_OF int_1_to_31) ^(DAY_OF_MONTH int_1_to_31) ^(YEAR_OF int_up_to_4_digits?))
-    
-  // spelled out month with a day and optional year: oct first, january 2, 1980, feb 28, '79
-  | month day_of_month year? 
-    -> ^(EXPLICIT_DATE month day_of_month year?)
-  
-  // day before spelled out month with an optional year: 2 of january, 1980
-  | day_of_month 'of'? month year? 
-    -> ^(EXPLICIT_DATE month day_of_month year?)
   ;
   
 // a prefix that should be valid before any date, relative or explicit
@@ -96,6 +115,19 @@ date_prefix
   | spelled_or_int_1_to_31 DAY AFTER  -> SEEK_DIR[">"] spelled_or_int_1_to_31
   | THE? DAY BEFORE                   -> SEEK_DIR["<"] INT["1"]
   | spelled_or_int_1_to_31 DAY BEFORE -> SEEK_DIR["<"] spelled_or_int_1_to_31
+  ;
+  
+time 
+  : hours (COLON minutes)? meridian_indicator?
+    -> ^(EXPLICIT_TIME hours minutes? meridian_indicator?)
+  
+  | time_identifier
+  ;
+  
+// common time identifiers (noon, midnight, etc)
+time_identifier
+  : MIDNIGHT -> ^(EXPLICIT_TIME ^(HOURS INT["12"]) AM_PM["am"])
+  | NOON     -> ^(EXPLICIT_TIME ^(HOURS INT["12"]) AM_PM["pm"])
   ;
   
 // a prefix that is valid before any modifiable_target
@@ -181,12 +213,6 @@ minutes
 meridian_indicator
   : AM -> AM_PM["am"]
   | PM -> AM_PM["pm"]
-  ;
-  
-// common time identifiers (noon, midnight, etc)
-time_identifier
-  : MIDNIGHT -> ^(EXPLICIT_TIME ^(HOURS INT["12"]) AM_PM["am"])
-  | NOON     -> ^(EXPLICIT_TIME ^(HOURS INT["12"]) AM_PM["pm"])
   ;
   
 // a number between 1 and 31 spelled-out (one, twenty-eight, etc.)
