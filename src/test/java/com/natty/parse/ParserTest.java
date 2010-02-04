@@ -21,7 +21,7 @@ public class ParserTest {
     //Date date = Parser.parseDate("oct 1");
     //System.out.println(date);
     
-    String inputString = "oct 10pm";
+    String inputString = "feb 10 10 8";
     ANTLRInputStream input = null;
     try {
       // lex

@@ -26,34 +26,22 @@ tokens {
 @lexer::header { package com.natty.parse; }
 
 datetime 
-  options{backtrack=true;}
-  : (relative_date date_time_sep? time)=> relative_date date_time_sep? time
-    -> ^(DATE_TIME relative_date time)
-    
-  | (explicit_day_and_month year date_time_sep? time)=> 
-      explicit_day_and_month year date_time_sep? time
-    -> ^(DATE_TIME ^(EXPLICIT_DATE explicit_day_and_month year) time)
-    
-  | date_prefix explicit_day_and_month year? date_time_sep? time
-    -> ^(DATE_TIME ^(RELATIVE_DATE date_prefix ^(EXPLICIT_DATE explicit_day_and_month year?)) time)
-    
-  | date_prefix explicit_day_and_month year? date_time_sep?
-    -> ^(DATE_TIME ^(RELATIVE_DATE date_prefix ^(EXPLICIT_DATE explicit_day_and_month year?)))
-      
-  | date_prefix? explicit_day_and_month date_time_sep? time?
-    -> ^(DATE_TIME ^(EXPLICIT_DATE explicit_day_and_month) time?)
+  : (explicit_datetime)=> explicit_datetime
+  //| relative_datetime
+  ;
+
+relative_datetime 
+  : date_prefix? relative_date date_time_sep? time
+  | time time_date_sep date_prefix? relative_date
+  | date_prefix? relative_date
+  ;
   
-  | time time_date_sep? date_prefix? explicit_day_and_month year?  
-    -> ^(DATE_TIME ^(EXPLICIT_DATE explicit_day_and_month year) time?)
+explicit_datetime 
+  : day_of_month time
+
+  //| day_of_month 'of'? month 
   
-  | date_prefix? relative_date date_time_sep? time? 
-    -> ^(DATE_TIME relative_date time)
-  
-  | time time_date_sep? date_prefix? relative_date            
-    -> ^(DATE_TIME relative_date time)
-  
-  | time
-    -> ^(DATE_TIME time)
+  //| formal_explicit_date
   ;
   
 date_time_sep
@@ -64,7 +52,7 @@ date_time_sep
 time_date_sep
   : ON
   ;
-  
+
 relative_date
   // today, yesterday, tomorrow, etc
   : named_relative_date
@@ -87,28 +75,17 @@ named_relative_date
   | TOMORROW  -> ^(RELATIVE_DATE SEEK_DIR[">"] INT["1"])
   | YESTERDAY -> ^(RELATIVE_DATE SEEK_DIR["<"] INT["1"])
   ;
-    
-explicit_day_and_month
-  // spelled out month with a day and optional year: oct first, january 2, 1980, feb 28, '79
-  : month day_of_month 
-    -> month day_of_month
   
-  // day before spelled out month with an optional year: 2 of january, 1980
-  | day_of_month 'of'? month 
-    -> month day_of_month
-  ;
-
-// an explicit date with month, day, and year
 formal_explicit_date
   // year first: 1979-02-28, 1980/01/02, etc.  full 4 digit year required to match
   : int_4_digits date_separator int_1_to_12 date_separator int_1_to_31
     -> ^(EXPLICIT_DATE ^(MONTH_OF int_1_to_12) ^(DAY_OF_MONTH int_1_to_31) ^(YEAR_OF int_4_digits))
-
+ 
   // year last: 1/02/1980, 2/28/79.  1 to 4 digit year is acceptable 
   | int_1_to_12 date_separator int_1_to_31 (date_separator int_up_to_4_digits)?
     -> ^(EXPLICIT_DATE ^(MONTH_OF int_1_to_31) ^(DAY_OF_MONTH int_1_to_31) ^(YEAR_OF int_up_to_4_digits?))
   ;
-  
+    
 // a prefix that should be valid before any date, relative or explicit
 date_prefix
   : THE? DAY AFTER                    -> SEEK_DIR[">"] INT["1"]
@@ -118,10 +95,11 @@ date_prefix
   ;
   
 time 
-  : hours (COLON minutes)? meridian_indicator?
-    -> ^(EXPLICIT_TIME hours minutes? meridian_indicator?)
+  : COLON 
+  //: hours (COLON? minutes)? meridian_indicator?
+    //-> ^(EXPLICIT_TIME hours minutes? meridian_indicator?)
   
-  | time_identifier
+  //| time_identifier
   ;
   
 // common time identifiers (noon, midnight, etc)
@@ -178,7 +156,7 @@ month
   ;
   
 day_of_month
-  : spelled_or_int_1_to_31   -> ^(DAY_OF_MONTH spelled_or_int_1_to_31)
+  : int_1_to_31              -> ^(DAY_OF_MONTH int_1_to_31)
   | spelled_sequence_1_to_31 -> ^(DAY_OF_MONTH spelled_sequence_1_to_31) 
   ;
   
@@ -216,8 +194,9 @@ meridian_indicator
   ;
   
 // a number between 1 and 31 spelled-out (one, twenty-eight, etc.)
-spelled_1_to_31
-  : ONE        -> INT["1"]
+spelled_or_int_1_to_31
+  : int_1_to_31
+  | ONE        -> INT["1"]
   | TWO        -> INT["2"]
   | THREE      -> INT["3"]
   | FOUR       -> INT["4"]
@@ -248,11 +227,6 @@ spelled_1_to_31
   | TWENTY DASH? NINE  -> INT["29"]
   | THIRTY             -> INT["30"]
   | THIRTY DASH? ONE   -> INT["31"]
-  ;
-  
-spelled_or_int_1_to_31
-  : spelled_1_to_31
-  | int_1_to_31
   ;
   
 // a number in sequence between 1 and 31, either spelled-out
@@ -293,7 +267,7 @@ spelled_sequence_1_to_31
   
 // up to 4 subsequent digits
 int_up_to_4_digits
-  : int_0_to_99_with_prefix
+  : int_0_to_99_optional_prefix
   | THREE_DIGIT -> INT[$THREE_DIGIT.text]
   | FOUR_DIGIT  -> INT[$FOUR_DIGIT.text]
   ;
@@ -312,12 +286,14 @@ int_4_digits
 int_1_to_12
   : TWO_ZEROS            -> INT[$TWO_ZEROS.text]
   | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text]
+  | ONE_TO_NINE          -> INT[$ONE_TO_NINE.text]
   | TEN_TO_TWELVE        -> INT[$TEN_TO_TWELVE.text]
   ;
   
 // number between 0 and 23 with an optional 0 prefix for numbers 0-9
 int_0_to_23
   : TWO_ZEROS                -> INT[$TWO_ZEROS.text]
+  | ONE_ZERO                 -> INT[$ONE_ZERO.text]
   | PREFIXED_ONE_TO_NINE     -> INT[$PREFIXED_ONE_TO_NINE.text]
   | ONE_TO_NINE              -> INT[$ONE_TO_NINE.text]
   | TEN_TO_TWELVE            -> INT[$TEN_TO_TWELVE.text]
@@ -327,6 +303,7 @@ int_0_to_23
 // number between 0 and 59 with an optional 0 prefix for numbers 0-9
 int_0_to_59
   : TWO_ZEROS                 -> INT[$TWO_ZEROS.text]
+  | ONE_ZERO                  -> INT[$ONE_ZERO.text]
   | PREFIXED_ONE_TO_NINE      -> INT[$PREFIXED_ONE_TO_NINE.text]
   | ONE_TO_NINE               -> INT[$ONE_TO_NINE.text]
   | TEN_TO_TWELVE             -> INT[$TEN_TO_TWELVE.text]
@@ -354,6 +331,12 @@ int_0_to_99_with_prefix
   | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
   | THIRTY_TWO_TO_FIFTY_NINE  -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text]
   | SIXTY_TO_NINETY_NINE      -> INT[$SIXTY_TO_NINETY_NINE.text]
+  ;
+  
+int_0_to_99_optional_prefix
+  : int_0_to_99_with_prefix
+  | ONE_TO_NINE -> INT[$ONE_TO_NINE.text]
+  | ONE_ZERO    -> INT[$ONE_ZERO.text]
   ;
 
 // number between 1 and 31 with an optional 0 prefix for numbers 0-9
