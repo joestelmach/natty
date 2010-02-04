@@ -78,6 +78,29 @@ gunit Date;
 //"tomorrow" -> (RELATIVE_DATE > 1)
 //"tommorrow" -> (RELATIVE_DATE > 1)
 
+formal_date:
+"2009-10-10" -> (EXPLICIT_DATE (MONTH_OF 10) (DAY_OF_MONTH 10) (YEAR_OF 2009))
+"2009/10/10" -> (EXPLICIT_DATE (MONTH_OF 10) (DAY_OF_MONTH 10) (YEAR_OF 2009))
+"10/10/2009" -> (EXPLICIT_DATE (MONTH_OF 10) (DAY_OF_MONTH 10) (YEAR_OF 2009))
+"10/10/09" -> (EXPLICIT_DATE (MONTH_OF 10) (DAY_OF_MONTH 10) (YEAR_OF 09))
+
+month_and_day:
+"oct 10" -> (MONTH_OF 10) (DAY_OF_MONTH 10)
+"10th of oct" -> (MONTH_OF 10) (DAY_OF_MONTH 10)
+
+day_of_month:
+"1" -> (DAY_OF_MONTH 1)
+"01" -> (DAY_OF_MONTH 01)
+"2" -> (DAY_OF_MONTH 2)
+"02" -> (DAY_OF_MONTH 02)
+"05" -> (DAY_OF_MONTH 05)
+"one" -> (DAY_OF_MONTH 1)
+"twenty" -> (DAY_OF_MONTH 20)
+"twenty-first" -> (DAY_OF_MONTH 21)
+"first" -> (DAY_OF_MONTH 1)
+"1st" -> (DAY_OF_MONTH 1)
+"2nd" -> (DAY_OF_MONTH 2)
+
 target_prefix:
 "this last"     -> "< by_week 1"
 "last"          -> "< by_week 1"

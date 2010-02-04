@@ -21,7 +21,7 @@ public class ParserTest {
     //Date date = Parser.parseDate("oct 1");
     //System.out.println(date);
     
-    String inputString = "feb 10 10 8";
+    String inputString = "12am on oct 10, in the year '89";
     ANTLRInputStream input = null;
     try {
       // lex
@@ -32,9 +32,9 @@ public class ParserTest {
       // parse 
       input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
       _parser = new DateParser(tokens);
-      DateParser.datetime_return result = _parser.datetime();
+      DateParser.date_time_return result = _parser.date_time();
       Tree tree = (Tree) result.getTree();
-      //printTree(tree, 0);
+      System.out.println(tree.toStringTree());
       
       // walk
       /*
@@ -55,23 +55,5 @@ public class ParserTest {
     } catch (RecognitionException e) {
       e.printStackTrace();
     }
-  }
-  
-  public static void printTree(Tree tree, int level) {
-    for(int i=0; i<level; i++) System.out.print(" ");
-    
-    int childCount = tree.getChildCount();
-    if(childCount > 0) System.out.print("(");
-    
-    String tokenType = _parser.getTokenNames()[tree.getType()];
-    String tokenValue = tree.getText();
-    
-    System.out.print((tokenType.equals(tokenValue) ? tokenType : tokenType + "[" + tree.getText() + "]"));
-    
-    for(int i=0; i<childCount; i++) {
-      printTree(tree.getChild(i), level + 1);
-    }
-    
-    if(childCount > 0) System.out.print(")");
   }
 }

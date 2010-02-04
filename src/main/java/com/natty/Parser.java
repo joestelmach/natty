@@ -27,7 +27,7 @@ public class Parser {
       // parse 
       input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
       DateParser  parser = new DateParser(tokens);
-      DateParser.datetime_return result = parser.datetime();
+      DateParser.date_time_return result = parser.date_time();
       Tree tree = (Tree) result.getTree();
       System.out.println(tree.toStringTree());
       

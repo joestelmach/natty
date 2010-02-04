@@ -1,4 +1,4 @@
-// $ANTLR 3.1.3 Mar 17, 2009 19:23:44 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g 2010-02-03 14:35:55
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g 2010-02-03 23:18:08
  package com.natty.parse; 
 
 import org.antlr.runtime.*;
@@ -12,138 +12,139 @@ import org.antlr.runtime.tree.*;
 
 public class DateParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "INT", "HOURS", "MINUTES", "AM_PM", "SPAN", "MONTH_OF", "DAY_OF_WEEK", "DAY_OF_MONTH", "YEAR_OF", "SEEK_DIR", "SEEK_TYPE", "EXPLICIT_TIME", "EXPLICIT_DATE", "RELATIVE_DATE", "DATE_TIME", "AT", "COMMA", "ON", "TODAY", "TOMORROW", "YESTERDAY", "THE", "DAY", "AFTER", "BEFORE", "COLON", "MIDNIGHT", "NOON", "THIS", "LAST", "PAST", "NEXT", "COMING", "UPCOMING", "IN", "FROM_NOW", "AGO", "WEEK", "MONTH", "YEAR", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "DASH", "SLASH", "AM", "PM", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN", "TWENTY", "THIRTY", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH", "THIRTEENTH", "FOURTEENTH", "FIFTEENTH", "SIXTEENTH", "SEVENTEENTH", "EIGHTEENTH", "NINETEENTH", "TWENTIETH", "TWENTY_FIRST", "TWENTY_SECOND", "TWENTY_THIRD", "TWENTY_FOURTH", "TWENTY_FIFTH", "TWENTY_SIXTH", "TWENTY_SEVENTH", "TWENTY_EIGHTH", "TWENTY_NINTH", "THIRTIETH", "THIRTY_FIRST", "THREE_DIGIT", "FOUR_DIGIT", "TWO_ZEROS", "PREFIXED_ONE_TO_NINE", "ONE_TO_NINE", "TEN_TO_TWELVE", "ONE_ZERO", "THIRTEEN_TO_TWENTY_THREE", "TWENTY_FOUR_TO_THIRTY_ONE", "THIRTY_TWO_TO_FIFTY_NINE", "SIXTY_TO_NINETY_NINE", "DIGIT", "WHITE_SPACE", "'\\''"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "INT", "HOURS", "MINUTES", "AM_PM", "SPAN", "MONTH_OF", "DAY_OF_WEEK", "DAY_OF_MONTH", "YEAR_OF", "SEEK_DIR", "SEEK_TYPE", "EXPLICIT_TIME", "EXPLICIT_DATE", "RELATIVE_DATE", "DATE_TIME", "COMMA", "ON", "OF", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "IN", "THE", "YEAR", "SINGLE_QUOTE", "DASH", "SLASH", "COLON", "MIDNIGHT", "NOON", "AM", "PM", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN", "TWENTY", "THIRTY", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH", "THIRTEENTH", "FOURTEENTH", "FIFTEENTH", "SIXTEENTH", "SEVENTEENTH", "EIGHTEENTH", "NINETEENTH", "TWENTIETH", "TWENTY_FIRST", "TWENTY_SECOND", "TWENTY_THIRD", "TWENTY_FOURTH", "TWENTY_FIFTH", "TWENTY_SIXTH", "TWENTY_SEVENTH", "TWENTY_EIGHTH", "TWENTY_NINTH", "THIRTIETH", "THIRTY_FIRST", "THREE_DIGIT", "FOUR_DIGIT", "PREFIXED_ONE_TO_NINE", "ONE_TO_NINE", "TEN_TO_TWELVE", "TWO_ZEROS", "ZERO", "THIRTEEN_TO_TWENTY_THREE", "TWENTY_FOUR_TO_THIRTY_ONE", "THIRTY_TWO_TO_FIFTY_NINE", "SIXTY_TO_NINETY_NINE", "AT", "THIS", "AFTER", "BEFORE", "LAST", "PAST", "NEXT", "COMING", "UPCOMING", "FROM_NOW", "AGO", "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "TODAY", "TOMORROW", "YESTERDAY", "DAY", "WEEK", "MONTH", "DIGIT", "WHITE_SPACE"
     };
-    public static final int NINETEEN=85;
-    public static final int WEEK=41;
-    public static final int SEPTEMBER=52;
-    public static final int THIRTEEN_TO_TWENTY_THREE=126;
-    public static final int WEDNESDAY=59;
-    public static final int TWENTY_EIGHTH=115;
-    public static final int TWENTY=86;
-    public static final int FROM_NOW=39;
-    public static final int APRIL=47;
-    public static final int JULY=50;
-    public static final int COMING=36;
-    public static final int NINETEENTH=106;
-    public static final int OCTOBER=53;
-    public static final int DAY=26;
-    public static final int ONE=67;
-    public static final int MIDNIGHT=30;
+    public static final int NINETEEN=63;
+    public static final int WEEK=130;
+    public static final int SEPTEMBER=30;
+    public static final int THIRTEEN_TO_TWENTY_THREE=104;
+    public static final int WEDNESDAY=122;
+    public static final int TWENTY_EIGHTH=93;
+    public static final int TWENTY=64;
+    public static final int FROM_NOW=117;
+    public static final int JULY=28;
+    public static final int APRIL=25;
+    public static final int COMING=115;
+    public static final int NINETEENTH=84;
+    public static final int OCTOBER=31;
+    public static final int DAY=129;
+    public static final int ONE=45;
+    public static final int MIDNIGHT=41;
+    public static final int MARCH=24;
     public static final int EOF=-1;
-    public static final int MARCH=46;
-    public static final int MONTH=42;
-    public static final int PAST=34;
-    public static final int SEVENTEEN=83;
+    public static final int MONTH=131;
+    public static final int PAST=113;
+    public static final int SEVENTEEN=61;
     public static final int DATE_TIME=18;
     public static final int AM_PM=7;
-    public static final int SIXTY_TO_NINETY_NINE=129;
-    public static final int TWENTY_SEVENTH=114;
-    public static final int TWENTY_FIFTH=112;
-    public static final int EIGHTEENTH=105;
+    public static final int SIXTY_TO_NINETY_NINE=107;
+    public static final int TWENTY_SEVENTH=92;
+    public static final int TWENTY_FIFTH=90;
+    public static final int EIGHTEENTH=83;
     public static final int SPAN=8;
     public static final int SEEK_DIR=13;
-    public static final int THIS=32;
-    public static final int THIRTIETH=117;
-    public static final int NOON=31;
-    public static final int LAST=33;
-    public static final int EIGHTEEN=84;
-    public static final int TWENTY_FOUR_TO_THIRTY_ONE=127;
-    public static final int TOMORROW=23;
+    public static final int THIS=109;
+    public static final int THIRTIETH=95;
+    public static final int NOON=42;
+    public static final int LAST=112;
+    public static final int EIGHTEEN=62;
+    public static final int TOMORROW=127;
+    public static final int TWENTY_FOUR_TO_THIRTY_ONE=105;
     public static final int RELATIVE_DATE=17;
-    public static final int ONE_TO_NINE=123;
-    public static final int FOUR_DIGIT=120;
-    public static final int FIFTEENTH=102;
-    public static final int FOURTH=91;
-    public static final int TODAY=22;
-    public static final int SECOND=89;
-    public static final int NOVEMBER=54;
-    public static final int SATURDAY=62;
-    public static final int FOUR=70;
-    public static final int SEVENTH=94;
-    public static final int TEN=76;
-    public static final int ON=21;
-    public static final int FEBRUARY=45;
-    public static final int MONDAY=57;
+    public static final int ONE_TO_NINE=100;
+    public static final int FOUR_DIGIT=98;
+    public static final int TODAY=126;
+    public static final int FOURTH=69;
+    public static final int FIFTEENTH=80;
+    public static final int SECOND=67;
+    public static final int NOVEMBER=32;
+    public static final int SATURDAY=125;
+    public static final int FOUR=48;
+    public static final int SEVENTH=72;
+    public static final int TEN=54;
+    public static final int FEBRUARY=23;
+    public static final int ON=20;
+    public static final int MONDAY=120;
+    public static final int SUNDAY=119;
     public static final int DAY_OF_WEEK=10;
-    public static final int SUNDAY=56;
-    public static final int SEVEN=73;
-    public static final int ELEVEN=77;
-    public static final int THIRTEEN=79;
+    public static final int SEVEN=51;
+    public static final int ELEVEN=55;
+    public static final int THIRTEEN=57;
+    public static final int JUNE=27;
     public static final int INT=4;
     public static final int EXPLICIT_DATE=16;
-    public static final int JUNE=49;
-    public static final int UPCOMING=37;
-    public static final int SIX=72;
-    public static final int FIFTH=92;
-    public static final int TWENTY_NINTH=116;
-    public static final int THURSDAY=60;
-    public static final int DECEMBER=55;
-    public static final int AUGUST=51;
-    public static final int PM=66;
+    public static final int OF=21;
+    public static final int UPCOMING=116;
+    public static final int SIX=50;
+    public static final int FIFTH=70;
+    public static final int TWENTY_NINTH=94;
+    public static final int THURSDAY=123;
+    public static final int DECEMBER=33;
+    public static final int AUGUST=29;
+    public static final int PM=44;
     public static final int EXPLICIT_TIME=15;
-    public static final int TUESDAY=58;
-    public static final int T__132=132;
-    public static final int THIRTY_TWO_TO_FIFTY_NINE=128;
-    public static final int EIGHTH=95;
-    public static final int THIRD=90;
-    public static final int YEAR=43;
-    public static final int THE=25;
-    public static final int TENTH=97;
-    public static final int MAY=48;
-    public static final int TWENTY_FOURTH=111;
-    public static final int THREE_DIGIT=119;
+    public static final int TUESDAY=121;
+    public static final int THIRTY_TWO_TO_FIFTY_NINE=106;
+    public static final int EIGHTH=73;
+    public static final int THIRD=68;
+    public static final int YEAR=36;
+    public static final int THE=35;
+    public static final int MAY=26;
+    public static final int TENTH=75;
+    public static final int TWENTY_FOURTH=89;
+    public static final int THREE_DIGIT=97;
     public static final int MONTH_OF=9;
-    public static final int WHITE_SPACE=131;
+    public static final int WHITE_SPACE=133;
     public static final int SEEK_TYPE=14;
-    public static final int PREFIXED_ONE_TO_NINE=122;
-    public static final int FRIDAY=61;
-    public static final int EIGHT=74;
-    public static final int TWENTY_SIXTH=113;
-    public static final int AT=19;
-    public static final int SLASH=64;
-    public static final int IN=38;
-    public static final int NINTH=96;
-    public static final int COMMA=20;
-    public static final int FIVE=71;
-    public static final int THIRTY=87;
-    public static final int TWENTIETH=107;
-    public static final int TWENTY_SECOND=109;
-    public static final int NEXT=35;
-    public static final int TWO_ZEROS=121;
-    public static final int DIGIT=130;
-    public static final int AM=65;
-    public static final int DASH=63;
-    public static final int FOURTEENTH=101;
-    public static final int SIXTEEN=82;
+    public static final int FRIDAY=124;
+    public static final int ZERO=103;
+    public static final int PREFIXED_ONE_TO_NINE=99;
+    public static final int EIGHT=52;
+    public static final int AT=108;
+    public static final int TWENTY_SIXTH=91;
+    public static final int SINGLE_QUOTE=37;
+    public static final int SLASH=39;
+    public static final int IN=34;
+    public static final int NINTH=74;
+    public static final int COMMA=19;
+    public static final int FIVE=49;
+    public static final int THIRTY=65;
+    public static final int TWENTIETH=85;
+    public static final int TWENTY_SECOND=87;
+    public static final int NEXT=114;
+    public static final int TWO_ZEROS=102;
+    public static final int DIGIT=132;
+    public static final int AM=43;
+    public static final int DASH=38;
+    public static final int FOURTEENTH=79;
+    public static final int SIXTEEN=60;
     public static final int YEAR_OF=12;
-    public static final int ONE_ZERO=125;
-    public static final int TEN_TO_TWELVE=124;
-    public static final int TWELVE=78;
-    public static final int AGO=40;
-    public static final int ELEVENTH=98;
-    public static final int BEFORE=28;
-    public static final int AFTER=27;
-    public static final int TWO=68;
-    public static final int SIXTEENTH=103;
-    public static final int JANUARY=44;
-    public static final int THIRTEENTH=100;
-    public static final int COLON=29;
+    public static final int TEN_TO_TWELVE=101;
+    public static final int TWELVE=56;
+    public static final int AGO=118;
+    public static final int ELEVENTH=76;
+    public static final int BEFORE=111;
+    public static final int AFTER=110;
+    public static final int TWO=46;
+    public static final int SIXTEENTH=81;
+    public static final int JANUARY=22;
+    public static final int THIRTEENTH=78;
+    public static final int COLON=40;
     public static final int MINUTES=6;
     public static final int DAY_OF_MONTH=11;
-    public static final int FIFTEEN=81;
-    public static final int TWELFTH=99;
-    public static final int NINE=75;
-    public static final int SIXTH=93;
-    public static final int TWENTY_FIRST=108;
-    public static final int THREE=69;
-    public static final int FOURTEEN=80;
-    public static final int TWENTY_THIRD=110;
-    public static final int YESTERDAY=24;
-    public static final int SEVENTEENTH=104;
+    public static final int FIFTEEN=59;
+    public static final int TWELFTH=77;
+    public static final int NINE=53;
+    public static final int SIXTH=71;
+    public static final int THREE=47;
+    public static final int TWENTY_FIRST=86;
+    public static final int FOURTEEN=58;
+    public static final int TWENTY_THIRD=88;
+    public static final int YESTERDAY=128;
     public static final int HOURS=5;
-    public static final int THIRTY_FIRST=118;
-    public static final int FIRST=88;
+    public static final int SEVENTEENTH=82;
+    public static final int THIRTY_FIRST=96;
+    public static final int FIRST=66;
 
     // delegates
     // delegators
@@ -170,493 +171,133 @@ public class DateParser extends Parser {
     public String getGrammarFileName() { return "/Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g"; }
 
 
-    public static class datetime_return extends ParserRuleReturnScope {
+    public static class date_time_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "datetime"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:28:1: datetime : ( explicit_datetime )=> explicit_datetime ;
-    public final DateParser.datetime_return datetime() throws RecognitionException {
-        DateParser.datetime_return retval = new DateParser.datetime_return();
+    // $ANTLR start "date_time"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:28:1: date_time options {backtrack=true; } : ( ( ( ( date ( COMMA | AT )? time )=> date time ) | time ( COMMA | ON )? date ) -> ^( DATE_TIME date time ) | date -> ^( DATE_TIME date ) | time -> ^( DATE_TIME time ) );
+    public final DateParser.date_time_return date_time() throws RecognitionException {
+        DateParser.date_time_return retval = new DateParser.date_time_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        DateParser.explicit_datetime_return explicit_datetime1 = null;
+        Token COMMA4=null;
+        Token ON5=null;
+        DateParser.date_return date1 = null;
+
+        DateParser.time_return time2 = null;
+
+        DateParser.time_return time3 = null;
+
+        DateParser.date_return date6 = null;
+
+        DateParser.date_return date7 = null;
+
+        DateParser.time_return time8 = null;
 
 
-
+        Object COMMA4_tree=null;
+        Object ON5_tree=null;
+        RewriteRuleTokenStream stream_ON=new RewriteRuleTokenStream(adaptor,"token ON");
+        RewriteRuleTokenStream stream_COMMA=new RewriteRuleTokenStream(adaptor,"token COMMA");
+        RewriteRuleSubtreeStream stream_time=new RewriteRuleSubtreeStream(adaptor,"rule time");
+        RewriteRuleSubtreeStream stream_date=new RewriteRuleSubtreeStream(adaptor,"rule date");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:29:3: ( ( explicit_datetime )=> explicit_datetime )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:29:5: ( explicit_datetime )=> explicit_datetime
-            {
-            root_0 = (Object)adaptor.nil();
-
-            pushFollow(FOLLOW_explicit_datetime_in_datetime131);
-            explicit_datetime1=explicit_datetime();
-
-            state._fsp--;
-            if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, explicit_datetime1.getTree());
-
-            }
-
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "datetime"
-
-    public static class relative_datetime_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "relative_datetime"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:33:1: relative_datetime : ( ( date_prefix )? relative_date ( date_time_sep )? time | time time_date_sep ( date_prefix )? relative_date | ( date_prefix )? relative_date );
-    public final DateParser.relative_datetime_return relative_datetime() throws RecognitionException {
-        DateParser.relative_datetime_return retval = new DateParser.relative_datetime_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        DateParser.date_prefix_return date_prefix2 = null;
-
-        DateParser.relative_date_return relative_date3 = null;
-
-        DateParser.date_time_sep_return date_time_sep4 = null;
-
-        DateParser.time_return time5 = null;
-
-        DateParser.time_return time6 = null;
-
-        DateParser.time_date_sep_return time_date_sep7 = null;
-
-        DateParser.date_prefix_return date_prefix8 = null;
-
-        DateParser.relative_date_return relative_date9 = null;
-
-        DateParser.date_prefix_return date_prefix10 = null;
-
-        DateParser.relative_date_return relative_date11 = null;
-
-
-
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:34:3: ( ( date_prefix )? relative_date ( date_time_sep )? time | time time_date_sep ( date_prefix )? relative_date | ( date_prefix )? relative_date )
-            int alt5=3;
-            alt5 = dfa5.predict(input);
-            switch (alt5) {
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:3: ( ( ( ( date ( COMMA | AT )? time )=> date time ) | time ( COMMA | ON )? date ) -> ^( DATE_TIME date time ) | date -> ^( DATE_TIME date ) | time -> ^( DATE_TIME time ) )
+            int alt3=3;
+            alt3 = dfa3.predict(input);
+            switch (alt3) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:34:5: ( date_prefix )? relative_date ( date_time_sep )? time
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:5: ( ( ( date ( COMMA | AT )? time )=> date time ) | time ( COMMA | ON )? date )
                     {
-                    root_0 = (Object)adaptor.nil();
-
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:34:5: ( date_prefix )?
-                    int alt1=2;
-                    alt1 = dfa1.predict(input);
-                    switch (alt1) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:34:5: date_prefix
-                            {
-                            pushFollow(FOLLOW_date_prefix_in_relative_datetime148);
-                            date_prefix2=date_prefix();
-
-                            state._fsp--;
-                            if (state.failed) return retval;
-                            if ( state.backtracking==0 ) adaptor.addChild(root_0, date_prefix2.getTree());
-
-                            }
-                            break;
-
-                    }
-
-                    pushFollow(FOLLOW_relative_date_in_relative_datetime151);
-                    relative_date3=relative_date();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, relative_date3.getTree());
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:34:32: ( date_time_sep )?
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:5: ( ( ( date ( COMMA | AT )? time )=> date time ) | time ( COMMA | ON )? date )
                     int alt2=2;
-                    int LA2_0 = input.LA(1);
-
-                    if ( ((LA2_0>=AT && LA2_0<=COMMA)) ) {
-                        alt2=1;
-                    }
+                    alt2 = dfa2.predict(input);
                     switch (alt2) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:34:32: date_time_sep
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:6: ( ( date ( COMMA | AT )? time )=> date time )
                             {
-                            pushFollow(FOLLOW_date_time_sep_in_relative_datetime153);
-                            date_time_sep4=date_time_sep();
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:6: ( ( date ( COMMA | AT )? time )=> date time )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:7: ( date ( COMMA | AT )? time )=> date time
+                            {
+                            pushFollow(FOLLOW_date_in_date_time152);
+                            date1=date();
 
                             state._fsp--;
                             if (state.failed) return retval;
-                            if ( state.backtracking==0 ) adaptor.addChild(root_0, date_time_sep4.getTree());
+                            if ( state.backtracking==0 ) stream_date.add(date1.getTree());
+                            pushFollow(FOLLOW_time_in_date_time154);
+                            time2=time();
+
+                            state._fsp--;
+                            if (state.failed) return retval;
+                            if ( state.backtracking==0 ) stream_time.add(time2.getTree());
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:48: time ( COMMA | ON )? date
+                            {
+                            pushFollow(FOLLOW_time_in_date_time159);
+                            time3=time();
+
+                            state._fsp--;
+                            if (state.failed) return retval;
+                            if ( state.backtracking==0 ) stream_time.add(time3.getTree());
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:53: ( COMMA | ON )?
+                            int alt1=3;
+                            int LA1_0 = input.LA(1);
+
+                            if ( (LA1_0==COMMA) ) {
+                                alt1=1;
+                            }
+                            else if ( (LA1_0==ON) ) {
+                                alt1=2;
+                            }
+                            switch (alt1) {
+                                case 1 :
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:54: COMMA
+                                    {
+                                    COMMA4=(Token)match(input,COMMA,FOLLOW_COMMA_in_date_time162); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_COMMA.add(COMMA4);
+
+
+                                    }
+                                    break;
+                                case 2 :
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:62: ON
+                                    {
+                                    ON5=(Token)match(input,ON,FOLLOW_ON_in_date_time166); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_ON.add(ON5);
+
+
+                                    }
+                                    break;
+
+                            }
+
+                            pushFollow(FOLLOW_date_in_date_time170);
+                            date6=date();
+
+                            state._fsp--;
+                            if (state.failed) return retval;
+                            if ( state.backtracking==0 ) stream_date.add(date6.getTree());
 
                             }
                             break;
 
                     }
 
-                    pushFollow(FOLLOW_time_in_relative_datetime156);
-                    time5=time();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, time5.getTree());
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:35:5: time time_date_sep ( date_prefix )? relative_date
-                    {
-                    root_0 = (Object)adaptor.nil();
-
-                    pushFollow(FOLLOW_time_in_relative_datetime162);
-                    time6=time();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, time6.getTree());
-                    pushFollow(FOLLOW_time_date_sep_in_relative_datetime164);
-                    time_date_sep7=time_date_sep();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, time_date_sep7.getTree());
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:35:24: ( date_prefix )?
-                    int alt3=2;
-                    alt3 = dfa3.predict(input);
-                    switch (alt3) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:35:24: date_prefix
-                            {
-                            pushFollow(FOLLOW_date_prefix_in_relative_datetime166);
-                            date_prefix8=date_prefix();
-
-                            state._fsp--;
-                            if (state.failed) return retval;
-                            if ( state.backtracking==0 ) adaptor.addChild(root_0, date_prefix8.getTree());
-
-                            }
-                            break;
-
-                    }
-
-                    pushFollow(FOLLOW_relative_date_in_relative_datetime169);
-                    relative_date9=relative_date();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, relative_date9.getTree());
-
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:36:5: ( date_prefix )? relative_date
-                    {
-                    root_0 = (Object)adaptor.nil();
-
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:36:5: ( date_prefix )?
-                    int alt4=2;
-                    alt4 = dfa4.predict(input);
-                    switch (alt4) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:36:5: date_prefix
-                            {
-                            pushFollow(FOLLOW_date_prefix_in_relative_datetime175);
-                            date_prefix10=date_prefix();
-
-                            state._fsp--;
-                            if (state.failed) return retval;
-                            if ( state.backtracking==0 ) adaptor.addChild(root_0, date_prefix10.getTree());
-
-                            }
-                            break;
-
-                    }
-
-                    pushFollow(FOLLOW_relative_date_in_relative_datetime178);
-                    relative_date11=relative_date();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, relative_date11.getTree());
-
-                    }
-                    break;
-
-            }
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "relative_datetime"
-
-    public static class explicit_datetime_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "explicit_datetime"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:39:1: explicit_datetime : day_of_month time ;
-    public final DateParser.explicit_datetime_return explicit_datetime() throws RecognitionException {
-        DateParser.explicit_datetime_return retval = new DateParser.explicit_datetime_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        DateParser.day_of_month_return day_of_month12 = null;
-
-        DateParser.time_return time13 = null;
-
-
-
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:40:3: ( day_of_month time )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:40:5: day_of_month time
-            {
-            root_0 = (Object)adaptor.nil();
-
-            pushFollow(FOLLOW_day_of_month_in_explicit_datetime194);
-            day_of_month12=day_of_month();
-
-            state._fsp--;
-            if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, day_of_month12.getTree());
-            pushFollow(FOLLOW_time_in_explicit_datetime196);
-            time13=time();
-
-            state._fsp--;
-            if (state.failed) return retval;
-            if ( state.backtracking==0 ) adaptor.addChild(root_0, time13.getTree());
-
-            }
-
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "explicit_datetime"
-
-    public static class date_time_sep_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "date_time_sep"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:47:1: date_time_sep : ( AT | COMMA );
-    public final DateParser.date_time_sep_return date_time_sep() throws RecognitionException {
-        DateParser.date_time_sep_return retval = new DateParser.date_time_sep_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token set14=null;
-
-        Object set14_tree=null;
-
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:48:3: ( AT | COMMA )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:
-            {
-            root_0 = (Object)adaptor.nil();
-
-            set14=(Token)input.LT(1);
-            if ( (input.LA(1)>=AT && input.LA(1)<=COMMA) ) {
-                input.consume();
-                if ( state.backtracking==0 ) adaptor.addChild(root_0, (Object)adaptor.create(set14));
-                state.errorRecovery=false;state.failed=false;
-            }
-            else {
-                if (state.backtracking>0) {state.failed=true; return retval;}
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                throw mse;
-            }
-
-
-            }
-
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "date_time_sep"
-
-    public static class time_date_sep_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "time_date_sep"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:52:1: time_date_sep : ON ;
-    public final DateParser.time_date_sep_return time_date_sep() throws RecognitionException {
-        DateParser.time_date_sep_return retval = new DateParser.time_date_sep_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token ON15=null;
-
-        Object ON15_tree=null;
-
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:53:3: ( ON )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:53:5: ON
-            {
-            root_0 = (Object)adaptor.nil();
-
-            ON15=(Token)match(input,ON,FOLLOW_ON_in_time_date_sep242); if (state.failed) return retval;
-            if ( state.backtracking==0 ) {
-            ON15_tree = (Object)adaptor.create(ON15);
-            adaptor.addChild(root_0, ON15_tree);
-            }
-
-            }
-
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "time_date_sep"
-
-    public static class relative_date_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "relative_date"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:56:1: relative_date : ( named_relative_date | modifiable_target -> ^( RELATIVE_DATE SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] modifiable_target ) | target_prefix modifiable_target -> ^( RELATIVE_DATE target_prefix modifiable_target ) | spelled_or_int_1_to_31 modifiable_target target_suffix -> ^( RELATIVE_DATE target_suffix spelled_or_int_1_to_31 modifiable_target ) );
-    public final DateParser.relative_date_return relative_date() throws RecognitionException {
-        DateParser.relative_date_return retval = new DateParser.relative_date_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        DateParser.named_relative_date_return named_relative_date16 = null;
-
-        DateParser.modifiable_target_return modifiable_target17 = null;
-
-        DateParser.target_prefix_return target_prefix18 = null;
-
-        DateParser.modifiable_target_return modifiable_target19 = null;
-
-        DateParser.spelled_or_int_1_to_31_return spelled_or_int_1_to_3120 = null;
-
-        DateParser.modifiable_target_return modifiable_target21 = null;
-
-        DateParser.target_suffix_return target_suffix22 = null;
-
-
-        RewriteRuleSubtreeStream stream_spelled_or_int_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule spelled_or_int_1_to_31");
-        RewriteRuleSubtreeStream stream_target_suffix=new RewriteRuleSubtreeStream(adaptor,"rule target_suffix");
-        RewriteRuleSubtreeStream stream_modifiable_target=new RewriteRuleSubtreeStream(adaptor,"rule modifiable_target");
-        RewriteRuleSubtreeStream stream_target_prefix=new RewriteRuleSubtreeStream(adaptor,"rule target_prefix");
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:58:3: ( named_relative_date | modifiable_target -> ^( RELATIVE_DATE SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] modifiable_target ) | target_prefix modifiable_target -> ^( RELATIVE_DATE target_prefix modifiable_target ) | spelled_or_int_1_to_31 modifiable_target target_suffix -> ^( RELATIVE_DATE target_suffix spelled_or_int_1_to_31 modifiable_target ) )
-            int alt6=4;
-            alt6 = dfa6.predict(input);
-            switch (alt6) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:58:5: named_relative_date
-                    {
-                    root_0 = (Object)adaptor.nil();
-
-                    pushFollow(FOLLOW_named_relative_date_in_relative_date258);
-                    named_relative_date16=named_relative_date();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, named_relative_date16.getTree());
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:61:5: modifiable_target
-                    {
-                    pushFollow(FOLLOW_modifiable_target_in_relative_date270);
-                    modifiable_target17=modifiable_target();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_modifiable_target.add(modifiable_target17.getTree());
 
 
                     // AST REWRITE
-                    // elements: modifiable_target
+                    // elements: time, date
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -667,17 +308,55 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 62:5: -> ^( RELATIVE_DATE SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] modifiable_target )
+                    // 31:5: -> ^( DATE_TIME date time )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:62:8: ^( RELATIVE_DATE SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] modifiable_target )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:31:8: ^( DATE_TIME date time )
                         {
                         Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(RELATIVE_DATE, "RELATIVE_DATE"), root_1);
+                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DATE_TIME, "DATE_TIME"), root_1);
 
-                        adaptor.addChild(root_1, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_1, (Object)adaptor.create(SEEK_TYPE, "by_day"));
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "1"));
-                        adaptor.addChild(root_1, stream_modifiable_target.nextTree());
+                        adaptor.addChild(root_1, stream_date.nextTree());
+                        adaptor.addChild(root_1, stream_time.nextTree());
+
+                        adaptor.addChild(root_0, root_1);
+                        }
+
+                    }
+
+                    retval.tree = root_0;}
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:33:5: date
+                    {
+                    pushFollow(FOLLOW_date_in_date_time196);
+                    date7=date();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) stream_date.add(date7.getTree());
+
+
+                    // AST REWRITE
+                    // elements: date
+                    // token labels: 
+                    // rule labels: retval
+                    // token list labels: 
+                    // rule list labels: 
+                    // wildcard labels: 
+                    if ( state.backtracking==0 ) {
+                    retval.tree = root_0;
+                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+                    root_0 = (Object)adaptor.nil();
+                    // 34:5: -> ^( DATE_TIME date )
+                    {
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:34:8: ^( DATE_TIME date )
+                        {
+                        Object root_1 = (Object)adaptor.nil();
+                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DATE_TIME, "DATE_TIME"), root_1);
+
+                        adaptor.addChild(root_1, stream_date.nextTree());
 
                         adaptor.addChild(root_0, root_1);
                         }
@@ -688,24 +367,18 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:65:5: target_prefix modifiable_target
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:36:5: time
                     {
-                    pushFollow(FOLLOW_target_prefix_in_relative_date304);
-                    target_prefix18=target_prefix();
+                    pushFollow(FOLLOW_time_in_date_time217);
+                    time8=time();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_target_prefix.add(target_prefix18.getTree());
-                    pushFollow(FOLLOW_modifiable_target_in_relative_date306);
-                    modifiable_target19=modifiable_target();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_modifiable_target.add(modifiable_target19.getTree());
+                    if ( state.backtracking==0 ) stream_time.add(time8.getTree());
 
 
                     // AST REWRITE
-                    // elements: target_prefix, modifiable_target
+                    // elements: time
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -716,69 +389,14 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 66:5: -> ^( RELATIVE_DATE target_prefix modifiable_target )
+                    // 37:5: -> ^( DATE_TIME time )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:66:8: ^( RELATIVE_DATE target_prefix modifiable_target )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:37:8: ^( DATE_TIME time )
                         {
                         Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(RELATIVE_DATE, "RELATIVE_DATE"), root_1);
+                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DATE_TIME, "DATE_TIME"), root_1);
 
-                        adaptor.addChild(root_1, stream_target_prefix.nextTree());
-                        adaptor.addChild(root_1, stream_modifiable_target.nextTree());
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:69:5: spelled_or_int_1_to_31 modifiable_target target_suffix
-                    {
-                    pushFollow(FOLLOW_spelled_or_int_1_to_31_in_relative_date335);
-                    spelled_or_int_1_to_3120=spelled_or_int_1_to_31();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_spelled_or_int_1_to_31.add(spelled_or_int_1_to_3120.getTree());
-                    pushFollow(FOLLOW_modifiable_target_in_relative_date337);
-                    modifiable_target21=modifiable_target();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_modifiable_target.add(modifiable_target21.getTree());
-                    pushFollow(FOLLOW_target_suffix_in_relative_date339);
-                    target_suffix22=target_suffix();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_target_suffix.add(target_suffix22.getTree());
-
-
-                    // AST REWRITE
-                    // elements: modifiable_target, spelled_or_int_1_to_31, target_suffix
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 70:5: -> ^( RELATIVE_DATE target_suffix spelled_or_int_1_to_31 modifiable_target )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:70:8: ^( RELATIVE_DATE target_suffix spelled_or_int_1_to_31 modifiable_target )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(RELATIVE_DATE, "RELATIVE_DATE"), root_1);
-
-                        adaptor.addChild(root_1, stream_target_suffix.nextTree());
-                        adaptor.addChild(root_1, stream_spelled_or_int_1_to_31.nextTree());
-                        adaptor.addChild(root_1, stream_modifiable_target.nextTree());
+                        adaptor.addChild(root_1, stream_time.nextTree());
 
                         adaptor.addChild(root_0, root_1);
                         }
@@ -808,172 +426,198 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "relative_date"
+    // $ANTLR end "date_time"
 
-    public static class named_relative_date_return extends ParserRuleReturnScope {
+    public static class date_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "named_relative_date"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:73:1: named_relative_date : ( TODAY -> ^( RELATIVE_DATE SEEK_DIR[\">\"] INT[\"0\"] ) | TOMORROW -> ^( RELATIVE_DATE SEEK_DIR[\">\"] INT[\"1\"] ) | YESTERDAY -> ^( RELATIVE_DATE SEEK_DIR[\"<\"] INT[\"1\"] ) );
-    public final DateParser.named_relative_date_return named_relative_date() throws RecognitionException {
-        DateParser.named_relative_date_return retval = new DateParser.named_relative_date_return();
+    // $ANTLR start "date"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:40:1: date : ( formal_date | month_and_day_date );
+    public final DateParser.date_return date() throws RecognitionException {
+        DateParser.date_return retval = new DateParser.date_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token TODAY23=null;
-        Token TOMORROW24=null;
-        Token YESTERDAY25=null;
+        DateParser.formal_date_return formal_date9 = null;
 
-        Object TODAY23_tree=null;
-        Object TOMORROW24_tree=null;
-        Object YESTERDAY25_tree=null;
-        RewriteRuleTokenStream stream_TODAY=new RewriteRuleTokenStream(adaptor,"token TODAY");
-        RewriteRuleTokenStream stream_YESTERDAY=new RewriteRuleTokenStream(adaptor,"token YESTERDAY");
-        RewriteRuleTokenStream stream_TOMORROW=new RewriteRuleTokenStream(adaptor,"token TOMORROW");
+        DateParser.month_and_day_date_return month_and_day_date10 = null;
+
+
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:74:3: ( TODAY -> ^( RELATIVE_DATE SEEK_DIR[\">\"] INT[\"0\"] ) | TOMORROW -> ^( RELATIVE_DATE SEEK_DIR[\">\"] INT[\"1\"] ) | YESTERDAY -> ^( RELATIVE_DATE SEEK_DIR[\"<\"] INT[\"1\"] ) )
-            int alt7=3;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:41:3: ( formal_date | month_and_day_date )
+            int alt4=2;
             switch ( input.LA(1) ) {
-            case TODAY:
+            case FOUR_DIGIT:
                 {
-                alt7=1;
+                alt4=1;
                 }
                 break;
-            case TOMORROW:
+            case PREFIXED_ONE_TO_NINE:
                 {
-                alt7=2;
+                int LA4_2 = input.LA(2);
+
+                if ( ((LA4_2>=OF && LA4_2<=DECEMBER)) ) {
+                    alt4=2;
+                }
+                else if ( ((LA4_2>=DASH && LA4_2<=SLASH)) ) {
+                    alt4=1;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 4, 2, input);
+
+                    throw nvae;
+                }
                 }
                 break;
-            case YESTERDAY:
+            case ONE_TO_NINE:
                 {
-                alt7=3;
+                int LA4_3 = input.LA(2);
+
+                if ( ((LA4_3>=OF && LA4_3<=DECEMBER)) ) {
+                    alt4=2;
+                }
+                else if ( ((LA4_3>=DASH && LA4_3<=SLASH)) ) {
+                    alt4=1;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 4, 3, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case TEN_TO_TWELVE:
+                {
+                int LA4_4 = input.LA(2);
+
+                if ( ((LA4_4>=DASH && LA4_4<=SLASH)) ) {
+                    alt4=1;
+                }
+                else if ( ((LA4_4>=OF && LA4_4<=DECEMBER)) ) {
+                    alt4=2;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 4, 4, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case JANUARY:
+            case FEBRUARY:
+            case MARCH:
+            case APRIL:
+            case MAY:
+            case JUNE:
+            case JULY:
+            case AUGUST:
+            case SEPTEMBER:
+            case OCTOBER:
+            case NOVEMBER:
+            case DECEMBER:
+            case ONE:
+            case TWO:
+            case THREE:
+            case FOUR:
+            case FIVE:
+            case SIX:
+            case SEVEN:
+            case EIGHT:
+            case NINE:
+            case TEN:
+            case ELEVEN:
+            case TWELVE:
+            case THIRTEEN:
+            case FOURTEEN:
+            case FIFTEEN:
+            case SIXTEEN:
+            case SEVENTEEN:
+            case EIGHTEEN:
+            case NINETEEN:
+            case TWENTY:
+            case THIRTY:
+            case FIRST:
+            case SECOND:
+            case THIRD:
+            case FOURTH:
+            case FIFTH:
+            case SIXTH:
+            case SEVENTH:
+            case EIGHTH:
+            case NINTH:
+            case TENTH:
+            case ELEVENTH:
+            case TWELFTH:
+            case THIRTEENTH:
+            case FOURTEENTH:
+            case FIFTEENTH:
+            case SIXTEENTH:
+            case SEVENTEENTH:
+            case EIGHTEENTH:
+            case NINETEENTH:
+            case TWENTIETH:
+            case TWENTY_FIRST:
+            case TWENTY_SECOND:
+            case TWENTY_THIRD:
+            case TWENTY_FOURTH:
+            case TWENTY_FIFTH:
+            case TWENTY_SIXTH:
+            case TWENTY_SEVENTH:
+            case TWENTY_EIGHTH:
+            case TWENTY_NINTH:
+            case THIRTIETH:
+            case THIRTY_FIRST:
+            case THIRTEEN_TO_TWENTY_THREE:
+            case TWENTY_FOUR_TO_THIRTY_ONE:
+                {
+                alt4=2;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt7) {
+            switch (alt4) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:74:5: TODAY
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:41:5: formal_date
                     {
-                    TODAY23=(Token)match(input,TODAY,FOLLOW_TODAY_in_named_relative_date371); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TODAY.add(TODAY23);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
                     root_0 = (Object)adaptor.nil();
-                    // 74:15: -> ^( RELATIVE_DATE SEEK_DIR[\">\"] INT[\"0\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:74:18: ^( RELATIVE_DATE SEEK_DIR[\">\"] INT[\"0\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(RELATIVE_DATE, "RELATIVE_DATE"), root_1);
 
-                        adaptor.addChild(root_1, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "0"));
+                    pushFollow(FOLLOW_formal_date_in_date244);
+                    formal_date9=formal_date();
 
-                        adaptor.addChild(root_0, root_1);
-                        }
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, formal_date9.getTree());
 
-                    }
-
-                    retval.tree = root_0;}
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:75:5: TOMORROW
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:42:5: month_and_day_date
                     {
-                    TOMORROW24=(Token)match(input,TOMORROW,FOLLOW_TOMORROW_in_named_relative_date393); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TOMORROW.add(TOMORROW24);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
                     root_0 = (Object)adaptor.nil();
-                    // 75:15: -> ^( RELATIVE_DATE SEEK_DIR[\">\"] INT[\"1\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:75:18: ^( RELATIVE_DATE SEEK_DIR[\">\"] INT[\"1\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(RELATIVE_DATE, "RELATIVE_DATE"), root_1);
 
-                        adaptor.addChild(root_1, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "1"));
+                    pushFollow(FOLLOW_month_and_day_date_in_date250);
+                    month_and_day_date10=month_and_day_date();
 
-                        adaptor.addChild(root_0, root_1);
-                        }
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, month_and_day_date10.getTree());
 
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:76:5: YESTERDAY
-                    {
-                    YESTERDAY25=(Token)match(input,YESTERDAY,FOLLOW_YESTERDAY_in_named_relative_date412); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_YESTERDAY.add(YESTERDAY25);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 76:15: -> ^( RELATIVE_DATE SEEK_DIR[\"<\"] INT[\"1\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:76:18: ^( RELATIVE_DATE SEEK_DIR[\"<\"] INT[\"1\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(RELATIVE_DATE, "RELATIVE_DATE"), root_1);
-
-                        adaptor.addChild(root_1, (Object)adaptor.create(SEEK_DIR, "<"));
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "1"));
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
                     }
                     break;
 
@@ -996,40 +640,40 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "named_relative_date"
+    // $ANTLR end "date"
 
-    public static class formal_explicit_date_return extends ParserRuleReturnScope {
+    public static class formal_date_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "formal_explicit_date"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:79:1: formal_explicit_date : ( int_4_digits date_separator int_1_to_12 date_separator int_1_to_31 -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_12 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF int_4_digits ) ) | int_1_to_12 date_separator int_1_to_31 ( date_separator int_up_to_4_digits )? -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_31 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF ( int_up_to_4_digits )? ) ) );
-    public final DateParser.formal_explicit_date_return formal_explicit_date() throws RecognitionException {
-        DateParser.formal_explicit_date_return retval = new DateParser.formal_explicit_date_return();
+    // $ANTLR start "formal_date"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:45:1: formal_date : ( int_4_digits date_separator int_1_to_12 date_separator int_1_to_31 -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_12 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF int_4_digits ) ) | int_1_to_12 date_separator int_1_to_31 ( date_separator int_up_to_4_digits )? -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_31 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF ( int_up_to_4_digits )? ) ) );
+    public final DateParser.formal_date_return formal_date() throws RecognitionException {
+        DateParser.formal_date_return retval = new DateParser.formal_date_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        DateParser.int_4_digits_return int_4_digits26 = null;
+        DateParser.int_4_digits_return int_4_digits11 = null;
 
-        DateParser.date_separator_return date_separator27 = null;
+        DateParser.date_separator_return date_separator12 = null;
 
-        DateParser.int_1_to_12_return int_1_to_1228 = null;
+        DateParser.int_1_to_12_return int_1_to_1213 = null;
 
-        DateParser.date_separator_return date_separator29 = null;
+        DateParser.date_separator_return date_separator14 = null;
 
-        DateParser.int_1_to_31_return int_1_to_3130 = null;
+        DateParser.int_1_to_31_return int_1_to_3115 = null;
 
-        DateParser.int_1_to_12_return int_1_to_1231 = null;
+        DateParser.int_1_to_12_return int_1_to_1216 = null;
 
-        DateParser.date_separator_return date_separator32 = null;
+        DateParser.date_separator_return date_separator17 = null;
 
-        DateParser.int_1_to_31_return int_1_to_3133 = null;
+        DateParser.int_1_to_31_return int_1_to_3118 = null;
 
-        DateParser.date_separator_return date_separator34 = null;
+        DateParser.date_separator_return date_separator19 = null;
 
-        DateParser.int_up_to_4_digits_return int_up_to_4_digits35 = null;
+        DateParser.int_up_to_4_digits_return int_up_to_4_digits20 = null;
 
 
         RewriteRuleSubtreeStream stream_int_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule int_1_to_31");
@@ -1038,61 +682,61 @@ public class DateParser extends Parser {
         RewriteRuleSubtreeStream stream_date_separator=new RewriteRuleSubtreeStream(adaptor,"rule date_separator");
         RewriteRuleSubtreeStream stream_int_1_to_12=new RewriteRuleSubtreeStream(adaptor,"rule int_1_to_12");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:81:3: ( int_4_digits date_separator int_1_to_12 date_separator int_1_to_31 -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_12 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF int_4_digits ) ) | int_1_to_12 date_separator int_1_to_31 ( date_separator int_up_to_4_digits )? -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_31 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF ( int_up_to_4_digits )? ) ) )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:47:3: ( int_4_digits date_separator int_1_to_12 date_separator int_1_to_31 -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_12 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF int_4_digits ) ) | int_1_to_12 date_separator int_1_to_31 ( date_separator int_up_to_4_digits )? -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_31 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF ( int_up_to_4_digits )? ) ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA9_0==FOUR_DIGIT) ) {
-                alt9=1;
+            if ( (LA6_0==FOUR_DIGIT) ) {
+                alt6=1;
             }
-            else if ( ((LA9_0>=TWO_ZEROS && LA9_0<=TEN_TO_TWELVE)) ) {
-                alt9=2;
+            else if ( ((LA6_0>=PREFIXED_ONE_TO_NINE && LA6_0<=TEN_TO_TWELVE)) ) {
+                alt6=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-            switch (alt9) {
+            switch (alt6) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:81:5: int_4_digits date_separator int_1_to_12 date_separator int_1_to_31
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:47:5: int_4_digits date_separator int_1_to_12 date_separator int_1_to_31
                     {
-                    pushFollow(FOLLOW_int_4_digits_in_formal_explicit_date442);
-                    int_4_digits26=int_4_digits();
+                    pushFollow(FOLLOW_int_4_digits_in_formal_date268);
+                    int_4_digits11=int_4_digits();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_int_4_digits.add(int_4_digits26.getTree());
-                    pushFollow(FOLLOW_date_separator_in_formal_explicit_date444);
-                    date_separator27=date_separator();
+                    if ( state.backtracking==0 ) stream_int_4_digits.add(int_4_digits11.getTree());
+                    pushFollow(FOLLOW_date_separator_in_formal_date270);
+                    date_separator12=date_separator();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_date_separator.add(date_separator27.getTree());
-                    pushFollow(FOLLOW_int_1_to_12_in_formal_explicit_date446);
-                    int_1_to_1228=int_1_to_12();
+                    if ( state.backtracking==0 ) stream_date_separator.add(date_separator12.getTree());
+                    pushFollow(FOLLOW_int_1_to_12_in_formal_date272);
+                    int_1_to_1213=int_1_to_12();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_int_1_to_12.add(int_1_to_1228.getTree());
-                    pushFollow(FOLLOW_date_separator_in_formal_explicit_date448);
-                    date_separator29=date_separator();
+                    if ( state.backtracking==0 ) stream_int_1_to_12.add(int_1_to_1213.getTree());
+                    pushFollow(FOLLOW_date_separator_in_formal_date274);
+                    date_separator14=date_separator();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_date_separator.add(date_separator29.getTree());
-                    pushFollow(FOLLOW_int_1_to_31_in_formal_explicit_date450);
-                    int_1_to_3130=int_1_to_31();
+                    if ( state.backtracking==0 ) stream_date_separator.add(date_separator14.getTree());
+                    pushFollow(FOLLOW_int_1_to_31_in_formal_date276);
+                    int_1_to_3115=int_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_int_1_to_31.add(int_1_to_3130.getTree());
+                    if ( state.backtracking==0 ) stream_int_1_to_31.add(int_1_to_3115.getTree());
 
 
                     // AST REWRITE
-                    // elements: int_4_digits, int_1_to_31, int_1_to_12
+                    // elements: int_1_to_12, int_1_to_31, int_4_digits
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1103,14 +747,14 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 82:5: -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_12 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF int_4_digits ) )
+                    // 48:5: -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_12 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF int_4_digits ) )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:8: ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_12 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF int_4_digits ) )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:48:8: ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_12 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF int_4_digits ) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_DATE, "EXPLICIT_DATE"), root_1);
 
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:24: ^( MONTH_OF int_1_to_12 )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:48:24: ^( MONTH_OF int_1_to_12 )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_2);
@@ -1119,7 +763,7 @@ public class DateParser extends Parser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:48: ^( DAY_OF_MONTH int_1_to_31 )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:48:48: ^( DAY_OF_MONTH int_1_to_31 )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_MONTH, "DAY_OF_MONTH"), root_2);
@@ -1128,7 +772,7 @@ public class DateParser extends Parser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:76: ^( YEAR_OF int_4_digits )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:48:76: ^( YEAR_OF int_4_digits )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(YEAR_OF, "YEAR_OF"), root_2);
@@ -1147,49 +791,49 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:85:5: int_1_to_12 date_separator int_1_to_31 ( date_separator int_up_to_4_digits )?
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:51:5: int_1_to_12 date_separator int_1_to_31 ( date_separator int_up_to_4_digits )?
                     {
-                    pushFollow(FOLLOW_int_1_to_12_in_formal_explicit_date489);
-                    int_1_to_1231=int_1_to_12();
+                    pushFollow(FOLLOW_int_1_to_12_in_formal_date315);
+                    int_1_to_1216=int_1_to_12();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_int_1_to_12.add(int_1_to_1231.getTree());
-                    pushFollow(FOLLOW_date_separator_in_formal_explicit_date491);
-                    date_separator32=date_separator();
+                    if ( state.backtracking==0 ) stream_int_1_to_12.add(int_1_to_1216.getTree());
+                    pushFollow(FOLLOW_date_separator_in_formal_date317);
+                    date_separator17=date_separator();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_date_separator.add(date_separator32.getTree());
-                    pushFollow(FOLLOW_int_1_to_31_in_formal_explicit_date493);
-                    int_1_to_3133=int_1_to_31();
+                    if ( state.backtracking==0 ) stream_date_separator.add(date_separator17.getTree());
+                    pushFollow(FOLLOW_int_1_to_31_in_formal_date319);
+                    int_1_to_3118=int_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_int_1_to_31.add(int_1_to_3133.getTree());
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:85:44: ( date_separator int_up_to_4_digits )?
-                    int alt8=2;
-                    int LA8_0 = input.LA(1);
+                    if ( state.backtracking==0 ) stream_int_1_to_31.add(int_1_to_3118.getTree());
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:51:44: ( date_separator int_up_to_4_digits )?
+                    int alt5=2;
+                    int LA5_0 = input.LA(1);
 
-                    if ( ((LA8_0>=DASH && LA8_0<=SLASH)) ) {
-                        alt8=1;
+                    if ( ((LA5_0>=DASH && LA5_0<=SLASH)) ) {
+                        alt5=1;
                     }
-                    switch (alt8) {
+                    switch (alt5) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:85:45: date_separator int_up_to_4_digits
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:51:45: date_separator int_up_to_4_digits
                             {
-                            pushFollow(FOLLOW_date_separator_in_formal_explicit_date496);
-                            date_separator34=date_separator();
+                            pushFollow(FOLLOW_date_separator_in_formal_date322);
+                            date_separator19=date_separator();
 
                             state._fsp--;
                             if (state.failed) return retval;
-                            if ( state.backtracking==0 ) stream_date_separator.add(date_separator34.getTree());
-                            pushFollow(FOLLOW_int_up_to_4_digits_in_formal_explicit_date498);
-                            int_up_to_4_digits35=int_up_to_4_digits();
+                            if ( state.backtracking==0 ) stream_date_separator.add(date_separator19.getTree());
+                            pushFollow(FOLLOW_int_up_to_4_digits_in_formal_date324);
+                            int_up_to_4_digits20=int_up_to_4_digits();
 
                             state._fsp--;
                             if (state.failed) return retval;
-                            if ( state.backtracking==0 ) stream_int_up_to_4_digits.add(int_up_to_4_digits35.getTree());
+                            if ( state.backtracking==0 ) stream_int_up_to_4_digits.add(int_up_to_4_digits20.getTree());
 
                             }
                             break;
@@ -1199,7 +843,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: int_up_to_4_digits, int_1_to_31, int_1_to_31
+                    // elements: int_1_to_31, int_up_to_4_digits, int_1_to_31
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1210,14 +854,14 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 86:5: -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_31 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF ( int_up_to_4_digits )? ) )
+                    // 52:5: -> ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_31 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF ( int_up_to_4_digits )? ) )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:86:8: ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_31 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF ( int_up_to_4_digits )? ) )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:52:8: ^( EXPLICIT_DATE ^( MONTH_OF int_1_to_31 ) ^( DAY_OF_MONTH int_1_to_31 ) ^( YEAR_OF ( int_up_to_4_digits )? ) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_DATE, "EXPLICIT_DATE"), root_1);
 
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:86:24: ^( MONTH_OF int_1_to_31 )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:52:24: ^( MONTH_OF int_1_to_31 )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_2);
@@ -1226,7 +870,7 @@ public class DateParser extends Parser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:86:48: ^( DAY_OF_MONTH int_1_to_31 )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:52:48: ^( DAY_OF_MONTH int_1_to_31 )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_MONTH, "DAY_OF_MONTH"), root_2);
@@ -1235,12 +879,12 @@ public class DateParser extends Parser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:86:76: ^( YEAR_OF ( int_up_to_4_digits )? )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:52:76: ^( YEAR_OF ( int_up_to_4_digits )? )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(YEAR_OF, "YEAR_OF"), root_2);
 
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:86:86: ( int_up_to_4_digits )?
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:52:86: ( int_up_to_4_digits )?
                         if ( stream_int_up_to_4_digits.hasNext() ) {
                             adaptor.addChild(root_2, stream_int_up_to_4_digits.nextTree());
 
@@ -1278,291 +922,217 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "formal_explicit_date"
+    // $ANTLR end "formal_date"
 
-    public static class date_prefix_return extends ParserRuleReturnScope {
+    public static class month_and_day_date_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
-    // $ANTLR start "date_prefix"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:90:1: date_prefix : ( ( THE )? DAY AFTER -> SEEK_DIR[\">\"] INT[\"1\"] | spelled_or_int_1_to_31 DAY AFTER -> SEEK_DIR[\">\"] spelled_or_int_1_to_31 | ( THE )? DAY BEFORE -> SEEK_DIR[\"<\"] INT[\"1\"] | spelled_or_int_1_to_31 DAY BEFORE -> SEEK_DIR[\"<\"] spelled_or_int_1_to_31 );
-    public final DateParser.date_prefix_return date_prefix() throws RecognitionException {
-        DateParser.date_prefix_return retval = new DateParser.date_prefix_return();
+    // $ANTLR start "month_and_day_date"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:56:1: month_and_day_date : ( day_of_month ( OF )? month ( year )? | month day_of_month ( year )? ) -> ^( EXPLICIT_DATE month day_of_month ( year )? ) ;
+    public final DateParser.month_and_day_date_return month_and_day_date() throws RecognitionException {
+        DateParser.month_and_day_date_return retval = new DateParser.month_and_day_date_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token THE36=null;
-        Token DAY37=null;
-        Token AFTER38=null;
-        Token DAY40=null;
-        Token AFTER41=null;
-        Token THE42=null;
-        Token DAY43=null;
-        Token BEFORE44=null;
-        Token DAY46=null;
-        Token BEFORE47=null;
-        DateParser.spelled_or_int_1_to_31_return spelled_or_int_1_to_3139 = null;
+        Token OF22=null;
+        DateParser.day_of_month_return day_of_month21 = null;
 
-        DateParser.spelled_or_int_1_to_31_return spelled_or_int_1_to_3145 = null;
+        DateParser.month_return month23 = null;
+
+        DateParser.year_return year24 = null;
+
+        DateParser.month_return month25 = null;
+
+        DateParser.day_of_month_return day_of_month26 = null;
+
+        DateParser.year_return year27 = null;
 
 
-        Object THE36_tree=null;
-        Object DAY37_tree=null;
-        Object AFTER38_tree=null;
-        Object DAY40_tree=null;
-        Object AFTER41_tree=null;
-        Object THE42_tree=null;
-        Object DAY43_tree=null;
-        Object BEFORE44_tree=null;
-        Object DAY46_tree=null;
-        Object BEFORE47_tree=null;
-        RewriteRuleTokenStream stream_BEFORE=new RewriteRuleTokenStream(adaptor,"token BEFORE");
-        RewriteRuleTokenStream stream_DAY=new RewriteRuleTokenStream(adaptor,"token DAY");
-        RewriteRuleTokenStream stream_AFTER=new RewriteRuleTokenStream(adaptor,"token AFTER");
-        RewriteRuleTokenStream stream_THE=new RewriteRuleTokenStream(adaptor,"token THE");
-        RewriteRuleSubtreeStream stream_spelled_or_int_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule spelled_or_int_1_to_31");
+        Object OF22_tree=null;
+        RewriteRuleTokenStream stream_OF=new RewriteRuleTokenStream(adaptor,"token OF");
+        RewriteRuleSubtreeStream stream_month=new RewriteRuleSubtreeStream(adaptor,"rule month");
+        RewriteRuleSubtreeStream stream_year=new RewriteRuleSubtreeStream(adaptor,"rule year");
+        RewriteRuleSubtreeStream stream_day_of_month=new RewriteRuleSubtreeStream(adaptor,"rule day_of_month");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:91:3: ( ( THE )? DAY AFTER -> SEEK_DIR[\">\"] INT[\"1\"] | spelled_or_int_1_to_31 DAY AFTER -> SEEK_DIR[\">\"] spelled_or_int_1_to_31 | ( THE )? DAY BEFORE -> SEEK_DIR[\"<\"] INT[\"1\"] | spelled_or_int_1_to_31 DAY BEFORE -> SEEK_DIR[\"<\"] spelled_or_int_1_to_31 )
-            int alt12=4;
-            alt12 = dfa12.predict(input);
-            switch (alt12) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:91:5: ( THE )? DAY AFTER
-                    {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:91:5: ( THE )?
-                    int alt10=2;
-                    int LA10_0 = input.LA(1);
-
-                    if ( (LA10_0==THE) ) {
-                        alt10=1;
-                    }
-                    switch (alt10) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:91:5: THE
-                            {
-                            THE36=(Token)match(input,THE,FOLLOW_THE_in_date_prefix547); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THE.add(THE36);
-
-
-                            }
-                            break;
-
-                    }
-
-                    DAY37=(Token)match(input,DAY,FOLLOW_DAY_in_date_prefix550); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_DAY.add(DAY37);
-
-                    AFTER38=(Token)match(input,AFTER,FOLLOW_AFTER_in_date_prefix552); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AFTER.add(AFTER38);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 91:39: -> SEEK_DIR[\">\"] INT[\"1\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, "1"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:92:5: spelled_or_int_1_to_31 DAY AFTER
-                    {
-                    pushFollow(FOLLOW_spelled_or_int_1_to_31_in_date_prefix585);
-                    spelled_or_int_1_to_3139=spelled_or_int_1_to_31();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_spelled_or_int_1_to_31.add(spelled_or_int_1_to_3139.getTree());
-                    DAY40=(Token)match(input,DAY,FOLLOW_DAY_in_date_prefix587); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_DAY.add(DAY40);
-
-                    AFTER41=(Token)match(input,AFTER,FOLLOW_AFTER_in_date_prefix589); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AFTER.add(AFTER41);
-
-
-
-                    // AST REWRITE
-                    // elements: spelled_or_int_1_to_31
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 92:39: -> SEEK_DIR[\">\"] spelled_or_int_1_to_31
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_0, stream_spelled_or_int_1_to_31.nextTree());
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:93:5: ( THE )? DAY BEFORE
-                    {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:93:5: ( THE )?
-                    int alt11=2;
-                    int LA11_0 = input.LA(1);
-
-                    if ( (LA11_0==THE) ) {
-                        alt11=1;
-                    }
-                    switch (alt11) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:93:5: THE
-                            {
-                            THE42=(Token)match(input,THE,FOLLOW_THE_in_date_prefix603); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THE.add(THE42);
-
-
-                            }
-                            break;
-
-                    }
-
-                    DAY43=(Token)match(input,DAY,FOLLOW_DAY_in_date_prefix606); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_DAY.add(DAY43);
-
-                    BEFORE44=(Token)match(input,BEFORE,FOLLOW_BEFORE_in_date_prefix608); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_BEFORE.add(BEFORE44);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 93:39: -> SEEK_DIR[\"<\"] INT[\"1\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, "<"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, "1"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:94:5: spelled_or_int_1_to_31 DAY BEFORE
-                    {
-                    pushFollow(FOLLOW_spelled_or_int_1_to_31_in_date_prefix640);
-                    spelled_or_int_1_to_3145=spelled_or_int_1_to_31();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_spelled_or_int_1_to_31.add(spelled_or_int_1_to_3145.getTree());
-                    DAY46=(Token)match(input,DAY,FOLLOW_DAY_in_date_prefix642); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_DAY.add(DAY46);
-
-                    BEFORE47=(Token)match(input,BEFORE,FOLLOW_BEFORE_in_date_prefix644); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_BEFORE.add(BEFORE47);
-
-
-
-                    // AST REWRITE
-                    // elements: spelled_or_int_1_to_31
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 94:39: -> SEEK_DIR[\"<\"] spelled_or_int_1_to_31
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, "<"));
-                        adaptor.addChild(root_0, stream_spelled_or_int_1_to_31.nextTree());
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-
-            }
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "date_prefix"
-
-    public static class time_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "time"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:97:1: time : COLON ;
-    public final DateParser.time_return time() throws RecognitionException {
-        DateParser.time_return retval = new DateParser.time_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token COLON48=null;
-
-        Object COLON48_tree=null;
-
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:98:3: ( COLON )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:98:5: COLON
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:3: ( ( day_of_month ( OF )? month ( year )? | month day_of_month ( year )? ) -> ^( EXPLICIT_DATE month day_of_month ( year )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:5: ( day_of_month ( OF )? month ( year )? | month day_of_month ( year )? )
             {
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:5: ( day_of_month ( OF )? month ( year )? | month day_of_month ( year )? )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
+
+            if ( ((LA10_0>=ONE && LA10_0<=THIRTY_FIRST)||(LA10_0>=PREFIXED_ONE_TO_NINE && LA10_0<=TEN_TO_TWELVE)||(LA10_0>=THIRTEEN_TO_TWENTY_THREE && LA10_0<=TWENTY_FOUR_TO_THIRTY_ONE)) ) {
+                alt10=1;
+            }
+            else if ( ((LA10_0>=JANUARY && LA10_0<=DECEMBER)) ) {
+                alt10=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return retval;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 10, 0, input);
+
+                throw nvae;
+            }
+            switch (alt10) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:6: day_of_month ( OF )? month ( year )?
+                    {
+                    pushFollow(FOLLOW_day_of_month_in_month_and_day_date370);
+                    day_of_month21=day_of_month();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) stream_day_of_month.add(day_of_month21.getTree());
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:19: ( OF )?
+                    int alt7=2;
+                    int LA7_0 = input.LA(1);
+
+                    if ( (LA7_0==OF) ) {
+                        alt7=1;
+                    }
+                    switch (alt7) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:19: OF
+                            {
+                            OF22=(Token)match(input,OF,FOLLOW_OF_in_month_and_day_date372); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_OF.add(OF22);
+
+
+                            }
+                            break;
+
+                    }
+
+                    pushFollow(FOLLOW_month_in_month_and_day_date375);
+                    month23=month();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) stream_month.add(month23.getTree());
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:29: ( year )?
+                    int alt8=2;
+                    int LA8_0 = input.LA(1);
+
+                    if ( (LA8_0==COMMA) ) {
+                        int LA8_1 = input.LA(2);
+
+                        if ( (LA8_1==IN||LA8_1==SINGLE_QUOTE||(LA8_1>=THREE_DIGIT && LA8_1<=FOUR_DIGIT)) ) {
+                            alt8=1;
+                        }
+                    }
+                    else if ( (LA8_0==IN||LA8_0==SINGLE_QUOTE||(LA8_0>=THREE_DIGIT && LA8_0<=FOUR_DIGIT)) ) {
+                        alt8=1;
+                    }
+                    switch (alt8) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:29: year
+                            {
+                            pushFollow(FOLLOW_year_in_month_and_day_date377);
+                            year24=year();
+
+                            state._fsp--;
+                            if (state.failed) return retval;
+                            if ( state.backtracking==0 ) stream_year.add(year24.getTree());
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:37: month day_of_month ( year )?
+                    {
+                    pushFollow(FOLLOW_month_in_month_and_day_date382);
+                    month25=month();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) stream_month.add(month25.getTree());
+                    pushFollow(FOLLOW_day_of_month_in_month_and_day_date384);
+                    day_of_month26=day_of_month();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) stream_day_of_month.add(day_of_month26.getTree());
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:56: ( year )?
+                    int alt9=2;
+                    int LA9_0 = input.LA(1);
+
+                    if ( (LA9_0==COMMA) ) {
+                        int LA9_1 = input.LA(2);
+
+                        if ( (LA9_1==IN||LA9_1==SINGLE_QUOTE||(LA9_1>=THREE_DIGIT && LA9_1<=FOUR_DIGIT)) ) {
+                            alt9=1;
+                        }
+                    }
+                    else if ( (LA9_0==IN||LA9_0==SINGLE_QUOTE||(LA9_0>=THREE_DIGIT && LA9_0<=FOUR_DIGIT)) ) {
+                        alt9=1;
+                    }
+                    switch (alt9) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:57:56: year
+                            {
+                            pushFollow(FOLLOW_year_in_month_and_day_date386);
+                            year27=year();
+
+                            state._fsp--;
+                            if (state.failed) return retval;
+                            if ( state.backtracking==0 ) stream_year.add(year27.getTree());
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+
+            // AST REWRITE
+            // elements: year, day_of_month, month
+            // token labels: 
+            // rule labels: retval
+            // token list labels: 
+            // rule list labels: 
+            // wildcard labels: 
+            if ( state.backtracking==0 ) {
+            retval.tree = root_0;
+            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
             root_0 = (Object)adaptor.nil();
+            // 58:5: -> ^( EXPLICIT_DATE month day_of_month ( year )? )
+            {
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:58:8: ^( EXPLICIT_DATE month day_of_month ( year )? )
+                {
+                Object root_1 = (Object)adaptor.nil();
+                root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_DATE, "EXPLICIT_DATE"), root_1);
 
-            COLON48=(Token)match(input,COLON,FOLLOW_COLON_in_time667); if (state.failed) return retval;
-            if ( state.backtracking==0 ) {
-            COLON48_tree = (Object)adaptor.create(COLON48);
-            adaptor.addChild(root_0, COLON48_tree);
+                adaptor.addChild(root_1, stream_month.nextTree());
+                adaptor.addChild(root_1, stream_day_of_month.nextTree());
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:58:43: ( year )?
+                if ( stream_year.hasNext() ) {
+                    adaptor.addChild(root_1, stream_year.nextTree());
+
+                }
+                stream_year.reset();
+
+                adaptor.addChild(root_0, root_1);
+                }
+
             }
 
+            retval.tree = root_0;}
             }
 
             retval.stop = input.LT(-1);
@@ -1583,1158 +1153,7 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "time"
-
-    public static class time_identifier_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "time_identifier"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:106:1: time_identifier : ( MIDNIGHT -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"am\"] ) | NOON -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"pm\"] ) );
-    public final DateParser.time_identifier_return time_identifier() throws RecognitionException {
-        DateParser.time_identifier_return retval = new DateParser.time_identifier_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token MIDNIGHT49=null;
-        Token NOON50=null;
-
-        Object MIDNIGHT49_tree=null;
-        Object NOON50_tree=null;
-        RewriteRuleTokenStream stream_NOON=new RewriteRuleTokenStream(adaptor,"token NOON");
-        RewriteRuleTokenStream stream_MIDNIGHT=new RewriteRuleTokenStream(adaptor,"token MIDNIGHT");
-
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:107:3: ( MIDNIGHT -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"am\"] ) | NOON -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"pm\"] ) )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
-
-            if ( (LA13_0==MIDNIGHT) ) {
-                alt13=1;
-            }
-            else if ( (LA13_0==NOON) ) {
-                alt13=2;
-            }
-            else {
-                if (state.backtracking>0) {state.failed=true; return retval;}
-                NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
-
-                throw nvae;
-            }
-            switch (alt13) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:107:5: MIDNIGHT
-                    {
-                    MIDNIGHT49=(Token)match(input,MIDNIGHT,FOLLOW_MIDNIGHT_in_time_identifier698); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_MIDNIGHT.add(MIDNIGHT49);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 107:14: -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"am\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:107:17: ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"am\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_TIME, "EXPLICIT_TIME"), root_1);
-
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:107:33: ^( HOURS INT[\"12\"] )
-                        {
-                        Object root_2 = (Object)adaptor.nil();
-                        root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(HOURS, "HOURS"), root_2);
-
-                        adaptor.addChild(root_2, (Object)adaptor.create(INT, "12"));
-
-                        adaptor.addChild(root_1, root_2);
-                        }
-                        adaptor.addChild(root_1, (Object)adaptor.create(AM_PM, "am"));
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:108:5: NOON
-                    {
-                    NOON50=(Token)match(input,NOON,FOLLOW_NOON_in_time_identifier720); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NOON.add(NOON50);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 108:14: -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"pm\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:108:17: ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"pm\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_TIME, "EXPLICIT_TIME"), root_1);
-
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:108:33: ^( HOURS INT[\"12\"] )
-                        {
-                        Object root_2 = (Object)adaptor.nil();
-                        root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(HOURS, "HOURS"), root_2);
-
-                        adaptor.addChild(root_2, (Object)adaptor.create(INT, "12"));
-
-                        adaptor.addChild(root_1, root_2);
-                        }
-                        adaptor.addChild(root_1, (Object)adaptor.create(AM_PM, "pm"));
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-
-            }
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "time_identifier"
-
-    public static class target_prefix_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "target_prefix"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:112:1: target_prefix : ( THIS -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] | ( THIS )? LAST -> SEEK_DIR[\"<\"] SEEK_TYPE[\"by_week\"] INT[\"1\"] | ( THIS )? PAST -> SEEK_DIR[\"<\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] | ( THIS )? NEXT -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_week\"] INT[\"1\"] | ( THIS )? COMING -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] | ( THIS )? UPCOMING -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] | ( IN )? spelled_or_int_1_to_31 -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] spelled_or_int_1_to_31 );
-    public final DateParser.target_prefix_return target_prefix() throws RecognitionException {
-        DateParser.target_prefix_return retval = new DateParser.target_prefix_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token THIS51=null;
-        Token THIS52=null;
-        Token LAST53=null;
-        Token THIS54=null;
-        Token PAST55=null;
-        Token THIS56=null;
-        Token NEXT57=null;
-        Token THIS58=null;
-        Token COMING59=null;
-        Token THIS60=null;
-        Token UPCOMING61=null;
-        Token IN62=null;
-        DateParser.spelled_or_int_1_to_31_return spelled_or_int_1_to_3163 = null;
-
-
-        Object THIS51_tree=null;
-        Object THIS52_tree=null;
-        Object LAST53_tree=null;
-        Object THIS54_tree=null;
-        Object PAST55_tree=null;
-        Object THIS56_tree=null;
-        Object NEXT57_tree=null;
-        Object THIS58_tree=null;
-        Object COMING59_tree=null;
-        Object THIS60_tree=null;
-        Object UPCOMING61_tree=null;
-        Object IN62_tree=null;
-        RewriteRuleTokenStream stream_NEXT=new RewriteRuleTokenStream(adaptor,"token NEXT");
-        RewriteRuleTokenStream stream_IN=new RewriteRuleTokenStream(adaptor,"token IN");
-        RewriteRuleTokenStream stream_LAST=new RewriteRuleTokenStream(adaptor,"token LAST");
-        RewriteRuleTokenStream stream_UPCOMING=new RewriteRuleTokenStream(adaptor,"token UPCOMING");
-        RewriteRuleTokenStream stream_COMING=new RewriteRuleTokenStream(adaptor,"token COMING");
-        RewriteRuleTokenStream stream_PAST=new RewriteRuleTokenStream(adaptor,"token PAST");
-        RewriteRuleTokenStream stream_THIS=new RewriteRuleTokenStream(adaptor,"token THIS");
-        RewriteRuleSubtreeStream stream_spelled_or_int_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule spelled_or_int_1_to_31");
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:113:3: ( THIS -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] | ( THIS )? LAST -> SEEK_DIR[\"<\"] SEEK_TYPE[\"by_week\"] INT[\"1\"] | ( THIS )? PAST -> SEEK_DIR[\"<\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] | ( THIS )? NEXT -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_week\"] INT[\"1\"] | ( THIS )? COMING -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] | ( THIS )? UPCOMING -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] | ( IN )? spelled_or_int_1_to_31 -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] spelled_or_int_1_to_31 )
-            int alt20=7;
-            switch ( input.LA(1) ) {
-            case THIS:
-                {
-                switch ( input.LA(2) ) {
-                case PAST:
-                    {
-                    alt20=3;
-                    }
-                    break;
-                case COMING:
-                    {
-                    alt20=5;
-                    }
-                    break;
-                case LAST:
-                    {
-                    alt20=2;
-                    }
-                    break;
-                case NEXT:
-                    {
-                    alt20=4;
-                    }
-                    break;
-                case UPCOMING:
-                    {
-                    alt20=6;
-                    }
-                    break;
-                case DAY:
-                case WEEK:
-                case MONTH:
-                case YEAR:
-                case JANUARY:
-                case FEBRUARY:
-                case MARCH:
-                case APRIL:
-                case MAY:
-                case JUNE:
-                case JULY:
-                case AUGUST:
-                case SEPTEMBER:
-                case OCTOBER:
-                case NOVEMBER:
-                case DECEMBER:
-                case SUNDAY:
-                case MONDAY:
-                case TUESDAY:
-                case WEDNESDAY:
-                case THURSDAY:
-                case FRIDAY:
-                case SATURDAY:
-                    {
-                    alt20=1;
-                    }
-                    break;
-                default:
-                    if (state.backtracking>0) {state.failed=true; return retval;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 20, 1, input);
-
-                    throw nvae;
-                }
-
-                }
-                break;
-            case LAST:
-                {
-                alt20=2;
-                }
-                break;
-            case PAST:
-                {
-                alt20=3;
-                }
-                break;
-            case NEXT:
-                {
-                alt20=4;
-                }
-                break;
-            case COMING:
-                {
-                alt20=5;
-                }
-                break;
-            case UPCOMING:
-                {
-                alt20=6;
-                }
-                break;
-            case IN:
-            case ONE:
-            case TWO:
-            case THREE:
-            case FOUR:
-            case FIVE:
-            case SIX:
-            case SEVEN:
-            case EIGHT:
-            case NINE:
-            case TEN:
-            case ELEVEN:
-            case TWELVE:
-            case THIRTEEN:
-            case FOURTEEN:
-            case FIFTEEN:
-            case SIXTEEN:
-            case SEVENTEEN:
-            case EIGHTEEN:
-            case NINETEEN:
-            case TWENTY:
-            case THIRTY:
-            case PREFIXED_ONE_TO_NINE:
-            case ONE_TO_NINE:
-            case TEN_TO_TWELVE:
-            case THIRTEEN_TO_TWENTY_THREE:
-            case TWENTY_FOUR_TO_THIRTY_ONE:
-                {
-                alt20=7;
-                }
-                break;
-            default:
-                if (state.backtracking>0) {state.failed=true; return retval;}
-                NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt20) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:113:5: THIS
-                    {
-                    THIS51=(Token)match(input,THIS,FOLLOW_THIS_in_target_prefix756); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIS.add(THIS51);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 113:20: -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_day"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, "1"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:114:5: ( THIS )? LAST
-                    {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:114:5: ( THIS )?
-                    int alt14=2;
-                    int LA14_0 = input.LA(1);
-
-                    if ( (LA14_0==THIS) ) {
-                        alt14=1;
-                    }
-                    switch (alt14) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:114:5: THIS
-                            {
-                            THIS52=(Token)match(input,THIS,FOLLOW_THIS_in_target_prefix783); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THIS.add(THIS52);
-
-
-                            }
-                            break;
-
-                    }
-
-                    LAST53=(Token)match(input,LAST,FOLLOW_LAST_in_target_prefix786); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_LAST.add(LAST53);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 114:20: -> SEEK_DIR[\"<\"] SEEK_TYPE[\"by_week\"] INT[\"1\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, "<"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_week"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, "1"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:115:5: ( THIS )? PAST
-                    {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:115:5: ( THIS )?
-                    int alt15=2;
-                    int LA15_0 = input.LA(1);
-
-                    if ( (LA15_0==THIS) ) {
-                        alt15=1;
-                    }
-                    switch (alt15) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:115:5: THIS
-                            {
-                            THIS54=(Token)match(input,THIS,FOLLOW_THIS_in_target_prefix807); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THIS.add(THIS54);
-
-
-                            }
-                            break;
-
-                    }
-
-                    PAST55=(Token)match(input,PAST,FOLLOW_PAST_in_target_prefix810); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PAST.add(PAST55);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 115:20: -> SEEK_DIR[\"<\"] SEEK_TYPE[\"by_day\"] INT[\"1\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, "<"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_day"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, "1"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:116:5: ( THIS )? NEXT
-                    {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:116:5: ( THIS )?
-                    int alt16=2;
-                    int LA16_0 = input.LA(1);
-
-                    if ( (LA16_0==THIS) ) {
-                        alt16=1;
-                    }
-                    switch (alt16) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:116:5: THIS
-                            {
-                            THIS56=(Token)match(input,THIS,FOLLOW_THIS_in_target_prefix831); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THIS.add(THIS56);
-
-
-                            }
-                            break;
-
-                    }
-
-                    NEXT57=(Token)match(input,NEXT,FOLLOW_NEXT_in_target_prefix834); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NEXT.add(NEXT57);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 116:20: -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_week\"] INT[\"1\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_week"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, "1"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 5 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:117:5: ( THIS )? COMING
-                    {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:117:5: ( THIS )?
-                    int alt17=2;
-                    int LA17_0 = input.LA(1);
-
-                    if ( (LA17_0==THIS) ) {
-                        alt17=1;
-                    }
-                    switch (alt17) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:117:5: THIS
-                            {
-                            THIS58=(Token)match(input,THIS,FOLLOW_THIS_in_target_prefix855); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THIS.add(THIS58);
-
-
-                            }
-                            break;
-
-                    }
-
-                    COMING59=(Token)match(input,COMING,FOLLOW_COMING_in_target_prefix858); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_COMING.add(COMING59);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 117:20: -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_day"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, "1"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 6 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:118:5: ( THIS )? UPCOMING
-                    {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:118:5: ( THIS )?
-                    int alt18=2;
-                    int LA18_0 = input.LA(1);
-
-                    if ( (LA18_0==THIS) ) {
-                        alt18=1;
-                    }
-                    switch (alt18) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:118:5: THIS
-                            {
-                            THIS60=(Token)match(input,THIS,FOLLOW_THIS_in_target_prefix877); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THIS.add(THIS60);
-
-
-                            }
-                            break;
-
-                    }
-
-                    UPCOMING61=(Token)match(input,UPCOMING,FOLLOW_UPCOMING_in_target_prefix880); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_UPCOMING.add(UPCOMING61);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 118:20: -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_day"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, "1"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 7 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:119:5: ( IN )? spelled_or_int_1_to_31
-                    {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:119:5: ( IN )?
-                    int alt19=2;
-                    int LA19_0 = input.LA(1);
-
-                    if ( (LA19_0==IN) ) {
-                        alt19=1;
-                    }
-                    switch (alt19) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:119:5: IN
-                            {
-                            IN62=(Token)match(input,IN,FOLLOW_IN_in_target_prefix897); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_IN.add(IN62);
-
-
-                            }
-                            break;
-
-                    }
-
-                    pushFollow(FOLLOW_spelled_or_int_1_to_31_in_target_prefix900);
-                    spelled_or_int_1_to_3163=spelled_or_int_1_to_31();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_spelled_or_int_1_to_31.add(spelled_or_int_1_to_3163.getTree());
-
-
-                    // AST REWRITE
-                    // elements: spelled_or_int_1_to_31
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 120:20: -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] spelled_or_int_1_to_31
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_day"));
-                        adaptor.addChild(root_0, stream_spelled_or_int_1_to_31.nextTree());
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-
-            }
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "target_prefix"
-
-    public static class target_suffix_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "target_suffix"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:124:1: target_suffix : ( FROM_NOW -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] | AGO -> SEEK_DIR[\"<\"] SEEK_TYPE[\"by_day\"] );
-    public final DateParser.target_suffix_return target_suffix() throws RecognitionException {
-        DateParser.target_suffix_return retval = new DateParser.target_suffix_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token FROM_NOW64=null;
-        Token AGO65=null;
-
-        Object FROM_NOW64_tree=null;
-        Object AGO65_tree=null;
-        RewriteRuleTokenStream stream_AGO=new RewriteRuleTokenStream(adaptor,"token AGO");
-        RewriteRuleTokenStream stream_FROM_NOW=new RewriteRuleTokenStream(adaptor,"token FROM_NOW");
-
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:125:3: ( FROM_NOW -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] | AGO -> SEEK_DIR[\"<\"] SEEK_TYPE[\"by_day\"] )
-            int alt21=2;
-            int LA21_0 = input.LA(1);
-
-            if ( (LA21_0==FROM_NOW) ) {
-                alt21=1;
-            }
-            else if ( (LA21_0==AGO) ) {
-                alt21=2;
-            }
-            else {
-                if (state.backtracking>0) {state.failed=true; return retval;}
-                NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
-
-                throw nvae;
-            }
-            switch (alt21) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:125:5: FROM_NOW
-                    {
-                    FROM_NOW64=(Token)match(input,FROM_NOW,FOLLOW_FROM_NOW_in_target_suffix946); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FROM_NOW.add(FROM_NOW64);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 125:14: -> SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, ">"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_day"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:126:5: AGO
-                    {
-                    AGO65=(Token)match(input,AGO,FOLLOW_AGO_in_target_suffix960); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AGO.add(AGO65);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 126:14: -> SEEK_DIR[\"<\"] SEEK_TYPE[\"by_day\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_DIR, "<"));
-                        adaptor.addChild(root_0, (Object)adaptor.create(SEEK_TYPE, "by_day"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-
-            }
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "target_suffix"
-
-    public static class modifiable_target_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "modifiable_target"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:130:1: modifiable_target : ( day_of_week | date_span | month );
-    public final DateParser.modifiable_target_return modifiable_target() throws RecognitionException {
-        DateParser.modifiable_target_return retval = new DateParser.modifiable_target_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        DateParser.day_of_week_return day_of_week66 = null;
-
-        DateParser.date_span_return date_span67 = null;
-
-        DateParser.month_return month68 = null;
-
-
-
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:131:3: ( day_of_week | date_span | month )
-            int alt22=3;
-            switch ( input.LA(1) ) {
-            case SUNDAY:
-            case MONDAY:
-            case TUESDAY:
-            case WEDNESDAY:
-            case THURSDAY:
-            case FRIDAY:
-            case SATURDAY:
-                {
-                alt22=1;
-                }
-                break;
-            case DAY:
-            case WEEK:
-            case MONTH:
-            case YEAR:
-                {
-                alt22=2;
-                }
-                break;
-            case JANUARY:
-            case FEBRUARY:
-            case MARCH:
-            case APRIL:
-            case MAY:
-            case JUNE:
-            case JULY:
-            case AUGUST:
-            case SEPTEMBER:
-            case OCTOBER:
-            case NOVEMBER:
-            case DECEMBER:
-                {
-                alt22=3;
-                }
-                break;
-            default:
-                if (state.backtracking>0) {state.failed=true; return retval;}
-                NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt22) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:131:5: day_of_week
-                    {
-                    root_0 = (Object)adaptor.nil();
-
-                    pushFollow(FOLLOW_day_of_week_in_modifiable_target989);
-                    day_of_week66=day_of_week();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, day_of_week66.getTree());
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:132:5: date_span
-                    {
-                    root_0 = (Object)adaptor.nil();
-
-                    pushFollow(FOLLOW_date_span_in_modifiable_target996);
-                    date_span67=date_span();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, date_span67.getTree());
-
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:133:5: month
-                    {
-                    root_0 = (Object)adaptor.nil();
-
-                    pushFollow(FOLLOW_month_in_modifiable_target1002);
-                    month68=month();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, month68.getTree());
-
-                    }
-                    break;
-
-            }
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "modifiable_target"
-
-    public static class date_span_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "date_span"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:136:1: date_span : ( DAY -> SPAN[\"day\"] | WEEK -> SPAN[\"week\"] | MONTH -> SPAN[\"month\"] | YEAR -> SPAN[\"year\"] );
-    public final DateParser.date_span_return date_span() throws RecognitionException {
-        DateParser.date_span_return retval = new DateParser.date_span_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token DAY69=null;
-        Token WEEK70=null;
-        Token MONTH71=null;
-        Token YEAR72=null;
-
-        Object DAY69_tree=null;
-        Object WEEK70_tree=null;
-        Object MONTH71_tree=null;
-        Object YEAR72_tree=null;
-        RewriteRuleTokenStream stream_WEEK=new RewriteRuleTokenStream(adaptor,"token WEEK");
-        RewriteRuleTokenStream stream_DAY=new RewriteRuleTokenStream(adaptor,"token DAY");
-        RewriteRuleTokenStream stream_YEAR=new RewriteRuleTokenStream(adaptor,"token YEAR");
-        RewriteRuleTokenStream stream_MONTH=new RewriteRuleTokenStream(adaptor,"token MONTH");
-
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:137:3: ( DAY -> SPAN[\"day\"] | WEEK -> SPAN[\"week\"] | MONTH -> SPAN[\"month\"] | YEAR -> SPAN[\"year\"] )
-            int alt23=4;
-            switch ( input.LA(1) ) {
-            case DAY:
-                {
-                alt23=1;
-                }
-                break;
-            case WEEK:
-                {
-                alt23=2;
-                }
-                break;
-            case MONTH:
-                {
-                alt23=3;
-                }
-                break;
-            case YEAR:
-                {
-                alt23=4;
-                }
-                break;
-            default:
-                if (state.backtracking>0) {state.failed=true; return retval;}
-                NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt23) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:137:5: DAY
-                    {
-                    DAY69=(Token)match(input,DAY,FOLLOW_DAY_in_date_span1017); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_DAY.add(DAY69);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 137:11: -> SPAN[\"day\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SPAN, "day"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:138:5: WEEK
-                    {
-                    WEEK70=(Token)match(input,WEEK,FOLLOW_WEEK_in_date_span1030); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_WEEK.add(WEEK70);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 138:11: -> SPAN[\"week\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SPAN, "week"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:139:5: MONTH
-                    {
-                    MONTH71=(Token)match(input,MONTH,FOLLOW_MONTH_in_date_span1042); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_MONTH.add(MONTH71);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 139:11: -> SPAN[\"month\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SPAN, "month"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:140:5: YEAR
-                    {
-                    YEAR72=(Token)match(input,YEAR,FOLLOW_YEAR_in_date_span1053); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_YEAR.add(YEAR72);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 140:11: -> SPAN[\"year\"]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(SPAN, "year"));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-
-            }
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "date_span"
+    // $ANTLR end "month_and_day_date"
 
     public static class month_return extends ParserRuleReturnScope {
         Object tree;
@@ -2742,38 +1161,38 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "month"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:143:1: month : ( JANUARY -> ^( MONTH_OF INT[\"1\"] ) | FEBRUARY -> ^( MONTH_OF INT[\"2\"] ) | MARCH -> ^( MONTH_OF INT[\"3\"] ) | APRIL -> ^( MONTH_OF INT[\"4\"] ) | MAY -> ^( MONTH_OF INT[\"5\"] ) | JUNE -> ^( MONTH_OF INT[\"6\"] ) | JULY -> ^( MONTH_OF INT[\"7\"] ) | AUGUST -> ^( MONTH_OF INT[\"8\"] ) | SEPTEMBER -> ^( MONTH_OF INT[\"9\"] ) | OCTOBER -> ^( MONTH_OF INT[\"10\"] ) | NOVEMBER -> ^( MONTH_OF INT[\"11\"] ) | DECEMBER -> ^( MONTH_OF INT[\"12\"] ) );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:61:1: month : ( JANUARY -> ^( MONTH_OF INT[\"1\"] ) | FEBRUARY -> ^( MONTH_OF INT[\"2\"] ) | MARCH -> ^( MONTH_OF INT[\"3\"] ) | APRIL -> ^( MONTH_OF INT[\"4\"] ) | MAY -> ^( MONTH_OF INT[\"5\"] ) | JUNE -> ^( MONTH_OF INT[\"6\"] ) | JULY -> ^( MONTH_OF INT[\"7\"] ) | AUGUST -> ^( MONTH_OF INT[\"8\"] ) | SEPTEMBER -> ^( MONTH_OF INT[\"9\"] ) | OCTOBER -> ^( MONTH_OF INT[\"10\"] ) | NOVEMBER -> ^( MONTH_OF INT[\"11\"] ) | DECEMBER -> ^( MONTH_OF INT[\"12\"] ) );
     public final DateParser.month_return month() throws RecognitionException {
         DateParser.month_return retval = new DateParser.month_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token JANUARY73=null;
-        Token FEBRUARY74=null;
-        Token MARCH75=null;
-        Token APRIL76=null;
-        Token MAY77=null;
-        Token JUNE78=null;
-        Token JULY79=null;
-        Token AUGUST80=null;
-        Token SEPTEMBER81=null;
-        Token OCTOBER82=null;
-        Token NOVEMBER83=null;
-        Token DECEMBER84=null;
+        Token JANUARY28=null;
+        Token FEBRUARY29=null;
+        Token MARCH30=null;
+        Token APRIL31=null;
+        Token MAY32=null;
+        Token JUNE33=null;
+        Token JULY34=null;
+        Token AUGUST35=null;
+        Token SEPTEMBER36=null;
+        Token OCTOBER37=null;
+        Token NOVEMBER38=null;
+        Token DECEMBER39=null;
 
-        Object JANUARY73_tree=null;
-        Object FEBRUARY74_tree=null;
-        Object MARCH75_tree=null;
-        Object APRIL76_tree=null;
-        Object MAY77_tree=null;
-        Object JUNE78_tree=null;
-        Object JULY79_tree=null;
-        Object AUGUST80_tree=null;
-        Object SEPTEMBER81_tree=null;
-        Object OCTOBER82_tree=null;
-        Object NOVEMBER83_tree=null;
-        Object DECEMBER84_tree=null;
+        Object JANUARY28_tree=null;
+        Object FEBRUARY29_tree=null;
+        Object MARCH30_tree=null;
+        Object APRIL31_tree=null;
+        Object MAY32_tree=null;
+        Object JUNE33_tree=null;
+        Object JULY34_tree=null;
+        Object AUGUST35_tree=null;
+        Object SEPTEMBER36_tree=null;
+        Object OCTOBER37_tree=null;
+        Object NOVEMBER38_tree=null;
+        Object DECEMBER39_tree=null;
         RewriteRuleTokenStream stream_OCTOBER=new RewriteRuleTokenStream(adaptor,"token OCTOBER");
         RewriteRuleTokenStream stream_MAY=new RewriteRuleTokenStream(adaptor,"token MAY");
         RewriteRuleTokenStream stream_AUGUST=new RewriteRuleTokenStream(adaptor,"token AUGUST");
@@ -2788,83 +1207,83 @@ public class DateParser extends Parser {
         RewriteRuleTokenStream stream_DECEMBER=new RewriteRuleTokenStream(adaptor,"token DECEMBER");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:144:3: ( JANUARY -> ^( MONTH_OF INT[\"1\"] ) | FEBRUARY -> ^( MONTH_OF INT[\"2\"] ) | MARCH -> ^( MONTH_OF INT[\"3\"] ) | APRIL -> ^( MONTH_OF INT[\"4\"] ) | MAY -> ^( MONTH_OF INT[\"5\"] ) | JUNE -> ^( MONTH_OF INT[\"6\"] ) | JULY -> ^( MONTH_OF INT[\"7\"] ) | AUGUST -> ^( MONTH_OF INT[\"8\"] ) | SEPTEMBER -> ^( MONTH_OF INT[\"9\"] ) | OCTOBER -> ^( MONTH_OF INT[\"10\"] ) | NOVEMBER -> ^( MONTH_OF INT[\"11\"] ) | DECEMBER -> ^( MONTH_OF INT[\"12\"] ) )
-            int alt24=12;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:62:3: ( JANUARY -> ^( MONTH_OF INT[\"1\"] ) | FEBRUARY -> ^( MONTH_OF INT[\"2\"] ) | MARCH -> ^( MONTH_OF INT[\"3\"] ) | APRIL -> ^( MONTH_OF INT[\"4\"] ) | MAY -> ^( MONTH_OF INT[\"5\"] ) | JUNE -> ^( MONTH_OF INT[\"6\"] ) | JULY -> ^( MONTH_OF INT[\"7\"] ) | AUGUST -> ^( MONTH_OF INT[\"8\"] ) | SEPTEMBER -> ^( MONTH_OF INT[\"9\"] ) | OCTOBER -> ^( MONTH_OF INT[\"10\"] ) | NOVEMBER -> ^( MONTH_OF INT[\"11\"] ) | DECEMBER -> ^( MONTH_OF INT[\"12\"] ) )
+            int alt11=12;
             switch ( input.LA(1) ) {
             case JANUARY:
                 {
-                alt24=1;
+                alt11=1;
                 }
                 break;
             case FEBRUARY:
                 {
-                alt24=2;
+                alt11=2;
                 }
                 break;
             case MARCH:
                 {
-                alt24=3;
+                alt11=3;
                 }
                 break;
             case APRIL:
                 {
-                alt24=4;
+                alt11=4;
                 }
                 break;
             case MAY:
                 {
-                alt24=5;
+                alt11=5;
                 }
                 break;
             case JUNE:
                 {
-                alt24=6;
+                alt11=6;
                 }
                 break;
             case JULY:
                 {
-                alt24=7;
+                alt11=7;
                 }
                 break;
             case AUGUST:
                 {
-                alt24=8;
+                alt11=8;
                 }
                 break;
             case SEPTEMBER:
                 {
-                alt24=9;
+                alt11=9;
                 }
                 break;
             case OCTOBER:
                 {
-                alt24=10;
+                alt11=10;
                 }
                 break;
             case NOVEMBER:
                 {
-                alt24=11;
+                alt11=11;
                 }
                 break;
             case DECEMBER:
                 {
-                alt24=12;
+                alt11=12;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt24) {
+            switch (alt11) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:144:5: JANUARY
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:62:5: JANUARY
                     {
-                    JANUARY73=(Token)match(input,JANUARY,FOLLOW_JANUARY_in_month1074); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_JANUARY.add(JANUARY73);
+                    JANUARY28=(Token)match(input,JANUARY,FOLLOW_JANUARY_in_month420); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_JANUARY.add(JANUARY28);
 
 
 
@@ -2880,9 +1299,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 144:15: -> ^( MONTH_OF INT[\"1\"] )
+                    // 62:15: -> ^( MONTH_OF INT[\"1\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:144:18: ^( MONTH_OF INT[\"1\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:62:18: ^( MONTH_OF INT[\"1\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -2898,10 +1317,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:145:5: FEBRUARY
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:63:5: FEBRUARY
                     {
-                    FEBRUARY74=(Token)match(input,FEBRUARY,FOLLOW_FEBRUARY_in_month1091); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FEBRUARY.add(FEBRUARY74);
+                    FEBRUARY29=(Token)match(input,FEBRUARY,FOLLOW_FEBRUARY_in_month437); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FEBRUARY.add(FEBRUARY29);
 
 
 
@@ -2917,9 +1336,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 145:15: -> ^( MONTH_OF INT[\"2\"] )
+                    // 63:15: -> ^( MONTH_OF INT[\"2\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:145:18: ^( MONTH_OF INT[\"2\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:63:18: ^( MONTH_OF INT[\"2\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -2935,10 +1354,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:146:5: MARCH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:64:5: MARCH
                     {
-                    MARCH75=(Token)match(input,MARCH,FOLLOW_MARCH_in_month1107); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_MARCH.add(MARCH75);
+                    MARCH30=(Token)match(input,MARCH,FOLLOW_MARCH_in_month453); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_MARCH.add(MARCH30);
 
 
 
@@ -2954,9 +1373,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 146:15: -> ^( MONTH_OF INT[\"3\"] )
+                    // 64:15: -> ^( MONTH_OF INT[\"3\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:146:18: ^( MONTH_OF INT[\"3\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:64:18: ^( MONTH_OF INT[\"3\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -2972,10 +1391,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:147:5: APRIL
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:65:5: APRIL
                     {
-                    APRIL76=(Token)match(input,APRIL,FOLLOW_APRIL_in_month1126); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_APRIL.add(APRIL76);
+                    APRIL31=(Token)match(input,APRIL,FOLLOW_APRIL_in_month472); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_APRIL.add(APRIL31);
 
 
 
@@ -2991,9 +1410,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 147:15: -> ^( MONTH_OF INT[\"4\"] )
+                    // 65:15: -> ^( MONTH_OF INT[\"4\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:147:18: ^( MONTH_OF INT[\"4\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:65:18: ^( MONTH_OF INT[\"4\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -3009,10 +1428,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:148:5: MAY
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:66:5: MAY
                     {
-                    MAY77=(Token)match(input,MAY,FOLLOW_MAY_in_month1145); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_MAY.add(MAY77);
+                    MAY32=(Token)match(input,MAY,FOLLOW_MAY_in_month491); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_MAY.add(MAY32);
 
 
 
@@ -3028,9 +1447,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 148:15: -> ^( MONTH_OF INT[\"5\"] )
+                    // 66:15: -> ^( MONTH_OF INT[\"5\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:148:18: ^( MONTH_OF INT[\"5\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:66:18: ^( MONTH_OF INT[\"5\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -3046,10 +1465,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:149:5: JUNE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:67:5: JUNE
                     {
-                    JUNE78=(Token)match(input,JUNE,FOLLOW_JUNE_in_month1166); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_JUNE.add(JUNE78);
+                    JUNE33=(Token)match(input,JUNE,FOLLOW_JUNE_in_month512); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_JUNE.add(JUNE33);
 
 
 
@@ -3065,9 +1484,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 149:15: -> ^( MONTH_OF INT[\"6\"] )
+                    // 67:15: -> ^( MONTH_OF INT[\"6\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:149:18: ^( MONTH_OF INT[\"6\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:67:18: ^( MONTH_OF INT[\"6\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -3083,10 +1502,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:150:5: JULY
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:68:5: JULY
                     {
-                    JULY79=(Token)match(input,JULY,FOLLOW_JULY_in_month1186); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_JULY.add(JULY79);
+                    JULY34=(Token)match(input,JULY,FOLLOW_JULY_in_month532); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_JULY.add(JULY34);
 
 
 
@@ -3102,9 +1521,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 150:15: -> ^( MONTH_OF INT[\"7\"] )
+                    // 68:15: -> ^( MONTH_OF INT[\"7\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:150:18: ^( MONTH_OF INT[\"7\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:68:18: ^( MONTH_OF INT[\"7\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -3120,10 +1539,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 8 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:151:5: AUGUST
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:69:5: AUGUST
                     {
-                    AUGUST80=(Token)match(input,AUGUST,FOLLOW_AUGUST_in_month1206); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AUGUST.add(AUGUST80);
+                    AUGUST35=(Token)match(input,AUGUST,FOLLOW_AUGUST_in_month552); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_AUGUST.add(AUGUST35);
 
 
 
@@ -3139,9 +1558,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 151:15: -> ^( MONTH_OF INT[\"8\"] )
+                    // 69:15: -> ^( MONTH_OF INT[\"8\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:151:18: ^( MONTH_OF INT[\"8\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:69:18: ^( MONTH_OF INT[\"8\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -3157,10 +1576,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 9 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:152:5: SEPTEMBER
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:70:5: SEPTEMBER
                     {
-                    SEPTEMBER81=(Token)match(input,SEPTEMBER,FOLLOW_SEPTEMBER_in_month1224); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEPTEMBER.add(SEPTEMBER81);
+                    SEPTEMBER36=(Token)match(input,SEPTEMBER,FOLLOW_SEPTEMBER_in_month570); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEPTEMBER.add(SEPTEMBER36);
 
 
 
@@ -3176,9 +1595,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 152:15: -> ^( MONTH_OF INT[\"9\"] )
+                    // 70:15: -> ^( MONTH_OF INT[\"9\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:152:18: ^( MONTH_OF INT[\"9\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:70:18: ^( MONTH_OF INT[\"9\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -3194,10 +1613,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 10 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:153:5: OCTOBER
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:71:5: OCTOBER
                     {
-                    OCTOBER82=(Token)match(input,OCTOBER,FOLLOW_OCTOBER_in_month1239); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_OCTOBER.add(OCTOBER82);
+                    OCTOBER37=(Token)match(input,OCTOBER,FOLLOW_OCTOBER_in_month585); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_OCTOBER.add(OCTOBER37);
 
 
 
@@ -3213,9 +1632,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 153:15: -> ^( MONTH_OF INT[\"10\"] )
+                    // 71:15: -> ^( MONTH_OF INT[\"10\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:153:18: ^( MONTH_OF INT[\"10\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:71:18: ^( MONTH_OF INT[\"10\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -3231,10 +1650,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 11 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:154:5: NOVEMBER
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:72:5: NOVEMBER
                     {
-                    NOVEMBER83=(Token)match(input,NOVEMBER,FOLLOW_NOVEMBER_in_month1256); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NOVEMBER.add(NOVEMBER83);
+                    NOVEMBER38=(Token)match(input,NOVEMBER,FOLLOW_NOVEMBER_in_month602); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NOVEMBER.add(NOVEMBER38);
 
 
 
@@ -3250,9 +1669,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 154:15: -> ^( MONTH_OF INT[\"11\"] )
+                    // 72:15: -> ^( MONTH_OF INT[\"11\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:154:18: ^( MONTH_OF INT[\"11\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:72:18: ^( MONTH_OF INT[\"11\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -3268,10 +1687,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 12 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:155:5: DECEMBER
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:73:5: DECEMBER
                     {
-                    DECEMBER84=(Token)match(input,DECEMBER,FOLLOW_DECEMBER_in_month1272); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_DECEMBER.add(DECEMBER84);
+                    DECEMBER39=(Token)match(input,DECEMBER,FOLLOW_DECEMBER_in_month618); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_DECEMBER.add(DECEMBER39);
 
 
 
@@ -3287,9 +1706,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 155:15: -> ^( MONTH_OF INT[\"12\"] )
+                    // 73:15: -> ^( MONTH_OF INT[\"12\"] )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:155:18: ^( MONTH_OF INT[\"12\"] )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:73:18: ^( MONTH_OF INT[\"12\"] )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MONTH_OF, "MONTH_OF"), root_1);
@@ -3332,52 +1751,265 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "day_of_month"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:158:1: day_of_month : ( int_1_to_31 -> ^( DAY_OF_MONTH int_1_to_31 ) | spelled_sequence_1_to_31 -> ^( DAY_OF_MONTH spelled_sequence_1_to_31 ) );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:76:1: day_of_month : ( spelled_or_int_1_to_31 -> ^( DAY_OF_MONTH spelled_or_int_1_to_31 ) | spelled_sequence_1_to_31 -> ^( DAY_OF_MONTH spelled_sequence_1_to_31 ) );
     public final DateParser.day_of_month_return day_of_month() throws RecognitionException {
         DateParser.day_of_month_return retval = new DateParser.day_of_month_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        DateParser.int_1_to_31_return int_1_to_3185 = null;
+        DateParser.spelled_or_int_1_to_31_return spelled_or_int_1_to_3140 = null;
 
-        DateParser.spelled_sequence_1_to_31_return spelled_sequence_1_to_3186 = null;
+        DateParser.spelled_sequence_1_to_31_return spelled_sequence_1_to_3141 = null;
 
 
-        RewriteRuleSubtreeStream stream_int_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule int_1_to_31");
+        RewriteRuleSubtreeStream stream_spelled_or_int_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule spelled_or_int_1_to_31");
         RewriteRuleSubtreeStream stream_spelled_sequence_1_to_31=new RewriteRuleSubtreeStream(adaptor,"rule spelled_sequence_1_to_31");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:159:3: ( int_1_to_31 -> ^( DAY_OF_MONTH int_1_to_31 ) | spelled_sequence_1_to_31 -> ^( DAY_OF_MONTH spelled_sequence_1_to_31 ) )
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:77:3: ( spelled_or_int_1_to_31 -> ^( DAY_OF_MONTH spelled_or_int_1_to_31 ) | spelled_sequence_1_to_31 -> ^( DAY_OF_MONTH spelled_sequence_1_to_31 ) )
+            int alt12=2;
+            switch ( input.LA(1) ) {
+            case ONE:
+            case TWO:
+            case THREE:
+            case FOUR:
+            case FIVE:
+            case SIX:
+            case SEVEN:
+            case EIGHT:
+            case NINE:
+            case TEN:
+            case ELEVEN:
+            case TWELVE:
+            case THIRTEEN:
+            case FOURTEEN:
+            case FIFTEEN:
+            case SIXTEEN:
+            case SEVENTEEN:
+            case EIGHTEEN:
+            case NINETEEN:
+            case PREFIXED_ONE_TO_NINE:
+            case ONE_TO_NINE:
+            case TEN_TO_TWELVE:
+            case THIRTEEN_TO_TWENTY_THREE:
+            case TWENTY_FOUR_TO_THIRTY_ONE:
+                {
+                alt12=1;
+                }
+                break;
+            case TWENTY:
+                {
+                switch ( input.LA(2) ) {
+                case DASH:
+                    {
+                    int LA12_5 = input.LA(3);
 
-            if ( ((LA25_0>=PREFIXED_ONE_TO_NINE && LA25_0<=TEN_TO_TWELVE)||(LA25_0>=THIRTEEN_TO_TWENTY_THREE && LA25_0<=TWENTY_FOUR_TO_THIRTY_ONE)) ) {
-                alt25=1;
-            }
-            else if ( ((LA25_0>=TWENTY && LA25_0<=THIRTY_FIRST)) ) {
-                alt25=2;
-            }
-            else {
+                    if ( ((LA12_5>=ONE && LA12_5<=NINE)) ) {
+                        alt12=1;
+                    }
+                    else if ( ((LA12_5>=FIRST && LA12_5<=NINTH)) ) {
+                        alt12=2;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 12, 5, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case FIRST:
+                case SECOND:
+                case THIRD:
+                case FOURTH:
+                case FIFTH:
+                case SIXTH:
+                case SEVENTH:
+                case EIGHTH:
+                case NINTH:
+                    {
+                    alt12=2;
+                    }
+                    break;
+                case EOF:
+                case COMMA:
+                case OF:
+                case JANUARY:
+                case FEBRUARY:
+                case MARCH:
+                case APRIL:
+                case MAY:
+                case JUNE:
+                case JULY:
+                case AUGUST:
+                case SEPTEMBER:
+                case OCTOBER:
+                case NOVEMBER:
+                case DECEMBER:
+                case IN:
+                case SINGLE_QUOTE:
+                case MIDNIGHT:
+                case NOON:
+                case ONE:
+                case TWO:
+                case THREE:
+                case FOUR:
+                case FIVE:
+                case SIX:
+                case SEVEN:
+                case EIGHT:
+                case NINE:
+                case THREE_DIGIT:
+                case FOUR_DIGIT:
+                case PREFIXED_ONE_TO_NINE:
+                case ONE_TO_NINE:
+                case TEN_TO_TWELVE:
+                case TWO_ZEROS:
+                case ZERO:
+                case THIRTEEN_TO_TWENTY_THREE:
+                case AT:
+                    {
+                    alt12=1;
+                    }
+                    break;
+                default:
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 12, 2, input);
+
+                    throw nvae;
+                }
+
+                }
+                break;
+            case THIRTY:
+                {
+                switch ( input.LA(2) ) {
+                case EOF:
+                case COMMA:
+                case OF:
+                case JANUARY:
+                case FEBRUARY:
+                case MARCH:
+                case APRIL:
+                case MAY:
+                case JUNE:
+                case JULY:
+                case AUGUST:
+                case SEPTEMBER:
+                case OCTOBER:
+                case NOVEMBER:
+                case DECEMBER:
+                case IN:
+                case SINGLE_QUOTE:
+                case MIDNIGHT:
+                case NOON:
+                case ONE:
+                case THREE_DIGIT:
+                case FOUR_DIGIT:
+                case PREFIXED_ONE_TO_NINE:
+                case ONE_TO_NINE:
+                case TEN_TO_TWELVE:
+                case TWO_ZEROS:
+                case ZERO:
+                case THIRTEEN_TO_TWENTY_THREE:
+                case AT:
+                    {
+                    alt12=1;
+                    }
+                    break;
+                case DASH:
+                    {
+                    int LA12_6 = input.LA(3);
+
+                    if ( (LA12_6==FIRST) ) {
+                        alt12=2;
+                    }
+                    else if ( (LA12_6==ONE) ) {
+                        alt12=1;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 12, 6, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case FIRST:
+                    {
+                    alt12=2;
+                    }
+                    break;
+                default:
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 12, 3, input);
+
+                    throw nvae;
+                }
+
+                }
+                break;
+            case FIRST:
+            case SECOND:
+            case THIRD:
+            case FOURTH:
+            case FIFTH:
+            case SIXTH:
+            case SEVENTH:
+            case EIGHTH:
+            case NINTH:
+            case TENTH:
+            case ELEVENTH:
+            case TWELFTH:
+            case THIRTEENTH:
+            case FOURTEENTH:
+            case FIFTEENTH:
+            case SIXTEENTH:
+            case SEVENTEENTH:
+            case EIGHTEENTH:
+            case NINETEENTH:
+            case TWENTIETH:
+            case TWENTY_FIRST:
+            case TWENTY_SECOND:
+            case TWENTY_THIRD:
+            case TWENTY_FOURTH:
+            case TWENTY_FIFTH:
+            case TWENTY_SIXTH:
+            case TWENTY_SEVENTH:
+            case TWENTY_EIGHTH:
+            case TWENTY_NINTH:
+            case THIRTIETH:
+            case THIRTY_FIRST:
+                {
+                alt12=2;
+                }
+                break;
+            default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt25) {
+
+            switch (alt12) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:159:5: int_1_to_31
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:77:5: spelled_or_int_1_to_31
                     {
-                    pushFollow(FOLLOW_int_1_to_31_in_day_of_month1297);
-                    int_1_to_3185=int_1_to_31();
+                    pushFollow(FOLLOW_spelled_or_int_1_to_31_in_day_of_month643);
+                    spelled_or_int_1_to_3140=spelled_or_int_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_int_1_to_31.add(int_1_to_3185.getTree());
+                    if ( state.backtracking==0 ) stream_spelled_or_int_1_to_31.add(spelled_or_int_1_to_3140.getTree());
 
 
                     // AST REWRITE
-                    // elements: int_1_to_31
+                    // elements: spelled_or_int_1_to_31
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3388,14 +2020,14 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 159:30: -> ^( DAY_OF_MONTH int_1_to_31 )
+                    // 77:30: -> ^( DAY_OF_MONTH spelled_or_int_1_to_31 )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:159:33: ^( DAY_OF_MONTH int_1_to_31 )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:77:33: ^( DAY_OF_MONTH spelled_or_int_1_to_31 )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_MONTH, "DAY_OF_MONTH"), root_1);
 
-                        adaptor.addChild(root_1, stream_int_1_to_31.nextTree());
+                        adaptor.addChild(root_1, stream_spelled_or_int_1_to_31.nextTree());
 
                         adaptor.addChild(root_0, root_1);
                         }
@@ -3406,14 +2038,14 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:160:5: spelled_sequence_1_to_31
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:78:5: spelled_sequence_1_to_31
                     {
-                    pushFollow(FOLLOW_spelled_sequence_1_to_31_in_day_of_month1324);
-                    spelled_sequence_1_to_3186=spelled_sequence_1_to_31();
+                    pushFollow(FOLLOW_spelled_sequence_1_to_31_in_day_of_month659);
+                    spelled_sequence_1_to_3141=spelled_sequence_1_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_spelled_sequence_1_to_31.add(spelled_sequence_1_to_3186.getTree());
+                    if ( state.backtracking==0 ) stream_spelled_sequence_1_to_31.add(spelled_sequence_1_to_3141.getTree());
 
 
                     // AST REWRITE
@@ -3428,9 +2060,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 160:30: -> ^( DAY_OF_MONTH spelled_sequence_1_to_31 )
+                    // 78:30: -> ^( DAY_OF_MONTH spelled_sequence_1_to_31 )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:160:33: ^( DAY_OF_MONTH spelled_sequence_1_to_31 )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:78:33: ^( DAY_OF_MONTH spelled_sequence_1_to_31 )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_MONTH, "DAY_OF_MONTH"), root_1);
@@ -3467,408 +2099,43 @@ public class DateParser extends Parser {
     }
     // $ANTLR end "day_of_month"
 
-    public static class day_of_week_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "day_of_week"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:163:1: day_of_week : ( SUNDAY -> ^( DAY_OF_WEEK INT[\"1\"] ) | MONDAY -> ^( DAY_OF_WEEK INT[\"2\"] ) | TUESDAY -> ^( DAY_OF_WEEK INT[\"3\"] ) | WEDNESDAY -> ^( DAY_OF_WEEK INT[\"4\"] ) | THURSDAY -> ^( DAY_OF_WEEK INT[\"5\"] ) | FRIDAY -> ^( DAY_OF_WEEK INT[\"6\"] ) | SATURDAY -> ^( DAY_OF_WEEK INT[\"7\"] ) );
-    public final DateParser.day_of_week_return day_of_week() throws RecognitionException {
-        DateParser.day_of_week_return retval = new DateParser.day_of_week_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token SUNDAY87=null;
-        Token MONDAY88=null;
-        Token TUESDAY89=null;
-        Token WEDNESDAY90=null;
-        Token THURSDAY91=null;
-        Token FRIDAY92=null;
-        Token SATURDAY93=null;
-
-        Object SUNDAY87_tree=null;
-        Object MONDAY88_tree=null;
-        Object TUESDAY89_tree=null;
-        Object WEDNESDAY90_tree=null;
-        Object THURSDAY91_tree=null;
-        Object FRIDAY92_tree=null;
-        Object SATURDAY93_tree=null;
-        RewriteRuleTokenStream stream_MONDAY=new RewriteRuleTokenStream(adaptor,"token MONDAY");
-        RewriteRuleTokenStream stream_SUNDAY=new RewriteRuleTokenStream(adaptor,"token SUNDAY");
-        RewriteRuleTokenStream stream_WEDNESDAY=new RewriteRuleTokenStream(adaptor,"token WEDNESDAY");
-        RewriteRuleTokenStream stream_THURSDAY=new RewriteRuleTokenStream(adaptor,"token THURSDAY");
-        RewriteRuleTokenStream stream_SATURDAY=new RewriteRuleTokenStream(adaptor,"token SATURDAY");
-        RewriteRuleTokenStream stream_TUESDAY=new RewriteRuleTokenStream(adaptor,"token TUESDAY");
-        RewriteRuleTokenStream stream_FRIDAY=new RewriteRuleTokenStream(adaptor,"token FRIDAY");
-
-        try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:164:3: ( SUNDAY -> ^( DAY_OF_WEEK INT[\"1\"] ) | MONDAY -> ^( DAY_OF_WEEK INT[\"2\"] ) | TUESDAY -> ^( DAY_OF_WEEK INT[\"3\"] ) | WEDNESDAY -> ^( DAY_OF_WEEK INT[\"4\"] ) | THURSDAY -> ^( DAY_OF_WEEK INT[\"5\"] ) | FRIDAY -> ^( DAY_OF_WEEK INT[\"6\"] ) | SATURDAY -> ^( DAY_OF_WEEK INT[\"7\"] ) )
-            int alt26=7;
-            switch ( input.LA(1) ) {
-            case SUNDAY:
-                {
-                alt26=1;
-                }
-                break;
-            case MONDAY:
-                {
-                alt26=2;
-                }
-                break;
-            case TUESDAY:
-                {
-                alt26=3;
-                }
-                break;
-            case WEDNESDAY:
-                {
-                alt26=4;
-                }
-                break;
-            case THURSDAY:
-                {
-                alt26=5;
-                }
-                break;
-            case FRIDAY:
-                {
-                alt26=6;
-                }
-                break;
-            case SATURDAY:
-                {
-                alt26=7;
-                }
-                break;
-            default:
-                if (state.backtracking>0) {state.failed=true; return retval;}
-                NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt26) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:164:5: SUNDAY
-                    {
-                    SUNDAY87=(Token)match(input,SUNDAY,FOLLOW_SUNDAY_in_day_of_week1348); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SUNDAY.add(SUNDAY87);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 164:15: -> ^( DAY_OF_WEEK INT[\"1\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:164:18: ^( DAY_OF_WEEK INT[\"1\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_WEEK, "DAY_OF_WEEK"), root_1);
-
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "1"));
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:165:5: MONDAY
-                    {
-                    MONDAY88=(Token)match(input,MONDAY,FOLLOW_MONDAY_in_day_of_week1366); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_MONDAY.add(MONDAY88);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 165:15: -> ^( DAY_OF_WEEK INT[\"2\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:165:18: ^( DAY_OF_WEEK INT[\"2\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_WEEK, "DAY_OF_WEEK"), root_1);
-
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "2"));
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:166:5: TUESDAY
-                    {
-                    TUESDAY89=(Token)match(input,TUESDAY,FOLLOW_TUESDAY_in_day_of_week1384); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TUESDAY.add(TUESDAY89);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 166:15: -> ^( DAY_OF_WEEK INT[\"3\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:166:18: ^( DAY_OF_WEEK INT[\"3\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_WEEK, "DAY_OF_WEEK"), root_1);
-
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "3"));
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:167:5: WEDNESDAY
-                    {
-                    WEDNESDAY90=(Token)match(input,WEDNESDAY,FOLLOW_WEDNESDAY_in_day_of_week1401); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_WEDNESDAY.add(WEDNESDAY90);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 167:15: -> ^( DAY_OF_WEEK INT[\"4\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:167:18: ^( DAY_OF_WEEK INT[\"4\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_WEEK, "DAY_OF_WEEK"), root_1);
-
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "4"));
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 5 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:168:5: THURSDAY
-                    {
-                    THURSDAY91=(Token)match(input,THURSDAY,FOLLOW_THURSDAY_in_day_of_week1416); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THURSDAY.add(THURSDAY91);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 168:15: -> ^( DAY_OF_WEEK INT[\"5\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:168:18: ^( DAY_OF_WEEK INT[\"5\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_WEEK, "DAY_OF_WEEK"), root_1);
-
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "5"));
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 6 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:169:5: FRIDAY
-                    {
-                    FRIDAY92=(Token)match(input,FRIDAY,FOLLOW_FRIDAY_in_day_of_week1432); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FRIDAY.add(FRIDAY92);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 169:15: -> ^( DAY_OF_WEEK INT[\"6\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:169:18: ^( DAY_OF_WEEK INT[\"6\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_WEEK, "DAY_OF_WEEK"), root_1);
-
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "6"));
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 7 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:170:5: SATURDAY
-                    {
-                    SATURDAY93=(Token)match(input,SATURDAY,FOLLOW_SATURDAY_in_day_of_week1450); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SATURDAY.add(SATURDAY93);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 170:15: -> ^( DAY_OF_WEEK INT[\"7\"] )
-                    {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:170:18: ^( DAY_OF_WEEK INT[\"7\"] )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DAY_OF_WEEK, "DAY_OF_WEEK"), root_1);
-
-                        adaptor.addChild(root_1, (Object)adaptor.create(INT, "7"));
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-
-            }
-            retval.stop = input.LT(-1);
-
-            if ( state.backtracking==0 ) {
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end "day_of_week"
-
     public static class year_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
     // $ANTLR start "year"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:173:1: year : ( ( COMMA )? ( IN THE YEAR )? ( '\\'' )? int_0_to_99_with_prefix -> ^( YEAR_OF int_0_to_99_with_prefix ) | ( COMMA )? ( IN THE YEAR )? int_3_or_4_digits -> ^( YEAR_OF int_3_or_4_digits ) );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:81:1: year : ( ( COMMA )? ( IN THE YEAR )? SINGLE_QUOTE int_0_to_99_with_prefix -> ^( YEAR_OF int_0_to_99_with_prefix ) | ( COMMA )? ( IN THE YEAR )? int_3_or_4_digits -> ^( YEAR_OF int_3_or_4_digits ) );
     public final DateParser.year_return year() throws RecognitionException {
         DateParser.year_return retval = new DateParser.year_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token COMMA94=null;
-        Token IN95=null;
-        Token THE96=null;
-        Token YEAR97=null;
-        Token char_literal98=null;
-        Token COMMA100=null;
-        Token IN101=null;
-        Token THE102=null;
-        Token YEAR103=null;
-        DateParser.int_0_to_99_with_prefix_return int_0_to_99_with_prefix99 = null;
+        Token COMMA42=null;
+        Token IN43=null;
+        Token THE44=null;
+        Token YEAR45=null;
+        Token SINGLE_QUOTE46=null;
+        Token COMMA48=null;
+        Token IN49=null;
+        Token THE50=null;
+        Token YEAR51=null;
+        DateParser.int_0_to_99_with_prefix_return int_0_to_99_with_prefix47 = null;
 
-        DateParser.int_3_or_4_digits_return int_3_or_4_digits104 = null;
+        DateParser.int_3_or_4_digits_return int_3_or_4_digits52 = null;
 
 
-        Object COMMA94_tree=null;
-        Object IN95_tree=null;
-        Object THE96_tree=null;
-        Object YEAR97_tree=null;
-        Object char_literal98_tree=null;
-        Object COMMA100_tree=null;
-        Object IN101_tree=null;
-        Object THE102_tree=null;
-        Object YEAR103_tree=null;
-        RewriteRuleTokenStream stream_132=new RewriteRuleTokenStream(adaptor,"token 132");
+        Object COMMA42_tree=null;
+        Object IN43_tree=null;
+        Object THE44_tree=null;
+        Object YEAR45_tree=null;
+        Object SINGLE_QUOTE46_tree=null;
+        Object COMMA48_tree=null;
+        Object IN49_tree=null;
+        Object THE50_tree=null;
+        Object YEAR51_tree=null;
+        RewriteRuleTokenStream stream_SINGLE_QUOTE=new RewriteRuleTokenStream(adaptor,"token SINGLE_QUOTE");
         RewriteRuleTokenStream stream_IN=new RewriteRuleTokenStream(adaptor,"token IN");
         RewriteRuleTokenStream stream_YEAR=new RewriteRuleTokenStream(adaptor,"token YEAR");
         RewriteRuleTokenStream stream_COMMA=new RewriteRuleTokenStream(adaptor,"token COMMA");
@@ -3876,32 +2143,32 @@ public class DateParser extends Parser {
         RewriteRuleSubtreeStream stream_int_0_to_99_with_prefix=new RewriteRuleSubtreeStream(adaptor,"rule int_0_to_99_with_prefix");
         RewriteRuleSubtreeStream stream_int_3_or_4_digits=new RewriteRuleSubtreeStream(adaptor,"rule int_3_or_4_digits");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:174:3: ( ( COMMA )? ( IN THE YEAR )? ( '\\'' )? int_0_to_99_with_prefix -> ^( YEAR_OF int_0_to_99_with_prefix ) | ( COMMA )? ( IN THE YEAR )? int_3_or_4_digits -> ^( YEAR_OF int_3_or_4_digits ) )
-            int alt32=2;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:3: ( ( COMMA )? ( IN THE YEAR )? SINGLE_QUOTE int_0_to_99_with_prefix -> ^( YEAR_OF int_0_to_99_with_prefix ) | ( COMMA )? ( IN THE YEAR )? int_3_or_4_digits -> ^( YEAR_OF int_3_or_4_digits ) )
+            int alt17=2;
             switch ( input.LA(1) ) {
             case COMMA:
                 {
                 switch ( input.LA(2) ) {
                 case IN:
                     {
-                    int LA32_2 = input.LA(3);
+                    int LA17_2 = input.LA(3);
 
-                    if ( (LA32_2==THE) ) {
-                        int LA32_5 = input.LA(4);
+                    if ( (LA17_2==THE) ) {
+                        int LA17_5 = input.LA(4);
 
-                        if ( (LA32_5==YEAR) ) {
-                            int LA32_6 = input.LA(5);
+                        if ( (LA17_5==YEAR) ) {
+                            int LA17_6 = input.LA(5);
 
-                            if ( ((LA32_6>=THREE_DIGIT && LA32_6<=FOUR_DIGIT)) ) {
-                                alt32=2;
+                            if ( (LA17_6==SINGLE_QUOTE) ) {
+                                alt17=1;
                             }
-                            else if ( ((LA32_6>=TWO_ZEROS && LA32_6<=PREFIXED_ONE_TO_NINE)||LA32_6==TEN_TO_TWELVE||(LA32_6>=THIRTEEN_TO_TWENTY_THREE && LA32_6<=SIXTY_TO_NINETY_NINE)||LA32_6==132) ) {
-                                alt32=1;
+                            else if ( ((LA17_6>=THREE_DIGIT && LA17_6<=FOUR_DIGIT)) ) {
+                                alt17=2;
                             }
                             else {
                                 if (state.backtracking>0) {state.failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("", 32, 6, input);
+                                    new NoViableAltException("", 17, 6, input);
 
                                 throw nvae;
                             }
@@ -3909,7 +2176,7 @@ public class DateParser extends Parser {
                         else {
                             if (state.backtracking>0) {state.failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("", 32, 5, input);
+                                new NoViableAltException("", 17, 5, input);
 
                             throw nvae;
                         }
@@ -3917,34 +2184,27 @@ public class DateParser extends Parser {
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 32, 2, input);
+                            new NoViableAltException("", 17, 2, input);
 
                         throw nvae;
                     }
                     }
                     break;
-                case TWO_ZEROS:
-                case PREFIXED_ONE_TO_NINE:
-                case TEN_TO_TWELVE:
-                case THIRTEEN_TO_TWENTY_THREE:
-                case TWENTY_FOUR_TO_THIRTY_ONE:
-                case THIRTY_TWO_TO_FIFTY_NINE:
-                case SIXTY_TO_NINETY_NINE:
-                case 132:
-                    {
-                    alt32=1;
-                    }
-                    break;
                 case THREE_DIGIT:
                 case FOUR_DIGIT:
                     {
-                    alt32=2;
+                    alt17=2;
+                    }
+                    break;
+                case SINGLE_QUOTE:
+                    {
+                    alt17=1;
                     }
                     break;
                 default:
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 32, 1, input);
+                        new NoViableAltException("", 17, 1, input);
 
                     throw nvae;
                 }
@@ -3953,24 +2213,24 @@ public class DateParser extends Parser {
                 break;
             case IN:
                 {
-                int LA32_2 = input.LA(2);
+                int LA17_2 = input.LA(2);
 
-                if ( (LA32_2==THE) ) {
-                    int LA32_5 = input.LA(3);
+                if ( (LA17_2==THE) ) {
+                    int LA17_5 = input.LA(3);
 
-                    if ( (LA32_5==YEAR) ) {
-                        int LA32_6 = input.LA(4);
+                    if ( (LA17_5==YEAR) ) {
+                        int LA17_6 = input.LA(4);
 
-                        if ( ((LA32_6>=THREE_DIGIT && LA32_6<=FOUR_DIGIT)) ) {
-                            alt32=2;
+                        if ( (LA17_6==SINGLE_QUOTE) ) {
+                            alt17=1;
                         }
-                        else if ( ((LA32_6>=TWO_ZEROS && LA32_6<=PREFIXED_ONE_TO_NINE)||LA32_6==TEN_TO_TWELVE||(LA32_6>=THIRTEEN_TO_TWENTY_THREE && LA32_6<=SIXTY_TO_NINETY_NINE)||LA32_6==132) ) {
-                            alt32=1;
+                        else if ( ((LA17_6>=THREE_DIGIT && LA17_6<=FOUR_DIGIT)) ) {
+                            alt17=2;
                         }
                         else {
                             if (state.backtracking>0) {state.failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("", 32, 6, input);
+                                new NoViableAltException("", 17, 6, input);
 
                             throw nvae;
                         }
@@ -3978,7 +2238,7 @@ public class DateParser extends Parser {
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 32, 5, input);
+                            new NoViableAltException("", 17, 5, input);
 
                         throw nvae;
                     }
@@ -3986,55 +2246,48 @@ public class DateParser extends Parser {
                 else {
                     if (state.backtracking>0) {state.failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("", 32, 2, input);
+                        new NoViableAltException("", 17, 2, input);
 
                     throw nvae;
                 }
                 }
                 break;
-            case TWO_ZEROS:
-            case PREFIXED_ONE_TO_NINE:
-            case TEN_TO_TWELVE:
-            case THIRTEEN_TO_TWENTY_THREE:
-            case TWENTY_FOUR_TO_THIRTY_ONE:
-            case THIRTY_TWO_TO_FIFTY_NINE:
-            case SIXTY_TO_NINETY_NINE:
-            case 132:
+            case SINGLE_QUOTE:
                 {
-                alt32=1;
+                alt17=1;
                 }
                 break;
             case THREE_DIGIT:
             case FOUR_DIGIT:
                 {
-                alt32=2;
+                alt17=2;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt32) {
+            switch (alt17) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:174:5: ( COMMA )? ( IN THE YEAR )? ( '\\'' )? int_0_to_99_with_prefix
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:5: ( COMMA )? ( IN THE YEAR )? SINGLE_QUOTE int_0_to_99_with_prefix
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:174:5: ( COMMA )?
-                    int alt27=2;
-                    int LA27_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:5: ( COMMA )?
+                    int alt13=2;
+                    int LA13_0 = input.LA(1);
 
-                    if ( (LA27_0==COMMA) ) {
-                        alt27=1;
+                    if ( (LA13_0==COMMA) ) {
+                        alt13=1;
                     }
-                    switch (alt27) {
+                    switch (alt13) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:174:5: COMMA
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:5: COMMA
                             {
-                            COMMA94=(Token)match(input,COMMA,FOLLOW_COMMA_in_year1475); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_COMMA.add(COMMA94);
+                            COMMA42=(Token)match(input,COMMA,FOLLOW_COMMA_in_year683); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_COMMA.add(COMMA42);
 
 
                             }
@@ -4042,25 +2295,25 @@ public class DateParser extends Parser {
 
                     }
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:174:12: ( IN THE YEAR )?
-                    int alt28=2;
-                    int LA28_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:12: ( IN THE YEAR )?
+                    int alt14=2;
+                    int LA14_0 = input.LA(1);
 
-                    if ( (LA28_0==IN) ) {
-                        alt28=1;
+                    if ( (LA14_0==IN) ) {
+                        alt14=1;
                     }
-                    switch (alt28) {
+                    switch (alt14) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:174:13: IN THE YEAR
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:13: IN THE YEAR
                             {
-                            IN95=(Token)match(input,IN,FOLLOW_IN_in_year1479); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_IN.add(IN95);
+                            IN43=(Token)match(input,IN,FOLLOW_IN_in_year687); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_IN.add(IN43);
 
-                            THE96=(Token)match(input,THE,FOLLOW_THE_in_year1481); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THE.add(THE96);
+                            THE44=(Token)match(input,THE,FOLLOW_THE_in_year689); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_THE.add(THE44);
 
-                            YEAR97=(Token)match(input,YEAR,FOLLOW_YEAR_in_year1483); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_YEAR.add(YEAR97);
+                            YEAR45=(Token)match(input,YEAR,FOLLOW_YEAR_in_year691); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_YEAR.add(YEAR45);
 
 
                             }
@@ -4068,32 +2321,15 @@ public class DateParser extends Parser {
 
                     }
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:174:27: ( '\\'' )?
-                    int alt29=2;
-                    int LA29_0 = input.LA(1);
+                    SINGLE_QUOTE46=(Token)match(input,SINGLE_QUOTE,FOLLOW_SINGLE_QUOTE_in_year695); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SINGLE_QUOTE.add(SINGLE_QUOTE46);
 
-                    if ( (LA29_0==132) ) {
-                        alt29=1;
-                    }
-                    switch (alt29) {
-                        case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:174:27: '\\''
-                            {
-                            char_literal98=(Token)match(input,132,FOLLOW_132_in_year1487); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_132.add(char_literal98);
-
-
-                            }
-                            break;
-
-                    }
-
-                    pushFollow(FOLLOW_int_0_to_99_with_prefix_in_year1490);
-                    int_0_to_99_with_prefix99=int_0_to_99_with_prefix();
+                    pushFollow(FOLLOW_int_0_to_99_with_prefix_in_year697);
+                    int_0_to_99_with_prefix47=int_0_to_99_with_prefix();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_int_0_to_99_with_prefix.add(int_0_to_99_with_prefix99.getTree());
+                    if ( state.backtracking==0 ) stream_int_0_to_99_with_prefix.add(int_0_to_99_with_prefix47.getTree());
 
 
                     // AST REWRITE
@@ -4108,9 +2344,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 174:57: -> ^( YEAR_OF int_0_to_99_with_prefix )
+                    // 82:65: -> ^( YEAR_OF int_0_to_99_with_prefix )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:174:60: ^( YEAR_OF int_0_to_99_with_prefix )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:82:68: ^( YEAR_OF int_0_to_99_with_prefix )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(YEAR_OF, "YEAR_OF"), root_1);
@@ -4126,21 +2362,21 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:175:5: ( COMMA )? ( IN THE YEAR )? int_3_or_4_digits
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:83:5: ( COMMA )? ( IN THE YEAR )? int_3_or_4_digits
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:175:5: ( COMMA )?
-                    int alt30=2;
-                    int LA30_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:83:5: ( COMMA )?
+                    int alt15=2;
+                    int LA15_0 = input.LA(1);
 
-                    if ( (LA30_0==COMMA) ) {
-                        alt30=1;
+                    if ( (LA15_0==COMMA) ) {
+                        alt15=1;
                     }
-                    switch (alt30) {
+                    switch (alt15) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:175:5: COMMA
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:83:5: COMMA
                             {
-                            COMMA100=(Token)match(input,COMMA,FOLLOW_COMMA_in_year1504); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_COMMA.add(COMMA100);
+                            COMMA48=(Token)match(input,COMMA,FOLLOW_COMMA_in_year712); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_COMMA.add(COMMA48);
 
 
                             }
@@ -4148,25 +2384,25 @@ public class DateParser extends Parser {
 
                     }
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:175:12: ( IN THE YEAR )?
-                    int alt31=2;
-                    int LA31_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:83:12: ( IN THE YEAR )?
+                    int alt16=2;
+                    int LA16_0 = input.LA(1);
 
-                    if ( (LA31_0==IN) ) {
-                        alt31=1;
+                    if ( (LA16_0==IN) ) {
+                        alt16=1;
                     }
-                    switch (alt31) {
+                    switch (alt16) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:175:13: IN THE YEAR
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:83:13: IN THE YEAR
                             {
-                            IN101=(Token)match(input,IN,FOLLOW_IN_in_year1508); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_IN.add(IN101);
+                            IN49=(Token)match(input,IN,FOLLOW_IN_in_year716); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_IN.add(IN49);
 
-                            THE102=(Token)match(input,THE,FOLLOW_THE_in_year1510); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THE.add(THE102);
+                            THE50=(Token)match(input,THE,FOLLOW_THE_in_year718); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_THE.add(THE50);
 
-                            YEAR103=(Token)match(input,YEAR,FOLLOW_YEAR_in_year1512); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_YEAR.add(YEAR103);
+                            YEAR51=(Token)match(input,YEAR,FOLLOW_YEAR_in_year720); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_YEAR.add(YEAR51);
 
 
                             }
@@ -4174,12 +2410,12 @@ public class DateParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_int_3_or_4_digits_in_year1516);
-                    int_3_or_4_digits104=int_3_or_4_digits();
+                    pushFollow(FOLLOW_int_3_or_4_digits_in_year724);
+                    int_3_or_4_digits52=int_3_or_4_digits();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_int_3_or_4_digits.add(int_3_or_4_digits104.getTree());
+                    if ( state.backtracking==0 ) stream_int_3_or_4_digits.add(int_3_or_4_digits52.getTree());
 
 
                     // AST REWRITE
@@ -4194,9 +2430,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 175:57: -> ^( YEAR_OF int_3_or_4_digits )
+                    // 83:65: -> ^( YEAR_OF int_3_or_4_digits )
                     {
-                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:175:60: ^( YEAR_OF int_3_or_4_digits )
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:83:68: ^( YEAR_OF int_3_or_4_digits )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(YEAR_OF, "YEAR_OF"), root_1);
@@ -4239,27 +2475,27 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "date_separator"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:178:1: date_separator : ( DASH | SLASH );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:86:1: date_separator : ( DASH | SLASH );
     public final DateParser.date_separator_return date_separator() throws RecognitionException {
         DateParser.date_separator_return retval = new DateParser.date_separator_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token set105=null;
+        Token set53=null;
 
-        Object set105_tree=null;
+        Object set53_tree=null;
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:179:3: ( DASH | SLASH )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:87:3: ( DASH | SLASH )
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:
             {
             root_0 = (Object)adaptor.nil();
 
-            set105=(Token)input.LT(1);
+            set53=(Token)input.LT(1);
             if ( (input.LA(1)>=DASH && input.LA(1)<=SLASH) ) {
                 input.consume();
-                if ( state.backtracking==0 ) adaptor.addChild(root_0, (Object)adaptor.create(set105));
+                if ( state.backtracking==0 ) adaptor.addChild(root_0, (Object)adaptor.create(set53));
                 state.errorRecovery=false;state.failed=false;
             }
             else {
@@ -4291,33 +2527,384 @@ public class DateParser extends Parser {
     }
     // $ANTLR end "date_separator"
 
+    public static class time_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "time"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:91:1: time : ( hours ( ( COLON )? minutes )? ( meridian_indicator )? -> ^( EXPLICIT_TIME hours ( minutes )? ( meridian_indicator )? ) | time_identifier );
+    public final DateParser.time_return time() throws RecognitionException {
+        DateParser.time_return retval = new DateParser.time_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token COLON55=null;
+        DateParser.hours_return hours54 = null;
+
+        DateParser.minutes_return minutes56 = null;
+
+        DateParser.meridian_indicator_return meridian_indicator57 = null;
+
+        DateParser.time_identifier_return time_identifier58 = null;
+
+
+        Object COLON55_tree=null;
+        RewriteRuleTokenStream stream_COLON=new RewriteRuleTokenStream(adaptor,"token COLON");
+        RewriteRuleSubtreeStream stream_meridian_indicator=new RewriteRuleSubtreeStream(adaptor,"rule meridian_indicator");
+        RewriteRuleSubtreeStream stream_minutes=new RewriteRuleSubtreeStream(adaptor,"rule minutes");
+        RewriteRuleSubtreeStream stream_hours=new RewriteRuleSubtreeStream(adaptor,"rule hours");
+        try {
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:92:3: ( hours ( ( COLON )? minutes )? ( meridian_indicator )? -> ^( EXPLICIT_TIME hours ( minutes )? ( meridian_indicator )? ) | time_identifier )
+            int alt21=2;
+            int LA21_0 = input.LA(1);
+
+            if ( ((LA21_0>=PREFIXED_ONE_TO_NINE && LA21_0<=THIRTEEN_TO_TWENTY_THREE)) ) {
+                alt21=1;
+            }
+            else if ( ((LA21_0>=MIDNIGHT && LA21_0<=NOON)) ) {
+                alt21=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return retval;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 21, 0, input);
+
+                throw nvae;
+            }
+            switch (alt21) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:92:5: hours ( ( COLON )? minutes )? ( meridian_indicator )?
+                    {
+                    pushFollow(FOLLOW_hours_in_time789);
+                    hours54=hours();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) stream_hours.add(hours54.getTree());
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:92:11: ( ( COLON )? minutes )?
+                    int alt19=2;
+                    alt19 = dfa19.predict(input);
+                    switch (alt19) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:92:12: ( COLON )? minutes
+                            {
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:92:12: ( COLON )?
+                            int alt18=2;
+                            int LA18_0 = input.LA(1);
+
+                            if ( (LA18_0==COLON) ) {
+                                alt18=1;
+                            }
+                            switch (alt18) {
+                                case 1 :
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:92:12: COLON
+                                    {
+                                    COLON55=(Token)match(input,COLON,FOLLOW_COLON_in_time792); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_COLON.add(COLON55);
+
+
+                                    }
+                                    break;
+
+                            }
+
+                            pushFollow(FOLLOW_minutes_in_time795);
+                            minutes56=minutes();
+
+                            state._fsp--;
+                            if (state.failed) return retval;
+                            if ( state.backtracking==0 ) stream_minutes.add(minutes56.getTree());
+
+                            }
+                            break;
+
+                    }
+
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:92:29: ( meridian_indicator )?
+                    int alt20=2;
+                    int LA20_0 = input.LA(1);
+
+                    if ( ((LA20_0>=AM && LA20_0<=PM)) ) {
+                        alt20=1;
+                    }
+                    switch (alt20) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:92:29: meridian_indicator
+                            {
+                            pushFollow(FOLLOW_meridian_indicator_in_time799);
+                            meridian_indicator57=meridian_indicator();
+
+                            state._fsp--;
+                            if (state.failed) return retval;
+                            if ( state.backtracking==0 ) stream_meridian_indicator.add(meridian_indicator57.getTree());
+
+                            }
+                            break;
+
+                    }
+
+
+
+                    // AST REWRITE
+                    // elements: minutes, meridian_indicator, hours
+                    // token labels: 
+                    // rule labels: retval
+                    // token list labels: 
+                    // rule list labels: 
+                    // wildcard labels: 
+                    if ( state.backtracking==0 ) {
+                    retval.tree = root_0;
+                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+                    root_0 = (Object)adaptor.nil();
+                    // 93:5: -> ^( EXPLICIT_TIME hours ( minutes )? ( meridian_indicator )? )
+                    {
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:93:8: ^( EXPLICIT_TIME hours ( minutes )? ( meridian_indicator )? )
+                        {
+                        Object root_1 = (Object)adaptor.nil();
+                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_TIME, "EXPLICIT_TIME"), root_1);
+
+                        adaptor.addChild(root_1, stream_hours.nextTree());
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:93:30: ( minutes )?
+                        if ( stream_minutes.hasNext() ) {
+                            adaptor.addChild(root_1, stream_minutes.nextTree());
+
+                        }
+                        stream_minutes.reset();
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:93:39: ( meridian_indicator )?
+                        if ( stream_meridian_indicator.hasNext() ) {
+                            adaptor.addChild(root_1, stream_meridian_indicator.nextTree());
+
+                        }
+                        stream_meridian_indicator.reset();
+
+                        adaptor.addChild(root_0, root_1);
+                        }
+
+                    }
+
+                    retval.tree = root_0;}
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:95:5: time_identifier
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    pushFollow(FOLLOW_time_identifier_in_time827);
+                    time_identifier58=time_identifier();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, time_identifier58.getTree());
+
+                    }
+                    break;
+
+            }
+            retval.stop = input.LT(-1);
+
+            if ( state.backtracking==0 ) {
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "time"
+
+    public static class time_identifier_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "time_identifier"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:99:1: time_identifier : ( MIDNIGHT -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"am\"] ) | NOON -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"pm\"] ) );
+    public final DateParser.time_identifier_return time_identifier() throws RecognitionException {
+        DateParser.time_identifier_return retval = new DateParser.time_identifier_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token MIDNIGHT59=null;
+        Token NOON60=null;
+
+        Object MIDNIGHT59_tree=null;
+        Object NOON60_tree=null;
+        RewriteRuleTokenStream stream_NOON=new RewriteRuleTokenStream(adaptor,"token NOON");
+        RewriteRuleTokenStream stream_MIDNIGHT=new RewriteRuleTokenStream(adaptor,"token MIDNIGHT");
+
+        try {
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:100:3: ( MIDNIGHT -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"am\"] ) | NOON -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"pm\"] ) )
+            int alt22=2;
+            int LA22_0 = input.LA(1);
+
+            if ( (LA22_0==MIDNIGHT) ) {
+                alt22=1;
+            }
+            else if ( (LA22_0==NOON) ) {
+                alt22=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return retval;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 22, 0, input);
+
+                throw nvae;
+            }
+            switch (alt22) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:100:5: MIDNIGHT
+                    {
+                    MIDNIGHT59=(Token)match(input,MIDNIGHT,FOLLOW_MIDNIGHT_in_time_identifier843); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_MIDNIGHT.add(MIDNIGHT59);
+
+
+
+                    // AST REWRITE
+                    // elements: 
+                    // token labels: 
+                    // rule labels: retval
+                    // token list labels: 
+                    // rule list labels: 
+                    // wildcard labels: 
+                    if ( state.backtracking==0 ) {
+                    retval.tree = root_0;
+                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+                    root_0 = (Object)adaptor.nil();
+                    // 100:14: -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"am\"] )
+                    {
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:100:17: ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"am\"] )
+                        {
+                        Object root_1 = (Object)adaptor.nil();
+                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_TIME, "EXPLICIT_TIME"), root_1);
+
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:100:33: ^( HOURS INT[\"12\"] )
+                        {
+                        Object root_2 = (Object)adaptor.nil();
+                        root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(HOURS, "HOURS"), root_2);
+
+                        adaptor.addChild(root_2, (Object)adaptor.create(INT, "12"));
+
+                        adaptor.addChild(root_1, root_2);
+                        }
+                        adaptor.addChild(root_1, (Object)adaptor.create(AM_PM, "am"));
+
+                        adaptor.addChild(root_0, root_1);
+                        }
+
+                    }
+
+                    retval.tree = root_0;}
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:101:5: NOON
+                    {
+                    NOON60=(Token)match(input,NOON,FOLLOW_NOON_in_time_identifier865); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NOON.add(NOON60);
+
+
+
+                    // AST REWRITE
+                    // elements: 
+                    // token labels: 
+                    // rule labels: retval
+                    // token list labels: 
+                    // rule list labels: 
+                    // wildcard labels: 
+                    if ( state.backtracking==0 ) {
+                    retval.tree = root_0;
+                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+                    root_0 = (Object)adaptor.nil();
+                    // 101:14: -> ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"pm\"] )
+                    {
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:101:17: ^( EXPLICIT_TIME ^( HOURS INT[\"12\"] ) AM_PM[\"pm\"] )
+                        {
+                        Object root_1 = (Object)adaptor.nil();
+                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXPLICIT_TIME, "EXPLICIT_TIME"), root_1);
+
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:101:33: ^( HOURS INT[\"12\"] )
+                        {
+                        Object root_2 = (Object)adaptor.nil();
+                        root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(HOURS, "HOURS"), root_2);
+
+                        adaptor.addChild(root_2, (Object)adaptor.create(INT, "12"));
+
+                        adaptor.addChild(root_1, root_2);
+                        }
+                        adaptor.addChild(root_1, (Object)adaptor.create(AM_PM, "pm"));
+
+                        adaptor.addChild(root_0, root_1);
+                        }
+
+                    }
+
+                    retval.tree = root_0;}
+                    }
+                    break;
+
+            }
+            retval.stop = input.LT(-1);
+
+            if ( state.backtracking==0 ) {
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "time_identifier"
+
     public static class hours_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
     };
 
     // $ANTLR start "hours"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:183:1: hours : int_0_to_23 -> ^( HOURS int_0_to_23 ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:104:1: hours : int_0_to_23 -> ^( HOURS int_0_to_23 ) ;
     public final DateParser.hours_return hours() throws RecognitionException {
         DateParser.hours_return retval = new DateParser.hours_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        DateParser.int_0_to_23_return int_0_to_23106 = null;
+        DateParser.int_0_to_23_return int_0_to_2361 = null;
 
 
         RewriteRuleSubtreeStream stream_int_0_to_23=new RewriteRuleSubtreeStream(adaptor,"rule int_0_to_23");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:3: ( int_0_to_23 -> ^( HOURS int_0_to_23 ) )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:5: int_0_to_23
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:105:3: ( int_0_to_23 -> ^( HOURS int_0_to_23 ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:105:5: int_0_to_23
             {
-            pushFollow(FOLLOW_int_0_to_23_in_hours1570);
-            int_0_to_23106=int_0_to_23();
+            pushFollow(FOLLOW_int_0_to_23_in_hours900);
+            int_0_to_2361=int_0_to_23();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_int_0_to_23.add(int_0_to_23106.getTree());
+            if ( state.backtracking==0 ) stream_int_0_to_23.add(int_0_to_2361.getTree());
 
 
             // AST REWRITE
@@ -4332,9 +2919,9 @@ public class DateParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 184:17: -> ^( HOURS int_0_to_23 )
+            // 105:17: -> ^( HOURS int_0_to_23 )
             {
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:20: ^( HOURS int_0_to_23 )
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:105:20: ^( HOURS int_0_to_23 )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(HOURS, "HOURS"), root_1);
@@ -4375,27 +2962,27 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "minutes"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:187:1: minutes : int_0_to_59 -> ^( MINUTES int_0_to_59 ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:108:1: minutes : int_0_to_59 -> ^( MINUTES int_0_to_59 ) ;
     public final DateParser.minutes_return minutes() throws RecognitionException {
         DateParser.minutes_return retval = new DateParser.minutes_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        DateParser.int_0_to_59_return int_0_to_59107 = null;
+        DateParser.int_0_to_59_return int_0_to_5962 = null;
 
 
         RewriteRuleSubtreeStream stream_int_0_to_59=new RewriteRuleSubtreeStream(adaptor,"rule int_0_to_59");
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:3: ( int_0_to_59 -> ^( MINUTES int_0_to_59 ) )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:5: int_0_to_59
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:109:3: ( int_0_to_59 -> ^( MINUTES int_0_to_59 ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:109:5: int_0_to_59
             {
-            pushFollow(FOLLOW_int_0_to_59_in_minutes1593);
-            int_0_to_59107=int_0_to_59();
+            pushFollow(FOLLOW_int_0_to_59_in_minutes923);
+            int_0_to_5962=int_0_to_59();
 
             state._fsp--;
             if (state.failed) return retval;
-            if ( state.backtracking==0 ) stream_int_0_to_59.add(int_0_to_59107.getTree());
+            if ( state.backtracking==0 ) stream_int_0_to_59.add(int_0_to_5962.getTree());
 
 
             // AST REWRITE
@@ -4410,9 +2997,9 @@ public class DateParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 188:17: -> ^( MINUTES int_0_to_59 )
+            // 109:17: -> ^( MINUTES int_0_to_59 )
             {
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:20: ^( MINUTES int_0_to_59 )
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:109:20: ^( MINUTES int_0_to_59 )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(MINUTES, "MINUTES"), root_1);
@@ -4453,45 +3040,45 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "meridian_indicator"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:191:1: meridian_indicator : ( AM -> AM_PM[\"am\"] | PM -> AM_PM[\"pm\"] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:112:1: meridian_indicator : ( AM -> AM_PM[\"am\"] | PM -> AM_PM[\"pm\"] );
     public final DateParser.meridian_indicator_return meridian_indicator() throws RecognitionException {
         DateParser.meridian_indicator_return retval = new DateParser.meridian_indicator_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token AM108=null;
-        Token PM109=null;
+        Token AM63=null;
+        Token PM64=null;
 
-        Object AM108_tree=null;
-        Object PM109_tree=null;
+        Object AM63_tree=null;
+        Object PM64_tree=null;
         RewriteRuleTokenStream stream_PM=new RewriteRuleTokenStream(adaptor,"token PM");
         RewriteRuleTokenStream stream_AM=new RewriteRuleTokenStream(adaptor,"token AM");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:192:3: ( AM -> AM_PM[\"am\"] | PM -> AM_PM[\"pm\"] )
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:113:3: ( AM -> AM_PM[\"am\"] | PM -> AM_PM[\"pm\"] )
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA33_0==AM) ) {
-                alt33=1;
+            if ( (LA23_0==AM) ) {
+                alt23=1;
             }
-            else if ( (LA33_0==PM) ) {
-                alt33=2;
+            else if ( (LA23_0==PM) ) {
+                alt23=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
-            switch (alt33) {
+            switch (alt23) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:192:5: AM
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:113:5: AM
                     {
-                    AM108=(Token)match(input,AM,FOLLOW_AM_in_meridian_indicator1616); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AM.add(AM108);
+                    AM63=(Token)match(input,AM,FOLLOW_AM_in_meridian_indicator946); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_AM.add(AM63);
 
 
 
@@ -4507,7 +3094,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 192:8: -> AM_PM[\"am\"]
+                    // 113:8: -> AM_PM[\"am\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(AM_PM, "am"));
 
@@ -4517,10 +3104,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:193:5: PM
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:114:5: PM
                     {
-                    PM109=(Token)match(input,PM,FOLLOW_PM_in_meridian_indicator1627); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PM.add(PM109);
+                    PM64=(Token)match(input,PM,FOLLOW_PM_in_meridian_indicator957); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_PM.add(PM64);
 
 
 
@@ -4536,7 +3123,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 193:8: -> AM_PM[\"pm\"]
+                    // 114:8: -> AM_PM[\"pm\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(AM_PM, "pm"));
 
@@ -4573,118 +3160,204 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "spelled_or_int_1_to_31"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:197:1: spelled_or_int_1_to_31 : ( int_1_to_31 | ONE -> INT[\"1\"] | TWO -> INT[\"2\"] | THREE -> INT[\"3\"] | FOUR -> INT[\"4\"] | FIVE -> INT[\"5\"] | SIX -> INT[\"6\"] | SEVEN -> INT[\"7\"] | EIGHT -> INT[\"8\"] | NINE -> INT[\"9\"] | TEN -> INT[\"10\"] | ELEVEN -> INT[\"11\"] | TWELVE -> INT[\"12\"] | THIRTEEN -> INT[\"13\"] | FOURTEEN -> INT[\"14\"] | FIFTEEN -> INT[\"15\"] | SIXTEEN -> INT[\"16\"] | SEVENTEEN -> INT[\"17\"] | EIGHTEEN -> INT[\"18\"] | NINETEEN -> INT[\"19\"] | TWENTY -> INT[\"20\"] | TWENTY ( DASH )? ONE -> INT[\"21\"] | TWENTY ( DASH )? TWO -> INT[\"22\"] | TWENTY ( DASH )? THREE -> INT[\"23\"] | TWENTY ( DASH )? FOUR -> INT[\"24\"] | TWENTY ( DASH )? FIVE -> INT[\"25\"] | TWENTY ( DASH )? SIX -> INT[\"26\"] | TWENTY ( DASH )? SEVEN -> INT[\"27\"] | TWENTY ( DASH )? EIGHT -> INT[\"28\"] | TWENTY ( DASH )? NINE -> INT[\"29\"] | THIRTY -> INT[\"30\"] | THIRTY ( DASH )? ONE -> INT[\"31\"] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:118:1: spelled_or_int_1_to_31 : ( int_1_to_31 | spelled_1_to_31 );
     public final DateParser.spelled_or_int_1_to_31_return spelled_or_int_1_to_31() throws RecognitionException {
         DateParser.spelled_or_int_1_to_31_return retval = new DateParser.spelled_or_int_1_to_31_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token ONE111=null;
-        Token TWO112=null;
-        Token THREE113=null;
-        Token FOUR114=null;
-        Token FIVE115=null;
-        Token SIX116=null;
-        Token SEVEN117=null;
-        Token EIGHT118=null;
-        Token NINE119=null;
-        Token TEN120=null;
-        Token ELEVEN121=null;
-        Token TWELVE122=null;
-        Token THIRTEEN123=null;
-        Token FOURTEEN124=null;
-        Token FIFTEEN125=null;
-        Token SIXTEEN126=null;
-        Token SEVENTEEN127=null;
-        Token EIGHTEEN128=null;
-        Token NINETEEN129=null;
-        Token TWENTY130=null;
-        Token TWENTY131=null;
-        Token DASH132=null;
-        Token ONE133=null;
-        Token TWENTY134=null;
-        Token DASH135=null;
-        Token TWO136=null;
-        Token TWENTY137=null;
-        Token DASH138=null;
-        Token THREE139=null;
-        Token TWENTY140=null;
-        Token DASH141=null;
-        Token FOUR142=null;
-        Token TWENTY143=null;
-        Token DASH144=null;
-        Token FIVE145=null;
-        Token TWENTY146=null;
-        Token DASH147=null;
-        Token SIX148=null;
-        Token TWENTY149=null;
-        Token DASH150=null;
-        Token SEVEN151=null;
-        Token TWENTY152=null;
-        Token DASH153=null;
-        Token EIGHT154=null;
-        Token TWENTY155=null;
-        Token DASH156=null;
-        Token NINE157=null;
-        Token THIRTY158=null;
-        Token THIRTY159=null;
-        Token DASH160=null;
-        Token ONE161=null;
-        DateParser.int_1_to_31_return int_1_to_31110 = null;
+        DateParser.int_1_to_31_return int_1_to_3165 = null;
+
+        DateParser.spelled_1_to_31_return spelled_1_to_3166 = null;
 
 
-        Object ONE111_tree=null;
-        Object TWO112_tree=null;
-        Object THREE113_tree=null;
-        Object FOUR114_tree=null;
-        Object FIVE115_tree=null;
-        Object SIX116_tree=null;
-        Object SEVEN117_tree=null;
-        Object EIGHT118_tree=null;
-        Object NINE119_tree=null;
-        Object TEN120_tree=null;
-        Object ELEVEN121_tree=null;
-        Object TWELVE122_tree=null;
-        Object THIRTEEN123_tree=null;
-        Object FOURTEEN124_tree=null;
-        Object FIFTEEN125_tree=null;
-        Object SIXTEEN126_tree=null;
-        Object SEVENTEEN127_tree=null;
-        Object EIGHTEEN128_tree=null;
-        Object NINETEEN129_tree=null;
-        Object TWENTY130_tree=null;
-        Object TWENTY131_tree=null;
-        Object DASH132_tree=null;
-        Object ONE133_tree=null;
-        Object TWENTY134_tree=null;
-        Object DASH135_tree=null;
-        Object TWO136_tree=null;
-        Object TWENTY137_tree=null;
-        Object DASH138_tree=null;
-        Object THREE139_tree=null;
-        Object TWENTY140_tree=null;
-        Object DASH141_tree=null;
-        Object FOUR142_tree=null;
-        Object TWENTY143_tree=null;
-        Object DASH144_tree=null;
-        Object FIVE145_tree=null;
-        Object TWENTY146_tree=null;
-        Object DASH147_tree=null;
-        Object SIX148_tree=null;
-        Object TWENTY149_tree=null;
-        Object DASH150_tree=null;
-        Object SEVEN151_tree=null;
-        Object TWENTY152_tree=null;
-        Object DASH153_tree=null;
-        Object EIGHT154_tree=null;
-        Object TWENTY155_tree=null;
-        Object DASH156_tree=null;
-        Object NINE157_tree=null;
-        Object THIRTY158_tree=null;
-        Object THIRTY159_tree=null;
-        Object DASH160_tree=null;
-        Object ONE161_tree=null;
+
+        try {
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:119:3: ( int_1_to_31 | spelled_1_to_31 )
+            int alt24=2;
+            int LA24_0 = input.LA(1);
+
+            if ( ((LA24_0>=PREFIXED_ONE_TO_NINE && LA24_0<=TEN_TO_TWELVE)||(LA24_0>=THIRTEEN_TO_TWENTY_THREE && LA24_0<=TWENTY_FOUR_TO_THIRTY_ONE)) ) {
+                alt24=1;
+            }
+            else if ( ((LA24_0>=ONE && LA24_0<=THIRTY)) ) {
+                alt24=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return retval;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 24, 0, input);
+
+                throw nvae;
+            }
+            switch (alt24) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:119:5: int_1_to_31
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    pushFollow(FOLLOW_int_1_to_31_in_spelled_or_int_1_to_31978);
+                    int_1_to_3165=int_1_to_31();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_1_to_3165.getTree());
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:120:5: spelled_1_to_31
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    pushFollow(FOLLOW_spelled_1_to_31_in_spelled_or_int_1_to_31984);
+                    spelled_1_to_3166=spelled_1_to_31();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, spelled_1_to_3166.getTree());
+
+                    }
+                    break;
+
+            }
+            retval.stop = input.LT(-1);
+
+            if ( state.backtracking==0 ) {
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "spelled_or_int_1_to_31"
+
+    public static class spelled_1_to_31_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start "spelled_1_to_31"
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:123:1: spelled_1_to_31 : ( ONE -> INT[\"1\"] | TWO -> INT[\"2\"] | THREE -> INT[\"3\"] | FOUR -> INT[\"4\"] | FIVE -> INT[\"5\"] | SIX -> INT[\"6\"] | SEVEN -> INT[\"7\"] | EIGHT -> INT[\"8\"] | NINE -> INT[\"9\"] | TEN -> INT[\"10\"] | ELEVEN -> INT[\"11\"] | TWELVE -> INT[\"12\"] | THIRTEEN -> INT[\"13\"] | FOURTEEN -> INT[\"14\"] | FIFTEEN -> INT[\"15\"] | SIXTEEN -> INT[\"16\"] | SEVENTEEN -> INT[\"17\"] | EIGHTEEN -> INT[\"18\"] | NINETEEN -> INT[\"19\"] | TWENTY -> INT[\"20\"] | TWENTY ( DASH )? ONE -> INT[\"21\"] | TWENTY ( DASH )? TWO -> INT[\"22\"] | TWENTY ( DASH )? THREE -> INT[\"23\"] | TWENTY ( DASH )? FOUR -> INT[\"24\"] | TWENTY ( DASH )? FIVE -> INT[\"25\"] | TWENTY ( DASH )? SIX -> INT[\"26\"] | TWENTY ( DASH )? SEVEN -> INT[\"27\"] | TWENTY ( DASH )? EIGHT -> INT[\"28\"] | TWENTY ( DASH )? NINE -> INT[\"29\"] | THIRTY -> INT[\"30\"] | THIRTY ( DASH )? ONE -> INT[\"31\"] );
+    public final DateParser.spelled_1_to_31_return spelled_1_to_31() throws RecognitionException {
+        DateParser.spelled_1_to_31_return retval = new DateParser.spelled_1_to_31_return();
+        retval.start = input.LT(1);
+
+        Object root_0 = null;
+
+        Token ONE67=null;
+        Token TWO68=null;
+        Token THREE69=null;
+        Token FOUR70=null;
+        Token FIVE71=null;
+        Token SIX72=null;
+        Token SEVEN73=null;
+        Token EIGHT74=null;
+        Token NINE75=null;
+        Token TEN76=null;
+        Token ELEVEN77=null;
+        Token TWELVE78=null;
+        Token THIRTEEN79=null;
+        Token FOURTEEN80=null;
+        Token FIFTEEN81=null;
+        Token SIXTEEN82=null;
+        Token SEVENTEEN83=null;
+        Token EIGHTEEN84=null;
+        Token NINETEEN85=null;
+        Token TWENTY86=null;
+        Token TWENTY87=null;
+        Token DASH88=null;
+        Token ONE89=null;
+        Token TWENTY90=null;
+        Token DASH91=null;
+        Token TWO92=null;
+        Token TWENTY93=null;
+        Token DASH94=null;
+        Token THREE95=null;
+        Token TWENTY96=null;
+        Token DASH97=null;
+        Token FOUR98=null;
+        Token TWENTY99=null;
+        Token DASH100=null;
+        Token FIVE101=null;
+        Token TWENTY102=null;
+        Token DASH103=null;
+        Token SIX104=null;
+        Token TWENTY105=null;
+        Token DASH106=null;
+        Token SEVEN107=null;
+        Token TWENTY108=null;
+        Token DASH109=null;
+        Token EIGHT110=null;
+        Token TWENTY111=null;
+        Token DASH112=null;
+        Token NINE113=null;
+        Token THIRTY114=null;
+        Token THIRTY115=null;
+        Token DASH116=null;
+        Token ONE117=null;
+
+        Object ONE67_tree=null;
+        Object TWO68_tree=null;
+        Object THREE69_tree=null;
+        Object FOUR70_tree=null;
+        Object FIVE71_tree=null;
+        Object SIX72_tree=null;
+        Object SEVEN73_tree=null;
+        Object EIGHT74_tree=null;
+        Object NINE75_tree=null;
+        Object TEN76_tree=null;
+        Object ELEVEN77_tree=null;
+        Object TWELVE78_tree=null;
+        Object THIRTEEN79_tree=null;
+        Object FOURTEEN80_tree=null;
+        Object FIFTEEN81_tree=null;
+        Object SIXTEEN82_tree=null;
+        Object SEVENTEEN83_tree=null;
+        Object EIGHTEEN84_tree=null;
+        Object NINETEEN85_tree=null;
+        Object TWENTY86_tree=null;
+        Object TWENTY87_tree=null;
+        Object DASH88_tree=null;
+        Object ONE89_tree=null;
+        Object TWENTY90_tree=null;
+        Object DASH91_tree=null;
+        Object TWO92_tree=null;
+        Object TWENTY93_tree=null;
+        Object DASH94_tree=null;
+        Object THREE95_tree=null;
+        Object TWENTY96_tree=null;
+        Object DASH97_tree=null;
+        Object FOUR98_tree=null;
+        Object TWENTY99_tree=null;
+        Object DASH100_tree=null;
+        Object FIVE101_tree=null;
+        Object TWENTY102_tree=null;
+        Object DASH103_tree=null;
+        Object SIX104_tree=null;
+        Object TWENTY105_tree=null;
+        Object DASH106_tree=null;
+        Object SEVEN107_tree=null;
+        Object TWENTY108_tree=null;
+        Object DASH109_tree=null;
+        Object EIGHT110_tree=null;
+        Object TWENTY111_tree=null;
+        Object DASH112_tree=null;
+        Object NINE113_tree=null;
+        Object THIRTY114_tree=null;
+        Object THIRTY115_tree=null;
+        Object DASH116_tree=null;
+        Object ONE117_tree=null;
         RewriteRuleTokenStream stream_NINETEEN=new RewriteRuleTokenStream(adaptor,"token NINETEEN");
         RewriteRuleTokenStream stream_DASH=new RewriteRuleTokenStream(adaptor,"token DASH");
         RewriteRuleTokenStream stream_TWENTY=new RewriteRuleTokenStream(adaptor,"token TWENTY");
@@ -4709,29 +3382,15 @@ public class DateParser extends Parser {
         RewriteRuleTokenStream stream_EIGHT=new RewriteRuleTokenStream(adaptor,"token EIGHT");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:198:3: ( int_1_to_31 | ONE -> INT[\"1\"] | TWO -> INT[\"2\"] | THREE -> INT[\"3\"] | FOUR -> INT[\"4\"] | FIVE -> INT[\"5\"] | SIX -> INT[\"6\"] | SEVEN -> INT[\"7\"] | EIGHT -> INT[\"8\"] | NINE -> INT[\"9\"] | TEN -> INT[\"10\"] | ELEVEN -> INT[\"11\"] | TWELVE -> INT[\"12\"] | THIRTEEN -> INT[\"13\"] | FOURTEEN -> INT[\"14\"] | FIFTEEN -> INT[\"15\"] | SIXTEEN -> INT[\"16\"] | SEVENTEEN -> INT[\"17\"] | EIGHTEEN -> INT[\"18\"] | NINETEEN -> INT[\"19\"] | TWENTY -> INT[\"20\"] | TWENTY ( DASH )? ONE -> INT[\"21\"] | TWENTY ( DASH )? TWO -> INT[\"22\"] | TWENTY ( DASH )? THREE -> INT[\"23\"] | TWENTY ( DASH )? FOUR -> INT[\"24\"] | TWENTY ( DASH )? FIVE -> INT[\"25\"] | TWENTY ( DASH )? SIX -> INT[\"26\"] | TWENTY ( DASH )? SEVEN -> INT[\"27\"] | TWENTY ( DASH )? EIGHT -> INT[\"28\"] | TWENTY ( DASH )? NINE -> INT[\"29\"] | THIRTY -> INT[\"30\"] | THIRTY ( DASH )? ONE -> INT[\"31\"] )
-            int alt44=32;
-            alt44 = dfa44.predict(input);
-            switch (alt44) {
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:124:3: ( ONE -> INT[\"1\"] | TWO -> INT[\"2\"] | THREE -> INT[\"3\"] | FOUR -> INT[\"4\"] | FIVE -> INT[\"5\"] | SIX -> INT[\"6\"] | SEVEN -> INT[\"7\"] | EIGHT -> INT[\"8\"] | NINE -> INT[\"9\"] | TEN -> INT[\"10\"] | ELEVEN -> INT[\"11\"] | TWELVE -> INT[\"12\"] | THIRTEEN -> INT[\"13\"] | FOURTEEN -> INT[\"14\"] | FIFTEEN -> INT[\"15\"] | SIXTEEN -> INT[\"16\"] | SEVENTEEN -> INT[\"17\"] | EIGHTEEN -> INT[\"18\"] | NINETEEN -> INT[\"19\"] | TWENTY -> INT[\"20\"] | TWENTY ( DASH )? ONE -> INT[\"21\"] | TWENTY ( DASH )? TWO -> INT[\"22\"] | TWENTY ( DASH )? THREE -> INT[\"23\"] | TWENTY ( DASH )? FOUR -> INT[\"24\"] | TWENTY ( DASH )? FIVE -> INT[\"25\"] | TWENTY ( DASH )? SIX -> INT[\"26\"] | TWENTY ( DASH )? SEVEN -> INT[\"27\"] | TWENTY ( DASH )? EIGHT -> INT[\"28\"] | TWENTY ( DASH )? NINE -> INT[\"29\"] | THIRTY -> INT[\"30\"] | THIRTY ( DASH )? ONE -> INT[\"31\"] )
+            int alt35=31;
+            alt35 = dfa35.predict(input);
+            switch (alt35) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:198:5: int_1_to_31
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:124:5: ONE
                     {
-                    root_0 = (Object)adaptor.nil();
-
-                    pushFollow(FOLLOW_int_1_to_31_in_spelled_or_int_1_to_311648);
-                    int_1_to_31110=int_1_to_31();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_1_to_31110.getTree());
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:199:5: ONE
-                    {
-                    ONE111=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_or_int_1_to_311654); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE.add(ONE111);
+                    ONE67=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_1_to_31999); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ONE.add(ONE67);
 
 
 
@@ -4747,7 +3406,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 199:16: -> INT[\"1\"]
+                    // 124:16: -> INT[\"1\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "1"));
 
@@ -4756,11 +3415,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:200:5: TWO
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:125:5: TWO
                     {
-                    TWO112=(Token)match(input,TWO,FOLLOW_TWO_in_spelled_or_int_1_to_311672); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWO.add(TWO112);
+                    TWO68=(Token)match(input,TWO,FOLLOW_TWO_in_spelled_1_to_311017); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWO.add(TWO68);
 
 
 
@@ -4776,7 +3435,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 200:16: -> INT[\"2\"]
+                    // 125:16: -> INT[\"2\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "2"));
 
@@ -4785,11 +3444,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:201:5: THREE
+                case 3 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:126:5: THREE
                     {
-                    THREE113=(Token)match(input,THREE,FOLLOW_THREE_in_spelled_or_int_1_to_311690); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THREE.add(THREE113);
+                    THREE69=(Token)match(input,THREE,FOLLOW_THREE_in_spelled_1_to_311035); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THREE.add(THREE69);
 
 
 
@@ -4805,7 +3464,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 201:16: -> INT[\"3\"]
+                    // 126:16: -> INT[\"3\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "3"));
 
@@ -4814,11 +3473,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 5 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:202:5: FOUR
+                case 4 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:127:5: FOUR
                     {
-                    FOUR114=(Token)match(input,FOUR,FOLLOW_FOUR_in_spelled_or_int_1_to_311706); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FOUR.add(FOUR114);
+                    FOUR70=(Token)match(input,FOUR,FOLLOW_FOUR_in_spelled_1_to_311051); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FOUR.add(FOUR70);
 
 
 
@@ -4834,7 +3493,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 202:16: -> INT[\"4\"]
+                    // 127:16: -> INT[\"4\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "4"));
 
@@ -4843,11 +3502,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 6 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:203:5: FIVE
+                case 5 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:128:5: FIVE
                     {
-                    FIVE115=(Token)match(input,FIVE,FOLLOW_FIVE_in_spelled_or_int_1_to_311723); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FIVE.add(FIVE115);
+                    FIVE71=(Token)match(input,FIVE,FOLLOW_FIVE_in_spelled_1_to_311068); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FIVE.add(FIVE71);
 
 
 
@@ -4863,7 +3522,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 203:16: -> INT[\"5\"]
+                    // 128:16: -> INT[\"5\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "5"));
 
@@ -4872,11 +3531,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 7 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:204:5: SIX
+                case 6 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:129:5: SIX
                     {
-                    SIX116=(Token)match(input,SIX,FOLLOW_SIX_in_spelled_or_int_1_to_311740); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SIX.add(SIX116);
+                    SIX72=(Token)match(input,SIX,FOLLOW_SIX_in_spelled_1_to_311085); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SIX.add(SIX72);
 
 
 
@@ -4892,7 +3551,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 204:16: -> INT[\"6\"]
+                    // 129:16: -> INT[\"6\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "6"));
 
@@ -4901,11 +3560,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 8 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:205:5: SEVEN
+                case 7 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:130:5: SEVEN
                     {
-                    SEVEN117=(Token)match(input,SEVEN,FOLLOW_SEVEN_in_spelled_or_int_1_to_311758); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEVEN.add(SEVEN117);
+                    SEVEN73=(Token)match(input,SEVEN,FOLLOW_SEVEN_in_spelled_1_to_311103); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEVEN.add(SEVEN73);
 
 
 
@@ -4921,7 +3580,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 205:16: -> INT[\"7\"]
+                    // 130:16: -> INT[\"7\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "7"));
 
@@ -4930,11 +3589,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 9 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:206:5: EIGHT
+                case 8 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:131:5: EIGHT
                     {
-                    EIGHT118=(Token)match(input,EIGHT,FOLLOW_EIGHT_in_spelled_or_int_1_to_311774); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EIGHT.add(EIGHT118);
+                    EIGHT74=(Token)match(input,EIGHT,FOLLOW_EIGHT_in_spelled_1_to_311119); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EIGHT.add(EIGHT74);
 
 
 
@@ -4950,7 +3609,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 206:16: -> INT[\"8\"]
+                    // 131:16: -> INT[\"8\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "8"));
 
@@ -4959,11 +3618,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 10 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:207:5: NINE
+                case 9 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:132:5: NINE
                     {
-                    NINE119=(Token)match(input,NINE,FOLLOW_NINE_in_spelled_or_int_1_to_311790); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NINE.add(NINE119);
+                    NINE75=(Token)match(input,NINE,FOLLOW_NINE_in_spelled_1_to_311135); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NINE.add(NINE75);
 
 
 
@@ -4979,7 +3638,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 207:16: -> INT[\"9\"]
+                    // 132:16: -> INT[\"9\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "9"));
 
@@ -4988,11 +3647,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 11 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:208:5: TEN
+                case 10 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:133:5: TEN
                     {
-                    TEN120=(Token)match(input,TEN,FOLLOW_TEN_in_spelled_or_int_1_to_311807); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TEN.add(TEN120);
+                    TEN76=(Token)match(input,TEN,FOLLOW_TEN_in_spelled_1_to_311152); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TEN.add(TEN76);
 
 
 
@@ -5008,7 +3667,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 208:16: -> INT[\"10\"]
+                    // 133:16: -> INT[\"10\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "10"));
 
@@ -5017,11 +3676,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 12 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:209:5: ELEVEN
+                case 11 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:134:5: ELEVEN
                     {
-                    ELEVEN121=(Token)match(input,ELEVEN,FOLLOW_ELEVEN_in_spelled_or_int_1_to_311825); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ELEVEN.add(ELEVEN121);
+                    ELEVEN77=(Token)match(input,ELEVEN,FOLLOW_ELEVEN_in_spelled_1_to_311170); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ELEVEN.add(ELEVEN77);
 
 
 
@@ -5037,7 +3696,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 209:16: -> INT[\"11\"]
+                    // 134:16: -> INT[\"11\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "11"));
 
@@ -5046,11 +3705,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 13 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:210:5: TWELVE
+                case 12 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:135:5: TWELVE
                     {
-                    TWELVE122=(Token)match(input,TWELVE,FOLLOW_TWELVE_in_spelled_or_int_1_to_311840); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWELVE.add(TWELVE122);
+                    TWELVE78=(Token)match(input,TWELVE,FOLLOW_TWELVE_in_spelled_1_to_311185); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWELVE.add(TWELVE78);
 
 
 
@@ -5066,7 +3725,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 210:16: -> INT[\"12\"]
+                    // 135:16: -> INT[\"12\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "12"));
 
@@ -5075,11 +3734,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 14 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:211:5: THIRTEEN
+                case 13 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:136:5: THIRTEEN
                     {
-                    THIRTEEN123=(Token)match(input,THIRTEEN,FOLLOW_THIRTEEN_in_spelled_or_int_1_to_311855); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTEEN.add(THIRTEEN123);
+                    THIRTEEN79=(Token)match(input,THIRTEEN,FOLLOW_THIRTEEN_in_spelled_1_to_311200); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRTEEN.add(THIRTEEN79);
 
 
 
@@ -5095,7 +3754,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 211:16: -> INT[\"13\"]
+                    // 136:16: -> INT[\"13\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "13"));
 
@@ -5104,11 +3763,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 15 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:212:5: FOURTEEN
+                case 14 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:137:5: FOURTEEN
                     {
-                    FOURTEEN124=(Token)match(input,FOURTEEN,FOLLOW_FOURTEEN_in_spelled_or_int_1_to_311868); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FOURTEEN.add(FOURTEEN124);
+                    FOURTEEN80=(Token)match(input,FOURTEEN,FOLLOW_FOURTEEN_in_spelled_1_to_311213); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FOURTEEN.add(FOURTEEN80);
 
 
 
@@ -5124,7 +3783,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 212:16: -> INT[\"14\"]
+                    // 137:16: -> INT[\"14\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "14"));
 
@@ -5133,11 +3792,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 16 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:213:5: FIFTEEN
+                case 15 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:138:5: FIFTEEN
                     {
-                    FIFTEEN125=(Token)match(input,FIFTEEN,FOLLOW_FIFTEEN_in_spelled_or_int_1_to_311881); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FIFTEEN.add(FIFTEEN125);
+                    FIFTEEN81=(Token)match(input,FIFTEEN,FOLLOW_FIFTEEN_in_spelled_1_to_311226); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FIFTEEN.add(FIFTEEN81);
 
 
 
@@ -5153,7 +3812,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 213:16: -> INT[\"15\"]
+                    // 138:16: -> INT[\"15\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "15"));
 
@@ -5162,11 +3821,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 17 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:214:5: SIXTEEN
+                case 16 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:139:5: SIXTEEN
                     {
-                    SIXTEEN126=(Token)match(input,SIXTEEN,FOLLOW_SIXTEEN_in_spelled_or_int_1_to_311895); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SIXTEEN.add(SIXTEEN126);
+                    SIXTEEN82=(Token)match(input,SIXTEEN,FOLLOW_SIXTEEN_in_spelled_1_to_311240); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SIXTEEN.add(SIXTEEN82);
 
 
 
@@ -5182,7 +3841,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 214:16: -> INT[\"16\"]
+                    // 139:16: -> INT[\"16\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "16"));
 
@@ -5191,11 +3850,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 18 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:215:5: SEVENTEEN
+                case 17 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:140:5: SEVENTEEN
                     {
-                    SEVENTEEN127=(Token)match(input,SEVENTEEN,FOLLOW_SEVENTEEN_in_spelled_or_int_1_to_311909); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEVENTEEN.add(SEVENTEEN127);
+                    SEVENTEEN83=(Token)match(input,SEVENTEEN,FOLLOW_SEVENTEEN_in_spelled_1_to_311254); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEVENTEEN.add(SEVENTEEN83);
 
 
 
@@ -5211,7 +3870,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 215:16: -> INT[\"17\"]
+                    // 140:16: -> INT[\"17\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "17"));
 
@@ -5220,11 +3879,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 19 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:216:5: EIGHTEEN
+                case 18 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:141:5: EIGHTEEN
                     {
-                    EIGHTEEN128=(Token)match(input,EIGHTEEN,FOLLOW_EIGHTEEN_in_spelled_or_int_1_to_311921); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EIGHTEEN.add(EIGHTEEN128);
+                    EIGHTEEN84=(Token)match(input,EIGHTEEN,FOLLOW_EIGHTEEN_in_spelled_1_to_311266); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EIGHTEEN.add(EIGHTEEN84);
 
 
 
@@ -5240,7 +3899,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 216:16: -> INT[\"18\"]
+                    // 141:16: -> INT[\"18\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "18"));
 
@@ -5249,11 +3908,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 20 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:217:5: NINETEEN
+                case 19 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:142:5: NINETEEN
                     {
-                    NINETEEN129=(Token)match(input,NINETEEN,FOLLOW_NINETEEN_in_spelled_or_int_1_to_311934); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NINETEEN.add(NINETEEN129);
+                    NINETEEN85=(Token)match(input,NINETEEN,FOLLOW_NINETEEN_in_spelled_1_to_311279); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NINETEEN.add(NINETEEN85);
 
 
 
@@ -5269,7 +3928,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 217:16: -> INT[\"19\"]
+                    // 142:16: -> INT[\"19\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "19"));
 
@@ -5278,11 +3937,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 21 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:218:5: TWENTY
+                case 20 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:143:5: TWENTY
                     {
-                    TWENTY130=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_or_int_1_to_311947); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY130);
+                    TWENTY86=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_1_to_311292); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY86);
 
 
 
@@ -5298,7 +3957,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 218:16: -> INT[\"20\"]
+                    // 143:16: -> INT[\"20\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "20"));
 
@@ -5307,25 +3966,25 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 22 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:219:5: TWENTY ( DASH )? ONE
+                case 21 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:144:5: TWENTY ( DASH )? ONE
                     {
-                    TWENTY131=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_or_int_1_to_311962); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY131);
+                    TWENTY87=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_1_to_311307); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY87);
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:219:12: ( DASH )?
-                    int alt34=2;
-                    int LA34_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:144:12: ( DASH )?
+                    int alt25=2;
+                    int LA25_0 = input.LA(1);
 
-                    if ( (LA34_0==DASH) ) {
-                        alt34=1;
+                    if ( (LA25_0==DASH) ) {
+                        alt25=1;
                     }
-                    switch (alt34) {
+                    switch (alt25) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:219:12: DASH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:144:12: DASH
                             {
-                            DASH132=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_or_int_1_to_311964); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_DASH.add(DASH132);
+                            DASH88=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_1_to_311309); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_DASH.add(DASH88);
 
 
                             }
@@ -5333,8 +3992,8 @@ public class DateParser extends Parser {
 
                     }
 
-                    ONE133=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_or_int_1_to_311967); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE.add(ONE133);
+                    ONE89=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_1_to_311312); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ONE.add(ONE89);
 
 
 
@@ -5350,7 +4009,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 219:24: -> INT[\"21\"]
+                    // 144:24: -> INT[\"21\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "21"));
 
@@ -5359,25 +4018,25 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 23 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:220:5: TWENTY ( DASH )? TWO
+                case 22 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:145:5: TWENTY ( DASH )? TWO
                     {
-                    TWENTY134=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_or_int_1_to_311980); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY134);
+                    TWENTY90=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_1_to_311325); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY90);
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:220:12: ( DASH )?
-                    int alt35=2;
-                    int LA35_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:145:12: ( DASH )?
+                    int alt26=2;
+                    int LA26_0 = input.LA(1);
 
-                    if ( (LA35_0==DASH) ) {
-                        alt35=1;
+                    if ( (LA26_0==DASH) ) {
+                        alt26=1;
                     }
-                    switch (alt35) {
+                    switch (alt26) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:220:12: DASH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:145:12: DASH
                             {
-                            DASH135=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_or_int_1_to_311982); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_DASH.add(DASH135);
+                            DASH91=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_1_to_311327); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_DASH.add(DASH91);
 
 
                             }
@@ -5385,8 +4044,8 @@ public class DateParser extends Parser {
 
                     }
 
-                    TWO136=(Token)match(input,TWO,FOLLOW_TWO_in_spelled_or_int_1_to_311985); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWO.add(TWO136);
+                    TWO92=(Token)match(input,TWO,FOLLOW_TWO_in_spelled_1_to_311330); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWO.add(TWO92);
 
 
 
@@ -5402,7 +4061,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 220:24: -> INT[\"22\"]
+                    // 145:24: -> INT[\"22\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "22"));
 
@@ -5411,25 +4070,25 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 24 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:221:5: TWENTY ( DASH )? THREE
+                case 23 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:146:5: TWENTY ( DASH )? THREE
                     {
-                    TWENTY137=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_or_int_1_to_311998); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY137);
+                    TWENTY93=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_1_to_311343); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY93);
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:221:12: ( DASH )?
-                    int alt36=2;
-                    int LA36_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:146:12: ( DASH )?
+                    int alt27=2;
+                    int LA27_0 = input.LA(1);
 
-                    if ( (LA36_0==DASH) ) {
-                        alt36=1;
+                    if ( (LA27_0==DASH) ) {
+                        alt27=1;
                     }
-                    switch (alt36) {
+                    switch (alt27) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:221:12: DASH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:146:12: DASH
                             {
-                            DASH138=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_or_int_1_to_312000); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_DASH.add(DASH138);
+                            DASH94=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_1_to_311345); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_DASH.add(DASH94);
 
 
                             }
@@ -5437,8 +4096,8 @@ public class DateParser extends Parser {
 
                     }
 
-                    THREE139=(Token)match(input,THREE,FOLLOW_THREE_in_spelled_or_int_1_to_312003); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THREE.add(THREE139);
+                    THREE95=(Token)match(input,THREE,FOLLOW_THREE_in_spelled_1_to_311348); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THREE.add(THREE95);
 
 
 
@@ -5454,7 +4113,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 221:24: -> INT[\"23\"]
+                    // 146:24: -> INT[\"23\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "23"));
 
@@ -5463,25 +4122,25 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 25 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:222:5: TWENTY ( DASH )? FOUR
+                case 24 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:147:5: TWENTY ( DASH )? FOUR
                     {
-                    TWENTY140=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_or_int_1_to_312014); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY140);
+                    TWENTY96=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_1_to_311359); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY96);
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:222:12: ( DASH )?
-                    int alt37=2;
-                    int LA37_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:147:12: ( DASH )?
+                    int alt28=2;
+                    int LA28_0 = input.LA(1);
 
-                    if ( (LA37_0==DASH) ) {
-                        alt37=1;
+                    if ( (LA28_0==DASH) ) {
+                        alt28=1;
                     }
-                    switch (alt37) {
+                    switch (alt28) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:222:12: DASH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:147:12: DASH
                             {
-                            DASH141=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_or_int_1_to_312016); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_DASH.add(DASH141);
+                            DASH97=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_1_to_311361); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_DASH.add(DASH97);
 
 
                             }
@@ -5489,8 +4148,8 @@ public class DateParser extends Parser {
 
                     }
 
-                    FOUR142=(Token)match(input,FOUR,FOLLOW_FOUR_in_spelled_or_int_1_to_312019); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FOUR.add(FOUR142);
+                    FOUR98=(Token)match(input,FOUR,FOLLOW_FOUR_in_spelled_1_to_311364); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FOUR.add(FOUR98);
 
 
 
@@ -5506,7 +4165,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 222:24: -> INT[\"24\"]
+                    // 147:24: -> INT[\"24\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "24"));
 
@@ -5515,25 +4174,25 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 26 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:223:5: TWENTY ( DASH )? FIVE
+                case 25 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:148:5: TWENTY ( DASH )? FIVE
                     {
-                    TWENTY143=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_or_int_1_to_312031); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY143);
+                    TWENTY99=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_1_to_311376); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY99);
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:223:12: ( DASH )?
-                    int alt38=2;
-                    int LA38_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:148:12: ( DASH )?
+                    int alt29=2;
+                    int LA29_0 = input.LA(1);
 
-                    if ( (LA38_0==DASH) ) {
-                        alt38=1;
+                    if ( (LA29_0==DASH) ) {
+                        alt29=1;
                     }
-                    switch (alt38) {
+                    switch (alt29) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:223:12: DASH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:148:12: DASH
                             {
-                            DASH144=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_or_int_1_to_312033); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_DASH.add(DASH144);
+                            DASH100=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_1_to_311378); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_DASH.add(DASH100);
 
 
                             }
@@ -5541,8 +4200,8 @@ public class DateParser extends Parser {
 
                     }
 
-                    FIVE145=(Token)match(input,FIVE,FOLLOW_FIVE_in_spelled_or_int_1_to_312036); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FIVE.add(FIVE145);
+                    FIVE101=(Token)match(input,FIVE,FOLLOW_FIVE_in_spelled_1_to_311381); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FIVE.add(FIVE101);
 
 
 
@@ -5558,7 +4217,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 223:24: -> INT[\"25\"]
+                    // 148:24: -> INT[\"25\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "25"));
 
@@ -5567,25 +4226,25 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 27 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:224:5: TWENTY ( DASH )? SIX
+                case 26 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:149:5: TWENTY ( DASH )? SIX
                     {
-                    TWENTY146=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_or_int_1_to_312048); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY146);
+                    TWENTY102=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_1_to_311393); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY102);
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:224:12: ( DASH )?
-                    int alt39=2;
-                    int LA39_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:149:12: ( DASH )?
+                    int alt30=2;
+                    int LA30_0 = input.LA(1);
 
-                    if ( (LA39_0==DASH) ) {
-                        alt39=1;
+                    if ( (LA30_0==DASH) ) {
+                        alt30=1;
                     }
-                    switch (alt39) {
+                    switch (alt30) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:224:12: DASH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:149:12: DASH
                             {
-                            DASH147=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_or_int_1_to_312050); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_DASH.add(DASH147);
+                            DASH103=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_1_to_311395); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_DASH.add(DASH103);
 
 
                             }
@@ -5593,8 +4252,8 @@ public class DateParser extends Parser {
 
                     }
 
-                    SIX148=(Token)match(input,SIX,FOLLOW_SIX_in_spelled_or_int_1_to_312053); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SIX.add(SIX148);
+                    SIX104=(Token)match(input,SIX,FOLLOW_SIX_in_spelled_1_to_311398); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SIX.add(SIX104);
 
 
 
@@ -5610,7 +4269,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 224:24: -> INT[\"26\"]
+                    // 149:24: -> INT[\"26\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "26"));
 
@@ -5619,25 +4278,25 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 28 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:225:5: TWENTY ( DASH )? SEVEN
+                case 27 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:150:5: TWENTY ( DASH )? SEVEN
                     {
-                    TWENTY149=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_or_int_1_to_312066); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY149);
+                    TWENTY105=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_1_to_311411); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY105);
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:225:12: ( DASH )?
-                    int alt40=2;
-                    int LA40_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:150:12: ( DASH )?
+                    int alt31=2;
+                    int LA31_0 = input.LA(1);
 
-                    if ( (LA40_0==DASH) ) {
-                        alt40=1;
+                    if ( (LA31_0==DASH) ) {
+                        alt31=1;
                     }
-                    switch (alt40) {
+                    switch (alt31) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:225:12: DASH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:150:12: DASH
                             {
-                            DASH150=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_or_int_1_to_312068); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_DASH.add(DASH150);
+                            DASH106=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_1_to_311413); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_DASH.add(DASH106);
 
 
                             }
@@ -5645,8 +4304,8 @@ public class DateParser extends Parser {
 
                     }
 
-                    SEVEN151=(Token)match(input,SEVEN,FOLLOW_SEVEN_in_spelled_or_int_1_to_312071); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEVEN.add(SEVEN151);
+                    SEVEN107=(Token)match(input,SEVEN,FOLLOW_SEVEN_in_spelled_1_to_311416); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEVEN.add(SEVEN107);
 
 
 
@@ -5662,7 +4321,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 225:24: -> INT[\"27\"]
+                    // 150:24: -> INT[\"27\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "27"));
 
@@ -5671,25 +4330,25 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 29 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:226:5: TWENTY ( DASH )? EIGHT
+                case 28 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:151:5: TWENTY ( DASH )? EIGHT
                     {
-                    TWENTY152=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_or_int_1_to_312082); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY152);
+                    TWENTY108=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_1_to_311427); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY108);
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:226:12: ( DASH )?
-                    int alt41=2;
-                    int LA41_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:151:12: ( DASH )?
+                    int alt32=2;
+                    int LA32_0 = input.LA(1);
 
-                    if ( (LA41_0==DASH) ) {
-                        alt41=1;
+                    if ( (LA32_0==DASH) ) {
+                        alt32=1;
                     }
-                    switch (alt41) {
+                    switch (alt32) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:226:12: DASH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:151:12: DASH
                             {
-                            DASH153=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_or_int_1_to_312084); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_DASH.add(DASH153);
+                            DASH109=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_1_to_311429); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_DASH.add(DASH109);
 
 
                             }
@@ -5697,8 +4356,8 @@ public class DateParser extends Parser {
 
                     }
 
-                    EIGHT154=(Token)match(input,EIGHT,FOLLOW_EIGHT_in_spelled_or_int_1_to_312087); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EIGHT.add(EIGHT154);
+                    EIGHT110=(Token)match(input,EIGHT,FOLLOW_EIGHT_in_spelled_1_to_311432); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EIGHT.add(EIGHT110);
 
 
 
@@ -5714,7 +4373,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 226:24: -> INT[\"28\"]
+                    // 151:24: -> INT[\"28\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "28"));
 
@@ -5723,25 +4382,25 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 30 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:227:5: TWENTY ( DASH )? NINE
+                case 29 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:152:5: TWENTY ( DASH )? NINE
                     {
-                    TWENTY155=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_or_int_1_to_312098); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY155);
+                    TWENTY111=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_1_to_311443); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY111);
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:227:12: ( DASH )?
-                    int alt42=2;
-                    int LA42_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:152:12: ( DASH )?
+                    int alt33=2;
+                    int LA33_0 = input.LA(1);
 
-                    if ( (LA42_0==DASH) ) {
-                        alt42=1;
+                    if ( (LA33_0==DASH) ) {
+                        alt33=1;
                     }
-                    switch (alt42) {
+                    switch (alt33) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:227:12: DASH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:152:12: DASH
                             {
-                            DASH156=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_or_int_1_to_312100); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_DASH.add(DASH156);
+                            DASH112=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_1_to_311445); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_DASH.add(DASH112);
 
 
                             }
@@ -5749,8 +4408,8 @@ public class DateParser extends Parser {
 
                     }
 
-                    NINE157=(Token)match(input,NINE,FOLLOW_NINE_in_spelled_or_int_1_to_312103); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NINE.add(NINE157);
+                    NINE113=(Token)match(input,NINE,FOLLOW_NINE_in_spelled_1_to_311448); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NINE.add(NINE113);
 
 
 
@@ -5766,7 +4425,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 227:24: -> INT[\"29\"]
+                    // 152:24: -> INT[\"29\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "29"));
 
@@ -5775,11 +4434,11 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 31 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:228:5: THIRTY
+                case 30 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:153:5: THIRTY
                     {
-                    THIRTY158=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_or_int_1_to_312115); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTY.add(THIRTY158);
+                    THIRTY114=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_1_to_311460); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRTY.add(THIRTY114);
 
 
 
@@ -5795,7 +4454,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 228:24: -> INT[\"30\"]
+                    // 153:24: -> INT[\"30\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "30"));
 
@@ -5804,25 +4463,25 @@ public class DateParser extends Parser {
                     retval.tree = root_0;}
                     }
                     break;
-                case 32 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:229:5: THIRTY ( DASH )? ONE
+                case 31 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:154:5: THIRTY ( DASH )? ONE
                     {
-                    THIRTY159=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_or_int_1_to_312138); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTY.add(THIRTY159);
+                    THIRTY115=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_1_to_311483); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRTY.add(THIRTY115);
 
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:229:12: ( DASH )?
-                    int alt43=2;
-                    int LA43_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:154:12: ( DASH )?
+                    int alt34=2;
+                    int LA34_0 = input.LA(1);
 
-                    if ( (LA43_0==DASH) ) {
-                        alt43=1;
+                    if ( (LA34_0==DASH) ) {
+                        alt34=1;
                     }
-                    switch (alt43) {
+                    switch (alt34) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:229:12: DASH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:154:12: DASH
                             {
-                            DASH160=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_or_int_1_to_312140); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_DASH.add(DASH160);
+                            DASH116=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_1_to_311485); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_DASH.add(DASH116);
 
 
                             }
@@ -5830,8 +4489,8 @@ public class DateParser extends Parser {
 
                     }
 
-                    ONE161=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_or_int_1_to_312143); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE.add(ONE161);
+                    ONE117=(Token)match(input,ONE,FOLLOW_ONE_in_spelled_1_to_311488); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ONE.add(ONE117);
 
 
 
@@ -5847,7 +4506,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 229:24: -> INT[\"31\"]
+                    // 154:24: -> INT[\"31\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "31"));
 
@@ -5876,7 +4535,7 @@ public class DateParser extends Parser {
         }
         return retval;
     }
-    // $ANTLR end "spelled_or_int_1_to_31"
+    // $ANTLR end "spelled_1_to_31"
 
     public static class spelled_sequence_1_to_31_return extends ParserRuleReturnScope {
         Object tree;
@@ -5884,136 +4543,136 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "spelled_sequence_1_to_31"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:234:1: spelled_sequence_1_to_31 : ( FIRST -> INT[\"1\"] | SECOND -> INT[\"2\"] | THIRD -> INT[\"3\"] | FOURTH -> INT[\"4\"] | FIFTH -> INT[\"5\"] | SIXTH -> INT[\"6\"] | SEVENTH -> INT[\"7\"] | EIGHTH -> INT[\"8\"] | NINTH -> INT[\"9\"] | TENTH -> INT[\"10\"] | ELEVENTH -> INT[\"11\"] | TWELFTH -> INT[\"12\"] | THIRTEENTH -> INT[\"13\"] | FOURTEENTH -> INT[\"14\"] | FIFTEENTH -> INT[\"15\"] | SIXTEENTH -> INT[\"16\"] | SEVENTEENTH -> INT[\"17\"] | EIGHTEENTH -> INT[\"18\"] | NINETEENTH -> INT[\"19\"] | TWENTIETH -> INT[\"20\"] | ( TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) ) -> INT[\"21\"] | ( TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) ) -> INT[\"22\"] | ( TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) ) -> INT[\"23\"] | ( TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) ) -> INT[\"24\"] | ( TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) ) -> INT[\"25\"] | ( TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) ) -> INT[\"26\"] | ( TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) ) -> INT[\"27\"] | ( TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) ) -> INT[\"28\"] | ( TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) ) -> INT[\"29\"] | THIRTIETH -> INT[\"30\"] | ( THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) ) -> INT[\"31\"] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:159:1: spelled_sequence_1_to_31 : ( FIRST -> INT[\"1\"] | SECOND -> INT[\"2\"] | THIRD -> INT[\"3\"] | FOURTH -> INT[\"4\"] | FIFTH -> INT[\"5\"] | SIXTH -> INT[\"6\"] | SEVENTH -> INT[\"7\"] | EIGHTH -> INT[\"8\"] | NINTH -> INT[\"9\"] | TENTH -> INT[\"10\"] | ELEVENTH -> INT[\"11\"] | TWELFTH -> INT[\"12\"] | THIRTEENTH -> INT[\"13\"] | FOURTEENTH -> INT[\"14\"] | FIFTEENTH -> INT[\"15\"] | SIXTEENTH -> INT[\"16\"] | SEVENTEENTH -> INT[\"17\"] | EIGHTEENTH -> INT[\"18\"] | NINETEENTH -> INT[\"19\"] | TWENTIETH -> INT[\"20\"] | ( TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) ) -> INT[\"21\"] | ( TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) ) -> INT[\"22\"] | ( TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) ) -> INT[\"23\"] | ( TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) ) -> INT[\"24\"] | ( TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) ) -> INT[\"25\"] | ( TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) ) -> INT[\"26\"] | ( TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) ) -> INT[\"27\"] | ( TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) ) -> INT[\"28\"] | ( TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) ) -> INT[\"29\"] | THIRTIETH -> INT[\"30\"] | ( THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) ) -> INT[\"31\"] );
     public final DateParser.spelled_sequence_1_to_31_return spelled_sequence_1_to_31() throws RecognitionException {
         DateParser.spelled_sequence_1_to_31_return retval = new DateParser.spelled_sequence_1_to_31_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token FIRST162=null;
-        Token SECOND163=null;
-        Token THIRD164=null;
-        Token FOURTH165=null;
-        Token FIFTH166=null;
-        Token SIXTH167=null;
-        Token SEVENTH168=null;
+        Token FIRST118=null;
+        Token SECOND119=null;
+        Token THIRD120=null;
+        Token FOURTH121=null;
+        Token FIFTH122=null;
+        Token SIXTH123=null;
+        Token SEVENTH124=null;
+        Token EIGHTH125=null;
+        Token NINTH126=null;
+        Token TENTH127=null;
+        Token ELEVENTH128=null;
+        Token TWELFTH129=null;
+        Token THIRTEENTH130=null;
+        Token FOURTEENTH131=null;
+        Token FIFTEENTH132=null;
+        Token SIXTEENTH133=null;
+        Token SEVENTEENTH134=null;
+        Token EIGHTEENTH135=null;
+        Token NINETEENTH136=null;
+        Token TWENTIETH137=null;
+        Token TWENTY_FIRST138=null;
+        Token TWENTY139=null;
+        Token DASH140=null;
+        Token FIRST141=null;
+        Token TWENTY_SECOND142=null;
+        Token TWENTY143=null;
+        Token DASH144=null;
+        Token SECOND145=null;
+        Token TWENTY_THIRD146=null;
+        Token TWENTY147=null;
+        Token DASH148=null;
+        Token THIRD149=null;
+        Token TWENTY_FOURTH150=null;
+        Token TWENTY151=null;
+        Token DASH152=null;
+        Token FOURTH153=null;
+        Token TWENTY_FIFTH154=null;
+        Token TWENTY155=null;
+        Token DASH156=null;
+        Token FIFTH157=null;
+        Token TWENTY_SIXTH158=null;
+        Token TWENTY159=null;
+        Token DASH160=null;
+        Token SIXTH161=null;
+        Token TWENTY_SEVENTH162=null;
+        Token TWENTY163=null;
+        Token DASH164=null;
+        Token SEVENTH165=null;
+        Token TWENTY_EIGHTH166=null;
+        Token TWENTY167=null;
+        Token DASH168=null;
         Token EIGHTH169=null;
-        Token NINTH170=null;
-        Token TENTH171=null;
-        Token ELEVENTH172=null;
-        Token TWELFTH173=null;
-        Token THIRTEENTH174=null;
-        Token FOURTEENTH175=null;
-        Token FIFTEENTH176=null;
-        Token SIXTEENTH177=null;
-        Token SEVENTEENTH178=null;
-        Token EIGHTEENTH179=null;
-        Token NINETEENTH180=null;
-        Token TWENTIETH181=null;
-        Token TWENTY_FIRST182=null;
-        Token TWENTY183=null;
-        Token DASH184=null;
-        Token FIRST185=null;
-        Token TWENTY_SECOND186=null;
-        Token TWENTY187=null;
-        Token DASH188=null;
-        Token SECOND189=null;
-        Token TWENTY_THIRD190=null;
-        Token TWENTY191=null;
-        Token DASH192=null;
-        Token THIRD193=null;
-        Token TWENTY_FOURTH194=null;
-        Token TWENTY195=null;
-        Token DASH196=null;
-        Token FOURTH197=null;
-        Token TWENTY_FIFTH198=null;
-        Token TWENTY199=null;
-        Token DASH200=null;
-        Token FIFTH201=null;
-        Token TWENTY_SIXTH202=null;
-        Token TWENTY203=null;
-        Token DASH204=null;
-        Token SIXTH205=null;
-        Token TWENTY_SEVENTH206=null;
-        Token TWENTY207=null;
-        Token DASH208=null;
-        Token SEVENTH209=null;
-        Token TWENTY_EIGHTH210=null;
-        Token TWENTY211=null;
-        Token DASH212=null;
-        Token EIGHTH213=null;
-        Token TWENTY_NINTH214=null;
-        Token TWENTY215=null;
-        Token DASH216=null;
-        Token NINTH217=null;
-        Token THIRTIETH218=null;
-        Token THIRTY_FIRST219=null;
-        Token THIRTY220=null;
-        Token DASH221=null;
-        Token FIRST222=null;
+        Token TWENTY_NINTH170=null;
+        Token TWENTY171=null;
+        Token DASH172=null;
+        Token NINTH173=null;
+        Token THIRTIETH174=null;
+        Token THIRTY_FIRST175=null;
+        Token THIRTY176=null;
+        Token DASH177=null;
+        Token FIRST178=null;
 
-        Object FIRST162_tree=null;
-        Object SECOND163_tree=null;
-        Object THIRD164_tree=null;
-        Object FOURTH165_tree=null;
-        Object FIFTH166_tree=null;
-        Object SIXTH167_tree=null;
-        Object SEVENTH168_tree=null;
+        Object FIRST118_tree=null;
+        Object SECOND119_tree=null;
+        Object THIRD120_tree=null;
+        Object FOURTH121_tree=null;
+        Object FIFTH122_tree=null;
+        Object SIXTH123_tree=null;
+        Object SEVENTH124_tree=null;
+        Object EIGHTH125_tree=null;
+        Object NINTH126_tree=null;
+        Object TENTH127_tree=null;
+        Object ELEVENTH128_tree=null;
+        Object TWELFTH129_tree=null;
+        Object THIRTEENTH130_tree=null;
+        Object FOURTEENTH131_tree=null;
+        Object FIFTEENTH132_tree=null;
+        Object SIXTEENTH133_tree=null;
+        Object SEVENTEENTH134_tree=null;
+        Object EIGHTEENTH135_tree=null;
+        Object NINETEENTH136_tree=null;
+        Object TWENTIETH137_tree=null;
+        Object TWENTY_FIRST138_tree=null;
+        Object TWENTY139_tree=null;
+        Object DASH140_tree=null;
+        Object FIRST141_tree=null;
+        Object TWENTY_SECOND142_tree=null;
+        Object TWENTY143_tree=null;
+        Object DASH144_tree=null;
+        Object SECOND145_tree=null;
+        Object TWENTY_THIRD146_tree=null;
+        Object TWENTY147_tree=null;
+        Object DASH148_tree=null;
+        Object THIRD149_tree=null;
+        Object TWENTY_FOURTH150_tree=null;
+        Object TWENTY151_tree=null;
+        Object DASH152_tree=null;
+        Object FOURTH153_tree=null;
+        Object TWENTY_FIFTH154_tree=null;
+        Object TWENTY155_tree=null;
+        Object DASH156_tree=null;
+        Object FIFTH157_tree=null;
+        Object TWENTY_SIXTH158_tree=null;
+        Object TWENTY159_tree=null;
+        Object DASH160_tree=null;
+        Object SIXTH161_tree=null;
+        Object TWENTY_SEVENTH162_tree=null;
+        Object TWENTY163_tree=null;
+        Object DASH164_tree=null;
+        Object SEVENTH165_tree=null;
+        Object TWENTY_EIGHTH166_tree=null;
+        Object TWENTY167_tree=null;
+        Object DASH168_tree=null;
         Object EIGHTH169_tree=null;
-        Object NINTH170_tree=null;
-        Object TENTH171_tree=null;
-        Object ELEVENTH172_tree=null;
-        Object TWELFTH173_tree=null;
-        Object THIRTEENTH174_tree=null;
-        Object FOURTEENTH175_tree=null;
-        Object FIFTEENTH176_tree=null;
-        Object SIXTEENTH177_tree=null;
-        Object SEVENTEENTH178_tree=null;
-        Object EIGHTEENTH179_tree=null;
-        Object NINETEENTH180_tree=null;
-        Object TWENTIETH181_tree=null;
-        Object TWENTY_FIRST182_tree=null;
-        Object TWENTY183_tree=null;
-        Object DASH184_tree=null;
-        Object FIRST185_tree=null;
-        Object TWENTY_SECOND186_tree=null;
-        Object TWENTY187_tree=null;
-        Object DASH188_tree=null;
-        Object SECOND189_tree=null;
-        Object TWENTY_THIRD190_tree=null;
-        Object TWENTY191_tree=null;
-        Object DASH192_tree=null;
-        Object THIRD193_tree=null;
-        Object TWENTY_FOURTH194_tree=null;
-        Object TWENTY195_tree=null;
-        Object DASH196_tree=null;
-        Object FOURTH197_tree=null;
-        Object TWENTY_FIFTH198_tree=null;
-        Object TWENTY199_tree=null;
-        Object DASH200_tree=null;
-        Object FIFTH201_tree=null;
-        Object TWENTY_SIXTH202_tree=null;
-        Object TWENTY203_tree=null;
-        Object DASH204_tree=null;
-        Object SIXTH205_tree=null;
-        Object TWENTY_SEVENTH206_tree=null;
-        Object TWENTY207_tree=null;
-        Object DASH208_tree=null;
-        Object SEVENTH209_tree=null;
-        Object TWENTY_EIGHTH210_tree=null;
-        Object TWENTY211_tree=null;
-        Object DASH212_tree=null;
-        Object EIGHTH213_tree=null;
-        Object TWENTY_NINTH214_tree=null;
-        Object TWENTY215_tree=null;
-        Object DASH216_tree=null;
-        Object NINTH217_tree=null;
-        Object THIRTIETH218_tree=null;
-        Object THIRTY_FIRST219_tree=null;
-        Object THIRTY220_tree=null;
-        Object DASH221_tree=null;
-        Object FIRST222_tree=null;
+        Object TWENTY_NINTH170_tree=null;
+        Object TWENTY171_tree=null;
+        Object DASH172_tree=null;
+        Object NINTH173_tree=null;
+        Object THIRTIETH174_tree=null;
+        Object THIRTY_FIRST175_tree=null;
+        Object THIRTY176_tree=null;
+        Object DASH177_tree=null;
+        Object FIRST178_tree=null;
         RewriteRuleTokenStream stream_THIRD=new RewriteRuleTokenStream(adaptor,"token THIRD");
         RewriteRuleTokenStream stream_FOURTH=new RewriteRuleTokenStream(adaptor,"token FOURTH");
         RewriteRuleTokenStream stream_FIFTEENTH=new RewriteRuleTokenStream(adaptor,"token FIFTEENTH");
@@ -6050,15 +4709,15 @@ public class DateParser extends Parser {
         RewriteRuleTokenStream stream_FIRST=new RewriteRuleTokenStream(adaptor,"token FIRST");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:235:3: ( FIRST -> INT[\"1\"] | SECOND -> INT[\"2\"] | THIRD -> INT[\"3\"] | FOURTH -> INT[\"4\"] | FIFTH -> INT[\"5\"] | SIXTH -> INT[\"6\"] | SEVENTH -> INT[\"7\"] | EIGHTH -> INT[\"8\"] | NINTH -> INT[\"9\"] | TENTH -> INT[\"10\"] | ELEVENTH -> INT[\"11\"] | TWELFTH -> INT[\"12\"] | THIRTEENTH -> INT[\"13\"] | FOURTEENTH -> INT[\"14\"] | FIFTEENTH -> INT[\"15\"] | SIXTEENTH -> INT[\"16\"] | SEVENTEENTH -> INT[\"17\"] | EIGHTEENTH -> INT[\"18\"] | NINETEENTH -> INT[\"19\"] | TWENTIETH -> INT[\"20\"] | ( TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) ) -> INT[\"21\"] | ( TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) ) -> INT[\"22\"] | ( TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) ) -> INT[\"23\"] | ( TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) ) -> INT[\"24\"] | ( TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) ) -> INT[\"25\"] | ( TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) ) -> INT[\"26\"] | ( TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) ) -> INT[\"27\"] | ( TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) ) -> INT[\"28\"] | ( TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) ) -> INT[\"29\"] | THIRTIETH -> INT[\"30\"] | ( THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) ) -> INT[\"31\"] )
-            int alt65=31;
-            alt65 = dfa65.predict(input);
-            switch (alt65) {
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:160:3: ( FIRST -> INT[\"1\"] | SECOND -> INT[\"2\"] | THIRD -> INT[\"3\"] | FOURTH -> INT[\"4\"] | FIFTH -> INT[\"5\"] | SIXTH -> INT[\"6\"] | SEVENTH -> INT[\"7\"] | EIGHTH -> INT[\"8\"] | NINTH -> INT[\"9\"] | TENTH -> INT[\"10\"] | ELEVENTH -> INT[\"11\"] | TWELFTH -> INT[\"12\"] | THIRTEENTH -> INT[\"13\"] | FOURTEENTH -> INT[\"14\"] | FIFTEENTH -> INT[\"15\"] | SIXTEENTH -> INT[\"16\"] | SEVENTEENTH -> INT[\"17\"] | EIGHTEENTH -> INT[\"18\"] | NINETEENTH -> INT[\"19\"] | TWENTIETH -> INT[\"20\"] | ( TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) ) -> INT[\"21\"] | ( TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) ) -> INT[\"22\"] | ( TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) ) -> INT[\"23\"] | ( TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) ) -> INT[\"24\"] | ( TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) ) -> INT[\"25\"] | ( TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) ) -> INT[\"26\"] | ( TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) ) -> INT[\"27\"] | ( TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) ) -> INT[\"28\"] | ( TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) ) -> INT[\"29\"] | THIRTIETH -> INT[\"30\"] | ( THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) ) -> INT[\"31\"] )
+            int alt56=31;
+            alt56 = dfa56.predict(input);
+            switch (alt56) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:235:5: FIRST
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:160:5: FIRST
                     {
-                    FIRST162=(Token)match(input,FIRST,FOLLOW_FIRST_in_spelled_sequence_1_to_312167); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FIRST.add(FIRST162);
+                    FIRST118=(Token)match(input,FIRST,FOLLOW_FIRST_in_spelled_sequence_1_to_311512); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FIRST.add(FIRST118);
 
 
 
@@ -6074,7 +4733,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 235:17: -> INT[\"1\"]
+                    // 160:17: -> INT[\"1\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "1"));
 
@@ -6084,10 +4743,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:236:5: SECOND
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:161:5: SECOND
                     {
-                    SECOND163=(Token)match(input,SECOND,FOLLOW_SECOND_in_spelled_sequence_1_to_312184); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SECOND.add(SECOND163);
+                    SECOND119=(Token)match(input,SECOND,FOLLOW_SECOND_in_spelled_sequence_1_to_311529); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SECOND.add(SECOND119);
 
 
 
@@ -6103,7 +4762,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 236:17: -> INT[\"2\"]
+                    // 161:17: -> INT[\"2\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "2"));
 
@@ -6113,10 +4772,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:237:5: THIRD
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:162:5: THIRD
                     {
-                    THIRD164=(Token)match(input,THIRD,FOLLOW_THIRD_in_spelled_sequence_1_to_312200); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRD.add(THIRD164);
+                    THIRD120=(Token)match(input,THIRD,FOLLOW_THIRD_in_spelled_sequence_1_to_311545); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRD.add(THIRD120);
 
 
 
@@ -6132,7 +4791,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 237:17: -> INT[\"3\"]
+                    // 162:17: -> INT[\"3\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "3"));
 
@@ -6142,10 +4801,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:238:5: FOURTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:163:5: FOURTH
                     {
-                    FOURTH165=(Token)match(input,FOURTH,FOLLOW_FOURTH_in_spelled_sequence_1_to_312217); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FOURTH.add(FOURTH165);
+                    FOURTH121=(Token)match(input,FOURTH,FOLLOW_FOURTH_in_spelled_sequence_1_to_311562); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FOURTH.add(FOURTH121);
 
 
 
@@ -6161,7 +4820,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 238:17: -> INT[\"4\"]
+                    // 163:17: -> INT[\"4\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "4"));
 
@@ -6171,10 +4830,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:239:5: FIFTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:164:5: FIFTH
                     {
-                    FIFTH166=(Token)match(input,FIFTH,FOLLOW_FIFTH_in_spelled_sequence_1_to_312233); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FIFTH.add(FIFTH166);
+                    FIFTH122=(Token)match(input,FIFTH,FOLLOW_FIFTH_in_spelled_sequence_1_to_311578); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FIFTH.add(FIFTH122);
 
 
 
@@ -6190,7 +4849,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 239:17: -> INT[\"5\"]
+                    // 164:17: -> INT[\"5\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "5"));
 
@@ -6200,10 +4859,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:240:5: SIXTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:165:5: SIXTH
                     {
-                    SIXTH167=(Token)match(input,SIXTH,FOLLOW_SIXTH_in_spelled_sequence_1_to_312250); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SIXTH.add(SIXTH167);
+                    SIXTH123=(Token)match(input,SIXTH,FOLLOW_SIXTH_in_spelled_sequence_1_to_311595); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SIXTH.add(SIXTH123);
 
 
 
@@ -6219,7 +4878,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 240:17: -> INT[\"6\"]
+                    // 165:17: -> INT[\"6\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "6"));
 
@@ -6229,10 +4888,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:241:5: SEVENTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:166:5: SEVENTH
                     {
-                    SEVENTH168=(Token)match(input,SEVENTH,FOLLOW_SEVENTH_in_spelled_sequence_1_to_312267); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEVENTH.add(SEVENTH168);
+                    SEVENTH124=(Token)match(input,SEVENTH,FOLLOW_SEVENTH_in_spelled_sequence_1_to_311612); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEVENTH.add(SEVENTH124);
 
 
 
@@ -6248,7 +4907,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 241:17: -> INT[\"7\"]
+                    // 166:17: -> INT[\"7\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "7"));
 
@@ -6258,10 +4917,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 8 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:242:5: EIGHTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:167:5: EIGHTH
                     {
-                    EIGHTH169=(Token)match(input,EIGHTH,FOLLOW_EIGHTH_in_spelled_sequence_1_to_312282); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EIGHTH.add(EIGHTH169);
+                    EIGHTH125=(Token)match(input,EIGHTH,FOLLOW_EIGHTH_in_spelled_sequence_1_to_311627); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EIGHTH.add(EIGHTH125);
 
 
 
@@ -6277,7 +4936,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 242:17: -> INT[\"8\"]
+                    // 167:17: -> INT[\"8\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "8"));
 
@@ -6287,10 +4946,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 9 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:243:5: NINTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:168:5: NINTH
                     {
-                    NINTH170=(Token)match(input,NINTH,FOLLOW_NINTH_in_spelled_sequence_1_to_312298); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NINTH.add(NINTH170);
+                    NINTH126=(Token)match(input,NINTH,FOLLOW_NINTH_in_spelled_sequence_1_to_311643); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NINTH.add(NINTH126);
 
 
 
@@ -6306,7 +4965,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 243:17: -> INT[\"9\"]
+                    // 168:17: -> INT[\"9\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "9"));
 
@@ -6316,10 +4975,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 10 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:244:5: TENTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:169:5: TENTH
                     {
-                    TENTH171=(Token)match(input,TENTH,FOLLOW_TENTH_in_spelled_sequence_1_to_312315); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TENTH.add(TENTH171);
+                    TENTH127=(Token)match(input,TENTH,FOLLOW_TENTH_in_spelled_sequence_1_to_311660); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TENTH.add(TENTH127);
 
 
 
@@ -6335,7 +4994,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 244:17: -> INT[\"10\"]
+                    // 169:17: -> INT[\"10\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "10"));
 
@@ -6345,10 +5004,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 11 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:245:5: ELEVENTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:170:5: ELEVENTH
                     {
-                    ELEVENTH172=(Token)match(input,ELEVENTH,FOLLOW_ELEVENTH_in_spelled_sequence_1_to_312332); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ELEVENTH.add(ELEVENTH172);
+                    ELEVENTH128=(Token)match(input,ELEVENTH,FOLLOW_ELEVENTH_in_spelled_sequence_1_to_311677); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ELEVENTH.add(ELEVENTH128);
 
 
 
@@ -6364,7 +5023,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 245:17: -> INT[\"11\"]
+                    // 170:17: -> INT[\"11\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "11"));
 
@@ -6374,10 +5033,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 12 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:246:5: TWELFTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:171:5: TWELFTH
                     {
-                    TWELFTH173=(Token)match(input,TWELFTH,FOLLOW_TWELFTH_in_spelled_sequence_1_to_312346); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWELFTH.add(TWELFTH173);
+                    TWELFTH129=(Token)match(input,TWELFTH,FOLLOW_TWELFTH_in_spelled_sequence_1_to_311691); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWELFTH.add(TWELFTH129);
 
 
 
@@ -6393,7 +5052,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 246:17: -> INT[\"12\"]
+                    // 171:17: -> INT[\"12\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "12"));
 
@@ -6403,10 +5062,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 13 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:247:5: THIRTEENTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:172:5: THIRTEENTH
                     {
-                    THIRTEENTH174=(Token)match(input,THIRTEENTH,FOLLOW_THIRTEENTH_in_spelled_sequence_1_to_312361); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTEENTH.add(THIRTEENTH174);
+                    THIRTEENTH130=(Token)match(input,THIRTEENTH,FOLLOW_THIRTEENTH_in_spelled_sequence_1_to_311706); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRTEENTH.add(THIRTEENTH130);
 
 
 
@@ -6422,7 +5081,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 247:17: -> INT[\"13\"]
+                    // 172:17: -> INT[\"13\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "13"));
 
@@ -6432,10 +5091,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 14 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:248:5: FOURTEENTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:173:5: FOURTEENTH
                     {
-                    FOURTEENTH175=(Token)match(input,FOURTEENTH,FOLLOW_FOURTEENTH_in_spelled_sequence_1_to_312373); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FOURTEENTH.add(FOURTEENTH175);
+                    FOURTEENTH131=(Token)match(input,FOURTEENTH,FOLLOW_FOURTEENTH_in_spelled_sequence_1_to_311718); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FOURTEENTH.add(FOURTEENTH131);
 
 
 
@@ -6451,7 +5110,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 248:17: -> INT[\"14\"]
+                    // 173:17: -> INT[\"14\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "14"));
 
@@ -6461,10 +5120,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 15 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:249:5: FIFTEENTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:174:5: FIFTEENTH
                     {
-                    FIFTEENTH176=(Token)match(input,FIFTEENTH,FOLLOW_FIFTEENTH_in_spelled_sequence_1_to_312385); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FIFTEENTH.add(FIFTEENTH176);
+                    FIFTEENTH132=(Token)match(input,FIFTEENTH,FOLLOW_FIFTEENTH_in_spelled_sequence_1_to_311730); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_FIFTEENTH.add(FIFTEENTH132);
 
 
 
@@ -6480,7 +5139,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 249:17: -> INT[\"15\"]
+                    // 174:17: -> INT[\"15\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "15"));
 
@@ -6490,10 +5149,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 16 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:250:5: SIXTEENTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:175:5: SIXTEENTH
                     {
-                    SIXTEENTH177=(Token)match(input,SIXTEENTH,FOLLOW_SIXTEENTH_in_spelled_sequence_1_to_312398); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SIXTEENTH.add(SIXTEENTH177);
+                    SIXTEENTH133=(Token)match(input,SIXTEENTH,FOLLOW_SIXTEENTH_in_spelled_sequence_1_to_311743); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SIXTEENTH.add(SIXTEENTH133);
 
 
 
@@ -6509,7 +5168,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 250:17: -> INT[\"16\"]
+                    // 175:17: -> INT[\"16\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "16"));
 
@@ -6519,10 +5178,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 17 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:251:5: SEVENTEENTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:176:5: SEVENTEENTH
                     {
-                    SEVENTEENTH178=(Token)match(input,SEVENTEENTH,FOLLOW_SEVENTEENTH_in_spelled_sequence_1_to_312411); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SEVENTEENTH.add(SEVENTEENTH178);
+                    SEVENTEENTH134=(Token)match(input,SEVENTEENTH,FOLLOW_SEVENTEENTH_in_spelled_sequence_1_to_311756); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SEVENTEENTH.add(SEVENTEENTH134);
 
 
 
@@ -6538,7 +5197,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 251:17: -> INT[\"17\"]
+                    // 176:17: -> INT[\"17\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "17"));
 
@@ -6548,10 +5207,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 18 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:252:5: EIGHTEENTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:177:5: EIGHTEENTH
                     {
-                    EIGHTEENTH179=(Token)match(input,EIGHTEENTH,FOLLOW_EIGHTEENTH_in_spelled_sequence_1_to_312422); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_EIGHTEENTH.add(EIGHTEENTH179);
+                    EIGHTEENTH135=(Token)match(input,EIGHTEENTH,FOLLOW_EIGHTEENTH_in_spelled_sequence_1_to_311767); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_EIGHTEENTH.add(EIGHTEENTH135);
 
 
 
@@ -6567,7 +5226,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 252:17: -> INT[\"18\"]
+                    // 177:17: -> INT[\"18\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "18"));
 
@@ -6577,10 +5236,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 19 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:253:5: NINETEENTH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:178:5: NINETEENTH
                     {
-                    NINETEENTH180=(Token)match(input,NINETEENTH,FOLLOW_NINETEENTH_in_spelled_sequence_1_to_312434); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NINETEENTH.add(NINETEENTH180);
+                    NINETEENTH136=(Token)match(input,NINETEENTH,FOLLOW_NINETEENTH_in_spelled_sequence_1_to_311779); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NINETEENTH.add(NINETEENTH136);
 
 
 
@@ -6596,7 +5255,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 253:17: -> INT[\"19\"]
+                    // 178:17: -> INT[\"19\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "19"));
 
@@ -6606,10 +5265,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 20 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:254:5: TWENTIETH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:179:5: TWENTIETH
                     {
-                    TWENTIETH181=(Token)match(input,TWENTIETH,FOLLOW_TWENTIETH_in_spelled_sequence_1_to_312446); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTIETH.add(TWENTIETH181);
+                    TWENTIETH137=(Token)match(input,TWENTIETH,FOLLOW_TWENTIETH_in_spelled_sequence_1_to_311791); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTIETH.add(TWENTIETH137);
 
 
 
@@ -6625,7 +5284,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 254:17: -> INT[\"20\"]
+                    // 179:17: -> INT[\"20\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "20"));
 
@@ -6635,57 +5294,57 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 21 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:255:5: ( TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:180:5: ( TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) )
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:255:5: ( TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) )
-                    int alt46=2;
-                    int LA46_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:180:5: ( TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) )
+                    int alt37=2;
+                    int LA37_0 = input.LA(1);
 
-                    if ( (LA46_0==TWENTY_FIRST) ) {
-                        alt46=1;
+                    if ( (LA37_0==TWENTY_FIRST) ) {
+                        alt37=1;
                     }
-                    else if ( (LA46_0==TWENTY) ) {
-                        alt46=2;
+                    else if ( (LA37_0==TWENTY) ) {
+                        alt37=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 46, 0, input);
+                            new NoViableAltException("", 37, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt46) {
+                    switch (alt37) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:255:6: TWENTY_FIRST
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:180:6: TWENTY_FIRST
                             {
-                            TWENTY_FIRST182=(Token)match(input,TWENTY_FIRST,FOLLOW_TWENTY_FIRST_in_spelled_sequence_1_to_312460); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY_FIRST.add(TWENTY_FIRST182);
+                            TWENTY_FIRST138=(Token)match(input,TWENTY_FIRST,FOLLOW_TWENTY_FIRST_in_spelled_sequence_1_to_311805); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY_FIRST.add(TWENTY_FIRST138);
 
 
                             }
                             break;
                         case 2 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:255:23: ( TWENTY ( DASH )? FIRST )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:180:23: ( TWENTY ( DASH )? FIRST )
                             {
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:255:23: ( TWENTY ( DASH )? FIRST )
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:255:24: TWENTY ( DASH )? FIRST
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:180:23: ( TWENTY ( DASH )? FIRST )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:180:24: TWENTY ( DASH )? FIRST
                             {
-                            TWENTY183=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312467); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY183);
+                            TWENTY139=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_311812); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY139);
 
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:255:31: ( DASH )?
-                            int alt45=2;
-                            int LA45_0 = input.LA(1);
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:180:31: ( DASH )?
+                            int alt36=2;
+                            int LA36_0 = input.LA(1);
 
-                            if ( (LA45_0==DASH) ) {
-                                alt45=1;
+                            if ( (LA36_0==DASH) ) {
+                                alt36=1;
                             }
-                            switch (alt45) {
+                            switch (alt36) {
                                 case 1 :
-                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:255:31: DASH
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:180:31: DASH
                                     {
-                                    DASH184=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312469); if (state.failed) return retval; 
-                                    if ( state.backtracking==0 ) stream_DASH.add(DASH184);
+                                    DASH140=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_311814); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_DASH.add(DASH140);
 
 
                                     }
@@ -6693,8 +5352,8 @@ public class DateParser extends Parser {
 
                             }
 
-                            FIRST185=(Token)match(input,FIRST,FOLLOW_FIRST_in_spelled_sequence_1_to_312472); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_FIRST.add(FIRST185);
+                            FIRST141=(Token)match(input,FIRST,FOLLOW_FIRST_in_spelled_sequence_1_to_311817); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_FIRST.add(FIRST141);
 
 
                             }
@@ -6719,7 +5378,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 255:47: -> INT[\"21\"]
+                    // 180:47: -> INT[\"21\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "21"));
 
@@ -6729,57 +5388,57 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 22 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:256:5: ( TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:181:5: ( TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) )
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:256:5: ( TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) )
-                    int alt48=2;
-                    int LA48_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:181:5: ( TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) )
+                    int alt39=2;
+                    int LA39_0 = input.LA(1);
 
-                    if ( (LA48_0==TWENTY_SECOND) ) {
-                        alt48=1;
+                    if ( (LA39_0==TWENTY_SECOND) ) {
+                        alt39=1;
                     }
-                    else if ( (LA48_0==TWENTY) ) {
-                        alt48=2;
+                    else if ( (LA39_0==TWENTY) ) {
+                        alt39=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 48, 0, input);
+                            new NoViableAltException("", 39, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt48) {
+                    switch (alt39) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:256:6: TWENTY_SECOND
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:181:6: TWENTY_SECOND
                             {
-                            TWENTY_SECOND186=(Token)match(input,TWENTY_SECOND,FOLLOW_TWENTY_SECOND_in_spelled_sequence_1_to_312488); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY_SECOND.add(TWENTY_SECOND186);
+                            TWENTY_SECOND142=(Token)match(input,TWENTY_SECOND,FOLLOW_TWENTY_SECOND_in_spelled_sequence_1_to_311833); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY_SECOND.add(TWENTY_SECOND142);
 
 
                             }
                             break;
                         case 2 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:256:23: ( TWENTY ( DASH )? SECOND )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:181:23: ( TWENTY ( DASH )? SECOND )
                             {
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:256:23: ( TWENTY ( DASH )? SECOND )
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:256:24: TWENTY ( DASH )? SECOND
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:181:23: ( TWENTY ( DASH )? SECOND )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:181:24: TWENTY ( DASH )? SECOND
                             {
-                            TWENTY187=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312494); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY187);
+                            TWENTY143=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_311839); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY143);
 
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:256:31: ( DASH )?
-                            int alt47=2;
-                            int LA47_0 = input.LA(1);
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:181:31: ( DASH )?
+                            int alt38=2;
+                            int LA38_0 = input.LA(1);
 
-                            if ( (LA47_0==DASH) ) {
-                                alt47=1;
+                            if ( (LA38_0==DASH) ) {
+                                alt38=1;
                             }
-                            switch (alt47) {
+                            switch (alt38) {
                                 case 1 :
-                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:256:31: DASH
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:181:31: DASH
                                     {
-                                    DASH188=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312496); if (state.failed) return retval; 
-                                    if ( state.backtracking==0 ) stream_DASH.add(DASH188);
+                                    DASH144=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_311841); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_DASH.add(DASH144);
 
 
                                     }
@@ -6787,8 +5446,8 @@ public class DateParser extends Parser {
 
                             }
 
-                            SECOND189=(Token)match(input,SECOND,FOLLOW_SECOND_in_spelled_sequence_1_to_312499); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_SECOND.add(SECOND189);
+                            SECOND145=(Token)match(input,SECOND,FOLLOW_SECOND_in_spelled_sequence_1_to_311844); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_SECOND.add(SECOND145);
 
 
                             }
@@ -6813,7 +5472,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 256:47: -> INT[\"22\"]
+                    // 181:47: -> INT[\"22\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "22"));
 
@@ -6823,57 +5482,57 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 23 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:5: ( TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:182:5: ( TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) )
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:5: ( TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) )
-                    int alt50=2;
-                    int LA50_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:182:5: ( TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) )
+                    int alt41=2;
+                    int LA41_0 = input.LA(1);
 
-                    if ( (LA50_0==TWENTY_THIRD) ) {
-                        alt50=1;
+                    if ( (LA41_0==TWENTY_THIRD) ) {
+                        alt41=1;
                     }
-                    else if ( (LA50_0==TWENTY) ) {
-                        alt50=2;
+                    else if ( (LA41_0==TWENTY) ) {
+                        alt41=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 50, 0, input);
+                            new NoViableAltException("", 41, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt50) {
+                    switch (alt41) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:6: TWENTY_THIRD
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:182:6: TWENTY_THIRD
                             {
-                            TWENTY_THIRD190=(Token)match(input,TWENTY_THIRD,FOLLOW_TWENTY_THIRD_in_spelled_sequence_1_to_312514); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY_THIRD.add(TWENTY_THIRD190);
+                            TWENTY_THIRD146=(Token)match(input,TWENTY_THIRD,FOLLOW_TWENTY_THIRD_in_spelled_sequence_1_to_311859); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY_THIRD.add(TWENTY_THIRD146);
 
 
                             }
                             break;
                         case 2 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:23: ( TWENTY ( DASH )? THIRD )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:182:23: ( TWENTY ( DASH )? THIRD )
                             {
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:23: ( TWENTY ( DASH )? THIRD )
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:24: TWENTY ( DASH )? THIRD
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:182:23: ( TWENTY ( DASH )? THIRD )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:182:24: TWENTY ( DASH )? THIRD
                             {
-                            TWENTY191=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312521); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY191);
+                            TWENTY147=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_311866); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY147);
 
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:31: ( DASH )?
-                            int alt49=2;
-                            int LA49_0 = input.LA(1);
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:182:31: ( DASH )?
+                            int alt40=2;
+                            int LA40_0 = input.LA(1);
 
-                            if ( (LA49_0==DASH) ) {
-                                alt49=1;
+                            if ( (LA40_0==DASH) ) {
+                                alt40=1;
                             }
-                            switch (alt49) {
+                            switch (alt40) {
                                 case 1 :
-                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:31: DASH
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:182:31: DASH
                                     {
-                                    DASH192=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312523); if (state.failed) return retval; 
-                                    if ( state.backtracking==0 ) stream_DASH.add(DASH192);
+                                    DASH148=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_311868); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_DASH.add(DASH148);
 
 
                                     }
@@ -6881,8 +5540,8 @@ public class DateParser extends Parser {
 
                             }
 
-                            THIRD193=(Token)match(input,THIRD,FOLLOW_THIRD_in_spelled_sequence_1_to_312526); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THIRD.add(THIRD193);
+                            THIRD149=(Token)match(input,THIRD,FOLLOW_THIRD_in_spelled_sequence_1_to_311871); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_THIRD.add(THIRD149);
 
 
                             }
@@ -6907,7 +5566,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 257:47: -> INT[\"23\"]
+                    // 182:47: -> INT[\"23\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "23"));
 
@@ -6917,57 +5576,57 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 24 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:5: ( TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:183:5: ( TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) )
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:5: ( TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) )
-                    int alt52=2;
-                    int LA52_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:183:5: ( TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) )
+                    int alt43=2;
+                    int LA43_0 = input.LA(1);
 
-                    if ( (LA52_0==TWENTY_FOURTH) ) {
-                        alt52=1;
+                    if ( (LA43_0==TWENTY_FOURTH) ) {
+                        alt43=1;
                     }
-                    else if ( (LA52_0==TWENTY) ) {
-                        alt52=2;
+                    else if ( (LA43_0==TWENTY) ) {
+                        alt43=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 52, 0, input);
+                            new NoViableAltException("", 43, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt52) {
+                    switch (alt43) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:6: TWENTY_FOURTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:183:6: TWENTY_FOURTH
                             {
-                            TWENTY_FOURTH194=(Token)match(input,TWENTY_FOURTH,FOLLOW_TWENTY_FOURTH_in_spelled_sequence_1_to_312542); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY_FOURTH.add(TWENTY_FOURTH194);
+                            TWENTY_FOURTH150=(Token)match(input,TWENTY_FOURTH,FOLLOW_TWENTY_FOURTH_in_spelled_sequence_1_to_311887); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY_FOURTH.add(TWENTY_FOURTH150);
 
 
                             }
                             break;
                         case 2 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:23: ( TWENTY ( DASH )? FOURTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:183:23: ( TWENTY ( DASH )? FOURTH )
                             {
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:23: ( TWENTY ( DASH )? FOURTH )
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:24: TWENTY ( DASH )? FOURTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:183:23: ( TWENTY ( DASH )? FOURTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:183:24: TWENTY ( DASH )? FOURTH
                             {
-                            TWENTY195=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312548); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY195);
+                            TWENTY151=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_311893); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY151);
 
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:31: ( DASH )?
-                            int alt51=2;
-                            int LA51_0 = input.LA(1);
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:183:31: ( DASH )?
+                            int alt42=2;
+                            int LA42_0 = input.LA(1);
 
-                            if ( (LA51_0==DASH) ) {
-                                alt51=1;
+                            if ( (LA42_0==DASH) ) {
+                                alt42=1;
                             }
-                            switch (alt51) {
+                            switch (alt42) {
                                 case 1 :
-                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:258:31: DASH
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:183:31: DASH
                                     {
-                                    DASH196=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312550); if (state.failed) return retval; 
-                                    if ( state.backtracking==0 ) stream_DASH.add(DASH196);
+                                    DASH152=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_311895); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_DASH.add(DASH152);
 
 
                                     }
@@ -6975,8 +5634,8 @@ public class DateParser extends Parser {
 
                             }
 
-                            FOURTH197=(Token)match(input,FOURTH,FOLLOW_FOURTH_in_spelled_sequence_1_to_312553); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_FOURTH.add(FOURTH197);
+                            FOURTH153=(Token)match(input,FOURTH,FOLLOW_FOURTH_in_spelled_sequence_1_to_311898); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_FOURTH.add(FOURTH153);
 
 
                             }
@@ -7001,7 +5660,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 258:47: -> INT[\"24\"]
+                    // 183:47: -> INT[\"24\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "24"));
 
@@ -7011,57 +5670,57 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 25 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:259:5: ( TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:5: ( TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) )
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:259:5: ( TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) )
-                    int alt54=2;
-                    int LA54_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:5: ( TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) )
+                    int alt45=2;
+                    int LA45_0 = input.LA(1);
 
-                    if ( (LA54_0==TWENTY_FIFTH) ) {
-                        alt54=1;
+                    if ( (LA45_0==TWENTY_FIFTH) ) {
+                        alt45=1;
                     }
-                    else if ( (LA54_0==TWENTY) ) {
-                        alt54=2;
+                    else if ( (LA45_0==TWENTY) ) {
+                        alt45=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 54, 0, input);
+                            new NoViableAltException("", 45, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt54) {
+                    switch (alt45) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:259:6: TWENTY_FIFTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:6: TWENTY_FIFTH
                             {
-                            TWENTY_FIFTH198=(Token)match(input,TWENTY_FIFTH,FOLLOW_TWENTY_FIFTH_in_spelled_sequence_1_to_312568); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY_FIFTH.add(TWENTY_FIFTH198);
+                            TWENTY_FIFTH154=(Token)match(input,TWENTY_FIFTH,FOLLOW_TWENTY_FIFTH_in_spelled_sequence_1_to_311913); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY_FIFTH.add(TWENTY_FIFTH154);
 
 
                             }
                             break;
                         case 2 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:259:23: ( TWENTY ( DASH )? FIFTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:23: ( TWENTY ( DASH )? FIFTH )
                             {
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:259:23: ( TWENTY ( DASH )? FIFTH )
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:259:24: TWENTY ( DASH )? FIFTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:23: ( TWENTY ( DASH )? FIFTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:24: TWENTY ( DASH )? FIFTH
                             {
-                            TWENTY199=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312575); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY199);
+                            TWENTY155=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_311920); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY155);
 
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:259:31: ( DASH )?
-                            int alt53=2;
-                            int LA53_0 = input.LA(1);
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:31: ( DASH )?
+                            int alt44=2;
+                            int LA44_0 = input.LA(1);
 
-                            if ( (LA53_0==DASH) ) {
-                                alt53=1;
+                            if ( (LA44_0==DASH) ) {
+                                alt44=1;
                             }
-                            switch (alt53) {
+                            switch (alt44) {
                                 case 1 :
-                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:259:31: DASH
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:184:31: DASH
                                     {
-                                    DASH200=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312577); if (state.failed) return retval; 
-                                    if ( state.backtracking==0 ) stream_DASH.add(DASH200);
+                                    DASH156=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_311922); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_DASH.add(DASH156);
 
 
                                     }
@@ -7069,8 +5728,8 @@ public class DateParser extends Parser {
 
                             }
 
-                            FIFTH201=(Token)match(input,FIFTH,FOLLOW_FIFTH_in_spelled_sequence_1_to_312580); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_FIFTH.add(FIFTH201);
+                            FIFTH157=(Token)match(input,FIFTH,FOLLOW_FIFTH_in_spelled_sequence_1_to_311925); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_FIFTH.add(FIFTH157);
 
 
                             }
@@ -7095,7 +5754,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 259:47: -> INT[\"25\"]
+                    // 184:47: -> INT[\"25\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "25"));
 
@@ -7105,57 +5764,57 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 26 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:260:5: ( TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:185:5: ( TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) )
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:260:5: ( TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) )
-                    int alt56=2;
-                    int LA56_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:185:5: ( TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) )
+                    int alt47=2;
+                    int LA47_0 = input.LA(1);
 
-                    if ( (LA56_0==TWENTY_SIXTH) ) {
-                        alt56=1;
+                    if ( (LA47_0==TWENTY_SIXTH) ) {
+                        alt47=1;
                     }
-                    else if ( (LA56_0==TWENTY) ) {
-                        alt56=2;
+                    else if ( (LA47_0==TWENTY) ) {
+                        alt47=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 56, 0, input);
+                            new NoViableAltException("", 47, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt56) {
+                    switch (alt47) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:260:6: TWENTY_SIXTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:185:6: TWENTY_SIXTH
                             {
-                            TWENTY_SIXTH202=(Token)match(input,TWENTY_SIXTH,FOLLOW_TWENTY_SIXTH_in_spelled_sequence_1_to_312596); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY_SIXTH.add(TWENTY_SIXTH202);
+                            TWENTY_SIXTH158=(Token)match(input,TWENTY_SIXTH,FOLLOW_TWENTY_SIXTH_in_spelled_sequence_1_to_311941); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY_SIXTH.add(TWENTY_SIXTH158);
 
 
                             }
                             break;
                         case 2 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:260:23: ( TWENTY ( DASH )? SIXTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:185:23: ( TWENTY ( DASH )? SIXTH )
                             {
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:260:23: ( TWENTY ( DASH )? SIXTH )
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:260:24: TWENTY ( DASH )? SIXTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:185:23: ( TWENTY ( DASH )? SIXTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:185:24: TWENTY ( DASH )? SIXTH
                             {
-                            TWENTY203=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312603); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY203);
+                            TWENTY159=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_311948); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY159);
 
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:260:31: ( DASH )?
-                            int alt55=2;
-                            int LA55_0 = input.LA(1);
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:185:31: ( DASH )?
+                            int alt46=2;
+                            int LA46_0 = input.LA(1);
 
-                            if ( (LA55_0==DASH) ) {
-                                alt55=1;
+                            if ( (LA46_0==DASH) ) {
+                                alt46=1;
                             }
-                            switch (alt55) {
+                            switch (alt46) {
                                 case 1 :
-                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:260:31: DASH
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:185:31: DASH
                                     {
-                                    DASH204=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312605); if (state.failed) return retval; 
-                                    if ( state.backtracking==0 ) stream_DASH.add(DASH204);
+                                    DASH160=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_311950); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_DASH.add(DASH160);
 
 
                                     }
@@ -7163,8 +5822,8 @@ public class DateParser extends Parser {
 
                             }
 
-                            SIXTH205=(Token)match(input,SIXTH,FOLLOW_SIXTH_in_spelled_sequence_1_to_312608); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_SIXTH.add(SIXTH205);
+                            SIXTH161=(Token)match(input,SIXTH,FOLLOW_SIXTH_in_spelled_sequence_1_to_311953); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_SIXTH.add(SIXTH161);
 
 
                             }
@@ -7189,7 +5848,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 260:47: -> INT[\"26\"]
+                    // 185:47: -> INT[\"26\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "26"));
 
@@ -7199,57 +5858,57 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 27 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:261:5: ( TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:186:5: ( TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) )
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:261:5: ( TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) )
-                    int alt58=2;
-                    int LA58_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:186:5: ( TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) )
+                    int alt49=2;
+                    int LA49_0 = input.LA(1);
 
-                    if ( (LA58_0==TWENTY_SEVENTH) ) {
-                        alt58=1;
+                    if ( (LA49_0==TWENTY_SEVENTH) ) {
+                        alt49=1;
                     }
-                    else if ( (LA58_0==TWENTY) ) {
-                        alt58=2;
+                    else if ( (LA49_0==TWENTY) ) {
+                        alt49=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 58, 0, input);
+                            new NoViableAltException("", 49, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt58) {
+                    switch (alt49) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:261:6: TWENTY_SEVENTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:186:6: TWENTY_SEVENTH
                             {
-                            TWENTY_SEVENTH206=(Token)match(input,TWENTY_SEVENTH,FOLLOW_TWENTY_SEVENTH_in_spelled_sequence_1_to_312624); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY_SEVENTH.add(TWENTY_SEVENTH206);
+                            TWENTY_SEVENTH162=(Token)match(input,TWENTY_SEVENTH,FOLLOW_TWENTY_SEVENTH_in_spelled_sequence_1_to_311969); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY_SEVENTH.add(TWENTY_SEVENTH162);
 
 
                             }
                             break;
                         case 2 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:261:23: ( TWENTY ( DASH )? SEVENTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:186:23: ( TWENTY ( DASH )? SEVENTH )
                             {
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:261:23: ( TWENTY ( DASH )? SEVENTH )
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:261:24: TWENTY ( DASH )? SEVENTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:186:23: ( TWENTY ( DASH )? SEVENTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:186:24: TWENTY ( DASH )? SEVENTH
                             {
-                            TWENTY207=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312629); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY207);
+                            TWENTY163=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_311974); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY163);
 
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:261:31: ( DASH )?
-                            int alt57=2;
-                            int LA57_0 = input.LA(1);
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:186:31: ( DASH )?
+                            int alt48=2;
+                            int LA48_0 = input.LA(1);
 
-                            if ( (LA57_0==DASH) ) {
-                                alt57=1;
+                            if ( (LA48_0==DASH) ) {
+                                alt48=1;
                             }
-                            switch (alt57) {
+                            switch (alt48) {
                                 case 1 :
-                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:261:31: DASH
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:186:31: DASH
                                     {
-                                    DASH208=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312631); if (state.failed) return retval; 
-                                    if ( state.backtracking==0 ) stream_DASH.add(DASH208);
+                                    DASH164=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_311976); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_DASH.add(DASH164);
 
 
                                     }
@@ -7257,8 +5916,8 @@ public class DateParser extends Parser {
 
                             }
 
-                            SEVENTH209=(Token)match(input,SEVENTH,FOLLOW_SEVENTH_in_spelled_sequence_1_to_312634); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_SEVENTH.add(SEVENTH209);
+                            SEVENTH165=(Token)match(input,SEVENTH,FOLLOW_SEVENTH_in_spelled_sequence_1_to_311979); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_SEVENTH.add(SEVENTH165);
 
 
                             }
@@ -7283,7 +5942,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 261:47: -> INT[\"27\"]
+                    // 186:47: -> INT[\"27\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "27"));
 
@@ -7293,57 +5952,57 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 28 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:262:5: ( TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:187:5: ( TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) )
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:262:5: ( TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) )
-                    int alt60=2;
-                    int LA60_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:187:5: ( TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) )
+                    int alt51=2;
+                    int LA51_0 = input.LA(1);
 
-                    if ( (LA60_0==TWENTY_EIGHTH) ) {
-                        alt60=1;
+                    if ( (LA51_0==TWENTY_EIGHTH) ) {
+                        alt51=1;
                     }
-                    else if ( (LA60_0==TWENTY) ) {
-                        alt60=2;
+                    else if ( (LA51_0==TWENTY) ) {
+                        alt51=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 60, 0, input);
+                            new NoViableAltException("", 51, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt60) {
+                    switch (alt51) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:262:6: TWENTY_EIGHTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:187:6: TWENTY_EIGHTH
                             {
-                            TWENTY_EIGHTH210=(Token)match(input,TWENTY_EIGHTH,FOLLOW_TWENTY_EIGHTH_in_spelled_sequence_1_to_312648); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY_EIGHTH.add(TWENTY_EIGHTH210);
+                            TWENTY_EIGHTH166=(Token)match(input,TWENTY_EIGHTH,FOLLOW_TWENTY_EIGHTH_in_spelled_sequence_1_to_311993); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY_EIGHTH.add(TWENTY_EIGHTH166);
 
 
                             }
                             break;
                         case 2 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:262:23: ( TWENTY ( DASH )? EIGHTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:187:23: ( TWENTY ( DASH )? EIGHTH )
                             {
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:262:23: ( TWENTY ( DASH )? EIGHTH )
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:262:24: TWENTY ( DASH )? EIGHTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:187:23: ( TWENTY ( DASH )? EIGHTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:187:24: TWENTY ( DASH )? EIGHTH
                             {
-                            TWENTY211=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312654); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY211);
+                            TWENTY167=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_311999); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY167);
 
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:262:31: ( DASH )?
-                            int alt59=2;
-                            int LA59_0 = input.LA(1);
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:187:31: ( DASH )?
+                            int alt50=2;
+                            int LA50_0 = input.LA(1);
 
-                            if ( (LA59_0==DASH) ) {
-                                alt59=1;
+                            if ( (LA50_0==DASH) ) {
+                                alt50=1;
                             }
-                            switch (alt59) {
+                            switch (alt50) {
                                 case 1 :
-                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:262:31: DASH
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:187:31: DASH
                                     {
-                                    DASH212=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312656); if (state.failed) return retval; 
-                                    if ( state.backtracking==0 ) stream_DASH.add(DASH212);
+                                    DASH168=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312001); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_DASH.add(DASH168);
 
 
                                     }
@@ -7351,8 +6010,8 @@ public class DateParser extends Parser {
 
                             }
 
-                            EIGHTH213=(Token)match(input,EIGHTH,FOLLOW_EIGHTH_in_spelled_sequence_1_to_312659); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_EIGHTH.add(EIGHTH213);
+                            EIGHTH169=(Token)match(input,EIGHTH,FOLLOW_EIGHTH_in_spelled_sequence_1_to_312004); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_EIGHTH.add(EIGHTH169);
 
 
                             }
@@ -7377,7 +6036,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 262:47: -> INT[\"28\"]
+                    // 187:47: -> INT[\"28\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "28"));
 
@@ -7387,57 +6046,57 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 29 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:263:5: ( TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:5: ( TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) )
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:263:5: ( TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) )
-                    int alt62=2;
-                    int LA62_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:5: ( TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) )
+                    int alt53=2;
+                    int LA53_0 = input.LA(1);
 
-                    if ( (LA62_0==TWENTY_NINTH) ) {
-                        alt62=1;
+                    if ( (LA53_0==TWENTY_NINTH) ) {
+                        alt53=1;
                     }
-                    else if ( (LA62_0==TWENTY) ) {
-                        alt62=2;
+                    else if ( (LA53_0==TWENTY) ) {
+                        alt53=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 62, 0, input);
+                            new NoViableAltException("", 53, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt62) {
+                    switch (alt53) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:263:6: TWENTY_NINTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:6: TWENTY_NINTH
                             {
-                            TWENTY_NINTH214=(Token)match(input,TWENTY_NINTH,FOLLOW_TWENTY_NINTH_in_spelled_sequence_1_to_312674); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY_NINTH.add(TWENTY_NINTH214);
+                            TWENTY_NINTH170=(Token)match(input,TWENTY_NINTH,FOLLOW_TWENTY_NINTH_in_spelled_sequence_1_to_312019); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY_NINTH.add(TWENTY_NINTH170);
 
 
                             }
                             break;
                         case 2 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:263:23: ( TWENTY ( DASH )? NINTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:23: ( TWENTY ( DASH )? NINTH )
                             {
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:263:23: ( TWENTY ( DASH )? NINTH )
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:263:24: TWENTY ( DASH )? NINTH
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:23: ( TWENTY ( DASH )? NINTH )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:24: TWENTY ( DASH )? NINTH
                             {
-                            TWENTY215=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312681); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY215);
+                            TWENTY171=(Token)match(input,TWENTY,FOLLOW_TWENTY_in_spelled_sequence_1_to_312026); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_TWENTY.add(TWENTY171);
 
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:263:31: ( DASH )?
-                            int alt61=2;
-                            int LA61_0 = input.LA(1);
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:31: ( DASH )?
+                            int alt52=2;
+                            int LA52_0 = input.LA(1);
 
-                            if ( (LA61_0==DASH) ) {
-                                alt61=1;
+                            if ( (LA52_0==DASH) ) {
+                                alt52=1;
                             }
-                            switch (alt61) {
+                            switch (alt52) {
                                 case 1 :
-                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:263:31: DASH
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:188:31: DASH
                                     {
-                                    DASH216=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312683); if (state.failed) return retval; 
-                                    if ( state.backtracking==0 ) stream_DASH.add(DASH216);
+                                    DASH172=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312028); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_DASH.add(DASH172);
 
 
                                     }
@@ -7445,8 +6104,8 @@ public class DateParser extends Parser {
 
                             }
 
-                            NINTH217=(Token)match(input,NINTH,FOLLOW_NINTH_in_spelled_sequence_1_to_312686); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_NINTH.add(NINTH217);
+                            NINTH173=(Token)match(input,NINTH,FOLLOW_NINTH_in_spelled_sequence_1_to_312031); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_NINTH.add(NINTH173);
 
 
                             }
@@ -7471,7 +6130,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 263:47: -> INT[\"29\"]
+                    // 188:47: -> INT[\"29\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "29"));
 
@@ -7481,10 +6140,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 30 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:264:5: THIRTIETH
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:189:5: THIRTIETH
                     {
-                    THIRTIETH218=(Token)match(input,THIRTIETH,FOLLOW_THIRTIETH_in_spelled_sequence_1_to_312701); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTIETH.add(THIRTIETH218);
+                    THIRTIETH174=(Token)match(input,THIRTIETH,FOLLOW_THIRTIETH_in_spelled_sequence_1_to_312046); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRTIETH.add(THIRTIETH174);
 
 
 
@@ -7500,7 +6159,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 264:47: -> INT[\"30\"]
+                    // 189:47: -> INT[\"30\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "30"));
 
@@ -7510,57 +6169,57 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 31 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:5: ( THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:190:5: ( THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) )
                     {
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:5: ( THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) )
-                    int alt64=2;
-                    int LA64_0 = input.LA(1);
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:190:5: ( THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) )
+                    int alt55=2;
+                    int LA55_0 = input.LA(1);
 
-                    if ( (LA64_0==THIRTY_FIRST) ) {
-                        alt64=1;
+                    if ( (LA55_0==THIRTY_FIRST) ) {
+                        alt55=1;
                     }
-                    else if ( (LA64_0==THIRTY) ) {
-                        alt64=2;
+                    else if ( (LA55_0==THIRTY) ) {
+                        alt55=2;
                     }
                     else {
                         if (state.backtracking>0) {state.failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("", 64, 0, input);
+                            new NoViableAltException("", 55, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt64) {
+                    switch (alt55) {
                         case 1 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:6: THIRTY_FIRST
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:190:6: THIRTY_FIRST
                             {
-                            THIRTY_FIRST219=(Token)match(input,THIRTY_FIRST,FOLLOW_THIRTY_FIRST_in_spelled_sequence_1_to_312745); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THIRTY_FIRST.add(THIRTY_FIRST219);
+                            THIRTY_FIRST175=(Token)match(input,THIRTY_FIRST,FOLLOW_THIRTY_FIRST_in_spelled_sequence_1_to_312090); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_THIRTY_FIRST.add(THIRTY_FIRST175);
 
 
                             }
                             break;
                         case 2 :
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:23: ( THIRTY ( DASH )? FIRST )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:190:23: ( THIRTY ( DASH )? FIRST )
                             {
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:23: ( THIRTY ( DASH )? FIRST )
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:24: THIRTY ( DASH )? FIRST
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:190:23: ( THIRTY ( DASH )? FIRST )
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:190:24: THIRTY ( DASH )? FIRST
                             {
-                            THIRTY220=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_sequence_1_to_312752); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_THIRTY.add(THIRTY220);
+                            THIRTY176=(Token)match(input,THIRTY,FOLLOW_THIRTY_in_spelled_sequence_1_to_312097); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_THIRTY.add(THIRTY176);
 
-                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:31: ( DASH )?
-                            int alt63=2;
-                            int LA63_0 = input.LA(1);
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:190:31: ( DASH )?
+                            int alt54=2;
+                            int LA54_0 = input.LA(1);
 
-                            if ( (LA63_0==DASH) ) {
-                                alt63=1;
+                            if ( (LA54_0==DASH) ) {
+                                alt54=1;
                             }
-                            switch (alt63) {
+                            switch (alt54) {
                                 case 1 :
-                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:31: DASH
+                                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:190:31: DASH
                                     {
-                                    DASH221=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312754); if (state.failed) return retval; 
-                                    if ( state.backtracking==0 ) stream_DASH.add(DASH221);
+                                    DASH177=(Token)match(input,DASH,FOLLOW_DASH_in_spelled_sequence_1_to_312099); if (state.failed) return retval; 
+                                    if ( state.backtracking==0 ) stream_DASH.add(DASH177);
 
 
                                     }
@@ -7568,8 +6227,8 @@ public class DateParser extends Parser {
 
                             }
 
-                            FIRST222=(Token)match(input,FIRST,FOLLOW_FIRST_in_spelled_sequence_1_to_312757); if (state.failed) return retval; 
-                            if ( state.backtracking==0 ) stream_FIRST.add(FIRST222);
+                            FIRST178=(Token)match(input,FIRST,FOLLOW_FIRST_in_spelled_sequence_1_to_312102); if (state.failed) return retval; 
+                            if ( state.backtracking==0 ) stream_FIRST.add(FIRST178);
 
 
                             }
@@ -7594,7 +6253,7 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 265:47: -> INT[\"31\"]
+                    // 190:47: -> INT[\"31\"]
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(INT, "31"));
 
@@ -7631,129 +6290,64 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_up_to_4_digits"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:269:1: int_up_to_4_digits : ( int_0_to_99_optional_prefix | THREE_DIGIT -> INT[$THREE_DIGIT.text] | FOUR_DIGIT -> INT[$FOUR_DIGIT.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:194:1: int_up_to_4_digits : ( int_0_to_99_optional_prefix | int_3_or_4_digits );
     public final DateParser.int_up_to_4_digits_return int_up_to_4_digits() throws RecognitionException {
         DateParser.int_up_to_4_digits_return retval = new DateParser.int_up_to_4_digits_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token THREE_DIGIT224=null;
-        Token FOUR_DIGIT225=null;
-        DateParser.int_0_to_99_optional_prefix_return int_0_to_99_optional_prefix223 = null;
+        DateParser.int_0_to_99_optional_prefix_return int_0_to_99_optional_prefix179 = null;
+
+        DateParser.int_3_or_4_digits_return int_3_or_4_digits180 = null;
 
 
-        Object THREE_DIGIT224_tree=null;
-        Object FOUR_DIGIT225_tree=null;
-        RewriteRuleTokenStream stream_FOUR_DIGIT=new RewriteRuleTokenStream(adaptor,"token FOUR_DIGIT");
-        RewriteRuleTokenStream stream_THREE_DIGIT=new RewriteRuleTokenStream(adaptor,"token THREE_DIGIT");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:270:3: ( int_0_to_99_optional_prefix | THREE_DIGIT -> INT[$THREE_DIGIT.text] | FOUR_DIGIT -> INT[$FOUR_DIGIT.text] )
-            int alt66=3;
-            switch ( input.LA(1) ) {
-            case TWO_ZEROS:
-            case PREFIXED_ONE_TO_NINE:
-            case ONE_TO_NINE:
-            case TEN_TO_TWELVE:
-            case ONE_ZERO:
-            case THIRTEEN_TO_TWENTY_THREE:
-            case TWENTY_FOUR_TO_THIRTY_ONE:
-            case THIRTY_TWO_TO_FIFTY_NINE:
-            case SIXTY_TO_NINETY_NINE:
-                {
-                alt66=1;
-                }
-                break;
-            case THREE_DIGIT:
-                {
-                alt66=2;
-                }
-                break;
-            case FOUR_DIGIT:
-                {
-                alt66=3;
-                }
-                break;
-            default:
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:195:3: ( int_0_to_99_optional_prefix | int_3_or_4_digits )
+            int alt57=2;
+            int LA57_0 = input.LA(1);
+
+            if ( ((LA57_0>=PREFIXED_ONE_TO_NINE && LA57_0<=SIXTY_TO_NINETY_NINE)) ) {
+                alt57=1;
+            }
+            else if ( ((LA57_0>=THREE_DIGIT && LA57_0<=FOUR_DIGIT)) ) {
+                alt57=2;
+            }
+            else {
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 66, 0, input);
+                    new NoViableAltException("", 57, 0, input);
 
                 throw nvae;
             }
-
-            switch (alt66) {
+            switch (alt57) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:270:5: int_0_to_99_optional_prefix
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:195:5: int_0_to_99_optional_prefix
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_int_0_to_99_optional_prefix_in_int_up_to_4_digits2782);
-                    int_0_to_99_optional_prefix223=int_0_to_99_optional_prefix();
+                    pushFollow(FOLLOW_int_0_to_99_optional_prefix_in_int_up_to_4_digits2127);
+                    int_0_to_99_optional_prefix179=int_0_to_99_optional_prefix();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_0_to_99_optional_prefix223.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_0_to_99_optional_prefix179.getTree());
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:271:5: THREE_DIGIT
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:196:5: int_3_or_4_digits
                     {
-                    THREE_DIGIT224=(Token)match(input,THREE_DIGIT,FOLLOW_THREE_DIGIT_in_int_up_to_4_digits2788); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THREE_DIGIT.add(THREE_DIGIT224);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
                     root_0 = (Object)adaptor.nil();
-                    // 271:17: -> INT[$THREE_DIGIT.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THREE_DIGIT224!=null?THREE_DIGIT224.getText():null)));
 
-                    }
+                    pushFollow(FOLLOW_int_3_or_4_digits_in_int_up_to_4_digits2133);
+                    int_3_or_4_digits180=int_3_or_4_digits();
 
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:272:5: FOUR_DIGIT
-                    {
-                    FOUR_DIGIT225=(Token)match(input,FOUR_DIGIT,FOLLOW_FOUR_DIGIT_in_int_up_to_4_digits2799); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FOUR_DIGIT.add(FOUR_DIGIT225);
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_3_or_4_digits180.getTree());
 
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 272:17: -> INT[$FOUR_DIGIT.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (FOUR_DIGIT225!=null?FOUR_DIGIT225.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
                     }
                     break;
 
@@ -7784,45 +6378,44 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_3_or_4_digits"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:276:1: int_3_or_4_digits : ( THREE_DIGIT -> INT[$THREE_DIGIT.text] | FOUR_DIGIT -> INT[$FOUR_DIGIT.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:200:1: int_3_or_4_digits : ( THREE_DIGIT -> INT[$THREE_DIGIT.text] | int_4_digits );
     public final DateParser.int_3_or_4_digits_return int_3_or_4_digits() throws RecognitionException {
         DateParser.int_3_or_4_digits_return retval = new DateParser.int_3_or_4_digits_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token THREE_DIGIT226=null;
-        Token FOUR_DIGIT227=null;
+        Token THREE_DIGIT181=null;
+        DateParser.int_4_digits_return int_4_digits182 = null;
 
-        Object THREE_DIGIT226_tree=null;
-        Object FOUR_DIGIT227_tree=null;
-        RewriteRuleTokenStream stream_FOUR_DIGIT=new RewriteRuleTokenStream(adaptor,"token FOUR_DIGIT");
+
+        Object THREE_DIGIT181_tree=null;
         RewriteRuleTokenStream stream_THREE_DIGIT=new RewriteRuleTokenStream(adaptor,"token THREE_DIGIT");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:277:3: ( THREE_DIGIT -> INT[$THREE_DIGIT.text] | FOUR_DIGIT -> INT[$FOUR_DIGIT.text] )
-            int alt67=2;
-            int LA67_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:201:3: ( THREE_DIGIT -> INT[$THREE_DIGIT.text] | int_4_digits )
+            int alt58=2;
+            int LA58_0 = input.LA(1);
 
-            if ( (LA67_0==THREE_DIGIT) ) {
-                alt67=1;
+            if ( (LA58_0==THREE_DIGIT) ) {
+                alt58=1;
             }
-            else if ( (LA67_0==FOUR_DIGIT) ) {
-                alt67=2;
+            else if ( (LA58_0==FOUR_DIGIT) ) {
+                alt58=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 67, 0, input);
+                    new NoViableAltException("", 58, 0, input);
 
                 throw nvae;
             }
-            switch (alt67) {
+            switch (alt58) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:277:5: THREE_DIGIT
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:201:5: THREE_DIGIT
                     {
-                    THREE_DIGIT226=(Token)match(input,THREE_DIGIT,FOLLOW_THREE_DIGIT_in_int_3_or_4_digits2821); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THREE_DIGIT.add(THREE_DIGIT226);
+                    THREE_DIGIT181=(Token)match(input,THREE_DIGIT,FOLLOW_THREE_DIGIT_in_int_3_or_4_digits2150); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THREE_DIGIT.add(THREE_DIGIT181);
 
 
 
@@ -7838,9 +6431,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 277:17: -> INT[$THREE_DIGIT.text]
+                    // 201:17: -> INT[$THREE_DIGIT.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THREE_DIGIT226!=null?THREE_DIGIT226.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THREE_DIGIT181!=null?THREE_DIGIT181.getText():null)));
 
                     }
 
@@ -7848,32 +6441,17 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:278:5: FOUR_DIGIT
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:202:5: int_4_digits
                     {
-                    FOUR_DIGIT227=(Token)match(input,FOUR_DIGIT,FOLLOW_FOUR_DIGIT_in_int_3_or_4_digits2832); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_FOUR_DIGIT.add(FOUR_DIGIT227);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
                     root_0 = (Object)adaptor.nil();
-                    // 278:17: -> INT[$FOUR_DIGIT.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (FOUR_DIGIT227!=null?FOUR_DIGIT227.getText():null)));
 
-                    }
+                    pushFollow(FOLLOW_int_4_digits_in_int_3_or_4_digits2161);
+                    int_4_digits182=int_4_digits();
 
-                    retval.tree = root_0;}
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_4_digits182.getTree());
+
                     }
                     break;
 
@@ -7904,24 +6482,24 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_4_digits"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:282:1: int_4_digits : FOUR_DIGIT -> INT[$FOUR_DIGIT.text] ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:206:1: int_4_digits : FOUR_DIGIT -> INT[$FOUR_DIGIT.text] ;
     public final DateParser.int_4_digits_return int_4_digits() throws RecognitionException {
         DateParser.int_4_digits_return retval = new DateParser.int_4_digits_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token FOUR_DIGIT228=null;
+        Token FOUR_DIGIT183=null;
 
-        Object FOUR_DIGIT228_tree=null;
+        Object FOUR_DIGIT183_tree=null;
         RewriteRuleTokenStream stream_FOUR_DIGIT=new RewriteRuleTokenStream(adaptor,"token FOUR_DIGIT");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:283:3: ( FOUR_DIGIT -> INT[$FOUR_DIGIT.text] )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:283:5: FOUR_DIGIT
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:207:3: ( FOUR_DIGIT -> INT[$FOUR_DIGIT.text] )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:207:5: FOUR_DIGIT
             {
-            FOUR_DIGIT228=(Token)match(input,FOUR_DIGIT,FOLLOW_FOUR_DIGIT_in_int_4_digits2854); if (state.failed) return retval; 
-            if ( state.backtracking==0 ) stream_FOUR_DIGIT.add(FOUR_DIGIT228);
+            FOUR_DIGIT183=(Token)match(input,FOUR_DIGIT,FOLLOW_FOUR_DIGIT_in_int_4_digits2177); if (state.failed) return retval; 
+            if ( state.backtracking==0 ) stream_FOUR_DIGIT.add(FOUR_DIGIT183);
 
 
 
@@ -7937,9 +6515,9 @@ public class DateParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 283:16: -> INT[$FOUR_DIGIT.text]
+            // 207:16: -> INT[$FOUR_DIGIT.text]
             {
-                adaptor.addChild(root_0, (Object)adaptor.create(INT, (FOUR_DIGIT228!=null?FOUR_DIGIT228.getText():null)));
+                adaptor.addChild(root_0, (Object)adaptor.create(INT, (FOUR_DIGIT183!=null?FOUR_DIGIT183.getText():null)));
 
             }
 
@@ -7972,65 +6550,57 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_1_to_12"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:286:1: int_1_to_12 : ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:210:1: int_1_to_12 : ( PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] );
     public final DateParser.int_1_to_12_return int_1_to_12() throws RecognitionException {
         DateParser.int_1_to_12_return retval = new DateParser.int_1_to_12_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token TWO_ZEROS229=null;
-        Token PREFIXED_ONE_TO_NINE230=null;
-        Token ONE_TO_NINE231=null;
-        Token TEN_TO_TWELVE232=null;
+        Token PREFIXED_ONE_TO_NINE184=null;
+        Token ONE_TO_NINE185=null;
+        Token TEN_TO_TWELVE186=null;
 
-        Object TWO_ZEROS229_tree=null;
-        Object PREFIXED_ONE_TO_NINE230_tree=null;
-        Object ONE_TO_NINE231_tree=null;
-        Object TEN_TO_TWELVE232_tree=null;
+        Object PREFIXED_ONE_TO_NINE184_tree=null;
+        Object ONE_TO_NINE185_tree=null;
+        Object TEN_TO_TWELVE186_tree=null;
         RewriteRuleTokenStream stream_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token ONE_TO_NINE");
-        RewriteRuleTokenStream stream_TWO_ZEROS=new RewriteRuleTokenStream(adaptor,"token TWO_ZEROS");
         RewriteRuleTokenStream stream_TEN_TO_TWELVE=new RewriteRuleTokenStream(adaptor,"token TEN_TO_TWELVE");
         RewriteRuleTokenStream stream_PREFIXED_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token PREFIXED_ONE_TO_NINE");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:287:3: ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] )
-            int alt68=4;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:211:3: ( PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] )
+            int alt59=3;
             switch ( input.LA(1) ) {
-            case TWO_ZEROS:
-                {
-                alt68=1;
-                }
-                break;
             case PREFIXED_ONE_TO_NINE:
                 {
-                alt68=2;
+                alt59=1;
                 }
                 break;
             case ONE_TO_NINE:
                 {
-                alt68=3;
+                alt59=2;
                 }
                 break;
             case TEN_TO_TWELVE:
                 {
-                alt68=4;
+                alt59=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 68, 0, input);
+                    new NoViableAltException("", 59, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt68) {
+            switch (alt59) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:287:5: TWO_ZEROS
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:211:5: PREFIXED_ONE_TO_NINE
                     {
-                    TWO_ZEROS229=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_int_1_to_122874); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWO_ZEROS.add(TWO_ZEROS229);
+                    PREFIXED_ONE_TO_NINE184=(Token)match(input,PREFIXED_ONE_TO_NINE,FOLLOW_PREFIXED_ONE_TO_NINE_in_int_1_to_122197); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_PREFIXED_ONE_TO_NINE.add(PREFIXED_ONE_TO_NINE184);
 
 
 
@@ -8046,9 +6616,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 287:26: -> INT[$TWO_ZEROS.text]
+                    // 211:26: -> INT[$PREFIXED_ONE_TO_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWO_ZEROS229!=null?TWO_ZEROS229.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (PREFIXED_ONE_TO_NINE184!=null?PREFIXED_ONE_TO_NINE184.getText():null)));
 
                     }
 
@@ -8056,10 +6626,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:288:5: PREFIXED_ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:212:5: ONE_TO_NINE
                     {
-                    PREFIXED_ONE_TO_NINE230=(Token)match(input,PREFIXED_ONE_TO_NINE,FOLLOW_PREFIXED_ONE_TO_NINE_in_int_1_to_122896); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PREFIXED_ONE_TO_NINE.add(PREFIXED_ONE_TO_NINE230);
+                    ONE_TO_NINE185=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_1_to_122208); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE185);
 
 
 
@@ -8075,9 +6645,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 288:26: -> INT[$PREFIXED_ONE_TO_NINE.text]
+                    // 212:26: -> INT[$ONE_TO_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (PREFIXED_ONE_TO_NINE230!=null?PREFIXED_ONE_TO_NINE230.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE185!=null?ONE_TO_NINE185.getText():null)));
 
                     }
 
@@ -8085,10 +6655,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:289:5: ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:213:5: TEN_TO_TWELVE
                     {
-                    ONE_TO_NINE231=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_1_to_122907); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE231);
+                    TEN_TO_TWELVE186=(Token)match(input,TEN_TO_TWELVE,FOLLOW_TEN_TO_TWELVE_in_int_1_to_122228); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TEN_TO_TWELVE.add(TEN_TO_TWELVE186);
 
 
 
@@ -8104,38 +6674,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 289:26: -> INT[$ONE_TO_NINE.text]
+                    // 213:26: -> INT[$TEN_TO_TWELVE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE231!=null?ONE_TO_NINE231.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:290:5: TEN_TO_TWELVE
-                    {
-                    TEN_TO_TWELVE232=(Token)match(input,TEN_TO_TWELVE,FOLLOW_TEN_TO_TWELVE_in_int_1_to_122927); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TEN_TO_TWELVE.add(TEN_TO_TWELVE232);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 290:26: -> INT[$TEN_TO_TWELVE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TEN_TO_TWELVE232!=null?TEN_TO_TWELVE232.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TEN_TO_TWELVE186!=null?TEN_TO_TWELVE186.getText():null)));
 
                     }
 
@@ -8170,81 +6711,66 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_0_to_23"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:294:1: int_0_to_23 : ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | ONE_ZERO -> INT[$ONE_ZERO.text] | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:217:1: int_0_to_23 : ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | ZERO -> INT[$ZERO.text] | int_1_to_12 | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] );
     public final DateParser.int_0_to_23_return int_0_to_23() throws RecognitionException {
         DateParser.int_0_to_23_return retval = new DateParser.int_0_to_23_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token TWO_ZEROS233=null;
-        Token ONE_ZERO234=null;
-        Token PREFIXED_ONE_TO_NINE235=null;
-        Token ONE_TO_NINE236=null;
-        Token TEN_TO_TWELVE237=null;
-        Token THIRTEEN_TO_TWENTY_THREE238=null;
+        Token TWO_ZEROS187=null;
+        Token ZERO188=null;
+        Token THIRTEEN_TO_TWENTY_THREE190=null;
+        DateParser.int_1_to_12_return int_1_to_12189 = null;
 
-        Object TWO_ZEROS233_tree=null;
-        Object ONE_ZERO234_tree=null;
-        Object PREFIXED_ONE_TO_NINE235_tree=null;
-        Object ONE_TO_NINE236_tree=null;
-        Object TEN_TO_TWELVE237_tree=null;
-        Object THIRTEEN_TO_TWENTY_THREE238_tree=null;
-        RewriteRuleTokenStream stream_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token ONE_TO_NINE");
+
+        Object TWO_ZEROS187_tree=null;
+        Object ZERO188_tree=null;
+        Object THIRTEEN_TO_TWENTY_THREE190_tree=null;
         RewriteRuleTokenStream stream_TWO_ZEROS=new RewriteRuleTokenStream(adaptor,"token TWO_ZEROS");
         RewriteRuleTokenStream stream_THIRTEEN_TO_TWENTY_THREE=new RewriteRuleTokenStream(adaptor,"token THIRTEEN_TO_TWENTY_THREE");
-        RewriteRuleTokenStream stream_TEN_TO_TWELVE=new RewriteRuleTokenStream(adaptor,"token TEN_TO_TWELVE");
-        RewriteRuleTokenStream stream_PREFIXED_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token PREFIXED_ONE_TO_NINE");
-        RewriteRuleTokenStream stream_ONE_ZERO=new RewriteRuleTokenStream(adaptor,"token ONE_ZERO");
+        RewriteRuleTokenStream stream_ZERO=new RewriteRuleTokenStream(adaptor,"token ZERO");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:295:3: ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | ONE_ZERO -> INT[$ONE_ZERO.text] | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] )
-            int alt69=6;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:218:3: ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | ZERO -> INT[$ZERO.text] | int_1_to_12 | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] )
+            int alt60=4;
             switch ( input.LA(1) ) {
             case TWO_ZEROS:
                 {
-                alt69=1;
+                alt60=1;
                 }
                 break;
-            case ONE_ZERO:
+            case ZERO:
                 {
-                alt69=2;
+                alt60=2;
                 }
                 break;
             case PREFIXED_ONE_TO_NINE:
-                {
-                alt69=3;
-                }
-                break;
             case ONE_TO_NINE:
-                {
-                alt69=4;
-                }
-                break;
             case TEN_TO_TWELVE:
                 {
-                alt69=5;
+                alt60=3;
                 }
                 break;
             case THIRTEEN_TO_TWENTY_THREE:
                 {
-                alt69=6;
+                alt60=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 69, 0, input);
+                    new NoViableAltException("", 60, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt69) {
+            switch (alt60) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:295:5: TWO_ZEROS
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:218:5: TWO_ZEROS
                     {
-                    TWO_ZEROS233=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_int_0_to_232955); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWO_ZEROS.add(TWO_ZEROS233);
+                    TWO_ZEROS187=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_int_0_to_232256); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWO_ZEROS.add(TWO_ZEROS187);
 
 
 
@@ -8260,9 +6786,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 295:30: -> INT[$TWO_ZEROS.text]
+                    // 218:30: -> INT[$TWO_ZEROS.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWO_ZEROS233!=null?TWO_ZEROS233.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWO_ZEROS187!=null?TWO_ZEROS187.getText():null)));
 
                     }
 
@@ -8270,10 +6796,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:296:5: ONE_ZERO
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:219:5: ZERO
                     {
-                    ONE_ZERO234=(Token)match(input,ONE_ZERO,FOLLOW_ONE_ZERO_in_int_0_to_232981); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_ZERO.add(ONE_ZERO234);
+                    ZERO188=(Token)match(input,ZERO,FOLLOW_ZERO_in_int_0_to_232282); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ZERO.add(ZERO188);
 
 
 
@@ -8289,9 +6815,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 296:30: -> INT[$ONE_ZERO.text]
+                    // 219:30: -> INT[$ZERO.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_ZERO234!=null?ONE_ZERO234.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ZERO188!=null?ZERO188.getText():null)));
 
                     }
 
@@ -8299,39 +6825,24 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:297:5: PREFIXED_ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:220:5: int_1_to_12
                     {
-                    PREFIXED_ONE_TO_NINE235=(Token)match(input,PREFIXED_ONE_TO_NINE,FOLLOW_PREFIXED_ONE_TO_NINE_in_int_0_to_233008); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PREFIXED_ONE_TO_NINE.add(PREFIXED_ONE_TO_NINE235);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
                     root_0 = (Object)adaptor.nil();
-                    // 297:30: -> INT[$PREFIXED_ONE_TO_NINE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (PREFIXED_ONE_TO_NINE235!=null?PREFIXED_ONE_TO_NINE235.getText():null)));
 
-                    }
+                    pushFollow(FOLLOW_int_1_to_12_in_int_0_to_232313);
+                    int_1_to_12189=int_1_to_12();
 
-                    retval.tree = root_0;}
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_1_to_12189.getTree());
+
                     }
                     break;
                 case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:298:5: ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:221:5: THIRTEEN_TO_TWENTY_THREE
                     {
-                    ONE_TO_NINE236=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_0_to_233023); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE236);
+                    THIRTEEN_TO_TWENTY_THREE190=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_232319); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE190);
 
 
 
@@ -8347,67 +6858,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 298:30: -> INT[$ONE_TO_NINE.text]
+                    // 221:30: -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE236!=null?ONE_TO_NINE236.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 5 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:299:5: TEN_TO_TWELVE
-                    {
-                    TEN_TO_TWELVE237=(Token)match(input,TEN_TO_TWELVE,FOLLOW_TEN_TO_TWELVE_in_int_0_to_233047); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TEN_TO_TWELVE.add(TEN_TO_TWELVE237);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 299:30: -> INT[$TEN_TO_TWELVE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TEN_TO_TWELVE237!=null?TEN_TO_TWELVE237.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 6 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:300:5: THIRTEEN_TO_TWENTY_THREE
-                    {
-                    THIRTEEN_TO_TWENTY_THREE238=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_233069); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE238);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 300:30: -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTEEN_TO_TWENTY_THREE238!=null?THIRTEEN_TO_TWENTY_THREE238.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTEEN_TO_TWENTY_THREE190!=null?THIRTEEN_TO_TWENTY_THREE190.getText():null)));
 
                     }
 
@@ -8442,126 +6895,75 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_0_to_59"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:304:1: int_0_to_59 : ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | ONE_ZERO -> INT[$ONE_ZERO.text] | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:225:1: int_0_to_59 : ( int_0_to_23 | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text] );
     public final DateParser.int_0_to_59_return int_0_to_59() throws RecognitionException {
         DateParser.int_0_to_59_return retval = new DateParser.int_0_to_59_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token TWO_ZEROS239=null;
-        Token ONE_ZERO240=null;
-        Token PREFIXED_ONE_TO_NINE241=null;
-        Token ONE_TO_NINE242=null;
-        Token TEN_TO_TWELVE243=null;
-        Token THIRTEEN_TO_TWENTY_THREE244=null;
-        Token TWENTY_FOUR_TO_THIRTY_ONE245=null;
-        Token THIRTY_TWO_TO_FIFTY_NINE246=null;
+        Token TWENTY_FOUR_TO_THIRTY_ONE192=null;
+        Token THIRTY_TWO_TO_FIFTY_NINE193=null;
+        DateParser.int_0_to_23_return int_0_to_23191 = null;
 
-        Object TWO_ZEROS239_tree=null;
-        Object ONE_ZERO240_tree=null;
-        Object PREFIXED_ONE_TO_NINE241_tree=null;
-        Object ONE_TO_NINE242_tree=null;
-        Object TEN_TO_TWELVE243_tree=null;
-        Object THIRTEEN_TO_TWENTY_THREE244_tree=null;
-        Object TWENTY_FOUR_TO_THIRTY_ONE245_tree=null;
-        Object THIRTY_TWO_TO_FIFTY_NINE246_tree=null;
-        RewriteRuleTokenStream stream_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token ONE_TO_NINE");
-        RewriteRuleTokenStream stream_TWO_ZEROS=new RewriteRuleTokenStream(adaptor,"token TWO_ZEROS");
-        RewriteRuleTokenStream stream_THIRTEEN_TO_TWENTY_THREE=new RewriteRuleTokenStream(adaptor,"token THIRTEEN_TO_TWENTY_THREE");
+
+        Object TWENTY_FOUR_TO_THIRTY_ONE192_tree=null;
+        Object THIRTY_TWO_TO_FIFTY_NINE193_tree=null;
         RewriteRuleTokenStream stream_THIRTY_TWO_TO_FIFTY_NINE=new RewriteRuleTokenStream(adaptor,"token THIRTY_TWO_TO_FIFTY_NINE");
-        RewriteRuleTokenStream stream_TEN_TO_TWELVE=new RewriteRuleTokenStream(adaptor,"token TEN_TO_TWELVE");
-        RewriteRuleTokenStream stream_PREFIXED_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token PREFIXED_ONE_TO_NINE");
-        RewriteRuleTokenStream stream_ONE_ZERO=new RewriteRuleTokenStream(adaptor,"token ONE_ZERO");
         RewriteRuleTokenStream stream_TWENTY_FOUR_TO_THIRTY_ONE=new RewriteRuleTokenStream(adaptor,"token TWENTY_FOUR_TO_THIRTY_ONE");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:305:3: ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | ONE_ZERO -> INT[$ONE_ZERO.text] | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text] )
-            int alt70=8;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:226:3: ( int_0_to_23 | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text] )
+            int alt61=3;
             switch ( input.LA(1) ) {
-            case TWO_ZEROS:
-                {
-                alt70=1;
-                }
-                break;
-            case ONE_ZERO:
-                {
-                alt70=2;
-                }
-                break;
             case PREFIXED_ONE_TO_NINE:
-                {
-                alt70=3;
-                }
-                break;
             case ONE_TO_NINE:
-                {
-                alt70=4;
-                }
-                break;
             case TEN_TO_TWELVE:
-                {
-                alt70=5;
-                }
-                break;
+            case TWO_ZEROS:
+            case ZERO:
             case THIRTEEN_TO_TWENTY_THREE:
                 {
-                alt70=6;
+                alt61=1;
                 }
                 break;
             case TWENTY_FOUR_TO_THIRTY_ONE:
                 {
-                alt70=7;
+                alt61=2;
                 }
                 break;
             case THIRTY_TWO_TO_FIFTY_NINE:
                 {
-                alt70=8;
+                alt61=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 70, 0, input);
+                    new NoViableAltException("", 61, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt70) {
+            switch (alt61) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:305:5: TWO_ZEROS
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:226:5: int_0_to_23
                     {
-                    TWO_ZEROS239=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_int_0_to_593090); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWO_ZEROS.add(TWO_ZEROS239);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
                     root_0 = (Object)adaptor.nil();
-                    // 305:31: -> INT[$TWO_ZEROS.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWO_ZEROS239!=null?TWO_ZEROS239.getText():null)));
 
-                    }
+                    pushFollow(FOLLOW_int_0_to_23_in_int_0_to_592340);
+                    int_0_to_23191=int_0_to_23();
 
-                    retval.tree = root_0;}
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_0_to_23191.getTree());
+
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:306:5: ONE_ZERO
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:227:5: TWENTY_FOUR_TO_THIRTY_ONE
                     {
-                    ONE_ZERO240=(Token)match(input,ONE_ZERO,FOLLOW_ONE_ZERO_in_int_0_to_593117); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_ZERO.add(ONE_ZERO240);
+                    TWENTY_FOUR_TO_THIRTY_ONE192=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_0_to_592346); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY_FOUR_TO_THIRTY_ONE.add(TWENTY_FOUR_TO_THIRTY_ONE192);
 
 
 
@@ -8577,9 +6979,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 306:31: -> INT[$ONE_ZERO.text]
+                    // 227:31: -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_ZERO240!=null?ONE_ZERO240.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWENTY_FOUR_TO_THIRTY_ONE192!=null?TWENTY_FOUR_TO_THIRTY_ONE192.getText():null)));
 
                     }
 
@@ -8587,10 +6989,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:307:5: PREFIXED_ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:228:5: THIRTY_TWO_TO_FIFTY_NINE
                     {
-                    PREFIXED_ONE_TO_NINE241=(Token)match(input,PREFIXED_ONE_TO_NINE,FOLLOW_PREFIXED_ONE_TO_NINE_in_int_0_to_593145); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PREFIXED_ONE_TO_NINE.add(PREFIXED_ONE_TO_NINE241);
+                    THIRTY_TWO_TO_FIFTY_NINE193=(Token)match(input,THIRTY_TWO_TO_FIFTY_NINE,FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_int_0_to_592357); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRTY_TWO_TO_FIFTY_NINE.add(THIRTY_TWO_TO_FIFTY_NINE193);
 
 
 
@@ -8606,154 +7008,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 307:31: -> INT[$PREFIXED_ONE_TO_NINE.text]
+                    // 228:31: -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (PREFIXED_ONE_TO_NINE241!=null?PREFIXED_ONE_TO_NINE241.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:308:5: ONE_TO_NINE
-                    {
-                    ONE_TO_NINE242=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_0_to_593161); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE242);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 308:31: -> INT[$ONE_TO_NINE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE242!=null?ONE_TO_NINE242.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 5 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:309:5: TEN_TO_TWELVE
-                    {
-                    TEN_TO_TWELVE243=(Token)match(input,TEN_TO_TWELVE,FOLLOW_TEN_TO_TWELVE_in_int_0_to_593186); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TEN_TO_TWELVE.add(TEN_TO_TWELVE243);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 309:31: -> INT[$TEN_TO_TWELVE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TEN_TO_TWELVE243!=null?TEN_TO_TWELVE243.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 6 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:310:5: THIRTEEN_TO_TWENTY_THREE
-                    {
-                    THIRTEEN_TO_TWENTY_THREE244=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_593209); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE244);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 310:31: -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTEEN_TO_TWENTY_THREE244!=null?THIRTEEN_TO_TWENTY_THREE244.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 7 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:311:5: TWENTY_FOUR_TO_THIRTY_ONE
-                    {
-                    TWENTY_FOUR_TO_THIRTY_ONE245=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_0_to_593221); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY_FOUR_TO_THIRTY_ONE.add(TWENTY_FOUR_TO_THIRTY_ONE245);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 311:31: -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWENTY_FOUR_TO_THIRTY_ONE245!=null?TWENTY_FOUR_TO_THIRTY_ONE245.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 8 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:312:5: THIRTY_TWO_TO_FIFTY_NINE
-                    {
-                    THIRTY_TWO_TO_FIFTY_NINE246=(Token)match(input,THIRTY_TWO_TO_FIFTY_NINE,FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_int_0_to_593232); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTY_TWO_TO_FIFTY_NINE.add(THIRTY_TWO_TO_FIFTY_NINE246);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 312:31: -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTY_TWO_TO_FIFTY_NINE246!=null?THIRTY_TWO_TO_FIFTY_NINE246.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTY_TWO_TO_FIFTY_NINE193!=null?THIRTY_TWO_TO_FIFTY_NINE193.getText():null)));
 
                     }
 
@@ -8788,118 +7045,58 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_0_to_99_no_prefix"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:316:1: int_0_to_99_no_prefix : ( ONE_ZERO -> INT[$ONE_ZERO.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text] | SIXTY_TO_NINETY_NINE -> INT[$SIXTY_TO_NINETY_NINE.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:232:1: int_0_to_99_no_prefix : ( int_0_to_59 | SIXTY_TO_NINETY_NINE -> INT[$SIXTY_TO_NINETY_NINE.text] );
     public final DateParser.int_0_to_99_no_prefix_return int_0_to_99_no_prefix() throws RecognitionException {
         DateParser.int_0_to_99_no_prefix_return retval = new DateParser.int_0_to_99_no_prefix_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token ONE_ZERO247=null;
-        Token ONE_TO_NINE248=null;
-        Token TEN_TO_TWELVE249=null;
-        Token THIRTEEN_TO_TWENTY_THREE250=null;
-        Token TWENTY_FOUR_TO_THIRTY_ONE251=null;
-        Token THIRTY_TWO_TO_FIFTY_NINE252=null;
-        Token SIXTY_TO_NINETY_NINE253=null;
+        Token SIXTY_TO_NINETY_NINE195=null;
+        DateParser.int_0_to_59_return int_0_to_59194 = null;
 
-        Object ONE_ZERO247_tree=null;
-        Object ONE_TO_NINE248_tree=null;
-        Object TEN_TO_TWELVE249_tree=null;
-        Object THIRTEEN_TO_TWENTY_THREE250_tree=null;
-        Object TWENTY_FOUR_TO_THIRTY_ONE251_tree=null;
-        Object THIRTY_TWO_TO_FIFTY_NINE252_tree=null;
-        Object SIXTY_TO_NINETY_NINE253_tree=null;
-        RewriteRuleTokenStream stream_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token ONE_TO_NINE");
+
+        Object SIXTY_TO_NINETY_NINE195_tree=null;
         RewriteRuleTokenStream stream_SIXTY_TO_NINETY_NINE=new RewriteRuleTokenStream(adaptor,"token SIXTY_TO_NINETY_NINE");
-        RewriteRuleTokenStream stream_THIRTEEN_TO_TWENTY_THREE=new RewriteRuleTokenStream(adaptor,"token THIRTEEN_TO_TWENTY_THREE");
-        RewriteRuleTokenStream stream_THIRTY_TWO_TO_FIFTY_NINE=new RewriteRuleTokenStream(adaptor,"token THIRTY_TWO_TO_FIFTY_NINE");
-        RewriteRuleTokenStream stream_TEN_TO_TWELVE=new RewriteRuleTokenStream(adaptor,"token TEN_TO_TWELVE");
-        RewriteRuleTokenStream stream_ONE_ZERO=new RewriteRuleTokenStream(adaptor,"token ONE_ZERO");
-        RewriteRuleTokenStream stream_TWENTY_FOUR_TO_THIRTY_ONE=new RewriteRuleTokenStream(adaptor,"token TWENTY_FOUR_TO_THIRTY_ONE");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:317:3: ( ONE_ZERO -> INT[$ONE_ZERO.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text] | SIXTY_TO_NINETY_NINE -> INT[$SIXTY_TO_NINETY_NINE.text] )
-            int alt71=7;
-            switch ( input.LA(1) ) {
-            case ONE_ZERO:
-                {
-                alt71=1;
-                }
-                break;
-            case ONE_TO_NINE:
-                {
-                alt71=2;
-                }
-                break;
-            case TEN_TO_TWELVE:
-                {
-                alt71=3;
-                }
-                break;
-            case THIRTEEN_TO_TWENTY_THREE:
-                {
-                alt71=4;
-                }
-                break;
-            case TWENTY_FOUR_TO_THIRTY_ONE:
-                {
-                alt71=5;
-                }
-                break;
-            case THIRTY_TWO_TO_FIFTY_NINE:
-                {
-                alt71=6;
-                }
-                break;
-            case SIXTY_TO_NINETY_NINE:
-                {
-                alt71=7;
-                }
-                break;
-            default:
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:233:3: ( int_0_to_59 | SIXTY_TO_NINETY_NINE -> INT[$SIXTY_TO_NINETY_NINE.text] )
+            int alt62=2;
+            int LA62_0 = input.LA(1);
+
+            if ( ((LA62_0>=PREFIXED_ONE_TO_NINE && LA62_0<=THIRTY_TWO_TO_FIFTY_NINE)) ) {
+                alt62=1;
+            }
+            else if ( (LA62_0==SIXTY_TO_NINETY_NINE) ) {
+                alt62=2;
+            }
+            else {
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 71, 0, input);
+                    new NoViableAltException("", 62, 0, input);
 
                 throw nvae;
             }
-
-            switch (alt71) {
+            switch (alt62) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:317:5: ONE_ZERO
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:233:5: int_0_to_59
                     {
-                    ONE_ZERO247=(Token)match(input,ONE_ZERO,FOLLOW_ONE_ZERO_in_int_0_to_99_no_prefix3254); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_ZERO.add(ONE_ZERO247);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
                     root_0 = (Object)adaptor.nil();
-                    // 317:31: -> INT[$ONE_ZERO.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_ZERO247!=null?ONE_ZERO247.getText():null)));
 
-                    }
+                    pushFollow(FOLLOW_int_0_to_59_in_int_0_to_99_no_prefix2379);
+                    int_0_to_59194=int_0_to_59();
 
-                    retval.tree = root_0;}
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_0_to_59194.getTree());
+
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:318:5: ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:234:5: SIXTY_TO_NINETY_NINE
                     {
-                    ONE_TO_NINE248=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_0_to_99_no_prefix3282); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE248);
+                    SIXTY_TO_NINETY_NINE195=(Token)match(input,SIXTY_TO_NINETY_NINE,FOLLOW_SIXTY_TO_NINETY_NINE_in_int_0_to_99_no_prefix2385); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SIXTY_TO_NINETY_NINE.add(SIXTY_TO_NINETY_NINE195);
 
 
 
@@ -8915,154 +7112,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 318:31: -> INT[$ONE_TO_NINE.text]
+                    // 234:31: -> INT[$SIXTY_TO_NINETY_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE248!=null?ONE_TO_NINE248.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:319:5: TEN_TO_TWELVE
-                    {
-                    TEN_TO_TWELVE249=(Token)match(input,TEN_TO_TWELVE,FOLLOW_TEN_TO_TWELVE_in_int_0_to_99_no_prefix3307); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TEN_TO_TWELVE.add(TEN_TO_TWELVE249);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 319:31: -> INT[$TEN_TO_TWELVE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TEN_TO_TWELVE249!=null?TEN_TO_TWELVE249.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:320:5: THIRTEEN_TO_TWENTY_THREE
-                    {
-                    THIRTEEN_TO_TWENTY_THREE250=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_99_no_prefix3330); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE250);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 320:31: -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTEEN_TO_TWENTY_THREE250!=null?THIRTEEN_TO_TWENTY_THREE250.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 5 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:321:5: TWENTY_FOUR_TO_THIRTY_ONE
-                    {
-                    TWENTY_FOUR_TO_THIRTY_ONE251=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_0_to_99_no_prefix3342); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY_FOUR_TO_THIRTY_ONE.add(TWENTY_FOUR_TO_THIRTY_ONE251);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 321:31: -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWENTY_FOUR_TO_THIRTY_ONE251!=null?TWENTY_FOUR_TO_THIRTY_ONE251.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 6 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:322:5: THIRTY_TWO_TO_FIFTY_NINE
-                    {
-                    THIRTY_TWO_TO_FIFTY_NINE252=(Token)match(input,THIRTY_TWO_TO_FIFTY_NINE,FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_int_0_to_99_no_prefix3353); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTY_TWO_TO_FIFTY_NINE.add(THIRTY_TWO_TO_FIFTY_NINE252);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 322:31: -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTY_TWO_TO_FIFTY_NINE252!=null?THIRTY_TWO_TO_FIFTY_NINE252.getText():null)));
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 7 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:323:5: SIXTY_TO_NINETY_NINE
-                    {
-                    SIXTY_TO_NINETY_NINE253=(Token)match(input,SIXTY_TO_NINETY_NINE,FOLLOW_SIXTY_TO_NINETY_NINE_in_int_0_to_99_no_prefix3365); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SIXTY_TO_NINETY_NINE.add(SIXTY_TO_NINETY_NINE253);
-
-
-
-                    // AST REWRITE
-                    // elements: 
-                    // token labels: 
-                    // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 323:31: -> INT[$SIXTY_TO_NINETY_NINE.text]
-                    {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (SIXTY_TO_NINETY_NINE253!=null?SIXTY_TO_NINETY_NINE253.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (SIXTY_TO_NINETY_NINE195!=null?SIXTY_TO_NINETY_NINE195.getText():null)));
 
                     }
 
@@ -9097,28 +7149,28 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_0_to_99_with_prefix"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:326:1: int_0_to_99_with_prefix : ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text] | SIXTY_TO_NINETY_NINE -> INT[$SIXTY_TO_NINETY_NINE.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:237:1: int_0_to_99_with_prefix : ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text] | SIXTY_TO_NINETY_NINE -> INT[$SIXTY_TO_NINETY_NINE.text] );
     public final DateParser.int_0_to_99_with_prefix_return int_0_to_99_with_prefix() throws RecognitionException {
         DateParser.int_0_to_99_with_prefix_return retval = new DateParser.int_0_to_99_with_prefix_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token TWO_ZEROS254=null;
-        Token PREFIXED_ONE_TO_NINE255=null;
-        Token TEN_TO_TWELVE256=null;
-        Token THIRTEEN_TO_TWENTY_THREE257=null;
-        Token TWENTY_FOUR_TO_THIRTY_ONE258=null;
-        Token THIRTY_TWO_TO_FIFTY_NINE259=null;
-        Token SIXTY_TO_NINETY_NINE260=null;
+        Token TWO_ZEROS196=null;
+        Token PREFIXED_ONE_TO_NINE197=null;
+        Token TEN_TO_TWELVE198=null;
+        Token THIRTEEN_TO_TWENTY_THREE199=null;
+        Token TWENTY_FOUR_TO_THIRTY_ONE200=null;
+        Token THIRTY_TWO_TO_FIFTY_NINE201=null;
+        Token SIXTY_TO_NINETY_NINE202=null;
 
-        Object TWO_ZEROS254_tree=null;
-        Object PREFIXED_ONE_TO_NINE255_tree=null;
-        Object TEN_TO_TWELVE256_tree=null;
-        Object THIRTEEN_TO_TWENTY_THREE257_tree=null;
-        Object TWENTY_FOUR_TO_THIRTY_ONE258_tree=null;
-        Object THIRTY_TWO_TO_FIFTY_NINE259_tree=null;
-        Object SIXTY_TO_NINETY_NINE260_tree=null;
+        Object TWO_ZEROS196_tree=null;
+        Object PREFIXED_ONE_TO_NINE197_tree=null;
+        Object TEN_TO_TWELVE198_tree=null;
+        Object THIRTEEN_TO_TWENTY_THREE199_tree=null;
+        Object TWENTY_FOUR_TO_THIRTY_ONE200_tree=null;
+        Object THIRTY_TWO_TO_FIFTY_NINE201_tree=null;
+        Object SIXTY_TO_NINETY_NINE202_tree=null;
         RewriteRuleTokenStream stream_SIXTY_TO_NINETY_NINE=new RewriteRuleTokenStream(adaptor,"token SIXTY_TO_NINETY_NINE");
         RewriteRuleTokenStream stream_TWO_ZEROS=new RewriteRuleTokenStream(adaptor,"token TWO_ZEROS");
         RewriteRuleTokenStream stream_THIRTEEN_TO_TWENTY_THREE=new RewriteRuleTokenStream(adaptor,"token THIRTEEN_TO_TWENTY_THREE");
@@ -9128,58 +7180,58 @@ public class DateParser extends Parser {
         RewriteRuleTokenStream stream_TWENTY_FOUR_TO_THIRTY_ONE=new RewriteRuleTokenStream(adaptor,"token TWENTY_FOUR_TO_THIRTY_ONE");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:327:3: ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text] | SIXTY_TO_NINETY_NINE -> INT[$SIXTY_TO_NINETY_NINE.text] )
-            int alt72=7;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:238:3: ( TWO_ZEROS -> INT[$TWO_ZEROS.text] | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] | THIRTY_TWO_TO_FIFTY_NINE -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text] | SIXTY_TO_NINETY_NINE -> INT[$SIXTY_TO_NINETY_NINE.text] )
+            int alt63=7;
             switch ( input.LA(1) ) {
             case TWO_ZEROS:
                 {
-                alt72=1;
+                alt63=1;
                 }
                 break;
             case PREFIXED_ONE_TO_NINE:
                 {
-                alt72=2;
+                alt63=2;
                 }
                 break;
             case TEN_TO_TWELVE:
                 {
-                alt72=3;
+                alt63=3;
                 }
                 break;
             case THIRTEEN_TO_TWENTY_THREE:
                 {
-                alt72=4;
+                alt63=4;
                 }
                 break;
             case TWENTY_FOUR_TO_THIRTY_ONE:
                 {
-                alt72=5;
+                alt63=5;
                 }
                 break;
             case THIRTY_TWO_TO_FIFTY_NINE:
                 {
-                alt72=6;
+                alt63=6;
                 }
                 break;
             case SIXTY_TO_NINETY_NINE:
                 {
-                alt72=7;
+                alt63=7;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 72, 0, input);
+                    new NoViableAltException("", 63, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt72) {
+            switch (alt63) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:327:5: TWO_ZEROS
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:238:5: TWO_ZEROS
                     {
-                    TWO_ZEROS254=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_int_0_to_99_with_prefix3390); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWO_ZEROS.add(TWO_ZEROS254);
+                    TWO_ZEROS196=(Token)match(input,TWO_ZEROS,FOLLOW_TWO_ZEROS_in_int_0_to_99_with_prefix2410); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWO_ZEROS.add(TWO_ZEROS196);
 
 
 
@@ -9195,9 +7247,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 327:31: -> INT[$TWO_ZEROS.text]
+                    // 238:31: -> INT[$TWO_ZEROS.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWO_ZEROS254!=null?TWO_ZEROS254.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWO_ZEROS196!=null?TWO_ZEROS196.getText():null)));
 
                     }
 
@@ -9205,10 +7257,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:328:5: PREFIXED_ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:239:5: PREFIXED_ONE_TO_NINE
                     {
-                    PREFIXED_ONE_TO_NINE255=(Token)match(input,PREFIXED_ONE_TO_NINE,FOLLOW_PREFIXED_ONE_TO_NINE_in_int_0_to_99_with_prefix3417); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PREFIXED_ONE_TO_NINE.add(PREFIXED_ONE_TO_NINE255);
+                    PREFIXED_ONE_TO_NINE197=(Token)match(input,PREFIXED_ONE_TO_NINE,FOLLOW_PREFIXED_ONE_TO_NINE_in_int_0_to_99_with_prefix2437); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_PREFIXED_ONE_TO_NINE.add(PREFIXED_ONE_TO_NINE197);
 
 
 
@@ -9224,9 +7276,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 328:31: -> INT[$PREFIXED_ONE_TO_NINE.text]
+                    // 239:31: -> INT[$PREFIXED_ONE_TO_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (PREFIXED_ONE_TO_NINE255!=null?PREFIXED_ONE_TO_NINE255.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (PREFIXED_ONE_TO_NINE197!=null?PREFIXED_ONE_TO_NINE197.getText():null)));
 
                     }
 
@@ -9234,10 +7286,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:329:5: TEN_TO_TWELVE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:240:5: TEN_TO_TWELVE
                     {
-                    TEN_TO_TWELVE256=(Token)match(input,TEN_TO_TWELVE,FOLLOW_TEN_TO_TWELVE_in_int_0_to_99_with_prefix3433); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TEN_TO_TWELVE.add(TEN_TO_TWELVE256);
+                    TEN_TO_TWELVE198=(Token)match(input,TEN_TO_TWELVE,FOLLOW_TEN_TO_TWELVE_in_int_0_to_99_with_prefix2453); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TEN_TO_TWELVE.add(TEN_TO_TWELVE198);
 
 
 
@@ -9253,9 +7305,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 329:31: -> INT[$TEN_TO_TWELVE.text]
+                    // 240:31: -> INT[$TEN_TO_TWELVE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TEN_TO_TWELVE256!=null?TEN_TO_TWELVE256.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TEN_TO_TWELVE198!=null?TEN_TO_TWELVE198.getText():null)));
 
                     }
 
@@ -9263,10 +7315,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:330:5: THIRTEEN_TO_TWENTY_THREE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:241:5: THIRTEEN_TO_TWENTY_THREE
                     {
-                    THIRTEEN_TO_TWENTY_THREE257=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_99_with_prefix3456); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE257);
+                    THIRTEEN_TO_TWENTY_THREE199=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_99_with_prefix2476); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE199);
 
 
 
@@ -9282,9 +7334,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 330:31: -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
+                    // 241:31: -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTEEN_TO_TWENTY_THREE257!=null?THIRTEEN_TO_TWENTY_THREE257.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTEEN_TO_TWENTY_THREE199!=null?THIRTEEN_TO_TWENTY_THREE199.getText():null)));
 
                     }
 
@@ -9292,10 +7344,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:331:5: TWENTY_FOUR_TO_THIRTY_ONE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:242:5: TWENTY_FOUR_TO_THIRTY_ONE
                     {
-                    TWENTY_FOUR_TO_THIRTY_ONE258=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_0_to_99_with_prefix3468); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY_FOUR_TO_THIRTY_ONE.add(TWENTY_FOUR_TO_THIRTY_ONE258);
+                    TWENTY_FOUR_TO_THIRTY_ONE200=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_0_to_99_with_prefix2488); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY_FOUR_TO_THIRTY_ONE.add(TWENTY_FOUR_TO_THIRTY_ONE200);
 
 
 
@@ -9311,9 +7363,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 331:31: -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
+                    // 242:31: -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWENTY_FOUR_TO_THIRTY_ONE258!=null?TWENTY_FOUR_TO_THIRTY_ONE258.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWENTY_FOUR_TO_THIRTY_ONE200!=null?TWENTY_FOUR_TO_THIRTY_ONE200.getText():null)));
 
                     }
 
@@ -9321,10 +7373,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:332:5: THIRTY_TWO_TO_FIFTY_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:243:5: THIRTY_TWO_TO_FIFTY_NINE
                     {
-                    THIRTY_TWO_TO_FIFTY_NINE259=(Token)match(input,THIRTY_TWO_TO_FIFTY_NINE,FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_int_0_to_99_with_prefix3479); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTY_TWO_TO_FIFTY_NINE.add(THIRTY_TWO_TO_FIFTY_NINE259);
+                    THIRTY_TWO_TO_FIFTY_NINE201=(Token)match(input,THIRTY_TWO_TO_FIFTY_NINE,FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_int_0_to_99_with_prefix2499); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRTY_TWO_TO_FIFTY_NINE.add(THIRTY_TWO_TO_FIFTY_NINE201);
 
 
 
@@ -9340,9 +7392,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 332:31: -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text]
+                    // 243:31: -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTY_TWO_TO_FIFTY_NINE259!=null?THIRTY_TWO_TO_FIFTY_NINE259.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTY_TWO_TO_FIFTY_NINE201!=null?THIRTY_TWO_TO_FIFTY_NINE201.getText():null)));
 
                     }
 
@@ -9350,10 +7402,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:333:5: SIXTY_TO_NINETY_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:244:5: SIXTY_TO_NINETY_NINE
                     {
-                    SIXTY_TO_NINETY_NINE260=(Token)match(input,SIXTY_TO_NINETY_NINE,FOLLOW_SIXTY_TO_NINETY_NINE_in_int_0_to_99_with_prefix3491); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SIXTY_TO_NINETY_NINE.add(SIXTY_TO_NINETY_NINE260);
+                    SIXTY_TO_NINETY_NINE202=(Token)match(input,SIXTY_TO_NINETY_NINE,FOLLOW_SIXTY_TO_NINETY_NINE_in_int_0_to_99_with_prefix2511); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SIXTY_TO_NINETY_NINE.add(SIXTY_TO_NINETY_NINE202);
 
 
 
@@ -9369,9 +7421,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 333:31: -> INT[$SIXTY_TO_NINETY_NINE.text]
+                    // 244:31: -> INT[$SIXTY_TO_NINETY_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (SIXTY_TO_NINETY_NINE260!=null?SIXTY_TO_NINETY_NINE260.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (SIXTY_TO_NINETY_NINE202!=null?SIXTY_TO_NINETY_NINE202.getText():null)));
 
                     }
 
@@ -9406,76 +7458,76 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_0_to_99_optional_prefix"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:336:1: int_0_to_99_optional_prefix : ( int_0_to_99_with_prefix | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | ONE_ZERO -> INT[$ONE_ZERO.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:247:1: int_0_to_99_optional_prefix : ( int_0_to_99_with_prefix | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | ZERO -> INT[$ZERO.text] );
     public final DateParser.int_0_to_99_optional_prefix_return int_0_to_99_optional_prefix() throws RecognitionException {
         DateParser.int_0_to_99_optional_prefix_return retval = new DateParser.int_0_to_99_optional_prefix_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token ONE_TO_NINE262=null;
-        Token ONE_ZERO263=null;
-        DateParser.int_0_to_99_with_prefix_return int_0_to_99_with_prefix261 = null;
+        Token ONE_TO_NINE204=null;
+        Token ZERO205=null;
+        DateParser.int_0_to_99_with_prefix_return int_0_to_99_with_prefix203 = null;
 
 
-        Object ONE_TO_NINE262_tree=null;
-        Object ONE_ZERO263_tree=null;
+        Object ONE_TO_NINE204_tree=null;
+        Object ZERO205_tree=null;
         RewriteRuleTokenStream stream_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token ONE_TO_NINE");
-        RewriteRuleTokenStream stream_ONE_ZERO=new RewriteRuleTokenStream(adaptor,"token ONE_ZERO");
+        RewriteRuleTokenStream stream_ZERO=new RewriteRuleTokenStream(adaptor,"token ZERO");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:337:3: ( int_0_to_99_with_prefix | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | ONE_ZERO -> INT[$ONE_ZERO.text] )
-            int alt73=3;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:248:3: ( int_0_to_99_with_prefix | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | ZERO -> INT[$ZERO.text] )
+            int alt64=3;
             switch ( input.LA(1) ) {
-            case TWO_ZEROS:
             case PREFIXED_ONE_TO_NINE:
             case TEN_TO_TWELVE:
+            case TWO_ZEROS:
             case THIRTEEN_TO_TWENTY_THREE:
             case TWENTY_FOUR_TO_THIRTY_ONE:
             case THIRTY_TWO_TO_FIFTY_NINE:
             case SIXTY_TO_NINETY_NINE:
                 {
-                alt73=1;
+                alt64=1;
                 }
                 break;
             case ONE_TO_NINE:
                 {
-                alt73=2;
+                alt64=2;
                 }
                 break;
-            case ONE_ZERO:
+            case ZERO:
                 {
-                alt73=3;
+                alt64=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 73, 0, input);
+                    new NoViableAltException("", 64, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt73) {
+            switch (alt64) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:337:5: int_0_to_99_with_prefix
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:248:5: int_0_to_99_with_prefix
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_int_0_to_99_with_prefix_in_int_0_to_99_optional_prefix3516);
-                    int_0_to_99_with_prefix261=int_0_to_99_with_prefix();
+                    pushFollow(FOLLOW_int_0_to_99_with_prefix_in_int_0_to_99_optional_prefix2536);
+                    int_0_to_99_with_prefix203=int_0_to_99_with_prefix();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_0_to_99_with_prefix261.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_0_to_99_with_prefix203.getTree());
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:338:5: ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:249:5: ONE_TO_NINE
                     {
-                    ONE_TO_NINE262=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_0_to_99_optional_prefix3522); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE262);
+                    ONE_TO_NINE204=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_0_to_99_optional_prefix2542); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE204);
 
 
 
@@ -9491,9 +7543,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 338:17: -> INT[$ONE_TO_NINE.text]
+                    // 249:17: -> INT[$ONE_TO_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE262!=null?ONE_TO_NINE262.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE204!=null?ONE_TO_NINE204.getText():null)));
 
                     }
 
@@ -9501,10 +7553,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:339:5: ONE_ZERO
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:250:5: ZERO
                     {
-                    ONE_ZERO263=(Token)match(input,ONE_ZERO,FOLLOW_ONE_ZERO_in_int_0_to_99_optional_prefix3533); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_ZERO.add(ONE_ZERO263);
+                    ZERO205=(Token)match(input,ZERO,FOLLOW_ZERO_in_int_0_to_99_optional_prefix2553); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ZERO.add(ZERO205);
 
 
 
@@ -9520,9 +7572,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 339:17: -> INT[$ONE_ZERO.text]
+                    // 250:17: -> INT[$ZERO.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_ZERO263!=null?ONE_ZERO263.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ZERO205!=null?ZERO205.getText():null)));
 
                     }
 
@@ -9557,58 +7609,58 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_1_to_31"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:343:1: int_1_to_31 : ( PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | int_10_to_31 );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:254:1: int_1_to_31 : ( PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | int_10_to_31 );
     public final DateParser.int_1_to_31_return int_1_to_31() throws RecognitionException {
         DateParser.int_1_to_31_return retval = new DateParser.int_1_to_31_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token PREFIXED_ONE_TO_NINE264=null;
-        Token ONE_TO_NINE265=null;
-        DateParser.int_10_to_31_return int_10_to_31266 = null;
+        Token PREFIXED_ONE_TO_NINE206=null;
+        Token ONE_TO_NINE207=null;
+        DateParser.int_10_to_31_return int_10_to_31208 = null;
 
 
-        Object PREFIXED_ONE_TO_NINE264_tree=null;
-        Object ONE_TO_NINE265_tree=null;
+        Object PREFIXED_ONE_TO_NINE206_tree=null;
+        Object ONE_TO_NINE207_tree=null;
         RewriteRuleTokenStream stream_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token ONE_TO_NINE");
         RewriteRuleTokenStream stream_PREFIXED_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token PREFIXED_ONE_TO_NINE");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:344:3: ( PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | int_10_to_31 )
-            int alt74=3;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:255:3: ( PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text] | ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | int_10_to_31 )
+            int alt65=3;
             switch ( input.LA(1) ) {
             case PREFIXED_ONE_TO_NINE:
                 {
-                alt74=1;
+                alt65=1;
                 }
                 break;
             case ONE_TO_NINE:
                 {
-                alt74=2;
+                alt65=2;
                 }
                 break;
             case TEN_TO_TWELVE:
             case THIRTEEN_TO_TWENTY_THREE:
             case TWENTY_FOUR_TO_THIRTY_ONE:
                 {
-                alt74=3;
+                alt65=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 74, 0, input);
+                    new NoViableAltException("", 65, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt74) {
+            switch (alt65) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:344:5: PREFIXED_ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:255:5: PREFIXED_ONE_TO_NINE
                     {
-                    PREFIXED_ONE_TO_NINE264=(Token)match(input,PREFIXED_ONE_TO_NINE,FOLLOW_PREFIXED_ONE_TO_NINE_in_int_1_to_313555); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PREFIXED_ONE_TO_NINE.add(PREFIXED_ONE_TO_NINE264);
+                    PREFIXED_ONE_TO_NINE206=(Token)match(input,PREFIXED_ONE_TO_NINE,FOLLOW_PREFIXED_ONE_TO_NINE_in_int_1_to_312579); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_PREFIXED_ONE_TO_NINE.add(PREFIXED_ONE_TO_NINE206);
 
 
 
@@ -9624,9 +7676,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 344:31: -> INT[$PREFIXED_ONE_TO_NINE.text]
+                    // 255:31: -> INT[$PREFIXED_ONE_TO_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (PREFIXED_ONE_TO_NINE264!=null?PREFIXED_ONE_TO_NINE264.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (PREFIXED_ONE_TO_NINE206!=null?PREFIXED_ONE_TO_NINE206.getText():null)));
 
                     }
 
@@ -9634,10 +7686,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:345:5: ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:256:5: ONE_TO_NINE
                     {
-                    ONE_TO_NINE265=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_1_to_313571); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE265);
+                    ONE_TO_NINE207=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_1_to_312595); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE207);
 
 
 
@@ -9653,9 +7705,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 345:31: -> INT[$ONE_TO_NINE.text]
+                    // 256:31: -> INT[$ONE_TO_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE265!=null?ONE_TO_NINE265.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE207!=null?ONE_TO_NINE207.getText():null)));
 
                     }
 
@@ -9663,16 +7715,16 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:346:5: int_10_to_31
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:257:5: int_10_to_31
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_int_10_to_31_in_int_1_to_313596);
-                    int_10_to_31266=int_10_to_31();
+                    pushFollow(FOLLOW_int_10_to_31_in_int_1_to_312620);
+                    int_10_to_31208=int_10_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_10_to_31266.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_10_to_31208.getTree());
 
                     }
                     break;
@@ -9704,44 +7756,44 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_1_to_31_no_prefix"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:349:1: int_1_to_31_no_prefix : ( ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | int_10_to_31 );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:260:1: int_1_to_31_no_prefix : ( ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | int_10_to_31 );
     public final DateParser.int_1_to_31_no_prefix_return int_1_to_31_no_prefix() throws RecognitionException {
         DateParser.int_1_to_31_no_prefix_return retval = new DateParser.int_1_to_31_no_prefix_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token ONE_TO_NINE267=null;
-        DateParser.int_10_to_31_return int_10_to_31268 = null;
+        Token ONE_TO_NINE209=null;
+        DateParser.int_10_to_31_return int_10_to_31210 = null;
 
 
-        Object ONE_TO_NINE267_tree=null;
+        Object ONE_TO_NINE209_tree=null;
         RewriteRuleTokenStream stream_ONE_TO_NINE=new RewriteRuleTokenStream(adaptor,"token ONE_TO_NINE");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:350:3: ( ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | int_10_to_31 )
-            int alt75=2;
-            int LA75_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:261:3: ( ONE_TO_NINE -> INT[$ONE_TO_NINE.text] | int_10_to_31 )
+            int alt66=2;
+            int LA66_0 = input.LA(1);
 
-            if ( (LA75_0==ONE_TO_NINE) ) {
-                alt75=1;
+            if ( (LA66_0==ONE_TO_NINE) ) {
+                alt66=1;
             }
-            else if ( (LA75_0==TEN_TO_TWELVE||(LA75_0>=THIRTEEN_TO_TWENTY_THREE && LA75_0<=TWENTY_FOUR_TO_THIRTY_ONE)) ) {
-                alt75=2;
+            else if ( (LA66_0==TEN_TO_TWELVE||(LA66_0>=THIRTEEN_TO_TWENTY_THREE && LA66_0<=TWENTY_FOUR_TO_THIRTY_ONE)) ) {
+                alt66=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 75, 0, input);
+                    new NoViableAltException("", 66, 0, input);
 
                 throw nvae;
             }
-            switch (alt75) {
+            switch (alt66) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:350:5: ONE_TO_NINE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:261:5: ONE_TO_NINE
                     {
-                    ONE_TO_NINE267=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_1_to_31_no_prefix3611); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE267);
+                    ONE_TO_NINE209=(Token)match(input,ONE_TO_NINE,FOLLOW_ONE_TO_NINE_in_int_1_to_31_no_prefix2635); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_ONE_TO_NINE.add(ONE_TO_NINE209);
 
 
 
@@ -9757,9 +7809,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 350:17: -> INT[$ONE_TO_NINE.text]
+                    // 261:17: -> INT[$ONE_TO_NINE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE267!=null?ONE_TO_NINE267.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (ONE_TO_NINE209!=null?ONE_TO_NINE209.getText():null)));
 
                     }
 
@@ -9767,16 +7819,16 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:351:5: int_10_to_31
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:262:5: int_10_to_31
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_int_10_to_31_in_int_1_to_31_no_prefix3622);
-                    int_10_to_31268=int_10_to_31();
+                    pushFollow(FOLLOW_int_10_to_31_in_int_1_to_31_no_prefix2646);
+                    int_10_to_31210=int_10_to_31();
 
                     state._fsp--;
                     if (state.failed) return retval;
-                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_10_to_31268.getTree());
+                    if ( state.backtracking==0 ) adaptor.addChild(root_0, int_10_to_31210.getTree());
 
                     }
                     break;
@@ -9808,57 +7860,57 @@ public class DateParser extends Parser {
     };
 
     // $ANTLR start "int_10_to_31"
-    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:354:1: int_10_to_31 : ( TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:265:1: int_10_to_31 : ( TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] );
     public final DateParser.int_10_to_31_return int_10_to_31() throws RecognitionException {
         DateParser.int_10_to_31_return retval = new DateParser.int_10_to_31_return();
         retval.start = input.LT(1);
 
         Object root_0 = null;
 
-        Token TEN_TO_TWELVE269=null;
-        Token THIRTEEN_TO_TWENTY_THREE270=null;
-        Token TWENTY_FOUR_TO_THIRTY_ONE271=null;
+        Token TEN_TO_TWELVE211=null;
+        Token THIRTEEN_TO_TWENTY_THREE212=null;
+        Token TWENTY_FOUR_TO_THIRTY_ONE213=null;
 
-        Object TEN_TO_TWELVE269_tree=null;
-        Object THIRTEEN_TO_TWENTY_THREE270_tree=null;
-        Object TWENTY_FOUR_TO_THIRTY_ONE271_tree=null;
+        Object TEN_TO_TWELVE211_tree=null;
+        Object THIRTEEN_TO_TWENTY_THREE212_tree=null;
+        Object TWENTY_FOUR_TO_THIRTY_ONE213_tree=null;
         RewriteRuleTokenStream stream_THIRTEEN_TO_TWENTY_THREE=new RewriteRuleTokenStream(adaptor,"token THIRTEEN_TO_TWENTY_THREE");
         RewriteRuleTokenStream stream_TEN_TO_TWELVE=new RewriteRuleTokenStream(adaptor,"token TEN_TO_TWELVE");
         RewriteRuleTokenStream stream_TWENTY_FOUR_TO_THIRTY_ONE=new RewriteRuleTokenStream(adaptor,"token TWENTY_FOUR_TO_THIRTY_ONE");
 
         try {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:355:3: ( TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] )
-            int alt76=3;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:266:3: ( TEN_TO_TWELVE -> INT[$TEN_TO_TWELVE.text] | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text] | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text] )
+            int alt67=3;
             switch ( input.LA(1) ) {
             case TEN_TO_TWELVE:
                 {
-                alt76=1;
+                alt67=1;
                 }
                 break;
             case THIRTEEN_TO_TWENTY_THREE:
                 {
-                alt76=2;
+                alt67=2;
                 }
                 break;
             case TWENTY_FOUR_TO_THIRTY_ONE:
                 {
-                alt76=3;
+                alt67=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 76, 0, input);
+                    new NoViableAltException("", 67, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt76) {
+            switch (alt67) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:355:5: TEN_TO_TWELVE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:266:5: TEN_TO_TWELVE
                     {
-                    TEN_TO_TWELVE269=(Token)match(input,TEN_TO_TWELVE,FOLLOW_TEN_TO_TWELVE_in_int_10_to_313637); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TEN_TO_TWELVE.add(TEN_TO_TWELVE269);
+                    TEN_TO_TWELVE211=(Token)match(input,TEN_TO_TWELVE,FOLLOW_TEN_TO_TWELVE_in_int_10_to_312661); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TEN_TO_TWELVE.add(TEN_TO_TWELVE211);
 
 
 
@@ -9874,9 +7926,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 355:31: -> INT[$TEN_TO_TWELVE.text]
+                    // 266:31: -> INT[$TEN_TO_TWELVE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TEN_TO_TWELVE269!=null?TEN_TO_TWELVE269.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TEN_TO_TWELVE211!=null?TEN_TO_TWELVE211.getText():null)));
 
                     }
 
@@ -9884,10 +7936,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:356:5: THIRTEEN_TO_TWENTY_THREE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:267:5: THIRTEEN_TO_TWENTY_THREE
                     {
-                    THIRTEEN_TO_TWENTY_THREE270=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_10_to_313660); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE270);
+                    THIRTEEN_TO_TWENTY_THREE212=(Token)match(input,THIRTEEN_TO_TWENTY_THREE,FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_10_to_312684); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_THIRTEEN_TO_TWENTY_THREE.add(THIRTEEN_TO_TWENTY_THREE212);
 
 
 
@@ -9903,9 +7955,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 356:31: -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
+                    // 267:31: -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTEEN_TO_TWENTY_THREE270!=null?THIRTEEN_TO_TWENTY_THREE270.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (THIRTEEN_TO_TWENTY_THREE212!=null?THIRTEEN_TO_TWENTY_THREE212.getText():null)));
 
                     }
 
@@ -9913,10 +7965,10 @@ public class DateParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:357:5: TWENTY_FOUR_TO_THIRTY_ONE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:268:5: TWENTY_FOUR_TO_THIRTY_ONE
                     {
-                    TWENTY_FOUR_TO_THIRTY_ONE271=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_10_to_313672); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_TWENTY_FOUR_TO_THIRTY_ONE.add(TWENTY_FOUR_TO_THIRTY_ONE271);
+                    TWENTY_FOUR_TO_THIRTY_ONE213=(Token)match(input,TWENTY_FOUR_TO_THIRTY_ONE,FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_10_to_312696); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_TWENTY_FOUR_TO_THIRTY_ONE.add(TWENTY_FOUR_TO_THIRTY_ONE213);
 
 
 
@@ -9932,9 +7984,9 @@ public class DateParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 357:31: -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
+                    // 268:31: -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
                     {
-                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWENTY_FOUR_TO_THIRTY_ONE271!=null?TWENTY_FOUR_TO_THIRTY_ONE271.getText():null)));
+                        adaptor.addChild(root_0, (Object)adaptor.create(INT, (TWENTY_FOUR_TO_THIRTY_ONE213!=null?TWENTY_FOUR_TO_THIRTY_ONE213.getText():null)));
 
                     }
 
@@ -9963,700 +8015,687 @@ public class DateParser extends Parser {
     }
     // $ANTLR end "int_10_to_31"
 
+    // $ANTLR start synpred1_Date
+    public final void synpred1_Date_fragment() throws RecognitionException {   
+        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:7: ( date ( COMMA | AT )? time )
+        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:8: date ( COMMA | AT )? time
+        {
+        pushFollow(FOLLOW_date_in_synpred1_Date137);
+        date();
+
+        state._fsp--;
+        if (state.failed) return ;
+        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:30:13: ( COMMA | AT )?
+        int alt68=2;
+        int LA68_0 = input.LA(1);
+
+        if ( (LA68_0==COMMA||LA68_0==AT) ) {
+            alt68=1;
+        }
+        switch (alt68) {
+            case 1 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:
+                {
+                if ( input.LA(1)==COMMA||input.LA(1)==AT ) {
+                    input.consume();
+                    state.errorRecovery=false;state.failed=false;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return ;}
+                    MismatchedSetException mse = new MismatchedSetException(null,input);
+                    throw mse;
+                }
+
+
+                }
+                break;
+
+        }
+
+        pushFollow(FOLLOW_time_in_synpred1_Date148);
+        time();
+
+        state._fsp--;
+        if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred1_Date
+
     // Delegated rules
 
+    public final boolean synpred1_Date() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred1_Date_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
 
-    protected DFA5 dfa5 = new DFA5(this);
-    protected DFA1 dfa1 = new DFA1(this);
+
     protected DFA3 dfa3 = new DFA3(this);
-    protected DFA4 dfa4 = new DFA4(this);
-    protected DFA6 dfa6 = new DFA6(this);
-    protected DFA12 dfa12 = new DFA12(this);
-    protected DFA44 dfa44 = new DFA44(this);
-    protected DFA65 dfa65 = new DFA65(this);
-    static final String DFA5_eotS =
-        "\u00cf\uffff";
-    static final String DFA5_eofS =
-        "\2\uffff\1\101\32\uffff\31\101\15\uffff\27\101\14\uffff\27\101\32"+
-        "\uffff\1\101\32\uffff\2\101\16\uffff\1\101\14\uffff";
-    static final String DFA5_minS =
-        "\1\26\1\32\1\23\32\32\31\23\6\32\1\103\1\uffff\1\33\2\26\2\uffff"+
-        "\27\23\1\103\11\32\1\103\1\32\27\23\32\32\1\23\32\32\2\23\2\26\1"+
-        "\103\11\32\1\103\1\32\1\23\1\103\11\32\1\103\1\32";
-    static final String DFA5_maxS =
-        "\1\177\1\32\1\35\30\76\1\113\1\103\31\35\6\76\1\177\1\uffff\1\34"+
-        "\2\177\2\uffff\27\50\1\113\11\76\1\103\1\76\27\35\30\76\1\113\1"+
-        "\103\1\35\30\76\1\113\1\103\2\35\2\177\1\113\11\76\1\103\1\76\1"+
-        "\50\1\113\11\76\1\103\1\76";
-    static final String DFA5_acceptS =
-        "\75\uffff\1\2\3\uffff\1\3\1\1\u008c\uffff";
-    static final String DFA5_specialS =
-        "\u00cf\uffff}>";
-    static final String[] DFA5_transitionS = {
-            "\1\35\1\36\1\37\1\1\1\2\2\uffff\1\75\2\uffff\1\66\1\67\1\70"+
-            "\1\71\1\72\1\73\1\74\2\uffff\1\47\1\50\1\51\1\52\1\53\1\54\1"+
-            "\55\1\56\1\57\1\60\1\61\1\62\1\63\1\64\1\65\1\40\1\41\1\42\1"+
-            "\43\1\44\1\45\1\46\4\uffff\1\10\1\11\1\12\1\13\1\14\1\15\1\16"+
-            "\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32"+
-            "\1\33\1\34\42\uffff\1\3\1\4\1\5\1\uffff\1\6\1\7",
-            "\1\76",
-            "\2\102\6\uffff\1\77\1\100\1\102",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111\1\132\3\uffff\1\142\1\136\1\137"+
-            "\1\133\1\135\1\141\1\143\1\134\1\140",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111\1\144\3\uffff\1\145",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\1\155\6\uffff\1\67\1\70\1\71\1\72\1\73\3\uffff\1\156\1\157"+
-            "\1\160\1\161\1\162\1\163\1\164\1\165\1\166\1\167\1\170\1\171"+
-            "\1\172\1\173\1\174\1\146\1\147\1\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088\1"+
-            "\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090"+
-            "\1\u0091\1\u0092\1\u0093\1\u0094\1\u0095\1\u0096\42\uffff\1"+
-            "\175\1\176\1\177\1\uffff\1\u0080\1\u0081",
-            "",
-            "\1\77\1\100",
-            "\1\35\1\36\1\37\1\uffff\1\u0097\5\uffff\1\66\1\67\1\70\1\71"+
-            "\1\72\1\73\1\74\2\uffff\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1"+
-            "\56\1\57\1\60\1\61\1\62\1\63\1\64\1\65\1\40\1\41\1\42\1\43\1"+
-            "\44\1\45\1\46\4\uffff\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1"+
-            "\1\u00a2\1\u00a3\1\u00a4\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9"+
-            "\1\u00aa\1\u00ab\1\u00ac\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1"+
-            "\42\uffff\1\u0098\1\u0099\1\u009a\1\uffff\1\u009b\1\u009c",
-            "\1\35\1\36\1\37\1\uffff\1\u0097\5\uffff\1\66\1\67\1\70\1\71"+
-            "\1\72\1\73\1\74\2\uffff\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1"+
-            "\56\1\57\1\60\1\61\1\62\1\63\1\64\1\65\1\40\1\41\1\42\1\43\1"+
-            "\44\1\45\1\46\4\uffff\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1"+
-            "\1\u00a2\1\u00a3\1\u00a4\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9"+
-            "\1\u00aa\1\u00ab\1\u00ac\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1"+
-            "\42\uffff\1\u0098\1\u0099\1\u009a\1\uffff\1\u009b\1\u009c",
-            "",
-            "",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\6\uffff\1\u00b5\1\u00b4\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\1\142\1\136\1\137\1\133\1\135\1\141\1\143\1\134\1\140",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\1\145",
-            "\1\112\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1"+
-            "\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104\1"+
-            "\105\1\106\1\107\1\110\1\111",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154\1\u00b6\3\uffff\1\u00b7\1\u00bc"+
-            "\1\u00b9\1\u00bb\1\u00ba\1\u00bf\1\u00bd\1\u00b8\1\u00be",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154\1\u00c0\3\uffff\1\u00c1",
-            "\2\102\10\uffff\1\102",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111\1\u00c3\3\uffff\1\u00c4\1\u00c9"+
-            "\1\u00c5\1\u00c8\1\u00c6\1\u00cc\1\u00cb\1\u00c7\1\u00ca",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111\1\u00cd\3\uffff\1\u00ce",
-            "\2\102\10\uffff\1\102",
-            "\2\102\10\uffff\1\102",
-            "\1\35\1\36\1\37\1\uffff\1\u0097\5\uffff\1\66\1\67\1\70\1\71"+
-            "\1\72\1\73\1\74\2\uffff\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1"+
-            "\56\1\57\1\60\1\61\1\62\1\63\1\64\1\65\1\40\1\41\1\42\1\43\1"+
-            "\44\1\45\1\46\4\uffff\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1"+
-            "\1\u00a2\1\u00a3\1\u00a4\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9"+
-            "\1\u00aa\1\u00ab\1\u00ac\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1"+
-            "\42\uffff\1\u0098\1\u0099\1\u009a\1\uffff\1\u009b\1\u009c",
-            "\1\35\1\36\1\37\1\uffff\1\u0097\5\uffff\1\66\1\67\1\70\1\71"+
-            "\1\72\1\73\1\74\2\uffff\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1"+
-            "\56\1\57\1\60\1\61\1\62\1\63\1\64\1\65\1\40\1\41\1\42\1\43\1"+
-            "\44\1\45\1\46\4\uffff\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1"+
-            "\1\u00a2\1\u00a3\1\u00a4\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9"+
-            "\1\u00aa\1\u00ab\1\u00ac\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1"+
-            "\42\uffff\1\u0098\1\u0099\1\u009a\1\uffff\1\u009b\1\u009c",
-            "\1\u00b7\1\u00bc\1\u00b9\1\u00bb\1\u00ba\1\u00bf\1\u00bd\1"+
-            "\u00b8\1\u00be",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\1\u00c1",
-            "\1\155\16\uffff\1\156\1\157\1\160\1\161\1\162\1\163\1\164\1"+
-            "\165\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\146\1\147\1"+
-            "\150\1\151\1\152\1\153\1\154",
-            "\2\102\10\uffff\1\102\11\uffff\1\u00b2\1\u00b3",
-            "\1\u00c4\1\u00c9\1\u00c5\1\u00c8\1\u00c6\1\u00cc\1\u00cb\1"+
-            "\u00c7\1\u00ca",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111",
-            "\1\u00ce",
-            "\1\u00c2\16\uffff\1\113\1\114\1\115\1\116\1\117\1\120\1\121"+
-            "\1\122\1\123\1\124\1\125\1\126\1\127\1\130\1\131\1\103\1\104"+
-            "\1\105\1\106\1\107\1\110\1\111"
-    };
-
-    static final short[] DFA5_eot = DFA.unpackEncodedString(DFA5_eotS);
-    static final short[] DFA5_eof = DFA.unpackEncodedString(DFA5_eofS);
-    static final char[] DFA5_min = DFA.unpackEncodedStringToUnsignedChars(DFA5_minS);
-    static final char[] DFA5_max = DFA.unpackEncodedStringToUnsignedChars(DFA5_maxS);
-    static final short[] DFA5_accept = DFA.unpackEncodedString(DFA5_acceptS);
-    static final short[] DFA5_special = DFA.unpackEncodedString(DFA5_specialS);
-    static final short[][] DFA5_transition;
-
-    static {
-        int numStates = DFA5_transitionS.length;
-        DFA5_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA5_transition[i] = DFA.unpackEncodedString(DFA5_transitionS[i]);
-        }
-    }
-
-    class DFA5 extends DFA {
-
-        public DFA5(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 5;
-            this.eot = DFA5_eot;
-            this.eof = DFA5_eof;
-            this.min = DFA5_min;
-            this.max = DFA5_max;
-            this.accept = DFA5_accept;
-            this.special = DFA5_special;
-            this.transition = DFA5_transition;
-        }
-        public String getDescription() {
-            return "33:1: relative_datetime : ( ( date_prefix )? relative_date ( date_time_sep )? time | time time_date_sep ( date_prefix )? relative_date | ( date_prefix )? relative_date );";
-        }
-    }
-    static final String DFA1_eotS =
-        "\53\uffff";
-    static final String DFA1_eofS =
-        "\53\uffff";
-    static final String DFA1_minS =
-        "\1\26\1\uffff\1\23\32\32\1\uffff\1\23\1\103\11\32\1\103\1\32";
-    static final String DFA1_maxS =
-        "\1\177\1\uffff\1\35\30\76\1\113\1\103\1\uffff\1\50\1\113\11\76\1"+
-        "\103\1\76";
-    static final String DFA1_acceptS =
-        "\1\uffff\1\1\33\uffff\1\2\15\uffff";
-    static final String DFA1_specialS =
-        "\53\uffff}>";
-    static final String[] DFA1_transitionS = {
-            "\3\35\1\1\1\2\5\uffff\7\35\2\uffff\26\35\4\uffff\1\10\1\11\1"+
-            "\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1"+
-            "\26\1\27\1\30\1\31\1\32\1\33\1\34\42\uffff\1\3\1\4\1\5\1\uffff"+
-            "\1\6\1\7",
-            "",
-            "\2\35\6\uffff\2\1\1\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35\1\37\3\uffff\1\45\1\43\1\41\1\40\1\42"+
-            "\1\44\1\47\1\50\1\46",
-            "\1\36\16\uffff\26\35\1\51\3\uffff\1\52",
-            "",
-            "\2\35\6\uffff\2\1\1\35\11\uffff\2\35",
-            "\1\45\1\43\1\41\1\40\1\42\1\44\1\47\1\50\1\46",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\52",
-            "\1\36\16\uffff\26\35"
-    };
-
-    static final short[] DFA1_eot = DFA.unpackEncodedString(DFA1_eotS);
-    static final short[] DFA1_eof = DFA.unpackEncodedString(DFA1_eofS);
-    static final char[] DFA1_min = DFA.unpackEncodedStringToUnsignedChars(DFA1_minS);
-    static final char[] DFA1_max = DFA.unpackEncodedStringToUnsignedChars(DFA1_maxS);
-    static final short[] DFA1_accept = DFA.unpackEncodedString(DFA1_acceptS);
-    static final short[] DFA1_special = DFA.unpackEncodedString(DFA1_specialS);
-    static final short[][] DFA1_transition;
-
-    static {
-        int numStates = DFA1_transitionS.length;
-        DFA1_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA1_transition[i] = DFA.unpackEncodedString(DFA1_transitionS[i]);
-        }
-    }
-
-    class DFA1 extends DFA {
-
-        public DFA1(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 1;
-            this.eot = DFA1_eot;
-            this.eof = DFA1_eof;
-            this.min = DFA1_min;
-            this.max = DFA1_max;
-            this.accept = DFA1_accept;
-            this.special = DFA1_special;
-            this.transition = DFA1_transition;
-        }
-        public String getDescription() {
-            return "34:5: ( date_prefix )?";
-        }
-    }
+    protected DFA2 dfa2 = new DFA2(this);
+    protected DFA19 dfa19 = new DFA19(this);
+    protected DFA35 dfa35 = new DFA35(this);
+    protected DFA56 dfa56 = new DFA56(this);
     static final String DFA3_eotS =
-        "\53\uffff";
+        "\u0114\uffff";
     static final String DFA3_eofS =
-        "\2\uffff\1\35\33\uffff\1\35\14\uffff";
+        "\2\uffff\4\146\101\uffff\4\146\3\uffff\12\146\1\uffff\14\u00d4\2"+
+        "\uffff\14\u00d4\26\uffff\71\u00d4\3\uffff\5\u00d4\5\146\3\uffff"+
+        "\2\u00d4\4\uffff\2\u00d4\1\uffff\22\u00d4\1\uffff\2\u00d4\3\uffff"+
+        "\7\u00d4\1\uffff\27\u00d4\2\uffff";
     static final String DFA3_minS =
-        "\1\26\1\uffff\1\33\32\32\1\uffff\1\33\1\103\11\32\1\103\1\32";
+        "\1\26\1\46\4\23\65\25\14\55\4\23\3\143\12\23\1\uffff\14\23\1\26"+
+        "\1\uffff\14\23\1\55\22\25\1\55\2\25\71\23\10\46\5\23\1\42\1\43\1"+
+        "\143\2\51\1\uffff\1\42\1\43\1\143\2\51\1\55\22\23\1\55\2\23\1\143"+
+        "\1\141\1\44\7\51\1\44\27\51\2\45";
     static final String DFA3_maxS =
-        "\1\177\1\uffff\1\34\30\76\1\113\1\103\1\uffff\1\50\1\113\11\76\1"+
-        "\103\1\76";
+        "\1\151\1\47\4\152\24\41\1\112\1\102\37\41\14\151\2\152\2\151\1\145"+
+        "\1\151\1\152\12\151\1\uffff\14\151\1\41\1\uffff\14\150\1\112\22"+
+        "\41\1\102\2\41\71\150\3\47\5\150\5\151\1\142\1\43\1\153\2\150\1"+
+        "\uffff\1\142\1\43\1\153\2\150\1\112\22\150\1\102\2\150\1\151\1\153"+
+        "\1\44\7\150\1\44\27\150\2\142";
     static final String DFA3_acceptS =
-        "\1\uffff\1\1\33\uffff\1\2\15\uffff";
+        "\130\uffff\1\1\15\uffff\1\3\155\uffff\1\2\77\uffff";
     static final String DFA3_specialS =
-        "\53\uffff}>";
+        "\u0114\uffff}>";
     static final String[] DFA3_transitionS = {
-            "\3\35\1\1\1\2\5\uffff\7\35\2\uffff\26\35\4\uffff\1\10\1\11\1"+
-            "\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1"+
-            "\26\1\27\1\30\1\31\1\32\1\33\1\34\42\uffff\1\3\1\4\1\5\1\uffff"+
-            "\1\6\1\7",
+            "\1\73\1\74\1\75\1\76\1\77\1\100\1\101\1\102\1\103\1\104\1\105"+
+            "\1\106\7\uffff\1\111\1\112\2\uffff\1\7\1\10\1\11\1\12\1\13\1"+
+            "\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1"+
+            "\30\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1"+
+            "\44\1\45\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56\1\57\1"+
+            "\60\1\61\1\62\1\63\1\64\1\65\1\66\1\67\1\70\1\71\1\72\1\uffff"+
+            "\1\1\1\2\1\3\1\4\1\107\1\110\1\5\1\6",
+            "\2\113",
+            "\2\130\1\145\1\131\1\132\1\133\1\134\1\135\1\136\1\137\1\140"+
+            "\1\141\1\142\1\143\1\144\4\uffff\2\114\1\115\2\uffff\1\126\1"+
+            "\127\64\130\1\uffff\1\130\1\120\1\121\1\122\1\116\1\117\1\123"+
+            "\1\124\1\125",
+            "\2\130\1\145\1\131\1\132\1\133\1\134\1\135\1\136\1\137\1\140"+
+            "\1\141\1\142\1\143\1\144\4\uffff\2\114\1\115\2\uffff\1\126\1"+
+            "\127\64\130\1\uffff\1\130\1\120\1\121\1\122\1\116\1\117\1\123"+
+            "\1\124\1\125",
+            "\2\130\1\145\1\131\1\132\1\133\1\134\1\135\1\136\1\137\1\140"+
+            "\1\141\1\142\1\143\1\144\4\uffff\2\114\1\115\2\uffff\1\126\1"+
+            "\127\64\130\1\uffff\1\130\1\120\1\121\1\122\1\116\1\117\1\123"+
+            "\1\124\1\125",
+            "\2\130\1\145\1\131\1\132\1\133\1\134\1\135\1\136\1\137\1\140"+
+            "\1\141\1\142\1\143\1\144\6\uffff\1\115\2\uffff\1\126\1\127\64"+
+            "\130\1\uffff\1\130\1\120\1\121\1\122\1\116\1\117\1\123\1\124"+
+            "\1\125",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162\4\uffff\1\163\6\uffff\1\u0082\1\173\1\176"+
+            "\1\u0083\1\u0085\1\164\1\174\1\177\1\166\14\uffff\1\171\1\167"+
+            "\1\u0080\1\172\1\u0084\1\170\1\u0081\1\165\1\175",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162\4\uffff\1\u0086\6\uffff\1\u0088\24\uffff"+
+            "\1\u0087",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1"+
+            "\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c"+
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4"+
+            "\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac"+
+            "\1\u00ad\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4"+
+            "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb\1\u00bc"+
+            "\1\u00bd\1\u00be\1\u00bf\1\u00c0\1\u00c1\2\uffff\1\u0089\1\u008a"+
+            "\1\u008b\2\uffff\1\u008c\1\u008d",
+            "\2\130\1\uffff\14\130\6\uffff\1\115\2\uffff\1\126\1\127\64"+
+            "\130\1\uffff\1\130\1\120\1\121\1\122\1\116\1\117\1\123\1\124"+
+            "\1\125",
+            "\2\130\1\uffff\14\130\6\uffff\1\115\2\uffff\1\126\1\127\64"+
+            "\130\1\uffff\1\130\1\120\1\121\1\122\1\116\1\117\1\123\1\124"+
+            "\1\125",
+            "\2\130\1\uffff\14\130\13\uffff\64\130\1\uffff\4\130\2\uffff"+
+            "\2\130",
+            "\2\130\1\uffff\14\130\13\uffff\64\130\1\uffff\4\130\2\uffff"+
+            "\2\130",
+            "\1\u00c2\1\u00c3\1\u00c4",
+            "\1\u00c5\1\u00c6\1\u00c7\2\uffff\1\u00c8\1\u00c9",
+            "\1\u00ca\1\u00cb\1\u00cc\1\116\1\117\1\u00cd\1\u00ce\1\125",
+            "\2\130\1\uffff\14\130\11\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\2\130\1\uffff\14\130\11\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\17\130\4\uffff\2\130\3\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\17\130\4\uffff\2\130\3\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\17\130\4\uffff\2\130\3\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\17\130\11\uffff\1\126\1\127\64\130\1\uffff\4\130\2\uffff\2"+
+            "\130",
+            "\17\130\11\uffff\1\126\1\127\64\130\1\uffff\4\130\2\uffff\2"+
+            "\130",
+            "\2\130\1\uffff\14\130\11\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\2\130\1\uffff\14\130\13\uffff\64\130\1\uffff\4\130\2\uffff"+
+            "\2\130",
+            "\2\130\1\uffff\14\130\13\uffff\64\130\1\uffff\4\130\2\uffff"+
+            "\2\130",
             "",
-            "\2\1",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35\1\37\3\uffff\1\42\1\43\1\40\1\44\1\47"+
-            "\1\50\1\46\1\45\1\41",
-            "\1\36\16\uffff\26\35\1\51\3\uffff\1\52",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\2\uffff"+
+            "\64\130\1\u00d2\1\u00d3\7\130",
+            "\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157\1\160"+
+            "\1\161\1\162",
             "",
-            "\2\1\12\uffff\2\35",
-            "\1\42\1\43\1\40\1\44\1\47\1\50\1\46\1\45\1\41",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\52",
-            "\1\36\16\uffff\26\35"
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u00cf\16\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\2\130\66"+
+            "\uffff\1\u00d2\1\u00d3\6\130",
+            "\1\u0082\1\173\1\176\1\u0083\1\u0085\1\164\1\174\1\177\1\166"+
+            "\14\uffff\1\171\1\167\1\u0080\1\172\1\u0084\1\170\1\u0081\1"+
+            "\165\1\175",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\u0088\24\uffff\1\u0087",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\145\1\147\1\150\1\151\1\152\1\153\1\154\1\155\1\156\1\157"+
+            "\1\160\1\161\1\162",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\1\u00da\2\uffff\2"+
+            "\130\2\uffff\1\u00e5\1\u00ea\1\u00ec\1\u00e0\1\u00e4\1\u00e6"+
+            "\1\u00dc\1\u00e2\1\u00e7\14\uffff\1\u00de\1\u00e8\1\u00e1\1"+
+            "\u00eb\1\u00df\1\u00e9\1\u00db\1\u00e3\1\u00dd\26\uffff\1\u00d8"+
+            "\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\1\u00ed\2\uffff\2"+
+            "\130\2\uffff\1\u00ef\24\uffff\1\u00ee\36\uffff\1\u00d8\1\u00d9"+
+            "\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\2\u00f0",
+            "\2\u00f0",
+            "\2\u00f0",
+            "\2\u00f1\1\uffff\2\130\70\uffff\6\130",
+            "\2\u00f1\1\uffff\2\130\70\uffff\6\130",
+            "\2\u00f1\1\uffff\2\130\70\uffff\6\130",
+            "\2\u00f1\1\uffff\2\130\70\uffff\6\130",
+            "\2\u00f1\1\uffff\2\130\70\uffff\6\130",
+            "\2\130\1\uffff\14\130\11\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\2\130\1\uffff\14\130\11\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\2\130\1\uffff\14\130\11\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\2\130\1\uffff\14\130\11\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\2\130\1\uffff\14\130\11\uffff\1\126\1\127\64\130\1\uffff\4"+
+            "\130\2\uffff\2\130",
+            "\1\u00d0\2\uffff\1\u00d1\73\uffff\1\u00d2\1\u00d3",
+            "\1\u00f2",
+            "\1\u00f4\1\uffff\1\u00f5\1\u00f3\1\uffff\1\u00f6\1\u00f7\1"+
+            "\u00f8\1\u00f9",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "",
+            "\1\u00d6\2\uffff\1\u00d7\73\uffff\1\u00d8\1\u00d9",
+            "\1\u00fa",
+            "\1\u00fc\1\uffff\1\u00fd\1\u00fb\1\uffff\1\u00fe\1\u00ff\1"+
+            "\u0100\1\u0101",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\1\u00e5\1\u00ea\1\u00ec\1\u00e0\1\u00e4\1\u00e6\1\u00dc\1"+
+            "\u00e2\1\u00e7\14\uffff\1\u00de\1\u00e8\1\u00e1\1\u00eb\1\u00df"+
+            "\1\u00e9\1\u00db\1\u00e3\1\u00dd",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00ef\24\uffff\1\u00ee",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u00d5\16\uffff\1\u00d6\2\uffff\1\u00d7\3\uffff\2\130\66"+
+            "\uffff\1\u00d8\1\u00d9\6\130",
+            "\1\u0102\1\u0103\1\u0104\2\uffff\1\u0105\1\u0106",
+            "\1\u0110\1\u0111\1\u0108\1\u010e\1\u0109\1\u0107\1\u010f\1"+
+            "\u010a\1\u010b\1\u010c\1\u010d",
+            "\1\u0112",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\1\u0113",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\2\130\70\uffff\6\130",
+            "\1\u00d1\73\uffff\1\u00d2\1\u00d3",
+            "\1\u00d7\73\uffff\1\u00d8\1\u00d9"
     };
 
     static final short[] DFA3_eot = DFA.unpackEncodedString(DFA3_eotS);
@@ -10689,412 +8728,1141 @@ public class DateParser extends Parser {
             this.transition = DFA3_transition;
         }
         public String getDescription() {
-            return "35:24: ( date_prefix )?";
+            return "28:1: date_time options {backtrack=true; } : ( ( ( ( date ( COMMA | AT )? time )=> date time ) | time ( COMMA | ON )? date ) -> ^( DATE_TIME date time ) | date -> ^( DATE_TIME date ) | time -> ^( DATE_TIME time ) );";
         }
     }
-    static final String DFA4_eotS =
-        "\53\uffff";
-    static final String DFA4_eofS =
-        "\2\uffff\1\35\33\uffff\1\35\14\uffff";
-    static final String DFA4_minS =
-        "\1\26\1\uffff\1\33\32\32\1\uffff\1\33\1\103\11\32\1\103\1\32";
-    static final String DFA4_maxS =
-        "\1\177\1\uffff\1\34\30\76\1\113\1\103\1\uffff\1\50\1\113\11\76\1"+
-        "\103\1\76";
-    static final String DFA4_acceptS =
-        "\1\uffff\1\1\33\uffff\1\2\15\uffff";
-    static final String DFA4_specialS =
-        "\53\uffff}>";
-    static final String[] DFA4_transitionS = {
-            "\3\35\1\1\1\2\5\uffff\7\35\2\uffff\26\35\4\uffff\1\10\1\11\1"+
-            "\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1"+
-            "\26\1\27\1\30\1\31\1\32\1\33\1\34\42\uffff\1\3\1\4\1\5\1\uffff"+
-            "\1\6\1\7",
+    static final String DFA2_eotS =
+        "\143\uffff";
+    static final String DFA2_eofS =
+        "\143\uffff";
+    static final String DFA2_minS =
+        "\1\26\1\uffff\4\23\102\uffff\14\23\2\uffff\4\0\11\uffff";
+    static final String DFA2_maxS =
+        "\1\151\1\uffff\4\152\102\uffff\14\151\2\uffff\4\0\11\uffff";
+    static final String DFA2_acceptS =
+        "\1\uffff\1\1\4\uffff\101\1\1\2\14\uffff\2\1\4\uffff\11\1";
+    static final String DFA2_specialS =
+        "\1\23\1\uffff\1\21\1\22\1\0\1\24\102\uffff\1\11\1\12\1\13\1\3\1"+
+        "\4\1\5\1\7\1\17\1\16\1\15\1\14\1\20\2\uffff\1\2\1\1\1\6\1\10\11"+
+        "\uffff}>";
+    static final String[] DFA2_transitionS = {
+            "\1\73\1\74\1\75\1\76\1\77\1\100\1\101\1\102\1\103\1\104\1\105"+
+            "\1\106\7\uffff\2\107\2\uffff\1\7\1\10\1\11\1\12\1\13\1\14\1"+
+            "\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1"+
+            "\31\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1"+
+            "\45\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56\1\57\1\60\1"+
+            "\61\1\62\1\63\1\64\1\65\1\66\1\67\1\70\1\71\1\72\1\uffff\1\1"+
+            "\1\2\1\3\1\4\2\107\1\5\1\6",
             "",
+            "\2\107\1\124\1\110\1\111\1\112\1\113\1\114\1\115\1\116\1\117"+
+            "\1\120\1\121\1\122\1\123\4\uffff\2\125\1\107\2\uffff\66\107"+
+            "\1\uffff\11\107",
+            "\2\107\1\124\1\110\1\111\1\112\1\113\1\114\1\115\1\116\1\117"+
+            "\1\120\1\121\1\122\1\123\4\uffff\2\125\1\107\2\uffff\66\107"+
+            "\1\uffff\11\107",
+            "\2\107\1\124\1\110\1\111\1\112\1\113\1\114\1\115\1\116\1\117"+
+            "\1\120\1\121\1\122\1\123\4\uffff\2\125\1\107\2\uffff\66\107"+
+            "\1\uffff\11\107",
+            "\2\107\1\124\1\110\1\111\1\112\1\113\1\114\1\115\1\116\1\117"+
+            "\1\120\1\121\1\122\1\123\6\uffff\1\107\2\uffff\66\107\1\uffff"+
+            "\11\107",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "\1\132\16\uffff\1\133\2\uffff\1\134\3\uffff\1\141\1\142\2\uffff"+
+            "\64\107\1\135\1\136\1\126\1\127\1\130\1\137\1\140\1\131\1\107",
+            "",
+            "",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA2_eot = DFA.unpackEncodedString(DFA2_eotS);
+    static final short[] DFA2_eof = DFA.unpackEncodedString(DFA2_eofS);
+    static final char[] DFA2_min = DFA.unpackEncodedStringToUnsignedChars(DFA2_minS);
+    static final char[] DFA2_max = DFA.unpackEncodedStringToUnsignedChars(DFA2_maxS);
+    static final short[] DFA2_accept = DFA.unpackEncodedString(DFA2_acceptS);
+    static final short[] DFA2_special = DFA.unpackEncodedString(DFA2_specialS);
+    static final short[][] DFA2_transition;
+
+    static {
+        int numStates = DFA2_transitionS.length;
+        DFA2_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA2_transition[i] = DFA.unpackEncodedString(DFA2_transitionS[i]);
+        }
+    }
+
+    class DFA2 extends DFA {
+
+        public DFA2(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 2;
+            this.eot = DFA2_eot;
+            this.eof = DFA2_eof;
+            this.min = DFA2_min;
+            this.max = DFA2_max;
+            this.accept = DFA2_accept;
+            this.special = DFA2_special;
+            this.transition = DFA2_transition;
+        }
+        public String getDescription() {
+            return "30:5: ( ( ( date ( COMMA | AT )? time )=> date time ) | time ( COMMA | ON )? date )";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            TokenStream input = (TokenStream)_input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA2_4 = input.LA(1);
+
+                         
+                        int index2_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_4==OF) && (synpred1_Date())) {s = 84;}
+
+                        else if ( (LA2_4==JANUARY) ) {s = 72;}
+
+                        else if ( (LA2_4==FEBRUARY) ) {s = 73;}
+
+                        else if ( (LA2_4==MARCH) ) {s = 74;}
+
+                        else if ( (LA2_4==APRIL) ) {s = 75;}
+
+                        else if ( (LA2_4==MAY) ) {s = 76;}
+
+                        else if ( (LA2_4==JUNE) ) {s = 77;}
+
+                        else if ( (LA2_4==JULY) ) {s = 78;}
+
+                        else if ( (LA2_4==AUGUST) ) {s = 79;}
+
+                        else if ( (LA2_4==SEPTEMBER) ) {s = 80;}
+
+                        else if ( (LA2_4==OCTOBER) ) {s = 81;}
+
+                        else if ( (LA2_4==NOVEMBER) ) {s = 82;}
+
+                        else if ( (LA2_4==DECEMBER) ) {s = 83;}
+
+                        else if ( ((LA2_4>=COMMA && LA2_4<=ON)||LA2_4==COLON||(LA2_4>=AM && LA2_4<=THIRTY_FIRST)||(LA2_4>=FOUR_DIGIT && LA2_4<=THIRTY_TWO_TO_FIFTY_NINE)) ) {s = 71;}
+
+                        else if ( ((LA2_4>=DASH && LA2_4<=SLASH)) && (synpred1_Date())) {s = 85;}
+
+                         
+                        input.seek(index2_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA2_87 = input.LA(1);
+
+                         
+                        int index2_87 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_Date()) ) {s = 98;}
+
+                        else if ( (true) ) {s = 71;}
+
+                         
+                        input.seek(index2_87);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA2_86 = input.LA(1);
+
+                         
+                        int index2_86 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_Date()) ) {s = 98;}
+
+                        else if ( (true) ) {s = 71;}
+
+                         
+                        input.seek(index2_86);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA2_75 = input.LA(1);
+
+                         
+                        int index2_75 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_75==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_75==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_75==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_75==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( ((LA2_75>=ONE && LA2_75<=THIRTY_FIRST)||LA2_75==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                        else if ( (LA2_75==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_75==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_75==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_75==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_75==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_75==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_75==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_75==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_75==NOON) && (synpred1_Date())) {s = 98;}
+
+                         
+                        input.seek(index2_75);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA2_76 = input.LA(1);
+
+                         
+                        int index2_76 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_76==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_76==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_76==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_76==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( ((LA2_76>=ONE && LA2_76<=THIRTY_FIRST)||LA2_76==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                        else if ( (LA2_76==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_76==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_76==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_76==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_76==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_76==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_76==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_76==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_76==NOON) && (synpred1_Date())) {s = 98;}
+
+                         
+                        input.seek(index2_76);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA2_77 = input.LA(1);
+
+                         
+                        int index2_77 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_77==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_77==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_77==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_77==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( ((LA2_77>=ONE && LA2_77<=THIRTY_FIRST)||LA2_77==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                        else if ( (LA2_77==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_77==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_77==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_77==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_77==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_77==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_77==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_77==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_77==NOON) && (synpred1_Date())) {s = 98;}
+
+                         
+                        input.seek(index2_77);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA2_88 = input.LA(1);
+
+                         
+                        int index2_88 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_Date()) ) {s = 98;}
+
+                        else if ( (true) ) {s = 71;}
+
+                         
+                        input.seek(index2_88);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA2_78 = input.LA(1);
+
+                         
+                        int index2_78 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_78==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_78==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_78==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_78==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_78==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_78==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_78==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_78==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_78==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_78==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_78==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( (LA2_78==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_78==NOON) && (synpred1_Date())) {s = 98;}
+
+                        else if ( ((LA2_78>=ONE && LA2_78<=THIRTY_FIRST)||LA2_78==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                         
+                        input.seek(index2_78);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 8 : 
+                        int LA2_89 = input.LA(1);
+
+                         
+                        int index2_89 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_Date()) ) {s = 98;}
+
+                        else if ( (true) ) {s = 71;}
+
+                         
+                        input.seek(index2_89);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 9 : 
+                        int LA2_72 = input.LA(1);
+
+                         
+                        int index2_72 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_72==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_72==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_72==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_72==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( ((LA2_72>=ONE && LA2_72<=THIRTY_FIRST)||LA2_72==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                        else if ( (LA2_72==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_72==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_72==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_72==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_72==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_72==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_72==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_72==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_72==NOON) && (synpred1_Date())) {s = 98;}
+
+                         
+                        input.seek(index2_72);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 10 : 
+                        int LA2_73 = input.LA(1);
+
+                         
+                        int index2_73 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_73==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_73==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_73==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_73==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( ((LA2_73>=ONE && LA2_73<=THIRTY_FIRST)||LA2_73==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                        else if ( (LA2_73==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_73==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_73==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_73==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_73==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_73==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_73==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_73==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_73==NOON) && (synpred1_Date())) {s = 98;}
+
+                         
+                        input.seek(index2_73);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 11 : 
+                        int LA2_74 = input.LA(1);
+
+                         
+                        int index2_74 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_74==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_74==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_74==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_74==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( ((LA2_74>=ONE && LA2_74<=THIRTY_FIRST)||LA2_74==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                        else if ( (LA2_74==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_74==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_74==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_74==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_74==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_74==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_74==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_74==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_74==NOON) && (synpred1_Date())) {s = 98;}
+
+                         
+                        input.seek(index2_74);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 12 : 
+                        int LA2_82 = input.LA(1);
+
+                         
+                        int index2_82 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_82==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_82==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_82==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_82==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_82==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_82==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_82==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_82==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_82==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_82==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_82==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( (LA2_82==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_82==NOON) && (synpred1_Date())) {s = 98;}
+
+                        else if ( ((LA2_82>=ONE && LA2_82<=THIRTY_FIRST)||LA2_82==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                         
+                        input.seek(index2_82);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 13 : 
+                        int LA2_81 = input.LA(1);
+
+                         
+                        int index2_81 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_81==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_81==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_81==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_81==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( ((LA2_81>=ONE && LA2_81<=THIRTY_FIRST)||LA2_81==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                        else if ( (LA2_81==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_81==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_81==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_81==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_81==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_81==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_81==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_81==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_81==NOON) && (synpred1_Date())) {s = 98;}
+
+                         
+                        input.seek(index2_81);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 14 : 
+                        int LA2_80 = input.LA(1);
+
+                         
+                        int index2_80 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_80==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_80==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_80==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_80==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( ((LA2_80>=ONE && LA2_80<=THIRTY_FIRST)||LA2_80==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                        else if ( (LA2_80==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_80==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_80==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_80==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_80==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_80==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_80==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_80==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_80==NOON) && (synpred1_Date())) {s = 98;}
+
+                         
+                        input.seek(index2_80);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 15 : 
+                        int LA2_79 = input.LA(1);
+
+                         
+                        int index2_79 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_79==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_79==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_79==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_79==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( ((LA2_79>=ONE && LA2_79<=THIRTY_FIRST)||LA2_79==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                        else if ( (LA2_79==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_79==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_79==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_79==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_79==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_79==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_79==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_79==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_79==NOON) && (synpred1_Date())) {s = 98;}
+
+                         
+                        input.seek(index2_79);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 16 : 
+                        int LA2_83 = input.LA(1);
+
+                         
+                        int index2_83 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_83==PREFIXED_ONE_TO_NINE) ) {s = 86;}
+
+                        else if ( (LA2_83==ONE_TO_NINE) ) {s = 87;}
+
+                        else if ( (LA2_83==TEN_TO_TWELVE) ) {s = 88;}
+
+                        else if ( (LA2_83==THIRTEEN_TO_TWENTY_THREE) ) {s = 89;}
+
+                        else if ( ((LA2_83>=ONE && LA2_83<=THIRTY_FIRST)||LA2_83==TWENTY_FOUR_TO_THIRTY_ONE) ) {s = 71;}
+
+                        else if ( (LA2_83==COMMA) && (synpred1_Date())) {s = 90;}
+
+                        else if ( (LA2_83==IN) && (synpred1_Date())) {s = 91;}
+
+                        else if ( (LA2_83==SINGLE_QUOTE) && (synpred1_Date())) {s = 92;}
+
+                        else if ( (LA2_83==THREE_DIGIT) && (synpred1_Date())) {s = 93;}
+
+                        else if ( (LA2_83==FOUR_DIGIT) && (synpred1_Date())) {s = 94;}
+
+                        else if ( (LA2_83==TWO_ZEROS) && (synpred1_Date())) {s = 95;}
+
+                        else if ( (LA2_83==ZERO) && (synpred1_Date())) {s = 96;}
+
+                        else if ( (LA2_83==MIDNIGHT) && (synpred1_Date())) {s = 97;}
+
+                        else if ( (LA2_83==NOON) && (synpred1_Date())) {s = 98;}
+
+                         
+                        input.seek(index2_83);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 17 : 
+                        int LA2_2 = input.LA(1);
+
+                         
+                        int index2_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((LA2_2>=COMMA && LA2_2<=ON)||LA2_2==COLON||(LA2_2>=AM && LA2_2<=THIRTY_FIRST)||(LA2_2>=FOUR_DIGIT && LA2_2<=THIRTY_TWO_TO_FIFTY_NINE)) ) {s = 71;}
+
+                        else if ( (LA2_2==JANUARY) ) {s = 72;}
+
+                        else if ( (LA2_2==FEBRUARY) ) {s = 73;}
+
+                        else if ( (LA2_2==MARCH) ) {s = 74;}
+
+                        else if ( (LA2_2==APRIL) ) {s = 75;}
+
+                        else if ( (LA2_2==MAY) ) {s = 76;}
+
+                        else if ( (LA2_2==JUNE) ) {s = 77;}
+
+                        else if ( (LA2_2==JULY) ) {s = 78;}
+
+                        else if ( (LA2_2==AUGUST) ) {s = 79;}
+
+                        else if ( (LA2_2==SEPTEMBER) ) {s = 80;}
+
+                        else if ( (LA2_2==OCTOBER) ) {s = 81;}
+
+                        else if ( (LA2_2==NOVEMBER) ) {s = 82;}
+
+                        else if ( (LA2_2==DECEMBER) ) {s = 83;}
+
+                        else if ( (LA2_2==OF) && (synpred1_Date())) {s = 84;}
+
+                        else if ( ((LA2_2>=DASH && LA2_2<=SLASH)) && (synpred1_Date())) {s = 85;}
+
+                         
+                        input.seek(index2_2);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 18 : 
+                        int LA2_3 = input.LA(1);
+
+                         
+                        int index2_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_3==OF) && (synpred1_Date())) {s = 84;}
+
+                        else if ( (LA2_3==JANUARY) ) {s = 72;}
+
+                        else if ( (LA2_3==FEBRUARY) ) {s = 73;}
+
+                        else if ( (LA2_3==MARCH) ) {s = 74;}
+
+                        else if ( (LA2_3==APRIL) ) {s = 75;}
+
+                        else if ( (LA2_3==MAY) ) {s = 76;}
+
+                        else if ( (LA2_3==JUNE) ) {s = 77;}
+
+                        else if ( (LA2_3==JULY) ) {s = 78;}
+
+                        else if ( (LA2_3==AUGUST) ) {s = 79;}
+
+                        else if ( (LA2_3==SEPTEMBER) ) {s = 80;}
+
+                        else if ( (LA2_3==OCTOBER) ) {s = 81;}
+
+                        else if ( (LA2_3==NOVEMBER) ) {s = 82;}
+
+                        else if ( (LA2_3==DECEMBER) ) {s = 83;}
+
+                        else if ( ((LA2_3>=COMMA && LA2_3<=ON)||LA2_3==COLON||(LA2_3>=AM && LA2_3<=THIRTY_FIRST)||(LA2_3>=FOUR_DIGIT && LA2_3<=THIRTY_TWO_TO_FIFTY_NINE)) ) {s = 71;}
+
+                        else if ( ((LA2_3>=DASH && LA2_3<=SLASH)) && (synpred1_Date())) {s = 85;}
+
+                         
+                        input.seek(index2_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 19 : 
+                        int LA2_0 = input.LA(1);
+
+                         
+                        int index2_0 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_0==FOUR_DIGIT) && (synpred1_Date())) {s = 1;}
+
+                        else if ( (LA2_0==PREFIXED_ONE_TO_NINE) ) {s = 2;}
+
+                        else if ( (LA2_0==ONE_TO_NINE) ) {s = 3;}
+
+                        else if ( (LA2_0==TEN_TO_TWELVE) ) {s = 4;}
+
+                        else if ( (LA2_0==THIRTEEN_TO_TWENTY_THREE) ) {s = 5;}
+
+                        else if ( (LA2_0==TWENTY_FOUR_TO_THIRTY_ONE) && (synpred1_Date())) {s = 6;}
+
+                        else if ( (LA2_0==ONE) && (synpred1_Date())) {s = 7;}
+
+                        else if ( (LA2_0==TWO) && (synpred1_Date())) {s = 8;}
+
+                        else if ( (LA2_0==THREE) && (synpred1_Date())) {s = 9;}
+
+                        else if ( (LA2_0==FOUR) && (synpred1_Date())) {s = 10;}
+
+                        else if ( (LA2_0==FIVE) && (synpred1_Date())) {s = 11;}
+
+                        else if ( (LA2_0==SIX) && (synpred1_Date())) {s = 12;}
+
+                        else if ( (LA2_0==SEVEN) && (synpred1_Date())) {s = 13;}
+
+                        else if ( (LA2_0==EIGHT) && (synpred1_Date())) {s = 14;}
+
+                        else if ( (LA2_0==NINE) && (synpred1_Date())) {s = 15;}
+
+                        else if ( (LA2_0==TEN) && (synpred1_Date())) {s = 16;}
+
+                        else if ( (LA2_0==ELEVEN) && (synpred1_Date())) {s = 17;}
+
+                        else if ( (LA2_0==TWELVE) && (synpred1_Date())) {s = 18;}
+
+                        else if ( (LA2_0==THIRTEEN) && (synpred1_Date())) {s = 19;}
+
+                        else if ( (LA2_0==FOURTEEN) && (synpred1_Date())) {s = 20;}
+
+                        else if ( (LA2_0==FIFTEEN) && (synpred1_Date())) {s = 21;}
+
+                        else if ( (LA2_0==SIXTEEN) && (synpred1_Date())) {s = 22;}
+
+                        else if ( (LA2_0==SEVENTEEN) && (synpred1_Date())) {s = 23;}
+
+                        else if ( (LA2_0==EIGHTEEN) && (synpred1_Date())) {s = 24;}
+
+                        else if ( (LA2_0==NINETEEN) && (synpred1_Date())) {s = 25;}
+
+                        else if ( (LA2_0==TWENTY) && (synpred1_Date())) {s = 26;}
+
+                        else if ( (LA2_0==THIRTY) && (synpred1_Date())) {s = 27;}
+
+                        else if ( (LA2_0==FIRST) && (synpred1_Date())) {s = 28;}
+
+                        else if ( (LA2_0==SECOND) && (synpred1_Date())) {s = 29;}
+
+                        else if ( (LA2_0==THIRD) && (synpred1_Date())) {s = 30;}
+
+                        else if ( (LA2_0==FOURTH) && (synpred1_Date())) {s = 31;}
+
+                        else if ( (LA2_0==FIFTH) && (synpred1_Date())) {s = 32;}
+
+                        else if ( (LA2_0==SIXTH) && (synpred1_Date())) {s = 33;}
+
+                        else if ( (LA2_0==SEVENTH) && (synpred1_Date())) {s = 34;}
+
+                        else if ( (LA2_0==EIGHTH) && (synpred1_Date())) {s = 35;}
+
+                        else if ( (LA2_0==NINTH) && (synpred1_Date())) {s = 36;}
+
+                        else if ( (LA2_0==TENTH) && (synpred1_Date())) {s = 37;}
+
+                        else if ( (LA2_0==ELEVENTH) && (synpred1_Date())) {s = 38;}
+
+                        else if ( (LA2_0==TWELFTH) && (synpred1_Date())) {s = 39;}
+
+                        else if ( (LA2_0==THIRTEENTH) && (synpred1_Date())) {s = 40;}
+
+                        else if ( (LA2_0==FOURTEENTH) && (synpred1_Date())) {s = 41;}
+
+                        else if ( (LA2_0==FIFTEENTH) && (synpred1_Date())) {s = 42;}
+
+                        else if ( (LA2_0==SIXTEENTH) && (synpred1_Date())) {s = 43;}
+
+                        else if ( (LA2_0==SEVENTEENTH) && (synpred1_Date())) {s = 44;}
+
+                        else if ( (LA2_0==EIGHTEENTH) && (synpred1_Date())) {s = 45;}
+
+                        else if ( (LA2_0==NINETEENTH) && (synpred1_Date())) {s = 46;}
+
+                        else if ( (LA2_0==TWENTIETH) && (synpred1_Date())) {s = 47;}
+
+                        else if ( (LA2_0==TWENTY_FIRST) && (synpred1_Date())) {s = 48;}
+
+                        else if ( (LA2_0==TWENTY_SECOND) && (synpred1_Date())) {s = 49;}
+
+                        else if ( (LA2_0==TWENTY_THIRD) && (synpred1_Date())) {s = 50;}
+
+                        else if ( (LA2_0==TWENTY_FOURTH) && (synpred1_Date())) {s = 51;}
+
+                        else if ( (LA2_0==TWENTY_FIFTH) && (synpred1_Date())) {s = 52;}
+
+                        else if ( (LA2_0==TWENTY_SIXTH) && (synpred1_Date())) {s = 53;}
+
+                        else if ( (LA2_0==TWENTY_SEVENTH) && (synpred1_Date())) {s = 54;}
+
+                        else if ( (LA2_0==TWENTY_EIGHTH) && (synpred1_Date())) {s = 55;}
+
+                        else if ( (LA2_0==TWENTY_NINTH) && (synpred1_Date())) {s = 56;}
+
+                        else if ( (LA2_0==THIRTIETH) && (synpred1_Date())) {s = 57;}
+
+                        else if ( (LA2_0==THIRTY_FIRST) && (synpred1_Date())) {s = 58;}
+
+                        else if ( (LA2_0==JANUARY) && (synpred1_Date())) {s = 59;}
+
+                        else if ( (LA2_0==FEBRUARY) && (synpred1_Date())) {s = 60;}
+
+                        else if ( (LA2_0==MARCH) && (synpred1_Date())) {s = 61;}
+
+                        else if ( (LA2_0==APRIL) && (synpred1_Date())) {s = 62;}
+
+                        else if ( (LA2_0==MAY) && (synpred1_Date())) {s = 63;}
+
+                        else if ( (LA2_0==JUNE) && (synpred1_Date())) {s = 64;}
+
+                        else if ( (LA2_0==JULY) && (synpred1_Date())) {s = 65;}
+
+                        else if ( (LA2_0==AUGUST) && (synpred1_Date())) {s = 66;}
+
+                        else if ( (LA2_0==SEPTEMBER) && (synpred1_Date())) {s = 67;}
+
+                        else if ( (LA2_0==OCTOBER) && (synpred1_Date())) {s = 68;}
+
+                        else if ( (LA2_0==NOVEMBER) && (synpred1_Date())) {s = 69;}
+
+                        else if ( (LA2_0==DECEMBER) && (synpred1_Date())) {s = 70;}
+
+                        else if ( ((LA2_0>=MIDNIGHT && LA2_0<=NOON)||(LA2_0>=TWO_ZEROS && LA2_0<=ZERO)) ) {s = 71;}
+
+                         
+                        input.seek(index2_0);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 20 : 
+                        int LA2_5 = input.LA(1);
+
+                         
+                        int index2_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA2_5==OF) && (synpred1_Date())) {s = 84;}
+
+                        else if ( (LA2_5==JANUARY) ) {s = 72;}
+
+                        else if ( (LA2_5==FEBRUARY) ) {s = 73;}
+
+                        else if ( (LA2_5==MARCH) ) {s = 74;}
+
+                        else if ( (LA2_5==APRIL) ) {s = 75;}
+
+                        else if ( (LA2_5==MAY) ) {s = 76;}
+
+                        else if ( (LA2_5==JUNE) ) {s = 77;}
+
+                        else if ( (LA2_5==JULY) ) {s = 78;}
+
+                        else if ( (LA2_5==AUGUST) ) {s = 79;}
+
+                        else if ( (LA2_5==SEPTEMBER) ) {s = 80;}
+
+                        else if ( (LA2_5==OCTOBER) ) {s = 81;}
+
+                        else if ( (LA2_5==NOVEMBER) ) {s = 82;}
+
+                        else if ( (LA2_5==DECEMBER) ) {s = 83;}
+
+                        else if ( ((LA2_5>=COMMA && LA2_5<=ON)||LA2_5==COLON||(LA2_5>=AM && LA2_5<=THIRTY_FIRST)||(LA2_5>=FOUR_DIGIT && LA2_5<=THIRTY_TWO_TO_FIFTY_NINE)) ) {s = 71;}
+
+                         
+                        input.seek(index2_5);
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            if (state.backtracking>0) {state.failed=true; return -1;}
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 2, _s, input);
+            error(nvae);
+            throw nvae;
+        }
+    }
+    static final String DFA19_eotS =
+        "\24\uffff";
+    static final String DFA19_eofS =
+        "\1\7\1\uffff\5\1\1\uffff\14\7";
+    static final String DFA19_minS =
+        "\1\23\1\uffff\5\23\1\uffff\14\23";
+    static final String DFA19_maxS =
+        "\1\152\1\uffff\5\151\1\uffff\14\151";
+    static final String DFA19_acceptS =
+        "\1\uffff\1\1\5\uffff\1\2\14\uffff";
+    static final String DFA19_specialS =
+        "\24\uffff}>";
+    static final String[] DFA19_transitionS = {
+            "\2\7\1\uffff\14\7\6\uffff\1\1\2\uffff\66\7\1\uffff\1\7\1\2\1"+
+            "\3\1\4\2\1\1\5\1\6\1\1",
+            "",
+            "\2\1\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21"+
+            "\1\22\1\23\4\uffff\2\7\3\uffff\66\1\1\uffff\4\1\2\uffff\2\1",
+            "\2\1\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21"+
+            "\1\22\1\23\4\uffff\2\7\3\uffff\66\1\1\uffff\4\1\2\uffff\2\1",
+            "\2\1\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21"+
+            "\1\22\1\23\4\uffff\2\7\3\uffff\66\1\1\uffff\4\1\2\uffff\2\1",
+            "\2\1\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21"+
+            "\1\22\1\23\11\uffff\66\1\1\uffff\4\1\2\uffff\2\1",
+            "\2\1\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21"+
+            "\1\22\1\23\11\uffff\66\1\1\uffff\4\1\2\uffff\2\1",
+            "",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
             "\2\1",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35\1\37\3\uffff\1\43\1\41\1\44\1\47\1\50"+
-            "\1\46\1\45\1\42\1\40",
-            "\1\36\16\uffff\26\35\1\51\3\uffff\1\52",
-            "",
-            "\2\1\12\uffff\2\35",
-            "\1\43\1\41\1\44\1\47\1\50\1\46\1\45\1\42\1\40",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\36\16\uffff\26\35",
-            "\1\52",
-            "\1\36\16\uffff\26\35"
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1",
+            "\1\7\16\uffff\1\7\2\uffff\1\7\7\uffff\64\1\2\7\3\1\2\uffff"+
+            "\2\1"
     };
 
-    static final short[] DFA4_eot = DFA.unpackEncodedString(DFA4_eotS);
-    static final short[] DFA4_eof = DFA.unpackEncodedString(DFA4_eofS);
-    static final char[] DFA4_min = DFA.unpackEncodedStringToUnsignedChars(DFA4_minS);
-    static final char[] DFA4_max = DFA.unpackEncodedStringToUnsignedChars(DFA4_maxS);
-    static final short[] DFA4_accept = DFA.unpackEncodedString(DFA4_acceptS);
-    static final short[] DFA4_special = DFA.unpackEncodedString(DFA4_specialS);
-    static final short[][] DFA4_transition;
+    static final short[] DFA19_eot = DFA.unpackEncodedString(DFA19_eotS);
+    static final short[] DFA19_eof = DFA.unpackEncodedString(DFA19_eofS);
+    static final char[] DFA19_min = DFA.unpackEncodedStringToUnsignedChars(DFA19_minS);
+    static final char[] DFA19_max = DFA.unpackEncodedStringToUnsignedChars(DFA19_maxS);
+    static final short[] DFA19_accept = DFA.unpackEncodedString(DFA19_acceptS);
+    static final short[] DFA19_special = DFA.unpackEncodedString(DFA19_specialS);
+    static final short[][] DFA19_transition;
 
     static {
-        int numStates = DFA4_transitionS.length;
-        DFA4_transition = new short[numStates][];
+        int numStates = DFA19_transitionS.length;
+        DFA19_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA4_transition[i] = DFA.unpackEncodedString(DFA4_transitionS[i]);
+            DFA19_transition[i] = DFA.unpackEncodedString(DFA19_transitionS[i]);
         }
     }
 
-    class DFA4 extends DFA {
+    class DFA19 extends DFA {
 
-        public DFA4(BaseRecognizer recognizer) {
+        public DFA19(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 4;
-            this.eot = DFA4_eot;
-            this.eof = DFA4_eof;
-            this.min = DFA4_min;
-            this.max = DFA4_max;
-            this.accept = DFA4_accept;
-            this.special = DFA4_special;
-            this.transition = DFA4_transition;
+            this.decisionNumber = 19;
+            this.eot = DFA19_eot;
+            this.eof = DFA19_eof;
+            this.min = DFA19_min;
+            this.max = DFA19_max;
+            this.accept = DFA19_accept;
+            this.special = DFA19_special;
+            this.transition = DFA19_transition;
         }
         public String getDescription() {
-            return "36:5: ( date_prefix )?";
+            return "92:11: ( ( COLON )? minutes )?";
         }
     }
-    static final String DFA6_eotS =
-        "\102\uffff";
-    static final String DFA6_eofS =
-        "\36\uffff\27\3\15\uffff";
-    static final String DFA6_minS =
-        "\1\26\3\uffff\32\32\27\23\1\103\11\32\1\103\1\32\1\uffff";
-    static final String DFA6_maxS =
-        "\1\177\3\uffff\30\76\1\113\1\103\27\50\1\113\11\76\1\103\1\76\1"+
-        "\uffff";
-    static final String DFA6_acceptS =
-        "\1\uffff\1\1\1\2\1\3\75\uffff\1\4";
-    static final String DFA6_specialS =
-        "\102\uffff}>";
-    static final String[] DFA6_transitionS = {
-            "\3\1\1\uffff\1\2\5\uffff\7\3\2\uffff\26\2\4\uffff\1\11\1\12"+
-            "\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26"+
-            "\1\27\1\30\1\31\1\32\1\33\1\34\1\35\42\uffff\1\4\1\5\1\6\1\uffff"+
-            "\1\7\1\10",
-            "",
-            "",
-            "",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44\1\65\3\uffff\1\72\1\67\1\75\1\73\1\71\1\70\1\76\1\74\1"+
-            "\66",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44\1\77\3\uffff\1\100",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\2\3\10\uffff\1\3\11\uffff\2\101",
-            "\1\72\1\67\1\75\1\73\1\71\1\70\1\76\1\74\1\66",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            "\1\100",
-            "\1\45\16\uffff\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\55\1\56"+
-            "\1\57\1\60\1\61\1\62\1\63\1\64\1\36\1\37\1\40\1\41\1\42\1\43"+
-            "\1\44",
-            ""
-    };
-
-    static final short[] DFA6_eot = DFA.unpackEncodedString(DFA6_eotS);
-    static final short[] DFA6_eof = DFA.unpackEncodedString(DFA6_eofS);
-    static final char[] DFA6_min = DFA.unpackEncodedStringToUnsignedChars(DFA6_minS);
-    static final char[] DFA6_max = DFA.unpackEncodedStringToUnsignedChars(DFA6_maxS);
-    static final short[] DFA6_accept = DFA.unpackEncodedString(DFA6_acceptS);
-    static final short[] DFA6_special = DFA.unpackEncodedString(DFA6_specialS);
-    static final short[][] DFA6_transition;
-
-    static {
-        int numStates = DFA6_transitionS.length;
-        DFA6_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA6_transition[i] = DFA.unpackEncodedString(DFA6_transitionS[i]);
-        }
-    }
-
-    class DFA6 extends DFA {
-
-        public DFA6(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 6;
-            this.eot = DFA6_eot;
-            this.eof = DFA6_eof;
-            this.min = DFA6_min;
-            this.max = DFA6_max;
-            this.accept = DFA6_accept;
-            this.special = DFA6_special;
-            this.transition = DFA6_transition;
-        }
-        public String getDescription() {
-            return "56:1: relative_date : ( named_relative_date | modifiable_target -> ^( RELATIVE_DATE SEEK_DIR[\">\"] SEEK_TYPE[\"by_day\"] INT[\"1\"] modifiable_target ) | target_prefix modifiable_target -> ^( RELATIVE_DATE target_prefix modifiable_target ) | spelled_or_int_1_to_31 modifiable_target target_suffix -> ^( RELATIVE_DATE target_suffix spelled_or_int_1_to_31 modifiable_target ) );";
-        }
-    }
-    static final String DFA12_eotS =
-        "\56\uffff";
-    static final String DFA12_eofS =
-        "\56\uffff";
-    static final String DFA12_minS =
-        "\1\31\1\32\1\33\32\32\2\uffff\1\33\1\103\11\32\1\103\1\32\2\uffff";
-    static final String DFA12_maxS =
-        "\1\177\1\32\1\34\30\32\1\113\1\103\2\uffff\1\34\1\113\11\32\1\103"+
-        "\1\32\2\uffff";
-    static final String DFA12_acceptS =
-        "\35\uffff\1\1\1\3\15\uffff\1\2\1\4";
-    static final String DFA12_specialS =
-        "\56\uffff}>";
-    static final String[] DFA12_transitionS = {
-            "\1\1\1\2\50\uffff\1\10\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1"+
-            "\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1"+
-            "\34\42\uffff\1\3\1\4\1\5\1\uffff\1\6\1\7",
-            "\1\2",
-            "\1\35\1\36",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37\44\uffff\1\40\3\uffff\1\45\1\47\1\44\1\42\1\46\1\43\1"+
-            "\51\1\50\1\41",
-            "\1\37\44\uffff\1\52\3\uffff\1\53",
-            "",
-            "",
-            "\1\54\1\55",
-            "\1\45\1\47\1\44\1\42\1\46\1\43\1\51\1\50\1\41",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\37",
-            "\1\53",
-            "\1\37",
-            "",
-            ""
-    };
-
-    static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
-    static final short[] DFA12_eof = DFA.unpackEncodedString(DFA12_eofS);
-    static final char[] DFA12_min = DFA.unpackEncodedStringToUnsignedChars(DFA12_minS);
-    static final char[] DFA12_max = DFA.unpackEncodedStringToUnsignedChars(DFA12_maxS);
-    static final short[] DFA12_accept = DFA.unpackEncodedString(DFA12_acceptS);
-    static final short[] DFA12_special = DFA.unpackEncodedString(DFA12_specialS);
-    static final short[][] DFA12_transition;
-
-    static {
-        int numStates = DFA12_transitionS.length;
-        DFA12_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA12_transition[i] = DFA.unpackEncodedString(DFA12_transitionS[i]);
-        }
-    }
-
-    class DFA12 extends DFA {
-
-        public DFA12(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 12;
-            this.eot = DFA12_eot;
-            this.eof = DFA12_eof;
-            this.min = DFA12_min;
-            this.max = DFA12_max;
-            this.accept = DFA12_accept;
-            this.special = DFA12_special;
-            this.transition = DFA12_transition;
-        }
-        public String getDescription() {
-            return "90:1: date_prefix : ( ( THE )? DAY AFTER -> SEEK_DIR[\">\"] INT[\"1\"] | spelled_or_int_1_to_31 DAY AFTER -> SEEK_DIR[\">\"] spelled_or_int_1_to_31 | ( THE )? DAY BEFORE -> SEEK_DIR[\"<\"] INT[\"1\"] | spelled_or_int_1_to_31 DAY BEFORE -> SEEK_DIR[\"<\"] spelled_or_int_1_to_31 );";
-        }
-    }
-    static final String DFA44_eotS =
-        "\44\uffff";
-    static final String DFA44_eofS =
-        "\44\uffff";
-    static final String DFA44_minS =
-        "\1\103\24\uffff\2\32\1\103\14\uffff";
-    static final String DFA44_maxS =
-        "\1\177\24\uffff\1\113\1\103\1\113\14\uffff";
-    static final String DFA44_acceptS =
+    static final String DFA35_eotS =
+        "\43\uffff";
+    static final String DFA35_eofS =
+        "\24\uffff\1\37\1\42\15\uffff";
+    static final String DFA35_minS =
+        "\1\55\23\uffff\2\23\1\55\14\uffff";
+    static final String DFA35_maxS =
+        "\1\101\23\uffff\2\154\1\65\14\uffff";
+    static final String DFA35_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1"+
-        "\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\3\uffff\1\36\1\33\1\30\1"+
-        "\25\1\31\1\26\1\34\1\35\1\27\1\32\1\40\1\37";
-    static final String DFA44_specialS =
-        "\44\uffff}>";
-    static final String[] DFA44_transitionS = {
-            "\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16"+
-            "\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\42\uffff\3\1\1\uffff"+
-            "\2\1",
+        "\15\1\16\1\17\1\20\1\21\1\22\1\23\3\uffff\1\33\1\30\1\26\1\35\1"+
+        "\32\1\25\1\34\1\27\1\24\1\31\1\37\1\36";
+    static final String DFA35_specialS =
+        "\43\uffff}>";
+    static final String[] DFA35_transitionS = {
+            "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1"+
+            "\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25",
             "",
             "",
             "",
@@ -11114,11 +9882,12 @@ public class DateParser extends Parser {
             "",
             "",
             "",
-            "",
-            "\1\33\16\uffff\26\33\1\27\3\uffff\1\35\1\40\1\32\1\34\1\41"+
-            "\1\31\1\36\1\37\1\30",
-            "\1\43\16\uffff\26\43\1\42\3\uffff\1\42",
-            "\1\35\1\40\1\32\1\34\1\41\1\31\1\36\1\37\1\30",
+            "\1\37\1\uffff\16\37\2\uffff\1\37\1\26\2\uffff\2\37\2\uffff"+
+            "\1\34\1\31\1\36\1\30\1\40\1\33\1\27\1\35\1\32\53\uffff\10\37"+
+            "\3\uffff\1\37",
+            "\1\42\1\uffff\16\42\2\uffff\1\42\1\41\2\uffff\2\42\2\uffff"+
+            "\1\41\63\uffff\10\42\3\uffff\1\42",
+            "\1\34\1\31\1\36\1\30\1\40\1\33\1\27\1\35\1\32",
             "",
             "",
             "",
@@ -11133,54 +9902,54 @@ public class DateParser extends Parser {
             ""
     };
 
-    static final short[] DFA44_eot = DFA.unpackEncodedString(DFA44_eotS);
-    static final short[] DFA44_eof = DFA.unpackEncodedString(DFA44_eofS);
-    static final char[] DFA44_min = DFA.unpackEncodedStringToUnsignedChars(DFA44_minS);
-    static final char[] DFA44_max = DFA.unpackEncodedStringToUnsignedChars(DFA44_maxS);
-    static final short[] DFA44_accept = DFA.unpackEncodedString(DFA44_acceptS);
-    static final short[] DFA44_special = DFA.unpackEncodedString(DFA44_specialS);
-    static final short[][] DFA44_transition;
+    static final short[] DFA35_eot = DFA.unpackEncodedString(DFA35_eotS);
+    static final short[] DFA35_eof = DFA.unpackEncodedString(DFA35_eofS);
+    static final char[] DFA35_min = DFA.unpackEncodedStringToUnsignedChars(DFA35_minS);
+    static final char[] DFA35_max = DFA.unpackEncodedStringToUnsignedChars(DFA35_maxS);
+    static final short[] DFA35_accept = DFA.unpackEncodedString(DFA35_acceptS);
+    static final short[] DFA35_special = DFA.unpackEncodedString(DFA35_specialS);
+    static final short[][] DFA35_transition;
 
     static {
-        int numStates = DFA44_transitionS.length;
-        DFA44_transition = new short[numStates][];
+        int numStates = DFA35_transitionS.length;
+        DFA35_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA44_transition[i] = DFA.unpackEncodedString(DFA44_transitionS[i]);
+            DFA35_transition[i] = DFA.unpackEncodedString(DFA35_transitionS[i]);
         }
     }
 
-    class DFA44 extends DFA {
+    class DFA35 extends DFA {
 
-        public DFA44(BaseRecognizer recognizer) {
+        public DFA35(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 44;
-            this.eot = DFA44_eot;
-            this.eof = DFA44_eof;
-            this.min = DFA44_min;
-            this.max = DFA44_max;
-            this.accept = DFA44_accept;
-            this.special = DFA44_special;
-            this.transition = DFA44_transition;
+            this.decisionNumber = 35;
+            this.eot = DFA35_eot;
+            this.eof = DFA35_eof;
+            this.min = DFA35_min;
+            this.max = DFA35_max;
+            this.accept = DFA35_accept;
+            this.special = DFA35_special;
+            this.transition = DFA35_transition;
         }
         public String getDescription() {
-            return "197:1: spelled_or_int_1_to_31 : ( int_1_to_31 | ONE -> INT[\"1\"] | TWO -> INT[\"2\"] | THREE -> INT[\"3\"] | FOUR -> INT[\"4\"] | FIVE -> INT[\"5\"] | SIX -> INT[\"6\"] | SEVEN -> INT[\"7\"] | EIGHT -> INT[\"8\"] | NINE -> INT[\"9\"] | TEN -> INT[\"10\"] | ELEVEN -> INT[\"11\"] | TWELVE -> INT[\"12\"] | THIRTEEN -> INT[\"13\"] | FOURTEEN -> INT[\"14\"] | FIFTEEN -> INT[\"15\"] | SIXTEEN -> INT[\"16\"] | SEVENTEEN -> INT[\"17\"] | EIGHTEEN -> INT[\"18\"] | NINETEEN -> INT[\"19\"] | TWENTY -> INT[\"20\"] | TWENTY ( DASH )? ONE -> INT[\"21\"] | TWENTY ( DASH )? TWO -> INT[\"22\"] | TWENTY ( DASH )? THREE -> INT[\"23\"] | TWENTY ( DASH )? FOUR -> INT[\"24\"] | TWENTY ( DASH )? FIVE -> INT[\"25\"] | TWENTY ( DASH )? SIX -> INT[\"26\"] | TWENTY ( DASH )? SEVEN -> INT[\"27\"] | TWENTY ( DASH )? EIGHT -> INT[\"28\"] | TWENTY ( DASH )? NINE -> INT[\"29\"] | THIRTY -> INT[\"30\"] | THIRTY ( DASH )? ONE -> INT[\"31\"] );";
+            return "123:1: spelled_1_to_31 : ( ONE -> INT[\"1\"] | TWO -> INT[\"2\"] | THREE -> INT[\"3\"] | FOUR -> INT[\"4\"] | FIVE -> INT[\"5\"] | SIX -> INT[\"6\"] | SEVEN -> INT[\"7\"] | EIGHT -> INT[\"8\"] | NINE -> INT[\"9\"] | TEN -> INT[\"10\"] | ELEVEN -> INT[\"11\"] | TWELVE -> INT[\"12\"] | THIRTEEN -> INT[\"13\"] | FOURTEEN -> INT[\"14\"] | FIFTEEN -> INT[\"15\"] | SIXTEEN -> INT[\"16\"] | SEVENTEEN -> INT[\"17\"] | EIGHTEEN -> INT[\"18\"] | NINETEEN -> INT[\"19\"] | TWENTY -> INT[\"20\"] | TWENTY ( DASH )? ONE -> INT[\"21\"] | TWENTY ( DASH )? TWO -> INT[\"22\"] | TWENTY ( DASH )? THREE -> INT[\"23\"] | TWENTY ( DASH )? FOUR -> INT[\"24\"] | TWENTY ( DASH )? FIVE -> INT[\"25\"] | TWENTY ( DASH )? SIX -> INT[\"26\"] | TWENTY ( DASH )? SEVEN -> INT[\"27\"] | TWENTY ( DASH )? EIGHT -> INT[\"28\"] | TWENTY ( DASH )? NINE -> INT[\"29\"] | THIRTY -> INT[\"30\"] | THIRTY ( DASH )? ONE -> INT[\"31\"] );";
         }
     }
-    static final String DFA65_eotS =
+    static final String DFA56_eotS =
         "\42\uffff";
-    static final String DFA65_eofS =
+    static final String DFA56_eofS =
         "\42\uffff";
-    static final String DFA65_minS =
-        "\1\126\25\uffff\1\77\12\uffff\1\130";
-    static final String DFA65_maxS =
-        "\1\166\25\uffff\1\140\12\uffff\1\140";
-    static final String DFA65_acceptS =
+    static final String DFA56_minS =
+        "\1\100\25\uffff\1\46\12\uffff\1\102";
+    static final String DFA56_maxS =
+        "\1\140\25\uffff\1\112\12\uffff\1\112";
+    static final String DFA56_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1"+
         "\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\uffff\1\26\1\27\1"+
         "\30\1\31\1\32\1\33\1\34\1\35\1\36\1\37\1\uffff";
-    static final String DFA65_specialS =
+    static final String DFA56_specialS =
         "\42\uffff}>";
-    static final String[] DFA65_transitionS = {
+    static final String[] DFA56_transitionS = {
             "\1\26\1\40\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1"+
             "\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\27\1\30\1"+
             "\31\1\32\1\33\1\34\1\35\1\36\1\37\1\40",
@@ -11205,7 +9974,7 @@ public class DateParser extends Parser {
             "",
             "",
             "",
-            "\1\41\30\uffff\1\25\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36",
+            "\1\41\33\uffff\1\25\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36",
             "",
             "",
             "",
@@ -11219,311 +9988,256 @@ public class DateParser extends Parser {
             "\1\25\1\27\1\30\1\31\1\32\1\33\1\34\1\35\1\36"
     };
 
-    static final short[] DFA65_eot = DFA.unpackEncodedString(DFA65_eotS);
-    static final short[] DFA65_eof = DFA.unpackEncodedString(DFA65_eofS);
-    static final char[] DFA65_min = DFA.unpackEncodedStringToUnsignedChars(DFA65_minS);
-    static final char[] DFA65_max = DFA.unpackEncodedStringToUnsignedChars(DFA65_maxS);
-    static final short[] DFA65_accept = DFA.unpackEncodedString(DFA65_acceptS);
-    static final short[] DFA65_special = DFA.unpackEncodedString(DFA65_specialS);
-    static final short[][] DFA65_transition;
+    static final short[] DFA56_eot = DFA.unpackEncodedString(DFA56_eotS);
+    static final short[] DFA56_eof = DFA.unpackEncodedString(DFA56_eofS);
+    static final char[] DFA56_min = DFA.unpackEncodedStringToUnsignedChars(DFA56_minS);
+    static final char[] DFA56_max = DFA.unpackEncodedStringToUnsignedChars(DFA56_maxS);
+    static final short[] DFA56_accept = DFA.unpackEncodedString(DFA56_acceptS);
+    static final short[] DFA56_special = DFA.unpackEncodedString(DFA56_specialS);
+    static final short[][] DFA56_transition;
 
     static {
-        int numStates = DFA65_transitionS.length;
-        DFA65_transition = new short[numStates][];
+        int numStates = DFA56_transitionS.length;
+        DFA56_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA65_transition[i] = DFA.unpackEncodedString(DFA65_transitionS[i]);
+            DFA56_transition[i] = DFA.unpackEncodedString(DFA56_transitionS[i]);
         }
     }
 
-    class DFA65 extends DFA {
+    class DFA56 extends DFA {
 
-        public DFA65(BaseRecognizer recognizer) {
+        public DFA56(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 65;
-            this.eot = DFA65_eot;
-            this.eof = DFA65_eof;
-            this.min = DFA65_min;
-            this.max = DFA65_max;
-            this.accept = DFA65_accept;
-            this.special = DFA65_special;
-            this.transition = DFA65_transition;
+            this.decisionNumber = 56;
+            this.eot = DFA56_eot;
+            this.eof = DFA56_eof;
+            this.min = DFA56_min;
+            this.max = DFA56_max;
+            this.accept = DFA56_accept;
+            this.special = DFA56_special;
+            this.transition = DFA56_transition;
         }
         public String getDescription() {
-            return "234:1: spelled_sequence_1_to_31 : ( FIRST -> INT[\"1\"] | SECOND -> INT[\"2\"] | THIRD -> INT[\"3\"] | FOURTH -> INT[\"4\"] | FIFTH -> INT[\"5\"] | SIXTH -> INT[\"6\"] | SEVENTH -> INT[\"7\"] | EIGHTH -> INT[\"8\"] | NINTH -> INT[\"9\"] | TENTH -> INT[\"10\"] | ELEVENTH -> INT[\"11\"] | TWELFTH -> INT[\"12\"] | THIRTEENTH -> INT[\"13\"] | FOURTEENTH -> INT[\"14\"] | FIFTEENTH -> INT[\"15\"] | SIXTEENTH -> INT[\"16\"] | SEVENTEENTH -> INT[\"17\"] | EIGHTEENTH -> INT[\"18\"] | NINETEENTH -> INT[\"19\"] | TWENTIETH -> INT[\"20\"] | ( TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) ) -> INT[\"21\"] | ( TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) ) -> INT[\"22\"] | ( TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) ) -> INT[\"23\"] | ( TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) ) -> INT[\"24\"] | ( TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) ) -> INT[\"25\"] | ( TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) ) -> INT[\"26\"] | ( TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) ) -> INT[\"27\"] | ( TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) ) -> INT[\"28\"] | ( TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) ) -> INT[\"29\"] | THIRTIETH -> INT[\"30\"] | ( THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) ) -> INT[\"31\"] );";
+            return "159:1: spelled_sequence_1_to_31 : ( FIRST -> INT[\"1\"] | SECOND -> INT[\"2\"] | THIRD -> INT[\"3\"] | FOURTH -> INT[\"4\"] | FIFTH -> INT[\"5\"] | SIXTH -> INT[\"6\"] | SEVENTH -> INT[\"7\"] | EIGHTH -> INT[\"8\"] | NINTH -> INT[\"9\"] | TENTH -> INT[\"10\"] | ELEVENTH -> INT[\"11\"] | TWELFTH -> INT[\"12\"] | THIRTEENTH -> INT[\"13\"] | FOURTEENTH -> INT[\"14\"] | FIFTEENTH -> INT[\"15\"] | SIXTEENTH -> INT[\"16\"] | SEVENTEENTH -> INT[\"17\"] | EIGHTEENTH -> INT[\"18\"] | NINETEENTH -> INT[\"19\"] | TWENTIETH -> INT[\"20\"] | ( TWENTY_FIRST | ( TWENTY ( DASH )? FIRST ) ) -> INT[\"21\"] | ( TWENTY_SECOND | ( TWENTY ( DASH )? SECOND ) ) -> INT[\"22\"] | ( TWENTY_THIRD | ( TWENTY ( DASH )? THIRD ) ) -> INT[\"23\"] | ( TWENTY_FOURTH | ( TWENTY ( DASH )? FOURTH ) ) -> INT[\"24\"] | ( TWENTY_FIFTH | ( TWENTY ( DASH )? FIFTH ) ) -> INT[\"25\"] | ( TWENTY_SIXTH | ( TWENTY ( DASH )? SIXTH ) ) -> INT[\"26\"] | ( TWENTY_SEVENTH | ( TWENTY ( DASH )? SEVENTH ) ) -> INT[\"27\"] | ( TWENTY_EIGHTH | ( TWENTY ( DASH )? EIGHTH ) ) -> INT[\"28\"] | ( TWENTY_NINTH | ( TWENTY ( DASH )? NINTH ) ) -> INT[\"29\"] | THIRTIETH -> INT[\"30\"] | ( THIRTY_FIRST | ( THIRTY ( DASH )? FIRST ) ) -> INT[\"31\"] );";
         }
     }
  
 
-    public static final BitSet FOLLOW_explicit_datetime_in_datetime131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_date_prefix_in_relative_datetime148 = new BitSet(new long[]{0x7FFFFE7F05C00000L,0xDC00000000FFFFF8L});
-    public static final BitSet FOLLOW_relative_date_in_relative_datetime151 = new BitSet(new long[]{0x0000000020180000L});
-    public static final BitSet FOLLOW_date_time_sep_in_relative_datetime153 = new BitSet(new long[]{0x0000000020180000L});
-    public static final BitSet FOLLOW_time_in_relative_datetime156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_time_in_relative_datetime162 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_time_date_sep_in_relative_datetime164 = new BitSet(new long[]{0x7FFFFE7F07C00000L,0xDC00000000FFFFF8L});
-    public static final BitSet FOLLOW_date_prefix_in_relative_datetime166 = new BitSet(new long[]{0x7FFFFE7F05C00000L,0xDC00000000FFFFF8L});
-    public static final BitSet FOLLOW_relative_date_in_relative_datetime169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_date_prefix_in_relative_datetime175 = new BitSet(new long[]{0x7FFFFE7F05C00000L,0xDC00000000FFFFF8L});
-    public static final BitSet FOLLOW_relative_date_in_relative_datetime178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_day_of_month_in_explicit_datetime194 = new BitSet(new long[]{0x0000000020180000L});
-    public static final BitSet FOLLOW_time_in_explicit_datetime196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_date_time_sep0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ON_in_time_date_sep242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_named_relative_date_in_relative_date258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_modifiable_target_in_relative_date270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_target_prefix_in_relative_date304 = new BitSet(new long[]{0x7FFFFE0004000000L});
-    public static final BitSet FOLLOW_modifiable_target_in_relative_date306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_spelled_or_int_1_to_31_in_relative_date335 = new BitSet(new long[]{0x7FFFFE0004000000L});
-    public static final BitSet FOLLOW_modifiable_target_in_relative_date337 = new BitSet(new long[]{0x0000018000000000L});
-    public static final BitSet FOLLOW_target_suffix_in_relative_date339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TODAY_in_named_relative_date371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TOMORROW_in_named_relative_date393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_YESTERDAY_in_named_relative_date412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_int_4_digits_in_formal_explicit_date442 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_date_separator_in_formal_explicit_date444 = new BitSet(new long[]{0x0000000000000000L,0x1E00000000000000L});
-    public static final BitSet FOLLOW_int_1_to_12_in_formal_explicit_date446 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_date_separator_in_formal_explicit_date448 = new BitSet(new long[]{0x0000000000000000L,0xDC00000000000000L});
-    public static final BitSet FOLLOW_int_1_to_31_in_formal_explicit_date450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_int_1_to_12_in_formal_explicit_date489 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_date_separator_in_formal_explicit_date491 = new BitSet(new long[]{0x0000000000000000L,0xDC00000000000000L});
-    public static final BitSet FOLLOW_int_1_to_31_in_formal_explicit_date493 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000001L});
-    public static final BitSet FOLLOW_date_separator_in_formal_explicit_date496 = new BitSet(new long[]{0x0000000000000000L,0xFF80000000000000L,0x0000000000000003L});
-    public static final BitSet FOLLOW_int_up_to_4_digits_in_formal_explicit_date498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THE_in_date_prefix547 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_DAY_in_date_prefix550 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_AFTER_in_date_prefix552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_spelled_or_int_1_to_31_in_date_prefix585 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_DAY_in_date_prefix587 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_AFTER_in_date_prefix589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THE_in_date_prefix603 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_DAY_in_date_prefix606 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_BEFORE_in_date_prefix608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_spelled_or_int_1_to_31_in_date_prefix640 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_DAY_in_date_prefix642 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_BEFORE_in_date_prefix644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COLON_in_time667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MIDNIGHT_in_time_identifier698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOON_in_time_identifier720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIS_in_target_prefix756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIS_in_target_prefix783 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_LAST_in_target_prefix786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIS_in_target_prefix807 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_PAST_in_target_prefix810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIS_in_target_prefix831 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_NEXT_in_target_prefix834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIS_in_target_prefix855 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_COMING_in_target_prefix858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIS_in_target_prefix877 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_UPCOMING_in_target_prefix880 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IN_in_target_prefix897 = new BitSet(new long[]{0x0000007F00000000L,0xDC00000000FFFFF8L});
-    public static final BitSet FOLLOW_spelled_or_int_1_to_31_in_target_prefix900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FROM_NOW_in_target_suffix946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AGO_in_target_suffix960 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_day_of_week_in_modifiable_target989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_date_span_in_modifiable_target996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_month_in_modifiable_target1002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DAY_in_date_span1017 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WEEK_in_date_span1030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MONTH_in_date_span1042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_YEAR_in_date_span1053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_JANUARY_in_month1074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FEBRUARY_in_month1091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MARCH_in_month1107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_APRIL_in_month1126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MAY_in_month1145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_JUNE_in_month1166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_JULY_in_month1186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AUGUST_in_month1206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SEPTEMBER_in_month1224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OCTOBER_in_month1239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOVEMBER_in_month1256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DECEMBER_in_month1272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_int_1_to_31_in_day_of_month1297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_spelled_sequence_1_to_31_in_day_of_month1324 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SUNDAY_in_day_of_week1348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MONDAY_in_day_of_week1366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TUESDAY_in_day_of_week1384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WEDNESDAY_in_day_of_week1401 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THURSDAY_in_day_of_week1416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FRIDAY_in_day_of_week1432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SATURDAY_in_day_of_week1450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMA_in_year1475 = new BitSet(new long[]{0x0000004000000000L,0xD600000000000000L,0x0000000000000013L});
-    public static final BitSet FOLLOW_IN_in_year1479 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_THE_in_year1481 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_YEAR_in_year1483 = new BitSet(new long[]{0x0000000000000000L,0xD600000000000000L,0x0000000000000013L});
-    public static final BitSet FOLLOW_132_in_year1487 = new BitSet(new long[]{0x0000000000000000L,0xD600000000000000L,0x0000000000000003L});
-    public static final BitSet FOLLOW_int_0_to_99_with_prefix_in_year1490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMA_in_year1504 = new BitSet(new long[]{0x0000004000000000L,0x0180000000000000L});
-    public static final BitSet FOLLOW_IN_in_year1508 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_THE_in_year1510 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_YEAR_in_year1512 = new BitSet(new long[]{0x0000004000000000L,0x0180000000000000L});
-    public static final BitSet FOLLOW_int_3_or_4_digits_in_year1516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_date_in_date_time152 = new BitSet(new long[]{0x0000060000000000L,0x000001F800000000L});
+    public static final BitSet FOLLOW_time_in_date_time154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_time_in_date_time159 = new BitSet(new long[]{0xFFFFE003FFD80000L,0x0000033DFFFFFFFFL});
+    public static final BitSet FOLLOW_COMMA_in_date_time162 = new BitSet(new long[]{0xFFFFE003FFD80000L,0x0000033DFFFFFFFFL});
+    public static final BitSet FOLLOW_ON_in_date_time166 = new BitSet(new long[]{0xFFFFE003FFD80000L,0x0000033DFFFFFFFFL});
+    public static final BitSet FOLLOW_date_in_date_time170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_date_in_date_time196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_time_in_date_time217 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_formal_date_in_date244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_month_and_day_date_in_date250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_4_digits_in_formal_date268 = new BitSet(new long[]{0x000000C000000000L});
+    public static final BitSet FOLLOW_date_separator_in_formal_date270 = new BitSet(new long[]{0x0000000000000000L,0x0000003800000000L});
+    public static final BitSet FOLLOW_int_1_to_12_in_formal_date272 = new BitSet(new long[]{0x000000C000000000L});
+    public static final BitSet FOLLOW_date_separator_in_formal_date274 = new BitSet(new long[]{0x0000000000000000L,0x0000033800000000L});
+    public static final BitSet FOLLOW_int_1_to_31_in_formal_date276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_1_to_12_in_formal_date315 = new BitSet(new long[]{0x000000C000000000L});
+    public static final BitSet FOLLOW_date_separator_in_formal_date317 = new BitSet(new long[]{0x0000000000000000L,0x0000033800000000L});
+    public static final BitSet FOLLOW_int_1_to_31_in_formal_date319 = new BitSet(new long[]{0x000000C000000002L});
+    public static final BitSet FOLLOW_date_separator_in_formal_date322 = new BitSet(new long[]{0x0000000000000000L,0x00000FFE00000000L});
+    public static final BitSet FOLLOW_int_up_to_4_digits_in_formal_date324 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_day_of_month_in_month_and_day_date370 = new BitSet(new long[]{0xFFFFE003FFF80000L,0x0000033DFFFFFFFFL});
+    public static final BitSet FOLLOW_OF_in_month_and_day_date372 = new BitSet(new long[]{0xFFFFE003FFD80000L,0x0000033DFFFFFFFFL});
+    public static final BitSet FOLLOW_month_in_month_and_day_date375 = new BitSet(new long[]{0x0000002400080002L,0x00000FFE00000000L});
+    public static final BitSet FOLLOW_year_in_month_and_day_date377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_month_in_month_and_day_date382 = new BitSet(new long[]{0xFFFFE00000000000L,0x00000339FFFFFFFFL});
+    public static final BitSet FOLLOW_day_of_month_in_month_and_day_date384 = new BitSet(new long[]{0x0000002400080002L,0x00000FFE00000000L});
+    public static final BitSet FOLLOW_year_in_month_and_day_date386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_JANUARY_in_month420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FEBRUARY_in_month437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MARCH_in_month453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_APRIL_in_month472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MAY_in_month491 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_JUNE_in_month512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_JULY_in_month532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AUGUST_in_month552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SEPTEMBER_in_month570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OCTOBER_in_month585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOVEMBER_in_month602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DECEMBER_in_month618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_spelled_or_int_1_to_31_in_day_of_month643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_spelled_sequence_1_to_31_in_day_of_month659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMA_in_year683 = new BitSet(new long[]{0x0000002400000000L});
+    public static final BitSet FOLLOW_IN_in_year687 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_THE_in_year689 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_YEAR_in_year691 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_SINGLE_QUOTE_in_year695 = new BitSet(new long[]{0x0000000000000000L,0x00000F6800000000L});
+    public static final BitSet FOLLOW_int_0_to_99_with_prefix_in_year697 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMA_in_year712 = new BitSet(new long[]{0x0000000400000000L,0x00000FFE00000000L});
+    public static final BitSet FOLLOW_IN_in_year716 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_THE_in_year718 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_YEAR_in_year720 = new BitSet(new long[]{0x0000000000000000L,0x00000FFE00000000L});
+    public static final BitSet FOLLOW_int_3_or_4_digits_in_year724 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_date_separator0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_int_0_to_23_in_hours1570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_int_0_to_59_in_minutes1593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AM_in_meridian_indicator1616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PM_in_meridian_indicator1627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_int_1_to_31_in_spelled_or_int_1_to_311648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_in_spelled_or_int_1_to_311654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWO_in_spelled_or_int_1_to_311672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THREE_in_spelled_or_int_1_to_311690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOUR_in_spelled_or_int_1_to_311706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FIVE_in_spelled_or_int_1_to_311723 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIX_in_spelled_or_int_1_to_311740 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SEVEN_in_spelled_or_int_1_to_311758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EIGHT_in_spelled_or_int_1_to_311774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NINE_in_spelled_or_int_1_to_311790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEN_in_spelled_or_int_1_to_311807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELEVEN_in_spelled_or_int_1_to_311825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWELVE_in_spelled_or_int_1_to_311840 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_in_spelled_or_int_1_to_311855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOURTEEN_in_spelled_or_int_1_to_311868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FIFTEEN_in_spelled_or_int_1_to_311881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIXTEEN_in_spelled_or_int_1_to_311895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SEVENTEEN_in_spelled_or_int_1_to_311909 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EIGHTEEN_in_spelled_or_int_1_to_311921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NINETEEN_in_spelled_or_int_1_to_311934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_or_int_1_to_311947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_or_int_1_to_311962 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_DASH_in_spelled_or_int_1_to_311964 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ONE_in_spelled_or_int_1_to_311967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_or_int_1_to_311980 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_DASH_in_spelled_or_int_1_to_311982 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_TWO_in_spelled_or_int_1_to_311985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_or_int_1_to_311998 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_DASH_in_spelled_or_int_1_to_312000 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_THREE_in_spelled_or_int_1_to_312003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_or_int_1_to_312014 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_DASH_in_spelled_or_int_1_to_312016 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_FOUR_in_spelled_or_int_1_to_312019 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_or_int_1_to_312031 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_DASH_in_spelled_or_int_1_to_312033 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_FIVE_in_spelled_or_int_1_to_312036 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_or_int_1_to_312048 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_DASH_in_spelled_or_int_1_to_312050 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_SIX_in_spelled_or_int_1_to_312053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_or_int_1_to_312066 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_DASH_in_spelled_or_int_1_to_312068 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_SEVEN_in_spelled_or_int_1_to_312071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_or_int_1_to_312082 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_DASH_in_spelled_or_int_1_to_312084 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_EIGHT_in_spelled_or_int_1_to_312087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_or_int_1_to_312098 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_DASH_in_spelled_or_int_1_to_312100 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_NINE_in_spelled_or_int_1_to_312103 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_in_spelled_or_int_1_to_312115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_in_spelled_or_int_1_to_312138 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_DASH_in_spelled_or_int_1_to_312140 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_ONE_in_spelled_or_int_1_to_312143 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FIRST_in_spelled_sequence_1_to_312167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SECOND_in_spelled_sequence_1_to_312184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRD_in_spelled_sequence_1_to_312200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOURTH_in_spelled_sequence_1_to_312217 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FIFTH_in_spelled_sequence_1_to_312233 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIXTH_in_spelled_sequence_1_to_312250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SEVENTH_in_spelled_sequence_1_to_312267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EIGHTH_in_spelled_sequence_1_to_312282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NINTH_in_spelled_sequence_1_to_312298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TENTH_in_spelled_sequence_1_to_312315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELEVENTH_in_spelled_sequence_1_to_312332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWELFTH_in_spelled_sequence_1_to_312346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEENTH_in_spelled_sequence_1_to_312361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOURTEENTH_in_spelled_sequence_1_to_312373 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FIFTEENTH_in_spelled_sequence_1_to_312385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIXTEENTH_in_spelled_sequence_1_to_312398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SEVENTEENTH_in_spelled_sequence_1_to_312411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EIGHTEENTH_in_spelled_sequence_1_to_312422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NINETEENTH_in_spelled_sequence_1_to_312434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTIETH_in_spelled_sequence_1_to_312446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FIRST_in_spelled_sequence_1_to_312460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312467 = new BitSet(new long[]{0x8000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312469 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_FIRST_in_spelled_sequence_1_to_312472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_SECOND_in_spelled_sequence_1_to_312488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312494 = new BitSet(new long[]{0x8000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312496 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_SECOND_in_spelled_sequence_1_to_312499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_THIRD_in_spelled_sequence_1_to_312514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312521 = new BitSet(new long[]{0x8000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312523 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_THIRD_in_spelled_sequence_1_to_312526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FOURTH_in_spelled_sequence_1_to_312542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312548 = new BitSet(new long[]{0x8000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312550 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_FOURTH_in_spelled_sequence_1_to_312553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FIFTH_in_spelled_sequence_1_to_312568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312575 = new BitSet(new long[]{0x8000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312577 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_FIFTH_in_spelled_sequence_1_to_312580 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_SIXTH_in_spelled_sequence_1_to_312596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312603 = new BitSet(new long[]{0x8000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312605 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_SIXTH_in_spelled_sequence_1_to_312608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_SEVENTH_in_spelled_sequence_1_to_312624 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312629 = new BitSet(new long[]{0x8000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312631 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_SEVENTH_in_spelled_sequence_1_to_312634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_EIGHTH_in_spelled_sequence_1_to_312648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312654 = new BitSet(new long[]{0x8000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312656 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_EIGHTH_in_spelled_sequence_1_to_312659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_NINTH_in_spelled_sequence_1_to_312674 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312681 = new BitSet(new long[]{0x8000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312683 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_NINTH_in_spelled_sequence_1_to_312686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTIETH_in_spelled_sequence_1_to_312701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_FIRST_in_spelled_sequence_1_to_312745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_in_spelled_sequence_1_to_312752 = new BitSet(new long[]{0x8000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312754 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_FIRST_in_spelled_sequence_1_to_312757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_int_0_to_99_optional_prefix_in_int_up_to_4_digits2782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THREE_DIGIT_in_int_up_to_4_digits2788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOUR_DIGIT_in_int_up_to_4_digits2799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THREE_DIGIT_in_int_3_or_4_digits2821 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOUR_DIGIT_in_int_3_or_4_digits2832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOUR_DIGIT_in_int_4_digits2854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWO_ZEROS_in_int_1_to_122874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PREFIXED_ONE_TO_NINE_in_int_1_to_122896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_1_to_122907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEN_TO_TWELVE_in_int_1_to_122927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWO_ZEROS_in_int_0_to_232955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_ZERO_in_int_0_to_232981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PREFIXED_ONE_TO_NINE_in_int_0_to_233008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_0_to_233023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEN_TO_TWELVE_in_int_0_to_233047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_233069 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWO_ZEROS_in_int_0_to_593090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_ZERO_in_int_0_to_593117 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PREFIXED_ONE_TO_NINE_in_int_0_to_593145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_0_to_593161 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEN_TO_TWELVE_in_int_0_to_593186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_593209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_0_to_593221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_int_0_to_593232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_ZERO_in_int_0_to_99_no_prefix3254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_0_to_99_no_prefix3282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEN_TO_TWELVE_in_int_0_to_99_no_prefix3307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_99_no_prefix3330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_0_to_99_no_prefix3342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_int_0_to_99_no_prefix3353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIXTY_TO_NINETY_NINE_in_int_0_to_99_no_prefix3365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWO_ZEROS_in_int_0_to_99_with_prefix3390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PREFIXED_ONE_TO_NINE_in_int_0_to_99_with_prefix3417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEN_TO_TWELVE_in_int_0_to_99_with_prefix3433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_99_with_prefix3456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_0_to_99_with_prefix3468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_int_0_to_99_with_prefix3479 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SIXTY_TO_NINETY_NINE_in_int_0_to_99_with_prefix3491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_int_0_to_99_with_prefix_in_int_0_to_99_optional_prefix3516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_0_to_99_optional_prefix3522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_ZERO_in_int_0_to_99_optional_prefix3533 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PREFIXED_ONE_TO_NINE_in_int_1_to_313555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_1_to_313571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_int_10_to_31_in_int_1_to_313596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_1_to_31_no_prefix3611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_int_10_to_31_in_int_1_to_31_no_prefix3622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEN_TO_TWELVE_in_int_10_to_313637 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_10_to_313660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_10_to_313672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_hours_in_time789 = new BitSet(new long[]{0x0000190000000002L,0x000007F800000000L});
+    public static final BitSet FOLLOW_COLON_in_time792 = new BitSet(new long[]{0x0000010000000000L,0x000007F800000000L});
+    public static final BitSet FOLLOW_minutes_in_time795 = new BitSet(new long[]{0x0000180000000002L});
+    public static final BitSet FOLLOW_meridian_indicator_in_time799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_time_identifier_in_time827 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MIDNIGHT_in_time_identifier843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOON_in_time_identifier865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_0_to_23_in_hours900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_0_to_59_in_minutes923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AM_in_meridian_indicator946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PM_in_meridian_indicator957 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_1_to_31_in_spelled_or_int_1_to_31978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_spelled_1_to_31_in_spelled_or_int_1_to_31984 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_in_spelled_1_to_31999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWO_in_spelled_1_to_311017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THREE_in_spelled_1_to_311035 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOUR_in_spelled_1_to_311051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FIVE_in_spelled_1_to_311068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIX_in_spelled_1_to_311085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SEVEN_in_spelled_1_to_311103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EIGHT_in_spelled_1_to_311119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NINE_in_spelled_1_to_311135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEN_in_spelled_1_to_311152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELEVEN_in_spelled_1_to_311170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWELVE_in_spelled_1_to_311185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEEN_in_spelled_1_to_311200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOURTEEN_in_spelled_1_to_311213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FIFTEEN_in_spelled_1_to_311226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIXTEEN_in_spelled_1_to_311240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SEVENTEEN_in_spelled_1_to_311254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EIGHTEEN_in_spelled_1_to_311266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NINETEEN_in_spelled_1_to_311279 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_1_to_311292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_1_to_311307 = new BitSet(new long[]{0x0000204000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_1_to_311309 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_ONE_in_spelled_1_to_311312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_1_to_311325 = new BitSet(new long[]{0x0000404000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_1_to_311327 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_TWO_in_spelled_1_to_311330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_1_to_311343 = new BitSet(new long[]{0x0000804000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_1_to_311345 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_THREE_in_spelled_1_to_311348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_1_to_311359 = new BitSet(new long[]{0x0001004000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_1_to_311361 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_FOUR_in_spelled_1_to_311364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_1_to_311376 = new BitSet(new long[]{0x0002004000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_1_to_311378 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_FIVE_in_spelled_1_to_311381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_1_to_311393 = new BitSet(new long[]{0x0004004000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_1_to_311395 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_SIX_in_spelled_1_to_311398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_1_to_311411 = new BitSet(new long[]{0x0008004000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_1_to_311413 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_SEVEN_in_spelled_1_to_311416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_1_to_311427 = new BitSet(new long[]{0x0010004000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_1_to_311429 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_EIGHT_in_spelled_1_to_311432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_1_to_311443 = new BitSet(new long[]{0x0020004000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_1_to_311445 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_NINE_in_spelled_1_to_311448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_in_spelled_1_to_311460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_in_spelled_1_to_311483 = new BitSet(new long[]{0x0000204000000000L});
+    public static final BitSet FOLLOW_DASH_in_spelled_1_to_311485 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_ONE_in_spelled_1_to_311488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FIRST_in_spelled_sequence_1_to_311512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SECOND_in_spelled_sequence_1_to_311529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRD_in_spelled_sequence_1_to_311545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOURTH_in_spelled_sequence_1_to_311562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FIFTH_in_spelled_sequence_1_to_311578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIXTH_in_spelled_sequence_1_to_311595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SEVENTH_in_spelled_sequence_1_to_311612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EIGHTH_in_spelled_sequence_1_to_311627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NINTH_in_spelled_sequence_1_to_311643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TENTH_in_spelled_sequence_1_to_311660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELEVENTH_in_spelled_sequence_1_to_311677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWELFTH_in_spelled_sequence_1_to_311691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEENTH_in_spelled_sequence_1_to_311706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOURTEENTH_in_spelled_sequence_1_to_311718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FIFTEENTH_in_spelled_sequence_1_to_311730 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIXTEENTH_in_spelled_sequence_1_to_311743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SEVENTEENTH_in_spelled_sequence_1_to_311756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EIGHTEENTH_in_spelled_sequence_1_to_311767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NINETEENTH_in_spelled_sequence_1_to_311779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTIETH_in_spelled_sequence_1_to_311791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FIRST_in_spelled_sequence_1_to_311805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_311812 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_311814 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_FIRST_in_spelled_sequence_1_to_311817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_SECOND_in_spelled_sequence_1_to_311833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_311839 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_311841 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_SECOND_in_spelled_sequence_1_to_311844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_THIRD_in_spelled_sequence_1_to_311859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_311866 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_311868 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_THIRD_in_spelled_sequence_1_to_311871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FOURTH_in_spelled_sequence_1_to_311887 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_311893 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_311895 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_FOURTH_in_spelled_sequence_1_to_311898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FIFTH_in_spelled_sequence_1_to_311913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_311920 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_311922 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_FIFTH_in_spelled_sequence_1_to_311925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_SIXTH_in_spelled_sequence_1_to_311941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_311948 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_311950 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_SIXTH_in_spelled_sequence_1_to_311953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_SEVENTH_in_spelled_sequence_1_to_311969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_311974 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_311976 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_SEVENTH_in_spelled_sequence_1_to_311979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_EIGHTH_in_spelled_sequence_1_to_311993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_311999 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312001 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_EIGHTH_in_spelled_sequence_1_to_312004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_NINTH_in_spelled_sequence_1_to_312019 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_in_spelled_sequence_1_to_312026 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312028 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_NINTH_in_spelled_sequence_1_to_312031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTIETH_in_spelled_sequence_1_to_312046 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_FIRST_in_spelled_sequence_1_to_312090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_in_spelled_sequence_1_to_312097 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_DASH_in_spelled_sequence_1_to_312099 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_FIRST_in_spelled_sequence_1_to_312102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_0_to_99_optional_prefix_in_int_up_to_4_digits2127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_3_or_4_digits_in_int_up_to_4_digits2133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THREE_DIGIT_in_int_3_or_4_digits2150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_4_digits_in_int_3_or_4_digits2161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOUR_DIGIT_in_int_4_digits2177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PREFIXED_ONE_TO_NINE_in_int_1_to_122197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_1_to_122208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEN_TO_TWELVE_in_int_1_to_122228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWO_ZEROS_in_int_0_to_232256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ZERO_in_int_0_to_232282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_1_to_12_in_int_0_to_232313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_232319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_0_to_23_in_int_0_to_592340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_0_to_592346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_int_0_to_592357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_0_to_59_in_int_0_to_99_no_prefix2379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIXTY_TO_NINETY_NINE_in_int_0_to_99_no_prefix2385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWO_ZEROS_in_int_0_to_99_with_prefix2410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PREFIXED_ONE_TO_NINE_in_int_0_to_99_with_prefix2437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEN_TO_TWELVE_in_int_0_to_99_with_prefix2453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_0_to_99_with_prefix2476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_0_to_99_with_prefix2488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTY_TWO_TO_FIFTY_NINE_in_int_0_to_99_with_prefix2499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SIXTY_TO_NINETY_NINE_in_int_0_to_99_with_prefix2511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_0_to_99_with_prefix_in_int_0_to_99_optional_prefix2536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_0_to_99_optional_prefix2542 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ZERO_in_int_0_to_99_optional_prefix2553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PREFIXED_ONE_TO_NINE_in_int_1_to_312579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_1_to_312595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_10_to_31_in_int_1_to_312620 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ONE_TO_NINE_in_int_1_to_31_no_prefix2635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_int_10_to_31_in_int_1_to_31_no_prefix2646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEN_TO_TWELVE_in_int_10_to_312661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THIRTEEN_TO_TWENTY_THREE_in_int_10_to_312684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TWENTY_FOUR_TO_THIRTY_ONE_in_int_10_to_312696 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_date_in_synpred1_Date137 = new BitSet(new long[]{0x0000060000080000L,0x000011F800000000L});
+    public static final BitSet FOLLOW_set_in_synpred1_Date139 = new BitSet(new long[]{0x0000060000000000L,0x000001F800000000L});
+    public static final BitSet FOLLOW_time_in_synpred1_Date148 = new BitSet(new long[]{0x0000000000000002L});
 
 }

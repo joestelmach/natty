@@ -25,58 +25,24 @@ tokens {
 @header        { package com.natty.parse; }
 @lexer::header { package com.natty.parse; }
 
-datetime 
-  : (explicit_datetime)=> explicit_datetime
-  //| relative_datetime
-  ;
-
-relative_datetime 
-  : date_prefix? relative_date date_time_sep? time
-  | time time_date_sep date_prefix? relative_date
-  | date_prefix? relative_date
-  ;
-  
-explicit_datetime 
-  : day_of_month time
-
-  //| day_of_month 'of'? month 
-  
-  //| formal_explicit_date
-  ;
-  
-date_time_sep
-  : AT
-  | COMMA
-  ;
-  
-time_date_sep
-  : ON
-  ;
-
-relative_date
-  // today, yesterday, tomorrow, etc
-  : named_relative_date
-  
-  // a modifiable target with no prefix gets a implicit prefix seek
-  | modifiable_target 
-    -> ^(RELATIVE_DATE SEEK_DIR[">"] SEEK_TYPE["by_day"] INT["1"] modifiable_target)
-  
-  // a modifiable target with a prefix
-  | target_prefix modifiable_target 
-    -> ^(RELATIVE_DATE target_prefix modifiable_target)
+date_time
+  options{backtrack=true;}
+  : (((date (COMMA | AT)? time)=> date time) | time (COMMA | ON)? date)
+    -> ^(DATE_TIME date time)
     
-  // a modifiable target with a suffix 
-  | spelled_or_int_1_to_31 modifiable_target target_suffix 
-    -> ^(RELATIVE_DATE target_suffix spelled_or_int_1_to_31 modifiable_target)
+  | date
+    -> ^(DATE_TIME date)
+  
+  | time
+    -> ^(DATE_TIME time)
   ;
   
-named_relative_date
-  : TODAY     -> ^(RELATIVE_DATE SEEK_DIR[">"] INT["0"])
-  | TOMORROW  -> ^(RELATIVE_DATE SEEK_DIR[">"] INT["1"])
-  | YESTERDAY -> ^(RELATIVE_DATE SEEK_DIR["<"] INT["1"])
+date
+  : formal_date
+  | month_and_day_date
   ;
   
-formal_explicit_date
+formal_date
   // year first: 1979-02-28, 1980/01/02, etc.  full 4 digit year required to match
   : int_4_digits date_separator int_1_to_12 date_separator int_1_to_31
     -> ^(EXPLICIT_DATE ^(MONTH_OF int_1_to_12) ^(DAY_OF_MONTH int_1_to_31) ^(YEAR_OF int_4_digits))
@@ -85,59 +51,11 @@ formal_explicit_date
   | int_1_to_12 date_separator int_1_to_31 (date_separator int_up_to_4_digits)?
     -> ^(EXPLICIT_DATE ^(MONTH_OF int_1_to_31) ^(DAY_OF_MONTH int_1_to_31) ^(YEAR_OF int_up_to_4_digits?))
   ;
-    
-// a prefix that should be valid before any date, relative or explicit
-date_prefix
-  : THE? DAY AFTER                    -> SEEK_DIR[">"] INT["1"]
-  | spelled_or_int_1_to_31 DAY AFTER  -> SEEK_DIR[">"] spelled_or_int_1_to_31
-  | THE? DAY BEFORE                   -> SEEK_DIR["<"] INT["1"]
-  | spelled_or_int_1_to_31 DAY BEFORE -> SEEK_DIR["<"] spelled_or_int_1_to_31
-  ;
-  
-time 
-  : COLON 
-  //: hours (COLON? minutes)? meridian_indicator?
-    //-> ^(EXPLICIT_TIME hours minutes? meridian_indicator?)
-  
-  //| time_identifier
-  ;
-  
-// common time identifiers (noon, midnight, etc)
-time_identifier
-  : MIDNIGHT -> ^(EXPLICIT_TIME ^(HOURS INT["12"]) AM_PM["am"])
-  | NOON     -> ^(EXPLICIT_TIME ^(HOURS INT["12"]) AM_PM["pm"])
-  ;
-  
-// a prefix that is valid before any modifiable_target
-target_prefix
-  : THIS           -> SEEK_DIR[">"] SEEK_TYPE["by_day"] INT["1"]
-  | THIS? LAST     -> SEEK_DIR["<"] SEEK_TYPE["by_week"] INT["1"]
-  | THIS? PAST     -> SEEK_DIR["<"] SEEK_TYPE["by_day"] INT["1"]
-  | THIS? NEXT     -> SEEK_DIR[">"] SEEK_TYPE["by_week"] INT["1"]
-  | THIS? COMING   -> SEEK_DIR[">"] SEEK_TYPE["by_day"] INT["1"]
-  | THIS? UPCOMING -> SEEK_DIR[">"] SEEK_TYPE["by_day"] INT["1"]
-  | IN? spelled_or_int_1_to_31 
-                   -> SEEK_DIR[">"] SEEK_TYPE["by_day"] spelled_or_int_1_to_31
-  ;
-  
-// a suffix that is valid after any modifiable_target
-target_suffix
-  : FROM_NOW -> SEEK_DIR[">"] SEEK_TYPE["by_day"]
-  | AGO      -> SEEK_DIR["<"] SEEK_TYPE["by_day"]
-  ;
-  
-// targets that are able to be prefixed or suffixed
-modifiable_target
-  : day_of_week 
-  | date_span
-  | month
-  ;
-  
-date_span
-  : DAY   -> SPAN["day"]
-  | WEEK  -> SPAN["week"]
-  | MONTH -> SPAN["month"]
-  | YEAR  -> SPAN["year"]
+
+// an explicit date made up of a month name, the day of the month, and an optional year
+month_and_day_date
+  : (day_of_month OF? month year? | month day_of_month year?)
+    -> ^(EXPLICIT_DATE month day_of_month year?)
   ;
   
 month
@@ -156,30 +74,33 @@ month
   ;
   
 day_of_month
-  : int_1_to_31              -> ^(DAY_OF_MONTH int_1_to_31)
+  : spelled_or_int_1_to_31   -> ^(DAY_OF_MONTH spelled_or_int_1_to_31)
   | spelled_sequence_1_to_31 -> ^(DAY_OF_MONTH spelled_sequence_1_to_31) 
   ;
   
-day_of_week
-  : SUNDAY    -> ^(DAY_OF_WEEK INT["1"])
-  | MONDAY    -> ^(DAY_OF_WEEK INT["2"])
-  | TUESDAY   -> ^(DAY_OF_WEEK INT["3"])
-  | WEDNESDAY -> ^(DAY_OF_WEEK INT["4"])
-  | THURSDAY  -> ^(DAY_OF_WEEK INT["5"])
-  | FRIDAY    -> ^(DAY_OF_WEEK INT["6"])
-  | SATURDAY  -> ^(DAY_OF_WEEK INT["7"])
-  ;
-  
 year
-  : COMMA? (IN THE YEAR)? '\''? int_0_to_99_with_prefix -> ^(YEAR_OF int_0_to_99_with_prefix)
-  | COMMA? (IN THE YEAR)? int_3_or_4_digits             -> ^(YEAR_OF int_3_or_4_digits)
+  : COMMA? (IN THE YEAR)? SINGLE_QUOTE int_0_to_99_with_prefix  -> ^(YEAR_OF int_0_to_99_with_prefix)
+  | COMMA? (IN THE YEAR)? int_3_or_4_digits                     -> ^(YEAR_OF int_3_or_4_digits)
   ;
   
 date_separator
   : DASH
   | SLASH
   ;
-
+  
+time 
+  : hours (COLON? minutes)? meridian_indicator?
+    -> ^(EXPLICIT_TIME hours minutes? meridian_indicator?)
+  
+  | time_identifier
+  ;
+  
+// common time identifiers (noon, midnight, etc)
+time_identifier
+  : MIDNIGHT -> ^(EXPLICIT_TIME ^(HOURS INT["12"]) AM_PM["am"])
+  | NOON     -> ^(EXPLICIT_TIME ^(HOURS INT["12"]) AM_PM["pm"])
+  ;
+  
 hours
   : int_0_to_23 -> ^(HOURS int_0_to_23)
   ;
@@ -196,7 +117,11 @@ meridian_indicator
 // a number between 1 and 31 spelled-out (one, twenty-eight, etc.)
 spelled_or_int_1_to_31
   : int_1_to_31
-  | ONE        -> INT["1"]
+  | spelled_1_to_31
+  ;
+  
+spelled_1_to_31
+  : ONE        -> INT["1"]
   | TWO        -> INT["2"]
   | THREE      -> INT["3"]
   | FOUR       -> INT["4"]
@@ -268,14 +193,13 @@ spelled_sequence_1_to_31
 // up to 4 subsequent digits
 int_up_to_4_digits
   : int_0_to_99_optional_prefix
-  | THREE_DIGIT -> INT[$THREE_DIGIT.text]
-  | FOUR_DIGIT  -> INT[$FOUR_DIGIT.text]
+  | int_3_or_4_digits 
   ;
   
-// exactly 3 or 4 subsequent digits
+// 3 or 4 subsequent digits
 int_3_or_4_digits
   : THREE_DIGIT -> INT[$THREE_DIGIT.text]
-  | FOUR_DIGIT  -> INT[$FOUR_DIGIT.text]
+  | int_4_digits
   ;
   
 // exactly 4 subsequent digits
@@ -284,8 +208,7 @@ int_4_digits
   ;
   
 int_1_to_12
-  : TWO_ZEROS            -> INT[$TWO_ZEROS.text]
-  | PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text]
+  : PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text]
   | ONE_TO_NINE          -> INT[$ONE_TO_NINE.text]
   | TEN_TO_TWELVE        -> INT[$TEN_TO_TWELVE.text]
   ;
@@ -293,33 +216,21 @@ int_1_to_12
 // number between 0 and 23 with an optional 0 prefix for numbers 0-9
 int_0_to_23
   : TWO_ZEROS                -> INT[$TWO_ZEROS.text]
-  | ONE_ZERO                 -> INT[$ONE_ZERO.text]
-  | PREFIXED_ONE_TO_NINE     -> INT[$PREFIXED_ONE_TO_NINE.text]
-  | ONE_TO_NINE              -> INT[$ONE_TO_NINE.text]
-  | TEN_TO_TWELVE            -> INT[$TEN_TO_TWELVE.text]
+  | ZERO                     -> INT[$ZERO.text]
+  | int_1_to_12
   | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
   ;
   
 // number between 0 and 59 with an optional 0 prefix for numbers 0-9
 int_0_to_59
-  : TWO_ZEROS                 -> INT[$TWO_ZEROS.text]
-  | ONE_ZERO                  -> INT[$ONE_ZERO.text]
-  | PREFIXED_ONE_TO_NINE      -> INT[$PREFIXED_ONE_TO_NINE.text]
-  | ONE_TO_NINE               -> INT[$ONE_TO_NINE.text]
-  | TEN_TO_TWELVE             -> INT[$TEN_TO_TWELVE.text]
-  | THIRTEEN_TO_TWENTY_THREE  -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
+  : int_0_to_23
   | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
   | THIRTY_TWO_TO_FIFTY_NINE  -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text]
   ;
   
 // number between 0 and 99 with an optional 0 prefix for numbers 0-9
 int_0_to_99_no_prefix
-  : ONE_ZERO                  -> INT[$ONE_ZERO.text]
-  | ONE_TO_NINE               -> INT[$ONE_TO_NINE.text]
-  | TEN_TO_TWELVE             -> INT[$TEN_TO_TWELVE.text]
-  | THIRTEEN_TO_TWENTY_THREE  -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
-  | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
-  | THIRTY_TWO_TO_FIFTY_NINE  -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text]
+  : int_0_to_59
   | SIXTY_TO_NINETY_NINE      -> INT[$SIXTY_TO_NINETY_NINE.text]
   ;
   
@@ -336,7 +247,7 @@ int_0_to_99_with_prefix
 int_0_to_99_optional_prefix
   : int_0_to_99_with_prefix
   | ONE_TO_NINE -> INT[$ONE_TO_NINE.text]
-  | ONE_ZERO    -> INT[$ONE_ZERO.text]
+  | ZERO        -> INT[$ZERO.text]
   ;
 
 // number between 1 and 31 with an optional 0 prefix for numbers 0-9
@@ -365,6 +276,7 @@ IN  : 'in';
 THE : 'the';
 AT  : 'at';
 ON  : 'on';
+OF  : 'of';
 
 // seek directions
 THIS     : 'this';
@@ -473,7 +385,7 @@ THIRTIETH      : 'thirtieth' | '30th';
 THIRTY_FIRST   : '31st';
 
 // 1 to nine prefixed with a zero
-PREFIXED_ONE_TO_NINE : ONE_ZERO '1'..'9';
+PREFIXED_ONE_TO_NINE : ZERO ONE_TO_NINE;
 
 // 1 to nine with no zero prefix
 ONE_TO_NINE : '1'..'9';
@@ -506,7 +418,7 @@ SIXTY_TO_NINETY_NINE
   : '6'..'9' DIGIT
   ;
   
-ONE_ZERO : '0';
+ZERO : '0';
 
 TWO_ZEROS : '00';
   
@@ -522,6 +434,7 @@ DASH  : '-' ;
 SLASH : '/' ;
 COMMA : ',';
 COLON : ':';
+SINGLE_QUOTE : '\'';
   
 WHITE_SPACE
   : (' ' | '\t' | '\n' | '\r')+ { $channel=HIDDEN; }
