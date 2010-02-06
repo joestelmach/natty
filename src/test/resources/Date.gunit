@@ -1,286 +1,140 @@
 gunit Date;
 @header{package com.natty.parse;}
 
-//explicit_time:
-//"10:00am" -> (EXPLICIT_TIME 10 0 am)
-//"10a" -> (EXPLICIT_TIME 10 0 am)
-//"10am" -> (EXPLICIT_TIME 10 0 am)
-//"10" -> (EXPLICIT_TIME 10 0)
-//"8p" -> (EXPLICIT_TIME 8 0 pm)
-//"8pm" -> (EXPLICIT_TIME 8 0 pm)
-//"8 pm" -> (EXPLICIT_TIME 8 0 pm)
-//"noon" -> (EXPLICIT_TIME 12 0 pm)
-//"midnight" -> (EXPLICIT_TIME 12 0 am)
-
-//relative_date:
-//"yesterday" -> (RELATIVE_DATE < 1)
-//"day before yesterday" -> (RELATIVE_DATE < 2)
-//"the day before yesterday" -> (RELATIVE_DATE < 2)
-//"tomorrow" ->(RELATIVE_DATE > 1)
-//"day after tomorrow" ->(RELATIVE_DATE > 2)
-//"the day after tomorrow" ->(RELATIVE_DATE > 2)
-//"in 3 days" ->(RELATIVE_DATE > by_day 3 day)
-//"3 days ago" ->(RELATIVE_DATE < by_day 3 day)
-//"in 3 weeks" ->(RELATIVE_DATE > by_day 3 week)
-//"four weeks ago" ->(RELATIVE_DATE < by_day 4 week)
-//"in 3 months" ->(RELATIVE_DATE > by_day 3 month)
-//"three months ago" ->(RELATIVE_DATE < by_day 3 month)
-//"in 3 years" ->(RELATIVE_DATE > by_day 3 year)
-//"seven years ago" ->(RELATIVE_DATE < by_day 7 year)
-//"next monday" -> (RELATIVE_DATE > by_week 1 2)
-//"next mon" -> (RELATIVE_DATE > by_week 1 2)
-//"4 mondays from now" -> (RELATIVE_DATE > by_day 4 2)
-//"next weekend" -> (RELATIVE_DATE > by_week 1 7)
-//"six mondays ago" -> (RELATIVE_DATE < by_day 6 2)
-//"last monday" -> (RELATIVE_DATE < by_week 1 2)
-//"last mon" -> (RELATIVE_DATE < by_week 1 2)
-//"this past mon" -> (RELATIVE_DATE < by_day 1 2)
-//"this coming mon" -> (RELATIVE_DATE > by_day 1 2)
-//"this upcoming mon" -> (RELATIVE_DATE > by_day 1 2)
-//"next thurs" -> (RELATIVE_DATE > by_week 1 5)
-//"next month" -> (RELATIVE_DATE > by_week 1 month)
-//"last month" -> (RELATIVE_DATE < by_week 1 month)
-//"next week" -> (RELATIVE_DATE > by_week 1 week)
-//"last week" -> (RELATIVE_DATE < by_week 1 week)
-//"next year" -> (RELATIVE_DATE > by_week 1 year)
-//"last year" -> (RELATIVE_DATE < by_week 1 year)
-//"next october" -> (RELATIVE_DATE > by_week 1 10)
-//"in 3 octs" -> (RELATIVE_DATE > by_day 3 10)
-//"last october" -> (RELATIVE_DATE < by_week 1 10)
-//"four octobers ago" -> (RELATIVE_DATE < by_day 4 10)
-
-//explicit_date:
-//"2009-10-10" -> (EXPLICIT_DATE 10 10 2009)
-//"2009-12-31" -> (EXPLICIT_DATE 12 31 2009)
-//"09-12-31" -> (EXPLICIT_DATE 09 12 31)
-//"10/10/1970" -> (EXPLICIT_DATE 10 10 1970)
-//"10/10" -> (EXPLICIT_DATE 10 10)
-//"12/31" -> (EXPLICIT_DATE 12 31)
-//"10/2" -> (EXPLICIT_DATE 10 2)
-//"10/02" -> (EXPLICIT_DATE 10 02)
-//"28th of february, 1979" -> (EXPLICIT_DATE 2 28 1979)
-//"28th of february 1979" -> (EXPLICIT_DATE 2 28 1979)
-//"28th of february in the year 1979" -> (EXPLICIT_DATE 2 28 1979)
-//"28th of february in the year 1979" -> (EXPLICIT_DATE 2 28 1979)
-//"february 28th, 1979" -> (EXPLICIT_DATE 2 28 1979)
-//"feb 28th, 1979" -> (EXPLICIT_DATE 2 28 1979)
-//"february 28th 1979" -> (EXPLICIT_DATE 2 28 1979)
-//"feb 28th 1979" -> (EXPLICIT_DATE 2 28 1979)
-//"feb 28th" -> (EXPLICIT_DATE 2 28)
-//"feb twentieth" -> (EXPLICIT_DATE 2 20)
-//"feb twenty first" -> (EXPLICIT_DATE 2 21)
-//"feb twenty-first" -> (EXPLICIT_DATE 2 21)
-//"feb twentyfirst" -> (EXPLICIT_DATE 2 21)
-
-//tomorrow:
-//"tomorow" -> (RELATIVE_DATE > 1)
-//"tommorow" -> (RELATIVE_DATE > 1)
-//"tomorrow" -> (RELATIVE_DATE > 1)
-//"tommorrow" -> (RELATIVE_DATE > 1)
+relaxed_date:
+"oct 1, 1980" OK
+"oct. 1, 1980" OK
+"oct 1,1980" OK
+"1st oct in the year '89" OK
 
 formal_date:
-"2009-10-10" -> (EXPLICIT_DATE (MONTH_OF 10) (DAY_OF_MONTH 10) (YEAR_OF 2009))
-"2009/10/10" -> (EXPLICIT_DATE (MONTH_OF 10) (DAY_OF_MONTH 10) (YEAR_OF 2009))
-"10/10/2009" -> (EXPLICIT_DATE (MONTH_OF 10) (DAY_OF_MONTH 10) (YEAR_OF 2009))
-"10/10/09" -> (EXPLICIT_DATE (MONTH_OF 10) (DAY_OF_MONTH 10) (YEAR_OF 09))
+"2009-10-10" OK
+"12/12/12" OK
+"3/4" OK
 
-month_and_day:
-"oct 10" -> (MONTH_OF 10) (DAY_OF_MONTH 10)
-"10th of oct" -> (MONTH_OF 10) (DAY_OF_MONTH 10)
+time:
+"0600h" -> (EXPLICIT_TIME (HOURS_OF_DAY 06) (MINUTES_OF_HOUR 00))
+"06:00h" -> (EXPLICIT_TIME (HOURS_OF_DAY 06) (MINUTES_OF_HOUR 00))
+"06:00 hours" -> (EXPLICIT_TIME (HOURS_OF_DAY 06) (MINUTES_OF_HOUR 00))
+"0000" -> (EXPLICIT_TIME (HOURS_OF_DAY 00) (MINUTES_OF_HOUR 00))
+"0700h" -> (EXPLICIT_TIME (HOURS_OF_DAY 07) (MINUTES_OF_HOUR 00))
+"6pm" -> (EXPLICIT_TIME (HOURS_OF_DAY 6) (MINUTES_OF_HOUR 0) pm)
+"5:30 a.m." -> (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 30) am)
+"5" -> (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0))
+"12:59" -> (EXPLICIT_TIME (HOURS_OF_DAY 12) (MINUTES_OF_HOUR 59))
+"23:59" -> (EXPLICIT_TIME (HOURS_OF_DAY 23) (MINUTES_OF_HOUR 59))
+"00:00" -> (EXPLICIT_TIME (HOURS_OF_DAY 00) (MINUTES_OF_HOUR 00))
 
-day_of_month:
-"1" -> (DAY_OF_MONTH 1)
-"01" -> (DAY_OF_MONTH 01)
-"2" -> (DAY_OF_MONTH 2)
-"02" -> (DAY_OF_MONTH 02)
-"05" -> (DAY_OF_MONTH 05)
-"one" -> (DAY_OF_MONTH 1)
-"twenty" -> (DAY_OF_MONTH 20)
-"twenty-first" -> (DAY_OF_MONTH 21)
-"first" -> (DAY_OF_MONTH 1)
-"1st" -> (DAY_OF_MONTH 1)
-"2nd" -> (DAY_OF_MONTH 2)
-
-target_prefix:
-"this last"     -> "< by_week 1"
-"last"          -> "< by_week 1"
-"this past"     -> "< by_day 1"
-"past"          -> "< by_day 1"
-"this next"     -> "> by_week 1"
-"next"          -> "> by_week 1"
-"this coming"   -> "> by_day 1"
-"coming"        -> "> by_day 1"
-"this upcoming" -> "> by_day 1"
-"upcoming"      -> "> by_day 1"
-"in 3"          -> "> by_day 3"
-"in twenty"     -> "> by_day 20"
-"3"             -> "> by_day 3"
-"twenty-eight"  -> "> by_day 28"
-
-target_suffix:
-"from now" -> "> by_day"
-"ago"      -> "< by_day"
-
-day_of_week:
-"sunday"     -> (DAY_OF_WEEK 1)
-"sundays"    -> (DAY_OF_WEEK 1)
-"sun"        -> (DAY_OF_WEEK 1)
-"monday"     -> (DAY_OF_WEEK 2)
-"mondays"    -> (DAY_OF_WEEK 2)
-"mon"        -> (DAY_OF_WEEK 2)
-"tuesday"    -> (DAY_OF_WEEK 3)
-"tuesdays"   -> (DAY_OF_WEEK 3)
-"tues"       -> (DAY_OF_WEEK 3)
-"tue"        -> (DAY_OF_WEEK 3)
-"wednesday"  -> (DAY_OF_WEEK 4)
-"wednesdays" -> (DAY_OF_WEEK 4)
-"wed"        -> (DAY_OF_WEEK 4)
-"thursday"   -> (DAY_OF_WEEK 5)
-"thursdays"  -> (DAY_OF_WEEK 5)
-"thur"       -> (DAY_OF_WEEK 5)
-"thu"        -> (DAY_OF_WEEK 5)
-"friday"     -> (DAY_OF_WEEK 6)
-"fridays"    -> (DAY_OF_WEEK 6)
-"fri"        -> (DAY_OF_WEEK 6)
-"saturday"   -> (DAY_OF_WEEK 7)
-"saturdays"  -> (DAY_OF_WEEK 7)
-"sat"        -> (DAY_OF_WEEK 7)
-
-named_relative_date:
-"today" -> (RELATIVE_DATE > 0)
-"tomorrow" -> (RELATIVE_DATE > 1)
-"tommorrow" -> (RELATIVE_DATE > 1)
-"tomorow" -> (RELATIVE_DATE > 1)
-"tommorow" -> (RELATIVE_DATE > 1)
-"yesterday" -> (RELATIVE_DATE < 1)
-
-year:
-"0000"             -> (YEAR_OF 0000)
-"9999"             -> (YEAR_OF 9999)
-"1980"             -> (YEAR_OF 1980)
-"in the year 1979" -> (YEAR_OF 1979)
-"1979"             -> (YEAR_OF 1979)
-"2010"             -> (YEAR_OF 2010)
-"'00"              -> (YEAR_OF 00)
-"'10"              -> (YEAR_OF 10)
-"'99"              -> (YEAR_OF 99)
-"00"               -> (YEAR_OF 00)
-"10"               -> (YEAR_OF 10)
-"99"               -> (YEAR_OF 99)
-
-date_separator:
-"-" -> "-"
-"/" -> "/"
-
+// ********** time tests **********
 hours:
 "-1" FAIL
-"00" -> (HOURS 00)
-"01" -> (HOURS 01)
-"1"  -> (HOURS 1)
-"02" -> (HOURS 02)
-"2"  -> (HOURS 2)
-"03" -> (HOURS 03)
-"3"  -> (HOURS 3)
-"04" -> (HOURS 04)
-"4"  -> (HOURS 4)
-"05" -> (HOURS 05)
-"5"  -> (HOURS 5)
-"06" -> (HOURS 06)
-"6"  -> (HOURS 6)
-"07" -> (HOURS 07)
-"7"  -> (HOURS 7)
-"08" -> (HOURS 08)
-"8"  -> (HOURS 8)
-"09" -> (HOURS 09)
-"9"  -> (HOURS 9)
-"10" -> (HOURS 10)
-"11" -> (HOURS 11)
-"12" -> (HOURS 12)
-"13" -> (HOURS 13)
-"14" -> (HOURS 14)
-"15" -> (HOURS 15)
-"16" -> (HOURS 16)
-"17" -> (HOURS 17)
-"18" -> (HOURS 18)
-"19" -> (HOURS 19)
-"20" -> (HOURS 20)
-"21" -> (HOURS 21)
-"22" -> (HOURS 22)
-"23" -> (HOURS 23)
+"00" -> (HOURS_OF_DAY 00)
+"01" -> (HOURS_OF_DAY 01)
+"1"  -> (HOURS_OF_DAY 1)
+"02" -> (HOURS_OF_DAY 02)
+"2"  -> (HOURS_OF_DAY 2)
+"03" -> (HOURS_OF_DAY 03)
+"3"  -> (HOURS_OF_DAY 3)
+"04" -> (HOURS_OF_DAY 04)
+"4"  -> (HOURS_OF_DAY 4)
+"05" -> (HOURS_OF_DAY 05)
+"5"  -> (HOURS_OF_DAY 5)
+"06" -> (HOURS_OF_DAY 06)
+"6"  -> (HOURS_OF_DAY 6)
+"07" -> (HOURS_OF_DAY 07)
+"7"  -> (HOURS_OF_DAY 7)
+"08" -> (HOURS_OF_DAY 08)
+"8"  -> (HOURS_OF_DAY 8)
+"09" -> (HOURS_OF_DAY 09)
+"9"  -> (HOURS_OF_DAY 9)
+"10" -> (HOURS_OF_DAY 10)
+"11" -> (HOURS_OF_DAY 11)
+"12" -> (HOURS_OF_DAY 12)
+"13" -> (HOURS_OF_DAY 13)
+"14" -> (HOURS_OF_DAY 14)
+"15" -> (HOURS_OF_DAY 15)
+"16" -> (HOURS_OF_DAY 16)
+"17" -> (HOURS_OF_DAY 17)
+"18" -> (HOURS_OF_DAY 18)
+"19" -> (HOURS_OF_DAY 19)
+"20" -> (HOURS_OF_DAY 20)
+"21" -> (HOURS_OF_DAY 21)
+"22" -> (HOURS_OF_DAY 22)
+"23" -> (HOURS_OF_DAY 23)
 "24" FAIL
 
 minutes:
 "-1" FAIL
-"0"  -> (MINUTES 0)
-"00" -> (MINUTES 00)
-"01" -> (MINUTES 01)
-"1"  -> (MINUTES 1)
-"02" -> (MINUTES 02)
-"2"  -> (MINUTES 2)
-"03" -> (MINUTES 03)
-"3"  -> (MINUTES 3)
-"04" -> (MINUTES 04)
-"4"  -> (MINUTES 4)
-"05" -> (MINUTES 05)
-"5"  -> (MINUTES 5)
-"06" -> (MINUTES 06)
-"6"  -> (MINUTES 6)
-"07" -> (MINUTES 07)
-"7"  -> (MINUTES 7)
-"08" -> (MINUTES 08)
-"8"  -> (MINUTES 8)
-"09" -> (MINUTES 09)
-"9"  -> (MINUTES 9)
-"10" -> (MINUTES 10)
-"11" -> (MINUTES 11)
-"12" -> (MINUTES 12)
-"13" -> (MINUTES 13)
-"14" -> (MINUTES 14)
-"15" -> (MINUTES 15)
-"16" -> (MINUTES 16)
-"17" -> (MINUTES 17)
-"18" -> (MINUTES 18)
-"19" -> (MINUTES 19)
-"20" -> (MINUTES 20)
-"21" -> (MINUTES 21)
-"22" -> (MINUTES 22)
-"23" -> (MINUTES 23)
-"24" -> (MINUTES 24)
-"25" -> (MINUTES 25)
-"26" -> (MINUTES 26)
-"27" -> (MINUTES 27)
-"28" -> (MINUTES 28)
-"29" -> (MINUTES 29)
-"30" -> (MINUTES 30)
-"31" -> (MINUTES 31)
-"32" -> (MINUTES 32)
-"33" -> (MINUTES 33)
-"34" -> (MINUTES 34)
-"35" -> (MINUTES 35)
-"36" -> (MINUTES 36)
-"37" -> (MINUTES 37)
-"38" -> (MINUTES 38)
-"39" -> (MINUTES 39)
-"40" -> (MINUTES 40)
-"41" -> (MINUTES 41)
-"42" -> (MINUTES 42)
-"43" -> (MINUTES 43)
-"44" -> (MINUTES 44)
-"45" -> (MINUTES 45)
-"46" -> (MINUTES 46)
-"47" -> (MINUTES 47)
-"48" -> (MINUTES 48)
-"49" -> (MINUTES 49)
-"50" -> (MINUTES 50)
-"51" -> (MINUTES 51)
-"52" -> (MINUTES 52)
-"53" -> (MINUTES 53)
-"54" -> (MINUTES 54)
-"55" -> (MINUTES 55)
-"56" -> (MINUTES 56)
-"57" -> (MINUTES 57)
-"58" -> (MINUTES 58)
-"59" -> (MINUTES 59)
+"00" -> (MINUTES_OF_HOUR 00)
+"0"  FAIL 
+"01" -> (MINUTES_OF_HOUR 01)
+"1"  FAIL
+"02" -> (MINUTES_OF_HOUR 02)
+"2"  FAIL
+"03" -> (MINUTES_OF_HOUR 03)
+"3"  FAIL 
+"04" -> (MINUTES_OF_HOUR 04)
+"4"  FAIL
+"05" -> (MINUTES_OF_HOUR 05)
+"5"  FAIL
+"06" -> (MINUTES_OF_HOUR 06)
+"6"  FAIL
+"07" -> (MINUTES_OF_HOUR 07)
+"7"  FAIL
+"08" -> (MINUTES_OF_HOUR 08)
+"8"  FAIL
+"09" -> (MINUTES_OF_HOUR 09)
+"9"  FAIL
+"10" -> (MINUTES_OF_HOUR 10)
+"11" -> (MINUTES_OF_HOUR 11)
+"12" -> (MINUTES_OF_HOUR 12)
+"13" -> (MINUTES_OF_HOUR 13)
+"14" -> (MINUTES_OF_HOUR 14)
+"15" -> (MINUTES_OF_HOUR 15)
+"16" -> (MINUTES_OF_HOUR 16)
+"17" -> (MINUTES_OF_HOUR 17)
+"18" -> (MINUTES_OF_HOUR 18)
+"19" -> (MINUTES_OF_HOUR 19)
+"20" -> (MINUTES_OF_HOUR 20)
+"21" -> (MINUTES_OF_HOUR 21)
+"22" -> (MINUTES_OF_HOUR 22)
+"23" -> (MINUTES_OF_HOUR 23)
+"24" -> (MINUTES_OF_HOUR 24)
+"25" -> (MINUTES_OF_HOUR 25)
+"26" -> (MINUTES_OF_HOUR 26)
+"27" -> (MINUTES_OF_HOUR 27)
+"28" -> (MINUTES_OF_HOUR 28)
+"29" -> (MINUTES_OF_HOUR 29)
+"30" -> (MINUTES_OF_HOUR 30)
+"31" -> (MINUTES_OF_HOUR 31)
+"32" -> (MINUTES_OF_HOUR 32)
+"33" -> (MINUTES_OF_HOUR 33)
+"34" -> (MINUTES_OF_HOUR 34)
+"35" -> (MINUTES_OF_HOUR 35)
+"36" -> (MINUTES_OF_HOUR 36)
+"37" -> (MINUTES_OF_HOUR 37)
+"38" -> (MINUTES_OF_HOUR 38)
+"39" -> (MINUTES_OF_HOUR 39)
+"40" -> (MINUTES_OF_HOUR 40)
+"41" -> (MINUTES_OF_HOUR 41)
+"42" -> (MINUTES_OF_HOUR 42)
+"43" -> (MINUTES_OF_HOUR 43)
+"44" -> (MINUTES_OF_HOUR 44)
+"45" -> (MINUTES_OF_HOUR 45)
+"46" -> (MINUTES_OF_HOUR 46)
+"47" -> (MINUTES_OF_HOUR 47)
+"48" -> (MINUTES_OF_HOUR 48)
+"49" -> (MINUTES_OF_HOUR 49)
+"50" -> (MINUTES_OF_HOUR 50)
+"51" -> (MINUTES_OF_HOUR 51)
+"52" -> (MINUTES_OF_HOUR 52)
+"53" -> (MINUTES_OF_HOUR 53)
+"54" -> (MINUTES_OF_HOUR 54)
+"55" -> (MINUTES_OF_HOUR 55)
+"56" -> (MINUTES_OF_HOUR 56)
+"57" -> (MINUTES_OF_HOUR 57)
+"58" -> (MINUTES_OF_HOUR 58)
+"59" -> (MINUTES_OF_HOUR 59)
 "60" FAIL
 
 meridian_indicator:
@@ -291,7 +145,444 @@ meridian_indicator:
 "p.m." -> "pm"
 "p" -> "pm"
 
-spelled_sequence_1_to_31:
+// ********** numeric tests **********
+
+int_00_to_23_optional_prefix:
+"00" -> "00"
+"0" -> "0"
+"01" -> "01"
+"1" -> "1"
+"02" -> "02"
+"2" -> "2"
+"03" -> "03"
+"3" -> "3"
+"04" -> "04"
+"4" -> "4"
+"05" -> "05"
+"5" -> "5"
+"06" -> "06"
+"6" -> "6"
+"07" -> "07"
+"7" -> "7"
+"08" -> "08"
+"8" -> "8"
+"09" -> "09"
+"9" -> "9"
+"10" -> "10"
+"11" -> "11"
+"12" -> "12"
+"13" -> "13"
+"14" -> "14"
+"15" -> "15"
+"16" -> "16"
+"17" -> "17"
+"18" -> "18"
+"19" -> "19"
+"20" -> "20"
+"21" -> "21"
+"22" -> "22"
+"23" -> "23"
+"24" FAIL
+
+int_00_to_59_mandatory_prefix:
+"00" -> "00"
+"0" FAIL 
+"01" -> "01"
+"1" FAIL 
+"02" -> "02"
+"2" FAIL
+"03" -> "03"
+"3" FAIL
+"04" -> "04"
+"4" FAIL
+"05" -> "05"
+"5" FAIL
+"06" -> "06"
+"6" FAIL
+"07" -> "07"
+"7" FAIL
+"08" -> "08"
+"8" FAIL
+"09" -> "09"
+"9" FAIL 
+"10" -> "10"
+"11" -> "11"
+"12" -> "12"
+"13" -> "13"
+"14" -> "14"
+"15" -> "15"
+"16" -> "16"
+"17" -> "17"
+"18" -> "18"
+"19" -> "19"
+"20" -> "20"
+"21" -> "21"
+"22" -> "22"
+"23" -> "23"
+"24" -> "24"
+"25" -> "25"
+"26" -> "26"
+"27" -> "27"
+"28" -> "28"
+"29" -> "29"
+"30" -> "30"
+"31" -> "31"
+"32" -> "32"
+"33" -> "33"
+"34" -> "34"
+"35" -> "35"
+"36" -> "36"
+"37" -> "37"
+"38" -> "38"
+"39" -> "39"
+"40" -> "40"
+"41" -> "41"
+"42" -> "42"
+"43" -> "43"
+"44" -> "44"
+"45" -> "45"
+"46" -> "46"
+"47" -> "47"
+"48" -> "48"
+"49" -> "49"
+"50" -> "50"
+"51" -> "51"
+"52" -> "52"
+"53" -> "53"
+"54" -> "54"
+"55" -> "55"
+"56" -> "56"
+"57" -> "57"
+"58" -> "58"
+"59" -> "59"
+"60" FAIL
+
+int_00_to_99_mandatory_prefix:
+"00" -> "00"
+"0" FAIL 
+"01" -> "01"
+"1" FAIL 
+"02" -> "02"
+"2" FAIL
+"03" -> "03"
+"3" FAIL
+"04" -> "04"
+"4" FAIL
+"05" -> "05"
+"5" FAIL
+"06" -> "06"
+"6" FAIL
+"07" -> "07"
+"7" FAIL
+"08" -> "08"
+"8" FAIL
+"09" -> "09"
+"9" FAIL 
+"10" -> "10"
+"11" -> "11"
+"12" -> "12"
+"13" -> "13"
+"14" -> "14"
+"15" -> "15"
+"16" -> "16"
+"17" -> "17"
+"18" -> "18"
+"19" -> "19"
+"20" -> "20"
+"21" -> "21"
+"22" -> "22"
+"23" -> "23"
+"24" -> "24"
+"25" -> "25"
+"26" -> "26"
+"27" -> "27"
+"28" -> "28"
+"29" -> "29"
+"30" -> "30"
+"31" -> "31"
+"32" -> "32"
+"33" -> "33"
+"34" -> "34"
+"35" -> "35"
+"36" -> "36"
+"37" -> "37"
+"38" -> "38"
+"39" -> "39"
+"40" -> "40"
+"41" -> "41"
+"42" -> "42"
+"43" -> "43"
+"44" -> "44"
+"45" -> "45"
+"46" -> "46"
+"47" -> "47"
+"48" -> "48"
+"49" -> "49"
+"50" -> "50"
+"51" -> "51"
+"52" -> "52"
+"53" -> "53"
+"54" -> "54"
+"55" -> "55"
+"56" -> "56"
+"57" -> "57"
+"58" -> "58"
+"59" -> "59"
+"60" -> "60"
+"61" -> "61"
+"62" -> "62"
+"63" -> "63"
+"64" -> "64"
+"65" -> "65"
+"66" -> "66"
+"67" -> "67"
+"68" -> "68"
+"69" -> "69"
+"70" -> "70"
+"71" -> "71"
+"72" -> "72"
+"73" -> "73"
+"74" -> "74"
+"75" -> "75"
+"76" -> "76"
+"77" -> "77"
+"78" -> "78"
+"79" -> "79"
+"80" -> "80"
+"81" -> "81"
+"82" -> "82"
+"83" -> "83"
+"84" -> "84"
+"85" -> "85"
+"86" -> "86"
+"87" -> "87"
+"88" -> "88"
+"89" -> "89"
+"90" -> "90"
+"91" -> "91"
+"92" -> "92"
+"93" -> "93"
+"94" -> "94"
+"95" -> "95"
+"96" -> "96"
+"97" -> "97"
+"98" -> "98"
+"99" -> "99"
+"100" FAIL
+
+int_01_to_12_optional_prefix:
+"00" FAIL
+"0" FAIL
+"01" -> "01"
+"1" -> "1"
+"02" -> "02"
+"2" -> "2"
+"03" -> "03"
+"3" -> "3"
+"04" -> "04"
+"4" -> "4"
+"05" -> "05"
+"5" -> "5"
+"06" -> "06"
+"6" -> "6"
+"07" -> "07"
+"7" -> "7"
+"08" -> "08"
+"8" -> "8"
+"09" -> "09"
+"9" -> "9"
+"10" -> "10"
+"11" -> "11"
+"12" -> "12"
+"13" FAIL
+
+int_01_to_31_optional_prefix:
+"00" FAIL
+"0" FAIL
+"01" -> "01"
+"1" -> "1"
+"02" -> "02"
+"2" -> "2"
+"03" -> "03"
+"3" -> "3"
+"04" -> "04"
+"4" -> "4"
+"05" -> "05"
+"5" -> "5"
+"06" -> "06"
+"6" -> "6"
+"07" -> "07"
+"7" -> "7"
+"08" -> "08"
+"8" -> "8"
+"09" -> "09"
+"9" -> "9"
+"10" -> "10"
+"11" -> "11"
+"12" -> "12"
+"13" -> "13"
+"14" -> "14"
+"15" -> "15"
+"16" -> "16"
+"17" -> "17"
+"18" -> "18"
+"19" -> "19"
+"20" -> "20"
+"21" -> "21"
+"22" -> "22"
+"23" -> "23"
+"24" -> "24"
+"25" -> "25"
+"26" -> "26"
+"27" -> "27"
+"28" -> "28"
+"29" -> "29"
+"30" -> "30"
+"31" -> "31"
+"32" FAIL
+
+int_four_digits:
+"000" FAIL
+"33" FAIL
+"2" FAIL
+"0000" -> "0000"
+"0100" -> "0100"
+"0020" -> "0020"
+"0003" -> "0003"
+"9999" -> "9999"
+"5050" -> "5050"
+
+spelled_or_int_01_to_31_optional_prefix:
+"zero" FAIL
+"one" -> "1"
+"two" -> "2"
+"three" -> "3"
+"four" -> "4"
+"five" -> "5"
+"six" -> "6"
+"seven" -> "7"
+"eight" -> "8"
+"nine" -> "9"
+"ten" -> "10"
+"eleven" -> "11"
+"twelve" -> "12"
+"thirteen" -> "13"
+"fourteen" -> "14"
+"fifteen" -> "15"
+"sixteen" -> "16"
+"seventeen" -> "17"
+"eighteen" -> "18"
+"nineteen" -> "19"
+"twenty" -> "20"
+"twenty one" -> "21"
+"twenty-one" -> "21"
+"twenty two" -> "22"
+"twenty-two" -> "22"
+"twenty three" -> "23"
+"twenty-three" -> "23"
+"twenty four" -> "24"
+"twenty-four" -> "24"
+"twenty five" -> "25"
+"twenty-five" -> "25"
+"twenty six" -> "26"
+"twenty-six" -> "26"
+"twenty seven" -> "27"
+"twenty-seven" -> "27"
+"twenty-eight" -> "28"
+"twenty nine" -> "29"
+"twenty-nine" -> "29"
+"thirty" -> "30"
+"thirty one" -> "31"
+"thirty-one" -> "31"
+"00" FAIL
+"0" FAIL
+"01" -> "01"
+"1" -> "1"
+"02" -> "02"
+"2" -> "2"
+"03" -> "03"
+"3" -> "3"
+"04" -> "04"
+"4" -> "4"
+"05" -> "05"
+"5" -> "5"
+"06" -> "06"
+"6" -> "6"
+"07" -> "07"
+"7" -> "7"
+"08" -> "08"
+"8" -> "8"
+"09" -> "09"
+"9" -> "9"
+"10" -> "10"
+"11" -> "11"
+"12" -> "12"
+"13" -> "13"
+"14" -> "14"
+"15" -> "15"
+"16" -> "16"
+"17" -> "17"
+"18" -> "18"
+"19" -> "19"
+"20" -> "20"
+"21" -> "21"
+"22" -> "22"
+"23" -> "23"
+"24" -> "24"
+"25" -> "25"
+"26" -> "26"
+"27" -> "27"
+"28" -> "28"
+"29" -> "29"
+"30" -> "30"
+"31" -> "31"
+
+spelled_one_to_thirty_one:
+"zero" FAIL
+"one" -> "1"
+"two" -> "2"
+"three" -> "3"
+"four" -> "4"
+"five" -> "5"
+"six" -> "6"
+"seven" -> "7"
+"eight" -> "8"
+"nine" -> "9"
+"ten" -> "10"
+"eleven" -> "11"
+"twelve" -> "12"
+"thirteen" -> "13"
+"fourteen" -> "14"
+"fifteen" -> "15"
+"sixteen" -> "16"
+"seventeen" -> "17"
+"eighteen" -> "18"
+"nineteen" -> "19"
+"twenty" -> "20"
+"twenty one" -> "21"
+"twenty-one" -> "21"
+"twenty two" -> "22"
+"twenty-two" -> "22"
+"twenty three" -> "23"
+"twenty-three" -> "23"
+"twenty four" -> "24"
+"twenty-four" -> "24"
+"twenty five" -> "25"
+"twenty-five" -> "25"
+"twenty six" -> "26"
+"twenty-six" -> "26"
+"twenty seven" -> "27"
+"twenty-seven" -> "27"
+"twenty-eight" -> "28"
+"twenty nine" -> "29"
+"twenty-nine" -> "29"
+"thirty" -> "30"
+"thirty one" -> "31"
+"thirty-one" -> "31"
+"thirty two" FAIL
+"thirty-two" FAIL
+
+spelled_first_to_thirty_first:
 "first" -> "1"
 "1st" -> "1"
 "second" -> "2"
@@ -365,468 +656,23 @@ spelled_sequence_1_to_31:
 "thirty first" -> "31"
 "31st" -> "31"
 
-spelled_or_int_1_to_31:
-"one" -> "1"
-"two" -> "2"
-"three" -> "3"
-"four" -> "4"
-"five" -> "5"
-"six" -> "6"
-"seven" -> "7"
-"eight" -> "8"
-"nine" -> "9"
-"ten" -> "10"
-"eleven" -> "11"
-"twelve" -> "12"
-"thirteen" -> "13"
-"fourteen" -> "14"
-"fifteen" -> "15"
-"sixteen" -> "16"
-"seventeen" -> "17"
-"eighteen" -> "18"
-"nineteen" -> "19"
-"twenty" -> "20"
-"twenty one" -> "21"
-"twenty-one" -> "21"
-"twenty two" -> "22"
-"twenty-two" -> "22"
-"twenty three" -> "23"
-"twenty-three" -> "23"
-"twenty four" -> "24"
-"twenty-four" -> "24"
-"twenty five" -> "25"
-"twenty-five" -> "25"
-"twenty six" -> "26"
-"twenty-six" -> "26"
-"twenty seven" -> "27"
-"twenty-seven" -> "27"
-"twenty-eight" -> "28"
-"twenty nine" -> "29"
-"twenty-nine" -> "29"
-"thirty" -> "30"
-"thirty one" -> "31"
-"thirty-one" -> "31"
-"01" -> "01"
-"1" -> "1"
-"02" -> "02"
-"2" -> "2"
-"03" -> "03"
-"3" -> "3"
-"04" -> "04"
-"4" -> "4"
-"05" -> "05"
-"5" -> "5"
-"06" -> "06"
-"6" -> "6"
-"07" -> "07"
-"7" -> "7"
-"08" -> "08"
-"8" -> "8"
-"09" -> "09"
-"9" -> "9"
-"10" -> "10"
-"11" -> "11"
-"12" -> "12"
-"13" -> "13"
-"14" -> "14"
-"15" -> "15"
-"16" -> "16"
-"17" -> "17"
-"18" -> "18"
-"19" -> "19"
-"20" -> "20"
-"21" -> "21"
-"22" -> "22"
-"23" -> "23"
-"24" -> "24"
-"25" -> "25"
-"26" -> "26"
-"27" -> "27"
-"28" -> "28"
-"29" -> "29"
-"30" -> "30"
-"31" -> "31"
+INT_0:
+"0" OK:
 
-int_1_to_31:
-"01" -> "01"
-"1" -> "1"
-"02" -> "02"
-"2" -> "2"
-"03" -> "03"
-"3" -> "3"
-"04" -> "04"
-"4" -> "4"
-"05" -> "05"
-"5" -> "5"
-"06" -> "06"
-"6" -> "6"
-"07" -> "07"
-"7" -> "7"
-"08" -> "08"
-"8" -> "8"
-"09" -> "09"
-"9" -> "9"
-"10" -> "10"
-"11" -> "11"
-"12" -> "12"
-"13" -> "13"
-"14" -> "14"
-"15" -> "15"
-"16" -> "16"
-"17" -> "17"
-"18" -> "18"
-"19" -> "19"
-"20" -> "20"
-"21" -> "21"
-"22" -> "22"
-"23" -> "23"
-"24" -> "24"
-"25" -> "25"
-"26" -> "26"
-"27" -> "27"
-"28" -> "28"
-"29" -> "29"
-"30" -> "30"
-"31" -> "31"
+INT_00:
+"0" FAIL
+"00" OK
 
-int_0_to_23:
-"0" -> "0"
-"01" -> "01"
-"1" -> "1"
-"02" -> "02"
-"2" -> "2"
-"03" -> "03"
-"3" -> "3"
-"04" -> "04"
-"4" -> "4"
-"05" -> "05"
-"5" -> "5"
-"06" -> "06"
-"6" -> "6"
-"07" -> "07"
-"7" -> "7"
-"08" -> "08"
-"8" -> "8"
-"09" -> "09"
-"9" -> "9"
-"10" -> "10"
-"11" -> "11"
-"12" -> "12"
-"13" -> "13"
-"14" -> "14"
-"15" -> "15"
-"16" -> "16"
-"17" -> "17"
-"18" -> "18"
-"19" -> "19"
-"20" -> "20"
-"21" -> "21"
-"22" -> "22"
-"23" -> "23"
-
-int_1_to_12:
-"01" -> "01"
-"1" -> "1"
-"02" -> "02"
-"2" -> "2"
-"03" -> "03"
-"3" -> "3"
-"04" -> "04"
-"4" -> "4"
-"05" -> "05"
-"5" -> "5"
-"06" -> "06"
-"6" -> "6"
-"07" -> "07"
-"7" -> "7"
-"08" -> "08"
-"8" -> "8"
-"09" -> "09"
-"9" -> "9"
-"10" -> "10"
-"11" -> "11"
-"12" -> "12"
-
-int_0_to_59:
-"0" -> "0"
-"00" -> "00"
-"01" -> "01"
-"1" -> "1"
-"02" -> "02"
-"2" -> "2"
-"03" -> "03"
-"3" -> "3"
-"04" -> "04"
-"4" -> "4"
-"05" -> "05"
-"5" -> "5"
-"06" -> "06"
-"6" -> "6"
-"07" -> "07"
-"7" -> "7"
-"08" -> "08"
-"8" -> "8"
-"09" -> "09"
-"9" -> "9"
-"10" -> "10"
-"11" -> "11"
-"12" -> "12"
-"13" -> "13"
-"14" -> "14"
-"15" -> "15"
-"16" -> "16"
-"17" -> "17"
-"18" -> "18"
-"19" -> "19"
-"20" -> "20"
-"21" -> "21"
-"22" -> "22"
-"23" -> "23"
-"24" -> "24"
-"25" -> "25"
-"26" -> "26"
-"27" -> "27"
-"28" -> "28"
-"29" -> "29"
-"30" -> "30"
-"31" -> "31"
-"32" -> "32"
-"33" -> "33"
-"34" -> "34"
-"35" -> "35"
-"36" -> "36"
-"37" -> "37"
-"38" -> "38"
-"39" -> "39"
-"40" -> "40"
-"41" -> "41"
-"42" -> "42"
-"43" -> "43"
-"44" -> "44"
-"45" -> "45"
-"46" -> "46"
-"47" -> "47"
-"48" -> "48"
-"49" -> "49"
-"50" -> "50"
-"51" -> "51"
-"52" -> "52"
-"53" -> "53"
-"54" -> "54"
-"55" -> "55"
-"56" -> "56"
-"57" -> "57"
-"58" -> "58"
-"59" -> "59"
-
-int_0_to_99_no_prefix:
-"0" -> "0"
-"1" -> "1"
-"2" -> "2"
-"3" -> "3"
-"4" -> "4"
-"5" -> "5"
-"6" -> "6"
-"7" -> "7"
-"8" -> "8"
-"9" -> "9"
-"10" -> "10"
-"11" -> "11"
-"12" -> "12"
-"13" -> "13"
-"14" -> "14"
-"15" -> "15"
-"16" -> "16"
-"17" -> "17"
-"18" -> "18"
-"19" -> "19"
-"20" -> "20"
-"21" -> "21"
-"22" -> "22"
-"23" -> "23"
-"24" -> "24"
-"25" -> "25"
-"26" -> "26"
-"27" -> "27"
-"28" -> "28"
-"29" -> "29"
-"30" -> "30"
-"31" -> "31"
-"32" -> "32"
-"33" -> "33"
-"34" -> "34"
-"35" -> "35"
-"36" -> "36"
-"37" -> "37"
-"38" -> "38"
-"39" -> "39"
-"40" -> "40"
-"41" -> "41"
-"42" -> "42"
-"43" -> "43"
-"44" -> "44"
-"45" -> "45"
-"46" -> "46"
-"47" -> "47"
-"48" -> "48"
-"49" -> "49"
-"50" -> "50"
-"51" -> "51"
-"52" -> "52"
-"53" -> "53"
-"54" -> "54"
-"55" -> "55"
-"56" -> "56"
-"57" -> "57"
-"58" -> "58"
-"59" -> "59"
-"60" -> "60"
-"61" -> "61"
-"62" -> "62"
-"63" -> "63"
-"64" -> "64"
-"65" -> "65"
-"66" -> "66"
-"67" -> "67"
-"68" -> "68"
-"69" -> "69"
-"70" -> "70"
-"71" -> "71"
-"72" -> "72"
-"73" -> "73"
-"74" -> "74"
-"75" -> "75"
-"76" -> "76"
-"77" -> "77"
-"78" -> "78"
-"79" -> "79"
-"80" -> "80"
-"81" -> "81"
-"82" -> "82"
-"83" -> "83"
-"84" -> "84"
-"85" -> "85"
-"86" -> "86"
-"87" -> "87"
-"88" -> "88"
-"89" -> "89"
-"90" -> "90"
-"91" -> "91"
-"92" -> "92"
-"93" -> "93"
-"94" -> "94"
-"95" -> "95"
-"96" -> "96"
-"97" -> "97"
-"98" -> "98"
-"99" -> "99"
-
-int_0_to_99_with_prefix:
-"00" -> "00"
-"01" -> "01"
-"02" -> "02"
-"03" -> "03"
-"04" -> "04"
-"05" -> "05"
-"06" -> "06"
-"07" -> "07"
-"08" -> "08"
-"09" -> "09"
-"10" -> "10"
-"11" -> "11"
-"12" -> "12"
-"13" -> "13"
-"14" -> "14"
-"15" -> "15"
-"16" -> "16"
-"17" -> "17"
-"18" -> "18"
-"19" -> "19"
-"20" -> "20"
-"21" -> "21"
-"22" -> "22"
-"23" -> "23"
-"24" -> "24"
-"25" -> "25"
-"26" -> "26"
-"27" -> "27"
-"28" -> "28"
-"29" -> "29"
-"30" -> "30"
-"31" -> "31"
-"32" -> "32"
-"33" -> "33"
-"34" -> "34"
-"35" -> "35"
-"36" -> "36"
-"37" -> "37"
-"38" -> "38"
-"39" -> "39"
-"40" -> "40"
-"41" -> "41"
-"42" -> "42"
-"43" -> "43"
-"44" -> "44"
-"45" -> "45"
-"46" -> "46"
-"47" -> "47"
-"48" -> "48"
-"49" -> "49"
-"50" -> "50"
-"51" -> "51"
-"52" -> "52"
-"53" -> "53"
-"54" -> "54"
-"55" -> "55"
-"56" -> "56"
-"57" -> "57"
-"58" -> "58"
-"59" -> "59"
-"60" -> "60"
-"61" -> "61"
-"62" -> "62"
-"63" -> "63"
-"64" -> "64"
-"65" -> "65"
-"66" -> "66"
-"67" -> "67"
-"68" -> "68"
-"69" -> "69"
-"70" -> "70"
-"71" -> "71"
-"72" -> "72"
-"73" -> "73"
-"74" -> "74"
-"75" -> "75"
-"76" -> "76"
-"77" -> "77"
-"78" -> "78"
-"79" -> "79"
-"80" -> "80"
-"81" -> "81"
-"82" -> "82"
-"83" -> "83"
-"84" -> "84"
-"85" -> "85"
-"86" -> "86"
-"87" -> "87"
-"88" -> "88"
-"89" -> "89"
-"90" -> "90"
-"91" -> "91"
-"92" -> "92"
-"93" -> "93"
-"94" -> "94"
-"95" -> "95"
-"96" -> "96"
-"97" -> "97"
-"98" -> "98"
-"99" -> "99"
-
-int_up_to_4_digits:
-"0000" -> "0000"
-"124" -> "124"
-"9999" -> "9999"
-"1" -> "1"
-"02" -> "02"
-
+INT_01_TO_12:
+"01" OK
+"02" OK
+"03" OK
+"04" OK
+"05" OK
+"06" OK
+"07" OK
+"08" OK
+"09" OK
+"10" OK
+"11" OK
+"12" OK

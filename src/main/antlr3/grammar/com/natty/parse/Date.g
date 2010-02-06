@@ -6,121 +6,251 @@ options {
 
 tokens {
   INT;
-  HOURS;
-  MINUTES;
-  AM_PM;
-  SPAN;
-  MONTH_OF;
-  DAY_OF_WEEK;
+  MONTH_OF_YEAR;
   DAY_OF_MONTH;
+  DAY_OF_WEEK;
   YEAR_OF;
-  SEEK_DIR;
-  SEEK_TYPE;
-  EXPLICIT_TIME;
+  DATE_TIME;
   EXPLICIT_DATE;
   RELATIVE_DATE;
-  DATE_TIME;
+  SEEK_DIRECTION;
+  SEEK_TYPE;
+  SPAN;
+  EXPLICIT_TIME;
+  HOURS_OF_DAY;
+  MINUTES_OF_HOUR;
+  AM_PM;
 }
 
 @header        { package com.natty.parse; }
 @lexer::header { package com.natty.parse; }
 
 date_time
-  options{backtrack=true;}
-  : (((date (COMMA | AT)? time)=> date time) | time (COMMA | ON)? date)
-    -> ^(DATE_TIME date time)
-    
-  | date
-    -> ^(DATE_TIME date)
-  
-  | time
-    -> ^(DATE_TIME time)
-  ;
-  
-date
-  : formal_date
-  | month_and_day_date
-  ;
-  
-formal_date
-  // year first: 1979-02-28, 1980/01/02, etc.  full 4 digit year required to match
-  : int_4_digits date_separator int_1_to_12 date_separator int_1_to_31
-    -> ^(EXPLICIT_DATE ^(MONTH_OF int_1_to_12) ^(DAY_OF_MONTH int_1_to_31) ^(YEAR_OF int_4_digits))
- 
-  // year last: 1/02/1980, 2/28/79.  1 to 4 digit year is acceptable 
-  | int_1_to_12 date_separator int_1_to_31 (date_separator int_up_to_4_digits)?
-    -> ^(EXPLICIT_DATE ^(MONTH_OF int_1_to_31) ^(DAY_OF_MONTH int_1_to_31) ^(YEAR_OF int_up_to_4_digits?))
+  : (
+      (date (WHITE_SPACE (AT WHITE_SPACE)? time)?)=>
+        date (WHITE_SPACE (AT WHITE_SPACE)? time)?
+      
+      | time (WHITE_SPACE (ON WHITE_SPACE)? date)?
+    ) -> ^(DATE_TIME date? time?)
   ;
 
-// an explicit date made up of a month name, the day of the month, and an optional year
-month_and_day_date
-  : (day_of_month OF? month year? | month day_of_month year?)
-    -> ^(EXPLICIT_DATE month day_of_month year?)
+date
+  : formal_date
+  | relaxed_date
+  | relative_date
   ;
   
-month
-  : JANUARY   -> ^(MONTH_OF INT["1"])
-  | FEBRUARY  -> ^(MONTH_OF INT["2"])
-  | MARCH     -> ^(MONTH_OF INT["3"])
-  | APRIL     -> ^(MONTH_OF INT["4"])
-  | MAY       -> ^(MONTH_OF INT["5"])
-  | JUNE      -> ^(MONTH_OF INT["6"])
-  | JULY      -> ^(MONTH_OF INT["7"])
-  | AUGUST    -> ^(MONTH_OF INT["8"])
-  | SEPTEMBER -> ^(MONTH_OF INT["9"])
-  | OCTOBER   -> ^(MONTH_OF INT["10"])
-  | NOVEMBER  -> ^(MONTH_OF INT["11"])
-  | DECEMBER  -> ^(MONTH_OF INT["12"])
+// ********** relaxed date rules **********
+
+// relaxed date with a spelled-out or abbreviated month
+relaxed_date
+  : (
+      // this is a bit tricky since a time can be placed directly after a date, and a year
+      // can look like a time (four digits, no colon i.e. 0500)  Since a year would be more
+      // common in this context, we choose to swallow the year as part of the date.
+      (relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year)=>
+        relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year
+    
+      | (relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year)=>
+        relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year
+    
+      | relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month
+      | relaxed_month WHITE_SPACE relaxed_day_of_month
+    ) -> ^(EXPLICIT_DATE relaxed_month relaxed_day_of_month relaxed_year?)
+  ;
+
+relaxed_month
+  : JANUARY DOT?   -> ^(MONTH_OF_YEAR INT["1"])
+  | FEBRUARY DOT?  -> ^(MONTH_OF_YEAR INT["2"])
+  | MARCH DOT?     -> ^(MONTH_OF_YEAR INT["3"])
+  | APRIL DOT?     -> ^(MONTH_OF_YEAR INT["4"])
+  | MAY DOT?       -> ^(MONTH_OF_YEAR INT["5"])
+  | JUNE DOT?      -> ^(MONTH_OF_YEAR INT["6"])
+  | JULY DOT?      -> ^(MONTH_OF_YEAR INT["7"])
+  | AUGUST DOT?    -> ^(MONTH_OF_YEAR INT["8"])
+  | SEPTEMBER DOT? -> ^(MONTH_OF_YEAR INT["9"])
+  | OCTOBER DOT?   -> ^(MONTH_OF_YEAR INT["10"])
+  | NOVEMBER DOT?  -> ^(MONTH_OF_YEAR INT["11"])
+  | DECEMBER DOT?  -> ^(MONTH_OF_YEAR INT["12"])
   ;
   
-day_of_month
-  : spelled_or_int_1_to_31   -> ^(DAY_OF_MONTH spelled_or_int_1_to_31)
-  | spelled_sequence_1_to_31 -> ^(DAY_OF_MONTH spelled_sequence_1_to_31) 
+relaxed_day_of_month
+  : spelled_or_int_01_to_31_optional_prefix -> ^(DAY_OF_MONTH spelled_or_int_01_to_31_optional_prefix)
+  | spelled_first_to_thirty_first           -> ^(DAY_OF_MONTH spelled_first_to_thirty_first) 
   ;
   
-year
-  : COMMA? (IN THE YEAR)? SINGLE_QUOTE int_0_to_99_with_prefix  -> ^(YEAR_OF int_0_to_99_with_prefix)
-  | COMMA? (IN THE YEAR)? int_3_or_4_digits                     -> ^(YEAR_OF int_3_or_4_digits)
+relaxed_year
+  : relaxed_year_prefix SINGLE_QUOTE int_00_to_99_mandatory_prefix -> ^(YEAR_OF int_00_to_99_mandatory_prefix)
+  | relaxed_year_prefix int_four_digits                            -> ^(YEAR_OF int_four_digits)
   ;
   
-date_separator
+relaxed_year_prefix
+  : (COMMA WHITE_SPACE? | WHITE_SPACE) (IN WHITE_SPACE THE WHITE_SPACE YEAR WHITE_SPACE)? 
+  ; 
+  
+// ********** formal date rules **********
+
+formal_date
+  // year first: 1979-02-28, 1980/01/02, etc.  full 4 digit year required to match
+  : int_four_digits formal_date_separator formal_month_of_year formal_date_separator formal_day_of_month
+ 
+  // year last: 1/02/1980, 2/28/79.  2 or 4 digit year is acceptable 
+  | formal_month_of_year formal_date_separator formal_day_of_month (formal_date_separator formal_year)?
+  ;
+
+formal_month_of_year
+  : int_01_to_12_optional_prefix -> ^(MONTH_OF_YEAR int_01_to_12_optional_prefix)
+  ;
+  
+formal_day_of_month
+  : int_01_to_31_optional_prefix -> ^(DAY_OF_MONTH int_01_to_31_optional_prefix)
+  ;
+  
+formal_year
+  : int_four_digits               -> ^(YEAR_OF int_four_digits)
+  | int_00_to_99_mandatory_prefix -> ^(YEAR_OF int_00_to_99_mandatory_prefix)
+  ;
+  
+formal_date_separator
   : DASH
   | SLASH
   ;
   
-time 
-  : hours (COLON? minutes)? meridian_indicator?
-    -> ^(EXPLICIT_TIME hours minutes? meridian_indicator?)
+// ********** relative date rules **********
   
-  | time_identifier
+relative_date
+  : named_relative_date 
+  | relative_prefix WHITE_SPACE relative_target 
+      -> ^(RELATIVE_DATE relative_prefix relative_target)
+  | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
+      -> ^(RELATIVE_DATE relative_suffix spelled_or_int_01_to_31_optional_prefix relative_target)
   ;
   
-// common time identifiers (noon, midnight, etc)
-time_identifier
-  : MIDNIGHT -> ^(EXPLICIT_TIME ^(HOURS INT["12"]) AM_PM["am"])
-  | NOON     -> ^(EXPLICIT_TIME ^(HOURS INT["12"]) AM_PM["pm"])
+relative_date_span
+  : DAY   -> SPAN["day"]
+  | WEEK  -> SPAN["week"]
+  | MONTH -> SPAN["month"]
+  | YEAR  -> SPAN["year"]
   ;
   
+relative_target
+  : day_of_week 
+  | relative_date_span
+  ;
+  
+relative_prefix
+  : (THIS WHITE_SPACE)? LAST -> SEEK_DIRECTION["<"] SEEK_TYPE["by_week"] INT["1"]
+  | (THIS WHITE_SPACE)? NEXT     -> SEEK_DIRECTION[">"] SEEK_TYPE["by_week"] INT["1"]
+  | (THIS WHITE_SPACE)? PAST     -> SEEK_DIRECTION["<"] SEEK_TYPE["by_day"] INT["1"]
+  | (THIS WHITE_SPACE)? COMING   -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] INT["1"]
+  | (THIS WHITE_SPACE)? UPCOMING -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] INT["1"]
+  | (IN WHITE_SPACE)? spelled_or_int_01_to_31_optional_prefix -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] spelled_or_int_01_to_31_optional_prefix
+  ;
+  
+relative_suffix
+  : 'from now' -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"]
+  | 'ago'      -> SEEK_DIRECTION["<"] SEEK_TYPE["by_day"]
+  ;
+ 
+day_of_week
+  : SUNDAY    -> DAY_OF_WEEK["1"]
+  | MONDAY    -> DAY_OF_WEEK["2"]
+  | TUESDAY   -> DAY_OF_WEEK["3"]
+  | WEDNESDAY -> DAY_OF_WEEK["4"]
+  | THURSDAY  -> DAY_OF_WEEK["5"]
+  | FRIDAY    -> DAY_OF_WEEK["6"]
+  | SATURDAY  -> DAY_OF_WEEK["7"]
+  ;
+  
+named_relative_date
+  : TODAY     -> ^(RELATIVE_DATE SEEK_DIRECTION[">"] INT["0"])
+  | TOMORROW  -> ^(RELATIVE_DATE SEEK_DIRECTION[">"] INT["1"])
+  | YESTERDAY -> ^(RELATIVE_DATE SEEK_DIRECTION["<"] INT["1"])
+  ;
+  
+// ********** time rules **********
+
+// a time with an hour, optional minutes, and optional meridian indicator
+time
+  : hours COLON? minutes (WHITE_SPACE? (meridian_indicator | (MILITARY_HOUR_SUFFIX | HOUR)))?
+      -> ^(EXPLICIT_TIME hours minutes meridian_indicator?)
+      
+  | hours WHITE_SPACE? meridian_indicator?
+      -> ^(EXPLICIT_TIME hours ^(MINUTES_OF_HOUR INT["0"]) meridian_indicator?)
+  ;
+ 
+// hour of the day
 hours
-  : int_0_to_23 -> ^(HOURS int_0_to_23)
+  : int_00_to_23_optional_prefix -> ^(HOURS_OF_DAY int_00_to_23_optional_prefix)
   ;
   
+// minutes of the hour
 minutes
-  : int_0_to_59 -> ^(MINUTES int_0_to_59)
+  : int_00_to_59_mandatory_prefix -> ^(MINUTES_OF_HOUR int_00_to_59_mandatory_prefix)
+  
   ;
   
+// meridian am/pm indicator
 meridian_indicator
   : AM -> AM_PM["am"]
   | PM -> AM_PM["pm"]
   ;
   
-// a number between 1 and 31 spelled-out (one, twenty-eight, etc.)
-spelled_or_int_1_to_31
-  : int_1_to_31
-  | spelled_1_to_31
+// ********** numeric rules **********
+
+// a number between 0 and 23 inclusive, with an optional 0 prefix before numbers 0-9
+int_00_to_23_optional_prefix
+  : (INT_0
+  | INT_00
+  | INT_1_TO_9
+  | INT_01_TO_12
+  | INT_13_TO_23) -> INT[$int_00_to_23_optional_prefix.text]
+  ;
+ 
+// a number between 00 and 59 inclusive, with a mandatory 0 prefix before numbers 0-9
+int_00_to_59_mandatory_prefix
+  : (INT_00
+  | INT_01_TO_12
+  | INT_13_TO_23
+  | INT_24_TO_31
+  | INT_32_TO_59) -> INT[$int_00_to_59_mandatory_prefix.text]
   ;
   
-spelled_1_to_31
+// a number between 00 and 99 inclusive, with a mandatory 0 prefix before numbers 0-9
+int_00_to_99_mandatory_prefix
+  : int_00_to_59_mandatory_prefix
+  | INT_60_TO_99 -> INT[$INT_60_TO_99.text]
+  ;
+  
+// a number between 1 and 12 inclusive, with an optional 0 prefix before numbers 1-9
+int_01_to_12_optional_prefix
+  : (INT_1_TO_9
+  | INT_01_TO_12) -> INT[$int_01_to_12_optional_prefix.text]
+  ;
+  
+// a number between 1 and 31 inclusive, with an optional 0 prefix before numbers 1-9
+int_01_to_31_optional_prefix
+  : (INT_1_TO_9
+  | INT_01_TO_12
+  | INT_13_TO_23
+  | INT_24_TO_31) -> INT[$int_01_to_31_optional_prefix.text]
+  ;
+  
+// a number with exactly four digits
+int_four_digits
+  : int_00_to_99_mandatory_prefix int_00_to_99_mandatory_prefix
+      -> INT[$int_four_digits.text]
+  ;
+  
+// a number between one and thirty-one either spelled-out, or as an
+// integer with an optional 0 prefix for numbers betwen 1 and 9
+spelled_or_int_01_to_31_optional_prefix
+  : int_01_to_31_optional_prefix
+  | spelled_one_to_thirty_one
+  ;
+  
+// a spelled number between one and thirty-one (one, two, etc.)
+spelled_one_to_thirty_one
   : ONE        -> INT["1"]
   | TWO        -> INT["2"]
   | THREE      -> INT["3"]
@@ -141,22 +271,21 @@ spelled_1_to_31
   | EIGHTEEN   -> INT["18"]
   | NINETEEN   -> INT["19"]
   | TWENTY     -> INT["20"]
-  | TWENTY DASH? ONE   -> INT["21"]
-  | TWENTY DASH? TWO   -> INT["22"]
-  | TWENTY DASH? THREE -> INT["23"]
-  | TWENTY DASH? FOUR  -> INT["24"]
-  | TWENTY DASH? FIVE  -> INT["25"]
-  | TWENTY DASH? SIX   -> INT["26"]
-  | TWENTY DASH? SEVEN -> INT["27"]
-  | TWENTY DASH? EIGHT -> INT["28"]
-  | TWENTY DASH? NINE  -> INT["29"]
-  | THIRTY             -> INT["30"]
-  | THIRTY DASH? ONE   -> INT["31"]
+  | TWENTY (DASH | WHITE_SPACE)? ONE   -> INT["21"]
+  | TWENTY (DASH | WHITE_SPACE)? TWO   -> INT["22"]
+  | TWENTY (DASH | WHITE_SPACE)? THREE -> INT["23"]
+  | TWENTY (DASH | WHITE_SPACE)? FOUR  -> INT["24"]
+  | TWENTY (DASH | WHITE_SPACE)? FIVE  -> INT["25"]
+  | TWENTY (DASH | WHITE_SPACE)? SIX   -> INT["26"]
+  | TWENTY (DASH | WHITE_SPACE)? SEVEN -> INT["27"]
+  | TWENTY (DASH | WHITE_SPACE)? EIGHT -> INT["28"]
+  | TWENTY (DASH | WHITE_SPACE)? NINE  -> INT["29"]
+  | THIRTY                             -> INT["30"]
+  | THIRTY (DASH | WHITE_SPACE)? ONE   -> INT["31"]
   ;
   
-// a number in sequence between 1 and 31, either spelled-out
-// or suffixed (first, 2nd, twenty-first, etc)
-spelled_sequence_1_to_31
+// a spelled number in sequence between first and thirty-first
+spelled_first_to_thirty_first
   : FIRST       -> INT["1"]
   | SECOND      -> INT["2"]
   | THIRD       -> INT["3"]
@@ -177,120 +306,21 @@ spelled_sequence_1_to_31
   | EIGHTEENTH  -> INT["18"]
   | NINETEENTH  -> INT["19"]
   | TWENTIETH   -> INT["20"]
-  | (TWENTY_FIRST   | (TWENTY DASH? FIRST))   -> INT["21"]
-  | (TWENTY_SECOND  | (TWENTY DASH? SECOND))  -> INT["22"]
-  | (TWENTY_THIRD   | (TWENTY DASH? THIRD))   -> INT["23"]
-  | (TWENTY_FOURTH  | (TWENTY DASH? FOURTH))  -> INT["24"]
-  | (TWENTY_FIFTH   | (TWENTY DASH? FIFTH))   -> INT["25"]
-  | (TWENTY_SIXTH   | (TWENTY DASH? SIXTH))   -> INT["26"]
-  | (TWENTY_SEVENTH | (TWENTY DASH? SEVENTH)) -> INT["27"]
-  | (TWENTY_EIGHTH  | (TWENTY DASH? EIGHTH))  -> INT["28"]
-  | (TWENTY_NINTH   | (TWENTY DASH? NINTH))   -> INT["29"]
-  | THIRTIETH                                 -> INT["30"]
-  | (THIRTY_FIRST   | (THIRTY DASH? FIRST))   -> INT["31"]
+  | (TWENTY_FIRST   | (TWENTY (DASH | WHITE_SPACE)? FIRST))   -> INT["21"]
+  | (TWENTY_SECOND  | (TWENTY (DASH | WHITE_SPACE)? SECOND))  -> INT["22"]
+  | (TWENTY_THIRD   | (TWENTY (DASH | WHITE_SPACE)? THIRD))   -> INT["23"]
+  | (TWENTY_FOURTH  | (TWENTY (DASH | WHITE_SPACE)? FOURTH))  -> INT["24"]
+  | (TWENTY_FIFTH   | (TWENTY (DASH | WHITE_SPACE)? FIFTH))   -> INT["25"]
+  | (TWENTY_SIXTH   | (TWENTY (DASH | WHITE_SPACE)? SIXTH))   -> INT["26"]
+  | (TWENTY_SEVENTH | (TWENTY (DASH | WHITE_SPACE)? SEVENTH)) -> INT["27"]
+  | (TWENTY_EIGHTH  | (TWENTY (DASH | WHITE_SPACE)? EIGHTH))  -> INT["28"]
+  | (TWENTY_NINTH   | (TWENTY (DASH | WHITE_SPACE)? NINTH))   -> INT["29"]
+  | THIRTIETH                                                 -> INT["30"]
+  | (THIRTY_FIRST   | (THIRTY (DASH | WHITE_SPACE)? FIRST))   -> INT["31"]
   ;
   
-// up to 4 subsequent digits
-int_up_to_4_digits
-  : int_0_to_99_optional_prefix
-  | int_3_or_4_digits 
-  ;
-  
-// 3 or 4 subsequent digits
-int_3_or_4_digits
-  : THREE_DIGIT -> INT[$THREE_DIGIT.text]
-  | int_4_digits
-  ;
-  
-// exactly 4 subsequent digits
-int_4_digits
-  : FOUR_DIGIT -> INT[$FOUR_DIGIT.text]
-  ;
-  
-int_1_to_12
-  : PREFIXED_ONE_TO_NINE -> INT[$PREFIXED_ONE_TO_NINE.text]
-  | ONE_TO_NINE          -> INT[$ONE_TO_NINE.text]
-  | TEN_TO_TWELVE        -> INT[$TEN_TO_TWELVE.text]
-  ;
-  
-// number between 0 and 23 with an optional 0 prefix for numbers 0-9
-int_0_to_23
-  : TWO_ZEROS                -> INT[$TWO_ZEROS.text]
-  | ZERO                     -> INT[$ZERO.text]
-  | int_1_to_12
-  | THIRTEEN_TO_TWENTY_THREE -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
-  ;
-  
-// number between 0 and 59 with an optional 0 prefix for numbers 0-9
-int_0_to_59
-  : int_0_to_23
-  | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
-  | THIRTY_TWO_TO_FIFTY_NINE  -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text]
-  ;
-  
-// number between 0 and 99 with an optional 0 prefix for numbers 0-9
-int_0_to_99_no_prefix
-  : int_0_to_59
-  | SIXTY_TO_NINETY_NINE      -> INT[$SIXTY_TO_NINETY_NINE.text]
-  ;
-  
-int_0_to_99_with_prefix
-  : TWO_ZEROS                 -> INT[$TWO_ZEROS.text]
-  | PREFIXED_ONE_TO_NINE      -> INT[$PREFIXED_ONE_TO_NINE.text]
-  | TEN_TO_TWELVE             -> INT[$TEN_TO_TWELVE.text]
-  | THIRTEEN_TO_TWENTY_THREE  -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
-  | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
-  | THIRTY_TWO_TO_FIFTY_NINE  -> INT[$THIRTY_TWO_TO_FIFTY_NINE.text]
-  | SIXTY_TO_NINETY_NINE      -> INT[$SIXTY_TO_NINETY_NINE.text]
-  ;
-  
-int_0_to_99_optional_prefix
-  : int_0_to_99_with_prefix
-  | ONE_TO_NINE -> INT[$ONE_TO_NINE.text]
-  | ZERO        -> INT[$ZERO.text]
-  ;
+// ********** date lexer rules ********** 
 
-// number between 1 and 31 with an optional 0 prefix for numbers 0-9
-int_1_to_31
-  : PREFIXED_ONE_TO_NINE      -> INT[$PREFIXED_ONE_TO_NINE.text]
-  | ONE_TO_NINE               -> INT[$ONE_TO_NINE.text]
-  | int_10_to_31
-  ;
-  
-int_1_to_31_no_prefix
-  : ONE_TO_NINE -> INT[$ONE_TO_NINE.text]
-  | int_10_to_31
-  ;
-  
-int_10_to_31
-  : TEN_TO_TWELVE             -> INT[$TEN_TO_TWELVE.text]
-  | THIRTEEN_TO_TWENTY_THREE  -> INT[$THIRTEEN_TO_TWENTY_THREE.text]
-  | TWENTY_FOUR_TO_THIRTY_ONE -> INT[$TWENTY_FOUR_TO_THIRTY_ONE.text]
-  ;
-  
-// time identifiers
-MIDNIGHT : 'midnight' | 'mid-night';
-NOON     : 'noon';
-
-IN  : 'in';
-THE : 'the';
-AT  : 'at';
-ON  : 'on';
-OF  : 'of';
-
-// seek directions
-THIS     : 'this';
-AFTER    : 'after';
-BEFORE   : 'before';
-LAST     : 'last';
-PAST     : 'past';
-NEXT     : 'next';
-COMING   : 'coming';
-UPCOMING : 'upcoming';
-FROM_NOW : 'from now';
-AGO      : 'ago';
-
-// months
 JANUARY   : 'january'   | 'jan';
 FEBRUARY  : 'february'  | 'feb';
 MARCH     : 'march'     | 'mar';
@@ -304,7 +334,6 @@ OCTOBER   : 'october'   | 'oct';
 NOVEMBER  : 'november'  | 'nov';
 DECEMBER  : 'december'  | 'dec';
   
-// days of the week
 SUNDAY    : 'sunday'    | 'sundays'    | 'sun'  | 'suns';
 MONDAY    : 'monday'    | 'mondays'    | 'mon'  | 'mons';
 TUESDAY   : 'tuesday'   | 'tuesdays'   | 'tues' | 'tue';
@@ -313,22 +342,61 @@ THURSDAY  : 'thursday'  | 'thursdays'  | 'thur' | 'thu' | 'thus' | 'thurs';
 FRIDAY    : 'friday'    | 'fridays'    | 'fri'  | 'fris';
 SATURDAY  : 'saturday'  | 'saturdays'  | 'sat'  | 'sats';
 
-// named days
-TODAY     : 'today';
-TOMORROW  : 'tomorow'   | 'tomorrow'   | 'tommorow' | 'tommorrow';
-YESTERDAY : 'yesterday';
-  
-// meridian indicators
-AM : 'am' | 'a.m.' | 'a';
-PM : 'pm' | 'p.m.' | 'p';
-  
-//date units
+HOUR  : 'hour'  | 'hours' ;
 DAY   : 'day'   | 'days' ;
 WEEK  : 'week'  | 'weeks' ;
 MONTH : 'month' | 'months' ;
 YEAR  : 'year'  | 'years' ;
+
+TODAY     : 'today';
+TOMORROW  : 'tomorow'   | 'tomorrow'   | 'tommorow' | 'tommorrow';
+YESTERDAY : 'yesterday';
+
+// ********** time lexer rules ********** 
   
-// spelled out numbers
+AM : 'am' | 'a.m.' | 'a';
+PM : 'pm' | 'p.m.' | 'p';
+
+MILITARY_HOUR_SUFFIX : 'h' | 'H';
+
+// ********* numeric lexer rules **********
+
+INT_60_TO_99
+  : '6'..'9' '0'..'9'
+  ;
+   
+INT_32_TO_59
+  : '3' '2'..'9'
+  | '4'..'5' '0'..'9' 
+  ;
+   
+INT_24_TO_31
+  : '2' '4'..'9'
+  | '3' '0'..'1'
+  ;
+   
+INT_13_TO_23
+  : '1' '3'..'9'
+  | '2' '0'..'3'
+  ;
+   
+INT_01_TO_12
+  : '0' '1'..'9'
+  | '1' '0'..'2'
+  ;
+   
+INT_00
+  : '00'
+  ;
+  
+INT_0
+  : '0'
+  ;
+ 
+INT_1_TO_9
+  : '0'..'9'
+  ;
+   
 ONE       : 'one';
 TWO       : 'two';
 THREE     : 'three';
@@ -351,7 +419,6 @@ NINETEEN  : 'nineteen';
 TWENTY    : 'twenty';
 THIRTY    : 'thirty';
 
-// sequence numbers
 FIRST          : 'first'       | '1st';
 SECOND         : 'second'      | '2nd';
 THIRD          : 'third'       | '3rd';
@@ -383,63 +450,28 @@ TWENTY_EIGHTH  : '28th';
 TWENTY_NINTH   : '29th';
 THIRTIETH      : 'thirtieth' | '30th';
 THIRTY_FIRST   : '31st';
+   
+// ********** common lexer rules **********
 
-// 1 to nine prefixed with a zero
-PREFIXED_ONE_TO_NINE : ZERO ONE_TO_NINE;
-
-// 1 to nine with no zero prefix
-ONE_TO_NINE : '1'..'9';
-
-// a number between 1 and 12, 0 prefix optional for numbers 1 through 9
-TEN_TO_TWELVE
-  : '1' '0'..'2'
-  ;
-  
-// a number between 13 and 24, inclusive
-THIRTEEN_TO_TWENTY_THREE
-  : '1' '3'..'9'
-  | '2' '0'..'3'
-  ;
-  
-// a number between 25 and 31, inclusive
-TWENTY_FOUR_TO_THIRTY_ONE
-  : '2' '4'..'9'
-  | '3' '0'..'1'
-  ;
-  
-// a number between 32 and 59, inclusive
-THIRTY_TWO_TO_FIFTY_NINE
-  : '3' '2'..'9'
-  | '4'..'5' DIGIT 
-  ;
-  
-// a number between 60 and 99, inclusive
-SIXTY_TO_NINETY_NINE
-  : '6'..'9' DIGIT
-  ;
-  
-ZERO : '0';
-
-TWO_ZEROS : '00';
-  
-THREE_DIGIT
-  : DIGIT DIGIT DIGIT
-  ;
-  
-FOUR_DIGIT
-  : DIGIT DIGIT DIGIT DIGIT
-  ;
-  
-DASH  : '-' ;
-SLASH : '/' ;
-COMMA : ',';
 COLON : ':';
+COMMA : ',';
+DASH  : '-';
+SLASH : '/';
+DOT   : '.';
 SINGLE_QUOTE : '\'';
-  
-WHITE_SPACE
-  : (' ' | '\t' | '\n' | '\r')+ { $channel=HIDDEN; }
-  ;
 
-fragment DIGIT
-  : '0'..'9'
+IN  : 'in';
+THE : 'the';
+AT  : 'at';
+ON  : 'on';
+OF  : 'of';
+THIS : 'this';
+LAST : 'last';
+NEXT : 'next';
+PAST : 'past';
+COMING : 'coming';
+UPCOMING : 'upcoming';
+
+WHITE_SPACE
+  : (' ' | '\t' | '\n' | '\r')+
   ;
