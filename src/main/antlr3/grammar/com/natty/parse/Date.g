@@ -13,8 +13,9 @@ tokens {
   DATE_TIME;
   EXPLICIT_DATE;
   RELATIVE_DATE;
-  SEEK_DIRECTION;
-  SEEK_TYPE;
+  SEEK;
+  DIRECTION;
+  SEEK_BY;
   SPAN;
   EXPLICIT_TIME;
   HOURS_OF_DAY;
@@ -27,17 +28,42 @@ tokens {
 
 date_time
   : (
-      (date (WHITE_SPACE (AT WHITE_SPACE)? time)?)=>
-        date (WHITE_SPACE (AT WHITE_SPACE)? time)?
+      (date (date_time_separator time)?)=>
+        date (date_time_separator time)?
       
-      | time (WHITE_SPACE (ON WHITE_SPACE)? date)?
+      | time (time_date_separator date)?
     ) -> ^(DATE_TIME date? time?)
+  ;
+  
+date_time_separator
+  : WHITE_SPACE (AT WHITE_SPACE)?
+  | COMMA WHITE_SPACE? (AT WHITE_SPACE)?
+  ;
+  
+time_date_separator
+  : WHITE_SPACE (ON WHITE_SPACE)?
+  | COMMA WHITE_SPACE? (ON WHITE_SPACE)?
   ;
 
 date
-  : formal_date
-  | relaxed_date
-  | relative_date
+  : global_date_prefix formal_date
+      -> ^(RELATIVE_DATE ^(SEEK global_date_prefix formal_date))
+      
+  | global_date_prefix relaxed_date
+      -> ^(RELATIVE_DATE ^(SEEK global_date_prefix relaxed_date))
+      
+  | global_date_prefix relative_date
+      -> ^(RELATIVE_DATE ^(SEEK global_date_prefix relative_date))
+      
+  | (formal_date | relaxed_date | relative_date)
+  ;
+  
+global_date_prefix
+  : (THE WHITE_SPACE)? DAY WHITE_SPACE AFTER WHITE_SPACE 
+      -> DIRECTION[">"] INT["1"]
+      
+  | (THE WHITE_SPACE)? DAY WHITE_SPACE BEFORE WHITE_SPACE
+      -> DIRECTION["<"] INT["1"]
   ;
   
 // ********** relaxed date rules **********
@@ -48,40 +74,46 @@ relaxed_date
       // this is a bit tricky since a time can be placed directly after a date, and a year
       // can look like a time (four digits, no colon i.e. 0500)  Since a year would be more
       // common in this context, we choose to swallow the year as part of the date.
-      (relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year)=>
-        relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year
+      ((THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year)=>
+        (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year
     
       | (relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year)=>
         relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year
     
-      | relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month
-      | relaxed_month WHITE_SPACE relaxed_day_of_month
+      | (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month
+      | (THE WHITE_SPACE)? relaxed_month WHITE_SPACE relaxed_day_of_month
     ) -> ^(EXPLICIT_DATE relaxed_month relaxed_day_of_month relaxed_year?)
   ;
 
 relaxed_month
-  : JANUARY DOT?   -> ^(MONTH_OF_YEAR INT["1"])
-  | FEBRUARY DOT?  -> ^(MONTH_OF_YEAR INT["2"])
-  | MARCH DOT?     -> ^(MONTH_OF_YEAR INT["3"])
-  | APRIL DOT?     -> ^(MONTH_OF_YEAR INT["4"])
-  | MAY DOT?       -> ^(MONTH_OF_YEAR INT["5"])
-  | JUNE DOT?      -> ^(MONTH_OF_YEAR INT["6"])
-  | JULY DOT?      -> ^(MONTH_OF_YEAR INT["7"])
-  | AUGUST DOT?    -> ^(MONTH_OF_YEAR INT["8"])
-  | SEPTEMBER DOT? -> ^(MONTH_OF_YEAR INT["9"])
-  | OCTOBER DOT?   -> ^(MONTH_OF_YEAR INT["10"])
-  | NOVEMBER DOT?  -> ^(MONTH_OF_YEAR INT["11"])
-  | DECEMBER DOT?  -> ^(MONTH_OF_YEAR INT["12"])
+  : JANUARY   -> ^(MONTH_OF_YEAR INT["1"])
+  | FEBRUARY  -> ^(MONTH_OF_YEAR INT["2"])
+  | MARCH     -> ^(MONTH_OF_YEAR INT["3"])
+  | APRIL     -> ^(MONTH_OF_YEAR INT["4"])
+  | MAY       -> ^(MONTH_OF_YEAR INT["5"])
+  | JUNE      -> ^(MONTH_OF_YEAR INT["6"])
+  | JULY      -> ^(MONTH_OF_YEAR INT["7"])
+  | AUGUST    -> ^(MONTH_OF_YEAR INT["8"])
+  | SEPTEMBER -> ^(MONTH_OF_YEAR INT["9"])
+  | OCTOBER   -> ^(MONTH_OF_YEAR INT["10"])
+  | NOVEMBER  -> ^(MONTH_OF_YEAR INT["11"])
+  | DECEMBER  -> ^(MONTH_OF_YEAR INT["12"])
   ;
   
 relaxed_day_of_month
-  : spelled_or_int_01_to_31_optional_prefix -> ^(DAY_OF_MONTH spelled_or_int_01_to_31_optional_prefix)
-  | spelled_first_to_thirty_first           -> ^(DAY_OF_MONTH spelled_first_to_thirty_first) 
+  : spelled_or_int_01_to_31_optional_prefix
+      -> ^(DAY_OF_MONTH spelled_or_int_01_to_31_optional_prefix)
+      
+  | spelled_first_to_thirty_first
+      -> ^(DAY_OF_MONTH spelled_first_to_thirty_first) 
   ;
   
 relaxed_year
-  : relaxed_year_prefix SINGLE_QUOTE int_00_to_99_mandatory_prefix -> ^(YEAR_OF int_00_to_99_mandatory_prefix)
-  | relaxed_year_prefix int_four_digits                            -> ^(YEAR_OF int_four_digits)
+  : relaxed_year_prefix SINGLE_QUOTE? int_00_to_99_mandatory_prefix
+      -> ^(YEAR_OF int_00_to_99_mandatory_prefix)
+      
+  | relaxed_year_prefix int_four_digits
+      -> ^(YEAR_OF int_four_digits)
   ;
   
 relaxed_year_prefix
@@ -92,10 +124,12 @@ relaxed_year_prefix
 
 formal_date
   // year first: 1979-02-28, 1980/01/02, etc.  full 4 digit year required to match
-  : int_four_digits formal_date_separator formal_month_of_year formal_date_separator formal_day_of_month
+  : formal_year_four_digits formal_date_separator formal_month_of_year formal_date_separator formal_day_of_month
+      -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month formal_year_four_digits)
  
   // year last: 1/02/1980, 2/28/79.  2 or 4 digit year is acceptable 
   | formal_month_of_year formal_date_separator formal_day_of_month (formal_date_separator formal_year)?
+      -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month formal_year?)
   ;
 
 formal_month_of_year
@@ -107,9 +141,13 @@ formal_day_of_month
   ;
   
 formal_year
-  : int_four_digits               -> ^(YEAR_OF int_four_digits)
+  : formal_year_four_digits
   | int_00_to_99_mandatory_prefix -> ^(YEAR_OF int_00_to_99_mandatory_prefix)
   ;
+  
+formal_year_four_digits
+  : int_four_digits -> ^(YEAR_OF int_four_digits)
+  ; 
   
 formal_date_separator
   : DASH
@@ -119,18 +157,13 @@ formal_date_separator
 // ********** relative date rules **********
   
 relative_date
-  : named_relative_date 
-  | relative_prefix WHITE_SPACE relative_target 
-      -> ^(RELATIVE_DATE relative_prefix relative_target)
+  : relative_prefix WHITE_SPACE relative_target 
+      -> ^(RELATIVE_DATE ^(SEEK relative_prefix) relative_target)
+      
   | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
-      -> ^(RELATIVE_DATE relative_suffix spelled_or_int_01_to_31_optional_prefix relative_target)
-  ;
-  
-relative_date_span
-  : DAY   -> SPAN["day"]
-  | WEEK  -> SPAN["week"]
-  | MONTH -> SPAN["month"]
-  | YEAR  -> SPAN["year"]
+      -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix) relative_target)
+      
+  | named_relative_date 
   ;
   
 relative_target
@@ -139,33 +172,41 @@ relative_target
   ;
   
 relative_prefix
-  : (THIS WHITE_SPACE)? LAST -> SEEK_DIRECTION["<"] SEEK_TYPE["by_week"] INT["1"]
-  | (THIS WHITE_SPACE)? NEXT     -> SEEK_DIRECTION[">"] SEEK_TYPE["by_week"] INT["1"]
-  | (THIS WHITE_SPACE)? PAST     -> SEEK_DIRECTION["<"] SEEK_TYPE["by_day"] INT["1"]
-  | (THIS WHITE_SPACE)? COMING   -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] INT["1"]
-  | (THIS WHITE_SPACE)? UPCOMING -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] INT["1"]
-  | (IN WHITE_SPACE)? spelled_or_int_01_to_31_optional_prefix -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"] spelled_or_int_01_to_31_optional_prefix
+  : (THIS WHITE_SPACE)? LAST     -> DIRECTION["<"] SEEK_BY["by_week"] INT["1"]
+  | (THIS WHITE_SPACE)? NEXT     -> DIRECTION[">"] SEEK_BY["by_week"] INT["1"]
+  | (THIS WHITE_SPACE)? PAST     -> DIRECTION["<"] SEEK_BY["by_day"] INT["1"]
+  | (THIS WHITE_SPACE)? COMING   -> DIRECTION[">"] SEEK_BY["by_day"] INT["1"]
+  | (THIS WHITE_SPACE)? UPCOMING -> DIRECTION[">"] SEEK_BY["by_day"] INT["1"]
+  | (IN WHITE_SPACE)? spelled_or_int_01_to_31_optional_prefix 
+      -> DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix
   ;
   
 relative_suffix
-  : 'from now' -> SEEK_DIRECTION[">"] SEEK_TYPE["by_day"]
-  | 'ago'      -> SEEK_DIRECTION["<"] SEEK_TYPE["by_day"]
+  : FROM WHITE_SPACE NOW -> DIRECTION[">"] SEEK_BY["by_day"]
+  | AGO                  -> DIRECTION["<"] SEEK_BY["by_day"]
+  ;
+  
+relative_date_span
+  : DAY   -> SPAN["day"]
+  | WEEK  -> SPAN["week"]
+  | MONTH -> SPAN["month"]
+  | YEAR  -> SPAN["year"]
   ;
  
 day_of_week
-  : SUNDAY    -> DAY_OF_WEEK["1"]
-  | MONDAY    -> DAY_OF_WEEK["2"]
-  | TUESDAY   -> DAY_OF_WEEK["3"]
-  | WEDNESDAY -> DAY_OF_WEEK["4"]
-  | THURSDAY  -> DAY_OF_WEEK["5"]
-  | FRIDAY    -> DAY_OF_WEEK["6"]
-  | SATURDAY  -> DAY_OF_WEEK["7"]
+  : SUNDAY    -> ^(DAY_OF_WEEK INT["1"])
+  | MONDAY    -> ^(DAY_OF_WEEK INT["2"])
+  | TUESDAY   -> ^(DAY_OF_WEEK INT["3"])
+  | WEDNESDAY -> ^(DAY_OF_WEEK INT["4"])
+  | THURSDAY  -> ^(DAY_OF_WEEK INT["5"])
+  | FRIDAY    -> ^(DAY_OF_WEEK INT["6"])
+  | SATURDAY  -> ^(DAY_OF_WEEK INT["7"])
   ;
   
 named_relative_date
-  : TODAY     -> ^(RELATIVE_DATE SEEK_DIRECTION[">"] INT["0"])
-  | TOMORROW  -> ^(RELATIVE_DATE SEEK_DIRECTION[">"] INT["1"])
-  | YESTERDAY -> ^(RELATIVE_DATE SEEK_DIRECTION["<"] INT["1"])
+  : TODAY     -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] INT["0"]))
+  | TOMORROW  -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] INT["1"]))
+  | YESTERDAY -> ^(RELATIVE_DATE ^(SEEK DIRECTION["<"] INT["1"]))
   ;
   
 // ********** time rules **********
@@ -177,6 +218,8 @@ time
       
   | hours WHITE_SPACE? meridian_indicator?
       -> ^(EXPLICIT_TIME hours ^(MINUTES_OF_HOUR INT["0"]) meridian_indicator?)
+      
+  | named_time
   ;
  
 // hour of the day
@@ -194,6 +237,11 @@ minutes
 meridian_indicator
   : AM -> AM_PM["am"]
   | PM -> AM_PM["pm"]
+  ;
+  
+named_time
+  : NOON     -> ^(EXPLICIT_TIME ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) AM_PM["pm"])
+  | MIDNIGHT -> ^(EXPLICIT_TIME ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) AM_PM["am"])
   ;
   
 // ********** numeric rules **********
@@ -321,18 +369,18 @@ spelled_first_to_thirty_first
   
 // ********** date lexer rules ********** 
 
-JANUARY   : 'january'   | 'jan';
-FEBRUARY  : 'february'  | 'feb';
-MARCH     : 'march'     | 'mar';
-APRIL     : 'april'     | 'apr';
+JANUARY   : 'january'   | 'jan' DOT?;
+FEBRUARY  : 'february'  | 'feb' DOT?;
+MARCH     : 'march'     | 'mar' DOT?;
+APRIL     : 'april'     | 'apr' DOT?;
 MAY       : 'may';
-JUNE      : 'june'      | 'jun';
-JULY      : 'july'      | 'jul';
-AUGUST    : 'august'    | 'aug';
-SEPTEMBER : 'september' | 'sep' | 'sept';
-OCTOBER   : 'october'   | 'oct';
-NOVEMBER  : 'november'  | 'nov';
-DECEMBER  : 'december'  | 'dec';
+JUNE      : 'june'      | 'jun' DOT?;
+JULY      : 'july'      | 'jul' DOT?;
+AUGUST    : 'august'    | 'aug' DOT?;
+SEPTEMBER : 'september' | 'sep' DOT? | 'sept' DOT?;
+OCTOBER   : 'october'   | 'oct' DOT?;
+NOVEMBER  : 'november'  | 'nov' DOT?;
+DECEMBER  : 'december'  | 'dec' DOT?;
   
 SUNDAY    : 'sunday'    | 'sundays'    | 'sun'  | 'suns';
 MONDAY    : 'monday'    | 'mondays'    | 'mon'  | 'mons';
@@ -340,7 +388,7 @@ TUESDAY   : 'tuesday'   | 'tuesdays'   | 'tues' | 'tue';
 WEDNESDAY : 'wednesday' | 'wednesdays' | 'wed'  | 'weds';
 THURSDAY  : 'thursday'  | 'thursdays'  | 'thur' | 'thu' | 'thus' | 'thurs';
 FRIDAY    : 'friday'    | 'fridays'    | 'fri'  | 'fris';
-SATURDAY  : 'saturday'  | 'saturdays'  | 'sat'  | 'sats';
+SATURDAY  : 'saturday'  | 'saturdays'  | 'sat'  | 'sats' | 'weekend';
 
 HOUR  : 'hour'  | 'hours' ;
 DAY   : 'day'   | 'days' ;
@@ -358,6 +406,9 @@ AM : 'am' | 'a.m.' | 'a';
 PM : 'pm' | 'p.m.' | 'p';
 
 MILITARY_HOUR_SUFFIX : 'h' | 'H';
+
+MIDNIGHT : 'midnight' | 'mid-night';
+NOON     : 'noon' | 'afternoon' | 'after-noon';
 
 // ********* numeric lexer rules **********
 
@@ -460,17 +511,22 @@ SLASH : '/';
 DOT   : '.';
 SINGLE_QUOTE : '\'';
 
-IN  : 'in';
-THE : 'the';
-AT  : 'at';
-ON  : 'on';
-OF  : 'of';
-THIS : 'this';
-LAST : 'last';
-NEXT : 'next';
-PAST : 'past';
-COMING : 'coming';
+IN       : 'in';
+THE      : 'the';
+AT       : 'at';
+ON       : 'on';
+OF       : 'of';
+THIS     : 'this';
+LAST     : 'last';
+NEXT     : 'next';
+PAST     : 'past';
+COMING   : 'coming';
 UPCOMING : 'upcoming';
+FROM     : 'from';
+NOW      : 'now';
+AGO      : 'ago';
+BEFORE   : 'before';
+AFTER    : 'after';
 
 WHITE_SPACE
   : (' ' | '\t' | '\n' | '\r')+

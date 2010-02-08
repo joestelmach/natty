@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g 2010-02-06 13:46:05
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g 2010-02-07 20:29:48
  package com.natty.parse; 
 
 import org.antlr.runtime.*;
@@ -7,132 +7,138 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class DateLexer extends Lexer {
-    public static final int NINETEEN=93;
-    public static final int WEEK=44;
-    public static final int SEPTEMBER=32;
-    public static final int WEDNESDAY=55;
-    public static final int INT_24_TO_31=72;
-    public static final int TWENTY_EIGHTH=123;
-    public static final int TWENTY=94;
-    public static final int INT_00=68;
-    public static final int JULY=30;
-    public static final int APRIL=27;
+    public static final int DIRECTION=13;
+    public static final int NINETEEN=100;
+    public static final int WEEK=55;
+    public static final int SEPTEMBER=37;
+    public static final int WEDNESDAY=60;
+    public static final int INT_24_TO_31=79;
+    public static final int TWENTY_EIGHTH=130;
+    public static final int TWENTY=101;
+    public static final int INT_00=75;
+    public static final int JULY=35;
+    public static final int APRIL=32;
     public static final int COMING=50;
-    public static final int NINETEENTH=114;
-    public static final int OCTOBER=33;
-    public static final int DAY=43;
-    public static final int ONE=75;
+    public static final int NINETEENTH=121;
+    public static final int OCTOBER=38;
+    public static final int NOW=53;
+    public static final int ONE=82;
+    public static final int DAY=25;
+    public static final int MIDNIGHT=73;
+    public static final int MARCH=31;
     public static final int EOF=-1;
-    public static final int MARCH=26;
-    public static final int MONTH=45;
+    public static final int MONTH=56;
     public static final int PAST=49;
-    public static final int SEVENTEEN=91;
+    public static final int SEVENTEEN=98;
     public static final int DATE_TIME=9;
-    public static final int AM_PM=18;
-    public static final int TWENTY_SEVENTH=122;
-    public static final int TWENTY_FIFTH=120;
-    public static final int EIGHTEENTH=113;
-    public static final int MINUTES_OF_HOUR=17;
-    public static final int SPAN=14;
+    public static final int AM_PM=19;
+    public static final int TWENTY_SEVENTH=129;
+    public static final int TWENTY_FIFTH=127;
+    public static final int EIGHTEENTH=120;
+    public static final int MINUTES_OF_HOUR=18;
+    public static final int SPAN=15;
     public static final int THIS=46;
-    public static final int THIRTIETH=125;
-    public static final int INT_60_TO_99=74;
+    public static final int NOON=72;
+    public static final int THIRTIETH=132;
+    public static final int INT_60_TO_99=81;
     public static final int LAST=47;
-    public static final int EIGHTEEN=92;
-    public static final int INT_01_TO_12=70;
-    public static final int TOMORROW=60;
+    public static final int EIGHTEEN=99;
+    public static final int INT_01_TO_12=77;
+    public static final int TOMORROW=65;
     public static final int RELATIVE_DATE=11;
-    public static final int TODAY=59;
-    public static final int FOURTH=99;
-    public static final int FIFTEENTH=110;
-    public static final int SECOND=97;
-    public static final int NOVEMBER=34;
-    public static final int SATURDAY=58;
+    public static final int FOURTH=106;
+    public static final int FIFTEENTH=117;
+    public static final int TODAY=64;
+    public static final int SECOND=104;
+    public static final int NOVEMBER=39;
+    public static final int SATURDAY=63;
     public static final int MONTH_OF_YEAR=5;
-    public static final int FOUR=78;
-    public static final int SEVENTH=102;
-    public static final int TEN=84;
-    public static final int FEBRUARY=25;
-    public static final int ON=21;
-    public static final int MONDAY=53;
+    public static final int FOUR=85;
+    public static final int SEVENTH=109;
+    public static final int TEN=91;
+    public static final int FEBRUARY=30;
+    public static final int ON=23;
+    public static final int MONDAY=58;
+    public static final int THIRTEEN=94;
+    public static final int ELEVEN=92;
     public static final int DAY_OF_WEEK=7;
-    public static final int SUNDAY=52;
-    public static final int SEVEN=81;
-    public static final int ELEVEN=85;
-    public static final int THIRTEEN=87;
-    public static final int JUNE=29;
+    public static final int SUNDAY=57;
+    public static final int SEVEN=88;
+    public static final int JUNE=34;
     public static final int INT=4;
     public static final int EXPLICIT_DATE=10;
-    public static final int OF=22;
+    public static final int OF=28;
     public static final int UPCOMING=51;
-    public static final int SIX=80;
-    public static final int FIFTH=100;
-    public static final int T__128=128;
-    public static final int TWENTY_NINTH=124;
-    public static final int T__127=127;
-    public static final int THURSDAY=56;
-    public static final int DECEMBER=35;
-    public static final int AUGUST=31;
-    public static final int PM=66;
-    public static final int EXPLICIT_TIME=15;
-    public static final int TUESDAY=54;
-    public static final int EIGHTH=103;
-    public static final int THIRD=98;
-    public static final int HOURS_OF_DAY=16;
-    public static final int YEAR=40;
-    public static final int THE=39;
-    public static final int TENTH=105;
-    public static final int MAY=28;
-    public static final int TWENTY_FOURTH=119;
-    public static final int WHITE_SPACE=19;
-    public static final int SEEK_TYPE=13;
-    public static final int FRIDAY=57;
-    public static final int EIGHT=82;
-    public static final int INT_0=67;
-    public static final int TWENTY_SIXTH=121;
-    public static final int AT=20;
-    public static final int SINGLE_QUOTE=36;
-    public static final int SLASH=42;
-    public static final int IN=38;
-    public static final int NINTH=104;
-    public static final int COMMA=37;
-    public static final int FIVE=79;
-    public static final int THIRTY=95;
-    public static final int TWENTIETH=115;
-    public static final int TWENTY_SECOND=117;
+    public static final int SIX=87;
+    public static final int FIFTH=107;
+    public static final int TWENTY_NINTH=131;
+    public static final int THURSDAY=61;
+    public static final int DECEMBER=40;
+    public static final int SEEK_BY=14;
+    public static final int AUGUST=36;
+    public static final int PM=71;
+    public static final int EXPLICIT_TIME=16;
+    public static final int FROM=52;
+    public static final int TUESDAY=59;
+    public static final int EIGHTH=110;
+    public static final int THIRD=105;
+    public static final int HOURS_OF_DAY=17;
+    public static final int YEAR=43;
+    public static final int THE=24;
+    public static final int TENTH=112;
+    public static final int MAY=33;
+    public static final int TWENTY_FOURTH=126;
+    public static final int WHITE_SPACE=20;
+    public static final int FRIDAY=62;
+    public static final int EIGHT=89;
+    public static final int INT_0=74;
+    public static final int TWENTY_SIXTH=128;
+    public static final int AT=21;
+    public static final int SINGLE_QUOTE=41;
+    public static final int SLASH=45;
+    public static final int IN=42;
+    public static final int NINTH=111;
+    public static final int COMMA=22;
+    public static final int FIVE=86;
+    public static final int THIRTY=102;
+    public static final int TWENTIETH=122;
+    public static final int TWENTY_SECOND=124;
     public static final int NEXT=48;
-    public static final int INT_13_TO_23=71;
-    public static final int DOT=24;
-    public static final int MILITARY_HOUR_SUFFIX=63;
-    public static final int INT_32_TO_59=73;
-    public static final int AM=65;
-    public static final int DASH=41;
-    public static final int FOURTEENTH=109;
-    public static final int INT_1_TO_9=69;
-    public static final int SIXTEEN=90;
+    public static final int INT_13_TO_23=78;
+    public static final int DOT=134;
+    public static final int MILITARY_HOUR_SUFFIX=68;
+    public static final int INT_32_TO_59=80;
+    public static final int AM=70;
+    public static final int DASH=44;
+    public static final int FOURTEENTH=116;
+    public static final int INT_1_TO_9=76;
+    public static final int SIXTEEN=97;
     public static final int YEAR_OF=8;
-    public static final int TWELVE=86;
-    public static final int SEEK_DIRECTION=12;
-    public static final int ELEVENTH=106;
-    public static final int TWO=76;
-    public static final int HOUR=64;
-    public static final int SIXTEENTH=111;
-    public static final int JANUARY=23;
-    public static final int THIRTEENTH=108;
-    public static final int COLON=62;
+    public static final int TWELVE=93;
+    public static final int AGO=54;
+    public static final int ELEVENTH=113;
+    public static final int BEFORE=27;
+    public static final int TWO=83;
+    public static final int AFTER=26;
+    public static final int HOUR=69;
+    public static final int SIXTEENTH=118;
+    public static final int JANUARY=29;
+    public static final int THIRTEENTH=115;
+    public static final int SEEK=12;
+    public static final int COLON=67;
     public static final int DAY_OF_MONTH=6;
-    public static final int FIFTEEN=89;
-    public static final int TWELFTH=107;
-    public static final int NINE=83;
-    public static final int SIXTH=101;
-    public static final int THREE=77;
-    public static final int TWENTY_FIRST=116;
-    public static final int FOURTEEN=88;
-    public static final int TWENTY_THIRD=118;
-    public static final int YESTERDAY=61;
-    public static final int SEVENTEENTH=112;
-    public static final int FIRST=96;
-    public static final int THIRTY_FIRST=126;
+    public static final int FIFTEEN=96;
+    public static final int TWELFTH=114;
+    public static final int NINE=90;
+    public static final int SIXTH=108;
+    public static final int THREE=84;
+    public static final int TWENTY_FIRST=123;
+    public static final int FOURTEEN=95;
+    public static final int TWENTY_THIRD=125;
+    public static final int YESTERDAY=66;
+    public static final int SEVENTEENTH=119;
+    public static final int FIRST=103;
+    public static final int THIRTY_FIRST=133;
 
     // delegates
     // delegators
@@ -147,138 +153,25 @@ public class DateLexer extends Lexer {
     }
     public String getGrammarFileName() { return "/Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g"; }
 
-    // $ANTLR start "T__127"
-    public final void mT__127() throws RecognitionException {
-        try {
-            int _type = T__127;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:5:8: ( 'from now' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:5:10: 'from now'
-            {
-            match("from now"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__127"
-
-    // $ANTLR start "T__128"
-    public final void mT__128() throws RecognitionException {
-        try {
-            int _type = T__128;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:6:8: ( 'ago' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:6:10: 'ago'
-            {
-            match("ago"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__128"
-
     // $ANTLR start "JANUARY"
     public final void mJANUARY() throws RecognitionException {
         try {
             int _type = JANUARY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:324:11: ( 'january' | 'jan' )
-            int alt1=2;
-            int LA1_0 = input.LA(1);
-
-            if ( (LA1_0=='j') ) {
-                int LA1_1 = input.LA(2);
-
-                if ( (LA1_1=='a') ) {
-                    int LA1_2 = input.LA(3);
-
-                    if ( (LA1_2=='n') ) {
-                        int LA1_3 = input.LA(4);
-
-                        if ( (LA1_3=='u') ) {
-                            alt1=1;
-                        }
-                        else {
-                            alt1=2;}
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 1, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 1, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 1, 0, input);
-
-                throw nvae;
-            }
-            switch (alt1) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:324:13: 'january'
-                    {
-                    match("january"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:324:27: 'jan'
-                    {
-                    match("jan"); 
-
-
-                    }
-                    break;
-
-            }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "JANUARY"
-
-    // $ANTLR start "FEBRUARY"
-    public final void mFEBRUARY() throws RecognitionException {
-        try {
-            int _type = FEBRUARY;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:325:11: ( 'february' | 'feb' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:372:11: ( 'january' | 'jan' ( DOT )? )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0=='f') ) {
+            if ( (LA2_0=='j') ) {
                 int LA2_1 = input.LA(2);
 
-                if ( (LA2_1=='e') ) {
+                if ( (LA2_1=='a') ) {
                     int LA2_2 = input.LA(3);
 
-                    if ( (LA2_2=='b') ) {
+                    if ( (LA2_2=='n') ) {
                         int LA2_3 = input.LA(4);
 
-                        if ( (LA2_3=='r') ) {
+                        if ( (LA2_3=='u') ) {
                             alt2=1;
                         }
                         else {
@@ -306,17 +199,35 @@ public class DateLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:325:13: 'february'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:372:13: 'january'
                     {
-                    match("february"); 
+                    match("january"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:325:27: 'feb'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:372:27: 'jan' ( DOT )?
                     {
-                    match("feb"); 
+                    match("jan"); 
+
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:372:33: ( DOT )?
+                    int alt1=2;
+                    int LA1_0 = input.LA(1);
+
+                    if ( (LA1_0=='.') ) {
+                        alt1=1;
+                    }
+                    switch (alt1) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:372:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
+
+                    }
 
 
                     }
@@ -329,98 +240,27 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "FEBRUARY"
+    // $ANTLR end "JANUARY"
 
-    // $ANTLR start "MARCH"
-    public final void mMARCH() throws RecognitionException {
+    // $ANTLR start "FEBRUARY"
+    public final void mFEBRUARY() throws RecognitionException {
         try {
-            int _type = MARCH;
+            int _type = FEBRUARY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:326:11: ( 'march' | 'mar' )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0=='m') ) {
-                int LA3_1 = input.LA(2);
-
-                if ( (LA3_1=='a') ) {
-                    int LA3_2 = input.LA(3);
-
-                    if ( (LA3_2=='r') ) {
-                        int LA3_3 = input.LA(4);
-
-                        if ( (LA3_3=='c') ) {
-                            alt3=1;
-                        }
-                        else {
-                            alt3=2;}
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 3, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 3, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
-
-                throw nvae;
-            }
-            switch (alt3) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:326:13: 'march'
-                    {
-                    match("march"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:326:27: 'mar'
-                    {
-                    match("mar"); 
-
-
-                    }
-                    break;
-
-            }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "MARCH"
-
-    // $ANTLR start "APRIL"
-    public final void mAPRIL() throws RecognitionException {
-        try {
-            int _type = APRIL;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:327:11: ( 'april' | 'apr' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:373:11: ( 'february' | 'feb' ( DOT )? )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0=='a') ) {
+            if ( (LA4_0=='f') ) {
                 int LA4_1 = input.LA(2);
 
-                if ( (LA4_1=='p') ) {
+                if ( (LA4_1=='e') ) {
                     int LA4_2 = input.LA(3);
 
-                    if ( (LA4_2=='r') ) {
+                    if ( (LA4_2=='b') ) {
                         int LA4_3 = input.LA(4);
 
-                        if ( (LA4_3=='i') ) {
+                        if ( (LA4_3=='r') ) {
                             alt4=1;
                         }
                         else {
@@ -448,17 +288,35 @@ public class DateLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:327:13: 'april'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:373:13: 'february'
                     {
-                    match("april"); 
+                    match("february"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:327:27: 'apr'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:373:27: 'feb' ( DOT )?
                     {
-                    match("apr"); 
+                    match("feb"); 
+
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:373:33: ( DOT )?
+                    int alt3=2;
+                    int LA3_0 = input.LA(1);
+
+                    if ( (LA3_0=='.') ) {
+                        alt3=1;
+                    }
+                    switch (alt3) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:373:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
+
+                    }
 
 
                     }
@@ -471,119 +329,27 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "APRIL"
+    // $ANTLR end "FEBRUARY"
 
-    // $ANTLR start "MAY"
-    public final void mMAY() throws RecognitionException {
+    // $ANTLR start "MARCH"
+    public final void mMARCH() throws RecognitionException {
         try {
-            int _type = MAY;
+            int _type = MARCH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:328:11: ( 'may' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:328:13: 'may'
-            {
-            match("may"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "MAY"
-
-    // $ANTLR start "JUNE"
-    public final void mJUNE() throws RecognitionException {
-        try {
-            int _type = JUNE;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:329:11: ( 'june' | 'jun' )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( (LA5_0=='j') ) {
-                int LA5_1 = input.LA(2);
-
-                if ( (LA5_1=='u') ) {
-                    int LA5_2 = input.LA(3);
-
-                    if ( (LA5_2=='n') ) {
-                        int LA5_3 = input.LA(4);
-
-                        if ( (LA5_3=='e') ) {
-                            alt5=1;
-                        }
-                        else {
-                            alt5=2;}
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 5, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 5, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
-
-                throw nvae;
-            }
-            switch (alt5) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:329:13: 'june'
-                    {
-                    match("june"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:329:27: 'jun'
-                    {
-                    match("jun"); 
-
-
-                    }
-                    break;
-
-            }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "JUNE"
-
-    // $ANTLR start "JULY"
-    public final void mJULY() throws RecognitionException {
-        try {
-            int _type = JULY;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:330:11: ( 'july' | 'jul' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:374:11: ( 'march' | 'mar' ( DOT )? )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0=='j') ) {
+            if ( (LA6_0=='m') ) {
                 int LA6_1 = input.LA(2);
 
-                if ( (LA6_1=='u') ) {
+                if ( (LA6_1=='a') ) {
                     int LA6_2 = input.LA(3);
 
-                    if ( (LA6_2=='l') ) {
+                    if ( (LA6_2=='r') ) {
                         int LA6_3 = input.LA(4);
 
-                        if ( (LA6_3=='y') ) {
+                        if ( (LA6_3=='c') ) {
                             alt6=1;
                         }
                         else {
@@ -611,17 +377,35 @@ public class DateLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:330:13: 'july'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:374:13: 'march'
                     {
-                    match("july"); 
+                    match("march"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:330:27: 'jul'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:374:27: 'mar' ( DOT )?
                     {
-                    match("jul"); 
+                    match("mar"); 
+
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:374:33: ( DOT )?
+                    int alt5=2;
+                    int LA5_0 = input.LA(1);
+
+                    if ( (LA5_0=='.') ) {
+                        alt5=1;
+                    }
+                    switch (alt5) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:374:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
+
+                    }
 
 
                     }
@@ -634,105 +418,28 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "JULY"
+    // $ANTLR end "MARCH"
 
-    // $ANTLR start "AUGUST"
-    public final void mAUGUST() throws RecognitionException {
+    // $ANTLR start "APRIL"
+    public final void mAPRIL() throws RecognitionException {
         try {
-            int _type = AUGUST;
+            int _type = APRIL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:331:11: ( 'august' | 'aug' )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0=='a') ) {
-                int LA7_1 = input.LA(2);
-
-                if ( (LA7_1=='u') ) {
-                    int LA7_2 = input.LA(3);
-
-                    if ( (LA7_2=='g') ) {
-                        int LA7_3 = input.LA(4);
-
-                        if ( (LA7_3=='u') ) {
-                            alt7=1;
-                        }
-                        else {
-                            alt7=2;}
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 7, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 7, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
-
-                throw nvae;
-            }
-            switch (alt7) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:331:13: 'august'
-                    {
-                    match("august"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:331:27: 'aug'
-                    {
-                    match("aug"); 
-
-
-                    }
-                    break;
-
-            }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "AUGUST"
-
-    // $ANTLR start "SEPTEMBER"
-    public final void mSEPTEMBER() throws RecognitionException {
-        try {
-            int _type = SEPTEMBER;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:332:11: ( 'september' | 'sep' | 'sept' )
-            int alt8=3;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:375:11: ( 'april' | 'apr' ( DOT )? )
+            int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0=='s') ) {
+            if ( (LA8_0=='a') ) {
                 int LA8_1 = input.LA(2);
 
-                if ( (LA8_1=='e') ) {
+                if ( (LA8_1=='p') ) {
                     int LA8_2 = input.LA(3);
 
-                    if ( (LA8_2=='p') ) {
+                    if ( (LA8_2=='r') ) {
                         int LA8_3 = input.LA(4);
 
-                        if ( (LA8_3=='t') ) {
-                            int LA8_4 = input.LA(5);
-
-                            if ( (LA8_4=='e') ) {
-                                alt8=1;
-                            }
-                            else {
-                                alt8=3;}
+                        if ( (LA8_3=='i') ) {
+                            alt8=1;
                         }
                         else {
                             alt8=2;}
@@ -759,25 +466,35 @@ public class DateLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:332:13: 'september'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:375:13: 'april'
                     {
-                    match("september"); 
+                    match("april"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:332:27: 'sep'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:375:27: 'apr' ( DOT )?
                     {
-                    match("sep"); 
+                    match("apr"); 
 
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:375:33: ( DOT )?
+                    int alt7=2;
+                    int LA7_0 = input.LA(1);
+
+                    if ( (LA7_0=='.') ) {
+                        alt7=1;
+                    }
+                    switch (alt7) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:375:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
 
                     }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:332:35: 'sept'
-                    {
-                    match("sept"); 
 
 
                     }
@@ -790,95 +507,45 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "SEPTEMBER"
+    // $ANTLR end "APRIL"
 
-    // $ANTLR start "OCTOBER"
-    public final void mOCTOBER() throws RecognitionException {
+    // $ANTLR start "MAY"
+    public final void mMAY() throws RecognitionException {
         try {
-            int _type = OCTOBER;
+            int _type = MAY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:333:11: ( 'october' | 'oct' )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:376:11: ( 'may' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:376:13: 'may'
+            {
+            match("may"); 
 
-            if ( (LA9_0=='o') ) {
-                int LA9_1 = input.LA(2);
-
-                if ( (LA9_1=='c') ) {
-                    int LA9_2 = input.LA(3);
-
-                    if ( (LA9_2=='t') ) {
-                        int LA9_3 = input.LA(4);
-
-                        if ( (LA9_3=='o') ) {
-                            alt9=1;
-                        }
-                        else {
-                            alt9=2;}
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 9, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 9, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
-
-                throw nvae;
-            }
-            switch (alt9) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:333:13: 'october'
-                    {
-                    match("october"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:333:27: 'oct'
-                    {
-                    match("oct"); 
-
-
-                    }
-                    break;
 
             }
+
             state.type = _type;
             state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end "OCTOBER"
+    // $ANTLR end "MAY"
 
-    // $ANTLR start "NOVEMBER"
-    public final void mNOVEMBER() throws RecognitionException {
+    // $ANTLR start "JUNE"
+    public final void mJUNE() throws RecognitionException {
         try {
-            int _type = NOVEMBER;
+            int _type = JUNE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:334:11: ( 'november' | 'nov' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:377:11: ( 'june' | 'jun' ( DOT )? )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0=='n') ) {
+            if ( (LA10_0=='j') ) {
                 int LA10_1 = input.LA(2);
 
-                if ( (LA10_1=='o') ) {
+                if ( (LA10_1=='u') ) {
                     int LA10_2 = input.LA(3);
 
-                    if ( (LA10_2=='v') ) {
+                    if ( (LA10_2=='n') ) {
                         int LA10_3 = input.LA(4);
 
                         if ( (LA10_3=='e') ) {
@@ -909,17 +576,35 @@ public class DateLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:334:13: 'november'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:377:13: 'june'
                     {
-                    match("november"); 
+                    match("june"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:334:27: 'nov'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:377:27: 'jun' ( DOT )?
                     {
-                    match("nov"); 
+                    match("jun"); 
+
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:377:33: ( DOT )?
+                    int alt9=2;
+                    int LA9_0 = input.LA(1);
+
+                    if ( (LA9_0=='.') ) {
+                        alt9=1;
+                    }
+                    switch (alt9) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:377:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
+
+                    }
 
 
                     }
@@ -932,116 +617,83 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "NOVEMBER"
+    // $ANTLR end "JUNE"
 
-    // $ANTLR start "DECEMBER"
-    public final void mDECEMBER() throws RecognitionException {
+    // $ANTLR start "JULY"
+    public final void mJULY() throws RecognitionException {
         try {
-            int _type = DECEMBER;
+            int _type = JULY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:335:11: ( 'december' | 'dec' )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:378:11: ( 'july' | 'jul' ( DOT )? )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0=='d') ) {
-                int LA11_1 = input.LA(2);
+            if ( (LA12_0=='j') ) {
+                int LA12_1 = input.LA(2);
 
-                if ( (LA11_1=='e') ) {
-                    int LA11_2 = input.LA(3);
+                if ( (LA12_1=='u') ) {
+                    int LA12_2 = input.LA(3);
 
-                    if ( (LA11_2=='c') ) {
-                        int LA11_3 = input.LA(4);
+                    if ( (LA12_2=='l') ) {
+                        int LA12_3 = input.LA(4);
 
-                        if ( (LA11_3=='e') ) {
-                            alt11=1;
+                        if ( (LA12_3=='y') ) {
+                            alt12=1;
                         }
                         else {
-                            alt11=2;}
+                            alt12=2;}
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 11, 2, input);
+                            new NoViableAltException("", 12, 2, input);
 
                         throw nvae;
                     }
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 11, 1, input);
+                        new NoViableAltException("", 12, 1, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt11) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:335:13: 'december'
-                    {
-                    match("december"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:335:27: 'dec'
-                    {
-                    match("dec"); 
-
-
-                    }
-                    break;
-
-            }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "DECEMBER"
-
-    // $ANTLR start "SUNDAY"
-    public final void mSUNDAY() throws RecognitionException {
-        try {
-            int _type = SUNDAY;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:337:11: ( 'sunday' | 'sundays' | 'sun' | 'suns' )
-            int alt12=4;
-            alt12 = dfa12.predict(input);
             switch (alt12) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:337:13: 'sunday'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:378:13: 'july'
                     {
-                    match("sunday"); 
+                    match("july"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:337:27: 'sundays'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:378:27: 'jul' ( DOT )?
                     {
-                    match("sundays"); 
+                    match("jul"); 
 
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:378:33: ( DOT )?
+                    int alt11=2;
+                    int LA11_0 = input.LA(1);
+
+                    if ( (LA11_0=='.') ) {
+                        alt11=1;
+                    }
+                    switch (alt11) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:378:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
 
                     }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:337:42: 'sun'
-                    {
-                    match("sun"); 
-
-
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:337:51: 'suns'
-                    {
-                    match("suns"); 
 
 
                     }
@@ -1054,96 +706,83 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "SUNDAY"
+    // $ANTLR end "JULY"
 
-    // $ANTLR start "MONDAY"
-    public final void mMONDAY() throws RecognitionException {
+    // $ANTLR start "AUGUST"
+    public final void mAUGUST() throws RecognitionException {
         try {
-            int _type = MONDAY;
+            int _type = AUGUST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:338:11: ( 'monday' | 'mondays' | 'mon' | 'mons' )
-            int alt13=4;
-            alt13 = dfa13.predict(input);
-            switch (alt13) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:338:13: 'monday'
-                    {
-                    match("monday"); 
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:379:11: ( 'august' | 'aug' ( DOT )? )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
+            if ( (LA14_0=='a') ) {
+                int LA14_1 = input.LA(2);
 
+                if ( (LA14_1=='u') ) {
+                    int LA14_2 = input.LA(3);
+
+                    if ( (LA14_2=='g') ) {
+                        int LA14_3 = input.LA(4);
+
+                        if ( (LA14_3=='u') ) {
+                            alt14=1;
+                        }
+                        else {
+                            alt14=2;}
                     }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:338:27: 'mondays'
-                    {
-                    match("mondays"); 
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 14, 2, input);
 
-
+                        throw nvae;
                     }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:338:42: 'mon'
-                    {
-                    match("mon"); 
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 14, 1, input);
 
-
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:338:51: 'mons'
-                    {
-                    match("mons"); 
-
-
-                    }
-                    break;
-
+                    throw nvae;
+                }
             }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "MONDAY"
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 14, 0, input);
 
-    // $ANTLR start "TUESDAY"
-    public final void mTUESDAY() throws RecognitionException {
-        try {
-            int _type = TUESDAY;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:339:11: ( 'tuesday' | 'tuesdays' | 'tues' | 'tue' )
-            int alt14=4;
-            alt14 = dfa14.predict(input);
+                throw nvae;
+            }
             switch (alt14) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:339:13: 'tuesday'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:379:13: 'august'
                     {
-                    match("tuesday"); 
+                    match("august"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:339:27: 'tuesdays'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:379:27: 'aug' ( DOT )?
                     {
-                    match("tuesdays"); 
+                    match("aug"); 
 
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:379:33: ( DOT )?
+                    int alt13=2;
+                    int LA13_0 = input.LA(1);
+
+                    if ( (LA13_0=='.') ) {
+                        alt13=1;
+                    }
+                    switch (alt13) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:379:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
 
                     }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:339:42: 'tues'
-                    {
-                    match("tues"); 
-
-
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:339:51: 'tue'
-                    {
-                    match("tue"); 
 
 
                     }
@@ -1156,163 +795,115 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "TUESDAY"
+    // $ANTLR end "AUGUST"
 
-    // $ANTLR start "WEDNESDAY"
-    public final void mWEDNESDAY() throws RecognitionException {
+    // $ANTLR start "SEPTEMBER"
+    public final void mSEPTEMBER() throws RecognitionException {
         try {
-            int _type = WEDNESDAY;
+            int _type = SEPTEMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:340:11: ( 'wednesday' | 'wednesdays' | 'wed' | 'weds' )
-            int alt15=4;
-            alt15 = dfa15.predict(input);
-            switch (alt15) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:340:13: 'wednesday'
-                    {
-                    match("wednesday"); 
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:380:11: ( 'september' | 'sep' ( DOT )? | 'sept' ( DOT )? )
+            int alt17=3;
+            int LA17_0 = input.LA(1);
 
+            if ( (LA17_0=='s') ) {
+                int LA17_1 = input.LA(2);
 
+                if ( (LA17_1=='e') ) {
+                    int LA17_2 = input.LA(3);
+
+                    if ( (LA17_2=='p') ) {
+                        int LA17_3 = input.LA(4);
+
+                        if ( (LA17_3=='t') ) {
+                            int LA17_4 = input.LA(5);
+
+                            if ( (LA17_4=='e') ) {
+                                alt17=1;
+                            }
+                            else {
+                                alt17=3;}
+                        }
+                        else {
+                            alt17=2;}
                     }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:340:27: 'wednesdays'
-                    {
-                    match("wednesdays"); 
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 17, 2, input);
 
-
+                        throw nvae;
                     }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:340:42: 'wed'
-                    {
-                    match("wed"); 
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 17, 1, input);
 
-
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:340:51: 'weds'
-                    {
-                    match("weds"); 
-
-
-                    }
-                    break;
-
+                    throw nvae;
+                }
             }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "WEDNESDAY"
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 17, 0, input);
 
-    // $ANTLR start "THURSDAY"
-    public final void mTHURSDAY() throws RecognitionException {
-        try {
-            int _type = THURSDAY;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:341:11: ( 'thursday' | 'thursdays' | 'thur' | 'thu' | 'thus' | 'thurs' )
-            int alt16=6;
-            alt16 = dfa16.predict(input);
-            switch (alt16) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:341:13: 'thursday'
-                    {
-                    match("thursday"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:341:27: 'thursdays'
-                    {
-                    match("thursdays"); 
-
-
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:341:42: 'thur'
-                    {
-                    match("thur"); 
-
-
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:341:51: 'thu'
-                    {
-                    match("thu"); 
-
-
-                    }
-                    break;
-                case 5 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:341:59: 'thus'
-                    {
-                    match("thus"); 
-
-
-                    }
-                    break;
-                case 6 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:341:68: 'thurs'
-                    {
-                    match("thurs"); 
-
-
-                    }
-                    break;
-
+                throw nvae;
             }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "THURSDAY"
-
-    // $ANTLR start "FRIDAY"
-    public final void mFRIDAY() throws RecognitionException {
-        try {
-            int _type = FRIDAY;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:342:11: ( 'friday' | 'fridays' | 'fri' | 'fris' )
-            int alt17=4;
-            alt17 = dfa17.predict(input);
             switch (alt17) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:342:13: 'friday'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:380:13: 'september'
                     {
-                    match("friday"); 
+                    match("september"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:342:27: 'fridays'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:380:27: 'sep' ( DOT )?
                     {
-                    match("fridays"); 
+                    match("sep"); 
+
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:380:33: ( DOT )?
+                    int alt15=2;
+                    int LA15_0 = input.LA(1);
+
+                    if ( (LA15_0=='.') ) {
+                        alt15=1;
+                    }
+                    switch (alt15) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:380:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
+
+                    }
 
 
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:342:42: 'fri'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:380:40: 'sept' ( DOT )?
                     {
-                    match("fri"); 
+                    match("sept"); 
 
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:380:47: ( DOT )?
+                    int alt16=2;
+                    int LA16_0 = input.LA(1);
+
+                    if ( (LA16_0=='.') ) {
+                        alt16=1;
+                    }
+                    switch (alt16) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:380:47: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
 
                     }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:342:51: 'fris'
-                    {
-                    match("fris"); 
 
 
                     }
@@ -1325,92 +916,31 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "FRIDAY"
+    // $ANTLR end "SEPTEMBER"
 
-    // $ANTLR start "SATURDAY"
-    public final void mSATURDAY() throws RecognitionException {
+    // $ANTLR start "OCTOBER"
+    public final void mOCTOBER() throws RecognitionException {
         try {
-            int _type = SATURDAY;
+            int _type = OCTOBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:343:11: ( 'saturday' | 'saturdays' | 'sat' | 'sats' )
-            int alt18=4;
-            alt18 = dfa18.predict(input);
-            switch (alt18) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:343:13: 'saturday'
-                    {
-                    match("saturday"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:343:27: 'saturdays'
-                    {
-                    match("saturdays"); 
-
-
-                    }
-                    break;
-                case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:343:42: 'sat'
-                    {
-                    match("sat"); 
-
-
-                    }
-                    break;
-                case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:343:51: 'sats'
-                    {
-                    match("sats"); 
-
-
-                    }
-                    break;
-
-            }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "SATURDAY"
-
-    // $ANTLR start "HOUR"
-    public final void mHOUR() throws RecognitionException {
-        try {
-            int _type = HOUR;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:345:7: ( 'hour' | 'hours' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:381:11: ( 'october' | 'oct' ( DOT )? )
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0=='h') ) {
+            if ( (LA19_0=='o') ) {
                 int LA19_1 = input.LA(2);
 
-                if ( (LA19_1=='o') ) {
+                if ( (LA19_1=='c') ) {
                     int LA19_2 = input.LA(3);
 
-                    if ( (LA19_2=='u') ) {
+                    if ( (LA19_2=='t') ) {
                         int LA19_3 = input.LA(4);
 
-                        if ( (LA19_3=='r') ) {
-                            int LA19_4 = input.LA(5);
-
-                            if ( (LA19_4=='s') ) {
-                                alt19=2;
-                            }
-                            else {
-                                alt19=1;}
+                        if ( (LA19_3=='o') ) {
+                            alt19=1;
                         }
                         else {
-                            NoViableAltException nvae =
-                                new NoViableAltException("", 19, 3, input);
-
-                            throw nvae;
-                        }
+                            alt19=2;}
                     }
                     else {
                         NoViableAltException nvae =
@@ -1434,17 +964,35 @@ public class DateLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:345:9: 'hour'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:381:13: 'october'
                     {
-                    match("hour"); 
+                    match("october"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:345:19: 'hours'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:381:27: 'oct' ( DOT )?
                     {
-                    match("hours"); 
+                    match("oct"); 
+
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:381:33: ( DOT )?
+                    int alt18=2;
+                    int LA18_0 = input.LA(1);
+
+                    if ( (LA18_0=='.') ) {
+                        alt18=1;
+                    }
+                    switch (alt18) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:381:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
+
+                    }
 
 
                     }
@@ -1457,112 +1005,31 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "HOUR"
+    // $ANTLR end "OCTOBER"
 
-    // $ANTLR start "DAY"
-    public final void mDAY() throws RecognitionException {
+    // $ANTLR start "NOVEMBER"
+    public final void mNOVEMBER() throws RecognitionException {
         try {
-            int _type = DAY;
+            int _type = NOVEMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:346:7: ( 'day' | 'days' )
-            int alt20=2;
-            int LA20_0 = input.LA(1);
-
-            if ( (LA20_0=='d') ) {
-                int LA20_1 = input.LA(2);
-
-                if ( (LA20_1=='a') ) {
-                    int LA20_2 = input.LA(3);
-
-                    if ( (LA20_2=='y') ) {
-                        int LA20_3 = input.LA(4);
-
-                        if ( (LA20_3=='s') ) {
-                            alt20=2;
-                        }
-                        else {
-                            alt20=1;}
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 20, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 20, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
-
-                throw nvae;
-            }
-            switch (alt20) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:346:9: 'day'
-                    {
-                    match("day"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:346:19: 'days'
-                    {
-                    match("days"); 
-
-
-                    }
-                    break;
-
-            }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "DAY"
-
-    // $ANTLR start "WEEK"
-    public final void mWEEK() throws RecognitionException {
-        try {
-            int _type = WEEK;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:347:7: ( 'week' | 'weeks' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:382:11: ( 'november' | 'nov' ( DOT )? )
             int alt21=2;
             int LA21_0 = input.LA(1);
 
-            if ( (LA21_0=='w') ) {
+            if ( (LA21_0=='n') ) {
                 int LA21_1 = input.LA(2);
 
-                if ( (LA21_1=='e') ) {
+                if ( (LA21_1=='o') ) {
                     int LA21_2 = input.LA(3);
 
-                    if ( (LA21_2=='e') ) {
+                    if ( (LA21_2=='v') ) {
                         int LA21_3 = input.LA(4);
 
-                        if ( (LA21_3=='k') ) {
-                            int LA21_4 = input.LA(5);
-
-                            if ( (LA21_4=='s') ) {
-                                alt21=2;
-                            }
-                            else {
-                                alt21=1;}
+                        if ( (LA21_3=='e') ) {
+                            alt21=1;
                         }
                         else {
-                            NoViableAltException nvae =
-                                new NoViableAltException("", 21, 3, input);
-
-                            throw nvae;
-                        }
+                            alt21=2;}
                     }
                     else {
                         NoViableAltException nvae =
@@ -1586,17 +1053,35 @@ public class DateLexer extends Lexer {
             }
             switch (alt21) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:347:9: 'week'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:382:13: 'november'
                     {
-                    match("week"); 
+                    match("november"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:347:19: 'weeks'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:382:27: 'nov' ( DOT )?
                     {
-                    match("weeks"); 
+                    match("nov"); 
+
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:382:33: ( DOT )?
+                    int alt20=2;
+                    int LA20_0 = input.LA(1);
+
+                    if ( (LA20_0=='.') ) {
+                        alt20=1;
+                    }
+                    switch (alt20) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:382:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
+
+                    }
 
 
                     }
@@ -1609,132 +1094,31 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "WEEK"
+    // $ANTLR end "NOVEMBER"
 
-    // $ANTLR start "MONTH"
-    public final void mMONTH() throws RecognitionException {
+    // $ANTLR start "DECEMBER"
+    public final void mDECEMBER() throws RecognitionException {
         try {
-            int _type = MONTH;
+            int _type = DECEMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:348:7: ( 'month' | 'months' )
-            int alt22=2;
-            int LA22_0 = input.LA(1);
-
-            if ( (LA22_0=='m') ) {
-                int LA22_1 = input.LA(2);
-
-                if ( (LA22_1=='o') ) {
-                    int LA22_2 = input.LA(3);
-
-                    if ( (LA22_2=='n') ) {
-                        int LA22_3 = input.LA(4);
-
-                        if ( (LA22_3=='t') ) {
-                            int LA22_4 = input.LA(5);
-
-                            if ( (LA22_4=='h') ) {
-                                int LA22_5 = input.LA(6);
-
-                                if ( (LA22_5=='s') ) {
-                                    alt22=2;
-                                }
-                                else {
-                                    alt22=1;}
-                            }
-                            else {
-                                NoViableAltException nvae =
-                                    new NoViableAltException("", 22, 4, input);
-
-                                throw nvae;
-                            }
-                        }
-                        else {
-                            NoViableAltException nvae =
-                                new NoViableAltException("", 22, 3, input);
-
-                            throw nvae;
-                        }
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 22, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 22, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
-
-                throw nvae;
-            }
-            switch (alt22) {
-                case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:348:9: 'month'
-                    {
-                    match("month"); 
-
-
-                    }
-                    break;
-                case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:348:19: 'months'
-                    {
-                    match("months"); 
-
-
-                    }
-                    break;
-
-            }
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "MONTH"
-
-    // $ANTLR start "YEAR"
-    public final void mYEAR() throws RecognitionException {
-        try {
-            int _type = YEAR;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:349:7: ( 'year' | 'years' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:383:11: ( 'december' | 'dec' ( DOT )? )
             int alt23=2;
             int LA23_0 = input.LA(1);
 
-            if ( (LA23_0=='y') ) {
+            if ( (LA23_0=='d') ) {
                 int LA23_1 = input.LA(2);
 
                 if ( (LA23_1=='e') ) {
                     int LA23_2 = input.LA(3);
 
-                    if ( (LA23_2=='a') ) {
+                    if ( (LA23_2=='c') ) {
                         int LA23_3 = input.LA(4);
 
-                        if ( (LA23_3=='r') ) {
-                            int LA23_4 = input.LA(5);
-
-                            if ( (LA23_4=='s') ) {
-                                alt23=2;
-                            }
-                            else {
-                                alt23=1;}
+                        if ( (LA23_3=='e') ) {
+                            alt23=1;
                         }
                         else {
-                            NoViableAltException nvae =
-                                new NoViableAltException("", 23, 3, input);
-
-                            throw nvae;
-                        }
+                            alt23=2;}
                     }
                     else {
                         NoViableAltException nvae =
@@ -1758,17 +1142,35 @@ public class DateLexer extends Lexer {
             }
             switch (alt23) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:349:9: 'year'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:383:13: 'december'
                     {
-                    match("year"); 
+                    match("december"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:349:19: 'years'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:383:27: 'dec' ( DOT )?
                     {
-                    match("years"); 
+                    match("dec"); 
+
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:383:33: ( DOT )?
+                    int alt22=2;
+                    int LA22_0 = input.LA(1);
+
+                    if ( (LA22_0=='.') ) {
+                        alt22=1;
+                    }
+                    switch (alt22) {
+                        case 1 :
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:383:33: DOT
+                            {
+                            mDOT(); 
+
+                            }
+                            break;
+
+                    }
 
 
                     }
@@ -1781,66 +1183,45 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "YEAR"
+    // $ANTLR end "DECEMBER"
 
-    // $ANTLR start "TODAY"
-    public final void mTODAY() throws RecognitionException {
+    // $ANTLR start "SUNDAY"
+    public final void mSUNDAY() throws RecognitionException {
         try {
-            int _type = TODAY;
+            int _type = SUNDAY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:351:11: ( 'today' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:351:13: 'today'
-            {
-            match("today"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "TODAY"
-
-    // $ANTLR start "TOMORROW"
-    public final void mTOMORROW() throws RecognitionException {
-        try {
-            int _type = TOMORROW;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:352:11: ( 'tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:385:11: ( 'sunday' | 'sundays' | 'sun' | 'suns' )
             int alt24=4;
             alt24 = dfa24.predict(input);
             switch (alt24) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:352:13: 'tomorow'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:385:13: 'sunday'
                     {
-                    match("tomorow"); 
+                    match("sunday"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:352:27: 'tomorrow'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:385:27: 'sundays'
                     {
-                    match("tomorrow"); 
+                    match("sundays"); 
 
 
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:352:42: 'tommorow'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:385:42: 'sun'
                     {
-                    match("tommorow"); 
+                    match("sun"); 
 
 
                     }
                     break;
                 case 4 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:352:55: 'tommorrow'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:385:51: 'suns'
                     {
-                    match("tommorrow"); 
+                    match("suns"); 
 
 
                     }
@@ -1853,81 +1234,46 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "TOMORROW"
+    // $ANTLR end "SUNDAY"
 
-    // $ANTLR start "YESTERDAY"
-    public final void mYESTERDAY() throws RecognitionException {
+    // $ANTLR start "MONDAY"
+    public final void mMONDAY() throws RecognitionException {
         try {
-            int _type = YESTERDAY;
+            int _type = MONDAY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:353:11: ( 'yesterday' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:353:13: 'yesterday'
-            {
-            match("yesterday"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "YESTERDAY"
-
-    // $ANTLR start "AM"
-    public final void mAM() throws RecognitionException {
-        try {
-            int _type = AM;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:357:4: ( 'am' | 'a.m.' | 'a' )
-            int alt25=3;
-            int LA25_0 = input.LA(1);
-
-            if ( (LA25_0=='a') ) {
-                switch ( input.LA(2) ) {
-                case 'm':
-                    {
-                    alt25=1;
-                    }
-                    break;
-                case '.':
-                    {
-                    alt25=2;
-                    }
-                    break;
-                default:
-                    alt25=3;}
-
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
-
-                throw nvae;
-            }
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:386:11: ( 'monday' | 'mondays' | 'mon' | 'mons' )
+            int alt25=4;
+            alt25 = dfa25.predict(input);
             switch (alt25) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:357:6: 'am'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:386:13: 'monday'
                     {
-                    match("am"); 
+                    match("monday"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:357:13: 'a.m.'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:386:27: 'mondays'
                     {
-                    match("a.m."); 
+                    match("mondays"); 
 
 
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:357:22: 'a'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:386:42: 'mon'
                     {
-                    match('a'); 
+                    match("mon"); 
+
+
+                    }
+                    break;
+                case 4 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:386:51: 'mons'
+                    {
+                    match("mons"); 
+
 
                     }
                     break;
@@ -1939,60 +1285,46 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "AM"
+    // $ANTLR end "MONDAY"
 
-    // $ANTLR start "PM"
-    public final void mPM() throws RecognitionException {
+    // $ANTLR start "TUESDAY"
+    public final void mTUESDAY() throws RecognitionException {
         try {
-            int _type = PM;
+            int _type = TUESDAY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:358:4: ( 'pm' | 'p.m.' | 'p' )
-            int alt26=3;
-            int LA26_0 = input.LA(1);
-
-            if ( (LA26_0=='p') ) {
-                switch ( input.LA(2) ) {
-                case 'm':
-                    {
-                    alt26=1;
-                    }
-                    break;
-                case '.':
-                    {
-                    alt26=2;
-                    }
-                    break;
-                default:
-                    alt26=3;}
-
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
-
-                throw nvae;
-            }
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:387:11: ( 'tuesday' | 'tuesdays' | 'tues' | 'tue' )
+            int alt26=4;
+            alt26 = dfa26.predict(input);
             switch (alt26) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:358:6: 'pm'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:387:13: 'tuesday'
                     {
-                    match("pm"); 
+                    match("tuesday"); 
 
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:358:13: 'p.m.'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:387:27: 'tuesdays'
                     {
-                    match("p.m."); 
+                    match("tuesdays"); 
 
 
                     }
                     break;
                 case 3 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:358:22: 'p'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:387:42: 'tues'
                     {
-                    match('p'); 
+                    match("tues"); 
+
+
+                    }
+                    break;
+                case 4 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:387:51: 'tue'
+                    {
+                    match("tue"); 
+
 
                     }
                     break;
@@ -2004,92 +1336,46 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "PM"
+    // $ANTLR end "TUESDAY"
 
-    // $ANTLR start "MILITARY_HOUR_SUFFIX"
-    public final void mMILITARY_HOUR_SUFFIX() throws RecognitionException {
+    // $ANTLR start "WEDNESDAY"
+    public final void mWEDNESDAY() throws RecognitionException {
         try {
-            int _type = MILITARY_HOUR_SUFFIX;
+            int _type = WEDNESDAY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:360:22: ( 'h' | 'H' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:
-            {
-            if ( input.LA(1)=='H'||input.LA(1)=='h' ) {
-                input.consume();
-
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                recover(mse);
-                throw mse;}
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "MILITARY_HOUR_SUFFIX"
-
-    // $ANTLR start "INT_60_TO_99"
-    public final void mINT_60_TO_99() throws RecognitionException {
-        try {
-            int _type = INT_60_TO_99;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:365:3: ( '6' .. '9' '0' .. '9' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:365:5: '6' .. '9' '0' .. '9'
-            {
-            matchRange('6','9'); 
-            matchRange('0','9'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "INT_60_TO_99"
-
-    // $ANTLR start "INT_32_TO_59"
-    public final void mINT_32_TO_59() throws RecognitionException {
-        try {
-            int _type = INT_32_TO_59;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:369:3: ( '3' '2' .. '9' | '4' .. '5' '0' .. '9' )
-            int alt27=2;
-            int LA27_0 = input.LA(1);
-
-            if ( (LA27_0=='3') ) {
-                alt27=1;
-            }
-            else if ( ((LA27_0>='4' && LA27_0<='5')) ) {
-                alt27=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 27, 0, input);
-
-                throw nvae;
-            }
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:388:11: ( 'wednesday' | 'wednesdays' | 'wed' | 'weds' )
+            int alt27=4;
+            alt27 = dfa27.predict(input);
             switch (alt27) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:369:5: '3' '2' .. '9'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:388:13: 'wednesday'
                     {
-                    match('3'); 
-                    matchRange('2','9'); 
+                    match("wednesday"); 
+
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:370:5: '4' .. '5' '0' .. '9'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:388:27: 'wednesdays'
                     {
-                    matchRange('4','5'); 
-                    matchRange('0','9'); 
+                    match("wednesdays"); 
+
+
+                    }
+                    break;
+                case 3 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:388:42: 'wed'
+                    {
+                    match("wed"); 
+
+
+                    }
+                    break;
+                case 4 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:388:51: 'weds'
+                    {
+                    match("weds"); 
+
 
                     }
                     break;
@@ -2101,43 +1387,62 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "INT_32_TO_59"
+    // $ANTLR end "WEDNESDAY"
 
-    // $ANTLR start "INT_24_TO_31"
-    public final void mINT_24_TO_31() throws RecognitionException {
+    // $ANTLR start "THURSDAY"
+    public final void mTHURSDAY() throws RecognitionException {
         try {
-            int _type = INT_24_TO_31;
+            int _type = THURSDAY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:374:3: ( '2' '4' .. '9' | '3' '0' .. '1' )
-            int alt28=2;
-            int LA28_0 = input.LA(1);
-
-            if ( (LA28_0=='2') ) {
-                alt28=1;
-            }
-            else if ( (LA28_0=='3') ) {
-                alt28=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
-
-                throw nvae;
-            }
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:389:11: ( 'thursday' | 'thursdays' | 'thur' | 'thu' | 'thus' | 'thurs' )
+            int alt28=6;
+            alt28 = dfa28.predict(input);
             switch (alt28) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:374:5: '2' '4' .. '9'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:389:13: 'thursday'
                     {
-                    match('2'); 
-                    matchRange('4','9'); 
+                    match("thursday"); 
+
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:375:5: '3' '0' .. '1'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:389:27: 'thursdays'
                     {
-                    match('3'); 
-                    matchRange('0','1'); 
+                    match("thursdays"); 
+
+
+                    }
+                    break;
+                case 3 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:389:42: 'thur'
+                    {
+                    match("thur"); 
+
+
+                    }
+                    break;
+                case 4 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:389:51: 'thu'
+                    {
+                    match("thu"); 
+
+
+                    }
+                    break;
+                case 5 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:389:59: 'thus'
+                    {
+                    match("thus"); 
+
+
+                    }
+                    break;
+                case 6 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:389:68: 'thurs'
+                    {
+                    match("thurs"); 
+
 
                     }
                     break;
@@ -2149,43 +1454,46 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "INT_24_TO_31"
+    // $ANTLR end "THURSDAY"
 
-    // $ANTLR start "INT_13_TO_23"
-    public final void mINT_13_TO_23() throws RecognitionException {
+    // $ANTLR start "FRIDAY"
+    public final void mFRIDAY() throws RecognitionException {
         try {
-            int _type = INT_13_TO_23;
+            int _type = FRIDAY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:379:3: ( '1' '3' .. '9' | '2' '0' .. '3' )
-            int alt29=2;
-            int LA29_0 = input.LA(1);
-
-            if ( (LA29_0=='1') ) {
-                alt29=1;
-            }
-            else if ( (LA29_0=='2') ) {
-                alt29=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
-
-                throw nvae;
-            }
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:390:11: ( 'friday' | 'fridays' | 'fri' | 'fris' )
+            int alt29=4;
+            alt29 = dfa29.predict(input);
             switch (alt29) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:379:5: '1' '3' .. '9'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:390:13: 'friday'
                     {
-                    match('1'); 
-                    matchRange('3','9'); 
+                    match("friday"); 
+
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:380:5: '2' '0' .. '3'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:390:27: 'fridays'
                     {
-                    match('2'); 
-                    matchRange('0','3'); 
+                    match("fridays"); 
+
+
+                    }
+                    break;
+                case 3 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:390:42: 'fri'
+                    {
+                    match("fri"); 
+
+
+                    }
+                    break;
+                case 4 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:390:51: 'fris'
+                    {
+                    match("fris"); 
+
 
                     }
                     break;
@@ -2197,43 +1505,54 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "INT_13_TO_23"
+    // $ANTLR end "FRIDAY"
 
-    // $ANTLR start "INT_01_TO_12"
-    public final void mINT_01_TO_12() throws RecognitionException {
+    // $ANTLR start "SATURDAY"
+    public final void mSATURDAY() throws RecognitionException {
         try {
-            int _type = INT_01_TO_12;
+            int _type = SATURDAY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:384:3: ( '0' '1' .. '9' | '1' '0' .. '2' )
-            int alt30=2;
-            int LA30_0 = input.LA(1);
-
-            if ( (LA30_0=='0') ) {
-                alt30=1;
-            }
-            else if ( (LA30_0=='1') ) {
-                alt30=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
-
-                throw nvae;
-            }
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:391:11: ( 'saturday' | 'saturdays' | 'sat' | 'sats' | 'weekend' )
+            int alt30=5;
+            alt30 = dfa30.predict(input);
             switch (alt30) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:384:5: '0' '1' .. '9'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:391:13: 'saturday'
                     {
-                    match('0'); 
-                    matchRange('1','9'); 
+                    match("saturday"); 
+
 
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:385:5: '1' '0' .. '2'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:391:27: 'saturdays'
                     {
-                    match('1'); 
-                    matchRange('0','2'); 
+                    match("saturdays"); 
+
+
+                    }
+                    break;
+                case 3 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:391:42: 'sat'
+                    {
+                    match("sat"); 
+
+
+                    }
+                    break;
+                case 4 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:391:51: 'sats'
+                    {
+                    match("sats"); 
+
+
+                    }
+                    break;
+                case 5 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:391:60: 'weekend'
+                    {
+                    match("weekend"); 
+
 
                     }
                     break;
@@ -2245,469 +1564,34 @@ public class DateLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "INT_01_TO_12"
+    // $ANTLR end "SATURDAY"
 
-    // $ANTLR start "INT_00"
-    public final void mINT_00() throws RecognitionException {
+    // $ANTLR start "HOUR"
+    public final void mHOUR() throws RecognitionException {
         try {
-            int _type = INT_00;
+            int _type = HOUR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:389:3: ( '00' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:389:5: '00'
-            {
-            match("00"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "INT_00"
-
-    // $ANTLR start "INT_0"
-    public final void mINT_0() throws RecognitionException {
-        try {
-            int _type = INT_0;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:393:3: ( '0' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:393:5: '0'
-            {
-            match('0'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "INT_0"
-
-    // $ANTLR start "INT_1_TO_9"
-    public final void mINT_1_TO_9() throws RecognitionException {
-        try {
-            int _type = INT_1_TO_9;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:397:3: ( '0' .. '9' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:397:5: '0' .. '9'
-            {
-            matchRange('0','9'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "INT_1_TO_9"
-
-    // $ANTLR start "ONE"
-    public final void mONE() throws RecognitionException {
-        try {
-            int _type = ONE;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:400:11: ( 'one' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:400:13: 'one'
-            {
-            match("one"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "ONE"
-
-    // $ANTLR start "TWO"
-    public final void mTWO() throws RecognitionException {
-        try {
-            int _type = TWO;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:401:11: ( 'two' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:401:13: 'two'
-            {
-            match("two"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "TWO"
-
-    // $ANTLR start "THREE"
-    public final void mTHREE() throws RecognitionException {
-        try {
-            int _type = THREE;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:402:11: ( 'three' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:402:13: 'three'
-            {
-            match("three"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "THREE"
-
-    // $ANTLR start "FOUR"
-    public final void mFOUR() throws RecognitionException {
-        try {
-            int _type = FOUR;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:403:11: ( 'four' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:403:13: 'four'
-            {
-            match("four"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "FOUR"
-
-    // $ANTLR start "FIVE"
-    public final void mFIVE() throws RecognitionException {
-        try {
-            int _type = FIVE;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:404:11: ( 'five' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:404:13: 'five'
-            {
-            match("five"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "FIVE"
-
-    // $ANTLR start "SIX"
-    public final void mSIX() throws RecognitionException {
-        try {
-            int _type = SIX;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:405:11: ( 'six' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:405:13: 'six'
-            {
-            match("six"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "SIX"
-
-    // $ANTLR start "SEVEN"
-    public final void mSEVEN() throws RecognitionException {
-        try {
-            int _type = SEVEN;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:406:11: ( 'seven' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:406:13: 'seven'
-            {
-            match("seven"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "SEVEN"
-
-    // $ANTLR start "EIGHT"
-    public final void mEIGHT() throws RecognitionException {
-        try {
-            int _type = EIGHT;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:407:11: ( 'eight' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:407:13: 'eight'
-            {
-            match("eight"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "EIGHT"
-
-    // $ANTLR start "NINE"
-    public final void mNINE() throws RecognitionException {
-        try {
-            int _type = NINE;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:408:11: ( 'nine' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:408:13: 'nine'
-            {
-            match("nine"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "NINE"
-
-    // $ANTLR start "TEN"
-    public final void mTEN() throws RecognitionException {
-        try {
-            int _type = TEN;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:409:11: ( 'ten' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:409:13: 'ten'
-            {
-            match("ten"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "TEN"
-
-    // $ANTLR start "ELEVEN"
-    public final void mELEVEN() throws RecognitionException {
-        try {
-            int _type = ELEVEN;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:410:11: ( 'eleven' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:410:13: 'eleven'
-            {
-            match("eleven"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "ELEVEN"
-
-    // $ANTLR start "TWELVE"
-    public final void mTWELVE() throws RecognitionException {
-        try {
-            int _type = TWELVE;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:411:11: ( 'twelve' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:411:13: 'twelve'
-            {
-            match("twelve"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "TWELVE"
-
-    // $ANTLR start "THIRTEEN"
-    public final void mTHIRTEEN() throws RecognitionException {
-        try {
-            int _type = THIRTEEN;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:412:11: ( 'thirteen' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:412:13: 'thirteen'
-            {
-            match("thirteen"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "THIRTEEN"
-
-    // $ANTLR start "FOURTEEN"
-    public final void mFOURTEEN() throws RecognitionException {
-        try {
-            int _type = FOURTEEN;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:413:11: ( 'fourteen' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:413:13: 'fourteen'
-            {
-            match("fourteen"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "FOURTEEN"
-
-    // $ANTLR start "FIFTEEN"
-    public final void mFIFTEEN() throws RecognitionException {
-        try {
-            int _type = FIFTEEN;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:414:11: ( 'fifteen' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:414:13: 'fifteen'
-            {
-            match("fifteen"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "FIFTEEN"
-
-    // $ANTLR start "SIXTEEN"
-    public final void mSIXTEEN() throws RecognitionException {
-        try {
-            int _type = SIXTEEN;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:415:11: ( 'sixteen' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:415:13: 'sixteen'
-            {
-            match("sixteen"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "SIXTEEN"
-
-    // $ANTLR start "SEVENTEEN"
-    public final void mSEVENTEEN() throws RecognitionException {
-        try {
-            int _type = SEVENTEEN;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:416:11: ( 'seventeen' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:416:13: 'seventeen'
-            {
-            match("seventeen"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "SEVENTEEN"
-
-    // $ANTLR start "EIGHTEEN"
-    public final void mEIGHTEEN() throws RecognitionException {
-        try {
-            int _type = EIGHTEEN;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:417:11: ( 'eighteen' | 'eightteen' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:393:7: ( 'hour' | 'hours' )
             int alt31=2;
             int LA31_0 = input.LA(1);
 
-            if ( (LA31_0=='e') ) {
+            if ( (LA31_0=='h') ) {
                 int LA31_1 = input.LA(2);
 
-                if ( (LA31_1=='i') ) {
+                if ( (LA31_1=='o') ) {
                     int LA31_2 = input.LA(3);
 
-                    if ( (LA31_2=='g') ) {
+                    if ( (LA31_2=='u') ) {
                         int LA31_3 = input.LA(4);
 
-                        if ( (LA31_3=='h') ) {
+                        if ( (LA31_3=='r') ) {
                             int LA31_4 = input.LA(5);
 
-                            if ( (LA31_4=='t') ) {
-                                int LA31_5 = input.LA(6);
-
-                                if ( (LA31_5=='e') ) {
-                                    alt31=1;
-                                }
-                                else if ( (LA31_5=='t') ) {
-                                    alt31=2;
-                                }
-                                else {
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("", 31, 5, input);
-
-                                    throw nvae;
-                                }
+                            if ( (LA31_4=='s') ) {
+                                alt31=2;
                             }
                             else {
-                                NoViableAltException nvae =
-                                    new NoViableAltException("", 31, 4, input);
-
-                                throw nvae;
-                            }
+                                alt31=1;}
                         }
                         else {
                             NoViableAltException nvae =
@@ -2738,7 +1622,1498 @@ public class DateLexer extends Lexer {
             }
             switch (alt31) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:417:13: 'eighteen'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:393:9: 'hour'
+                    {
+                    match("hour"); 
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:393:19: 'hours'
+                    {
+                    match("hours"); 
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "HOUR"
+
+    // $ANTLR start "DAY"
+    public final void mDAY() throws RecognitionException {
+        try {
+            int _type = DAY;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:394:7: ( 'day' | 'days' )
+            int alt32=2;
+            int LA32_0 = input.LA(1);
+
+            if ( (LA32_0=='d') ) {
+                int LA32_1 = input.LA(2);
+
+                if ( (LA32_1=='a') ) {
+                    int LA32_2 = input.LA(3);
+
+                    if ( (LA32_2=='y') ) {
+                        int LA32_3 = input.LA(4);
+
+                        if ( (LA32_3=='s') ) {
+                            alt32=2;
+                        }
+                        else {
+                            alt32=1;}
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 32, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 32, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 32, 0, input);
+
+                throw nvae;
+            }
+            switch (alt32) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:394:9: 'day'
+                    {
+                    match("day"); 
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:394:19: 'days'
+                    {
+                    match("days"); 
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "DAY"
+
+    // $ANTLR start "WEEK"
+    public final void mWEEK() throws RecognitionException {
+        try {
+            int _type = WEEK;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:395:7: ( 'week' | 'weeks' )
+            int alt33=2;
+            int LA33_0 = input.LA(1);
+
+            if ( (LA33_0=='w') ) {
+                int LA33_1 = input.LA(2);
+
+                if ( (LA33_1=='e') ) {
+                    int LA33_2 = input.LA(3);
+
+                    if ( (LA33_2=='e') ) {
+                        int LA33_3 = input.LA(4);
+
+                        if ( (LA33_3=='k') ) {
+                            int LA33_4 = input.LA(5);
+
+                            if ( (LA33_4=='s') ) {
+                                alt33=2;
+                            }
+                            else {
+                                alt33=1;}
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 33, 3, input);
+
+                            throw nvae;
+                        }
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 33, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 33, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 33, 0, input);
+
+                throw nvae;
+            }
+            switch (alt33) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:395:9: 'week'
+                    {
+                    match("week"); 
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:395:19: 'weeks'
+                    {
+                    match("weeks"); 
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "WEEK"
+
+    // $ANTLR start "MONTH"
+    public final void mMONTH() throws RecognitionException {
+        try {
+            int _type = MONTH;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:396:7: ( 'month' | 'months' )
+            int alt34=2;
+            int LA34_0 = input.LA(1);
+
+            if ( (LA34_0=='m') ) {
+                int LA34_1 = input.LA(2);
+
+                if ( (LA34_1=='o') ) {
+                    int LA34_2 = input.LA(3);
+
+                    if ( (LA34_2=='n') ) {
+                        int LA34_3 = input.LA(4);
+
+                        if ( (LA34_3=='t') ) {
+                            int LA34_4 = input.LA(5);
+
+                            if ( (LA34_4=='h') ) {
+                                int LA34_5 = input.LA(6);
+
+                                if ( (LA34_5=='s') ) {
+                                    alt34=2;
+                                }
+                                else {
+                                    alt34=1;}
+                            }
+                            else {
+                                NoViableAltException nvae =
+                                    new NoViableAltException("", 34, 4, input);
+
+                                throw nvae;
+                            }
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 34, 3, input);
+
+                            throw nvae;
+                        }
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 34, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 34, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 34, 0, input);
+
+                throw nvae;
+            }
+            switch (alt34) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:396:9: 'month'
+                    {
+                    match("month"); 
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:396:19: 'months'
+                    {
+                    match("months"); 
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "MONTH"
+
+    // $ANTLR start "YEAR"
+    public final void mYEAR() throws RecognitionException {
+        try {
+            int _type = YEAR;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:397:7: ( 'year' | 'years' )
+            int alt35=2;
+            int LA35_0 = input.LA(1);
+
+            if ( (LA35_0=='y') ) {
+                int LA35_1 = input.LA(2);
+
+                if ( (LA35_1=='e') ) {
+                    int LA35_2 = input.LA(3);
+
+                    if ( (LA35_2=='a') ) {
+                        int LA35_3 = input.LA(4);
+
+                        if ( (LA35_3=='r') ) {
+                            int LA35_4 = input.LA(5);
+
+                            if ( (LA35_4=='s') ) {
+                                alt35=2;
+                            }
+                            else {
+                                alt35=1;}
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 35, 3, input);
+
+                            throw nvae;
+                        }
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 35, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 35, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 35, 0, input);
+
+                throw nvae;
+            }
+            switch (alt35) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:397:9: 'year'
+                    {
+                    match("year"); 
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:397:19: 'years'
+                    {
+                    match("years"); 
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "YEAR"
+
+    // $ANTLR start "TODAY"
+    public final void mTODAY() throws RecognitionException {
+        try {
+            int _type = TODAY;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:399:11: ( 'today' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:399:13: 'today'
+            {
+            match("today"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "TODAY"
+
+    // $ANTLR start "TOMORROW"
+    public final void mTOMORROW() throws RecognitionException {
+        try {
+            int _type = TOMORROW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:400:11: ( 'tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow' )
+            int alt36=4;
+            alt36 = dfa36.predict(input);
+            switch (alt36) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:400:13: 'tomorow'
+                    {
+                    match("tomorow"); 
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:400:27: 'tomorrow'
+                    {
+                    match("tomorrow"); 
+
+
+                    }
+                    break;
+                case 3 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:400:42: 'tommorow'
+                    {
+                    match("tommorow"); 
+
+
+                    }
+                    break;
+                case 4 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:400:55: 'tommorrow'
+                    {
+                    match("tommorrow"); 
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "TOMORROW"
+
+    // $ANTLR start "YESTERDAY"
+    public final void mYESTERDAY() throws RecognitionException {
+        try {
+            int _type = YESTERDAY;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:401:11: ( 'yesterday' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:401:13: 'yesterday'
+            {
+            match("yesterday"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "YESTERDAY"
+
+    // $ANTLR start "AM"
+    public final void mAM() throws RecognitionException {
+        try {
+            int _type = AM;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:405:4: ( 'am' | 'a.m.' | 'a' )
+            int alt37=3;
+            int LA37_0 = input.LA(1);
+
+            if ( (LA37_0=='a') ) {
+                switch ( input.LA(2) ) {
+                case 'm':
+                    {
+                    alt37=1;
+                    }
+                    break;
+                case '.':
+                    {
+                    alt37=2;
+                    }
+                    break;
+                default:
+                    alt37=3;}
+
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 37, 0, input);
+
+                throw nvae;
+            }
+            switch (alt37) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:405:6: 'am'
+                    {
+                    match("am"); 
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:405:13: 'a.m.'
+                    {
+                    match("a.m."); 
+
+
+                    }
+                    break;
+                case 3 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:405:22: 'a'
+                    {
+                    match('a'); 
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "AM"
+
+    // $ANTLR start "PM"
+    public final void mPM() throws RecognitionException {
+        try {
+            int _type = PM;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:406:4: ( 'pm' | 'p.m.' | 'p' )
+            int alt38=3;
+            int LA38_0 = input.LA(1);
+
+            if ( (LA38_0=='p') ) {
+                switch ( input.LA(2) ) {
+                case 'm':
+                    {
+                    alt38=1;
+                    }
+                    break;
+                case '.':
+                    {
+                    alt38=2;
+                    }
+                    break;
+                default:
+                    alt38=3;}
+
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 38, 0, input);
+
+                throw nvae;
+            }
+            switch (alt38) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:406:6: 'pm'
+                    {
+                    match("pm"); 
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:406:13: 'p.m.'
+                    {
+                    match("p.m."); 
+
+
+                    }
+                    break;
+                case 3 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:406:22: 'p'
+                    {
+                    match('p'); 
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "PM"
+
+    // $ANTLR start "MILITARY_HOUR_SUFFIX"
+    public final void mMILITARY_HOUR_SUFFIX() throws RecognitionException {
+        try {
+            int _type = MILITARY_HOUR_SUFFIX;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:408:22: ( 'h' | 'H' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:
+            {
+            if ( input.LA(1)=='H'||input.LA(1)=='h' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "MILITARY_HOUR_SUFFIX"
+
+    // $ANTLR start "MIDNIGHT"
+    public final void mMIDNIGHT() throws RecognitionException {
+        try {
+            int _type = MIDNIGHT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:410:10: ( 'midnight' | 'mid-night' )
+            int alt39=2;
+            int LA39_0 = input.LA(1);
+
+            if ( (LA39_0=='m') ) {
+                int LA39_1 = input.LA(2);
+
+                if ( (LA39_1=='i') ) {
+                    int LA39_2 = input.LA(3);
+
+                    if ( (LA39_2=='d') ) {
+                        int LA39_3 = input.LA(4);
+
+                        if ( (LA39_3=='n') ) {
+                            alt39=1;
+                        }
+                        else if ( (LA39_3=='-') ) {
+                            alt39=2;
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 39, 3, input);
+
+                            throw nvae;
+                        }
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 39, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 39, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 39, 0, input);
+
+                throw nvae;
+            }
+            switch (alt39) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:410:12: 'midnight'
+                    {
+                    match("midnight"); 
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:410:25: 'mid-night'
+                    {
+                    match("mid-night"); 
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "MIDNIGHT"
+
+    // $ANTLR start "NOON"
+    public final void mNOON() throws RecognitionException {
+        try {
+            int _type = NOON;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:411:10: ( 'noon' | 'afternoon' | 'after-noon' )
+            int alt40=3;
+            int LA40_0 = input.LA(1);
+
+            if ( (LA40_0=='n') ) {
+                alt40=1;
+            }
+            else if ( (LA40_0=='a') ) {
+                int LA40_2 = input.LA(2);
+
+                if ( (LA40_2=='f') ) {
+                    int LA40_3 = input.LA(3);
+
+                    if ( (LA40_3=='t') ) {
+                        int LA40_4 = input.LA(4);
+
+                        if ( (LA40_4=='e') ) {
+                            int LA40_5 = input.LA(5);
+
+                            if ( (LA40_5=='r') ) {
+                                int LA40_6 = input.LA(6);
+
+                                if ( (LA40_6=='n') ) {
+                                    alt40=2;
+                                }
+                                else if ( (LA40_6=='-') ) {
+                                    alt40=3;
+                                }
+                                else {
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("", 40, 6, input);
+
+                                    throw nvae;
+                                }
+                            }
+                            else {
+                                NoViableAltException nvae =
+                                    new NoViableAltException("", 40, 5, input);
+
+                                throw nvae;
+                            }
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 40, 4, input);
+
+                            throw nvae;
+                        }
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 40, 3, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 40, 2, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 40, 0, input);
+
+                throw nvae;
+            }
+            switch (alt40) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:411:12: 'noon'
+                    {
+                    match("noon"); 
+
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:411:21: 'afternoon'
+                    {
+                    match("afternoon"); 
+
+
+                    }
+                    break;
+                case 3 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:411:35: 'after-noon'
+                    {
+                    match("after-noon"); 
+
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "NOON"
+
+    // $ANTLR start "INT_60_TO_99"
+    public final void mINT_60_TO_99() throws RecognitionException {
+        try {
+            int _type = INT_60_TO_99;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:416:3: ( '6' .. '9' '0' .. '9' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:416:5: '6' .. '9' '0' .. '9'
+            {
+            matchRange('6','9'); 
+            matchRange('0','9'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INT_60_TO_99"
+
+    // $ANTLR start "INT_32_TO_59"
+    public final void mINT_32_TO_59() throws RecognitionException {
+        try {
+            int _type = INT_32_TO_59;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:420:3: ( '3' '2' .. '9' | '4' .. '5' '0' .. '9' )
+            int alt41=2;
+            int LA41_0 = input.LA(1);
+
+            if ( (LA41_0=='3') ) {
+                alt41=1;
+            }
+            else if ( ((LA41_0>='4' && LA41_0<='5')) ) {
+                alt41=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 41, 0, input);
+
+                throw nvae;
+            }
+            switch (alt41) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:420:5: '3' '2' .. '9'
+                    {
+                    match('3'); 
+                    matchRange('2','9'); 
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:421:5: '4' .. '5' '0' .. '9'
+                    {
+                    matchRange('4','5'); 
+                    matchRange('0','9'); 
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INT_32_TO_59"
+
+    // $ANTLR start "INT_24_TO_31"
+    public final void mINT_24_TO_31() throws RecognitionException {
+        try {
+            int _type = INT_24_TO_31;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:425:3: ( '2' '4' .. '9' | '3' '0' .. '1' )
+            int alt42=2;
+            int LA42_0 = input.LA(1);
+
+            if ( (LA42_0=='2') ) {
+                alt42=1;
+            }
+            else if ( (LA42_0=='3') ) {
+                alt42=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 42, 0, input);
+
+                throw nvae;
+            }
+            switch (alt42) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:425:5: '2' '4' .. '9'
+                    {
+                    match('2'); 
+                    matchRange('4','9'); 
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:426:5: '3' '0' .. '1'
+                    {
+                    match('3'); 
+                    matchRange('0','1'); 
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INT_24_TO_31"
+
+    // $ANTLR start "INT_13_TO_23"
+    public final void mINT_13_TO_23() throws RecognitionException {
+        try {
+            int _type = INT_13_TO_23;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:430:3: ( '1' '3' .. '9' | '2' '0' .. '3' )
+            int alt43=2;
+            int LA43_0 = input.LA(1);
+
+            if ( (LA43_0=='1') ) {
+                alt43=1;
+            }
+            else if ( (LA43_0=='2') ) {
+                alt43=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 43, 0, input);
+
+                throw nvae;
+            }
+            switch (alt43) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:430:5: '1' '3' .. '9'
+                    {
+                    match('1'); 
+                    matchRange('3','9'); 
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:431:5: '2' '0' .. '3'
+                    {
+                    match('2'); 
+                    matchRange('0','3'); 
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INT_13_TO_23"
+
+    // $ANTLR start "INT_01_TO_12"
+    public final void mINT_01_TO_12() throws RecognitionException {
+        try {
+            int _type = INT_01_TO_12;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:435:3: ( '0' '1' .. '9' | '1' '0' .. '2' )
+            int alt44=2;
+            int LA44_0 = input.LA(1);
+
+            if ( (LA44_0=='0') ) {
+                alt44=1;
+            }
+            else if ( (LA44_0=='1') ) {
+                alt44=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 44, 0, input);
+
+                throw nvae;
+            }
+            switch (alt44) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:435:5: '0' '1' .. '9'
+                    {
+                    match('0'); 
+                    matchRange('1','9'); 
+
+                    }
+                    break;
+                case 2 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:436:5: '1' '0' .. '2'
+                    {
+                    match('1'); 
+                    matchRange('0','2'); 
+
+                    }
+                    break;
+
+            }
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INT_01_TO_12"
+
+    // $ANTLR start "INT_00"
+    public final void mINT_00() throws RecognitionException {
+        try {
+            int _type = INT_00;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:440:3: ( '00' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:440:5: '00'
+            {
+            match("00"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INT_00"
+
+    // $ANTLR start "INT_0"
+    public final void mINT_0() throws RecognitionException {
+        try {
+            int _type = INT_0;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:444:3: ( '0' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:444:5: '0'
+            {
+            match('0'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INT_0"
+
+    // $ANTLR start "INT_1_TO_9"
+    public final void mINT_1_TO_9() throws RecognitionException {
+        try {
+            int _type = INT_1_TO_9;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:448:3: ( '0' .. '9' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:448:5: '0' .. '9'
+            {
+            matchRange('0','9'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "INT_1_TO_9"
+
+    // $ANTLR start "ONE"
+    public final void mONE() throws RecognitionException {
+        try {
+            int _type = ONE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:451:11: ( 'one' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:451:13: 'one'
+            {
+            match("one"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "ONE"
+
+    // $ANTLR start "TWO"
+    public final void mTWO() throws RecognitionException {
+        try {
+            int _type = TWO;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:452:11: ( 'two' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:452:13: 'two'
+            {
+            match("two"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "TWO"
+
+    // $ANTLR start "THREE"
+    public final void mTHREE() throws RecognitionException {
+        try {
+            int _type = THREE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:453:11: ( 'three' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:453:13: 'three'
+            {
+            match("three"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "THREE"
+
+    // $ANTLR start "FOUR"
+    public final void mFOUR() throws RecognitionException {
+        try {
+            int _type = FOUR;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:454:11: ( 'four' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:454:13: 'four'
+            {
+            match("four"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "FOUR"
+
+    // $ANTLR start "FIVE"
+    public final void mFIVE() throws RecognitionException {
+        try {
+            int _type = FIVE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:455:11: ( 'five' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:455:13: 'five'
+            {
+            match("five"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "FIVE"
+
+    // $ANTLR start "SIX"
+    public final void mSIX() throws RecognitionException {
+        try {
+            int _type = SIX;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:456:11: ( 'six' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:456:13: 'six'
+            {
+            match("six"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "SIX"
+
+    // $ANTLR start "SEVEN"
+    public final void mSEVEN() throws RecognitionException {
+        try {
+            int _type = SEVEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:457:11: ( 'seven' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:457:13: 'seven'
+            {
+            match("seven"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "SEVEN"
+
+    // $ANTLR start "EIGHT"
+    public final void mEIGHT() throws RecognitionException {
+        try {
+            int _type = EIGHT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:458:11: ( 'eight' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:458:13: 'eight'
+            {
+            match("eight"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "EIGHT"
+
+    // $ANTLR start "NINE"
+    public final void mNINE() throws RecognitionException {
+        try {
+            int _type = NINE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:459:11: ( 'nine' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:459:13: 'nine'
+            {
+            match("nine"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "NINE"
+
+    // $ANTLR start "TEN"
+    public final void mTEN() throws RecognitionException {
+        try {
+            int _type = TEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:460:11: ( 'ten' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:460:13: 'ten'
+            {
+            match("ten"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "TEN"
+
+    // $ANTLR start "ELEVEN"
+    public final void mELEVEN() throws RecognitionException {
+        try {
+            int _type = ELEVEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:461:11: ( 'eleven' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:461:13: 'eleven'
+            {
+            match("eleven"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "ELEVEN"
+
+    // $ANTLR start "TWELVE"
+    public final void mTWELVE() throws RecognitionException {
+        try {
+            int _type = TWELVE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:462:11: ( 'twelve' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:462:13: 'twelve'
+            {
+            match("twelve"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "TWELVE"
+
+    // $ANTLR start "THIRTEEN"
+    public final void mTHIRTEEN() throws RecognitionException {
+        try {
+            int _type = THIRTEEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:463:11: ( 'thirteen' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:463:13: 'thirteen'
+            {
+            match("thirteen"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "THIRTEEN"
+
+    // $ANTLR start "FOURTEEN"
+    public final void mFOURTEEN() throws RecognitionException {
+        try {
+            int _type = FOURTEEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:464:11: ( 'fourteen' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:464:13: 'fourteen'
+            {
+            match("fourteen"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "FOURTEEN"
+
+    // $ANTLR start "FIFTEEN"
+    public final void mFIFTEEN() throws RecognitionException {
+        try {
+            int _type = FIFTEEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:465:11: ( 'fifteen' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:465:13: 'fifteen'
+            {
+            match("fifteen"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "FIFTEEN"
+
+    // $ANTLR start "SIXTEEN"
+    public final void mSIXTEEN() throws RecognitionException {
+        try {
+            int _type = SIXTEEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:466:11: ( 'sixteen' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:466:13: 'sixteen'
+            {
+            match("sixteen"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "SIXTEEN"
+
+    // $ANTLR start "SEVENTEEN"
+    public final void mSEVENTEEN() throws RecognitionException {
+        try {
+            int _type = SEVENTEEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:467:11: ( 'seventeen' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:467:13: 'seventeen'
+            {
+            match("seventeen"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "SEVENTEEN"
+
+    // $ANTLR start "EIGHTEEN"
+    public final void mEIGHTEEN() throws RecognitionException {
+        try {
+            int _type = EIGHTEEN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:468:11: ( 'eighteen' | 'eightteen' )
+            int alt45=2;
+            int LA45_0 = input.LA(1);
+
+            if ( (LA45_0=='e') ) {
+                int LA45_1 = input.LA(2);
+
+                if ( (LA45_1=='i') ) {
+                    int LA45_2 = input.LA(3);
+
+                    if ( (LA45_2=='g') ) {
+                        int LA45_3 = input.LA(4);
+
+                        if ( (LA45_3=='h') ) {
+                            int LA45_4 = input.LA(5);
+
+                            if ( (LA45_4=='t') ) {
+                                int LA45_5 = input.LA(6);
+
+                                if ( (LA45_5=='e') ) {
+                                    alt45=1;
+                                }
+                                else if ( (LA45_5=='t') ) {
+                                    alt45=2;
+                                }
+                                else {
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("", 45, 5, input);
+
+                                    throw nvae;
+                                }
+                            }
+                            else {
+                                NoViableAltException nvae =
+                                    new NoViableAltException("", 45, 4, input);
+
+                                throw nvae;
+                            }
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 45, 3, input);
+
+                            throw nvae;
+                        }
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 45, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 45, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 45, 0, input);
+
+                throw nvae;
+            }
+            switch (alt45) {
+                case 1 :
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:468:13: 'eighteen'
                     {
                     match("eighteen"); 
 
@@ -2746,7 +3121,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:417:26: 'eightteen'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:468:26: 'eightteen'
                     {
                     match("eightteen"); 
 
@@ -2768,8 +3143,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = NINETEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:418:11: ( 'nineteen' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:418:13: 'nineteen'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:469:11: ( 'nineteen' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:469:13: 'nineteen'
             {
             match("nineteen"); 
 
@@ -2789,8 +3164,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:419:11: ( 'twenty' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:419:13: 'twenty'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:470:11: ( 'twenty' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:470:13: 'twenty'
             {
             match("twenty"); 
 
@@ -2810,8 +3185,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIRTY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:420:11: ( 'thirty' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:420:13: 'thirty'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:471:11: ( 'thirty' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:471:13: 'thirty'
             {
             match("thirty"); 
 
@@ -2831,25 +3206,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = FIRST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:422:16: ( 'first' | '1st' )
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:473:16: ( 'first' | '1st' )
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA32_0=='f') ) {
-                alt32=1;
+            if ( (LA46_0=='f') ) {
+                alt46=1;
             }
-            else if ( (LA32_0=='1') ) {
-                alt32=2;
+            else if ( (LA46_0=='1') ) {
+                alt46=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 46, 0, input);
 
                 throw nvae;
             }
-            switch (alt32) {
+            switch (alt46) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:422:18: 'first'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:473:18: 'first'
                     {
                     match("first"); 
 
@@ -2857,7 +3232,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:422:34: '1st'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:473:34: '1st'
                     {
                     match("1st"); 
 
@@ -2879,25 +3254,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = SECOND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:423:16: ( 'second' | '2nd' )
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:474:16: ( 'second' | '2nd' )
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA33_0=='s') ) {
-                alt33=1;
+            if ( (LA47_0=='s') ) {
+                alt47=1;
             }
-            else if ( (LA33_0=='2') ) {
-                alt33=2;
+            else if ( (LA47_0=='2') ) {
+                alt47=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 47, 0, input);
 
                 throw nvae;
             }
-            switch (alt33) {
+            switch (alt47) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:423:18: 'second'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:474:18: 'second'
                     {
                     match("second"); 
 
@@ -2905,7 +3280,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:423:34: '2nd'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:474:34: '2nd'
                     {
                     match("2nd"); 
 
@@ -2927,25 +3302,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIRD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:424:16: ( 'third' | '3rd' )
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:475:16: ( 'third' | '3rd' )
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA34_0=='t') ) {
-                alt34=1;
+            if ( (LA48_0=='t') ) {
+                alt48=1;
             }
-            else if ( (LA34_0=='3') ) {
-                alt34=2;
+            else if ( (LA48_0=='3') ) {
+                alt48=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 34, 0, input);
+                    new NoViableAltException("", 48, 0, input);
 
                 throw nvae;
             }
-            switch (alt34) {
+            switch (alt48) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:424:18: 'third'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:475:18: 'third'
                     {
                     match("third"); 
 
@@ -2953,7 +3328,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:424:34: '3rd'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:475:34: '3rd'
                     {
                     match("3rd"); 
 
@@ -2975,25 +3350,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = FOURTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:425:16: ( 'fourth' | '4th' )
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:476:16: ( 'fourth' | '4th' )
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            if ( (LA35_0=='f') ) {
-                alt35=1;
+            if ( (LA49_0=='f') ) {
+                alt49=1;
             }
-            else if ( (LA35_0=='4') ) {
-                alt35=2;
+            else if ( (LA49_0=='4') ) {
+                alt49=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 35, 0, input);
+                    new NoViableAltException("", 49, 0, input);
 
                 throw nvae;
             }
-            switch (alt35) {
+            switch (alt49) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:425:18: 'fourth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:476:18: 'fourth'
                     {
                     match("fourth"); 
 
@@ -3001,7 +3376,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:425:34: '4th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:476:34: '4th'
                     {
                     match("4th"); 
 
@@ -3023,25 +3398,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = FIFTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:426:16: ( 'fifth' | '5th' )
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:477:16: ( 'fifth' | '5th' )
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA36_0=='f') ) {
-                alt36=1;
+            if ( (LA50_0=='f') ) {
+                alt50=1;
             }
-            else if ( (LA36_0=='5') ) {
-                alt36=2;
+            else if ( (LA50_0=='5') ) {
+                alt50=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 36, 0, input);
+                    new NoViableAltException("", 50, 0, input);
 
                 throw nvae;
             }
-            switch (alt36) {
+            switch (alt50) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:426:18: 'fifth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:477:18: 'fifth'
                     {
                     match("fifth"); 
 
@@ -3049,7 +3424,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:426:34: '5th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:477:34: '5th'
                     {
                     match("5th"); 
 
@@ -3071,25 +3446,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = SIXTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:427:16: ( 'sixth' | '6th' )
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:478:16: ( 'sixth' | '6th' )
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA37_0=='s') ) {
-                alt37=1;
+            if ( (LA51_0=='s') ) {
+                alt51=1;
             }
-            else if ( (LA37_0=='6') ) {
-                alt37=2;
+            else if ( (LA51_0=='6') ) {
+                alt51=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 37, 0, input);
+                    new NoViableAltException("", 51, 0, input);
 
                 throw nvae;
             }
-            switch (alt37) {
+            switch (alt51) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:427:18: 'sixth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:478:18: 'sixth'
                     {
                     match("sixth"); 
 
@@ -3097,7 +3472,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:427:34: '6th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:478:34: '6th'
                     {
                     match("6th"); 
 
@@ -3119,25 +3494,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = SEVENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:428:16: ( 'seventh' | '7th' )
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:479:16: ( 'seventh' | '7th' )
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA38_0=='s') ) {
-                alt38=1;
+            if ( (LA52_0=='s') ) {
+                alt52=1;
             }
-            else if ( (LA38_0=='7') ) {
-                alt38=2;
+            else if ( (LA52_0=='7') ) {
+                alt52=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 38, 0, input);
+                    new NoViableAltException("", 52, 0, input);
 
                 throw nvae;
             }
-            switch (alt38) {
+            switch (alt52) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:428:18: 'seventh'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:479:18: 'seventh'
                     {
                     match("seventh"); 
 
@@ -3145,7 +3520,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:428:34: '7th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:479:34: '7th'
                     {
                     match("7th"); 
 
@@ -3167,25 +3542,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = EIGHTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:429:16: ( 'eigth' | '8th' )
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:480:16: ( 'eigth' | '8th' )
+            int alt53=2;
+            int LA53_0 = input.LA(1);
 
-            if ( (LA39_0=='e') ) {
-                alt39=1;
+            if ( (LA53_0=='e') ) {
+                alt53=1;
             }
-            else if ( (LA39_0=='8') ) {
-                alt39=2;
+            else if ( (LA53_0=='8') ) {
+                alt53=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 39, 0, input);
+                    new NoViableAltException("", 53, 0, input);
 
                 throw nvae;
             }
-            switch (alt39) {
+            switch (alt53) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:429:18: 'eigth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:480:18: 'eigth'
                     {
                     match("eigth"); 
 
@@ -3193,7 +3568,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:429:34: '8th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:480:34: '8th'
                     {
                     match("8th"); 
 
@@ -3215,25 +3590,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = NINTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:430:16: ( 'ninth' | '9th' )
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:481:16: ( 'ninth' | '9th' )
+            int alt54=2;
+            int LA54_0 = input.LA(1);
 
-            if ( (LA40_0=='n') ) {
-                alt40=1;
+            if ( (LA54_0=='n') ) {
+                alt54=1;
             }
-            else if ( (LA40_0=='9') ) {
-                alt40=2;
+            else if ( (LA54_0=='9') ) {
+                alt54=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 40, 0, input);
+                    new NoViableAltException("", 54, 0, input);
 
                 throw nvae;
             }
-            switch (alt40) {
+            switch (alt54) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:430:18: 'ninth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:481:18: 'ninth'
                     {
                     match("ninth"); 
 
@@ -3241,7 +3616,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:430:34: '9th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:481:34: '9th'
                     {
                     match("9th"); 
 
@@ -3263,25 +3638,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = TENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:431:16: ( 'tenth' | '10th' )
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:482:16: ( 'tenth' | '10th' )
+            int alt55=2;
+            int LA55_0 = input.LA(1);
 
-            if ( (LA41_0=='t') ) {
-                alt41=1;
+            if ( (LA55_0=='t') ) {
+                alt55=1;
             }
-            else if ( (LA41_0=='1') ) {
-                alt41=2;
+            else if ( (LA55_0=='1') ) {
+                alt55=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 41, 0, input);
+                    new NoViableAltException("", 55, 0, input);
 
                 throw nvae;
             }
-            switch (alt41) {
+            switch (alt55) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:431:18: 'tenth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:482:18: 'tenth'
                     {
                     match("tenth"); 
 
@@ -3289,7 +3664,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:431:34: '10th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:482:34: '10th'
                     {
                     match("10th"); 
 
@@ -3311,25 +3686,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = ELEVENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:432:16: ( 'eleventh' | '11th' )
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:483:16: ( 'eleventh' | '11th' )
+            int alt56=2;
+            int LA56_0 = input.LA(1);
 
-            if ( (LA42_0=='e') ) {
-                alt42=1;
+            if ( (LA56_0=='e') ) {
+                alt56=1;
             }
-            else if ( (LA42_0=='1') ) {
-                alt42=2;
+            else if ( (LA56_0=='1') ) {
+                alt56=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 42, 0, input);
+                    new NoViableAltException("", 56, 0, input);
 
                 throw nvae;
             }
-            switch (alt42) {
+            switch (alt56) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:432:18: 'eleventh'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:483:18: 'eleventh'
                     {
                     match("eleventh"); 
 
@@ -3337,7 +3712,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:432:34: '11th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:483:34: '11th'
                     {
                     match("11th"); 
 
@@ -3359,25 +3734,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWELFTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:433:16: ( 'twelfth' | '12th' )
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:484:16: ( 'twelfth' | '12th' )
+            int alt57=2;
+            int LA57_0 = input.LA(1);
 
-            if ( (LA43_0=='t') ) {
-                alt43=1;
+            if ( (LA57_0=='t') ) {
+                alt57=1;
             }
-            else if ( (LA43_0=='1') ) {
-                alt43=2;
+            else if ( (LA57_0=='1') ) {
+                alt57=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 43, 0, input);
+                    new NoViableAltException("", 57, 0, input);
 
                 throw nvae;
             }
-            switch (alt43) {
+            switch (alt57) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:433:18: 'twelfth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:484:18: 'twelfth'
                     {
                     match("twelfth"); 
 
@@ -3385,7 +3760,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:433:34: '12th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:484:34: '12th'
                     {
                     match("12th"); 
 
@@ -3407,25 +3782,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIRTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:434:16: ( 'thirteenth' | '13th' )
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:485:16: ( 'thirteenth' | '13th' )
+            int alt58=2;
+            int LA58_0 = input.LA(1);
 
-            if ( (LA44_0=='t') ) {
-                alt44=1;
+            if ( (LA58_0=='t') ) {
+                alt58=1;
             }
-            else if ( (LA44_0=='1') ) {
-                alt44=2;
+            else if ( (LA58_0=='1') ) {
+                alt58=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 44, 0, input);
+                    new NoViableAltException("", 58, 0, input);
 
                 throw nvae;
             }
-            switch (alt44) {
+            switch (alt58) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:434:18: 'thirteenth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:485:18: 'thirteenth'
                     {
                     match("thirteenth"); 
 
@@ -3433,7 +3808,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:434:34: '13th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:485:34: '13th'
                     {
                     match("13th"); 
 
@@ -3455,25 +3830,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = FOURTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:435:16: ( 'fourteenth' | '14th' )
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:486:16: ( 'fourteenth' | '14th' )
+            int alt59=2;
+            int LA59_0 = input.LA(1);
 
-            if ( (LA45_0=='f') ) {
-                alt45=1;
+            if ( (LA59_0=='f') ) {
+                alt59=1;
             }
-            else if ( (LA45_0=='1') ) {
-                alt45=2;
+            else if ( (LA59_0=='1') ) {
+                alt59=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 45, 0, input);
+                    new NoViableAltException("", 59, 0, input);
 
                 throw nvae;
             }
-            switch (alt45) {
+            switch (alt59) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:435:18: 'fourteenth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:486:18: 'fourteenth'
                     {
                     match("fourteenth"); 
 
@@ -3481,7 +3856,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:435:34: '14th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:486:34: '14th'
                     {
                     match("14th"); 
 
@@ -3503,25 +3878,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = FIFTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:436:16: ( 'fifteenth' | '15th' )
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:487:16: ( 'fifteenth' | '15th' )
+            int alt60=2;
+            int LA60_0 = input.LA(1);
 
-            if ( (LA46_0=='f') ) {
-                alt46=1;
+            if ( (LA60_0=='f') ) {
+                alt60=1;
             }
-            else if ( (LA46_0=='1') ) {
-                alt46=2;
+            else if ( (LA60_0=='1') ) {
+                alt60=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 46, 0, input);
+                    new NoViableAltException("", 60, 0, input);
 
                 throw nvae;
             }
-            switch (alt46) {
+            switch (alt60) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:436:18: 'fifteenth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:487:18: 'fifteenth'
                     {
                     match("fifteenth"); 
 
@@ -3529,7 +3904,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:436:34: '15th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:487:34: '15th'
                     {
                     match("15th"); 
 
@@ -3551,25 +3926,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = SIXTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:437:16: ( 'sixteenth' | '16th' )
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:488:16: ( 'sixteenth' | '16th' )
+            int alt61=2;
+            int LA61_0 = input.LA(1);
 
-            if ( (LA47_0=='s') ) {
-                alt47=1;
+            if ( (LA61_0=='s') ) {
+                alt61=1;
             }
-            else if ( (LA47_0=='1') ) {
-                alt47=2;
+            else if ( (LA61_0=='1') ) {
+                alt61=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 47, 0, input);
+                    new NoViableAltException("", 61, 0, input);
 
                 throw nvae;
             }
-            switch (alt47) {
+            switch (alt61) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:437:18: 'sixteenth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:488:18: 'sixteenth'
                     {
                     match("sixteenth"); 
 
@@ -3577,7 +3952,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:437:34: '16th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:488:34: '16th'
                     {
                     match("16th"); 
 
@@ -3599,25 +3974,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = SEVENTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:438:16: ( 'seventeenth' | '17th' )
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:489:16: ( 'seventeenth' | '17th' )
+            int alt62=2;
+            int LA62_0 = input.LA(1);
 
-            if ( (LA48_0=='s') ) {
-                alt48=1;
+            if ( (LA62_0=='s') ) {
+                alt62=1;
             }
-            else if ( (LA48_0=='1') ) {
-                alt48=2;
+            else if ( (LA62_0=='1') ) {
+                alt62=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 48, 0, input);
+                    new NoViableAltException("", 62, 0, input);
 
                 throw nvae;
             }
-            switch (alt48) {
+            switch (alt62) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:438:18: 'seventeenth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:489:18: 'seventeenth'
                     {
                     match("seventeenth"); 
 
@@ -3625,7 +4000,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:438:34: '17th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:489:34: '17th'
                     {
                     match("17th"); 
 
@@ -3647,25 +4022,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = EIGHTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:439:16: ( 'eighteenth' | '18th' )
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:490:16: ( 'eighteenth' | '18th' )
+            int alt63=2;
+            int LA63_0 = input.LA(1);
 
-            if ( (LA49_0=='e') ) {
-                alt49=1;
+            if ( (LA63_0=='e') ) {
+                alt63=1;
             }
-            else if ( (LA49_0=='1') ) {
-                alt49=2;
+            else if ( (LA63_0=='1') ) {
+                alt63=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 49, 0, input);
+                    new NoViableAltException("", 63, 0, input);
 
                 throw nvae;
             }
-            switch (alt49) {
+            switch (alt63) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:439:18: 'eighteenth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:490:18: 'eighteenth'
                     {
                     match("eighteenth"); 
 
@@ -3673,7 +4048,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:439:34: '18th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:490:34: '18th'
                     {
                     match("18th"); 
 
@@ -3695,25 +4070,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = NINETEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:440:16: ( 'nineteenth' | '19th' )
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:491:16: ( 'nineteenth' | '19th' )
+            int alt64=2;
+            int LA64_0 = input.LA(1);
 
-            if ( (LA50_0=='n') ) {
-                alt50=1;
+            if ( (LA64_0=='n') ) {
+                alt64=1;
             }
-            else if ( (LA50_0=='1') ) {
-                alt50=2;
+            else if ( (LA64_0=='1') ) {
+                alt64=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
+                    new NoViableAltException("", 64, 0, input);
 
                 throw nvae;
             }
-            switch (alt50) {
+            switch (alt64) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:440:18: 'nineteenth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:491:18: 'nineteenth'
                     {
                     match("nineteenth"); 
 
@@ -3721,7 +4096,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:440:34: '19th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:491:34: '19th'
                     {
                     match("19th"); 
 
@@ -3743,25 +4118,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTIETH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:441:16: ( 'twentieth' | '20th' )
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:492:16: ( 'twentieth' | '20th' )
+            int alt65=2;
+            int LA65_0 = input.LA(1);
 
-            if ( (LA51_0=='t') ) {
-                alt51=1;
+            if ( (LA65_0=='t') ) {
+                alt65=1;
             }
-            else if ( (LA51_0=='2') ) {
-                alt51=2;
+            else if ( (LA65_0=='2') ) {
+                alt65=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 51, 0, input);
+                    new NoViableAltException("", 65, 0, input);
 
                 throw nvae;
             }
-            switch (alt51) {
+            switch (alt65) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:441:18: 'twentieth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:492:18: 'twentieth'
                     {
                     match("twentieth"); 
 
@@ -3769,7 +4144,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:441:34: '20th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:492:34: '20th'
                     {
                     match("20th"); 
 
@@ -3791,8 +4166,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY_FIRST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:442:16: ( '21st' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:442:18: '21st'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:493:16: ( '21st' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:493:18: '21st'
             {
             match("21st"); 
 
@@ -3812,8 +4187,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY_SECOND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:443:16: ( '22nd' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:443:18: '22nd'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:494:16: ( '22nd' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:494:18: '22nd'
             {
             match("22nd"); 
 
@@ -3833,8 +4208,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY_THIRD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:444:16: ( '23rd' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:444:18: '23rd'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:495:16: ( '23rd' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:495:18: '23rd'
             {
             match("23rd"); 
 
@@ -3854,8 +4229,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY_FOURTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:445:16: ( '24th' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:445:18: '24th'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:496:16: ( '24th' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:496:18: '24th'
             {
             match("24th"); 
 
@@ -3875,8 +4250,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY_FIFTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:446:16: ( '25th' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:446:18: '25th'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:497:16: ( '25th' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:497:18: '25th'
             {
             match("25th"); 
 
@@ -3896,8 +4271,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY_SIXTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:447:16: ( '26th' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:447:18: '26th'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:498:16: ( '26th' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:498:18: '26th'
             {
             match("26th"); 
 
@@ -3917,8 +4292,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY_SEVENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:448:16: ( '27th' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:448:18: '27th'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:499:16: ( '27th' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:499:18: '27th'
             {
             match("27th"); 
 
@@ -3938,8 +4313,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY_EIGHTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:449:16: ( '28th' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:449:18: '28th'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:500:16: ( '28th' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:500:18: '28th'
             {
             match("28th"); 
 
@@ -3959,8 +4334,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY_NINTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:450:16: ( '29th' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:450:18: '29th'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:501:16: ( '29th' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:501:18: '29th'
             {
             match("29th"); 
 
@@ -3980,25 +4355,25 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIRTIETH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:451:16: ( 'thirtieth' | '30th' )
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:502:16: ( 'thirtieth' | '30th' )
+            int alt66=2;
+            int LA66_0 = input.LA(1);
 
-            if ( (LA52_0=='t') ) {
-                alt52=1;
+            if ( (LA66_0=='t') ) {
+                alt66=1;
             }
-            else if ( (LA52_0=='3') ) {
-                alt52=2;
+            else if ( (LA66_0=='3') ) {
+                alt66=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 52, 0, input);
+                    new NoViableAltException("", 66, 0, input);
 
                 throw nvae;
             }
-            switch (alt52) {
+            switch (alt66) {
                 case 1 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:451:18: 'thirtieth'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:502:18: 'thirtieth'
                     {
                     match("thirtieth"); 
 
@@ -4006,7 +4381,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:451:32: '30th'
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:502:32: '30th'
                     {
                     match("30th"); 
 
@@ -4028,8 +4403,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIRTY_FIRST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:452:16: ( '31st' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:452:18: '31st'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:503:16: ( '31st' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:503:18: '31st'
             {
             match("31st"); 
 
@@ -4049,8 +4424,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:456:7: ( ':' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:456:9: ':'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:507:7: ( ':' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:507:9: ':'
             {
             match(':'); 
 
@@ -4069,8 +4444,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:457:7: ( ',' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:457:9: ','
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:508:7: ( ',' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:508:9: ','
             {
             match(','); 
 
@@ -4089,8 +4464,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = DASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:458:7: ( '-' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:458:9: '-'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:509:7: ( '-' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:509:9: '-'
             {
             match('-'); 
 
@@ -4109,8 +4484,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:459:7: ( '/' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:459:9: '/'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:510:7: ( '/' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:510:9: '/'
             {
             match('/'); 
 
@@ -4129,8 +4504,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:460:7: ( '.' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:460:9: '.'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:511:7: ( '.' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:511:9: '.'
             {
             match('.'); 
 
@@ -4149,8 +4524,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SINGLE_QUOTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:461:14: ( '\\'' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:461:16: '\\''
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:512:14: ( '\\'' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:512:16: '\\''
             {
             match('\''); 
 
@@ -4169,8 +4544,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = IN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:463:5: ( 'in' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:463:7: 'in'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:514:10: ( 'in' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:514:12: 'in'
             {
             match("in"); 
 
@@ -4190,8 +4565,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:464:5: ( 'the' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:464:7: 'the'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:515:10: ( 'the' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:515:12: 'the'
             {
             match("the"); 
 
@@ -4211,8 +4586,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:465:5: ( 'at' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:465:7: 'at'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:516:10: ( 'at' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:516:12: 'at'
             {
             match("at"); 
 
@@ -4232,8 +4607,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = ON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:466:5: ( 'on' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:466:7: 'on'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:517:10: ( 'on' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:517:12: 'on'
             {
             match("on"); 
 
@@ -4253,8 +4628,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = OF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:467:5: ( 'of' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:467:7: 'of'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:518:10: ( 'of' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:518:12: 'of'
             {
             match("of"); 
 
@@ -4274,8 +4649,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:468:6: ( 'this' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:468:8: 'this'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:519:10: ( 'this' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:519:12: 'this'
             {
             match("this"); 
 
@@ -4295,8 +4670,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = LAST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:469:6: ( 'last' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:469:8: 'last'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:520:10: ( 'last' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:520:12: 'last'
             {
             match("last"); 
 
@@ -4316,8 +4691,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = NEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:470:6: ( 'next' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:470:8: 'next'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:521:10: ( 'next' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:521:12: 'next'
             {
             match("next"); 
 
@@ -4337,8 +4712,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = PAST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:471:6: ( 'past' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:471:8: 'past'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:522:10: ( 'past' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:522:12: 'past'
             {
             match("past"); 
 
@@ -4358,8 +4733,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = COMING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:472:8: ( 'coming' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:472:10: 'coming'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:523:10: ( 'coming' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:523:12: 'coming'
             {
             match("coming"); 
 
@@ -4379,8 +4754,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = UPCOMING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:473:10: ( 'upcoming' )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:473:12: 'upcoming'
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:524:10: ( 'upcoming' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:524:12: 'upcoming'
             {
             match("upcoming"); 
 
@@ -4395,27 +4770,132 @@ public class DateLexer extends Lexer {
     }
     // $ANTLR end "UPCOMING"
 
+    // $ANTLR start "FROM"
+    public final void mFROM() throws RecognitionException {
+        try {
+            int _type = FROM;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:525:10: ( 'from' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:525:12: 'from'
+            {
+            match("from"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "FROM"
+
+    // $ANTLR start "NOW"
+    public final void mNOW() throws RecognitionException {
+        try {
+            int _type = NOW;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:526:10: ( 'now' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:526:12: 'now'
+            {
+            match("now"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "NOW"
+
+    // $ANTLR start "AGO"
+    public final void mAGO() throws RecognitionException {
+        try {
+            int _type = AGO;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:527:10: ( 'ago' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:527:12: 'ago'
+            {
+            match("ago"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "AGO"
+
+    // $ANTLR start "BEFORE"
+    public final void mBEFORE() throws RecognitionException {
+        try {
+            int _type = BEFORE;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:528:10: ( 'before' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:528:12: 'before'
+            {
+            match("before"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "BEFORE"
+
+    // $ANTLR start "AFTER"
+    public final void mAFTER() throws RecognitionException {
+        try {
+            int _type = AFTER;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:529:10: ( 'after' )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:529:12: 'after'
+            {
+            match("after"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "AFTER"
+
     // $ANTLR start "WHITE_SPACE"
     public final void mWHITE_SPACE() throws RecognitionException {
         try {
             int _type = WHITE_SPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:476:3: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:476:5: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:532:3: ( ( ' ' | '\\t' | '\\n' | '\\r' )+ )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:532:5: ( ' ' | '\\t' | '\\n' | '\\r' )+
             {
-            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:476:5: ( ' ' | '\\t' | '\\n' | '\\r' )+
-            int cnt53=0;
-            loop53:
+            // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:532:5: ( ' ' | '\\t' | '\\n' | '\\r' )+
+            int cnt67=0;
+            loop67:
             do {
-                int alt53=2;
-                int LA53_0 = input.LA(1);
+                int alt67=2;
+                int LA67_0 = input.LA(1);
 
-                if ( ((LA53_0>='\t' && LA53_0<='\n')||LA53_0=='\r'||LA53_0==' ') ) {
-                    alt53=1;
+                if ( ((LA67_0>='\t' && LA67_0<='\n')||LA67_0=='\r'||LA67_0==' ') ) {
+                    alt67=1;
                 }
 
 
-                switch (alt53) {
+                switch (alt67) {
             	case 1 :
             	    // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:
             	    {
@@ -4433,12 +4913,12 @@ public class DateLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt53 >= 1 ) break loop53;
+            	    if ( cnt67 >= 1 ) break loop67;
                         EarlyExitException eee =
-                            new EarlyExitException(53, input);
+                            new EarlyExitException(67, input);
                         throw eee;
                 }
-                cnt53++;
+                cnt67++;
             } while (true);
 
 
@@ -4453,231 +4933,231 @@ public class DateLexer extends Lexer {
     // $ANTLR end "WHITE_SPACE"
 
     public void mTokens() throws RecognitionException {
-        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:8: ( T__127 | T__128 | JANUARY | FEBRUARY | MARCH | APRIL | MAY | JUNE | JULY | AUGUST | SEPTEMBER | OCTOBER | NOVEMBER | DECEMBER | SUNDAY | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | HOUR | DAY | WEEK | MONTH | YEAR | TODAY | TOMORROW | YESTERDAY | AM | PM | MILITARY_HOUR_SUFFIX | INT_60_TO_99 | INT_32_TO_59 | INT_24_TO_31 | INT_13_TO_23 | INT_01_TO_12 | INT_00 | INT_0 | INT_1_TO_9 | ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE | TEN | ELEVEN | TWELVE | THIRTEEN | FOURTEEN | FIFTEEN | SIXTEEN | SEVENTEEN | EIGHTEEN | NINETEEN | TWENTY | THIRTY | FIRST | SECOND | THIRD | FOURTH | FIFTH | SIXTH | SEVENTH | EIGHTH | NINTH | TENTH | ELEVENTH | TWELFTH | THIRTEENTH | FOURTEENTH | FIFTEENTH | SIXTEENTH | SEVENTEENTH | EIGHTEENTH | NINETEENTH | TWENTIETH | TWENTY_FIRST | TWENTY_SECOND | TWENTY_THIRD | TWENTY_FOURTH | TWENTY_FIFTH | TWENTY_SIXTH | TWENTY_SEVENTH | TWENTY_EIGHTH | TWENTY_NINTH | THIRTIETH | THIRTY_FIRST | COLON | COMMA | DASH | SLASH | DOT | SINGLE_QUOTE | IN | THE | AT | ON | OF | THIS | LAST | NEXT | PAST | COMING | UPCOMING | WHITE_SPACE )
-        int alt54=110;
-        alt54 = dfa54.predict(input);
-        switch (alt54) {
+        // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:8: ( JANUARY | FEBRUARY | MARCH | APRIL | MAY | JUNE | JULY | AUGUST | SEPTEMBER | OCTOBER | NOVEMBER | DECEMBER | SUNDAY | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | HOUR | DAY | WEEK | MONTH | YEAR | TODAY | TOMORROW | YESTERDAY | AM | PM | MILITARY_HOUR_SUFFIX | MIDNIGHT | NOON | INT_60_TO_99 | INT_32_TO_59 | INT_24_TO_31 | INT_13_TO_23 | INT_01_TO_12 | INT_00 | INT_0 | INT_1_TO_9 | ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE | TEN | ELEVEN | TWELVE | THIRTEEN | FOURTEEN | FIFTEEN | SIXTEEN | SEVENTEEN | EIGHTEEN | NINETEEN | TWENTY | THIRTY | FIRST | SECOND | THIRD | FOURTH | FIFTH | SIXTH | SEVENTH | EIGHTH | NINTH | TENTH | ELEVENTH | TWELFTH | THIRTEENTH | FOURTEENTH | FIFTEENTH | SIXTEENTH | SEVENTEENTH | EIGHTEENTH | NINETEENTH | TWENTIETH | TWENTY_FIRST | TWENTY_SECOND | TWENTY_THIRD | TWENTY_FOURTH | TWENTY_FIFTH | TWENTY_SIXTH | TWENTY_SEVENTH | TWENTY_EIGHTH | TWENTY_NINTH | THIRTIETH | THIRTY_FIRST | COLON | COMMA | DASH | SLASH | DOT | SINGLE_QUOTE | IN | THE | AT | ON | OF | THIS | LAST | NEXT | PAST | COMING | UPCOMING | FROM | NOW | AGO | BEFORE | AFTER | WHITE_SPACE )
+        int alt68=115;
+        alt68 = dfa68.predict(input);
+        switch (alt68) {
             case 1 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:10: T__127
-                {
-                mT__127(); 
-
-                }
-                break;
-            case 2 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:17: T__128
-                {
-                mT__128(); 
-
-                }
-                break;
-            case 3 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:24: JANUARY
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:10: JANUARY
                 {
                 mJANUARY(); 
 
                 }
                 break;
-            case 4 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:32: FEBRUARY
+            case 2 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:18: FEBRUARY
                 {
                 mFEBRUARY(); 
 
                 }
                 break;
-            case 5 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:41: MARCH
+            case 3 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:27: MARCH
                 {
                 mMARCH(); 
 
                 }
                 break;
-            case 6 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:47: APRIL
+            case 4 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:33: APRIL
                 {
                 mAPRIL(); 
 
                 }
                 break;
-            case 7 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:53: MAY
+            case 5 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:39: MAY
                 {
                 mMAY(); 
 
                 }
                 break;
-            case 8 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:57: JUNE
+            case 6 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:43: JUNE
                 {
                 mJUNE(); 
 
                 }
                 break;
-            case 9 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:62: JULY
+            case 7 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:48: JULY
                 {
                 mJULY(); 
 
                 }
                 break;
-            case 10 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:67: AUGUST
+            case 8 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:53: AUGUST
                 {
                 mAUGUST(); 
 
                 }
                 break;
-            case 11 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:74: SEPTEMBER
+            case 9 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:60: SEPTEMBER
                 {
                 mSEPTEMBER(); 
 
                 }
                 break;
-            case 12 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:84: OCTOBER
+            case 10 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:70: OCTOBER
                 {
                 mOCTOBER(); 
 
                 }
                 break;
-            case 13 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:92: NOVEMBER
+            case 11 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:78: NOVEMBER
                 {
                 mNOVEMBER(); 
 
                 }
                 break;
-            case 14 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:101: DECEMBER
+            case 12 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:87: DECEMBER
                 {
                 mDECEMBER(); 
 
                 }
                 break;
-            case 15 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:110: SUNDAY
+            case 13 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:96: SUNDAY
                 {
                 mSUNDAY(); 
 
                 }
                 break;
-            case 16 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:117: MONDAY
+            case 14 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:103: MONDAY
                 {
                 mMONDAY(); 
 
                 }
                 break;
-            case 17 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:124: TUESDAY
+            case 15 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:110: TUESDAY
                 {
                 mTUESDAY(); 
 
                 }
                 break;
-            case 18 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:132: WEDNESDAY
+            case 16 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:118: WEDNESDAY
                 {
                 mWEDNESDAY(); 
 
                 }
                 break;
-            case 19 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:142: THURSDAY
+            case 17 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:128: THURSDAY
                 {
                 mTHURSDAY(); 
 
                 }
                 break;
-            case 20 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:151: FRIDAY
+            case 18 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:137: FRIDAY
                 {
                 mFRIDAY(); 
 
                 }
                 break;
-            case 21 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:158: SATURDAY
+            case 19 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:144: SATURDAY
                 {
                 mSATURDAY(); 
 
                 }
                 break;
-            case 22 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:167: HOUR
+            case 20 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:153: HOUR
                 {
                 mHOUR(); 
 
                 }
                 break;
-            case 23 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:172: DAY
+            case 21 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:158: DAY
                 {
                 mDAY(); 
 
                 }
                 break;
-            case 24 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:176: WEEK
+            case 22 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:162: WEEK
                 {
                 mWEEK(); 
 
                 }
                 break;
-            case 25 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:181: MONTH
+            case 23 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:167: MONTH
                 {
                 mMONTH(); 
 
                 }
                 break;
-            case 26 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:187: YEAR
+            case 24 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:173: YEAR
                 {
                 mYEAR(); 
 
                 }
                 break;
-            case 27 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:192: TODAY
+            case 25 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:178: TODAY
                 {
                 mTODAY(); 
 
                 }
                 break;
-            case 28 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:198: TOMORROW
+            case 26 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:184: TOMORROW
                 {
                 mTOMORROW(); 
 
                 }
                 break;
-            case 29 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:207: YESTERDAY
+            case 27 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:193: YESTERDAY
                 {
                 mYESTERDAY(); 
 
                 }
                 break;
-            case 30 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:217: AM
+            case 28 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:203: AM
                 {
                 mAM(); 
 
                 }
                 break;
-            case 31 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:220: PM
+            case 29 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:206: PM
                 {
                 mPM(); 
 
                 }
                 break;
-            case 32 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:223: MILITARY_HOUR_SUFFIX
+            case 30 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:209: MILITARY_HOUR_SUFFIX
                 {
                 mMILITARY_HOUR_SUFFIX(); 
+
+                }
+                break;
+            case 31 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:230: MIDNIGHT
+                {
+                mMIDNIGHT(); 
+
+                }
+                break;
+            case 32 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:239: NOON
+                {
+                mNOON(); 
 
                 }
                 break;
@@ -5221,7 +5701,42 @@ public class DateLexer extends Lexer {
                 }
                 break;
             case 110 :
-                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:877: WHITE_SPACE
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:877: FROM
+                {
+                mFROM(); 
+
+                }
+                break;
+            case 111 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:882: NOW
+                {
+                mNOW(); 
+
+                }
+                break;
+            case 112 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:886: AGO
+                {
+                mAGO(); 
+
+                }
+                break;
+            case 113 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:890: BEFORE
+                {
+                mBEFORE(); 
+
+                }
+                break;
+            case 114 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:897: AFTER
+                {
+                mAFTER(); 
+
+                }
+                break;
+            case 115 :
+                // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g:1:903: WHITE_SPACE
                 {
                 mWHITE_SPACE(); 
 
@@ -5233,470 +5748,37 @@ public class DateLexer extends Lexer {
     }
 
 
-    protected DFA12 dfa12 = new DFA12(this);
-    protected DFA13 dfa13 = new DFA13(this);
-    protected DFA14 dfa14 = new DFA14(this);
-    protected DFA15 dfa15 = new DFA15(this);
-    protected DFA16 dfa16 = new DFA16(this);
-    protected DFA17 dfa17 = new DFA17(this);
-    protected DFA18 dfa18 = new DFA18(this);
     protected DFA24 dfa24 = new DFA24(this);
-    protected DFA54 dfa54 = new DFA54(this);
-    static final String DFA12_eotS =
-        "\3\uffff\1\6\4\uffff\1\12\2\uffff";
-    static final String DFA12_eofS =
-        "\13\uffff";
-    static final String DFA12_minS =
-        "\1\163\1\165\1\156\1\144\1\141\2\uffff\1\171\1\163\2\uffff";
-    static final String DFA12_maxS =
-        "\1\163\1\165\1\156\1\163\1\141\2\uffff\1\171\1\163\2\uffff";
-    static final String DFA12_acceptS =
-        "\5\uffff\1\4\1\3\2\uffff\1\2\1\1";
-    static final String DFA12_specialS =
-        "\13\uffff}>";
-    static final String[] DFA12_transitionS = {
-            "\1\1",
-            "\1\2",
-            "\1\3",
-            "\1\4\16\uffff\1\5",
-            "\1\7",
-            "",
-            "",
-            "\1\10",
-            "\1\11",
-            "",
-            ""
-    };
-
-    static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
-    static final short[] DFA12_eof = DFA.unpackEncodedString(DFA12_eofS);
-    static final char[] DFA12_min = DFA.unpackEncodedStringToUnsignedChars(DFA12_minS);
-    static final char[] DFA12_max = DFA.unpackEncodedStringToUnsignedChars(DFA12_maxS);
-    static final short[] DFA12_accept = DFA.unpackEncodedString(DFA12_acceptS);
-    static final short[] DFA12_special = DFA.unpackEncodedString(DFA12_specialS);
-    static final short[][] DFA12_transition;
-
-    static {
-        int numStates = DFA12_transitionS.length;
-        DFA12_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA12_transition[i] = DFA.unpackEncodedString(DFA12_transitionS[i]);
-        }
-    }
-
-    class DFA12 extends DFA {
-
-        public DFA12(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 12;
-            this.eot = DFA12_eot;
-            this.eof = DFA12_eof;
-            this.min = DFA12_min;
-            this.max = DFA12_max;
-            this.accept = DFA12_accept;
-            this.special = DFA12_special;
-            this.transition = DFA12_transition;
-        }
-        public String getDescription() {
-            return "337:1: SUNDAY : ( 'sunday' | 'sundays' | 'sun' | 'suns' );";
-        }
-    }
-    static final String DFA13_eotS =
-        "\3\uffff\1\6\4\uffff\1\12\2\uffff";
-    static final String DFA13_eofS =
-        "\13\uffff";
-    static final String DFA13_minS =
-        "\1\155\1\157\1\156\1\144\1\141\2\uffff\1\171\1\163\2\uffff";
-    static final String DFA13_maxS =
-        "\1\155\1\157\1\156\1\163\1\141\2\uffff\1\171\1\163\2\uffff";
-    static final String DFA13_acceptS =
-        "\5\uffff\1\4\1\3\2\uffff\1\2\1\1";
-    static final String DFA13_specialS =
-        "\13\uffff}>";
-    static final String[] DFA13_transitionS = {
-            "\1\1",
-            "\1\2",
-            "\1\3",
-            "\1\4\16\uffff\1\5",
-            "\1\7",
-            "",
-            "",
-            "\1\10",
-            "\1\11",
-            "",
-            ""
-    };
-
-    static final short[] DFA13_eot = DFA.unpackEncodedString(DFA13_eotS);
-    static final short[] DFA13_eof = DFA.unpackEncodedString(DFA13_eofS);
-    static final char[] DFA13_min = DFA.unpackEncodedStringToUnsignedChars(DFA13_minS);
-    static final char[] DFA13_max = DFA.unpackEncodedStringToUnsignedChars(DFA13_maxS);
-    static final short[] DFA13_accept = DFA.unpackEncodedString(DFA13_acceptS);
-    static final short[] DFA13_special = DFA.unpackEncodedString(DFA13_specialS);
-    static final short[][] DFA13_transition;
-
-    static {
-        int numStates = DFA13_transitionS.length;
-        DFA13_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA13_transition[i] = DFA.unpackEncodedString(DFA13_transitionS[i]);
-        }
-    }
-
-    class DFA13 extends DFA {
-
-        public DFA13(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 13;
-            this.eot = DFA13_eot;
-            this.eof = DFA13_eof;
-            this.min = DFA13_min;
-            this.max = DFA13_max;
-            this.accept = DFA13_accept;
-            this.special = DFA13_special;
-            this.transition = DFA13_transition;
-        }
-        public String getDescription() {
-            return "338:1: MONDAY : ( 'monday' | 'mondays' | 'mon' | 'mons' );";
-        }
-    }
-    static final String DFA14_eotS =
-        "\3\uffff\1\5\1\7\4\uffff\1\13\2\uffff";
-    static final String DFA14_eofS =
-        "\14\uffff";
-    static final String DFA14_minS =
-        "\1\164\1\165\1\145\1\163\1\144\1\uffff\1\141\1\uffff\1\171\1\163"+
-        "\2\uffff";
-    static final String DFA14_maxS =
-        "\1\164\1\165\1\145\1\163\1\144\1\uffff\1\141\1\uffff\1\171\1\163"+
-        "\2\uffff";
-    static final String DFA14_acceptS =
-        "\5\uffff\1\4\1\uffff\1\3\2\uffff\1\2\1\1";
-    static final String DFA14_specialS =
-        "\14\uffff}>";
-    static final String[] DFA14_transitionS = {
-            "\1\1",
-            "\1\2",
-            "\1\3",
-            "\1\4",
-            "\1\6",
-            "",
-            "\1\10",
-            "",
-            "\1\11",
-            "\1\12",
-            "",
-            ""
-    };
-
-    static final short[] DFA14_eot = DFA.unpackEncodedString(DFA14_eotS);
-    static final short[] DFA14_eof = DFA.unpackEncodedString(DFA14_eofS);
-    static final char[] DFA14_min = DFA.unpackEncodedStringToUnsignedChars(DFA14_minS);
-    static final char[] DFA14_max = DFA.unpackEncodedStringToUnsignedChars(DFA14_maxS);
-    static final short[] DFA14_accept = DFA.unpackEncodedString(DFA14_acceptS);
-    static final short[] DFA14_special = DFA.unpackEncodedString(DFA14_specialS);
-    static final short[][] DFA14_transition;
-
-    static {
-        int numStates = DFA14_transitionS.length;
-        DFA14_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA14_transition[i] = DFA.unpackEncodedString(DFA14_transitionS[i]);
-        }
-    }
-
-    class DFA14 extends DFA {
-
-        public DFA14(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 14;
-            this.eot = DFA14_eot;
-            this.eof = DFA14_eof;
-            this.min = DFA14_min;
-            this.max = DFA14_max;
-            this.accept = DFA14_accept;
-            this.special = DFA14_special;
-            this.transition = DFA14_transition;
-        }
-        public String getDescription() {
-            return "339:1: TUESDAY : ( 'tuesday' | 'tuesdays' | 'tues' | 'tue' );";
-        }
-    }
-    static final String DFA15_eotS =
-        "\3\uffff\1\6\7\uffff\1\15\2\uffff";
-    static final String DFA15_eofS =
-        "\16\uffff";
-    static final String DFA15_minS =
-        "\1\167\1\145\1\144\1\156\1\145\2\uffff\1\163\1\144\1\141\1\171\1"+
-        "\163\2\uffff";
-    static final String DFA15_maxS =
-        "\1\167\1\145\1\144\1\163\1\145\2\uffff\1\163\1\144\1\141\1\171\1"+
-        "\163\2\uffff";
-    static final String DFA15_acceptS =
-        "\5\uffff\1\4\1\3\5\uffff\1\2\1\1";
-    static final String DFA15_specialS =
-        "\16\uffff}>";
-    static final String[] DFA15_transitionS = {
-            "\1\1",
-            "\1\2",
-            "\1\3",
-            "\1\4\4\uffff\1\5",
-            "\1\7",
-            "",
-            "",
-            "\1\10",
-            "\1\11",
-            "\1\12",
-            "\1\13",
-            "\1\14",
-            "",
-            ""
-    };
-
-    static final short[] DFA15_eot = DFA.unpackEncodedString(DFA15_eotS);
-    static final short[] DFA15_eof = DFA.unpackEncodedString(DFA15_eofS);
-    static final char[] DFA15_min = DFA.unpackEncodedStringToUnsignedChars(DFA15_minS);
-    static final char[] DFA15_max = DFA.unpackEncodedStringToUnsignedChars(DFA15_maxS);
-    static final short[] DFA15_accept = DFA.unpackEncodedString(DFA15_acceptS);
-    static final short[] DFA15_special = DFA.unpackEncodedString(DFA15_specialS);
-    static final short[][] DFA15_transition;
-
-    static {
-        int numStates = DFA15_transitionS.length;
-        DFA15_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA15_transition[i] = DFA.unpackEncodedString(DFA15_transitionS[i]);
-        }
-    }
-
-    class DFA15 extends DFA {
-
-        public DFA15(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 15;
-            this.eot = DFA15_eot;
-            this.eof = DFA15_eof;
-            this.min = DFA15_min;
-            this.max = DFA15_max;
-            this.accept = DFA15_accept;
-            this.special = DFA15_special;
-            this.transition = DFA15_transition;
-        }
-        public String getDescription() {
-            return "340:1: WEDNESDAY : ( 'wednesday' | 'wednesdays' | 'wed' | 'weds' );";
-        }
-    }
-    static final String DFA16_eotS =
-        "\3\uffff\1\6\1\10\2\uffff\1\12\4\uffff\1\16\2\uffff";
-    static final String DFA16_eofS =
-        "\17\uffff";
-    static final String DFA16_minS =
-        "\1\164\1\150\1\165\1\162\1\163\2\uffff\1\144\1\uffff\1\141\1\uffff"+
-        "\1\171\1\163\2\uffff";
-    static final String DFA16_maxS =
-        "\1\164\1\150\1\165\2\163\2\uffff\1\144\1\uffff\1\141\1\uffff\1\171"+
-        "\1\163\2\uffff";
-    static final String DFA16_acceptS =
-        "\5\uffff\1\5\1\4\1\uffff\1\3\1\uffff\1\6\2\uffff\1\2\1\1";
-    static final String DFA16_specialS =
-        "\17\uffff}>";
-    static final String[] DFA16_transitionS = {
-            "\1\1",
-            "\1\2",
-            "\1\3",
-            "\1\4\1\5",
-            "\1\7",
-            "",
-            "",
-            "\1\11",
-            "",
-            "\1\13",
-            "",
-            "\1\14",
-            "\1\15",
-            "",
-            ""
-    };
-
-    static final short[] DFA16_eot = DFA.unpackEncodedString(DFA16_eotS);
-    static final short[] DFA16_eof = DFA.unpackEncodedString(DFA16_eofS);
-    static final char[] DFA16_min = DFA.unpackEncodedStringToUnsignedChars(DFA16_minS);
-    static final char[] DFA16_max = DFA.unpackEncodedStringToUnsignedChars(DFA16_maxS);
-    static final short[] DFA16_accept = DFA.unpackEncodedString(DFA16_acceptS);
-    static final short[] DFA16_special = DFA.unpackEncodedString(DFA16_specialS);
-    static final short[][] DFA16_transition;
-
-    static {
-        int numStates = DFA16_transitionS.length;
-        DFA16_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA16_transition[i] = DFA.unpackEncodedString(DFA16_transitionS[i]);
-        }
-    }
-
-    class DFA16 extends DFA {
-
-        public DFA16(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 16;
-            this.eot = DFA16_eot;
-            this.eof = DFA16_eof;
-            this.min = DFA16_min;
-            this.max = DFA16_max;
-            this.accept = DFA16_accept;
-            this.special = DFA16_special;
-            this.transition = DFA16_transition;
-        }
-        public String getDescription() {
-            return "341:1: THURSDAY : ( 'thursday' | 'thursdays' | 'thur' | 'thu' | 'thus' | 'thurs' );";
-        }
-    }
-    static final String DFA17_eotS =
-        "\3\uffff\1\6\4\uffff\1\12\2\uffff";
-    static final String DFA17_eofS =
-        "\13\uffff";
-    static final String DFA17_minS =
-        "\1\146\1\162\1\151\1\144\1\141\2\uffff\1\171\1\163\2\uffff";
-    static final String DFA17_maxS =
-        "\1\146\1\162\1\151\1\163\1\141\2\uffff\1\171\1\163\2\uffff";
-    static final String DFA17_acceptS =
-        "\5\uffff\1\4\1\3\2\uffff\1\2\1\1";
-    static final String DFA17_specialS =
-        "\13\uffff}>";
-    static final String[] DFA17_transitionS = {
-            "\1\1",
-            "\1\2",
-            "\1\3",
-            "\1\4\16\uffff\1\5",
-            "\1\7",
-            "",
-            "",
-            "\1\10",
-            "\1\11",
-            "",
-            ""
-    };
-
-    static final short[] DFA17_eot = DFA.unpackEncodedString(DFA17_eotS);
-    static final short[] DFA17_eof = DFA.unpackEncodedString(DFA17_eofS);
-    static final char[] DFA17_min = DFA.unpackEncodedStringToUnsignedChars(DFA17_minS);
-    static final char[] DFA17_max = DFA.unpackEncodedStringToUnsignedChars(DFA17_maxS);
-    static final short[] DFA17_accept = DFA.unpackEncodedString(DFA17_acceptS);
-    static final short[] DFA17_special = DFA.unpackEncodedString(DFA17_specialS);
-    static final short[][] DFA17_transition;
-
-    static {
-        int numStates = DFA17_transitionS.length;
-        DFA17_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA17_transition[i] = DFA.unpackEncodedString(DFA17_transitionS[i]);
-        }
-    }
-
-    class DFA17 extends DFA {
-
-        public DFA17(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 17;
-            this.eot = DFA17_eot;
-            this.eof = DFA17_eof;
-            this.min = DFA17_min;
-            this.max = DFA17_max;
-            this.accept = DFA17_accept;
-            this.special = DFA17_special;
-            this.transition = DFA17_transition;
-        }
-        public String getDescription() {
-            return "342:1: FRIDAY : ( 'friday' | 'fridays' | 'fri' | 'fris' );";
-        }
-    }
-    static final String DFA18_eotS =
-        "\3\uffff\1\6\6\uffff\1\14\2\uffff";
-    static final String DFA18_eofS =
-        "\15\uffff";
-    static final String DFA18_minS =
-        "\1\163\1\141\1\164\1\163\1\162\2\uffff\1\144\1\141\1\171\1\163\2"+
-        "\uffff";
-    static final String DFA18_maxS =
-        "\1\163\1\141\1\164\1\165\1\162\2\uffff\1\144\1\141\1\171\1\163\2"+
-        "\uffff";
-    static final String DFA18_acceptS =
-        "\5\uffff\1\4\1\3\4\uffff\1\2\1\1";
-    static final String DFA18_specialS =
-        "\15\uffff}>";
-    static final String[] DFA18_transitionS = {
-            "\1\1",
-            "\1\2",
-            "\1\3",
-            "\1\5\1\uffff\1\4",
-            "\1\7",
-            "",
-            "",
-            "\1\10",
-            "\1\11",
-            "\1\12",
-            "\1\13",
-            "",
-            ""
-    };
-
-    static final short[] DFA18_eot = DFA.unpackEncodedString(DFA18_eotS);
-    static final short[] DFA18_eof = DFA.unpackEncodedString(DFA18_eofS);
-    static final char[] DFA18_min = DFA.unpackEncodedStringToUnsignedChars(DFA18_minS);
-    static final char[] DFA18_max = DFA.unpackEncodedStringToUnsignedChars(DFA18_maxS);
-    static final short[] DFA18_accept = DFA.unpackEncodedString(DFA18_acceptS);
-    static final short[] DFA18_special = DFA.unpackEncodedString(DFA18_specialS);
-    static final short[][] DFA18_transition;
-
-    static {
-        int numStates = DFA18_transitionS.length;
-        DFA18_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA18_transition[i] = DFA.unpackEncodedString(DFA18_transitionS[i]);
-        }
-    }
-
-    class DFA18 extends DFA {
-
-        public DFA18(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 18;
-            this.eot = DFA18_eot;
-            this.eof = DFA18_eof;
-            this.min = DFA18_min;
-            this.max = DFA18_max;
-            this.accept = DFA18_accept;
-            this.special = DFA18_special;
-            this.transition = DFA18_transition;
-        }
-        public String getDescription() {
-            return "343:1: SATURDAY : ( 'saturday' | 'saturdays' | 'sat' | 'sats' );";
-        }
-    }
+    protected DFA25 dfa25 = new DFA25(this);
+    protected DFA26 dfa26 = new DFA26(this);
+    protected DFA27 dfa27 = new DFA27(this);
+    protected DFA28 dfa28 = new DFA28(this);
+    protected DFA29 dfa29 = new DFA29(this);
+    protected DFA30 dfa30 = new DFA30(this);
+    protected DFA36 dfa36 = new DFA36(this);
+    protected DFA68 dfa68 = new DFA68(this);
     static final String DFA24_eotS =
-        "\15\uffff";
+        "\3\uffff\1\6\4\uffff\1\12\2\uffff";
     static final String DFA24_eofS =
-        "\15\uffff";
+        "\13\uffff";
     static final String DFA24_minS =
-        "\1\164\1\157\2\155\1\162\2\157\1\162\2\uffff\1\157\2\uffff";
+        "\1\163\1\165\1\156\1\144\1\141\2\uffff\1\171\1\163\2\uffff";
     static final String DFA24_maxS =
-        "\1\164\1\157\1\155\1\157\1\162\1\157\2\162\2\uffff\1\162\2\uffff";
+        "\1\163\1\165\1\156\1\163\1\141\2\uffff\1\171\1\163\2\uffff";
     static final String DFA24_acceptS =
-        "\10\uffff\1\1\1\2\1\uffff\1\3\1\4";
+        "\5\uffff\1\4\1\3\2\uffff\1\2\1\1";
     static final String DFA24_specialS =
-        "\15\uffff}>";
+        "\13\uffff}>";
     static final String[] DFA24_transitionS = {
             "\1\1",
             "\1\2",
             "\1\3",
-            "\1\5\1\uffff\1\4",
-            "\1\6",
+            "\1\4\16\uffff\1\5",
             "\1\7",
-            "\1\10\2\uffff\1\11",
-            "\1\12",
             "",
             "",
-            "\1\13\2\uffff\1\14",
+            "\1\10",
+            "\1\11",
             "",
             ""
     };
@@ -5731,102 +5813,537 @@ public class DateLexer extends Lexer {
             this.transition = DFA24_transition;
         }
         public String getDescription() {
-            return "352:1: TOMORROW : ( 'tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow' );";
+            return "385:1: SUNDAY : ( 'sunday' | 'sundays' | 'sun' | 'suns' );";
         }
     }
-    static final String DFA54_eotS =
-        "\2\uffff\1\54\10\uffff\1\16\1\uffff\1\106\1\uffff\5\112\1\150\1"+
-        "\uffff\4\112\35\uffff\1\175\24\uffff\1\u008d\1\uffff\1\u008d\1\uffff"+
-        "\1\u008d\1\u0091\1\uffff\3\u0091\5\u008d\1\u0091\1\146\1\uffff\2"+
-        "\146\6\u0091\22\uffff\1\u00a8\2\uffff\1\u00ac\13\uffff\1\u00b2\36"+
-        "\uffff\1\u00b6\6\uffff\1\u00bb\12\uffff\1\u00c4\6\uffff\1\u00cc"+
-        "\15\uffff\1\u00d5\1\uffff\1\u00d7\1\uffff\1\u00d9\4\uffff\1\u00dd"+
-        "\3\uffff\1\u00df\1\u00e0\1\u00cb\1\uffff\1\u00e1\3\uffff";
-    static final String DFA54_eofS =
-        "\u00e2\uffff";
-    static final String DFA54_minS =
-        "\1\11\1\145\1\147\3\141\1\143\1\145\1\141\2\145\1\157\1\145\1\141"+
-        "\1\uffff\6\60\1\151\4\60\13\uffff\1\151\1\uffff\1\165\1\146\6\uffff"+
-        "\1\154\1\162\1\156\1\143\2\uffff\1\170\1\uffff\1\145\2\uffff\1\156"+
-        "\4\uffff\1\145\1\144\1\145\1\156\1\144\1\uffff\1\141\6\uffff\1\164"+
-        "\1\uffff\1\163\1\uffff\2\164\1\uffff\1\163\1\156\1\162\7\164\1\uffff"+
-        "\10\164\3\uffff\1\147\1\145\6\uffff\1\162\1\uffff\1\164\4\uffff"+
-        "\1\164\1\uffff\1\145\1\164\2\uffff\1\145\2\uffff\1\162\4\uffff\1"+
-        "\154\1\164\34\uffff\1\150\1\166\1\164\1\145\2\uffff\1\156\1\145"+
-        "\1\uffff\1\164\1\144\1\uffff\1\146\1\164\1\uffff\1\164\2\145\1\uffff"+
-        "\1\145\1\164\2\145\1\uffff\1\145\1\uffff\1\151\1\145\1\156\1\145"+
-        "\1\156\1\145\1\uffff\1\156\2\145\2\uffff\1\145\2\uffff\1\164\1\156"+
-        "\1\164\1\145\1\164\3\156\1\uffff\1\164\1\uffff\1\156\1\uffff\3\164"+
-        "\1\uffff\1\164\3\uffff";
-    static final String DFA54_maxS =
-        "\1\171\1\162\2\165\1\157\1\165\1\156\1\157\1\145\1\167\1\145\1\157"+
+    static final String DFA25_eotS =
+        "\3\uffff\1\6\4\uffff\1\12\2\uffff";
+    static final String DFA25_eofS =
+        "\13\uffff";
+    static final String DFA25_minS =
+        "\1\155\1\157\1\156\1\144\1\141\2\uffff\1\171\1\163\2\uffff";
+    static final String DFA25_maxS =
+        "\1\155\1\157\1\156\1\163\1\141\2\uffff\1\171\1\163\2\uffff";
+    static final String DFA25_acceptS =
+        "\5\uffff\1\4\1\3\2\uffff\1\2\1\1";
+    static final String DFA25_specialS =
+        "\13\uffff}>";
+    static final String[] DFA25_transitionS = {
+            "\1\1",
+            "\1\2",
+            "\1\3",
+            "\1\4\16\uffff\1\5",
+            "\1\7",
+            "",
+            "",
+            "\1\10",
+            "\1\11",
+            "",
+            ""
+    };
+
+    static final short[] DFA25_eot = DFA.unpackEncodedString(DFA25_eotS);
+    static final short[] DFA25_eof = DFA.unpackEncodedString(DFA25_eofS);
+    static final char[] DFA25_min = DFA.unpackEncodedStringToUnsignedChars(DFA25_minS);
+    static final char[] DFA25_max = DFA.unpackEncodedStringToUnsignedChars(DFA25_maxS);
+    static final short[] DFA25_accept = DFA.unpackEncodedString(DFA25_acceptS);
+    static final short[] DFA25_special = DFA.unpackEncodedString(DFA25_specialS);
+    static final short[][] DFA25_transition;
+
+    static {
+        int numStates = DFA25_transitionS.length;
+        DFA25_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA25_transition[i] = DFA.unpackEncodedString(DFA25_transitionS[i]);
+        }
+    }
+
+    class DFA25 extends DFA {
+
+        public DFA25(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 25;
+            this.eot = DFA25_eot;
+            this.eof = DFA25_eof;
+            this.min = DFA25_min;
+            this.max = DFA25_max;
+            this.accept = DFA25_accept;
+            this.special = DFA25_special;
+            this.transition = DFA25_transition;
+        }
+        public String getDescription() {
+            return "386:1: MONDAY : ( 'monday' | 'mondays' | 'mon' | 'mons' );";
+        }
+    }
+    static final String DFA26_eotS =
+        "\3\uffff\1\5\1\7\4\uffff\1\13\2\uffff";
+    static final String DFA26_eofS =
+        "\14\uffff";
+    static final String DFA26_minS =
+        "\1\164\1\165\1\145\1\163\1\144\1\uffff\1\141\1\uffff\1\171\1\163"+
+        "\2\uffff";
+    static final String DFA26_maxS =
+        "\1\164\1\165\1\145\1\163\1\144\1\uffff\1\141\1\uffff\1\171\1\163"+
+        "\2\uffff";
+    static final String DFA26_acceptS =
+        "\5\uffff\1\4\1\uffff\1\3\2\uffff\1\2\1\1";
+    static final String DFA26_specialS =
+        "\14\uffff}>";
+    static final String[] DFA26_transitionS = {
+            "\1\1",
+            "\1\2",
+            "\1\3",
+            "\1\4",
+            "\1\6",
+            "",
+            "\1\10",
+            "",
+            "\1\11",
+            "\1\12",
+            "",
+            ""
+    };
+
+    static final short[] DFA26_eot = DFA.unpackEncodedString(DFA26_eotS);
+    static final short[] DFA26_eof = DFA.unpackEncodedString(DFA26_eofS);
+    static final char[] DFA26_min = DFA.unpackEncodedStringToUnsignedChars(DFA26_minS);
+    static final char[] DFA26_max = DFA.unpackEncodedStringToUnsignedChars(DFA26_maxS);
+    static final short[] DFA26_accept = DFA.unpackEncodedString(DFA26_acceptS);
+    static final short[] DFA26_special = DFA.unpackEncodedString(DFA26_specialS);
+    static final short[][] DFA26_transition;
+
+    static {
+        int numStates = DFA26_transitionS.length;
+        DFA26_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA26_transition[i] = DFA.unpackEncodedString(DFA26_transitionS[i]);
+        }
+    }
+
+    class DFA26 extends DFA {
+
+        public DFA26(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 26;
+            this.eot = DFA26_eot;
+            this.eof = DFA26_eof;
+            this.min = DFA26_min;
+            this.max = DFA26_max;
+            this.accept = DFA26_accept;
+            this.special = DFA26_special;
+            this.transition = DFA26_transition;
+        }
+        public String getDescription() {
+            return "387:1: TUESDAY : ( 'tuesday' | 'tuesdays' | 'tues' | 'tue' );";
+        }
+    }
+    static final String DFA27_eotS =
+        "\3\uffff\1\6\7\uffff\1\15\2\uffff";
+    static final String DFA27_eofS =
+        "\16\uffff";
+    static final String DFA27_minS =
+        "\1\167\1\145\1\144\1\156\1\145\2\uffff\1\163\1\144\1\141\1\171\1"+
+        "\163\2\uffff";
+    static final String DFA27_maxS =
+        "\1\167\1\145\1\144\1\163\1\145\2\uffff\1\163\1\144\1\141\1\171\1"+
+        "\163\2\uffff";
+    static final String DFA27_acceptS =
+        "\5\uffff\1\4\1\3\5\uffff\1\2\1\1";
+    static final String DFA27_specialS =
+        "\16\uffff}>";
+    static final String[] DFA27_transitionS = {
+            "\1\1",
+            "\1\2",
+            "\1\3",
+            "\1\4\4\uffff\1\5",
+            "\1\7",
+            "",
+            "",
+            "\1\10",
+            "\1\11",
+            "\1\12",
+            "\1\13",
+            "\1\14",
+            "",
+            ""
+    };
+
+    static final short[] DFA27_eot = DFA.unpackEncodedString(DFA27_eotS);
+    static final short[] DFA27_eof = DFA.unpackEncodedString(DFA27_eofS);
+    static final char[] DFA27_min = DFA.unpackEncodedStringToUnsignedChars(DFA27_minS);
+    static final char[] DFA27_max = DFA.unpackEncodedStringToUnsignedChars(DFA27_maxS);
+    static final short[] DFA27_accept = DFA.unpackEncodedString(DFA27_acceptS);
+    static final short[] DFA27_special = DFA.unpackEncodedString(DFA27_specialS);
+    static final short[][] DFA27_transition;
+
+    static {
+        int numStates = DFA27_transitionS.length;
+        DFA27_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA27_transition[i] = DFA.unpackEncodedString(DFA27_transitionS[i]);
+        }
+    }
+
+    class DFA27 extends DFA {
+
+        public DFA27(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 27;
+            this.eot = DFA27_eot;
+            this.eof = DFA27_eof;
+            this.min = DFA27_min;
+            this.max = DFA27_max;
+            this.accept = DFA27_accept;
+            this.special = DFA27_special;
+            this.transition = DFA27_transition;
+        }
+        public String getDescription() {
+            return "388:1: WEDNESDAY : ( 'wednesday' | 'wednesdays' | 'wed' | 'weds' );";
+        }
+    }
+    static final String DFA28_eotS =
+        "\3\uffff\1\6\1\10\2\uffff\1\12\4\uffff\1\16\2\uffff";
+    static final String DFA28_eofS =
+        "\17\uffff";
+    static final String DFA28_minS =
+        "\1\164\1\150\1\165\1\162\1\163\2\uffff\1\144\1\uffff\1\141\1\uffff"+
+        "\1\171\1\163\2\uffff";
+    static final String DFA28_maxS =
+        "\1\164\1\150\1\165\2\163\2\uffff\1\144\1\uffff\1\141\1\uffff\1\171"+
+        "\1\163\2\uffff";
+    static final String DFA28_acceptS =
+        "\5\uffff\1\5\1\4\1\uffff\1\3\1\uffff\1\6\2\uffff\1\2\1\1";
+    static final String DFA28_specialS =
+        "\17\uffff}>";
+    static final String[] DFA28_transitionS = {
+            "\1\1",
+            "\1\2",
+            "\1\3",
+            "\1\4\1\5",
+            "\1\7",
+            "",
+            "",
+            "\1\11",
+            "",
+            "\1\13",
+            "",
+            "\1\14",
+            "\1\15",
+            "",
+            ""
+    };
+
+    static final short[] DFA28_eot = DFA.unpackEncodedString(DFA28_eotS);
+    static final short[] DFA28_eof = DFA.unpackEncodedString(DFA28_eofS);
+    static final char[] DFA28_min = DFA.unpackEncodedStringToUnsignedChars(DFA28_minS);
+    static final char[] DFA28_max = DFA.unpackEncodedStringToUnsignedChars(DFA28_maxS);
+    static final short[] DFA28_accept = DFA.unpackEncodedString(DFA28_acceptS);
+    static final short[] DFA28_special = DFA.unpackEncodedString(DFA28_specialS);
+    static final short[][] DFA28_transition;
+
+    static {
+        int numStates = DFA28_transitionS.length;
+        DFA28_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA28_transition[i] = DFA.unpackEncodedString(DFA28_transitionS[i]);
+        }
+    }
+
+    class DFA28 extends DFA {
+
+        public DFA28(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 28;
+            this.eot = DFA28_eot;
+            this.eof = DFA28_eof;
+            this.min = DFA28_min;
+            this.max = DFA28_max;
+            this.accept = DFA28_accept;
+            this.special = DFA28_special;
+            this.transition = DFA28_transition;
+        }
+        public String getDescription() {
+            return "389:1: THURSDAY : ( 'thursday' | 'thursdays' | 'thur' | 'thu' | 'thus' | 'thurs' );";
+        }
+    }
+    static final String DFA29_eotS =
+        "\3\uffff\1\6\4\uffff\1\12\2\uffff";
+    static final String DFA29_eofS =
+        "\13\uffff";
+    static final String DFA29_minS =
+        "\1\146\1\162\1\151\1\144\1\141\2\uffff\1\171\1\163\2\uffff";
+    static final String DFA29_maxS =
+        "\1\146\1\162\1\151\1\163\1\141\2\uffff\1\171\1\163\2\uffff";
+    static final String DFA29_acceptS =
+        "\5\uffff\1\4\1\3\2\uffff\1\2\1\1";
+    static final String DFA29_specialS =
+        "\13\uffff}>";
+    static final String[] DFA29_transitionS = {
+            "\1\1",
+            "\1\2",
+            "\1\3",
+            "\1\4\16\uffff\1\5",
+            "\1\7",
+            "",
+            "",
+            "\1\10",
+            "\1\11",
+            "",
+            ""
+    };
+
+    static final short[] DFA29_eot = DFA.unpackEncodedString(DFA29_eotS);
+    static final short[] DFA29_eof = DFA.unpackEncodedString(DFA29_eofS);
+    static final char[] DFA29_min = DFA.unpackEncodedStringToUnsignedChars(DFA29_minS);
+    static final char[] DFA29_max = DFA.unpackEncodedStringToUnsignedChars(DFA29_maxS);
+    static final short[] DFA29_accept = DFA.unpackEncodedString(DFA29_acceptS);
+    static final short[] DFA29_special = DFA.unpackEncodedString(DFA29_specialS);
+    static final short[][] DFA29_transition;
+
+    static {
+        int numStates = DFA29_transitionS.length;
+        DFA29_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA29_transition[i] = DFA.unpackEncodedString(DFA29_transitionS[i]);
+        }
+    }
+
+    class DFA29 extends DFA {
+
+        public DFA29(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 29;
+            this.eot = DFA29_eot;
+            this.eof = DFA29_eof;
+            this.min = DFA29_min;
+            this.max = DFA29_max;
+            this.accept = DFA29_accept;
+            this.special = DFA29_special;
+            this.transition = DFA29_transition;
+        }
+        public String getDescription() {
+            return "390:1: FRIDAY : ( 'friday' | 'fridays' | 'fri' | 'fris' );";
+        }
+    }
+    static final String DFA30_eotS =
+        "\4\uffff\1\7\6\uffff\1\15\2\uffff";
+    static final String DFA30_eofS =
+        "\16\uffff";
+    static final String DFA30_minS =
+        "\1\163\1\141\1\uffff\1\164\1\163\1\162\2\uffff\1\144\1\141\1\171"+
+        "\1\163\2\uffff";
+    static final String DFA30_maxS =
+        "\1\167\1\141\1\uffff\1\164\1\165\1\162\2\uffff\1\144\1\141\1\171"+
+        "\1\163\2\uffff";
+    static final String DFA30_acceptS =
+        "\2\uffff\1\5\3\uffff\1\4\1\3\4\uffff\1\2\1\1";
+    static final String DFA30_specialS =
+        "\16\uffff}>";
+    static final String[] DFA30_transitionS = {
+            "\1\1\3\uffff\1\2",
+            "\1\3",
+            "",
+            "\1\4",
+            "\1\6\1\uffff\1\5",
+            "\1\10",
+            "",
+            "",
+            "\1\11",
+            "\1\12",
+            "\1\13",
+            "\1\14",
+            "",
+            ""
+    };
+
+    static final short[] DFA30_eot = DFA.unpackEncodedString(DFA30_eotS);
+    static final short[] DFA30_eof = DFA.unpackEncodedString(DFA30_eofS);
+    static final char[] DFA30_min = DFA.unpackEncodedStringToUnsignedChars(DFA30_minS);
+    static final char[] DFA30_max = DFA.unpackEncodedStringToUnsignedChars(DFA30_maxS);
+    static final short[] DFA30_accept = DFA.unpackEncodedString(DFA30_acceptS);
+    static final short[] DFA30_special = DFA.unpackEncodedString(DFA30_specialS);
+    static final short[][] DFA30_transition;
+
+    static {
+        int numStates = DFA30_transitionS.length;
+        DFA30_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA30_transition[i] = DFA.unpackEncodedString(DFA30_transitionS[i]);
+        }
+    }
+
+    class DFA30 extends DFA {
+
+        public DFA30(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 30;
+            this.eot = DFA30_eot;
+            this.eof = DFA30_eof;
+            this.min = DFA30_min;
+            this.max = DFA30_max;
+            this.accept = DFA30_accept;
+            this.special = DFA30_special;
+            this.transition = DFA30_transition;
+        }
+        public String getDescription() {
+            return "391:1: SATURDAY : ( 'saturday' | 'saturdays' | 'sat' | 'sats' | 'weekend' );";
+        }
+    }
+    static final String DFA36_eotS =
+        "\15\uffff";
+    static final String DFA36_eofS =
+        "\15\uffff";
+    static final String DFA36_minS =
+        "\1\164\1\157\2\155\1\162\2\157\1\162\2\uffff\1\157\2\uffff";
+    static final String DFA36_maxS =
+        "\1\164\1\157\1\155\1\157\1\162\1\157\2\162\2\uffff\1\162\2\uffff";
+    static final String DFA36_acceptS =
+        "\10\uffff\1\1\1\2\1\uffff\1\3\1\4";
+    static final String DFA36_specialS =
+        "\15\uffff}>";
+    static final String[] DFA36_transitionS = {
+            "\1\1",
+            "\1\2",
+            "\1\3",
+            "\1\5\1\uffff\1\4",
+            "\1\6",
+            "\1\7",
+            "\1\10\2\uffff\1\11",
+            "\1\12",
+            "",
+            "",
+            "\1\13\2\uffff\1\14",
+            "",
+            ""
+    };
+
+    static final short[] DFA36_eot = DFA.unpackEncodedString(DFA36_eotS);
+    static final short[] DFA36_eof = DFA.unpackEncodedString(DFA36_eofS);
+    static final char[] DFA36_min = DFA.unpackEncodedStringToUnsignedChars(DFA36_minS);
+    static final char[] DFA36_max = DFA.unpackEncodedStringToUnsignedChars(DFA36_maxS);
+    static final short[] DFA36_accept = DFA.unpackEncodedString(DFA36_acceptS);
+    static final short[] DFA36_special = DFA.unpackEncodedString(DFA36_specialS);
+    static final short[][] DFA36_transition;
+
+    static {
+        int numStates = DFA36_transitionS.length;
+        DFA36_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA36_transition[i] = DFA.unpackEncodedString(DFA36_transitionS[i]);
+        }
+    }
+
+    class DFA36 extends DFA {
+
+        public DFA36(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 36;
+            this.eot = DFA36_eot;
+            this.eof = DFA36_eof;
+            this.min = DFA36_min;
+            this.max = DFA36_max;
+            this.accept = DFA36_accept;
+            this.special = DFA36_special;
+            this.transition = DFA36_transition;
+        }
+        public String getDescription() {
+            return "400:1: TOMORROW : ( 'tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow' );";
+        }
+    }
+    static final String DFA68_eotS =
+        "\4\uffff\1\61\6\uffff\1\16\1\uffff\1\111\1\uffff\5\115\1\153\1\uffff"+
+        "\4\115\40\uffff\1\u0081\24\uffff\1\u0094\1\uffff\1\u0094\1\uffff"+
+        "\1\u0094\1\u0098\1\uffff\3\u0098\5\u0094\1\u0098\1\151\1\uffff\2"+
+        "\151\6\u0098\22\uffff\1\u00af\3\uffff\1\u00b4\16\uffff\1\u00ba\36"+
+        "\uffff\1\u00bf\7\uffff\1\u00c5\5\uffff\1\u00c9\5\uffff\1\u00ce\1"+
+        "\u00d0\7\uffff\1\u00d8\16\uffff\1\u00e1\1\uffff\1\u00e3\1\uffff"+
+        "\1\u00e5\4\uffff\1\u00e9\3\uffff\1\u00eb\1\u00ec\1\u00d7\1\uffff"+
+        "\1\u00ed\3\uffff";
+    static final String DFA68_eofS =
+        "\u00ee\uffff";
+    static final String DFA68_minS =
+        "\1\11\1\141\1\145\1\141\1\146\1\141\1\143\1\145\1\141\2\145\1\157"+
+        "\1\145\1\141\1\uffff\6\60\1\151\4\60\15\uffff\1\154\1\uffff\1\151"+
+        "\1\165\1\146\1\162\1\156\4\uffff\1\164\2\uffff\1\143\2\uffff\1\170"+
+        "\1\uffff\1\145\1\uffff\1\157\1\156\4\uffff\1\145\1\144\1\145\1\156"+
+        "\1\144\1\uffff\1\141\6\uffff\1\164\1\uffff\1\163\1\uffff\2\164\1"+
+        "\uffff\1\163\1\156\1\162\7\164\1\uffff\10\164\3\uffff\1\147\1\145"+
+        "\10\uffff\1\162\1\uffff\1\164\2\uffff\1\164\1\145\1\uffff\1\145"+
+        "\1\164\5\uffff\1\145\2\uffff\1\162\4\uffff\1\154\1\164\1\uffff\1"+
+        "\153\32\uffff\1\150\1\166\1\164\1\145\2\uffff\1\162\1\156\1\145"+
+        "\1\uffff\1\164\1\144\1\uffff\1\146\1\164\1\uffff\1\145\1\164\2\145"+
+        "\1\uffff\1\145\1\55\1\164\2\145\1\uffff\1\145\1\uffff\1\151\1\uffff"+
+        "\1\145\1\156\1\145\1\156\1\uffff\1\145\1\uffff\1\156\2\145\2\uffff"+
+        "\1\145\2\uffff\1\164\1\156\1\164\1\145\1\164\3\156\1\uffff\1\164"+
+        "\1\uffff\1\156\1\uffff\3\164\1\uffff\1\164\3\uffff";
+    static final String DFA68_maxS =
+        "\1\171\1\165\1\162\1\157\2\165\1\156\1\157\1\145\1\167\1\145\1\157"+
         "\1\145\1\141\1\uffff\1\164\1\162\1\164\1\156\1\163\1\71\1\154\4"+
-        "\164\13\uffff\1\157\1\uffff\1\165\1\166\6\uffff\1\156\1\171\1\156"+
-        "\1\166\2\uffff\1\170\1\uffff\1\145\2\uffff\1\156\4\uffff\1\165\1"+
-        "\155\1\157\1\156\1\145\1\uffff\1\163\6\uffff\1\164\1\uffff\1\163"+
-        "\1\uffff\2\164\1\uffff\1\163\1\156\1\162\7\164\1\uffff\10\164\3"+
-        "\uffff\1\147\1\145\6\uffff\1\162\1\uffff\1\164\4\uffff\1\164\1\uffff"+
-        "\1\145\1\164\2\uffff\1\164\2\uffff\1\163\4\uffff\1\156\1\164\34"+
-        "\uffff\1\164\1\166\1\164\1\150\2\uffff\1\156\1\150\1\uffff\2\164"+
-        "\1\uffff\1\166\1\164\1\uffff\1\164\1\145\1\150\1\uffff\1\145\1\164"+
-        "\2\145\1\uffff\1\171\1\uffff\1\171\1\164\1\156\1\145\1\156\1\150"+
-        "\1\uffff\1\156\2\145\2\uffff\1\145\2\uffff\1\164\1\156\1\164\1\145"+
-        "\1\164\3\156\1\uffff\1\164\1\uffff\1\156\1\uffff\3\164\1\uffff\1"+
-        "\164\3\uffff";
-    static final String DFA54_acceptS =
-        "\16\uffff\1\40\13\uffff\1\135\1\136\1\137\1\140\1\141\1\142\1\143"+
-        "\1\151\1\154\1\155\1\156\1\uffff\1\4\2\uffff\1\2\1\6\1\12\1\36\1"+
-        "\145\1\3\4\uffff\1\17\1\25\1\uffff\1\14\1\uffff\1\147\1\15\1\uffff"+
-        "\1\152\1\16\1\27\1\21\5\uffff\1\26\1\uffff\1\37\1\153\1\41\1\103"+
-        "\1\50\1\42\1\uffff\1\100\1\uffff\1\101\2\uffff\1\77\12\uffff\1\76"+
-        "\10\uffff\1\45\1\46\1\47\2\uffff\1\102\1\104\1\105\1\106\1\1\1\24"+
-        "\1\uffff\1\55\1\uffff\1\10\1\11\1\5\1\7\1\uffff\1\13\2\uffff\1\51"+
-        "\1\146\1\uffff\1\23\1\53\1\uffff\1\144\1\33\1\34\1\52\2\uffff\1"+
-        "\22\1\30\1\32\1\35\1\133\1\43\1\134\1\125\1\121\1\44\1\122\1\123"+
-        "\1\124\1\126\1\127\1\130\1\131\1\132\1\112\1\107\1\110\1\111\1\113"+
-        "\1\114\1\115\1\116\1\117\1\120\4\uffff\1\20\1\31\2\uffff\1\56\2"+
-        "\uffff\1\150\2\uffff\1\62\3\uffff\1\54\4\uffff\1\61\1\uffff\1\64"+
-        "\6\uffff\1\57\3\uffff\1\75\1\74\1\uffff\1\72\1\60\10\uffff\1\63"+
-        "\1\uffff\1\67\1\uffff\1\70\3\uffff\1\66\1\uffff\1\73\1\65\1\71";
-    static final String DFA54_specialS =
-        "\u00e2\uffff}>";
-    static final String[] DFA54_transitionS = {
-            "\2\44\2\uffff\1\44\22\uffff\1\44\6\uffff\1\37\4\uffff\1\33\1"+
+        "\164\15\uffff\1\156\1\uffff\1\157\1\165\1\166\1\171\1\156\4\uffff"+
+        "\1\164\2\uffff\1\166\2\uffff\1\170\1\uffff\1\145\1\uffff\1\167\1"+
+        "\156\4\uffff\1\165\1\155\1\157\1\156\1\145\1\uffff\1\163\6\uffff"+
+        "\1\164\1\uffff\1\163\1\uffff\2\164\1\uffff\1\163\1\156\1\162\7\164"+
+        "\1\uffff\10\164\3\uffff\1\147\1\145\10\uffff\1\162\1\uffff\1\164"+
+        "\2\uffff\1\164\1\145\1\uffff\1\145\1\164\5\uffff\1\164\2\uffff\1"+
+        "\163\4\uffff\1\156\1\164\1\uffff\1\153\32\uffff\1\164\1\166\1\164"+
+        "\1\150\2\uffff\1\162\1\156\1\150\1\uffff\2\164\1\uffff\1\166\1\164"+
+        "\1\uffff\1\145\1\164\1\145\1\150\1\uffff\1\145\1\156\1\164\2\145"+
+        "\1\uffff\1\171\1\uffff\1\171\1\uffff\1\164\1\156\1\145\1\156\1\uffff"+
+        "\1\150\1\uffff\1\156\2\145\2\uffff\1\145\2\uffff\1\164\1\156\1\164"+
+        "\1\145\1\164\3\156\1\uffff\1\164\1\uffff\1\156\1\uffff\3\164\1\uffff"+
+        "\1\164\3\uffff";
+    static final String DFA68_acceptS =
+        "\16\uffff\1\36\13\uffff\1\135\1\136\1\137\1\140\1\141\1\142\1\143"+
+        "\1\151\1\154\1\155\1\161\1\163\1\1\1\uffff\1\2\5\uffff\1\37\1\4"+
+        "\1\10\1\34\1\uffff\1\145\1\160\1\uffff\1\15\1\23\1\uffff\1\12\1"+
+        "\uffff\1\147\2\uffff\1\152\1\14\1\25\1\17\5\uffff\1\24\1\uffff\1"+
+        "\35\1\153\1\41\1\103\1\50\1\42\1\uffff\1\100\1\uffff\1\101\2\uffff"+
+        "\1\77\12\uffff\1\76\10\uffff\1\45\1\46\1\47\2\uffff\1\102\1\104"+
+        "\1\105\1\106\1\6\1\7\1\22\1\156\1\uffff\1\55\1\uffff\1\3\1\5\2\uffff"+
+        "\1\11\2\uffff\1\51\1\146\1\13\1\40\1\157\1\uffff\1\21\1\53\1\uffff"+
+        "\1\144\1\31\1\32\1\52\2\uffff\1\20\1\uffff\1\30\1\33\1\133\1\43"+
+        "\1\134\1\125\1\121\1\44\1\122\1\123\1\124\1\126\1\127\1\130\1\131"+
+        "\1\132\1\112\1\107\1\110\1\111\1\113\1\114\1\115\1\116\1\117\1\120"+
+        "\4\uffff\1\16\1\27\3\uffff\1\56\2\uffff\1\150\2\uffff\1\62\4\uffff"+
+        "\1\54\5\uffff\1\61\1\uffff\1\64\1\uffff\1\26\4\uffff\1\162\1\uffff"+
+        "\1\57\3\uffff\1\75\1\74\1\uffff\1\72\1\60\10\uffff\1\63\1\uffff"+
+        "\1\67\1\uffff\1\70\3\uffff\1\66\1\uffff\1\73\1\65\1\71";
+    static final String DFA68_specialS =
+        "\u00ee\uffff}>";
+    static final String[] DFA68_transitionS = {
+            "\2\45\2\uffff\1\45\22\uffff\1\45\6\uffff\1\37\4\uffff\1\33\1"+
             "\34\1\36\1\35\1\24\1\23\1\22\1\20\1\21\1\26\1\17\1\27\1\30\1"+
-            "\31\1\32\15\uffff\1\16\30\uffff\1\2\1\uffff\1\42\1\10\1\25\1"+
-            "\1\1\uffff\1\13\1\40\1\3\1\uffff\1\41\1\4\1\7\1\6\1\15\2\uffff"+
+            "\31\1\32\15\uffff\1\16\30\uffff\1\4\1\44\1\42\1\10\1\25\1\2"+
+            "\1\uffff\1\13\1\40\1\1\1\uffff\1\41\1\3\1\7\1\6\1\15\2\uffff"+
             "\1\5\1\11\1\43\1\uffff\1\12\1\uffff\1\14",
-            "\1\46\3\uffff\1\50\5\uffff\1\47\2\uffff\1\45",
-            "\1\51\10\uffff\1\52\3\uffff\1\55\1\53",
-            "\1\56\23\uffff\1\57",
-            "\1\60\15\uffff\1\61",
-            "\1\64\3\uffff\1\62\3\uffff\1\65\13\uffff\1\63",
-            "\1\66\2\uffff\1\70\7\uffff\1\67",
-            "\1\73\3\uffff\1\72\5\uffff\1\71",
-            "\1\75\3\uffff\1\74",
-            "\1\102\2\uffff\1\77\6\uffff\1\100\5\uffff\1\76\1\uffff\1\101",
-            "\1\103",
-            "\1\104",
-            "\1\105",
+            "\1\46\23\uffff\1\47",
+            "\1\50\3\uffff\1\53\5\uffff\1\52\2\uffff\1\51",
+            "\1\54\7\uffff\1\56\5\uffff\1\55",
+            "\1\62\1\64\10\uffff\1\57\3\uffff\1\63\1\60",
+            "\1\67\3\uffff\1\65\3\uffff\1\70\13\uffff\1\66",
+            "\1\71\2\uffff\1\73\7\uffff\1\72",
+            "\1\76\3\uffff\1\75\5\uffff\1\74",
+            "\1\100\3\uffff\1\77",
+            "\1\105\2\uffff\1\102\6\uffff\1\103\5\uffff\1\101\1\uffff\1"+
+            "\104",
+            "\1\106",
             "\1\107",
+            "\1\110",
+            "\1\112",
             "",
-            "\12\110\72\uffff\1\111",
-            "\1\114\1\116\10\113\70\uffff\1\115",
-            "\12\113\72\uffff\1\117",
-            "\1\121\1\123\1\124\1\125\1\120\1\126\1\127\1\130\1\131\1\132"+
-            "\64\uffff\1\122",
-            "\1\134\1\136\1\137\1\133\1\140\1\141\1\142\1\143\1\144\1\145"+
-            "\71\uffff\1\135",
-            "\1\147\11\146",
-            "\1\151\2\uffff\1\152",
-            "\12\113\72\uffff\1\153",
-            "\12\110\72\uffff\1\154",
-            "\12\110\72\uffff\1\155",
-            "\12\110\72\uffff\1\156",
-            "",
-            "",
-            "",
-            "",
+            "\12\113\72\uffff\1\114",
+            "\1\117\1\121\10\116\70\uffff\1\120",
+            "\12\116\72\uffff\1\122",
+            "\1\124\1\126\1\127\1\130\1\123\1\131\1\132\1\133\1\134\1\135"+
+            "\64\uffff\1\125",
+            "\1\137\1\141\1\142\1\136\1\143\1\144\1\145\1\146\1\147\1\150"+
+            "\71\uffff\1\140",
+            "\1\152\11\151",
+            "\1\154\2\uffff\1\155",
+            "\12\116\72\uffff\1\156",
+            "\12\113\72\uffff\1\157",
+            "\12\113\72\uffff\1\160",
+            "\12\113\72\uffff\1\161",
             "",
             "",
             "",
@@ -5834,63 +6351,62 @@ public class DateLexer extends Lexer {
             "",
             "",
             "",
-            "\1\160\5\uffff\1\157",
-            "",
-            "\1\161",
-            "\1\163\13\uffff\1\135\3\uffff\1\162",
             "",
             "",
             "",
             "",
             "",
             "",
-            "\1\165\1\uffff\1\164",
-            "\1\166\6\uffff\1\167",
-            "\1\170",
-            "\1\122\14\uffff\1\171\5\uffff\1\172",
+            "\1\163\1\uffff\1\162",
             "",
-            "",
+            "\1\164\5\uffff\1\165",
+            "\1\166",
+            "\1\170\13\uffff\1\140\3\uffff\1\167",
+            "\1\171\6\uffff\1\172",
             "\1\173",
+            "",
+            "",
+            "",
             "",
             "\1\174",
             "",
             "",
-            "\1\176",
+            "\1\125\14\uffff\1\175\5\uffff\1\176",
+            "",
+            "",
+            "\1\177",
+            "",
+            "\1\u0080",
+            "",
+            "\1\u0083\6\uffff\1\u0082\1\u0084",
+            "\1\u0085",
             "",
             "",
             "",
             "",
-            "\1\u0082\3\uffff\1\u0081\10\uffff\1\u0080\2\uffff\1\177",
-            "\1\u0083\10\uffff\1\u0084",
-            "\1\u0086\11\uffff\1\u0085",
-            "\1\u0087",
-            "\1\u0088\1\u0089",
-            "",
-            "\1\u008a\21\uffff\1\u008b",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u008c",
-            "",
+            "\1\u0089\3\uffff\1\u0088\10\uffff\1\u0087\2\uffff\1\u0086",
+            "\1\u008a\10\uffff\1\u008b",
+            "\1\u008d\11\uffff\1\u008c",
             "\1\u008e",
+            "\1\u008f\1\u0090",
             "",
-            "\1\u008f",
-            "\1\u0090",
+            "\1\u0091\21\uffff\1\u0092",
             "",
-            "\1\u0092",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u0093",
-            "\1\u0094",
+            "",
             "\1\u0095",
+            "",
             "\1\u0096",
             "\1\u0097",
-            "\1\u0098",
+            "",
             "\1\u0099",
             "\1\u009a",
             "\1\u009b",
-            "",
             "\1\u009c",
             "\1\u009d",
             "\1\u009e",
@@ -5898,41 +6414,20 @@ public class DateLexer extends Lexer {
             "\1\u00a0",
             "\1\u00a1",
             "\1\u00a2",
+            "",
             "\1\u00a3",
-            "",
-            "",
-            "",
             "\1\u00a4",
             "\1\u00a5",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u00a6",
-            "",
             "\1\u00a7",
-            "",
-            "",
-            "",
-            "",
+            "\1\u00a8",
             "\1\u00a9",
-            "",
             "\1\u00aa",
+            "",
+            "",
+            "",
             "\1\u00ab",
-            "",
-            "",
-            "\1\u00ad\16\uffff\1\156",
-            "",
-            "",
-            "\1\u00ae\1\u00af",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00b0\1\uffff\1\u00b1",
-            "\1\u009b",
+            "\1\u00ac",
             "",
             "",
             "",
@@ -5941,121 +6436,159 @@ public class DateLexer extends Lexer {
             "",
             "",
             "",
+            "\1\u00ad",
+            "",
+            "\1\u00ae",
+            "",
+            "",
+            "\1\u00b0",
+            "\1\u00b1",
+            "",
+            "\1\u00b2",
+            "\1\u00b3",
             "",
             "",
             "",
             "",
             "",
+            "\1\u00b5\16\uffff\1\161",
+            "",
+            "",
+            "\1\u00b6\1\u00b7",
             "",
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00b3\13\uffff\1\155",
-            "\1\u00b4",
-            "\1\u00b5",
-            "\1\u00b7\2\uffff\1\153",
-            "",
-            "",
-            "\1\u00b8",
-            "\1\u00b9\2\uffff\1\111",
-            "",
-            "\1\u00ba",
-            "\1\115\17\uffff\1\u00bc",
-            "",
-            "\1\u009d\17\uffff\1\u00bd",
-            "\1\u00be",
-            "",
-            "\1\u00bf",
-            "\1\u00c0",
-            "\1\u00c1\2\uffff\1\117",
-            "",
-            "\1\u00c2",
-            "\1\u00c3",
-            "\1\u00c5",
-            "\1\u00c6",
-            "",
-            "\1\u00c7\3\uffff\1\u008c\17\uffff\1\u00c8",
-            "",
-            "\1\u0090\17\uffff\1\u00c9",
-            "\1\u00ca\16\uffff\1\u00cb",
-            "\1\u00cd",
-            "\1\u00ce",
-            "\1\u00cf",
-            "\1\u00d0\2\uffff\1\154",
-            "",
-            "\1\u00d1",
-            "\1\u00d2",
-            "\1\u00d3",
-            "",
-            "",
-            "\1\u00d4",
-            "",
-            "",
-            "\1\u009c",
-            "\1\u00d6",
-            "\1\u009f",
-            "\1\u00d8",
-            "\1\u00a0",
-            "\1\u00da",
-            "\1\u00db",
-            "\1\u00dc",
-            "",
-            "\1\u009e",
-            "",
-            "\1\u00de",
-            "",
-            "\1\u00a3",
-            "\1\u009a",
+            "\1\u00b8\1\uffff\1\u00b9",
             "\1\u00a2",
             "",
+            "\1\u00bb",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u00bc\13\uffff\1\160",
+            "\1\u00bd",
+            "\1\u00be",
+            "\1\u00c0\2\uffff\1\156",
+            "",
+            "",
+            "\1\u00c1",
+            "\1\u00c2",
+            "\1\u00c3\2\uffff\1\114",
+            "",
+            "\1\u00c4",
+            "\1\120\17\uffff\1\u00c6",
+            "",
+            "\1\u00a4\17\uffff\1\u00c7",
+            "\1\u00c8",
+            "",
+            "\1\67",
+            "\1\u00ca",
+            "\1\u00cb",
+            "\1\u00cc\2\uffff\1\122",
+            "",
+            "\1\u00cd",
+            "\1\u0083\100\uffff\1\u0083",
+            "\1\u00cf",
+            "\1\u00d1",
+            "\1\u00d2",
+            "",
+            "\1\u00d3\3\uffff\1\u0093\17\uffff\1\u00d4",
+            "",
+            "\1\u0097\17\uffff\1\u00d5",
+            "",
+            "\1\u00d6\16\uffff\1\u00d7",
+            "\1\u00d9",
+            "\1\u00da",
+            "\1\u00db",
+            "",
+            "\1\u00dc\2\uffff\1\157",
+            "",
+            "\1\u00dd",
+            "\1\u00de",
+            "\1\u00df",
+            "",
+            "",
+            "\1\u00e0",
+            "",
+            "",
+            "\1\u00a3",
+            "\1\u00e2",
+            "\1\u00a6",
+            "\1\u00e4",
+            "\1\u00a7",
+            "\1\u00e6",
+            "\1\u00e7",
+            "\1\u00e8",
+            "",
+            "\1\u00a5",
+            "",
+            "\1\u00ea",
+            "",
+            "\1\u00aa",
             "\1\u00a1",
+            "\1\u00a9",
+            "",
+            "\1\u00a8",
             "",
             "",
             ""
     };
 
-    static final short[] DFA54_eot = DFA.unpackEncodedString(DFA54_eotS);
-    static final short[] DFA54_eof = DFA.unpackEncodedString(DFA54_eofS);
-    static final char[] DFA54_min = DFA.unpackEncodedStringToUnsignedChars(DFA54_minS);
-    static final char[] DFA54_max = DFA.unpackEncodedStringToUnsignedChars(DFA54_maxS);
-    static final short[] DFA54_accept = DFA.unpackEncodedString(DFA54_acceptS);
-    static final short[] DFA54_special = DFA.unpackEncodedString(DFA54_specialS);
-    static final short[][] DFA54_transition;
+    static final short[] DFA68_eot = DFA.unpackEncodedString(DFA68_eotS);
+    static final short[] DFA68_eof = DFA.unpackEncodedString(DFA68_eofS);
+    static final char[] DFA68_min = DFA.unpackEncodedStringToUnsignedChars(DFA68_minS);
+    static final char[] DFA68_max = DFA.unpackEncodedStringToUnsignedChars(DFA68_maxS);
+    static final short[] DFA68_accept = DFA.unpackEncodedString(DFA68_acceptS);
+    static final short[] DFA68_special = DFA.unpackEncodedString(DFA68_specialS);
+    static final short[][] DFA68_transition;
 
     static {
-        int numStates = DFA54_transitionS.length;
-        DFA54_transition = new short[numStates][];
+        int numStates = DFA68_transitionS.length;
+        DFA68_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA54_transition[i] = DFA.unpackEncodedString(DFA54_transitionS[i]);
+            DFA68_transition[i] = DFA.unpackEncodedString(DFA68_transitionS[i]);
         }
     }
 
-    class DFA54 extends DFA {
+    class DFA68 extends DFA {
 
-        public DFA54(BaseRecognizer recognizer) {
+        public DFA68(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 54;
-            this.eot = DFA54_eot;
-            this.eof = DFA54_eof;
-            this.min = DFA54_min;
-            this.max = DFA54_max;
-            this.accept = DFA54_accept;
-            this.special = DFA54_special;
-            this.transition = DFA54_transition;
+            this.decisionNumber = 68;
+            this.eot = DFA68_eot;
+            this.eof = DFA68_eof;
+            this.min = DFA68_min;
+            this.max = DFA68_max;
+            this.accept = DFA68_accept;
+            this.special = DFA68_special;
+            this.transition = DFA68_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__127 | T__128 | JANUARY | FEBRUARY | MARCH | APRIL | MAY | JUNE | JULY | AUGUST | SEPTEMBER | OCTOBER | NOVEMBER | DECEMBER | SUNDAY | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | HOUR | DAY | WEEK | MONTH | YEAR | TODAY | TOMORROW | YESTERDAY | AM | PM | MILITARY_HOUR_SUFFIX | INT_60_TO_99 | INT_32_TO_59 | INT_24_TO_31 | INT_13_TO_23 | INT_01_TO_12 | INT_00 | INT_0 | INT_1_TO_9 | ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE | TEN | ELEVEN | TWELVE | THIRTEEN | FOURTEEN | FIFTEEN | SIXTEEN | SEVENTEEN | EIGHTEEN | NINETEEN | TWENTY | THIRTY | FIRST | SECOND | THIRD | FOURTH | FIFTH | SIXTH | SEVENTH | EIGHTH | NINTH | TENTH | ELEVENTH | TWELFTH | THIRTEENTH | FOURTEENTH | FIFTEENTH | SIXTEENTH | SEVENTEENTH | EIGHTEENTH | NINETEENTH | TWENTIETH | TWENTY_FIRST | TWENTY_SECOND | TWENTY_THIRD | TWENTY_FOURTH | TWENTY_FIFTH | TWENTY_SIXTH | TWENTY_SEVENTH | TWENTY_EIGHTH | TWENTY_NINTH | THIRTIETH | THIRTY_FIRST | COLON | COMMA | DASH | SLASH | DOT | SINGLE_QUOTE | IN | THE | AT | ON | OF | THIS | LAST | NEXT | PAST | COMING | UPCOMING | WHITE_SPACE );";
+            return "1:1: Tokens : ( JANUARY | FEBRUARY | MARCH | APRIL | MAY | JUNE | JULY | AUGUST | SEPTEMBER | OCTOBER | NOVEMBER | DECEMBER | SUNDAY | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | HOUR | DAY | WEEK | MONTH | YEAR | TODAY | TOMORROW | YESTERDAY | AM | PM | MILITARY_HOUR_SUFFIX | MIDNIGHT | NOON | INT_60_TO_99 | INT_32_TO_59 | INT_24_TO_31 | INT_13_TO_23 | INT_01_TO_12 | INT_00 | INT_0 | INT_1_TO_9 | ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE | TEN | ELEVEN | TWELVE | THIRTEEN | FOURTEEN | FIFTEEN | SIXTEEN | SEVENTEEN | EIGHTEEN | NINETEEN | TWENTY | THIRTY | FIRST | SECOND | THIRD | FOURTH | FIFTH | SIXTH | SEVENTH | EIGHTH | NINTH | TENTH | ELEVENTH | TWELFTH | THIRTEENTH | FOURTEENTH | FIFTEENTH | SIXTEENTH | SEVENTEENTH | EIGHTEENTH | NINETEENTH | TWENTIETH | TWENTY_FIRST | TWENTY_SECOND | TWENTY_THIRD | TWENTY_FOURTH | TWENTY_FIFTH | TWENTY_SIXTH | TWENTY_SEVENTH | TWENTY_EIGHTH | TWENTY_NINTH | THIRTIETH | THIRTY_FIRST | COLON | COMMA | DASH | SLASH | DOT | SINGLE_QUOTE | IN | THE | AT | ON | OF | THIS | LAST | NEXT | PAST | COMING | UPCOMING | FROM | NOW | AGO | BEFORE | AFTER | WHITE_SPACE );";
         }
     }
  
