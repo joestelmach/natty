@@ -20,31 +20,10 @@ public class SeekableDateTime {
   public SeekableDateTime() {
     _calendar = new GregorianCalendar();
     _calendar.setTimeZone(TimeZone.getTimeZone("US/Eastern"));
-    _calendar.roll(Calendar.HOUR, true);
-    _calendar.set(Calendar.MINUTE, 0);
-    _calendar.set(Calendar.SECOND, 0);
-    _calendar.set(Calendar.MILLISECOND, 0);
-    
-    for(String id:TimeZone.getAvailableIDs()) {
-      //System.out.println(id);
-    }
-    
-  }
-  
-  /**
-   * seeks the specified amount of days, in the specified direction
-   * @param direction the direction to seek: two possibilities 
-   *    '<' go backward 
-   *    '>' go forward
-   *    
-   * @param amount the amount to seek.  should be guaranteed to parse as an integer
-   */
-  public void seek(String direction, String seekAmount) {
-    int seekAmountInt = Integer.parseInt(seekAmount);
-    assert(direction.equals("<") || direction.equals(">"));
-    
-    int sign = direction.equals(">") ? 1 : -1;
-    _calendar.add(Calendar.DAY_OF_YEAR, seekAmountInt * sign);
+    //_calendar.set(Calendar.HOUR, _calendar.get(Calendar.HOUR) + 1);
+    //_calendar.set(Calendar.MINUTE, 0);
+    //_calendar.set(Calendar.SECOND, 0);
+    //_calendar.set(Calendar.MILLISECOND, 0);
   }
   
   /**
@@ -66,6 +45,7 @@ public class SeekableDateTime {
    *     1 to 7 (1 being Sunday, 7 being Saturday.) Must be guaranteed to parse as an Integer
    */
   public void seekToDayOfWeek(String direction, String seekType, String seekAmount, String dayOfWeek) {
+    System.out.println("seeking to day: " + direction + " " + " " + seekType + " " + seekAmount + " " + dayOfWeek);
     int dayOfWeekInt = Integer.parseInt(dayOfWeek);
     int seekAmountInt = Integer.parseInt(seekAmount);
     assert(direction.equals("<") || direction.equals(">"));
@@ -87,7 +67,9 @@ public class SeekableDateTime {
       } while(_calendar.get(Calendar.DAY_OF_WEEK) != dayOfWeekInt);
       
       // now add/subtract any additional days
-      _calendar.add(Calendar.WEEK_OF_YEAR, (seekAmountInt - 1) * sign);
+      if(seekAmountInt > 0) {
+        _calendar.add(Calendar.WEEK_OF_YEAR, (seekAmountInt - 1) * sign);
+      }
     }
   }
   
@@ -104,6 +86,7 @@ public class SeekableDateTime {
    *     between 1 and 12 
    */
   public void seekToMonth(String direction, String seekAmount, String month) {
+    System.out.println("seeking: " + direction + " " + seekAmount + " " + month);
     int seekAmountInt = Integer.parseInt(seekAmount);
     int monthInt = Integer.parseInt(month);
     assert(direction.equals("<") || direction.equals(">"));
@@ -156,10 +139,8 @@ public class SeekableDateTime {
    *     
    * @param year the year to set (optional).  If present, must be guaranteed to 
    *     parse as an integer between 0 and 9999
-   *     
-   * @param era the time era to set (optional) If present, must either be 'bc' or 'ad'
    */
-  public void setExplicitDate(String month, String day, String year, String era) {
+  public void setExplicitDate(String month, String day, String year) {
     int monthInt = Integer.parseInt(month);
     assert(monthInt > 0 && monthInt <= 12);
     
@@ -172,15 +153,9 @@ public class SeekableDateTime {
       assert(yearInt > 0 && yearInt < 9999);
     }
     
-    if(era != null) {
-      assert(era.equals("bc") || era.equals("ad"));
-    }
-    
     _calendar.set(Calendar.MONTH, monthInt - 1);
     _calendar.set(Calendar.DAY_OF_MONTH, dayInt);
     if(yearInt > 0) _calendar.set(Calendar.YEAR, yearInt);
-    if(era != null) _calendar.set(Calendar.ERA, era.equals("bc") ? 
-        GregorianCalendar.BC : GregorianCalendar.AD);
   }
   
   /**

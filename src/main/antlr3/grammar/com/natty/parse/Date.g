@@ -46,24 +46,19 @@ time_date_separator
   ;
 
 date
-  : global_date_prefix formal_date
-      -> ^(RELATIVE_DATE ^(SEEK global_date_prefix formal_date))
-      
-  | global_date_prefix relaxed_date
-      -> ^(RELATIVE_DATE ^(SEEK global_date_prefix relaxed_date))
-      
-  | global_date_prefix relative_date
-      -> ^(RELATIVE_DATE ^(SEEK global_date_prefix relative_date))
-      
-  | (formal_date | relaxed_date | relative_date)
+  : (relaxed_date)=> relaxed_date
+  | formal_date
+  | relative_date
+  | global_date_prefix date 
+      -> ^(RELATIVE_DATE ^(SEEK global_date_prefix date))
   ;
   
 global_date_prefix
   : (THE WHITE_SPACE)? DAY WHITE_SPACE AFTER WHITE_SPACE 
-      -> DIRECTION[">"] INT["1"]
+      -> DIRECTION[">"] SEEK_BY["by_day"] INT["1"]
       
   | (THE WHITE_SPACE)? DAY WHITE_SPACE BEFORE WHITE_SPACE
-      -> DIRECTION["<"] INT["1"]
+      -> DIRECTION["<"] SEEK_BY["by_day"] INT["1"]
   ;
   
 // ********** relaxed date rules **********
@@ -81,6 +76,7 @@ relaxed_date
         relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year
     
       | (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month
+      
       | (THE WHITE_SPACE)? relaxed_month WHITE_SPACE relaxed_day_of_month
     ) -> ^(EXPLICIT_DATE relaxed_month relaxed_day_of_month relaxed_year?)
   ;
@@ -157,18 +153,30 @@ formal_date_separator
 // ********** relative date rules **********
   
 relative_date
-  : relative_prefix WHITE_SPACE relative_target 
-      -> ^(RELATIVE_DATE ^(SEEK relative_prefix) relative_target)
+  : relative_prefix WHITE_SPACE relative_target 's'?
+      -> ^(RELATIVE_DATE ^(SEEK relative_prefix relative_target))
+      
+  | implicit_prefix WHITE_SPACE relative_target 
+      -> ^(RELATIVE_DATE ^(SEEK implicit_prefix relative_target))
+      
+  // a relative target with no prefix has an implicit seek of 0
+  | relative_target
+      -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] relative_target))
       
   | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
-      -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix) relative_target)
+      -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix relative_target))
       
   | named_relative_date 
   ;
   
 relative_target
   : day_of_week 
+  | relaxed_month
   | relative_date_span
+  ;
+  
+implicit_prefix
+  : THIS -> DIRECTION[">"] SEEK_BY["by_day"] INT["0"]
   ;
   
 relative_prefix
@@ -204,9 +212,9 @@ day_of_week
   ;
   
 named_relative_date
-  : TODAY     -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] INT["0"]))
-  | TOMORROW  -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] INT["1"]))
-  | YESTERDAY -> ^(RELATIVE_DATE ^(SEEK DIRECTION["<"] INT["1"]))
+  : TODAY     -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"]))
+  | TOMORROW  -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["1"] SPAN["day"]))
+  | YESTERDAY -> ^(RELATIVE_DATE ^(SEEK DIRECTION["<"] SEEK_BY["by_day"] INT["1"] SPAN["day"]))
   ;
   
 // ********** time rules **********

@@ -2,7 +2,7 @@ gunit Date;
 @header{package com.natty.parse;}
 
 date_time:
-"seven years ago at 3pm" -> (DATE_TIME (RELATIVE_DATE (SEEK < by_day 7) year) (EXPLICIT_TIME (HOURS_OF_DAY 3) (MINUTES_OF_HOUR 0) pm))
+"seven years ago at 3pm" -> (DATE_TIME (RELATIVE_DATE (SEEK < by_day 7 year)) (EXPLICIT_TIME (HOURS_OF_DAY 3) (MINUTES_OF_HOUR 0) pm))
 "1st oct in the year '89 1300 hours" -> (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 89)) (EXPLICIT_TIME (HOURS_OF_DAY 13) (MINUTES_OF_HOUR 00)))
 "1st oct in the year '89 at 1300 hours" -> (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 89)) (EXPLICIT_TIME (HOURS_OF_DAY 13) (MINUTES_OF_HOUR 00)))
 "1st oct in the year '89, 13:00" -> (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 89)) (EXPLICIT_TIME (HOURS_OF_DAY 13) (MINUTES_OF_HOUR 00)))
@@ -29,17 +29,18 @@ time_date_separator:
 " on " OK
 
 date:
-"the day before yesterday" -> (RELATIVE_DATE (SEEK < 1 (RELATIVE_DATE (SEEK < 1))))
+"the day before yesterday" -> (RELATIVE_DATE (SEEK < by_day 1 (RELATIVE_DATE (SEEK < by_day 1 day))))
 "1st oct in the year '89" -> (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 89))
 "2009-10-10" -> (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 10) (YEAR_OF 2009))
-"seven years ago" ->(RELATIVE_DATE (SEEK < by_day 7) year)
-"next monday" -> (RELATIVE_DATE (SEEK > by_week 1) (DAY_OF_WEEK 2))
+"seven years ago" ->(RELATIVE_DATE (SEEK < by_day 7 year))
+"next monday" -> (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 2)))
+//"the day before the day before yesterday" -> 
 
 global_date_prefix:
-"the day after " -> "> 1"
-"day after " -> "> 1"
-"the day before " -> "< 1"
-"day before " -> "< 1"
+"the day after " -> "> by_day 1"
+"day after " -> "> by_day 1"
+"the day before " -> "< by_day 1"
+"day before " -> "< by_day 1"
 
 // ********** relaxed date tests **********
 
@@ -229,33 +230,33 @@ formal_date_separator:
 // ********** relative date tests **********
 
 relative_date:
-"yesterday" -> (RELATIVE_DATE (SEEK < 1))
-"tomorrow" ->(RELATIVE_DATE (SEEK > 1))
-"in 3 days" ->(RELATIVE_DATE (SEEK > by_day 3) day)
-"3 days ago" ->(RELATIVE_DATE (SEEK < by_day 3) day)
-"in 3 weeks" ->(RELATIVE_DATE (SEEK > by_day 3) week)
-"four weeks ago" ->(RELATIVE_DATE (SEEK < by_day 4) week)
-"in 3 months" ->(RELATIVE_DATE (SEEK > by_day 3) month)
-"three months ago" ->(RELATIVE_DATE (SEEK < by_day 3) month)
-"in 3 years" ->(RELATIVE_DATE (SEEK > by_day 3) year)
-"seven years ago" ->(RELATIVE_DATE (SEEK < by_day 7) year)
-"next monday" -> (RELATIVE_DATE (SEEK > by_week 1) (DAY_OF_WEEK 2))
-"next mon" -> (RELATIVE_DATE (SEEK > by_week 1) (DAY_OF_WEEK 2))
-"4 mondays from now" -> (RELATIVE_DATE (SEEK > by_day 4) (DAY_OF_WEEK 2))
-"next weekend" -> (RELATIVE_DATE (SEEK > by_week 1) (DAY_OF_WEEK 7))
-"six mondays ago" -> (RELATIVE_DATE (SEEK < by_day 6) (DAY_OF_WEEK 2))
-"last monday" -> (RELATIVE_DATE (SEEK < by_week 1) (DAY_OF_WEEK 2))
-"last mon" -> (RELATIVE_DATE (SEEK < by_week 1) (DAY_OF_WEEK 2))
-"this past mon" -> (RELATIVE_DATE (SEEK < by_day 1) (DAY_OF_WEEK 2))
-"this coming mon" -> (RELATIVE_DATE (SEEK > by_day 1) (DAY_OF_WEEK 2))
-"this upcoming mon" -> (RELATIVE_DATE (SEEK > by_day 1) (DAY_OF_WEEK 2))
-"next thurs" -> (RELATIVE_DATE (SEEK > by_week 1) (DAY_OF_WEEK 5))
-"next month" -> (RELATIVE_DATE (SEEK > by_week 1) month)
-"last month" -> (RELATIVE_DATE (SEEK < by_week 1) month)
-"next week" -> (RELATIVE_DATE (SEEK > by_week 1) week)
-"last week" -> (RELATIVE_DATE (SEEK < by_week 1) week)
-"next year" -> (RELATIVE_DATE (SEEK > by_week 1) year)
-"last year" -> (RELATIVE_DATE (SEEK < by_week 1) year)
+"yesterday" -> (RELATIVE_DATE (SEEK < by_day 1 day))
+"tomorrow" ->(RELATIVE_DATE (SEEK > by_day 1 day))
+"in 3 days" ->(RELATIVE_DATE (SEEK > by_day 3 day))
+"3 days ago" ->(RELATIVE_DATE (SEEK < by_day 3 day))
+"in 3 weeks" ->(RELATIVE_DATE (SEEK > by_day 3 week))
+"four weeks ago" ->(RELATIVE_DATE (SEEK < by_day 4 week))
+"in 3 months" ->(RELATIVE_DATE (SEEK > by_day 3 month))
+"three months ago" ->(RELATIVE_DATE (SEEK < by_day 3 month))
+"in 3 years" ->(RELATIVE_DATE (SEEK > by_day 3 year))
+"seven years ago" ->(RELATIVE_DATE (SEEK < by_day 7 year))
+"next monday" -> (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 2)))
+"next mon" -> (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 2)))
+"4 mondays from now" -> (RELATIVE_DATE (SEEK > by_day 4 (DAY_OF_WEEK 2)))
+"next weekend" -> (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 7)))
+"six mondays ago" -> (RELATIVE_DATE (SEEK < by_day 6 (DAY_OF_WEEK 2)))
+"last monday" -> (RELATIVE_DATE (SEEK < by_week 1 (DAY_OF_WEEK 2)))
+"last mon" -> (RELATIVE_DATE (SEEK < by_week 1 (DAY_OF_WEEK 2)))
+"this past mon" -> (RELATIVE_DATE (SEEK < by_day 1 (DAY_OF_WEEK 2)))
+"this coming mon" -> (RELATIVE_DATE (SEEK > by_day 1 (DAY_OF_WEEK 2)))
+"this upcoming mon" -> (RELATIVE_DATE (SEEK > by_day 1 (DAY_OF_WEEK 2)))
+"next thurs" -> (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 5)))
+"next month" -> (RELATIVE_DATE (SEEK > by_week 1 month))
+"last month" -> (RELATIVE_DATE (SEEK < by_week 1 month))
+"next week" -> (RELATIVE_DATE (SEEK > by_week 1 week))
+"last week" -> (RELATIVE_DATE (SEEK < by_week 1 week))
+"next year" -> (RELATIVE_DATE (SEEK > by_week 1 year))
+"last year" -> (RELATIVE_DATE (SEEK < by_week 1 year))
 
 relative_target:
 "sunday"     -> (DAY_OF_WEEK 1)
@@ -289,6 +290,9 @@ relative_target:
 "months" -> "month"
 "year" -> "year"
 "years" -> "year"
+
+implicit_prefix:
+"this"          -> "> by_day 0"
 
 relative_prefix:
 "this last"     -> "< by_week 1"
@@ -346,12 +350,12 @@ day_of_week:
 "sat"        -> (DAY_OF_WEEK 7)
 
 named_relative_date:
-"today"     -> (RELATIVE_DATE (SEEK > 0))
-"tomorow"   -> (RELATIVE_DATE (SEEK > 1))
-"tomorrow"  -> (RELATIVE_DATE (SEEK > 1))
-"tommorow"  -> (RELATIVE_DATE (SEEK > 1))
-"tommorrow" -> (RELATIVE_DATE (SEEK > 1))
-"yesterday" -> (RELATIVE_DATE (SEEK < 1))
+"today"     -> (RELATIVE_DATE (SEEK > by_day 0 day))
+"tomorow"   -> (RELATIVE_DATE (SEEK > by_day 1 day))
+"tomorrow"  -> (RELATIVE_DATE (SEEK > by_day 1 day))
+"tommorow"  -> (RELATIVE_DATE (SEEK > by_day 1 day))
+"tommorrow" -> (RELATIVE_DATE (SEEK > by_day 1 day))
+"yesterday" -> (RELATIVE_DATE (SEEK < by_day 1 day))
 
 // ********** time tests **********
 time:

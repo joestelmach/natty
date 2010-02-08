@@ -2,10 +2,12 @@ package com.natty.parse;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.Date;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
 
 import com.natty.utility.Printer;
@@ -21,7 +23,7 @@ public class ParserTest {
     //Date date = Parser.parseDate("oct 1");
     //System.out.println(date);
     
-    String inputString = "1st oct in the year '89, 1300 hours";
+    String inputString = "the day after the day after tomorrow";
     ANTLRInputStream input = null;
     try {
       // lex
@@ -37,18 +39,18 @@ public class ParserTest {
       System.out.println(tree.toStringTree());
       
       // walk
-      /*
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
       DateWalker walker = new DateWalker(nodes);
-      walker.datetime();
-      //date = walker.getDate();
-      */
+      walker.date_time();
+      
       Printer printer = new Printer(_parser.getTokenNames());
       printer.printTokenStream(tokens);
       printer.printTree(tree);
       
-      
+      Date date = walker.getDate();
+      System.out.println("");
+      System.out.println(date);
     } catch (IOException e) {
       e.printStackTrace();
       

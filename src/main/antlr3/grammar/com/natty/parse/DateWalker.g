@@ -8,59 +8,40 @@ options {
 @header { package com.natty.parse; }
 
 @members {
-  SeekableDateTime dateTime = new SeekableDateTime();
+  SeekableDateTime parserState = new SeekableDateTime();
   
   public java.util.Date getDate() {
-    return dateTime.getDate(); 
+    return parserState.getDate(); 
   }
 }
 
-datetime 
-  : ^(DATE_TIME date time?) 
-  ;
-
+  
+date_time
+  : ^(DATE_TIME date? time?)
+  ;  
+  
 date
-  : relative_date 
-  | explicit_date
+  : relative_date
+  ;
+  
+relative_date
+  : ^(RELATIVE_DATE seek)
   ;
   
 time
-  : explicit_time
+  : ^(EXPLICIT_TIME ^(HOURS_OF_DAY INT) ^(MINUTES_OF_HOUR INT) AM_PM?)
   ;
-
-explicit_date
-  : ^(EXPLICIT_DATE MONTH DAY_OF_MONTH YEAR? ERA?)
-    {dateTime.setExplicitDate($MONTH.text, $DAY_OF_MONTH.text, $YEAR.text, $ERA.text);}
-  ;
-
-relative_date
-  // a date relative to another relative date
-  : ^(RELATIVE_DATE SEEK_DIRECTION RELATIVE_DATE) 
   
-  // a date relative to an explicit date
-  | ^(RELATIVE_DATE SEEK_DIRECTION EXPLICIT_DATE) 
-  
-  // a direction and number of days to seek
-  | ^(RELATIVE_DATE SEEK_DIRECTION INTEGER) 
-    {dateTime.seek($SEEK_DIRECTION.text, $INTEGER.text);}
-  
-  // a direction, seek type (day to day, or a week at a time), an amount to seek by, 
-  // and a day of week to seek to
-  | ^(RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER DAY_OF_WEEK) 
-    {dateTime.seekToDayOfWeek($SEEK_DIRECTION.text, $SEEK_TYPE.text, $INTEGER.text, $DAY_OF_WEEK.text);}
+seek
+  : ^(SEEK DIRECTION by=SEEK_BY amount=INT ^(DAY_OF_WEEK day=INT))
+    {parserState.seekToDayOfWeek($DIRECTION.text, $by.text, $amount.text, $day.text);}
     
-  // a direction, seek type (which is ignored in this case) an amount to seek by, 
-  // and an amount multipler span of time (day, week, month, year)
-  | ^(RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER SPAN) 
-    {dateTime.seekBySpan($SEEK_DIRECTION.text, $INTEGER.text, $SPAN.text);}
+  | ^(SEEK DIRECTION SEEK_BY amount=INT ^(MONTH_OF_YEAR month=INT))
+    {parserState.seekToMonth($DIRECTION.text, $amount.text, $month.text);}
   
-  // a direction, seek type (which is ignored in this case) an amount to seek by, 
-  // and a month to seek to
-  | ^(RELATIVE_DATE SEEK_DIRECTION SEEK_TYPE INTEGER MONTH) 
-    {dateTime.seekToMonth($SEEK_DIRECTION.text, $INTEGER.text, $MONTH.text);}
-  ;
+  | ^(SEEK DIRECTION SEEK_BY INT SPAN)
+    {parserState.seekBySpan($DIRECTION.text, $INT.text, $SPAN.text);}
   
-explicit_time 
-  : ^(EXPLICIT_TIME HOURS MINUTES AM_PM?)
-    {dateTime.setExplicitTime($HOURS.text, $MINUTES.text, $AM_PM.text);}
+  | ^(SEEK DIRECTION SEEK_BY INT date)
+    {parserState.seekBySpan($DIRECTION.text, $INT.text, "day");}
   ;

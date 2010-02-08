@@ -35,7 +35,7 @@ public class Parser {
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
       DateWalker walker = new DateWalker(nodes);
-      walker.datetime();
+      walker.date_time();
       date = walker.getDate();
       
     } catch (IOException e) {
