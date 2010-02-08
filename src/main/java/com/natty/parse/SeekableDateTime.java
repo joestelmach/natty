@@ -22,8 +22,8 @@ public class SeekableDateTime {
     _calendar.setTimeZone(TimeZone.getTimeZone("US/Eastern"));
     //_calendar.set(Calendar.HOUR, _calendar.get(Calendar.HOUR) + 1);
     //_calendar.set(Calendar.MINUTE, 0);
-    //_calendar.set(Calendar.SECOND, 0);
-    //_calendar.set(Calendar.MILLISECOND, 0);
+    _calendar.set(Calendar.SECOND, 0);
+    _calendar.set(Calendar.MILLISECOND, 0);
   }
   
   /**
@@ -141,6 +141,7 @@ public class SeekableDateTime {
    *     parse as an integer between 0 and 9999
    */
   public void setExplicitDate(String month, String day, String year) {
+	System.out.println("setting explicit date");
     int monthInt = Integer.parseInt(month);
     assert(monthInt > 0 && monthInt <= 12);
     

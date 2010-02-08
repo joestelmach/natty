@@ -22,14 +22,28 @@ date_time
   
 date
   : relative_date
+  | explicit_date
   ;
   
 relative_date
   : ^(RELATIVE_DATE seek)
   ;
   
+relaxed_date
+  : ^(RELATIVE_DATE seek)
+  ;
+  
+explicit_date
+  : ^(EXPLICIT_DATE ^(MONTH_OF_YEAR month=INT) ^(DAY_OF_MONTH day=INT))
+    {parserState.setExplicitDate($month.text, $day.text, null);}
+    
+  | ^(EXPLICIT_DATE ^(MONTH_OF_YEAR month=INT) ^(DAY_OF_MONTH day=INT) ^(YEAR_OF year=INT))
+    {parserState.setExplicitDate($month.text, $day.text, $year.text);}
+  ;
+  
 time
-  : ^(EXPLICIT_TIME ^(HOURS_OF_DAY INT) ^(MINUTES_OF_HOUR INT) AM_PM?)
+  : ^(EXPLICIT_TIME ^(HOURS_OF_DAY hours=INT) ^(MINUTES_OF_HOUR minutes=INT) AM_PM?)
+    {parserState.setExplicitTime($hours.text, $minutes.text, $AM_PM.text);}
   ;
   
 seek
