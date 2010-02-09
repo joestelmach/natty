@@ -5,19 +5,21 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
+import org.antlr.runtime.tree.CommonTree;
+
 /**
  * Represents a seek-able date and time.
  * @author Joe Stelmach
  *
  */
-public class SeekableDateTime {
+public class ParserState {
   private GregorianCalendar _calendar;
   
   /**
    * Creates a new SeekableDateTime representing the start of u
    * the next hour from the current time
    */
-  public SeekableDateTime() {
+  public ParserState() {
     _calendar = new GregorianCalendar();
     _calendar.setTimeZone(TimeZone.getTimeZone("US/Eastern"));
     //_calendar.set(Calendar.HOUR, _calendar.get(Calendar.HOUR) + 1);
@@ -45,7 +47,6 @@ public class SeekableDateTime {
    *     1 to 7 (1 being Sunday, 7 being Saturday.) Must be guaranteed to parse as an Integer
    */
   public void seekToDayOfWeek(String direction, String seekType, String seekAmount, String dayOfWeek) {
-    System.out.println("seeking to day: " + direction + " " + " " + seekType + " " + seekAmount + " " + dayOfWeek);
     int dayOfWeekInt = Integer.parseInt(dayOfWeek);
     int seekAmountInt = Integer.parseInt(seekAmount);
     assert(direction.equals("<") || direction.equals(">"));
@@ -86,7 +87,6 @@ public class SeekableDateTime {
    *     between 1 and 12 
    */
   public void seekToMonth(String direction, String seekAmount, String month) {
-    System.out.println("seeking: " + direction + " " + seekAmount + " " + month);
     int seekAmountInt = Integer.parseInt(seekAmount);
     int monthInt = Integer.parseInt(month);
     assert(direction.equals("<") || direction.equals(">"));
@@ -141,7 +141,6 @@ public class SeekableDateTime {
    *     parse as an integer between 0 and 9999
    */
   public void setExplicitDate(String month, String day, String year) {
-	System.out.println("setting explicit date");
     int monthInt = Integer.parseInt(month);
     assert(monthInt > 0 && monthInt <= 12);
     
@@ -191,6 +190,24 @@ public class SeekableDateTime {
     }
     
     _calendar.set(Calendar.MINUTE, minutesInt);
+  }
+  
+  /**
+   * Sets the date's start token position and length 
+   * @param startToken
+   * @param length
+   */
+  public void setDatePosition(CommonTree startNode, int length) {
+    startNode.getToken();
+    //int endIndex = startIndex + length;
+    //System.out.println(startIndex + " - " + endIndex);
+  }
+  
+  public void setTimePosition(CommonTree startNode, int length) {
+    startNode.getToken();
+    
+    //int endIndex = startIndex + length;
+    //System.out.println(startIndex + " - " + endIndex);
   }
   
   /**

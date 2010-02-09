@@ -23,7 +23,7 @@ public class ParserTest {
     //Date date = Parser.parseDate("oct 1");
     //System.out.println(date);
     
-    String inputString = "10/10/2008 3:45am";
+    String inputString = "next wed. at 5pm";
     ANTLRInputStream input = null;
     try {
       // lex
@@ -36,7 +36,7 @@ public class ParserTest {
       _parser = new DateParser(tokens);
       DateParser.date_time_return result = _parser.date_time();
       Tree tree = (Tree) result.getTree();
-      System.out.println(tree.toStringTree());
+      //System.out.println(tree.toStringTree());
       
       // walk
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
@@ -44,12 +44,12 @@ public class ParserTest {
       DateWalker walker = new DateWalker(nodes);
       walker.date_time();
       
-      Printer printer = new Printer(_parser.getTokenNames());
-      printer.printTokenStream(tokens);
-      printer.printTree(tree);
+      //Printer printer = new Printer(_parser.getTokenNames());
+      //printer.printTokenStream(tokens);
+      //printer.printTree(tree);
       
-      Date date = walker.getDate();
-      System.out.println("");
+      Date date = walker.getState().getDate();
+      //System.out.println("");
       System.out.println(date);
     } catch (IOException e) {
       e.printStackTrace();

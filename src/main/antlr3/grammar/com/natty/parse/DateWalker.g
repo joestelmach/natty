@@ -8,20 +8,22 @@ options {
 @header { package com.natty.parse; }
 
 @members {
-  SeekableDateTime parserState = new SeekableDateTime();
+  ParserState parserState = new ParserState();
   
-  public java.util.Date getDate() {
-    return parserState.getDate(); 
+  public ParserState getState() {
+    return parserState;
   }
 }
 
-  
 date_time
+  @after {
+    System.out.println("found date: " + $date_time.text);
+  }
   : ^(DATE_TIME date? time?)
   ;  
   
 date
-  : relative_date
+  : relative_date 
   | explicit_date
   ;
   

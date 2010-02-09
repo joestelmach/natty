@@ -390,13 +390,13 @@ OCTOBER   : 'october'   | 'oct' DOT?;
 NOVEMBER  : 'november'  | 'nov' DOT?;
 DECEMBER  : 'december'  | 'dec' DOT?;
   
-SUNDAY    : 'sunday'    | 'sundays'    | 'sun'  | 'suns';
-MONDAY    : 'monday'    | 'mondays'    | 'mon'  | 'mons';
-TUESDAY   : 'tuesday'   | 'tuesdays'   | 'tues' | 'tue';
-WEDNESDAY : 'wednesday' | 'wednesdays' | 'wed'  | 'weds';
-THURSDAY  : 'thursday'  | 'thursdays'  | 'thur' | 'thu' | 'thus' | 'thurs';
-FRIDAY    : 'friday'    | 'fridays'    | 'fri'  | 'fris';
-SATURDAY  : 'saturday'  | 'saturdays'  | 'sat'  | 'sats' | 'weekend';
+SUNDAY    : 'sunday'    | 'sundays'    | 'sun' DOT?  | 'suns' DOT?;
+MONDAY    : 'monday'    | 'mondays'    | 'mon' DOT?  | 'mons' DOT?;
+TUESDAY   : 'tuesday'   | 'tuesdays'   | 'tues' DOT? | 'tue' DOT?;
+WEDNESDAY : 'wednesday' | 'wednesdays' | 'wed' DOT?  | 'weds' DOT?;
+THURSDAY  : 'thursday'  | 'thursdays'  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thurs' DOT?;
+FRIDAY    : 'friday'    | 'fridays'    | 'fri' DOT?  | 'fris' DOT?;
+SATURDAY  : 'saturday'  | 'saturdays'  | 'sat' DOT?  | 'sats' DOT?  | 'weekend';
 
 HOUR  : 'hour'  | 'hours' ;
 DAY   : 'day'   | 'days' ;

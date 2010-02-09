@@ -2,6 +2,7 @@ gunit Date;
 @header{package com.natty.parse;}
 
 date_time:
+" " FAIL
 "seven years ago at 3pm" -> (DATE_TIME (RELATIVE_DATE (SEEK < by_day 7 year)) (EXPLICIT_TIME (HOURS_OF_DAY 3) (MINUTES_OF_HOUR 0) pm))
 "1st oct in the year '89 1300 hours" -> (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 89)) (EXPLICIT_TIME (HOURS_OF_DAY 13) (MINUTES_OF_HOUR 00)))
 "1st oct in the year '89 at 1300 hours" -> (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 89)) (EXPLICIT_TIME (HOURS_OF_DAY 13) (MINUTES_OF_HOUR 00)))
@@ -13,6 +14,7 @@ date_time:
 "3am,october first 2010" -> (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 2010)) (EXPLICIT_TIME (HOURS_OF_DAY 3) (MINUTES_OF_HOUR 0) am))
 "3am, on october first 2010" -> (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 2010)) (EXPLICIT_TIME (HOURS_OF_DAY 3) (MINUTES_OF_HOUR 0) am))
 "3am october first 2010" -> (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 2010)) (EXPLICIT_TIME (HOURS_OF_DAY 3) (MINUTES_OF_HOUR 0) am))
+"next wed. at 5pm" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))) (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0) pm))
 
 date_time_separator:
 "," OK
@@ -328,26 +330,35 @@ day_of_week:
 "sunday"     -> (DAY_OF_WEEK 1)
 "sundays"    -> (DAY_OF_WEEK 1)
 "sun"        -> (DAY_OF_WEEK 1)
+"sun."        -> (DAY_OF_WEEK 1)
 "monday"     -> (DAY_OF_WEEK 2)
 "mondays"    -> (DAY_OF_WEEK 2)
 "mon"        -> (DAY_OF_WEEK 2)
+"mon."        -> (DAY_OF_WEEK 2)
 "tuesday"    -> (DAY_OF_WEEK 3)
 "tuesdays"   -> (DAY_OF_WEEK 3)
 "tues"       -> (DAY_OF_WEEK 3)
+"tues."       -> (DAY_OF_WEEK 3)
 "tue"        -> (DAY_OF_WEEK 3)
+"tue."        -> (DAY_OF_WEEK 3)
 "wednesday"  -> (DAY_OF_WEEK 4)
 "wednesdays" -> (DAY_OF_WEEK 4)
 "wed"        -> (DAY_OF_WEEK 4)
+"wed."        -> (DAY_OF_WEEK 4)
 "thursday"   -> (DAY_OF_WEEK 5)
 "thursdays"  -> (DAY_OF_WEEK 5)
 "thur"       -> (DAY_OF_WEEK 5)
+"thur."       -> (DAY_OF_WEEK 5)
 "thu"        -> (DAY_OF_WEEK 5)
+"thu."        -> (DAY_OF_WEEK 5)
 "friday"     -> (DAY_OF_WEEK 6)
 "fridays"    -> (DAY_OF_WEEK 6)
 "fri"        -> (DAY_OF_WEEK 6)
+"fri."        -> (DAY_OF_WEEK 6)
 "saturday"   -> (DAY_OF_WEEK 7)
 "saturdays"  -> (DAY_OF_WEEK 7)
 "sat"        -> (DAY_OF_WEEK 7)
+"sat."        -> (DAY_OF_WEEK 7)
 
 named_relative_date:
 "today"     -> (RELATIVE_DATE (SEEK > by_day 0 day))
