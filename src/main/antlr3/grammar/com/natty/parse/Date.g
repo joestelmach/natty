@@ -25,24 +25,20 @@ tokens {
 
 @header        { package com.natty.parse; }
 @lexer::header { package com.natty.parse; }
+search 
+  : date_time
+  ;
+  //;
+  ////catch [RecognitionException re] {
+    //reportError(re);
+    //input.consume(); // eat the ';'
+  //}
 
-search
-  : (
-      ((date_time WHITE_SPACE text)+) => (date_time text)+
-      | ((text date_time WHITE_SPACE?)+) => (text date_time)+
-      | date_time
-    ) -> date_time+
-  ;
-  
-text
-  : (STRING WHITE_SPACE)+
-  ;
-  
 date_time
   @after {
     int startIndex = $date_time.start.getCharPositionInLine();
     int endIndex = startIndex + $date_time.text.length();
-    System.out.println("found " + $date_time.text + " at " + startIndex + " - " + endIndex); 
+    //System.out.println("found " + $date_time.text + " at " + startIndex + " - " + endIndex); 
   }
   : (
       (date (date_time_separator time)?)=>
@@ -187,6 +183,10 @@ relative_date
       
   | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
       -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix relative_target))
+      
+      
+  // TODO add tree
+  | THE? WHITE_SPACE LAST WHITE_SPACE day_of_week WHITE_SPACE IN WHITE_SPACE relaxed_month
       
   | named_relative_date 
   ;
@@ -562,6 +562,6 @@ WHITE_SPACE
   : (' ' | '\t' | '\n' | '\r')+
   ;
   
-STRING
-  : ('a'..'z' | 'A'..'Z')+
+UNKNOWN
+  : . {$channel=HIDDEN;}
   ;

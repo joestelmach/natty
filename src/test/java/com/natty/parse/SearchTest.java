@@ -23,7 +23,7 @@ public class SearchTest {
     //Date date = Parser.parseDate("oct 1");
     //System.out.println(date);
     
-    String inputString = "3 days after next wed and then again with will on  10/10/2009";
+    String inputString = "will foo bar 10/10/2009 asdf";
     ANTLRInputStream input = null;
     try {
       // lex
