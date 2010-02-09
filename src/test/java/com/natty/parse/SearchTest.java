@@ -17,13 +17,13 @@ import com.natty.utility.Printer;
  * 
  * @author Joe Stelmach
  */
-public class ParserTest {
+public class SearchTest {
   private static DateParser _parser;
   public static void main(String[] args) throws Exception {
     //Date date = Parser.parseDate("oct 1");
     //System.out.println(date);
     
-    String inputString = "3 days after next wed";
+    String inputString = "3 days after next wed and then again with will on  10/10/2009";
     ANTLRInputStream input = null;
     try {
       // lex
@@ -34,7 +34,7 @@ public class ParserTest {
       // parse 
       input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
       _parser = new DateParser(tokens);
-      DateParser.date_time_return result = _parser.date_time();
+      DateParser.search_return result = _parser.search();
       Tree tree = (Tree) result.getTree();
       //System.out.println(tree.toStringTree());
       

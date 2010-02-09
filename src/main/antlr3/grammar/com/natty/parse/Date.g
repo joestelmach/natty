@@ -26,7 +26,24 @@ tokens {
 @header        { package com.natty.parse; }
 @lexer::header { package com.natty.parse; }
 
+search
+  : (
+      ((date_time WHITE_SPACE text)+) => (date_time text)+
+      | ((text date_time WHITE_SPACE?)+) => (text date_time)+
+      | date_time
+    ) -> date_time+
+  ;
+  
+text
+  : (STRING WHITE_SPACE)+
+  ;
+  
 date_time
+  @after {
+    int startIndex = $date_time.start.getCharPositionInLine();
+    int endIndex = startIndex + $date_time.text.length();
+    System.out.println("found " + $date_time.text + " at " + startIndex + " - " + endIndex); 
+  }
   : (
       (date (date_time_separator time)?)=>
         date (date_time_separator time)?
@@ -54,11 +71,16 @@ date
   ;
   
 global_date_prefix
-  : (THE WHITE_SPACE)? DAY WHITE_SPACE AFTER WHITE_SPACE 
-      -> DIRECTION[">"] SEEK_BY["by_day"] INT["1"]
-      
-  | (THE WHITE_SPACE)? DAY WHITE_SPACE BEFORE WHITE_SPACE
-      -> DIRECTION["<"] SEEK_BY["by_day"] INT["1"]
+  : (THE WHITE_SPACE)? DAY WHITE_SPACE prefix_direction WHITE_SPACE 
+      -> prefix_direction SEEK_BY["by_day"] INT["1"]
+  
+  | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE DAY WHITE_SPACE prefix_direction WHITE_SPACE
+      -> prefix_direction SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix
+  ; 
+  
+prefix_direction
+  : AFTER  -> DIRECTION[">"]
+  | BEFORE -> DIRECTION["<"]
   ;
   
 // ********** relaxed date rules **********
@@ -113,7 +135,7 @@ relaxed_year
   ;
   
 relaxed_year_prefix
-  : (COMMA WHITE_SPACE? | WHITE_SPACE) (IN WHITE_SPACE THE WHITE_SPACE YEAR WHITE_SPACE)? 
+  : (COMMA WHITE_SPACE? | WHITE_SPACE) (IN WHITE_SPACE THE WHITE_SPACE YEAR WHITE_SPACE)?
   ; 
   
 // ********** formal date rules **********
@@ -224,7 +246,7 @@ time
   : hours COLON? minutes (WHITE_SPACE? (meridian_indicator | (MILITARY_HOUR_SUFFIX | HOUR)))?
       -> ^(EXPLICIT_TIME hours minutes meridian_indicator?)
       
-  | hours WHITE_SPACE? meridian_indicator?
+  | hours (WHITE_SPACE? meridian_indicator)?
       -> ^(EXPLICIT_TIME hours ^(MINUTES_OF_HOUR INT["0"]) meridian_indicator?)
       
   | named_time
@@ -538,4 +560,8 @@ AFTER    : 'after';
 
 WHITE_SPACE
   : (' ' | '\t' | '\n' | '\r')+
+  ;
+  
+STRING
+  : ('a'..'z' | 'A'..'Z')+
   ;

@@ -16,9 +16,6 @@ options {
 }
 
 date_time
-  @after {
-    System.out.println("found date: " + $date_time.text);
-  }
   : ^(DATE_TIME date? time?)
   ;  
   
