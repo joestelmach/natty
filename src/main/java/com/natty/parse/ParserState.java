@@ -131,6 +131,48 @@ public class ParserState {
   
   /**
    * 
+   * @param index
+   * @param dayOfWeek
+   * @param month
+   */
+  public void setDayOfWeekIndex(String index, String dayOfWeek, String month) {
+    int indexInt = Integer.parseInt(index);
+    assert(indexInt > 0 && indexInt < 6);
+    
+    int dayOfWeekInt = Integer.parseInt(dayOfWeek);
+    assert(dayOfWeekInt >= 1 && dayOfWeekInt <= 7);
+    
+    int monthInt = Integer.parseInt(month);
+    assert(monthInt > 0 && monthInt <= 12);
+    
+    
+    // seek to the first day of the requested month
+    _calendar.set(Calendar.MONTH, monthInt - 1);
+    _calendar.set(Calendar.WEEK_OF_MONTH, 1);
+    while(_calendar.get(Calendar.DAY_OF_MONTH) != 1) {
+      _calendar.add(Calendar.DAY_OF_YEAR, 1);
+    }
+    
+    // if we already passed the day we're looking for, we add a week
+    if(_calendar.get(Calendar.DAY_OF_WEEK) > dayOfWeekInt) {
+      _calendar.add(Calendar.WEEK_OF_MONTH, 1);
+    }
+    
+    // now move to the requested day within the week
+    _calendar.set(Calendar.DAY_OF_WEEK, dayOfWeekInt);
+    int currentMonth = _calendar.get(Calendar.MONTH);
+    
+    // add weeks for our requested index
+    _calendar.add(Calendar.WEEK_OF_MONTH, indexInt - 1);
+    
+    // if we bled into the next month, push back a week
+    if(currentMonth != _calendar.get(Calendar.MONTH)) {
+      _calendar.add(Calendar.WEEK_OF_MONTH, -1);
+    }
+  }
+  
+  /**
+   * 
    * @param month the month to set.  Must be guaranteed to parse as an integer
    *     between 1 and 12
    *     

@@ -26,10 +26,13 @@ date
   
 relative_date
   : ^(RELATIVE_DATE seek)
+  
+  | ^(RELATIVE_DATE ^(WEEK_INDEX index=INT ^(DAY_OF_WEEK day=INT) ^(MONTH_OF_YEAR month=INT)))
+    {parserState.setDayOfWeekIndex($index.text, $day.text, $month.text);}
   ;
   
 relaxed_date
-  : ^(RELATIVE_DATE seek)
+  : ^(EXPLICIT seek)
   ;
   
 explicit_date

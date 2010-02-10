@@ -261,6 +261,23 @@ relative_date:
 "last week" -> (RELATIVE_DATE (SEEK < by_week 1 week))
 "next year" -> (RELATIVE_DATE (SEEK > by_week 1 year))
 "last year" -> (RELATIVE_DATE (SEEK < by_week 1 year))
+"the last sunday in november" -> (RELATIVE_DATE (WEEK_INDEX 5 (DAY_OF_WEEK 1) (MONTH_OF_YEAR 11)))
+"the first wed. in january" -> (RELATIVE_DATE (WEEK_INDEX 1 (DAY_OF_WEEK 4) (MONTH_OF_YEAR 1)))
+
+relative_occurrence_index:
+"1" -> "1"
+"2" -> "2"
+"3" -> "3"
+"4" -> "4"
+"5" -> "5"
+"6" FAIL
+"first" -> "1"
+"second" -> "2"
+"third" -> "3"
+"fourth" -> "4"
+"fifth" -> "5"
+"sixth" FAIL
+"last" -> "5"
 
 relative_target:
 "sunday"     -> (DAY_OF_WEEK 1)

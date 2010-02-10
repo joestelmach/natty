@@ -23,7 +23,7 @@ public class ParserTest {
     //Date date = Parser.parseDate("oct 1");
     //System.out.println(date);
     
-    String inputString = "3 saturdays from now";
+    String inputString = "2 days before the last saturday in dec";
     ANTLRInputStream input = null;
     try {
       // lex

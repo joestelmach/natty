@@ -17,6 +17,7 @@ tokens {
   DIRECTION;
   SEEK_BY;
   SPAN;
+  WEEK_INDEX;
   EXPLICIT_TIME;
   HOURS_OF_DAY;
   MINUTES_OF_HOUR;
@@ -25,20 +26,20 @@ tokens {
 
 @header        { package com.natty.parse; }
 @lexer::header { package com.natty.parse; }
+
 search 
   : date_time
   ;
-  //;
-  ////catch [RecognitionException re] {
-    //reportError(re);
-    //input.consume(); // eat the ';'
-  //}
+  catch [RecognitionException re] {
+    reportError(re);
+    input.consume(); // eat the ';'
+  }
 
 date_time
   @after {
     int startIndex = $date_time.start.getCharPositionInLine();
     int endIndex = startIndex + $date_time.text.length();
-    //System.out.println("found " + $date_time.text + " at " + startIndex + " - " + endIndex); 
+    System.out.println("found " + $date_time.text + " at " + startIndex + " - " + endIndex); 
   }
   : (
       (date (date_time_separator time)?)=>
@@ -171,24 +172,35 @@ formal_date_separator
 // ********** relative date rules **********
   
 relative_date
-  : relative_prefix WHITE_SPACE relative_target 's'?
+  : relative_prefix WHITE_SPACE relative_target?
       -> ^(RELATIVE_DATE ^(SEEK relative_prefix relative_target))
       
   | implicit_prefix WHITE_SPACE relative_target 
       -> ^(RELATIVE_DATE ^(SEEK implicit_prefix relative_target))
       
   // a relative target with no prefix has an implicit seek of 0
+  // monday, october
   | relative_target
       -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] relative_target))
       
   | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
       -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix relative_target))
       
-      
-  // TODO add tree
-  | THE? WHITE_SPACE LAST WHITE_SPACE day_of_week WHITE_SPACE IN WHITE_SPACE relaxed_month
+  // the last thursday in november
+  | (THE WHITE_SPACE)? relative_occurrence_index WHITE_SPACE day_of_week WHITE_SPACE IN WHITE_SPACE relaxed_month
+      -> ^(RELATIVE_DATE ^(WEEK_INDEX relative_occurrence_index day_of_week relaxed_month))
       
   | named_relative_date 
+  ;
+  
+relative_occurrence_index
+  : INT_1_TO_5 -> INT[$INT_1_TO_5.text]
+  | FIRST      -> INT["1"]
+  | SECOND     -> INT["2"]
+  | THIRD      -> INT["3"]
+  | FOURTH     -> INT["4"]
+  | FIFTH      -> INT["5"]
+  | LAST       -> INT["5"]
   ;
   
 relative_target
@@ -280,7 +292,8 @@ named_time
 int_00_to_23_optional_prefix
   : (INT_0
   | INT_00
-  | INT_1_TO_9
+  | INT_1_TO_5
+  | INT_6_TO_9
   | INT_01_TO_12
   | INT_13_TO_23) -> INT[$int_00_to_23_optional_prefix.text]
   ;
@@ -302,13 +315,13 @@ int_00_to_99_mandatory_prefix
   
 // a number between 1 and 12 inclusive, with an optional 0 prefix before numbers 1-9
 int_01_to_12_optional_prefix
-  : (INT_1_TO_9
-  | INT_01_TO_12) -> INT[$int_01_to_12_optional_prefix.text]
+  : (INT_1_TO_5 | INT_6_TO_9 | INT_01_TO_12) -> INT[$int_01_to_12_optional_prefix.text]
   ;
   
 // a number between 1 and 31 inclusive, with an optional 0 prefix before numbers 1-9
 int_01_to_31_optional_prefix
-  : (INT_1_TO_9
+  : (INT_1_TO_5
+  | INT_6_TO_9
   | INT_01_TO_12
   | INT_13_TO_23
   | INT_24_TO_31) -> INT[$int_01_to_31_optional_prefix.text]
@@ -399,26 +412,26 @@ spelled_first_to_thirty_first
   
 // ********** date lexer rules ********** 
 
-JANUARY   : 'january'   | 'jan' DOT?;
-FEBRUARY  : 'february'  | 'feb' DOT?;
-MARCH     : 'march'     | 'mar' DOT?;
-APRIL     : 'april'     | 'apr' DOT?;
-MAY       : 'may';
-JUNE      : 'june'      | 'jun' DOT?;
-JULY      : 'july'      | 'jul' DOT?;
-AUGUST    : 'august'    | 'aug' DOT?;
-SEPTEMBER : 'september' | 'sep' DOT? | 'sept' DOT?;
-OCTOBER   : 'october'   | 'oct' DOT?;
-NOVEMBER  : 'november'  | 'nov' DOT?;
-DECEMBER  : 'december'  | 'dec' DOT?;
+JANUARY   : 'january' 's'?   | 'jan' DOT?;
+FEBRUARY  : 'february' 's'?  | 'feb' DOT?;
+MARCH     : 'march' 's'?     | 'mar' DOT?;
+APRIL     : 'april' 's'?     | 'apr' DOT?;
+MAY       : 'may' 's'?;
+JUNE      : 'june' 's'?      | 'jun' DOT?;
+JULY      : 'july' 's'?      | 'jul' DOT?;
+AUGUST    : 'august' 's'?    | 'aug' DOT?;
+SEPTEMBER : 'september' 's'? | 'sep' DOT? | 'sept' DOT?;
+OCTOBER   : 'october' 's'?   | 'oct' DOT?;
+NOVEMBER  : 'november' 's'?  | 'nov' DOT?;
+DECEMBER  : 'december' 's'?  | 'dec' DOT?;
   
-SUNDAY    : 'sunday'    | 'sundays'    | 'sun' DOT?  | 'suns' DOT?;
-MONDAY    : 'monday'    | 'mondays'    | 'mon' DOT?  | 'mons' DOT?;
-TUESDAY   : 'tuesday'   | 'tuesdays'   | 'tues' DOT? | 'tue' DOT?;
-WEDNESDAY : 'wednesday' | 'wednesdays' | 'wed' DOT?  | 'weds' DOT?;
-THURSDAY  : 'thursday'  | 'thursdays'  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thurs' DOT?;
-FRIDAY    : 'friday'    | 'fridays'    | 'fri' DOT?  | 'fris' DOT?;
-SATURDAY  : 'saturday'  | 'saturdays'  | 'sat' DOT?  | 'sats' DOT?  | 'weekend';
+SUNDAY    : 'sunday' 's'?    | 'sun' DOT?  | 'suns' DOT?;
+MONDAY    : 'monday' 's'?    | 'mon' DOT?  | 'mons' DOT?;
+TUESDAY   : 'tuesday' 's'?   | 'tues' DOT? | 'tue' DOT?;
+WEDNESDAY : 'wednesday' 's'? | 'wed' DOT?  | 'weds' DOT?;
+THURSDAY  : 'thursday' 's'?  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thurs' DOT?;
+FRIDAY    : 'friday' 's'?    | 'fri' DOT?  | 'fris' DOT?;
+SATURDAY  : 'saturday' 's'?  | 'sat' DOT?  | 'sats' DOT?  | 'weekend';
 
 HOUR  : 'hour'  | 'hours' ;
 DAY   : 'day'   | 'days' ;
@@ -474,8 +487,12 @@ INT_0
   : '0'
   ;
  
-INT_1_TO_9
-  : '0'..'9'
+INT_1_TO_5
+  : '1'..'5'
+  ;
+  
+INT_6_TO_9
+  : '6'..'9'
   ;
    
 ONE       : 'one';
