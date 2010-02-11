@@ -14,7 +14,7 @@ post '/parse' do
   IO.popen("java -jar parser.jar '#{params[:value]}'") do |parser|
     parser.each{|line| output << line} 
   end
-  output = "{\"errors\":\"#{output.strip()}\"}" if (("{" =~ /^\{/) == 0)
+  output = "{\"errors\":\"#{output.strip()}\"}" unless ((output =~ /^\{/) == 0)
 
   content_type :json
   output

@@ -3,6 +3,7 @@ $(document).ready(function() {
 
   var submit = function() {
     $('#loading').show();
+    $('#hide').show();
     $('#structure').hide();
     $('#ast').hide();
     $('#structure_details').html('');
@@ -12,13 +13,22 @@ $(document).ready(function() {
   };
 
   var onResponse = function(json) {
-    $('#result').show();
     $('#loading').hide();
-    $('#result').html(json.iso8601);
-    $('#ast').show();
-    $('#ast_details').html(json.ast);
-    $('#structure').show();
-    buildStructure(json.structure);
+
+    if(json.errors) {
+      $('#errors').show();
+    }
+
+    else {
+      $('#errors').hide();
+      $('#result').show();
+      $('#result').html(json.iso8601);
+      $('#ast').show();
+      $('#ast_details').html(json.ast);
+      $('#structure').show();
+      buildStructure(json.structure);
+    }
+
     input.focus();
     input.select();
   };

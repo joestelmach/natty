@@ -17,7 +17,7 @@ br {
 }
 
 input[type=text] {
-  width : 500px;
+  width : 550px;
   font-size:22px;
 }
 
@@ -32,7 +32,8 @@ input[type=text] {
   left:110px;
 }
 
-#result {
+#result,
+#errors {
   position:absolute;
   left:150px;
   top:127px;
@@ -40,6 +41,11 @@ input[type=text] {
   font-weight:bold;
   font-size:18px;
   background-color:#c6d6ff;
+}
+
+#errors {
+  background-color:#fff;
+  color:red;
 }
 
 #ast {
