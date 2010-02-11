@@ -1,0 +1,27 @@
+body {
+  font-family:Helvetica;
+  padding:20px;
+}
+
+h1 {
+  font-size:26px;
+}
+
+input[type=text] {
+  width : 500px;
+  font-size:22px;
+}
+
+#submit {
+  margin-top:20px;
+  font-size:18px;
+}
+
+#result {
+  margin-top:40px;
+}
+
+#structure {
+  margin-top:40px;
+}
+

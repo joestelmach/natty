@@ -10,6 +10,7 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
 
+import com.natty.utility.Printer;
 import com.natty.utility.StructureBuilder;
 
 /**
@@ -19,9 +20,10 @@ import com.natty.utility.StructureBuilder;
  */
 public class ParserTest {
   public static void main(String[] args) throws Exception {
-    
-    String inputString = "next oct at 10am";
+    String inputString = "the day after today";
     ANTLRInputStream input = null;
+    StructureBuilder builder = new StructureBuilder();
+    Date date = new Date();
     try {
       // lex
       input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
@@ -29,19 +31,19 @@ public class ParserTest {
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
       // parse 
-      StructureBuilder builder = new StructureBuilder();
       DateParser parser = new DateParser(tokens, builder);
       DateParser.date_time_return result = parser.date_time();
-      System.out.println(builder.toJSON());
+      Printer printer = new Printer(parser.getTokenNames());
       
       // walk
       Tree tree = (Tree) result.getTree();
+      printer.printTree(tree);
+      System.out.print("\n");
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
       DateWalker walker = new DateWalker(nodes);
       walker.date_time();
-      
-      Date date = walker.getState().getDate();
+      date = walker.getState().getDate();
       
     } catch (IOException e) {
       e.printStackTrace();
@@ -49,5 +51,8 @@ public class ParserTest {
     } catch (RecognitionException e) {
       e.printStackTrace();
     }
+    
+    System.out.println(date);
+    System.out.println(builder.toJSON());
   }
 }

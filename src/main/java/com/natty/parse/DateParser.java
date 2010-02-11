@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g 2010-02-10 19:23:46
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/Date.g 2010-02-10 20:09:03
  package com.natty.parse; 
 
 import org.antlr.runtime.*;
@@ -156,19 +156,20 @@ public class DateParser extends DebugParser {
     // delegators
 
     public static final String[] ruleNames = new String[] {
-        "invalidRule", "spelled_or_int_01_to_31_optional_prefix", "synpred4_Date", 
-        "synpred1_Date", "minutes", "relaxed_date", "synpred3_Date", "time_date_separator", 
-        "relative_target", "relaxed_year", "date_time_separator", "formal_year", 
-        "relative_date_span", "relaxed_day_of_month", "time", "relaxed_year_prefix", 
-        "formal_month_of_year", "int_01_to_12_optional_prefix", "spelled_first_to_thirty_first", 
-        "synpred2_Date", "named_relative_date", "date", "int_00_to_99_mandatory_prefix", 
-        "relative_suffix", "global_date_prefix", "int_four_digits", "date_time", 
-        "formal_day_of_month", "hours", "meridian_indicator", "day_of_week", 
-        "prefix_direction", "formal_year_four_digits", "relative_prefix", 
-        "named_time", "relaxed_month", "formal_date_separator", "formal_date", 
-        "implicit_prefix", "spelled_one_to_thirty_one", "int_00_to_23_optional_prefix", 
-        "int_01_to_31_optional_prefix", "search", "int_00_to_59_mandatory_prefix", 
-        "relative_date", "relative_occurrence_index"
+        "invalidRule", "relaxed_year_prefix", "relative_suffix", "search", 
+        "formal_month_of_year", "formal_year_four_digits", "relative_prefix", 
+        "synpred2_Date", "relative_date", "int_00_to_23_optional_prefix", 
+        "named_relative_date", "relative_target", "minutes", "spelled_or_int_01_to_31_optional_prefix", 
+        "day_of_week", "prefix_direction", "synpred1_Date", "formal_year", 
+        "implicit_prefix", "relaxed_day_of_month", "relaxed_month", "relaxed_date", 
+        "int_01_to_12_optional_prefix", "relaxed_year", "spelled_first_to_thirty_first", 
+        "spelled_one_to_thirty_one", "date", "global_date_prefix", "meridian_indicator", 
+        "date_time_separator", "int_00_to_99_mandatory_prefix", "hours", 
+        "named_time", "relative_occurrence_index", "relative_date_span", 
+        "int_01_to_31_optional_prefix", "synpred4_Date", "int_00_to_59_mandatory_prefix", 
+        "formal_date", "date_time", "formal_date_separator", "synpred3_Date", 
+        "int_four_digits", "time_date_separator", "formal_day_of_month", 
+        "time"
     };
      
         public int ruleLevel = 0;
@@ -1390,7 +1391,7 @@ public class DateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: prefix_direction, spelled_or_int_01_to_31_optional_prefix
+                    // elements: spelled_or_int_01_to_31_optional_prefix, prefix_direction
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1984,7 +1985,7 @@ public class DateParser extends DebugParser {
 
 
             // AST REWRITE
-            // elements: relaxed_year, relaxed_month, relaxed_day_of_month
+            // elements: relaxed_day_of_month, relaxed_year, relaxed_month
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3697,7 +3698,7 @@ public class DateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: formal_year_four_digits, formal_day_of_month, formal_month_of_year
+                    // elements: formal_month_of_year, formal_year_four_digits, formal_day_of_month
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3801,7 +3802,7 @@ public class DateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: formal_day_of_month, formal_month_of_year, formal_year
+                    // elements: formal_year, formal_day_of_month, formal_month_of_year
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -4710,7 +4711,7 @@ public class DateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: relative_target, implicit_prefix
+                    // elements: implicit_prefix, relative_target
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -4852,7 +4853,7 @@ public class DateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: spelled_or_int_01_to_31_optional_prefix, relative_target, relative_suffix
+                    // elements: relative_target, relative_suffix, spelled_or_int_01_to_31_optional_prefix
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -4976,7 +4977,7 @@ public class DateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: relative_occurrence_index, relaxed_month, day_of_week
+                    // elements: relative_occurrence_index, day_of_week, relaxed_month
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -7703,7 +7704,7 @@ public class DateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: hours, minutes, meridian_indicator
+                    // elements: minutes, hours, meridian_indicator
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 

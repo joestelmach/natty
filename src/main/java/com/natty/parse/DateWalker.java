@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g 2010-02-10 19:23:43
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g 2010-02-10 20:07:40
  package com.natty.parse; 
 
 import org.antlr.runtime.*;
@@ -6,9 +6,7 @@ import org.antlr.runtime.tree.*;import java.util.Stack;
 import java.util.List;
 import java.util.ArrayList;
 
-import org.antlr.runtime.debug.*;
-import java.io.IOException;
-public class DateWalker extends DebugTreeParser {
+public class DateWalker extends TreeParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "INT", "MONTH_OF_YEAR", "DAY_OF_MONTH", "DAY_OF_WEEK", "YEAR_OF", "DATE_TIME", "EXPLICIT_DATE", "RELATIVE_DATE", "SEEK", "DIRECTION", "SEEK_BY", "SPAN", "WEEK_INDEX", "EXPLICIT_TIME", "HOURS_OF_DAY", "MINUTES_OF_HOUR", "AM_PM", "WHITE_SPACE", "AT", "COMMA", "ON", "THE", "DAY", "AFTER", "BEFORE", "OF", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "SINGLE_QUOTE", "IN", "YEAR", "DASH", "SLASH", "INT_1_TO_5", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "LAST", "THIS", "NEXT", "PAST", "COMING", "UPCOMING", "FROM", "NOW", "AGO", "WEEK", "MONTH", "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "TODAY", "TOMORROW", "YESTERDAY", "COLON", "MILITARY_HOUR_SUFFIX", "HOUR", "AM", "PM", "NOON", "MIDNIGHT", "INT_0", "INT_00", "INT_6_TO_9", "INT_01_TO_12", "INT_13_TO_23", "INT_24_TO_31", "INT_32_TO_59", "INT_60_TO_99", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN", "TWENTY", "THIRTY", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH", "THIRTEENTH", "FOURTEENTH", "FIFTEENTH", "SIXTEENTH", "SEVENTEENTH", "EIGHTEENTH", "NINETEENTH", "TWENTIETH", "TWENTY_FIRST", "TWENTY_SECOND", "TWENTY_THIRD", "TWENTY_FOURTH", "TWENTY_FIFTH", "TWENTY_SIXTH", "TWENTY_SEVENTH", "TWENTY_EIGHTH", "TWENTY_NINTH", "THIRTIETH", "THIRTY_FIRST", "DOT", "UNKNOWN", "EXPLICIT"
     };
@@ -152,39 +150,15 @@ public class DateWalker extends DebugTreeParser {
     // delegates
     // delegators
 
-    public static final String[] ruleNames = new String[] {
-        "invalidRule", "relaxed_date", "relative_date", "date", "seek", 
-        "time", "explicit_date", "date_time"
-    };
-     
-        public int ruleLevel = 0;
-        public int getRuleLevel() { return ruleLevel; }
-        public void incRuleLevel() { ruleLevel++; }
-        public void decRuleLevel() { ruleLevel--; }
+
         public DateWalker(TreeNodeStream input) {
-            this(input, DebugEventSocketProxy.DEFAULT_DEBUGGER_PORT, new RecognizerSharedState());
+            this(input, new RecognizerSharedState());
         }
-        public DateWalker(TreeNodeStream input, int port, RecognizerSharedState state) {
+        public DateWalker(TreeNodeStream input, RecognizerSharedState state) {
             super(input, state);
-            DebugEventSocketProxy proxy =
-                new DebugEventSocketProxy(this, port, input.getTreeAdaptor());
-            setDebugListener(proxy);
-            try {
-                proxy.handshake();
-            }
-            catch (IOException ioe) {
-                reportError(ioe);
-            }
+             
         }
-    public DateWalker(TreeNodeStream input, DebugEventListener dbg) {
-        super(input, dbg, new RecognizerSharedState());
-
-    }
-    protected boolean evalPredicate(boolean result, String predicate) {
-        dbg.semanticPredicate(result, predicate);
-        return result;
-    }
-
+        
 
     public String[] getTokenNames() { return DateWalker.tokenNames; }
     public String getGrammarFileName() { return "/Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g"; }
@@ -201,43 +175,25 @@ public class DateWalker extends DebugTreeParser {
     // $ANTLR start "date_time"
     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:18:1: date_time : ^( DATE_TIME ( date )? ( time )? ) ;
     public final void date_time() throws RecognitionException {
-        try { dbg.enterRule(getGrammarFileName(), "date_time");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(18, 1);
-
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:19:3: ( ^( DATE_TIME ( date )? ( time )? ) )
-            dbg.enterAlt(1);
-
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:19:5: ^( DATE_TIME ( date )? ( time )? )
             {
-            dbg.location(19,5);
-            dbg.location(19,7);
             match(input,DATE_TIME,FOLLOW_DATE_TIME_in_date_time46); 
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                dbg.location(19,17);
                 // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:19:17: ( date )?
                 int alt1=2;
-                try { dbg.enterSubRule(1);
-                try { dbg.enterDecision(1);
-
                 int LA1_0 = input.LA(1);
 
                 if ( ((LA1_0>=EXPLICIT_DATE && LA1_0<=RELATIVE_DATE)) ) {
                     alt1=1;
                 }
-                } finally {dbg.exitDecision(1);}
-
                 switch (alt1) {
                     case 1 :
-                        dbg.enterAlt(1);
-
                         // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:19:17: date
                         {
-                        dbg.location(19,17);
                         pushFollow(FOLLOW_date_in_date_time48);
                         date();
 
@@ -248,28 +204,18 @@ public class DateWalker extends DebugTreeParser {
                         break;
 
                 }
-                } finally {dbg.exitSubRule(1);}
 
-                dbg.location(19,23);
                 // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:19:23: ( time )?
                 int alt2=2;
-                try { dbg.enterSubRule(2);
-                try { dbg.enterDecision(2);
-
                 int LA2_0 = input.LA(1);
 
                 if ( (LA2_0==EXPLICIT_TIME) ) {
                     alt2=1;
                 }
-                } finally {dbg.exitDecision(2);}
-
                 switch (alt2) {
                     case 1 :
-                        dbg.enterAlt(1);
-
                         // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:19:23: time
                         {
-                        dbg.location(19,23);
                         pushFollow(FOLLOW_time_in_date_time51);
                         time();
 
@@ -280,7 +226,6 @@ public class DateWalker extends DebugTreeParser {
                         break;
 
                 }
-                } finally {dbg.exitSubRule(2);}
 
 
                 match(input, Token.UP, null); 
@@ -295,15 +240,6 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(20, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "date_time");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "date_time"
@@ -312,16 +248,9 @@ public class DateWalker extends DebugTreeParser {
     // $ANTLR start "date"
     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:22:1: date : ( relative_date | explicit_date );
     public final void date() throws RecognitionException {
-        try { dbg.enterRule(getGrammarFileName(), "date");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(22, 1);
-
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:23:3: ( relative_date | explicit_date )
             int alt3=2;
-            try { dbg.enterDecision(3);
-
             int LA3_0 = input.LA(1);
 
             if ( (LA3_0==RELATIVE_DATE) ) {
@@ -334,18 +263,12 @@ public class DateWalker extends DebugTreeParser {
                 NoViableAltException nvae =
                     new NoViableAltException("", 3, 0, input);
 
-                dbg.recognitionException(nvae);
                 throw nvae;
             }
-            } finally {dbg.exitDecision(3);}
-
             switch (alt3) {
                 case 1 :
-                    dbg.enterAlt(1);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:23:5: relative_date
                     {
-                    dbg.location(23,5);
                     pushFollow(FOLLOW_relative_date_in_date70);
                     relative_date();
 
@@ -355,11 +278,8 @@ public class DateWalker extends DebugTreeParser {
                     }
                     break;
                 case 2 :
-                    dbg.enterAlt(2);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:24:5: explicit_date
                     {
-                    dbg.location(24,5);
                     pushFollow(FOLLOW_explicit_date_in_date77);
                     explicit_date();
 
@@ -377,15 +297,6 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(25, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "date");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "date"
@@ -398,16 +309,9 @@ public class DateWalker extends DebugTreeParser {
         CommonTree day=null;
         CommonTree month=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "relative_date");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(27, 1);
-
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:28:3: ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) )
             int alt4=2;
-            try { dbg.enterDecision(4);
-
             int LA4_0 = input.LA(1);
 
             if ( (LA4_0==RELATIVE_DATE) ) {
@@ -426,7 +330,6 @@ public class DateWalker extends DebugTreeParser {
                         NoViableAltException nvae =
                             new NoViableAltException("", 4, 2, input);
 
-                        dbg.recognitionException(nvae);
                         throw nvae;
                     }
                 }
@@ -434,7 +337,6 @@ public class DateWalker extends DebugTreeParser {
                     NoViableAltException nvae =
                         new NoViableAltException("", 4, 1, input);
 
-                    dbg.recognitionException(nvae);
                     throw nvae;
                 }
             }
@@ -442,23 +344,15 @@ public class DateWalker extends DebugTreeParser {
                 NoViableAltException nvae =
                     new NoViableAltException("", 4, 0, input);
 
-                dbg.recognitionException(nvae);
                 throw nvae;
             }
-            } finally {dbg.exitDecision(4);}
-
             switch (alt4) {
                 case 1 :
-                    dbg.enterAlt(1);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:28:5: ^( RELATIVE_DATE seek )
                     {
-                    dbg.location(28,5);
-                    dbg.location(28,7);
                     match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date93); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(28,21);
                     pushFollow(FOLLOW_seek_in_relative_date95);
                     seek();
 
@@ -470,37 +364,24 @@ public class DateWalker extends DebugTreeParser {
                     }
                     break;
                 case 2 :
-                    dbg.enterAlt(2);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:30:5: ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) )
                     {
-                    dbg.location(30,5);
-                    dbg.location(30,7);
                     match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date106); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(30,21);
-                    dbg.location(30,23);
                     match(input,WEEK_INDEX,FOLLOW_WEEK_INDEX_in_relative_date109); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(30,39);
                     index=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date113); 
-                    dbg.location(30,44);
-                    dbg.location(30,46);
                     match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_relative_date116); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(30,61);
                     day=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date120); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(30,67);
-                    dbg.location(30,69);
                     match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_relative_date124); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(30,88);
                     month=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date128); 
 
                     match(input, Token.UP, null); 
@@ -508,7 +389,6 @@ public class DateWalker extends DebugTreeParser {
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(31,5);
                     _walkerState.setDayOfWeekIndex((index!=null?index.getText():null), (day!=null?day.getText():null), (month!=null?month.getText():null));
 
                     }
@@ -522,15 +402,6 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(32, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "relative_date");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "relative_date"
@@ -539,23 +410,13 @@ public class DateWalker extends DebugTreeParser {
     // $ANTLR start "relaxed_date"
     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:34:1: relaxed_date : ^( EXPLICIT seek ) ;
     public final void relaxed_date() throws RecognitionException {
-        try { dbg.enterRule(getGrammarFileName(), "relaxed_date");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(34, 1);
-
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:35:3: ( ^( EXPLICIT seek ) )
-            dbg.enterAlt(1);
-
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:35:5: ^( EXPLICIT seek )
             {
-            dbg.location(35,5);
-            dbg.location(35,7);
             match(input,EXPLICIT,FOLLOW_EXPLICIT_in_relaxed_date153); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(35,16);
             pushFollow(FOLLOW_seek_in_relaxed_date155);
             seek();
 
@@ -573,15 +434,6 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(36, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "relaxed_date");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "relaxed_date"
@@ -594,102 +446,61 @@ public class DateWalker extends DebugTreeParser {
         CommonTree day=null;
         CommonTree year=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "explicit_date");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(38, 1);
-
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:39:3: ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day= INT ) ^( YEAR_OF year= INT ) ) )
             int alt5=2;
-            try { dbg.enterDecision(5);
-
-            try {
-                isCyclicDecision = true;
-                alt5 = dfa5.predict(input);
-            }
-            catch (NoViableAltException nvae) {
-                dbg.recognitionException(nvae);
-                throw nvae;
-            }
-            } finally {dbg.exitDecision(5);}
-
+            alt5 = dfa5.predict(input);
             switch (alt5) {
                 case 1 :
-                    dbg.enterAlt(1);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:39:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day= INT ) )
                     {
-                    dbg.location(39,5);
-                    dbg.location(39,7);
                     match(input,EXPLICIT_DATE,FOLLOW_EXPLICIT_DATE_in_explicit_date172); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(39,21);
-                    dbg.location(39,23);
                     match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_explicit_date175); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(39,42);
                     month=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date179); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(39,48);
-                    dbg.location(39,50);
                     match(input,DAY_OF_MONTH,FOLLOW_DAY_OF_MONTH_in_explicit_date183); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(39,66);
                     day=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date187); 
 
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(40,5);
                     _walkerState.setExplicitDate((month!=null?month.getText():null), (day!=null?day.getText():null), null);
 
                     }
                     break;
                 case 2 :
-                    dbg.enterAlt(2);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:42:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day= INT ) ^( YEAR_OF year= INT ) )
                     {
-                    dbg.location(42,5);
-                    dbg.location(42,7);
                     match(input,EXPLICIT_DATE,FOLLOW_EXPLICIT_DATE_in_explicit_date207); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(42,21);
-                    dbg.location(42,23);
                     match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_explicit_date210); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(42,42);
                     month=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date214); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(42,48);
-                    dbg.location(42,50);
                     match(input,DAY_OF_MONTH,FOLLOW_DAY_OF_MONTH_in_explicit_date218); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(42,66);
                     day=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date222); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(42,72);
-                    dbg.location(42,74);
                     match(input,YEAR_OF,FOLLOW_YEAR_OF_in_explicit_date226); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(42,86);
                     year=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date230); 
 
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(43,5);
                     _walkerState.setExplicitDate((month!=null?month.getText():null), (day!=null?day.getText():null), (year!=null?year.getText():null));
 
                     }
@@ -703,15 +514,6 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(44, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "explicit_date");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "explicit_date"
@@ -724,71 +526,45 @@ public class DateWalker extends DebugTreeParser {
         CommonTree minutes=null;
         CommonTree AM_PM1=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "time");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(46, 1);
-
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:47:3: ( ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( AM_PM )? ) )
-            dbg.enterAlt(1);
-
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:47:5: ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( AM_PM )? )
             {
-            dbg.location(47,5);
-            dbg.location(47,7);
             match(input,EXPLICIT_TIME,FOLLOW_EXPLICIT_TIME_in_time254); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(47,21);
-            dbg.location(47,23);
             match(input,HOURS_OF_DAY,FOLLOW_HOURS_OF_DAY_in_time257); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(47,41);
             hours=(CommonTree)match(input,INT,FOLLOW_INT_in_time261); 
 
             match(input, Token.UP, null); 
-            dbg.location(47,47);
-            dbg.location(47,49);
             match(input,MINUTES_OF_HOUR,FOLLOW_MINUTES_OF_HOUR_in_time265); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(47,72);
             minutes=(CommonTree)match(input,INT,FOLLOW_INT_in_time269); 
 
             match(input, Token.UP, null); 
-            dbg.location(47,78);
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:47:78: ( AM_PM )?
             int alt6=2;
-            try { dbg.enterSubRule(6);
-            try { dbg.enterDecision(6);
-
             int LA6_0 = input.LA(1);
 
             if ( (LA6_0==AM_PM) ) {
                 alt6=1;
             }
-            } finally {dbg.exitDecision(6);}
-
             switch (alt6) {
                 case 1 :
-                    dbg.enterAlt(1);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:47:78: AM_PM
                     {
-                    dbg.location(47,78);
                     AM_PM1=(CommonTree)match(input,AM_PM,FOLLOW_AM_PM_in_time272); 
 
                     }
                     break;
 
             }
-            } finally {dbg.exitSubRule(6);}
 
 
             match(input, Token.UP, null); 
-            dbg.location(48,5);
             _walkerState.setExplicitTime((hours!=null?hours.getText():null), (minutes!=null?minutes.getText():null), (AM_PM1!=null?AM_PM1.getText():null));
 
             }
@@ -800,15 +576,6 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(49, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "time");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "time"
@@ -829,133 +596,78 @@ public class DateWalker extends DebugTreeParser {
         CommonTree DIRECTION7=null;
         CommonTree INT8=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "seek");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(51, 1);
-
         try {
             // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:52:3: ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) )
             int alt7=4;
-            try { dbg.enterDecision(7);
-
-            try {
-                isCyclicDecision = true;
-                alt7 = dfa7.predict(input);
-            }
-            catch (NoViableAltException nvae) {
-                dbg.recognitionException(nvae);
-                throw nvae;
-            }
-            } finally {dbg.exitDecision(7);}
-
+            alt7 = dfa7.predict(input);
             switch (alt7) {
                 case 1 :
-                    dbg.enterAlt(1);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:52:5: ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) )
                     {
-                    dbg.location(52,5);
-                    dbg.location(52,7);
                     match(input,SEEK,FOLLOW_SEEK_in_seek296); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(52,12);
                     DIRECTION2=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek298); 
-                    dbg.location(52,24);
                     by=(CommonTree)match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek302); 
-                    dbg.location(52,39);
                     amount=(CommonTree)match(input,INT,FOLLOW_INT_in_seek306); 
-                    dbg.location(52,44);
-                    dbg.location(52,46);
                     match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_seek309); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(52,61);
                     day=(CommonTree)match(input,INT,FOLLOW_INT_in_seek313); 
 
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(53,5);
                     _walkerState.seekToDayOfWeek((DIRECTION2!=null?DIRECTION2.getText():null), (by!=null?by.getText():null), (amount!=null?amount.getText():null), (day!=null?day.getText():null));
 
                     }
                     break;
                 case 2 :
-                    dbg.enterAlt(2);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:55:5: ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) )
                     {
-                    dbg.location(55,5);
-                    dbg.location(55,7);
                     match(input,SEEK,FOLLOW_SEEK_in_seek333); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(55,12);
                     DIRECTION3=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek335); 
-                    dbg.location(55,22);
                     match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek337); 
-                    dbg.location(55,36);
                     amount=(CommonTree)match(input,INT,FOLLOW_INT_in_seek341); 
-                    dbg.location(55,41);
-                    dbg.location(55,43);
                     match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_seek344); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(55,62);
                     month=(CommonTree)match(input,INT,FOLLOW_INT_in_seek348); 
 
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(56,5);
                     _walkerState.seekToMonth((DIRECTION3!=null?DIRECTION3.getText():null), (amount!=null?amount.getText():null), (month!=null?month.getText():null));
 
                     }
                     break;
                 case 3 :
-                    dbg.enterAlt(3);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:58:5: ^( SEEK DIRECTION SEEK_BY INT SPAN )
                     {
-                    dbg.location(58,5);
-                    dbg.location(58,7);
                     match(input,SEEK,FOLLOW_SEEK_in_seek366); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(58,12);
                     DIRECTION4=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek368); 
-                    dbg.location(58,22);
                     match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek370); 
-                    dbg.location(58,30);
                     INT5=(CommonTree)match(input,INT,FOLLOW_INT_in_seek372); 
-                    dbg.location(58,34);
                     SPAN6=(CommonTree)match(input,SPAN,FOLLOW_SPAN_in_seek374); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(59,5);
                     _walkerState.seekBySpan((DIRECTION4!=null?DIRECTION4.getText():null), (INT5!=null?INT5.getText():null), (SPAN6!=null?SPAN6.getText():null));
 
                     }
                     break;
                 case 4 :
-                    dbg.enterAlt(4);
-
                     // /Users/joe/java_workspace/natty/src/main/antlr3/grammar/com/natty/parse/DateWalker.g:61:5: ^( SEEK DIRECTION SEEK_BY INT date )
                     {
-                    dbg.location(61,5);
-                    dbg.location(61,7);
                     match(input,SEEK,FOLLOW_SEEK_in_seek391); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(61,12);
                     DIRECTION7=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek393); 
-                    dbg.location(61,22);
                     match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek395); 
-                    dbg.location(61,30);
                     INT8=(CommonTree)match(input,INT,FOLLOW_INT_in_seek397); 
-                    dbg.location(61,34);
                     pushFollow(FOLLOW_date_in_seek399);
                     date();
 
@@ -963,7 +675,6 @@ public class DateWalker extends DebugTreeParser {
 
 
                     match(input, Token.UP, null); 
-                    dbg.location(62,5);
                     _walkerState.seekBySpan((DIRECTION7!=null?DIRECTION7.getText():null), (INT8!=null?INT8.getText():null), "day");
 
                     }
@@ -977,15 +688,6 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(63, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "seek");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "seek"
@@ -1055,9 +757,6 @@ public class DateWalker extends DebugTreeParser {
         public String getDescription() {
             return "38:1: explicit_date : ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day= INT ) ^( YEAR_OF year= INT ) ) );";
         }
-        public void error(NoViableAltException nvae) {
-            dbg.recognitionException(nvae);
-        }
     }
     static final String DFA7_eotS =
         "\12\uffff";
@@ -1115,9 +814,6 @@ public class DateWalker extends DebugTreeParser {
         }
         public String getDescription() {
             return "51:1: seek : ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) );";
-        }
-        public void error(NoViableAltException nvae) {
-            dbg.recognitionException(nvae);
         }
     }
  

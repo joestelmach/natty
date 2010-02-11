@@ -1,13 +1,27 @@
 $(document).ready(function() {
-  // do stuff when DOM is ready
-	$('#submit').click(function(e) {
-    var input = $('#text_input');
+  var input = $('#text_input');
+
+  var submit = function() {
+    $('#structure').hide();
+    $('#result').hide();
     $.post("parse", {value : input.val()}, function(json) {
-      console.log(json);
-      var text = json.structure.date_time.text;
+      var text = input.val();
       input.val('');
-      $('#result').html(json.iso8601);
-      $('#structure').html(text);
+      $('#result_details').html(json.iso8601);
+      $('#structure_details').html(text);
+      $('#structure').show();
+      $('#result').show();
     });
-	});
+  };
+
+  // submit on enter in text field
+  input.keypress(function(e) {  
+    if((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+      submit();
+    }  
+  });
+  input.focus();
+
+  // or when the submit button is pressed
+	$('#submit').click(submit);
 });

@@ -145,11 +145,8 @@ public class WalkerState {
     
     
     // seek to the first day of the requested month
-    _calendar.set(Calendar.MONTH, monthInt - 1);
-    _calendar.set(Calendar.WEEK_OF_MONTH, 1);
-    while(_calendar.get(Calendar.DAY_OF_MONTH) != 1) {
-      _calendar.add(Calendar.DAY_OF_YEAR, 1);
-    }
+    _calendar.set(Calendar.MONTH, monthInt -1);
+    _calendar.set(Calendar.DAY_OF_MONTH, 1);
     
     // if we already passed the day we're looking for, we add a week
     if(_calendar.get(Calendar.DAY_OF_WEEK) > dayOfWeekInt) {
