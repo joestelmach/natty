@@ -29,6 +29,7 @@ public class Parser {
     ANTLRInputStream input = null;
     StructureBuilder builder = new StructureBuilder();
     Date date = new Date();
+    Tree tree = null;
     try {
       // lex
       input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
@@ -40,7 +41,7 @@ public class Parser {
       DateParser.date_time_return result = parser.date_time();
       
       // walk
-      Tree tree = (Tree) result.getTree();
+      tree = (Tree) result.getTree();
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
       DateWalker walker = new DateWalker(nodes);
@@ -60,6 +61,7 @@ public class Parser {
       formatter.setTimeZone(TimeZone.getTimeZone("America/New_York"));
       json.put("iso8601", formatter.format(date));
       json.put("structure", builder.toJSON());
+      if(tree != null) json.put("ast", tree.toStringTree());
       
     } catch(JSONException e) {
       _logger.log(Level.FINE, "could not generate json", e);

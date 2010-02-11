@@ -5,6 +5,15 @@ body {
 
 h1 {
   font-size:26px;
+  color:#666;
+}
+
+h2 {
+  color:#666;
+}
+
+br {
+  clear:both;
 }
 
 input[type=text] {
@@ -17,7 +26,23 @@ input[type=text] {
   font-size:18px;
 }
 
+#loading {
+  position:absolute;
+  top:125px;
+  left:110px;
+}
+
 #result {
+  position:absolute;
+  left:150px;
+  top:127px;
+  padding:5px;
+  font-weight:bold;
+  font-size:18px;
+  background-color:#c6d6ff;
+}
+
+#ast {
   margin-top:40px;
 }
 
@@ -25,3 +50,22 @@ input[type=text] {
   margin-top:40px;
 }
 
+#structure .index {
+  border:1px solid #aaa;
+  padding:5px 5px 0 5px;
+  margin-right:5px;
+  font-size:20px;
+  float:left;
+  font-weight:bold;
+}
+
+#structure .index.imaginary {
+  border:none;
+}
+
+#structure .index .name {
+  padding:5px 0;
+  font-size:12px;
+  font-weight:normal;
+  clear:both;
+}

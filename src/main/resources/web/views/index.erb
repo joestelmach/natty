@@ -2,13 +2,18 @@
 <input type="text" id="text_input" />
 <br/>
 <input type="submit" id="submit" value="parse" />
+<img src="/images/loading.gif" id="loading" style="display:none" />
+<div id="result" style="display:none;"></div>
 
 <div id="structure" style="display:none">
-  <h2>Here's how we broke it down:</h2>
+  <h2>here's how we broke it down:</h2>
   <div id="structure_details"></div>
 </div>
 
-<div id="result" style="display:none">
-  <h2>For a final value of:</h2>
-  <div id="result_details"></div>
+<br />
+<div id="ast" style="display:none">
+  <h2>and here's the ast we built:</h2>
+  <div id="ast_details"></div>
 </div>
+<br />
+

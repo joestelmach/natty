@@ -22,8 +22,8 @@ public class StructureBuilder extends BlankDebugEventListener {
     INTERESTING_RULES = new HashMap<String, String>();
     //INTERESTING_RULES.put("date_time", "date and time");
     INTERESTING_RULES.put("global_date_prefix", "date prefix");
-    //INTERESTING_RULES.put("date", "date");
-    INTERESTING_RULES.put("relative_date", "relative date");
+    INTERESTING_RULES.put("date", "date");
+    //INTERESTING_RULES.put("relative_date", "relative date");
     INTERESTING_RULES.put("relaxed_day_of_month", "day");
     INTERESTING_RULES.put("relaxed_month", "month");
     INTERESTING_RULES.put("relaxed_year", "year");
