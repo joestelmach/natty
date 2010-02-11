@@ -5,21 +5,19 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-import org.antlr.runtime.tree.CommonTree;
-
 /**
  * Represents a seek-able date and time.
  * @author Joe Stelmach
  *
  */
-public class ParserState {
+public class WalkerState {
   private GregorianCalendar _calendar;
   
   /**
    * Creates a new SeekableDateTime representing the start of u
    * the next hour from the current time
    */
-  public ParserState() {
+  public WalkerState() {
     _calendar = new GregorianCalendar();
     _calendar.setTimeZone(TimeZone.getTimeZone("US/Eastern"));
     //_calendar.set(Calendar.HOUR, _calendar.get(Calendar.HOUR) + 1);
@@ -232,24 +230,6 @@ public class ParserState {
     }
     
     _calendar.set(Calendar.MINUTE, minutesInt);
-  }
-  
-  /**
-   * Sets the date's start token position and length 
-   * @param startToken
-   * @param length
-   */
-  public void setDatePosition(CommonTree startNode, int length) {
-    startNode.getToken();
-    //int endIndex = startIndex + length;
-    //System.out.println(startIndex + " - " + endIndex);
-  }
-  
-  public void setTimePosition(CommonTree startNode, int length) {
-    startNode.getToken();
-    
-    //int endIndex = startIndex + length;
-    //System.out.println(startIndex + " - " + endIndex);
   }
   
   /**

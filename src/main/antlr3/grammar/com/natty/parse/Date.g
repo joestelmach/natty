@@ -27,6 +27,9 @@ tokens {
 @header        { package com.natty.parse; }
 @lexer::header { package com.natty.parse; }
 
+@members {
+}
+
 search 
   : date_time
   ;
@@ -36,11 +39,6 @@ search
   }
 
 date_time
-  @after {
-    int startIndex = $date_time.start.getCharPositionInLine();
-    int endIndex = startIndex + $date_time.text.length();
-    System.out.println("found " + $date_time.text + " at " + startIndex + " - " + endIndex); 
-  }
   : (
       (date (date_time_separator time)?)=>
         date (date_time_separator time)?
@@ -48,6 +46,11 @@ date_time
       | time (time_date_separator date)?
     ) -> ^(DATE_TIME date? time?)
   ;
+  catch [RecognitionException re] {
+    //reportError(re);
+    //input.consume(); // eat the ';'
+    System.out.println("could not parse input");
+  }
   
 date_time_separator
   : WHITE_SPACE (AT WHITE_SPACE)?
@@ -272,7 +275,6 @@ hours
 // minutes of the hour
 minutes
   : int_00_to_59_mandatory_prefix -> ^(MINUTES_OF_HOUR int_00_to_59_mandatory_prefix)
-  
   ;
   
 // meridian am/pm indicator

@@ -12,12 +12,12 @@ import org.antlr.runtime.tree.Tree;
 import com.natty.parse.DateLexer;
 import com.natty.parse.DateParser;
 import com.natty.parse.DateWalker;
-import com.natty.parse.ParserState;
+import com.natty.parse.WalkerState;
 
 public class Parser {
-  public static ParserState parseDate(final String inputString) {
-    ParserState state = null;
+  public static WalkerState parseDate(final String inputString) {
     ANTLRInputStream input = null;
+    WalkerState state = null;
     try {
       // lex
       input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
@@ -43,7 +43,6 @@ public class Parser {
     } catch (RecognitionException e) {
       e.printStackTrace();
     }
-    
     return state;
   }
 }

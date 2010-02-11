@@ -10,7 +10,7 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
 
-import com.natty.utility.Printer;
+import com.natty.utility.StructureBuilder;
 
 /**
  * Runs the DateParser through it's paces
@@ -18,39 +18,31 @@ import com.natty.utility.Printer;
  * @author Joe Stelmach
  */
 public class ParserTest {
-  private static DateParser _parser;
   public static void main(String[] args) throws Exception {
-    //Date date = Parser.parseDate("oct 1");
-    //System.out.println(date);
     
-    String inputString = "2 days before the last saturday in dec";
+    String inputString = "next oct at 10am";
     ANTLRInputStream input = null;
     try {
       // lex
       input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
       DateLexer lexer = new DateLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
-    
+      
       // parse 
-      input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
-      _parser = new DateParser(tokens);
-      DateParser.date_time_return result = _parser.date_time();
-      Tree tree = (Tree) result.getTree();
-      //System.out.println(tree.toStringTree());
+      StructureBuilder builder = new StructureBuilder();
+      DateParser parser = new DateParser(tokens, builder);
+      DateParser.date_time_return result = parser.date_time();
+      System.out.println(builder.toJSON());
       
       // walk
+      Tree tree = (Tree) result.getTree();
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
       DateWalker walker = new DateWalker(nodes);
       walker.date_time();
       
-      Printer printer = new Printer(_parser.getTokenNames());
-      printer.printTokenStream(tokens);
-      printer.printTree(tree);
-      
       Date date = walker.getState().getDate();
-      System.out.println("");
-      System.out.println(date);
+      
     } catch (IOException e) {
       e.printStackTrace();
       
