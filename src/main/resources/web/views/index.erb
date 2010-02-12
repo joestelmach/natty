@@ -1,21 +1,26 @@
 <h1>enter something resembling a date:</h1>
 <input type="text" id="text_input" />
-<br/>
-<input type="submit" id="submit" value="parse" />
-<img src="images/loading.gif" id="loading" style="display:none" />
-<div id="result" style="display:none;"></div>
 
-<div id="errors" style="display:none">The parser has encounterd an un-resolvable bug</div>
-
-<div id="structure" style="display:none">
-  <h2>here's how we broke it down:</h2>
-  <div id="structure_details"></div>
+<div id="submit_row">
+  <div id="submit">parse</div>
+  <img src="images/loading.gif" id="loading" style="display:none" />
 </div>
 
-<br />
-<div id="ast" style="display:none">
-  <h2>and here's the ast we built:</h2>
-  <div id="ast_details"></div>
+<div id="error" style="display:none">Sorry, the parser has encounterd an un-resolvable bug</div>
+
+<div id="date_wrapper">
+  <span id="date" style="display:none;"></span>
+</div>
+
+<div id="summary" style="display:none">
+  <div id="structure">
+    <h2>here's how we broke it down:</h2>
+    <div id="structure_details"></div>
+  </div>
+
+  <div id="ast">
+    <h2>and here's the ast we built:</h2>
+    <div id="ast_details"></div>
+  </div>
 </div>
 <br />
-

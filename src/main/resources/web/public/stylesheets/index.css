@@ -1,59 +1,84 @@
-body {
-  font-family:Helvetica;
-  padding:20px;
+html {
+  padding:0;
+  margin:0;
+  height:100%;
 }
 
-h1 {
-  font-size:26px;
-  color:#666;
+body {
+  font-family:Helvetica;
+  padding:0;
+  margin:0;
+  background-color:#F4F9FD;
+  height:100%;
+}
+
+h1,
+h2 {
+  font-size:28px;  
+  font-weight:normal;
+  color:#888;
 }
 
 h2 {
-  color:#666;
+  font-size:20px;  
 }
 
-br {
-  clear:both;
+#content {
+  width : 760px;
+  padding:20px;
+  margin:0 0 0 -400px;
+  background-color:#fff;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  border-left:1px solid #ccc;
+  border-right:1px solid #ccc;
 }
 
-input[type=text] {
-  width : 550px;
-  font-size:22px;
+#text_input {
+  width:760px;
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+#error {
+  color : #903;
+  line-height:32px;
+  font-size:18px;
+}
+
+#submit_row {
+  line-height:32px;
+}
+
+#submit_row * {
+  float:left;
+  margin-right:20px;
+  font-size:18px;
 }
 
 #submit {
-  margin-top:20px;
-  font-size:18px;
-}
-
-#loading {
-  position:absolute;
-  top:125px;
-  left:110px;
-}
-
-#result,
-#errors {
-  position:absolute;
-  left:150px;
-  top:127px;
+  -webkit-appearance : square-button;
+  -moz-appearance : button-bevel;
+  cursor:pointer;
+  font-size:22px;
+  line-height:22px;
   padding:5px;
-  font-weight:bold;
-  font-size:18px;
-  background-color:#c6d6ff;
 }
 
-#errors {
-  background-color:#fff;
-  color:red;
+#date_wrapper {
+  clear:both;
+  padding-top:20px;
 }
 
-#ast {
-  margin-top:40px;
+#date {
+  background-color:#FFFFCC;
 }
 
-#structure {
-  margin-top:40px;
+#summary {
+  clear:both;
+  padding-top:20px;
 }
 
 #structure .index {
@@ -74,4 +99,9 @@ input[type=text] {
   font-size:12px;
   font-weight:normal;
   clear:both;
+}
+
+#ast {
+  clear:both;
+  padding-top:20px;
 }
