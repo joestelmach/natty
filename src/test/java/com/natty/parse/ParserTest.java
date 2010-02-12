@@ -20,13 +20,13 @@ import com.natty.utility.StructureBuilder;
  */
 public class ParserTest {
   public static void main(String[] args) throws Exception {
-    String inputString = "the day after today";
+    String inputString = "oct 21st, '89";
     ANTLRInputStream input = null;
     StructureBuilder builder = new StructureBuilder();
     Date date = new Date();
     try {
       // lex
-      input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
+      input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(inputString.getBytes()));
       DateLexer lexer = new DateLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       

@@ -91,11 +91,11 @@ relaxed_date
       // this is a bit tricky since a time can be placed directly after a date, and a year
       // can look like a time (four digits, no colon i.e. 0500)  Since a year would be more
       // common in this context, we choose to swallow the year as part of the date.
-      ((THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year)=>
-        (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year
+      ((THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year_prefix relaxed_year)=>
+        (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year_prefix relaxed_year
     
-      | (relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year)=>
-        relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year
+      | (relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year_prefix relaxed_year)=>
+        relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year_prefix relaxed_year
     
       | (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month
       
@@ -127,10 +127,10 @@ relaxed_day_of_month
   ;
   
 relaxed_year
-  : relaxed_year_prefix SINGLE_QUOTE? int_00_to_99_mandatory_prefix
+  : SINGLE_QUOTE? int_00_to_99_mandatory_prefix
       -> ^(YEAR_OF int_00_to_99_mandatory_prefix)
       
-  | relaxed_year_prefix int_four_digits
+  | int_four_digits
       -> ^(YEAR_OF int_four_digits)
   ;
   

@@ -11,7 +11,7 @@ post '/parse' do
 
   # invoke the parser with the given input
   output = ''
-  IO.popen("java -jar parser.jar '#{params[:value]}'") do |parser|
+  IO.popen("java -jar parser.jar \"#{params[:value]}\"") do |parser|
     parser.each{|line| output << line} 
   end
   output = "{\"errors\":\"#{output.strip()}\"}" unless ((output =~ /^\{/) == 0)

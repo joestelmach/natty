@@ -113,15 +113,14 @@ relaxed_day_of_month:
 "32" FAIL
 
 relaxed_year:
-" '69" -> (YEAR_OF 69)
-" 79" -> (YEAR_OF 79)
-" 2079" -> (YEAR_OF 2079)
-" 999" FAIL
-" 999" FAIL
-", in the year '80" -> (YEAR_OF 80)
-" in the year 1979" -> (YEAR_OF 1979)
-" in the year 2004" -> (YEAR_OF 2004)
-"in the year 2004" FAIL // no leading white space
+"'69" -> (YEAR_OF 69)
+"79" -> (YEAR_OF 79)
+"2079" -> (YEAR_OF 2079)
+"999" FAIL
+"999" FAIL
+"'80" -> (YEAR_OF 80)
+"1979" -> (YEAR_OF 1979)
+"2004" -> (YEAR_OF 2004)
 
 relaxed_year_prefix:
 ", in the year " OK

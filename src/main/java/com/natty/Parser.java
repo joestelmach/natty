@@ -17,6 +17,7 @@ import org.antlr.runtime.tree.Tree;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.natty.parse.ANTLRNoCaseInputStream;
 import com.natty.parse.DateLexer;
 import com.natty.parse.DateParser;
 import com.natty.parse.DateWalker;
@@ -32,7 +33,7 @@ public class Parser {
     Tree tree = null;
     try {
       // lex
-      input = new ANTLRInputStream(new ByteArrayInputStream(inputString.getBytes()));
+      input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(inputString.getBytes()));
       DateLexer lexer = new DateLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
@@ -57,7 +58,7 @@ public class Parser {
     
     JSONObject json = new JSONObject();
     try {
-      DateFormat formatter = new SimpleDateFormat("MMM dd, yyyy hh:mm a z");
+      DateFormat formatter = new SimpleDateFormat("EEE MMM dd, yyyy hh:mm a z");
       formatter.setTimeZone(TimeZone.getTimeZone("America/New_York"));
       json.put("iso8601", formatter.format(date));
       json.put("structure", builder.toJSON());

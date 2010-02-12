@@ -21,15 +21,24 @@ public class StructureBuilder extends BlankDebugEventListener {
   static {
     INTERESTING_RULES = new HashMap<String, String>();
     //INTERESTING_RULES.put("date_time", "date and time");
+    //INTERESTING_RULES.put("date", "date");
     INTERESTING_RULES.put("global_date_prefix", "date prefix");
-    INTERESTING_RULES.put("date", "date");
-    //INTERESTING_RULES.put("relative_date", "relative date");
+    INTERESTING_RULES.put("relative_date", "relative date");
+    INTERESTING_RULES.put("relaxed_date", "relaxed date");
+    INTERESTING_RULES.put("formal_date", "formal date");
     INTERESTING_RULES.put("relaxed_day_of_month", "day");
     INTERESTING_RULES.put("relaxed_month", "month");
     INTERESTING_RULES.put("relaxed_year", "year");
     INTERESTING_RULES.put("formal_month_of_year", "month");
     INTERESTING_RULES.put("formal_day_of_month", "day");
     INTERESTING_RULES.put("formal_year", "year");
+    INTERESTING_RULES.put("relative_prefix", "relative prefix");
+    INTERESTING_RULES.put("implicit_prefix", "implicit prefix");
+    INTERESTING_RULES.put("relative_suffix", "relative suffix");
+    INTERESTING_RULES.put("relative_target", "relative target");
+    INTERESTING_RULES.put("relative_date_span", "span");
+    INTERESTING_RULES.put("relative_occurrence_index", "relative occurrence index");
+    INTERESTING_RULES.put("named_relative_date", "named relative date");
     INTERESTING_RULES.put("day_of_week", "weekday");
     INTERESTING_RULES.put("time", "time");
     INTERESTING_RULES.put("hours", "hours");
