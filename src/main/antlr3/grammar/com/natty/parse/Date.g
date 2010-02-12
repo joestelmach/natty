@@ -290,7 +290,8 @@ named_time
   ;
   
 time_zone_abbreviation
-  : EST  -> ZONE["America/New_York"]
+  : UTC  -> ZONE["UTC"]
+  | EST  -> ZONE["America/New_York"]
   | CST  -> ZONE["America/Chicago"]
   | PST  -> ZONE["America/Los_Angeles"]
   | MST  -> ZONE["America/Denver"]
@@ -465,6 +466,7 @@ MILITARY_HOUR_SUFFIX : 'h' | 'H';
 MIDNIGHT : 'midnight' | 'mid-night';
 NOON     : 'noon'     | 'afternoon' | 'after-noon';
 
+UTC  : 'utc'  | 'gmt'  | 'Z';
 EST  : 'est'  | 'edt'  | 'et';
 PST  : 'pst'  | 'pdt'  | 'pt';
 CST  : 'cst'  | 'cdt'  | 'ct';

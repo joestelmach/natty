@@ -23,11 +23,10 @@ import com.natty.utility.StructureBuilder;
  */
 public class ParserTest {
   public static void main(String[] args) throws Exception {
-    String inputString = "oct 1st 5pm pst";
+    String inputString = "oct 1st 5pm utc";
     ANTLRInputStream input = null;
     StructureBuilder builder = new StructureBuilder();
     Date date = new Date();
-    System.out.println(Arrays.toString(TimeZone.getAvailableIDs()));
     try {
       // lex
       input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(inputString.getBytes()));
