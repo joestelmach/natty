@@ -12,6 +12,8 @@ import java.util.TimeZone;
  */
 public class WalkerState {
   private GregorianCalendar _calendar;
+  private int _currentYear;
+  private static final int TWO_DIGIT_YEAR_CENTURY_THRESHOLD = 20;
   
   /**
    * Creates a new SeekableDateTime representing the start of u
@@ -19,11 +21,12 @@ public class WalkerState {
    */
   public WalkerState() {
     _calendar = new GregorianCalendar();
-    _calendar.setTimeZone(TimeZone.getTimeZone("US/Eastern"));
+    //_calendar.setTimeZone(TimeZone.getTimeZone("US/Eastern"));
     //_calendar.set(Calendar.HOUR, _calendar.get(Calendar.HOUR) + 1);
     //_calendar.set(Calendar.MINUTE, 0);
     _calendar.set(Calendar.SECOND, 0);
     _calendar.set(Calendar.MILLISECOND, 0);
+    _currentYear = _calendar.get(Calendar.YEAR);
   }
   
   /**
@@ -188,7 +191,13 @@ public class WalkerState {
     if(year != null) {
       yearInt = Integer.parseInt(year);
       assert(yearInt > 0 && yearInt < 9999);
+      // two digit years require us to choose a reasonable century.
+      if(year.length() == 2) {
+        int century = (yearInt > ((_currentYear - 2000) + TWO_DIGIT_YEAR_CENTURY_THRESHOLD)) ? 1900 : 2000;
+        yearInt = yearInt + century;
+      }
     }
+    
     
     _calendar.set(Calendar.MONTH, monthInt - 1);
     _calendar.set(Calendar.DAY_OF_MONTH, dayInt);
@@ -205,13 +214,19 @@ public class WalkerState {
    *     an integer between 0 and 59
    *     
    * @param amPm the meridian indicator to use.  Must be either 'am' or 'pm'
+   * 
+   * @param zone the time zone to use in zoneinfo format (America/New_York, etc)
    */
-  public void setExplicitTime(String hours, String minutes, String amPm) {
+  public void setExplicitTime(String hours, String minutes, String amPm, String zone) {
     int hoursInt = Integer.parseInt(hours);
     int minutesInt = Integer.parseInt(minutes);
     assert(amPm == null || amPm.equals("am") || amPm.equals("pm"));
     assert(hoursInt >= 0 && hoursInt <= 23); 
     assert(minutesInt >= 0 && minutesInt < 60); 
+    
+    if(zone != null) {
+      _calendar.setTimeZone(TimeZone.getTimeZone(zone));
+    }
     
     // hours greater than 12 are in 24-hour time
     if(hoursInt > 12) {

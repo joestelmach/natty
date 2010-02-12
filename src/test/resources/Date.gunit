@@ -530,6 +530,27 @@ meridian_indicator:
 "p.m." -> "pm"
 "p" -> "pm"
 
+time_zone_abbreviation:
+"est" -> "America/New_York"
+"edt" -> "America/New_York"
+"et" -> "America/New_York"
+"pst" -> "America/Los_Angeles"
+"pdt" -> "America/Los_Angeles"
+"pt" -> "America/Los_Angeles"
+"cst" -> "America/Chicago"
+"cdt" -> "America/Chicago"
+"ct" -> "America/Chicago"
+"mst" -> "America/Denver"
+"mdt" -> "America/Denver"
+"mt" -> "America/Denver"
+"akst" -> "America/Anchorage"
+"akdt" -> "America/Anchorage"
+"akt" -> "America/Anchorage"
+"hast" -> "Pacific/Honolulu"
+"hadt"  -> "Pacific/Honolulu"
+"hat"  -> "Pacific/Honolulu"
+"hst" -> "Pacific/Honolulu"
+
 // ********** numeric tests **********
 
 int_00_to_23_optional_prefix:

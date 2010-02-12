@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.debug.BlankDebugEventListener;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
 import org.json.JSONException;
@@ -45,7 +46,7 @@ public class Parser {
       tree = (Tree) result.getTree();
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
-      DateWalker walker = new DateWalker(nodes);
+      DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
       walker.date_time();
       date = walker.getState().getDate();
       

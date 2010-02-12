@@ -22,6 +22,7 @@ tokens {
   HOURS_OF_DAY;
   MINUTES_OF_HOUR;
   AM_PM;
+  ZONE;
 }
 
 @header        { package com.natty.parse; }
@@ -258,11 +259,11 @@ named_relative_date
 
 // a time with an hour, optional minutes, and optional meridian indicator
 time
-  : hours COLON? minutes (WHITE_SPACE? (meridian_indicator | (MILITARY_HOUR_SUFFIX | HOUR)))?
-      -> ^(EXPLICIT_TIME hours minutes meridian_indicator?)
+  : hours COLON? minutes (WHITE_SPACE? (meridian_indicator | (MILITARY_HOUR_SUFFIX | HOUR)))? (WHITE_SPACE? time_zone_abbreviation)?
+      -> ^(EXPLICIT_TIME hours minutes meridian_indicator? time_zone_abbreviation?)
       
-  | hours (WHITE_SPACE? meridian_indicator)?
-      -> ^(EXPLICIT_TIME hours ^(MINUTES_OF_HOUR INT["0"]) meridian_indicator?)
+  | hours (WHITE_SPACE? meridian_indicator)? (WHITE_SPACE? time_zone_abbreviation)?
+      -> ^(EXPLICIT_TIME hours ^(MINUTES_OF_HOUR INT["0"]) meridian_indicator? time_zone_abbreviation?)
       
   | named_time
   ;
@@ -286,6 +287,15 @@ meridian_indicator
 named_time
   : NOON     -> ^(EXPLICIT_TIME ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) AM_PM["pm"])
   | MIDNIGHT -> ^(EXPLICIT_TIME ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) AM_PM["am"])
+  ;
+  
+time_zone_abbreviation
+  : EST  -> ZONE["America/New_York"]
+  | CST  -> ZONE["America/Chicago"]
+  | PST  -> ZONE["America/Los_Angeles"]
+  | MST  -> ZONE["America/Denver"]
+  | AKST -> ZONE["America/Anchorage"]
+  | HAST -> ZONE["Pacific/Honolulu"]
   ;
   
 // ********** numeric rules **********
@@ -453,7 +463,14 @@ PM : 'pm' | 'p.m.' | 'p';
 MILITARY_HOUR_SUFFIX : 'h' | 'H';
 
 MIDNIGHT : 'midnight' | 'mid-night';
-NOON     : 'noon' | 'afternoon' | 'after-noon';
+NOON     : 'noon'     | 'afternoon' | 'after-noon';
+
+EST  : 'est'  | 'edt'  | 'et';
+PST  : 'pst'  | 'pdt'  | 'pt';
+CST  : 'cst'  | 'cdt'  | 'ct';
+MST  : 'mst'  | 'mdt'  | 'mt';
+AKST : 'akst' | 'akdt' | 'akt';
+HAST : 'hast' | 'hadt' | 'hat' | 'hst';
 
 // ********* numeric lexer rules **********
 
