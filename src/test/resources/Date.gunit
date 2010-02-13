@@ -1062,23 +1062,606 @@ spelled_first_to_thirty_first:
 "thirty first" -> "31"
 "31st" -> "31"
 
-INT_0:
-"0" OK:
+int_60_to_99:
+"59" FAIL
+"60" OK
+"61" OK
+"62" OK
+"63" OK
+"64" OK
+"65" OK
+"66" OK
+"67" OK
+"68" OK
+"69" OK
+"70" OK
+"71" OK
+"72" OK
+"73" OK
+"74" OK
+"75" OK
+"76" OK
+"77" OK
+"78" OK
+"79" OK
+"80" OK
+"81" OK
+"82" OK
+"83" OK
+"84" OK
+"85" OK
+"86" OK
+"87" OK
+"88" OK
+"89" OK
+"90" OK
+"91" OK
+"92" OK
+"93" OK
+"94" OK
+"95" OK
+"96" OK
+"97" OK
+"98" OK
+"99" OK
+"100" FAIL
 
-INT_00:
+
+int_32_to_59:
+"31" FAIL
+"32" OK 
+"33" OK 
+"34" OK 
+"35" OK 
+"36" OK 
+"37" OK 
+"38" OK 
+"39" OK 
+"40" OK 
+"41" OK
+"42" OK 
+"43" OK 
+"44" OK 
+"45" OK 
+"46" OK 
+"47" OK 
+"48" OK 
+"49" OK 
+"50" OK 
+"51" OK
+"52" OK 
+"53" OK 
+"54" OK 
+"55" OK 
+"56" OK 
+"57" OK 
+"58" OK 
+"59" OK 
+"60" FAIL
+
+int_24_to_31:
+"23" FAIL 
+"24" OK
+"25" OK
+"26" OK
+"27" OK
+"28" OK
+"29" OK
+"30" OK
+"31" OK
+"32" FAIL
+
+int_13_to_23:
+"12" FAIL
+"13" OK 
+"14" OK 
+"15" OK 
+"16" OK 
+"17" OK 
+"18" OK 
+"19" OK 
+"20" OK 
+"21" OK 
+"22" OK 
+"23" OK 
+"24" FAIL
+
+int_01_to_12:
 "0" FAIL
-"00" OK
-
-INT_01_TO_12:
+"00" FAIL
+"1" FAIL
 "01" OK
-"02" OK
-"03" OK
-"04" OK
-"05" OK
-"06" OK
-"07" OK
-"08" OK
-"09" OK
-"10" OK
-"11" OK
-"12" OK
+"2" FAIL 
+"02" OK 
+"3" FAIL 
+"03" OK 
+"4" FAIL 
+"04" OK 
+"5" FAIL 
+"05" OK 
+"6" FAIL 
+"06" OK 
+"7" FAIL 
+"07" OK 
+"8" FAIL 
+"08" OK 
+"9" FAIL 
+"09" OK 
+"10" OK 
+"11" OK 
+"12" OK 
+"13" FAIL
+
+int_1_to_9:
+"0" FAIL
+"00" FAIL
+"1" OK
+"01" FAIL
+"2" OK
+"02" FAIL
+"3" OK
+"03" FAIL
+"4" OK
+"04" FAIL
+"5" OK
+"05" FAIL
+"6" OK 
+"06" FAIL
+"7" OK 
+"07" FAIL
+"8" OK 
+"08" FAIL
+"9" OK 
+"09" FAIL
+"10" FAIL
+
+int_1_to_5:
+"0" FAIL
+"00" FAIL
+"1" OK
+"01" FAIL
+"2" OK
+"02" FAIL
+"3" OK
+"03" FAIL
+"4" OK
+"04" FAIL
+"5" OK
+"05" FAIL
+"6" FAIL
+"06" FAIL
+
+// ********** date lexer rules ********** 
+
+JANUARY:
+"january" OK
+"januarys" OK
+"jan" OK
+"jan." OK
+
+FEBRUARY:
+"february" OK
+"februarys" OK
+"feb" OK
+"feb." OK
+
+MARCH:
+"march" OK
+"marches" OK
+"mar" OK
+"mar." OK
+
+APRIL:
+"april" OK
+"aprils" OK
+"apr" OK
+"apr." OK
+
+MAY:
+"may" OK
+"mays" OK
+
+JUNE:
+"june" OK
+"junes" OK
+"jun" OK
+"jun." OK
+
+JULY:
+"july" OK
+"julys" OK
+"jul" OK
+"jul." OK
+
+AUGUST:
+"august" OK
+"augusts" OK
+"aug" OK
+"aug." OK
+
+SEPTEMBER:
+"september" OK
+"septembers" OK
+"sep" OK
+"sep." OK
+"sept" OK
+"sept." OK
+
+OCTOBER:
+"october" OK
+"octobers" OK
+"oct" OK
+"oct." OK
+
+NOVEMBER:
+"november" OK
+"novembers" OK
+"nov" OK
+"nov." OK
+
+DECEMBER:
+"december" OK
+"decembers" OK
+"dec" OK
+"dec." OK
+  
+SUNDAY:
+"sunday" OK
+"sundays" OK
+"sun" OK
+"sun." OK
+"suns" OK
+"suns." OK
+
+MONDAY:
+"monday" OK
+"mondays" OK
+"mon" OK
+"mon." OK
+"mons" OK
+"mons." OK
+
+TUESDAY:
+"tuesday" OK
+"tuesdays" OK
+"tues" OK
+"tues." OK
+"tue" OK
+"tue." OK
+
+WEDNESDAY:
+"wednesday" OK
+"wednesdays" OK
+"wed" OK
+"wed." OK
+"weds" OK
+"weds." OK
+
+THURSDAY:
+"thursday" OK
+"thursdays" OK
+"thur" OK
+"thur." OK
+"thu" OK
+"thu." OK
+"thus" OK
+"thus." OK
+"thurs" OK
+"thurs." OK
+
+FRIDAY:
+"friday" OK
+"fridays" OK
+"fri" OK
+"fri." OK
+"fris" OK
+"fris." OK
+
+SATURDAY:
+"saturday" OK
+"saturdays" OK
+"sat" OK
+"sat." OK
+"sats" OK
+"sats." OK
+"weekend" OK
+
+HOUR:
+"hour" OK
+"hours" OK
+
+DAY:
+"day" OK
+"days" OK
+
+WEEK:
+"week" OK
+"weeks" OK
+
+MONTH:
+"month" OK
+"months" OK
+
+YEAR:
+"year" OK
+"years" OK
+
+TODAY:"today" OK
+
+TOMORROW:
+"tomorow" OK
+"tomorrow" OK
+"tommorow" OK
+"tommorrow" OK
+
+YESTERDAY : "yesterday" OK
+
+// ********** time lexer rules ********** 
+  
+AM:
+"am" OK
+"a.m." OK
+"a" OK
+
+PM:
+"pm" OK
+"p.m." OK
+"p"  OK
+
+T:"t" OK
+
+MILITARY_HOUR_SUFFIX:"h" OK
+
+MIDNIGHT:
+"midnight" OK
+"mid-night" OK
+
+NOON:
+"noon" OK
+"afternoon" OK
+"after-noon" OK
+
+UTC:
+"utc" OK
+"gmt" OK
+"z" OK
+
+EST:
+"est" OK
+"edt" OK
+"et" OK
+
+PST:
+"pst" OK
+"pdt" OK
+"pt" OK
+
+CST:
+"cst" OK
+"cdt" OK
+"ct" OK
+
+MST:
+"mst" OK
+"mdt" OK
+"mt" OK
+
+AKST:
+"akst" OK
+"akdt" OK
+"akt" OK
+
+HAST: 
+"hast" OK
+"hadt" OK
+"hat" OK
+"hst" OK
+
+// ********* numeric lexer rules **********
+
+INT_00: "00" OK
+INT_00: "0" FAIL
+INT_01: "01" OK
+INT_01: "1" FAIL
+INT_02: "02" OK
+INT_02: "2" FAIL
+INT_03: "03" OK
+INT_03: "3" FAIL
+INT_04: "04" OK
+INT_04: "4" FAIL
+INT_05: "05" OK
+INT_05: "6" FAIL
+INT_06: "06" OK
+INT_06: "6" FAIL
+INT_07: "07" OK
+INT_07: "7" FAIL
+INT_08: "08" OK
+INT_08: "8" FAIL
+INT_09: "09" OK
+INT_09: "9" FAIL
+INT_0: "0" OK
+INT_1: "1" OK
+INT_2: "2" OK
+INT_3: "3" OK
+INT_4: "4" OK
+INT_5: "5" OK
+INT_6: "6" OK
+INT_7: "7" OK
+INT_8: "8" OK
+INT_9: "9" OK
+INT_10: "10" OK
+INT_11: "11" OK
+INT_12: "12" OK
+INT_13: "13" OK
+INT_14: "14" OK
+INT_15: "15" OK
+INT_16: "16" OK
+INT_17: "17" OK
+INT_18: "18" OK
+INT_19: "19" OK
+INT_20: "20" OK
+INT_21: "21" OK
+INT_22: "22" OK
+INT_23: "23" OK
+INT_24: "24" OK
+INT_25: "25" OK
+INT_26: "26" OK
+INT_27: "27" OK
+INT_28: "28" OK
+INT_29: "29" OK
+INT_30: "30" OK
+INT_31: "31" OK
+INT_32: "32" OK
+INT_33: "33" OK
+INT_34: "34" OK
+INT_35: "35" OK
+INT_36: "36" OK
+INT_37: "37" OK
+INT_38: "38" OK
+INT_39: "39" OK
+INT_40: "40" OK
+INT_41: "41" OK
+INT_42: "42" OK
+INT_43: "43" OK
+INT_44: "44" OK
+INT_45: "45" OK
+INT_46: "46" OK
+INT_47: "47" OK
+INT_48: "48" OK
+INT_49: "49" OK
+INT_50: "50" OK
+INT_51: "51" OK
+INT_52: "52" OK
+INT_53: "53" OK
+INT_54: "54" OK
+INT_55: "55" OK
+INT_56: "56" OK
+INT_57: "57" OK
+INT_58: "58" OK
+INT_59: "59" OK
+INT_60: "60" OK
+INT_61: "61" OK
+INT_62: "62" OK
+INT_63: "63" OK
+INT_64: "64" OK
+INT_65: "65" OK
+INT_66: "66" OK
+INT_67: "67" OK
+INT_68: "68" OK
+INT_69: "69" OK
+INT_70: "70" OK
+INT_71: "71" OK
+INT_72: "72" OK
+INT_73: "73" OK
+INT_74: "74" OK
+INT_75: "75" OK
+INT_76: "76" OK
+INT_77: "77" OK
+INT_78: "78" OK
+INT_79: "79" OK
+INT_80: "80" OK
+INT_81: "81" OK
+INT_82: "82" OK
+INT_83: "83" OK
+INT_84: "84" OK
+INT_85: "85" OK
+INT_86: "86" OK
+INT_87: "87" OK
+INT_88: "88" OK
+INT_89: "89" OK
+INT_90: "90" OK
+INT_91: "91" OK
+INT_92: "92" OK
+INT_93: "93" OK
+INT_94: "94" OK
+INT_95: "95" OK
+INT_96: "96" OK
+INT_97: "97" OK
+INT_98: "98" OK
+INT_99: "99" OK
+
+ST: "st" OK
+ND: "nd" OK
+RD: "rd" OK
+TH: "th" OK
+   
+ONE: "one" OK
+TWO: "two" OK
+THREE: "three" OK
+FOUR: "four" OK
+FIVE: "five" OK
+SIX: "six" OK
+SEVEN: "seven" OK
+EIGHT: "eight" OK
+NINE: "nine" OK
+TEN: "ten" OK
+ELEVEN: "eleven" OK
+TWELVE: "twelve" OK
+THIRTEEN: "thirteen" OK
+FOURTEEN: "fourteen" OK
+FIFTEEN: "fifteen" OK
+SIXTEEN: "sixteen" OK
+SEVENTEEN: "seventeen" OK
+EIGHTEEN: 
+  "eighteen" OK
+  "eightteen" OK
+NINETEEN: "nineteen" OK
+TWENTY: "twenty" OK
+THIRTY: "thirty" OK
+
+FIRST: "first" OK
+SECOND: "second" OK
+THIRD: "third" OK
+FOURTH: "fourth" OK
+FIFTH: "fifth" OK
+SIXTH: "sixth" OK
+SEVENTH: "seventh" OK
+EIGHTH: "eigth" OK
+NINTH: "ninth" OK
+TENTH: "tenth" OK
+ELEVENTH: "eleventh" OK
+TWELFTH: "twelfth" OK
+THIRTEENTH: "thirteenth" OK
+FOURTEENTH: "fourteenth" OK
+FIFTEENTH: "fifteenth" OK
+SIXTEENTH: "sixteenth" OK
+SEVENTEENTH: "seventeenth" OK
+EIGHTEENTH: "eighteenth" OK
+NINETEENTH: "nineteenth" OK
+TWENTIETH: "twentieth" OK
+THIRTIETH: "thirtieth" OK
+
+COLON: ":" OK
+COMMA: "," OK
+DASH: "-" OK
+SLASH: "/" OK
+DOT:  "." OK
+PLUS: "+" OK
+SINGLE_QUOTE: "'" OK
+IN: "in" OK
+THE: "the" OK
+AT: "at" OK
+ON: "on" OK
+OF: "of" OK
+THIS: "this" OK
+LAST: "last" OK
+NEXT: "next" OK
+PAST: "past" OK
+COMING: "coming" OK
+UPCOMING: "upcoming" OK
+FROM: "from" OK
+NOW: "now" OK
+AGO: "ago" OK
+BEFORE: "before" OK
+AFTER: "after" OK
+
+WHITE_SPACE:
+" " OK
+"    " OK
+"\t" OK
+"\t\t" OK
+"\n" OK
+"\n" OK
+"\n\n" OK
+"\r" OK
+"\r\r" OK

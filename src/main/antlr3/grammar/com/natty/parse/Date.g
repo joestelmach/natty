@@ -439,60 +439,6 @@ spelled_first_to_thirty_first
   | ((THIRTY (DASH | WHITE_SPACE)? FIRST)   | INT_31 ST) -> INT["31"]
   ;
   
-// ********** date lexer rules ********** 
-
-JANUARY   : 'january' 's'?   | 'jan' DOT?;
-FEBRUARY  : 'february' 's'?  | 'feb' DOT?;
-MARCH     : 'march' 's'?     | 'mar' DOT?;
-APRIL     : 'april' 's'?     | 'apr' DOT?;
-MAY       : 'may' 's'?;
-JUNE      : 'june' 's'?      | 'jun' DOT?;
-JULY      : 'july' 's'?      | 'jul' DOT?;
-AUGUST    : 'august' 's'?    | 'aug' DOT?;
-SEPTEMBER : 'september' 's'? | 'sep' DOT? | 'sept' DOT?;
-OCTOBER   : 'october' 's'?   | 'oct' DOT?;
-NOVEMBER  : 'november' 's'?  | 'nov' DOT?;
-DECEMBER  : 'december' 's'?  | 'dec' DOT?;
-  
-SUNDAY    : 'sunday' 's'?    | 'sun' DOT?  | 'suns' DOT?;
-MONDAY    : 'monday' 's'?    | 'mon' DOT?  | 'mons' DOT?;
-TUESDAY   : 'tuesday' 's'?   | 'tues' DOT? | 'tue' DOT?;
-WEDNESDAY : 'wednesday' 's'? | 'wed' DOT?  | 'weds' DOT?;
-THURSDAY  : 'thursday' 's'?  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thurs' DOT?;
-FRIDAY    : 'friday' 's'?    | 'fri' DOT?  | 'fris' DOT?;
-SATURDAY  : 'saturday' 's'?  | 'sat' DOT?  | 'sats' DOT?  | 'weekend';
-
-HOUR  : 'hour'  | 'hours' ;
-DAY   : 'day'   | 'days' ;
-WEEK  : 'week'  | 'weeks' ;
-MONTH : 'month' | 'months' ;
-YEAR  : 'year'  | 'years' ;
-
-TODAY     : 'today';
-TOMORROW  : 'tomorow'   | 'tomorrow'   | 'tommorow' | 'tommorrow';
-YESTERDAY : 'yesterday';
-
-// ********** time lexer rules ********** 
-  
-AM : 'am' | 'a.m.' | 'a';
-PM : 'pm' | 'p.m.' | 'p';
-T  : 't';
-
-MILITARY_HOUR_SUFFIX : 'h' | 'H';
-
-MIDNIGHT : 'midnight' | 'mid-night';
-NOON     : 'noon'     | 'afternoon' | 'after-noon';
-
-UTC  : 'utc'  | 'gmt'  | 'z';
-EST  : 'est'  | 'edt'  | 'et';
-PST  : 'pst'  | 'pdt'  | 'pt';
-CST  : 'cst'  | 'cdt'  | 'ct';
-MST  : 'mst'  | 'mdt'  | 'mt';
-AKST : 'akst' | 'akdt' | 'akt';
-HAST : 'hast' | 'hadt' | 'hat' | 'hst';
-
-// ********* numeric lexer rules **********
-
 int_60_to_99
   : INT_60 | INT_61 | INT_62 | INT_63 | INT_64 | INT_65 | INT_66 | INT_67 | INT_68
   | INT_69 | INT_70 | INT_71 | INT_72 | INT_73 | INT_74 | INT_75 | INT_76 | INT_77
@@ -530,6 +476,61 @@ int_1_to_5
   : INT_1  | INT_2  | INT_3  | INT_4  | INT_5 
   ;
   
+  
+// ********** date lexer rules ********** 
+
+JANUARY   : 'january' 's'?   | 'jan' DOT?;
+FEBRUARY  : 'february' 's'?  | 'feb' DOT?;
+MARCH     : 'march' 'es'?     | 'mar' DOT?;
+APRIL     : 'april' 's'?     | 'apr' DOT?;
+MAY       : 'may' 's'?;
+JUNE      : 'june' 's'?      | 'jun' DOT?;
+JULY      : 'july' 's'?      | 'jul' DOT?;
+AUGUST    : 'august' 's'?    | 'aug' DOT?;
+SEPTEMBER : 'september' 's'? | 'sep' DOT? | 'sept' DOT?;
+OCTOBER   : 'october' 's'?   | 'oct' DOT?;
+NOVEMBER  : 'november' 's'?  | 'nov' DOT?;
+DECEMBER  : 'december' 's'?  | 'dec' DOT?;
+  
+SUNDAY    : 'sunday' 's'?    | 'sun' DOT?  | 'suns' DOT?;
+MONDAY    : 'monday' 's'?    | 'mon' DOT?  | 'mons' DOT?;
+TUESDAY   : 'tuesday' 's'?   | 'tues' DOT? | 'tue' DOT?;
+WEDNESDAY : 'wednesday' 's'? | 'wed' DOT?  | 'weds' DOT?;
+THURSDAY  : 'thursday' 's'?  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thurs' DOT?;
+FRIDAY    : 'friday' 's'?    | 'fri' DOT?  | 'fris' DOT?;
+SATURDAY  : 'saturday' 's'?  | 'sat' DOT?  | 'sats' DOT?  | 'weekend';
+
+HOUR  : 'hour'  | 'hours' ;
+DAY   : 'day'   | 'days' ;
+WEEK  : 'week'  | 'weeks' ;
+MONTH : 'month' | 'months' ;
+YEAR  : 'year'  | 'years' ;
+
+TODAY     : 'today';
+TOMORROW  : 'tomorow'   | 'tomorrow'   | 'tommorow' | 'tommorrow';
+YESTERDAY : 'yesterday';
+
+// ********** time lexer rules ********** 
+  
+AM : 'am' | 'a.m.' | 'a';
+PM : 'pm' | 'p.m.' | 'p';
+T  : 't';
+
+MILITARY_HOUR_SUFFIX : 'h';
+
+MIDNIGHT : 'midnight' | 'mid-night';
+NOON     : 'noon'     | 'afternoon' | 'after-noon';
+
+UTC  : 'utc'  | 'gmt'  | 'z';
+EST  : 'est'  | 'edt'  | 'et';
+PST  : 'pst'  | 'pdt'  | 'pt';
+CST  : 'cst'  | 'cdt'  | 'ct';
+MST  : 'mst'  | 'mdt'  | 'mt';
+AKST : 'akst' | 'akdt' | 'akt';
+HAST : 'hast' | 'hadt' | 'hat' | 'hst';
+
+// ********* numeric lexer rules **********
+
 INT_00 : '00';
 INT_01 : '01';
 INT_02 : '02';
@@ -719,8 +720,4 @@ AFTER    : 'after';
 
 WHITE_SPACE
   : (' ' | '\t' | '\n' | '\r')+
-  ;
-  
-UNKNOWN
-  : . {$channel=HIDDEN;}
   ;
