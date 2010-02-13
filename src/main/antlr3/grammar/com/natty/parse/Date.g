@@ -21,8 +21,10 @@ tokens {
   EXPLICIT_TIME;
   HOURS_OF_DAY;
   MINUTES_OF_HOUR;
+  SECONDS_OF_MINUTE;
   AM_PM;
   ZONE;
+  ZONE_OFFSET;
 }
 
 @header        { package com.natty.parse; }
@@ -56,6 +58,7 @@ date_time
 date_time_separator
   : WHITE_SPACE (AT WHITE_SPACE)?
   | COMMA WHITE_SPACE? (AT WHITE_SPACE)?
+  | T
   ;
   
 time_date_separator
@@ -259,11 +262,11 @@ named_relative_date
 
 // a time with an hour, optional minutes, and optional meridian indicator
 time
-  : hours COLON? minutes (WHITE_SPACE? (meridian_indicator | (MILITARY_HOUR_SUFFIX | HOUR)))? (WHITE_SPACE? time_zone_abbreviation)?
-      -> ^(EXPLICIT_TIME hours minutes meridian_indicator? time_zone_abbreviation?)
+  : hours COLON? minutes (COLON? seconds)? (WHITE_SPACE? (meridian_indicator | (MILITARY_HOUR_SUFFIX | HOUR)))? (WHITE_SPACE? time_zone)?
+      -> ^(EXPLICIT_TIME hours minutes seconds? meridian_indicator? time_zone?)
       
-  | hours (WHITE_SPACE? meridian_indicator)? (WHITE_SPACE? time_zone_abbreviation)?
-      -> ^(EXPLICIT_TIME hours ^(MINUTES_OF_HOUR INT["0"]) meridian_indicator? time_zone_abbreviation?)
+  | hours (WHITE_SPACE? meridian_indicator)? (WHITE_SPACE? time_zone)?
+      -> ^(EXPLICIT_TIME hours ^(MINUTES_OF_HOUR INT["0"]) meridian_indicator? time_zone?)
       
   | named_time
   ;
@@ -278,6 +281,11 @@ minutes
   : int_00_to_59_mandatory_prefix -> ^(MINUTES_OF_HOUR int_00_to_59_mandatory_prefix)
   ;
   
+// seconds of the minute 
+seconds
+  : int_00_to_59_mandatory_prefix -> ^(SECONDS_OF_MINUTE int_00_to_59_mandatory_prefix)
+  ;
+  
 // meridian am/pm indicator
 meridian_indicator
   : AM -> AM_PM["am"]
@@ -289,6 +297,16 @@ named_time
   | MIDNIGHT -> ^(EXPLICIT_TIME ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) AM_PM["am"])
   ;
   
+time_zone
+  : time_zone_abbreviation
+  | time_zone_offset
+  ;
+  
+time_zone_offset
+  : (PLUS | DASH) hours (COLON? minutes)? 
+      -> ZONE_OFFSET[$time_zone_offset.text]
+  ;
+      
 time_zone_abbreviation
   : UTC  -> ZONE["UTC"]
   | EST  -> ZONE["America/New_York"]
@@ -388,37 +406,37 @@ spelled_one_to_thirty_one
   
 // a spelled number in sequence between first and thirty-first
 spelled_first_to_thirty_first
-  : FIRST       -> INT["1"]
-  | SECOND      -> INT["2"]
-  | THIRD       -> INT["3"]
-  | FOURTH      -> INT["4"]
-  | FIFTH       -> INT["5"]
-  | SIXTH       -> INT["6"]
-  | SEVENTH     -> INT["7"]
-  | EIGHTH      -> INT["8"]
-  | NINTH       -> INT["9"]
-  | TENTH       -> INT["10"]
-  | ELEVENTH    -> INT["11"]
-  | TWELFTH     -> INT["12"]
-  | THIRTEENTH  -> INT["13"]
-  | FOURTEENTH  -> INT["14"]
-  | FIFTEENTH   -> INT["15"]
-  | SIXTEENTH   -> INT["16"]
-  | SEVENTEENTH -> INT["17"]
-  | EIGHTEENTH  -> INT["18"]
-  | NINETEENTH  -> INT["19"]
-  | TWENTIETH   -> INT["20"]
-  | (TWENTY_FIRST   | (TWENTY (DASH | WHITE_SPACE)? FIRST))   -> INT["21"]
-  | (TWENTY_SECOND  | (TWENTY (DASH | WHITE_SPACE)? SECOND))  -> INT["22"]
-  | (TWENTY_THIRD   | (TWENTY (DASH | WHITE_SPACE)? THIRD))   -> INT["23"]
-  | (TWENTY_FOURTH  | (TWENTY (DASH | WHITE_SPACE)? FOURTH))  -> INT["24"]
-  | (TWENTY_FIFTH   | (TWENTY (DASH | WHITE_SPACE)? FIFTH))   -> INT["25"]
-  | (TWENTY_SIXTH   | (TWENTY (DASH | WHITE_SPACE)? SIXTH))   -> INT["26"]
-  | (TWENTY_SEVENTH | (TWENTY (DASH | WHITE_SPACE)? SEVENTH)) -> INT["27"]
-  | (TWENTY_EIGHTH  | (TWENTY (DASH | WHITE_SPACE)? EIGHTH))  -> INT["28"]
-  | (TWENTY_NINTH   | (TWENTY (DASH | WHITE_SPACE)? NINTH))   -> INT["29"]
-  | THIRTIETH                                                 -> INT["30"]
-  | (THIRTY_FIRST   | (THIRTY (DASH | WHITE_SPACE)? FIRST))   -> INT["31"]
+  : (FIRST       | INT_1 ST)  -> INT["1"]
+  | (SECOND      | INT_2 ND)  -> INT["2"]
+  | (THIRD       | INT_3 RD)  -> INT["3"]
+  | (FOURTH      | INT_4 TH)  -> INT["4"]
+  | (FIFTH       | INT_5 TH)  -> INT["5"]
+  | (SIXTH       | INT_6 TH)  -> INT["6"]
+  | (SEVENTH     | INT_7 TH)  -> INT["7"]
+  | (EIGHTH      | INT_8 TH)  -> INT["8"]
+  | (NINTH       | INT_9 TH)  -> INT["9"]
+  | (TENTH       | INT_10 TH) -> INT["10"]
+  | (ELEVENTH    | INT_11 TH) -> INT["11"]
+  | (TWELFTH     | INT_12 TH) -> INT["12"]
+  | (THIRTEENTH  | INT_13 TH) -> INT["13"]
+  | (FOURTEENTH  | INT_14 TH) -> INT["14"]
+  | (FIFTEENTH   | INT_15 TH) -> INT["15"]
+  | (SIXTEENTH   | INT_16 TH) -> INT["16"]
+  | (SEVENTEENTH | INT_17 TH) -> INT["17"]
+  | (EIGHTEENTH  | INT_18 TH) -> INT["18"]
+  | (NINETEENTH  | INT_19 TH) -> INT["19"]
+  | (TWENTIETH   | INT_20 TH) -> INT["20"]
+  | ((TWENTY (DASH | WHITE_SPACE)? FIRST)   | INT_21 ST) -> INT["21"]
+  | ((TWENTY (DASH | WHITE_SPACE)? SECOND)  | INT_22 ND) -> INT["22"]
+  | ((TWENTY (DASH | WHITE_SPACE)? THIRD)   | INT_23 RD) -> INT["23"]
+  | ((TWENTY (DASH | WHITE_SPACE)? FOURTH)  | INT_24 TH) -> INT["24"]
+  | ((TWENTY (DASH | WHITE_SPACE)? FIFTH)   | INT_25 TH) -> INT["25"]
+  | ((TWENTY (DASH | WHITE_SPACE)? SIXTH)   | INT_26 TH) -> INT["26"]
+  | ((TWENTY (DASH | WHITE_SPACE)? SEVENTH) | INT_27 TH) -> INT["27"]
+  | ((TWENTY (DASH | WHITE_SPACE)? EIGHTH)  | INT_28 TH) -> INT["28"]
+  | ((TWENTY (DASH | WHITE_SPACE)? NINTH)   | INT_29 TH) -> INT["29"]
+  | (THIRTIETH | INT_30 TH)                              -> INT["30"]
+  | ((THIRTY (DASH | WHITE_SPACE)? FIRST)   | INT_31 ST) -> INT["31"]
   ;
   
 // ********** date lexer rules ********** 
@@ -458,13 +476,14 @@ YESTERDAY : 'yesterday';
   
 AM : 'am' | 'a.m.' | 'a';
 PM : 'pm' | 'p.m.' | 'p';
+T  : 't';
 
 MILITARY_HOUR_SUFFIX : 'h' | 'H';
 
 MIDNIGHT : 'midnight' | 'mid-night';
 NOON     : 'noon'     | 'afternoon' | 'after-noon';
 
-UTC  : 'utc'  | 'gmt'  | 'Z';
+UTC  : 'utc'  | 'gmt'  | 'z';
 EST  : 'est'  | 'edt'  | 'et';
 PST  : 'pst'  | 'pdt'  | 'pt';
 CST  : 'cst'  | 'cdt'  | 'ct';
@@ -511,7 +530,6 @@ int_1_to_5
   : INT_1  | INT_2  | INT_3  | INT_4  | INT_5 
   ;
   
-INT_0 : '0';
 INT_00 : '00';
 INT_01 : '01';
 INT_02 : '02';
@@ -522,15 +540,16 @@ INT_06 : '06';
 INT_07 : '07';
 INT_08 : '08';
 INT_09 : '09';
-INT_1 : '1';
-INT_2 : '2';
-INT_3 : '3';
-INT_4 : '4';
-INT_5 : '5';
-INT_6 : '6';
-INT_7 : '7';
-INT_8 : '8';
-INT_9 : '9';
+INT_0  : '0';
+INT_1  : '1';
+INT_2  : '2';
+INT_3  : '3';
+INT_4  : '4';
+INT_5  : '5';
+INT_6  : '6';
+INT_7  : '7';
+INT_8  : '8';
+INT_9  : '9';
 INT_10 : '10';
 INT_11 : '11';
 INT_12 : '12';
@@ -621,6 +640,11 @@ INT_96 : '96';
 INT_97 : '97';
 INT_98 : '98';
 INT_99 : '99';
+
+ST : 'st';
+ND : 'nd';
+RD : 'rd';
+TH : 'th';
    
 ONE       : 'one';
 TWO       : 'two';
@@ -644,37 +668,27 @@ NINETEEN  : 'nineteen';
 TWENTY    : 'twenty';
 THIRTY    : 'thirty';
 
-FIRST          : 'first'       | '1st';
-SECOND         : 'second'      | '2nd';
-THIRD          : 'third'       | '3rd';
-FOURTH         : 'fourth'      | '4th';
-FIFTH          : 'fifth'       | '5th';
-SIXTH          : 'sixth'       | '6th';
-SEVENTH        : 'seventh'     | '7th';
-EIGHTH         : 'eigth'       | '8th';
-NINTH          : 'ninth'       | '9th';
-TENTH          : 'tenth'       | '10th';
-ELEVENTH       : 'eleventh'    | '11th';
-TWELFTH        : 'twelfth'     | '12th';
-THIRTEENTH     : 'thirteenth'  | '13th';
-FOURTEENTH     : 'fourteenth'  | '14th';
-FIFTEENTH      : 'fifteenth'   | '15th';
-SIXTEENTH      : 'sixteenth'   | '16th';
-SEVENTEENTH    : 'seventeenth' | '17th';
-EIGHTEENTH     : 'eighteenth'  | '18th';
-NINETEENTH     : 'nineteenth'  | '19th';
-TWENTIETH      : 'twentieth'   | '20th';
-TWENTY_FIRST   : '21st';
-TWENTY_SECOND  : '22nd';
-TWENTY_THIRD   : '23rd';
-TWENTY_FOURTH  : '24th';
-TWENTY_FIFTH   : '25th';
-TWENTY_SIXTH   : '26th';
-TWENTY_SEVENTH : '27th';
-TWENTY_EIGHTH  : '28th';
-TWENTY_NINTH   : '29th';
-THIRTIETH      : 'thirtieth' | '30th';
-THIRTY_FIRST   : '31st';
+FIRST          : 'first';
+SECOND         : 'second';
+THIRD          : 'third';
+FOURTH         : 'fourth';
+FIFTH          : 'fifth';
+SIXTH          : 'sixth';
+SEVENTH        : 'seventh';
+EIGHTH         : 'eigth';
+NINTH          : 'ninth';
+TENTH          : 'tenth';
+ELEVENTH       : 'eleventh';
+TWELFTH        : 'twelfth';
+THIRTEENTH     : 'thirteenth';
+FOURTEENTH     : 'fourteenth';
+FIFTEENTH      : 'fifteenth';
+SIXTEENTH      : 'sixteenth';
+SEVENTEENTH    : 'seventeenth';
+EIGHTEENTH     : 'eighteenth';
+NINETEENTH     : 'nineteenth';
+TWENTIETH      : 'twentieth';
+THIRTIETH      : 'thirtieth';
    
 // ********** common lexer rules **********
 
@@ -683,6 +697,7 @@ COMMA : ',';
 DASH  : '-';
 SLASH : '/';
 DOT   : '.';
+PLUS  : '+';
 SINGLE_QUOTE : '\'';
 
 IN       : 'in';

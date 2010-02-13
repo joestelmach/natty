@@ -6,9 +6,7 @@ import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 /**
- * Represents a seek-able date and time.
  * @author Joe Stelmach
- *
  */
 public class WalkerState {
   private GregorianCalendar _calendar;
@@ -21,11 +19,6 @@ public class WalkerState {
    */
   public WalkerState() {
     _calendar = new GregorianCalendar();
-    //_calendar.setTimeZone(TimeZone.getTimeZone("US/Eastern"));
-    //_calendar.set(Calendar.HOUR, _calendar.get(Calendar.HOUR) + 1);
-    //_calendar.set(Calendar.MINUTE, 0);
-    _calendar.set(Calendar.SECOND, 0);
-    _calendar.set(Calendar.MILLISECOND, 0);
     _currentYear = _calendar.get(Calendar.YEAR);
   }
   
@@ -213,11 +206,16 @@ public class WalkerState {
    * @param minutes the minutes to set.  Must be guaranteed to parse as
    *     an integer between 0 and 59
    *     
+   * @param seconds the optional seconds to set.  Must be guaranteed to parse as
+   *     an integer between 0 and 59
+   *     
    * @param amPm the meridian indicator to use.  Must be either 'am' or 'pm'
    * 
-   * @param zone the time zone to use in zoneinfo format (America/New_York, etc)
+   * @param zone the time zone to use in one of two formats:
+   *     - zoneinfo format (America/New_York, America/Los_Angeles, etc)
+   *     - GMT offset (+05:00, -0500, +5, etc)
    */
-  public void setExplicitTime(String hours, String minutes, String amPm, String zone) {
+  public void setExplicitTime(String hours, String minutes, String seconds, String amPm, String zone) {
     int hoursInt = Integer.parseInt(hours);
     int minutesInt = Integer.parseInt(minutes);
     assert(amPm == null || amPm.equals("am") || amPm.equals("pm"));
@@ -225,6 +223,9 @@ public class WalkerState {
     assert(minutesInt >= 0 && minutesInt < 60); 
     
     if(zone != null) {
+      if(zone.startsWith("+") || zone.startsWith("-")) {
+        zone = "GMT" + zone;
+      }
       _calendar.setTimeZone(TimeZone.getTimeZone(zone));
     }
     
@@ -239,6 +240,12 @@ public class WalkerState {
       _calendar.set(Calendar.HOUR, hoursInt);
       _calendar.set(Calendar.AM_PM, 
           (amPm == null || amPm.equals("pm")) ? Calendar.PM : Calendar.AM);
+    }
+    
+    if(seconds != null) {
+      int secondsInt = Integer.parseInt(seconds);
+      assert(secondsInt >= 0 && secondsInt < 60); 
+      _calendar.set(Calendar.SECOND, secondsInt);
     }
     
     _calendar.set(Calendar.MINUTE, minutesInt);

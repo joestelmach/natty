@@ -2,9 +2,7 @@ package com.natty.parse;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.TimeZone;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -23,7 +21,7 @@ import com.natty.utility.StructureBuilder;
  */
 public class ParserTest {
   public static void main(String[] args) throws Exception {
-    String inputString = "oct 1st 5pm utc";
+    String inputString = "2010-12-30T050030+0600";
     ANTLRInputStream input = null;
     StructureBuilder builder = new StructureBuilder();
     Date date = new Date();
@@ -38,6 +36,7 @@ public class ParserTest {
       //DateParser parser = new DateParser(tokens);
       DateParser.date_time_return result = parser.date_time();
       Printer printer = new Printer(parser.getTokenNames());
+      printer.printTokenStream(tokens);
       
       // walk
       Tree tree = (Tree) result.getTree();

@@ -44,8 +44,8 @@ explicit_date
   ;
   
 time
-  : ^(EXPLICIT_TIME ^(HOURS_OF_DAY hours=INT) ^(MINUTES_OF_HOUR minutes=INT) AM_PM? ZONE?)
-    {_walkerState.setExplicitTime($hours.text, $minutes.text, $AM_PM.text, $ZONE.text);}
+  : ^(EXPLICIT_TIME ^(HOURS_OF_DAY hours=INT) ^(MINUTES_OF_HOUR minutes=INT) ^(SECONDS_OF_MINUTE seconds=INT?) AM_PM? (zone=ZONE | zone=ZONE_OFFSET)?)
+    {_walkerState.setExplicitTime($hours.text, $minutes.text, $seconds.text, $AM_PM.text, $zone.text);}
   ;
   
 seek
