@@ -234,12 +234,12 @@ public class WalkerState {
       _calendar.set(Calendar.HOUR_OF_DAY, hoursInt);
     }
     
-    // otherwise, we specify the meridian indicator. PM is used when 
-    // no indicator is given
+    // otherwise, we specify the meridian indicator. 
     else {
       _calendar.set(Calendar.HOUR, hoursInt);
-      _calendar.set(Calendar.AM_PM, 
-          (amPm == null || amPm.equals("pm")) ? Calendar.PM : Calendar.AM);
+      _calendar.set(Calendar.AM_PM,  amPm == null ? 
+        hoursInt > 12 ? Calendar.PM : Calendar.AM :
+        amPm.equals("pm") ? Calendar.PM : Calendar.AM);
     }
     
     if(seconds != null) {
