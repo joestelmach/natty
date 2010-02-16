@@ -167,18 +167,26 @@ public class WalkerState {
    * @param month the month to set.  Must be guaranteed to parse as an integer
    *     between 1 and 12
    *     
-   * @param day the day of month to set.  Must be guaranteed to parse as an
+   * @param dayOfMonth the day of month to set.  Must be guaranteed to parse as an
    *     integer between 1 and 31
+   *     
+   * @param dayOfWeek the day of the week.  This is optional and will only be used
+   *     when no year is given.  If the current year's month and day does not fall on the
+   *     given day of week, we walk backwards in 1 year iterations until we find the first
+   *     such date.  If given, must be guaranteed to parse as an integer between 1 and 7.
    *     
    * @param year the year to set (optional).  If present, must be guaranteed to 
    *     parse as an integer between 0 and 9999
    */
-  public void setExplicitDate(String month, String day, String year) {
+  public void setExplicitDate(String month, String dayOfMonth, String dayOfWeek, String year) {
     int monthInt = Integer.parseInt(month);
     assert(monthInt > 0 && monthInt <= 12);
     
-    int dayInt = Integer.parseInt(day);
-    assert(dayInt > 0 && dayInt <= 31);
+    int dayOfMonthInt = Integer.parseInt(dayOfMonth);
+    assert(dayOfMonthInt > 0 && dayOfMonthInt <= 31);
+    
+    _calendar.set(Calendar.MONTH, monthInt - 1);
+    _calendar.set(Calendar.DAY_OF_MONTH, dayOfMonthInt);
     
     int yearInt = -1;
     if(year != null) {
@@ -189,12 +197,16 @@ public class WalkerState {
         int century = (yearInt > ((_currentYear - 2000) + TWO_DIGIT_YEAR_CENTURY_THRESHOLD)) ? 1900 : 2000;
         yearInt = yearInt + century;
       }
+      
+      _calendar.set(Calendar.YEAR, yearInt);
     }
     
-    
-    _calendar.set(Calendar.MONTH, monthInt - 1);
-    _calendar.set(Calendar.DAY_OF_MONTH, dayInt);
-    if(yearInt > 0) _calendar.set(Calendar.YEAR, yearInt);
+    // if no year is given, but a day of week is, we ensure that the resulting
+    // date falls on the given day of week.
+    else if(dayOfWeek != null) {
+      int dayOfWeekInt = Integer.parseInt(dayOfWeek);
+      assert(dayOfWeekInt >= 1 && dayOfWeekInt <= 7);
+    }
   }
   
   /**

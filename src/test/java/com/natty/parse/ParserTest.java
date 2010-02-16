@@ -21,7 +21,7 @@ import com.natty.utility.StructureBuilder;
  */
 public class ParserTest {
   public static void main(String[] args) throws Exception {
-    String inputString = "Fri, 21 Nov 1997 09:55:06 -0500";
+    String inputString = "21 Nov";
     ANTLRInputStream input = null;
     StructureBuilder builder = new StructureBuilder();
     Date date = new Date();

@@ -98,24 +98,31 @@ relaxed_date
       
       // The 31st of April in the year 2008
       // RFC822 style: Fri, 21 Nov 1997
-      (relaxed_day_of_month_prefix? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year_prefix relaxed_year)=>
-        relaxed_day_of_month_prefix? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year_prefix relaxed_year
+      (relaxed_day_of_week? relaxed_day_of_month_prefix? relaxed_day_of_month 
+          WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year_prefix relaxed_year)=>
+        relaxed_day_of_week? relaxed_day_of_month_prefix? relaxed_day_of_month 
+            WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year_prefix relaxed_year
         
       // above without the year restriction
-      | relaxed_day_of_month_prefix? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month
+      | relaxed_day_of_week? relaxed_day_of_month_prefix? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month
     
       // Jan 21, 1997
       // Sun, Nov 21
-      | ((day_of_week COMMA WHITE_SPACE?)? relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year_prefix relaxed_year)=>
-        (day_of_week COMMA WHITE_SPACE?)? relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year_prefix relaxed_year
+      | (relaxed_day_of_week? relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year_prefix relaxed_year)=>
+        relaxed_day_of_week? relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year_prefix relaxed_year
       
       // jan 1st, february 28th
       | relaxed_month WHITE_SPACE relaxed_day_of_month
-    ) -> ^(EXPLICIT_DATE relaxed_month relaxed_day_of_month relaxed_year?)
+    ) -> ^(EXPLICIT_DATE relaxed_month relaxed_day_of_month relaxed_day_of_week? relaxed_year?)
   ;
   
+  relaxed_day_of_week
+  : day_of_week ((COMMA WHITE_SPACE?) | WHITE_SPACE) -> day_of_week
+  ;
+  
+  
 relaxed_day_of_month_prefix
-  : (THE | day_of_week COMMA?) WHITE_SPACE
+  : (THE WHITE_SPACE) | (COMMA WHITE_SPACE?)
   ;
 
 relaxed_month

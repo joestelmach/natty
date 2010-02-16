@@ -36,15 +36,16 @@ relaxed_date
   ;
   
 explicit_date
-  : ^(EXPLICIT_DATE ^(MONTH_OF_YEAR month=INT) ^(DAY_OF_MONTH day=INT))
-    {_walkerState.setExplicitDate($month.text, $day.text, null);}
-    
-  | ^(EXPLICIT_DATE ^(MONTH_OF_YEAR month=INT) ^(DAY_OF_MONTH day=INT) ^(YEAR_OF year=INT))
-    {_walkerState.setExplicitDate($month.text, $day.text, $year.text);}
+  : ^(EXPLICIT_DATE ^(MONTH_OF_YEAR month=INT) ^(DAY_OF_MONTH day_of_month=INT) ^(DAY_OF_WEEK day_of_week=INT) ^(YEAR_OF year=INT))
+  | ^(EXPLICIT_DATE ^(MONTH_OF_YEAR month=INT) ^(DAY_OF_MONTH day_of_month=INT) ^(DAY_OF_WEEK day_of_week=INT))
+  | ^(EXPLICIT_DATE ^(MONTH_OF_YEAR month=INT) ^(DAY_OF_MONTH day_of_month=INT) ^(YEAR_OF year=INT))
+  | ^(EXPLICIT_DATE ^(MONTH_OF_YEAR month=INT) ^(DAY_OF_MONTH day_of_month=INT))
+    {_walkerState.setExplicitDate($month.text, $day_of_month.text, $day_of_week.text, $year.text);}
   ;
   
 time
-  : ^(EXPLICIT_TIME ^(HOURS_OF_DAY hours=INT) ^(MINUTES_OF_HOUR minutes=INT) ^(SECONDS_OF_MINUTE seconds=INT?) AM_PM? (zone=ZONE | zone=ZONE_OFFSET)?)
+  : ^(EXPLICIT_TIME ^(HOURS_OF_DAY hours=INT) ^(MINUTES_OF_HOUR minutes=INT) 
+      ^(SECONDS_OF_MINUTE seconds=INT?) AM_PM? (zone=ZONE | zone=ZONE_OFFSET)?)
     {_walkerState.setExplicitTime($hours.text, $minutes.text, $seconds.text, $AM_PM.text, $zone.text);}
   ;
   
