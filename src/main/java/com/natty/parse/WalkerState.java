@@ -206,6 +206,9 @@ public class WalkerState {
     else if(dayOfWeek != null) {
       int dayOfWeekInt = Integer.parseInt(dayOfWeek);
       assert(dayOfWeekInt >= 1 && dayOfWeekInt <= 7);
+      while(_calendar.get(Calendar.DAY_OF_WEEK) != dayOfWeekInt) {
+        _calendar.roll(Calendar.YEAR, false);
+      }
     }
   }
   

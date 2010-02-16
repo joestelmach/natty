@@ -50,7 +50,7 @@ date_time
     ) -> ^(DATE_TIME date? time?)
   ;
   catch [RecognitionException re] {
-    //reportError(re);
+    reportError(re);
     //input.consume(); // eat the ';'
     System.out.println("could not parse input");
   }
@@ -112,11 +112,11 @@ relaxed_date
         relaxed_day_of_week? relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year_prefix relaxed_year
       
       // jan 1st, february 28th
-      | relaxed_month WHITE_SPACE relaxed_day_of_month
+      | relaxed_day_of_week? relaxed_month WHITE_SPACE relaxed_day_of_month
     ) -> ^(EXPLICIT_DATE relaxed_month relaxed_day_of_month relaxed_day_of_week? relaxed_year?)
   ;
   
-  relaxed_day_of_week
+relaxed_day_of_week
   : day_of_week ((COMMA WHITE_SPACE?) | WHITE_SPACE) -> day_of_week
   ;
   
@@ -145,7 +145,7 @@ relaxed_day_of_month
       -> ^(DAY_OF_MONTH spelled_or_int_01_to_31_optional_prefix)
       
   | spelled_first_to_thirty_first
-      -> ^(DAY_OF_MONTH spelled_first_to_thirty_first) 
+      -> ^(DAY_OF_MONTH spelled_first_to_thirty_first)
   ;
   
 relaxed_year

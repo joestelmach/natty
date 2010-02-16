@@ -1,7 +1,6 @@
 html {
   padding:0;
   margin:0;
-  height:100%;
 }
 
 body {
@@ -9,7 +8,6 @@ body {
   padding:0;
   margin:0;
   background-color:#F4F9FD;
-  height:100%;
 }
 
 h1,
@@ -104,4 +102,18 @@ h2 {
 #ast {
   clear:both;
   padding-top:20px;
+  color :#222;
+}
+
+#ast #ast_details .token {
+  margin-top:5px;
+}
+
+#ast #ast_details .spacing {
+  color :#aaa;
+  font-weight:normal;
+}
+
+#ast #ast_details .root {
+  font-weight:bold;
 }

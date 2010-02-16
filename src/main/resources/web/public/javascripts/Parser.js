@@ -50,7 +50,7 @@ Parser = Class.create({
       this._summary.show();
       this._date.update(json.iso8601).show();
       this._structureDetails.update(new ParseTree().build(this._input.value, json.structure)).show();
-      this._astDetails.update(json.ast);
+      this._astDetails.update(new AbstractSyntaxTree().build(json.ast));
     }
   },
 

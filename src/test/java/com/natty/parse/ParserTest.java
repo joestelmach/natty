@@ -21,7 +21,7 @@ import com.natty.utility.StructureBuilder;
  */
 public class ParserTest {
   public static void main(String[] args) throws Exception {
-    String inputString = "21 Nov";
+    String inputString = "tuesday, nov 21";
     ANTLRInputStream input = null;
     StructureBuilder builder = new StructureBuilder();
     Date date = new Date();
@@ -32,8 +32,8 @@ public class ParserTest {
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
       // parse 
-      //DateParser parser = new DateParser(tokens, builder);
-      DateParser parser = new DateParser(tokens);
+      DateParser parser = new DateParser(tokens, builder);
+      //DateParser parser = new DateParser(tokens);
       DateParser.date_time_return result = parser.date_time();
       Printer printer = new Printer(parser.getTokenNames());
       printer.printTokenStream(tokens);
@@ -44,8 +44,8 @@ public class ParserTest {
       System.out.print("\n");
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
-      //DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
-      DateWalker walker = new DateWalker(nodes);
+      DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
+      //DateWalker walker = new DateWalker(nodes);
       walker.date_time();
       date = walker.getState().getDate();
       
