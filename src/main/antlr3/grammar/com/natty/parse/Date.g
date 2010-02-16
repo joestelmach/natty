@@ -25,22 +25,16 @@ tokens {
   AM_PM;
   ZONE;
   ZONE_OFFSET;
+  UNKNOWN_TEXT;
 }
 
 @header        { package com.natty.parse; }
 @lexer::header { package com.natty.parse; }
 
-@members {
-}
-
 search 
-  : date_time
+  : (date_time UNKNOWN_TEXT)+ -> date_time+
   ;
-  catch [RecognitionException re] {
-    reportError(re);
-    input.consume(); // eat the ';'
-  }
-
+  
 date_time
   : (
       (date (date_time_separator time)?)=>
@@ -49,11 +43,6 @@ date_time
       | time (time_date_separator date)?
     ) -> ^(DATE_TIME date? time?)
   ;
-  catch [RecognitionException re] {
-    reportError(re);
-    //input.consume(); // eat the ';'
-    System.out.println("could not parse input");
-  }
   
 date_time_separator
   : WHITE_SPACE (AT WHITE_SPACE)?
@@ -197,7 +186,7 @@ formal_date_separator
 // ********** relative date rules **********
   
 relative_date
-  : relative_prefix WHITE_SPACE relative_target?
+  : relative_prefix WHITE_SPACE relative_target
       -> ^(RELATIVE_DATE ^(SEEK relative_prefix relative_target))
       
   | implicit_prefix WHITE_SPACE relative_target 
@@ -738,4 +727,8 @@ AFTER    : 'after';
 
 WHITE_SPACE
   : (' ' | '\t' | '\n' | '\r')+
+  ;
+  
+UNKNOWN 
+  : .
   ;

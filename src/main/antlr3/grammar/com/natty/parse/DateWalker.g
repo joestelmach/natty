@@ -15,6 +15,10 @@ options {
   }
 }
 
+search
+  : date_time+
+  ;
+
 date_time
   : ^(DATE_TIME date? time?)
   ;  

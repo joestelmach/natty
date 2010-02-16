@@ -7,6 +7,7 @@ import java.util.Date;
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.TokenSource;
 import org.antlr.runtime.debug.BlankDebugEventListener;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
@@ -21,7 +22,7 @@ import com.natty.utility.StructureBuilder;
  */
 public class ParserTest {
   public static void main(String[] args) throws Exception {
-    String inputString = "tuesday, nov 21";
+    String inputString = "oct 1st bbbbbbb bbbbbbbb nov 2nd xxxxx oct 2";
     ANTLRInputStream input = null;
     StructureBuilder builder = new StructureBuilder();
     Date date = new Date();
@@ -29,12 +30,13 @@ public class ParserTest {
       // lex
       input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(inputString.getBytes()));
       DateLexer lexer = new DateLexer(input);
-      CommonTokenStream tokens = new CommonTokenStream(lexer);
+      TokenSource tokenSource = new ScrubbedTokenSource(new CommonTokenStream(lexer));
+      CommonTokenStream tokens = new CommonTokenStream(tokenSource);
       
       // parse 
       DateParser parser = new DateParser(tokens, builder);
       //DateParser parser = new DateParser(tokens);
-      DateParser.date_time_return result = parser.date_time();
+      DateParser.search_return result = parser.search();
       Printer printer = new Printer(parser.getTokenNames());
       printer.printTokenStream(tokens);
       
