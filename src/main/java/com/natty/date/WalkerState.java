@@ -1,9 +1,12 @@
 package com.natty.date;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.TimeZone;
+import java.util.logging.Logger;
 
 /**
  * @author Joe Stelmach
@@ -12,14 +15,16 @@ public class WalkerState {
   private GregorianCalendar _calendar;
   private int _currentYear;
   private static final int TWO_DIGIT_YEAR_CENTURY_THRESHOLD = 20;
+  private List<Date> _dateTimes;
+  private static final Logger _logger = Logger.getLogger(WalkerState.class.getName());
   
   /**
    * Creates a new SeekableDateTime representing the start of u
    * the next hour from the current time
    */
   public WalkerState() {
-    _calendar = new GregorianCalendar();
-    _currentYear = _calendar.get(Calendar.YEAR);
+    resetCalender();
+    _dateTimes = new ArrayList<Date>();
   }
   
   /**
@@ -266,10 +271,22 @@ public class WalkerState {
     _calendar.set(Calendar.MINUTE, minutesInt);
   }
   
+  public void captureDateTime() {
+    Date date = _calendar.getTime();
+    _logger.info("capturing date time: " + date);
+    _dateTimes.add(date);
+    resetCalender();
+  }
+  
+  public List<Date> getDateTimes() {
+    return _dateTimes;
+  }
+  
   /**
-   * Return the date currently represented
+   *  Resets the calendar
    */
-  public Date getDate() {
-    return _calendar.getTime();
+  private void resetCalender() {
+    _calendar = new GregorianCalendar();
+    _currentYear = _calendar.get(Calendar.YEAR);
   }
 }
