@@ -27,6 +27,7 @@ import com.natty.date.generated.DateWalker;
 
 public class DateTimeSearcher {
   private static final Logger _logger = Logger.getLogger(DateTimeSearcher.class.getName());
+  private static final DateFormat _formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
   
   public static String search(String inputString) {
     inputString = inputString.trim() + " foo";
@@ -61,7 +62,6 @@ public class DateTimeSearcher {
     List<Location> locations = parseListener.getLocations();
     List<Date> dateTimes = walker.getState().getDateTimes();
     
-    DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
     JSONArray jsonArray = new JSONArray();
     for(int i=0; i<locations.size(); i++) {
       Location location = locations.get(i);
@@ -71,10 +71,10 @@ public class DateTimeSearcher {
         json.put("text", location.getText());
         json.put("start", location.getStart());
         json.put("end", location.getEnd());
-        formatter.setTimeZone(TimeZone.getTimeZone("America/New_York"));
-        json.put("localtime", formatter.format(date));
-        formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
-        json.put("utctime", formatter.format(date));
+        _formatter.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+        json.put("localtime", _formatter.format(date));
+        _formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+        json.put("utctime", _formatter.format(date));
         jsonArray.put(json);
       
       } catch(JSONException e) {
@@ -84,5 +84,60 @@ public class DateTimeSearcher {
     }
     
     return jsonArray.toString();
+  }
+  
+  /**
+   * Parses the input string for a single date time and assumes there is no
+   * extraneous text.
+   * @param inputString
+   * @return
+   */
+  public static String parseDate(final String inputString) {
+    ANTLRInputStream input = null;
+    StructureBuilder builder = new StructureBuilder();
+    Date date = new Date();
+    Tree tree = null;
+    try {
+      // lex
+      input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(inputString.getBytes()));
+      DateLexer lexer = new DateLexer(input);
+      CommonTokenStream tokens = new CommonTokenStream(lexer);
+      
+      // parse 
+      DateParser parser = new DateParser(tokens, builder);
+      DateParser.date_time_return result = parser.date_time();
+      
+      // walk
+      tree = (Tree) result.getTree();
+      CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+      nodes.setTokenStream(tokens);
+      DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
+      walker.date_time();
+      date = walker.getState().getDateTimes().get(0);
+      
+    } catch (IOException e) {
+      e.printStackTrace();
+      
+    } catch (RecognitionException e) {
+      e.printStackTrace();
+    }
+    
+    JSONObject json = new JSONObject();
+    try {
+      DateFormat friendlyFormatter = new SimpleDateFormat("EEE MMM dd, yyyy hh:mm a z");
+      json.put("iso8601", friendlyFormatter.format(date));
+      _formatter.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+      json.put("localtime", _formatter.format(date));
+      _formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+      json.put("utctime", _formatter.format(date));
+      json.put("structure", builder.toJSON());
+      if(tree != null) json.put("ast", tree.toStringTree());
+      
+    } catch(JSONException e) {
+      _logger.log(Level.FINE, "could not generate json", e);
+      
+    }
+    
+    return json.toString();
   }
 }

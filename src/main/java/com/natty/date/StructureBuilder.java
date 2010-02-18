@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.debug.BlankDebugEventListener;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -51,17 +50,15 @@ public class StructureBuilder extends BlankDebugEventListener {
   private int backtracking = 0;
   private Map<String, Stack<List<Token>>> _ruleMap;
   private JSONObject _json;
-  private JSONArray _dateTimesJson;
   private static final Logger _logger = Logger.getLogger(StructureBuilder.class.getName());
 
   public StructureBuilder() {
     _ruleMap = new HashMap<String, Stack<List<Token>>>();
     _json = new JSONObject();
-    _dateTimesJson = new JSONArray();
   }
   
-  public JSONArray toJSON() {
-    return _dateTimesJson;
+  public JSONObject toJSON() {
+    return _json;
   }
 
   /** Backtracking or cyclic DFA, don't want to add nodes to tree */
@@ -88,34 +85,27 @@ public class StructureBuilder extends BlankDebugEventListener {
   public void exitRule(String filename, String ruleName) {
     if (backtracking > 0) return;
     
-    if(ruleName.equals("date_time")) {
-      _dateTimesJson.put(_json);
-      _json = new JSONObject();
-    }
-    
-    else {
-      List<Token> tokenList = _ruleMap.get(ruleName).pop();
-      if(tokenList.size() > 0 && INTERESTING_RULES.keySet().contains(ruleName)) { 
+    List<Token> tokenList = _ruleMap.get(ruleName).pop();
+    if(tokenList.size() > 0 && INTERESTING_RULES.keySet().contains(ruleName)) { 
         
-        StringBuilder builder = new StringBuilder();
-        for(Token token:tokenList) {
-          builder.append(token.getText());
-        }
-        String text = builder.toString();
-        int start = tokenList.get(0).getCharPositionInLine();
-        int end = start + text.length();
+      StringBuilder builder = new StringBuilder();
+      for(Token token:tokenList) {
+        builder.append(token.getText());
+      }
+      String text = builder.toString();
+      int start = tokenList.get(0).getCharPositionInLine();
+      int end = start + text.length();
             
-        JSONObject json = new JSONObject();
-        try {
-          json.put("text", text);
-          json.put("start", start);
-          json.put("end", end);
-          _json.put(INTERESTING_RULES.get(ruleName), json);
-          
-        } catch(JSONException e) {
-          _logger.log(Level.FINE, "could not add json", e);
-          
-        }
+      JSONObject json = new JSONObject();
+      try {
+        json.put("text", text);
+        json.put("start", start);
+        json.put("end", end);
+        _json.put(INTERESTING_RULES.get(ruleName), json);
+        
+      } catch(JSONException e) {
+        _logger.log(Level.FINE, "could not add json", e);
+        
       }
     }
   }

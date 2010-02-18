@@ -19,3 +19,8 @@ post '/parse' do
   content_type :json
   output
 end
+
+get '/:view' do
+  erb params[:view].to_sym
+end
+
