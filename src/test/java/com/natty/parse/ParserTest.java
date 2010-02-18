@@ -25,7 +25,8 @@ import com.natty.utility.Printer;
  */
 public class ParserTest {
   public static void main(String[] args) throws Exception {
-    String inputString = "21 Nov 1998 am foo flaksdj asalkdfj oct 1st at 2pm";
+    long start = System.currentTimeMillis();
+    String inputString = "21 Nov 1998 afasdf a  aasdf foo oct 1st at 3pm";
     ANTLRInputStream input = null;
     StructureBuilder builder = new StructureBuilder();
     Date date = new Date();
@@ -33,8 +34,6 @@ public class ParserTest {
       // lex
       input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(inputString.getBytes()));
       DateLexer lexer = new DateLexer(input);
-      //TokenSource tokenSource = new ScrubbedTokenSource(new CommonTokenStream(lexer));
-      //CommonTokenStream tokens = new CommonTokenStream(tokenSource);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
       // parse 
@@ -54,7 +53,7 @@ public class ParserTest {
       nodes.setTokenStream(tokens);
       DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
       //DateWalker walker = new DateWalker(nodes);
-      //walker.search();
+      walker.search();
       //date = walker.getState().getDate();
       
     } catch (IOException e) {
@@ -66,5 +65,6 @@ public class ParserTest {
     
     System.out.println(date);
     System.out.println(builder.toJSON());
+    System.out.println("completed in " + (System.currentTimeMillis() - start) + " millis");
   }
 }

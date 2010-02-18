@@ -26,26 +26,19 @@ tokens {
   AM_PM;
   ZONE;
   ZONE_OFFSET;
-  TEXT;
 }
 
 @header { package com.natty.date.generated; }
 
-@members { 
-  protected Object recoverFromMismatchedToken(IntStream input, int ttype, BitSet follow)
-      throws RecognitionException {
-      
-    System.out.println("recovering from mismatched token");
-    consumeUntil(input, TEXT); // throw away all until ';' 
-    Object matchedSymbol = getCurrentInputSymbol(input);
-    return matchedSymbol;
-  } 
-} 
-
 search 
-  : (((date_time)=>date_time | .*) TEXT)+ -> date_time+
+  : (((date_time)=>date_time | .*) text)+ -> date_time+
   ;
+  
 
+text
+  : WHITE_SPACE (UNKNOWN WHITE_SPACE)+
+  ;
+  
 date_time
   : (
       | (date (date_time_separator time)?)=>

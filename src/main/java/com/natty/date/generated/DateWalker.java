@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g 2010-02-17 17:10:50
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g 2010-02-18 00:59:55
  package com.natty.date.generated; 
 
 import org.antlr.runtime.*;
@@ -10,13 +10,13 @@ import org.antlr.runtime.debug.*;
 import java.io.IOException;
 public class DateWalker extends DebugTreeParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DOT", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", "TODAY", "TOMORROW", "YESTERDAY", "AM", "PM", "T", "MILITARY_HOUR_SUFFIX", "MIDNIGHT", "NOON", "UTC", "EST", "PST", "CST", "MST", "AKST", "HAST", "INT_00", "INT_01", "INT_02", "INT_03", "INT_04", "INT_05", "INT_06", "INT_07", "INT_08", "INT_09", "INT_0", "INT_1", "INT_2", "INT_3", "INT_4", "INT_5", "INT_6", "INT_7", "INT_8", "INT_9", "INT_10", "INT_11", "INT_12", "INT_13", "INT_14", "INT_15", "INT_16", "INT_17", "INT_18", "INT_19", "INT_20", "INT_21", "INT_22", "INT_23", "INT_24", "INT_25", "INT_26", "INT_27", "INT_28", "INT_29", "INT_30", "INT_31", "INT_32", "INT_33", "INT_34", "INT_35", "INT_36", "INT_37", "INT_38", "INT_39", "INT_40", "INT_41", "INT_42", "INT_43", "INT_44", "INT_45", "INT_46", "INT_47", "INT_48", "INT_49", "INT_50", "INT_51", "INT_52", "INT_53", "INT_54", "INT_55", "INT_56", "INT_57", "INT_58", "INT_59", "INT_60", "INT_61", "INT_62", "INT_63", "INT_64", "INT_65", "INT_66", "INT_67", "INT_68", "INT_69", "INT_70", "INT_71", "INT_72", "INT_73", "INT_74", "INT_75", "INT_76", "INT_77", "INT_78", "INT_79", "INT_80", "INT_81", "INT_82", "INT_83", "INT_84", "INT_85", "INT_86", "INT_87", "INT_88", "INT_89", "INT_90", "INT_91", "INT_92", "INT_93", "INT_94", "INT_95", "INT_96", "INT_97", "INT_98", "ST", "ND", "RD", "TH", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN", "TWENTY", "THIRTY", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH", "THIRTEENTH", "FOURTEENTH", "FIFTEENTH", "SIXTEENTH", "SEVENTEENTH", "EIGHTEENTH", "NINETEENTH", "TWENTIETH", "THIRTIETH", "COLON", "COMMA", "DASH", "SLASH", "PLUS", "SINGLE_QUOTE", "IN", "THE", "AT", "ON", "OF", "THIS", "LAST", "NEXT", "PAST", "COMING", "UPCOMING", "FROM", "NOW", "AGO", "BEFORE", "AFTER", "SPACE", "WHITE_SPACE", "DIGIT", "UNKNOWN", "DATE_TIME", "RELATIVE_DATE", "WEEK_INDEX", "INT", "DAY_OF_WEEK", "MONTH_OF_YEAR", "EXPLICIT", "EXPLICIT_DATE", "DAY_OF_MONTH", "YEAR_OF", "EXPLICIT_TIME", "HOURS_OF_DAY", "MINUTES_OF_HOUR", "SECONDS_OF_MINUTE", "AM_PM", "ZONE", "ZONE_OFFSET", "SEEK", "DIRECTION", "SEEK_BY", "SPAN"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DOT", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", "TODAY", "TOMORROW", "YESTERDAY", "AM", "PM", "T", "MILITARY_HOUR_SUFFIX", "MIDNIGHT", "NOON", "UTC", "EST", "PST", "CST", "MST", "AKST", "HAST", "INT_00", "INT_01", "INT_02", "INT_03", "INT_04", "INT_05", "INT_06", "INT_07", "INT_08", "INT_09", "INT_0", "INT_1", "INT_2", "INT_3", "INT_4", "INT_5", "INT_6", "INT_7", "INT_8", "INT_9", "INT_10", "INT_11", "INT_12", "INT_13", "INT_14", "INT_15", "INT_16", "INT_17", "INT_18", "INT_19", "INT_20", "INT_21", "INT_22", "INT_23", "INT_24", "INT_25", "INT_26", "INT_27", "INT_28", "INT_29", "INT_30", "INT_31", "INT_32", "INT_33", "INT_34", "INT_35", "INT_36", "INT_37", "INT_38", "INT_39", "INT_40", "INT_41", "INT_42", "INT_43", "INT_44", "INT_45", "INT_46", "INT_47", "INT_48", "INT_49", "INT_50", "INT_51", "INT_52", "INT_53", "INT_54", "INT_55", "INT_56", "INT_57", "INT_58", "INT_59", "INT_60", "INT_61", "INT_62", "INT_63", "INT_64", "INT_65", "INT_66", "INT_67", "INT_68", "INT_69", "INT_70", "INT_71", "INT_72", "INT_73", "INT_74", "INT_75", "INT_76", "INT_77", "INT_78", "INT_79", "INT_80", "INT_81", "INT_82", "INT_83", "INT_84", "INT_85", "INT_86", "INT_87", "INT_88", "INT_89", "INT_90", "INT_91", "INT_92", "INT_93", "INT_94", "INT_95", "INT_96", "INT_97", "INT_98", "INT_99", "ST", "ND", "RD", "TH", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN", "TWENTY", "THIRTY", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH", "THIRTEENTH", "FOURTEENTH", "FIFTEENTH", "SIXTEENTH", "SEVENTEENTH", "EIGHTEENTH", "NINETEENTH", "TWENTIETH", "THIRTIETH", "COLON", "COMMA", "DASH", "SLASH", "PLUS", "SINGLE_QUOTE", "IN", "THE", "AT", "ON", "OF", "THIS", "LAST", "NEXT", "PAST", "COMING", "UPCOMING", "FROM", "NOW", "AGO", "BEFORE", "AFTER", "SPACE", "WHITE_SPACE", "UNKNOWN", "DIGIT", "DATE_TIME", "RELATIVE_DATE", "WEEK_INDEX", "INT", "DAY_OF_WEEK", "MONTH_OF_YEAR", "EXPLICIT", "EXPLICIT_DATE", "DAY_OF_MONTH", "YEAR_OF", "EXPLICIT_TIME", "HOURS_OF_DAY", "MINUTES_OF_HOUR", "SECONDS_OF_MINUTE", "AM_PM", "ZONE", "ZONE_OFFSET", "SEEK", "DIRECTION", "SEEK_BY", "SPAN"
     };
-    public static final int DIRECTION=244;
-    public static final int NINETEEN=176;
+    public static final int DIRECTION=245;
+    public static final int NINETEEN=177;
     public static final int INT_08=53;
     public static final int INT_09=54;
-    public static final int TWENTY=177;
+    public static final int TWENTY=178;
     public static final int INT_02=47;
     public static final int INT_03=48;
     public static final int INT_00=45;
@@ -24,69 +24,69 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_01=46;
     public static final int INT_06=51;
     public static final int INT_07=52;
-    public static final int COMING=215;
+    public static final int COMING=216;
     public static final int INT_04=49;
     public static final int INT_05=50;
-    public static final int NOW=218;
+    public static final int NOW=219;
     public static final int EOF=-1;
     public static final int MONTH=27;
-    public static final int AM_PM=240;
-    public static final int EIGHTEENTH=196;
-    public static final int SPAN=246;
-    public static final int THIS=211;
+    public static final int AM_PM=241;
+    public static final int EIGHTEENTH=197;
+    public static final int SPAN=247;
+    public static final int THIS=212;
     public static final int NOON=37;
     public static final int TOMORROW=30;
-    public static final int FIFTEENTH=193;
+    public static final int FIFTEENTH=194;
     public static final int TODAY=29;
     public static final int NOVEMBER=15;
-    public static final int MONTH_OF_YEAR=231;
-    public static final int SEVENTH=185;
+    public static final int MONTH_OF_YEAR=232;
+    public static final int SEVENTH=186;
     public static final int FEBRUARY=6;
     public static final int T=34;
-    public static final int DAY_OF_WEEK=230;
+    public static final int DAY_OF_WEEK=231;
     public static final int SUNDAY=17;
-    public static final int SEVEN=164;
-    public static final int ELEVEN=168;
-    public static final int THIRTEEN=170;
-    public static final int EXPLICIT_DATE=233;
-    public static final int INT=229;
-    public static final int UPCOMING=216;
-    public static final int SIX=163;
-    public static final int FIFTH=183;
+    public static final int SEVEN=165;
+    public static final int ELEVEN=169;
+    public static final int THIRTEEN=171;
+    public static final int EXPLICIT_DATE=234;
+    public static final int INT=230;
+    public static final int UPCOMING=217;
+    public static final int SIX=164;
+    public static final int FIFTH=184;
     public static final int DECEMBER=16;
-    public static final int SECONDS_OF_MINUTE=239;
+    public static final int SECONDS_OF_MINUTE=240;
     public static final int AUGUST=12;
     public static final int TUESDAY=19;
     public static final int INT_47=102;
-    public static final int THIRD=181;
+    public static final int THIRD=182;
     public static final int INT_46=101;
     public static final int INT_45=100;
     public static final int INT_44=99;
-    public static final int RD=156;
+    public static final int RD=157;
     public static final int INT_49=104;
     public static final int INT_48=103;
-    public static final int THE=207;
-    public static final int EXPLICIT=232;
+    public static final int THE=208;
+    public static final int EXPLICIT=233;
     public static final int INT_42=97;
-    public static final int WHITE_SPACE=223;
+    public static final int WHITE_SPACE=224;
     public static final int INT_43=98;
     public static final int INT_40=95;
     public static final int FRIDAY=22;
     public static final int INT_41=96;
     public static final int INT_34=89;
-    public static final int AT=208;
+    public static final int AT=209;
     public static final int INT_33=88;
     public static final int INT_36=91;
-    public static final int SINGLE_QUOTE=205;
+    public static final int SINGLE_QUOTE=206;
     public static final int INT_35=90;
     public static final int INT_38=93;
-    public static final int SLASH=203;
+    public static final int SLASH=204;
     public static final int INT_37=92;
     public static final int INT_39=94;
-    public static final int NINTH=187;
-    public static final int ZONE=241;
-    public static final int TWENTIETH=198;
-    public static final int PLUS=204;
+    public static final int NINTH=188;
+    public static final int ZONE=242;
+    public static final int TWENTIETH=199;
+    public static final int PLUS=205;
     public static final int INT_30=85;
     public static final int AM=32;
     public static final int INT_31=86;
@@ -98,20 +98,20 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_25=80;
     public static final int INT_24=79;
     public static final int INT_23=78;
-    public static final int TH=157;
+    public static final int TH=158;
     public static final int INT_22=77;
-    public static final int FOURTEENTH=192;
-    public static final int SIXTEEN=173;
-    public static final int AGO=219;
-    public static final int ELEVENTH=189;
-    public static final int ST=154;
-    public static final int TWO=159;
+    public static final int FOURTEENTH=193;
+    public static final int SIXTEEN=174;
+    public static final int AGO=220;
+    public static final int ELEVENTH=190;
+    public static final int ST=155;
+    public static final int TWO=160;
     public static final int HOUR=24;
     public static final int INT_20=75;
     public static final int INT_21=76;
     public static final int JANUARY=5;
-    public static final int THIRTEENTH=191;
-    public static final int COLON=200;
+    public static final int THIRTEENTH=192;
+    public static final int COLON=201;
     public static final int INT_16=71;
     public static final int INT_15=70;
     public static final int INT_18=73;
@@ -120,16 +120,16 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_11=66;
     public static final int INT_14=69;
     public static final int INT_13=68;
-    public static final int DAY_OF_MONTH=234;
+    public static final int DAY_OF_MONTH=235;
     public static final int INT_19=74;
-    public static final int FIFTEEN=172;
-    public static final int NINE=166;
-    public static final int THREE=160;
-    public static final int FOURTEEN=171;
+    public static final int FIFTEEN=173;
+    public static final int NINE=167;
+    public static final int THREE=161;
+    public static final int FOURTEEN=172;
     public static final int INT_10=65;
     public static final int YESTERDAY=31;
-    public static final int SEVENTEENTH=195;
-    public static final int FIRST=179;
+    public static final int SEVENTEENTH=196;
+    public static final int FIRST=180;
     public static final int INT_81=136;
     public static final int INT_80=135;
     public static final int SEPTEMBER=13;
@@ -142,17 +142,17 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_87=142;
     public static final int INT_86=141;
     public static final int JULY=11;
-    public static final int NINETEENTH=197;
+    public static final int NINETEENTH=198;
     public static final int OCTOBER=14;
     public static final int DAY=25;
-    public static final int ONE=158;
+    public static final int ONE=159;
     public static final int MIDNIGHT=36;
     public static final int INT_88=143;
     public static final int MARCH=7;
     public static final int INT_89=144;
-    public static final int PAST=214;
-    public static final int SEVENTEEN=174;
-    public static final int DATE_TIME=226;
+    public static final int PAST=215;
+    public static final int SEVENTEEN=175;
+    public static final int DATE_TIME=227;
     public static final int INT_72=127;
     public static final int INT_71=126;
     public static final int INT_70=125;
@@ -160,30 +160,30 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_75=130;
     public static final int INT_74=129;
     public static final int INT_73=128;
-    public static final int MINUTES_OF_HOUR=238;
-    public static final int THIRTIETH=199;
-    public static final int LAST=212;
+    public static final int MINUTES_OF_HOUR=239;
+    public static final int THIRTIETH=200;
+    public static final int LAST=213;
     public static final int INT_79=134;
     public static final int INT_77=132;
-    public static final int EIGHTEEN=175;
+    public static final int EIGHTEEN=176;
     public static final int INT_78=133;
-    public static final int ND=155;
-    public static final int RELATIVE_DATE=227;
+    public static final int ND=156;
+    public static final int RELATIVE_DATE=228;
     public static final int INT_63=118;
     public static final int INT_62=117;
     public static final int INT_65=120;
     public static final int INT_64=119;
-    public static final int FOURTH=182;
-    public static final int SECOND=180;
+    public static final int FOURTH=183;
+    public static final int SECOND=181;
     public static final int INT_61=116;
     public static final int INT_60=115;
     public static final int SATURDAY=23;
-    public static final int FOUR=161;
-    public static final int TEN=167;
-    public static final int ON=209;
+    public static final int FOUR=162;
+    public static final int TEN=168;
+    public static final int ON=210;
     public static final int MONDAY=18;
     public static final int JUNE=10;
-    public static final int OF=210;
+    public static final int OF=211;
     public static final int INT_66=121;
     public static final int INT_67=122;
     public static final int INT_68=123;
@@ -194,25 +194,25 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_51=106;
     public static final int INT_50=105;
     public static final int THURSDAY=21;
-    public static final int ZONE_OFFSET=242;
-    public static final int SEEK_BY=245;
+    public static final int ZONE_OFFSET=243;
+    public static final int SEEK_BY=246;
     public static final int PM=33;
-    public static final int EXPLICIT_TIME=236;
-    public static final int FROM=217;
+    public static final int EXPLICIT_TIME=237;
+    public static final int FROM=218;
     public static final int INT_59=114;
     public static final int INT_57=112;
     public static final int INT_58=113;
     public static final int INT_55=110;
-    public static final int EIGHTH=186;
+    public static final int EIGHTH=187;
     public static final int INT_56=111;
-    public static final int HOURS_OF_DAY=237;
+    public static final int HOURS_OF_DAY=238;
     public static final int YEAR=28;
-    public static final int TENTH=188;
+    public static final int TENTH=189;
     public static final int MAY=9;
     public static final int INT_9=64;
     public static final int INT_8=63;
     public static final int INT_7=62;
-    public static final int SPACE=222;
+    public static final int SPACE=223;
     public static final int INT_6=61;
     public static final int UTC=38;
     public static final int INT_5=60;
@@ -221,30 +221,30 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_3=58;
     public static final int MST=42;
     public static final int INT_2=57;
-    public static final int EIGHT=165;
+    public static final int EIGHT=166;
     public static final int INT_1=56;
     public static final int INT_0=55;
     public static final int CST=41;
     public static final int PST=40;
-    public static final int IN=206;
+    public static final int IN=207;
     public static final int UNKNOWN=225;
-    public static final int COMMA=201;
-    public static final int FIVE=162;
-    public static final int THIRTY=178;
-    public static final int NEXT=213;
-    public static final int DIGIT=224;
+    public static final int COMMA=202;
+    public static final int FIVE=163;
+    public static final int THIRTY=179;
+    public static final int NEXT=214;
+    public static final int DIGIT=226;
     public static final int DOT=4;
     public static final int MILITARY_HOUR_SUFFIX=35;
     public static final int EST=39;
     public static final int HAST=44;
-    public static final int DASH=202;
-    public static final int YEAR_OF=235;
-    public static final int TWELVE=169;
-    public static final int WEEK_INDEX=228;
-    public static final int BEFORE=220;
-    public static final int AFTER=221;
-    public static final int SIXTEENTH=194;
-    public static final int SEEK=243;
+    public static final int DASH=203;
+    public static final int YEAR_OF=236;
+    public static final int TWELVE=170;
+    public static final int WEEK_INDEX=229;
+    public static final int BEFORE=221;
+    public static final int AFTER=222;
+    public static final int SIXTEENTH=195;
+    public static final int SEEK=244;
     public static final int INT_90=145;
     public static final int INT_97=152;
     public static final int INT_98=153;
@@ -254,15 +254,16 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_94=149;
     public static final int INT_91=146;
     public static final int INT_92=147;
-    public static final int TWELFTH=190;
-    public static final int SIXTH=184;
+    public static final int TWELFTH=191;
+    public static final int SIXTH=185;
+    public static final int INT_99=154;
 
     // delegates
     // delegators
 
     public static final String[] ruleNames = new String[] {
-        "invalidRule", "relative_date", "time", "date", "seek", "relaxed_date", 
-        "date_time", "search", "explicit_date"
+        "invalidRule", "date", "date_time", "time", "relaxed_date", "relative_date", 
+        "seek", "search", "explicit_date"
     };
      
         public int ruleLevel = 0;
@@ -295,7 +296,7 @@ public class DateWalker extends DebugTreeParser {
 
 
     public String[] getTokenNames() { return DateWalker.tokenNames; }
-    public String getGrammarFileName() { return "/Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g"; }
+    public String getGrammarFileName() { return "/Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g"; }
 
 
       private com.natty.date.WalkerState _walkerState = new com.natty.date.WalkerState();
@@ -307,7 +308,7 @@ public class DateWalker extends DebugTreeParser {
 
 
     // $ANTLR start "search"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:18:1: search : ( date_time )+ ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:18:1: search : ( date_time )+ ;
     public final void search() throws RecognitionException {
         try { dbg.enterRule(getGrammarFileName(), "search");
         if ( getRuleLevel()==0 ) {dbg.commence();}
@@ -315,13 +316,13 @@ public class DateWalker extends DebugTreeParser {
         dbg.location(18, 1);
 
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:3: ( ( date_time )+ )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:3: ( ( date_time )+ )
             dbg.enterAlt(1);
 
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:5: ( date_time )+
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:5: ( date_time )+
             {
             dbg.location(19,5);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:5: ( date_time )+
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:5: ( date_time )+
             int cnt1=0;
             try { dbg.enterSubRule(1);
 
@@ -343,7 +344,7 @@ public class DateWalker extends DebugTreeParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:5: date_time
+            	    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:5: date_time
             	    {
             	    dbg.location(19,5);
             	    pushFollow(FOLLOW_date_time_in_search45);
@@ -392,7 +393,7 @@ public class DateWalker extends DebugTreeParser {
 
 
     // $ANTLR start "date_time"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:22:1: date_time : ^( DATE_TIME ( date )? ( time )? ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:22:1: date_time : ^( DATE_TIME ( date )? ( time )? ) ;
     public final void date_time() throws RecognitionException {
         try { dbg.enterRule(getGrammarFileName(), "date_time");
         if ( getRuleLevel()==0 ) {dbg.commence();}
@@ -400,10 +401,10 @@ public class DateWalker extends DebugTreeParser {
         dbg.location(22, 1);
 
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:3: ( ^( DATE_TIME ( date )? ( time )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:3: ( ^( DATE_TIME ( date )? ( time )? ) )
             dbg.enterAlt(1);
 
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:5: ^( DATE_TIME ( date )? ( time )? )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:5: ^( DATE_TIME ( date )? ( time )? )
             {
             dbg.location(23,5);
             dbg.location(23,7);
@@ -412,7 +413,7 @@ public class DateWalker extends DebugTreeParser {
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
                 dbg.location(23,17);
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:17: ( date )?
+                // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:17: ( date )?
                 int alt2=2;
                 try { dbg.enterSubRule(2);
                 try { dbg.enterDecision(2);
@@ -428,7 +429,7 @@ public class DateWalker extends DebugTreeParser {
                     case 1 :
                         dbg.enterAlt(1);
 
-                        // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:17: date
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:17: date
                         {
                         dbg.location(23,17);
                         pushFollow(FOLLOW_date_in_date_time62);
@@ -444,7 +445,7 @@ public class DateWalker extends DebugTreeParser {
                 } finally {dbg.exitSubRule(2);}
 
                 dbg.location(23,23);
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:23: ( time )?
+                // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:23: ( time )?
                 int alt3=2;
                 try { dbg.enterSubRule(3);
                 try { dbg.enterDecision(3);
@@ -460,7 +461,7 @@ public class DateWalker extends DebugTreeParser {
                     case 1 :
                         dbg.enterAlt(1);
 
-                        // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:23: time
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:23: time
                         {
                         dbg.location(23,23);
                         pushFollow(FOLLOW_time_in_date_time65);
@@ -503,7 +504,7 @@ public class DateWalker extends DebugTreeParser {
 
 
     // $ANTLR start "date"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:26:1: date : ( relative_date | explicit_date );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:26:1: date : ( relative_date | explicit_date );
     public final void date() throws RecognitionException {
         try { dbg.enterRule(getGrammarFileName(), "date");
         if ( getRuleLevel()==0 ) {dbg.commence();}
@@ -511,7 +512,7 @@ public class DateWalker extends DebugTreeParser {
         dbg.location(26, 1);
 
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:27:3: ( relative_date | explicit_date )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:27:3: ( relative_date | explicit_date )
             int alt4=2;
             try { dbg.enterDecision(4);
 
@@ -536,7 +537,7 @@ public class DateWalker extends DebugTreeParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:27:5: relative_date
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:27:5: relative_date
                     {
                     dbg.location(27,5);
                     pushFollow(FOLLOW_relative_date_in_date84);
@@ -550,7 +551,7 @@ public class DateWalker extends DebugTreeParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:28:5: explicit_date
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:28:5: explicit_date
                     {
                     dbg.location(28,5);
                     pushFollow(FOLLOW_explicit_date_in_date91);
@@ -585,7 +586,7 @@ public class DateWalker extends DebugTreeParser {
 
 
     // $ANTLR start "relative_date"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:31:1: relative_date : ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:31:1: relative_date : ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) );
     public final void relative_date() throws RecognitionException {
         CommonTree index=null;
         CommonTree day=null;
@@ -597,7 +598,7 @@ public class DateWalker extends DebugTreeParser {
         dbg.location(31, 1);
 
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:32:3: ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:32:3: ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) )
             int alt5=2;
             try { dbg.enterDecision(5);
 
@@ -644,7 +645,7 @@ public class DateWalker extends DebugTreeParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:32:5: ^( RELATIVE_DATE seek )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:32:5: ^( RELATIVE_DATE seek )
                     {
                     dbg.location(32,5);
                     dbg.location(32,7);
@@ -665,7 +666,7 @@ public class DateWalker extends DebugTreeParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:34:5: ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:34:5: ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) )
                     {
                     dbg.location(34,5);
                     dbg.location(34,7);
@@ -730,7 +731,7 @@ public class DateWalker extends DebugTreeParser {
 
 
     // $ANTLR start "relaxed_date"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:38:1: relaxed_date : ^( EXPLICIT seek ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:38:1: relaxed_date : ^( EXPLICIT seek ) ;
     public final void relaxed_date() throws RecognitionException {
         try { dbg.enterRule(getGrammarFileName(), "relaxed_date");
         if ( getRuleLevel()==0 ) {dbg.commence();}
@@ -738,10 +739,10 @@ public class DateWalker extends DebugTreeParser {
         dbg.location(38, 1);
 
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:39:3: ( ^( EXPLICIT seek ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:39:3: ( ^( EXPLICIT seek ) )
             dbg.enterAlt(1);
 
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:39:5: ^( EXPLICIT seek )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:39:5: ^( EXPLICIT seek )
             {
             dbg.location(39,5);
             dbg.location(39,7);
@@ -781,7 +782,7 @@ public class DateWalker extends DebugTreeParser {
 
 
     // $ANTLR start "explicit_date"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:42:1: explicit_date : ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ) ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:42:1: explicit_date : ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ) ) ;
     public final void explicit_date() throws RecognitionException {
         CommonTree month=null;
         CommonTree day_of_month=null;
@@ -794,13 +795,13 @@ public class DateWalker extends DebugTreeParser {
         dbg.location(42, 1);
 
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:43:3: ( ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ) ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:43:3: ( ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ) ) )
             dbg.enterAlt(1);
 
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:43:5: ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:43:5: ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ) )
             {
             dbg.location(43,5);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:43:5: ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:43:5: ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( YEAR_OF year= INT ) ) | ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ) )
             int alt6=4;
             try { dbg.enterSubRule(6);
             try { dbg.enterDecision(6);
@@ -819,7 +820,7 @@ public class DateWalker extends DebugTreeParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:43:6: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ^( YEAR_OF year= INT ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:43:6: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) ^( YEAR_OF year= INT ) )
                     {
                     dbg.location(43,6);
                     dbg.location(43,8);
@@ -870,7 +871,7 @@ public class DateWalker extends DebugTreeParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:44:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:44:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( DAY_OF_WEEK day_of_week= INT ) )
                     {
                     dbg.location(44,5);
                     dbg.location(44,7);
@@ -912,7 +913,7 @@ public class DateWalker extends DebugTreeParser {
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:45:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( YEAR_OF year= INT ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:45:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) ^( YEAR_OF year= INT ) )
                     {
                     dbg.location(45,5);
                     dbg.location(45,7);
@@ -954,7 +955,7 @@ public class DateWalker extends DebugTreeParser {
                 case 4 :
                     dbg.enterAlt(4);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:46:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:46:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH day_of_month= INT ) )
                     {
                     dbg.location(46,5);
                     dbg.location(46,7);
@@ -1015,7 +1016,7 @@ public class DateWalker extends DebugTreeParser {
 
 
     // $ANTLR start "time"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:50:1: time : ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ^( SECONDS_OF_MINUTE (seconds= INT )? ) ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:50:1: time : ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ^( SECONDS_OF_MINUTE (seconds= INT )? ) ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) ;
     public final void time() throws RecognitionException {
         CommonTree hours=null;
         CommonTree minutes=null;
@@ -1029,10 +1030,10 @@ public class DateWalker extends DebugTreeParser {
         dbg.location(50, 1);
 
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:51:3: ( ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ^( SECONDS_OF_MINUTE (seconds= INT )? ) ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:51:3: ( ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ^( SECONDS_OF_MINUTE (seconds= INT )? ) ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) )
             dbg.enterAlt(1);
 
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:51:5: ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ^( SECONDS_OF_MINUTE (seconds= INT )? ) ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:51:5: ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ^( SECONDS_OF_MINUTE (seconds= INT )? ) ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? )
             {
             dbg.location(51,5);
             dbg.location(51,7);
@@ -1064,7 +1065,7 @@ public class DateWalker extends DebugTreeParser {
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
                 dbg.location(52,34);
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:34: (seconds= INT )?
+                // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:34: (seconds= INT )?
                 int alt7=2;
                 try { dbg.enterSubRule(7);
                 try { dbg.enterDecision(7);
@@ -1080,7 +1081,7 @@ public class DateWalker extends DebugTreeParser {
                     case 1 :
                         dbg.enterAlt(1);
 
-                        // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:34: seconds= INT
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:34: seconds= INT
                         {
                         dbg.location(52,34);
                         seconds=(CommonTree)match(input,INT,FOLLOW_INT_in_time361); 
@@ -1095,7 +1096,7 @@ public class DateWalker extends DebugTreeParser {
                 match(input, Token.UP, null); 
             }
             dbg.location(52,41);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:41: ( AM_PM )?
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:41: ( AM_PM )?
             int alt8=2;
             try { dbg.enterSubRule(8);
             try { dbg.enterDecision(8);
@@ -1111,7 +1112,7 @@ public class DateWalker extends DebugTreeParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:41: AM_PM
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:41: AM_PM
                     {
                     dbg.location(52,41);
                     AM_PM1=(CommonTree)match(input,AM_PM,FOLLOW_AM_PM_in_time365); 
@@ -1123,7 +1124,7 @@ public class DateWalker extends DebugTreeParser {
             } finally {dbg.exitSubRule(8);}
 
             dbg.location(52,48);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:48: (zone= ZONE | zone= ZONE_OFFSET )?
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:48: (zone= ZONE | zone= ZONE_OFFSET )?
             int alt9=3;
             try { dbg.enterSubRule(9);
             try { dbg.enterDecision(9);
@@ -1142,7 +1143,7 @@ public class DateWalker extends DebugTreeParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:49: zone= ZONE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:49: zone= ZONE
                     {
                     dbg.location(52,53);
                     zone=(CommonTree)match(input,ZONE,FOLLOW_ZONE_in_time371); 
@@ -1152,7 +1153,7 @@ public class DateWalker extends DebugTreeParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:61: zone= ZONE_OFFSET
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:61: zone= ZONE_OFFSET
                     {
                     dbg.location(52,65);
                     zone=(CommonTree)match(input,ZONE_OFFSET,FOLLOW_ZONE_OFFSET_in_time377); 
@@ -1192,7 +1193,7 @@ public class DateWalker extends DebugTreeParser {
 
 
     // $ANTLR start "seek"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:56:1: seek : ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:56:1: seek : ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) );
     public final void seek() throws RecognitionException {
         CommonTree by=null;
         CommonTree amount=null;
@@ -1212,7 +1213,7 @@ public class DateWalker extends DebugTreeParser {
         dbg.location(56, 1);
 
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:3: ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:3: ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) )
             int alt10=4;
             try { dbg.enterDecision(10);
 
@@ -1230,7 +1231,7 @@ public class DateWalker extends DebugTreeParser {
                 case 1 :
                     dbg.enterAlt(1);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:5: ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:5: ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) )
                     {
                     dbg.location(57,5);
                     dbg.location(57,7);
@@ -1262,7 +1263,7 @@ public class DateWalker extends DebugTreeParser {
                 case 2 :
                     dbg.enterAlt(2);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:60:5: ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:60:5: ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) )
                     {
                     dbg.location(60,5);
                     dbg.location(60,7);
@@ -1294,7 +1295,7 @@ public class DateWalker extends DebugTreeParser {
                 case 3 :
                     dbg.enterAlt(3);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:63:5: ^( SEEK DIRECTION SEEK_BY INT SPAN )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:63:5: ^( SEEK DIRECTION SEEK_BY INT SPAN )
                     {
                     dbg.location(63,5);
                     dbg.location(63,7);
@@ -1319,7 +1320,7 @@ public class DateWalker extends DebugTreeParser {
                 case 4 :
                     dbg.enterAlt(4);
 
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:66:5: ^( SEEK DIRECTION SEEK_BY INT date )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:66:5: ^( SEEK DIRECTION SEEK_BY INT date )
                     {
                     dbg.location(66,5);
                     dbg.location(66,7);
@@ -1377,11 +1378,11 @@ public class DateWalker extends DebugTreeParser {
     static final String DFA6_eofS =
         "\23\uffff";
     static final String DFA6_minS =
-        "\1\u00e9\1\2\1\u00e7\1\2\1\u00e5\1\3\1\u00ea\1\2\1\u00e5\2\3\1\2"+
-        "\2\uffff\1\u00e5\2\3\2\uffff";
+        "\1\u00ea\1\2\1\u00e8\1\2\1\u00e6\1\3\1\u00eb\1\2\1\u00e6\2\3\1\2"+
+        "\2\uffff\1\u00e6\2\3\2\uffff";
     static final String DFA6_maxS =
-        "\1\u00e9\1\2\1\u00e7\1\2\1\u00e5\1\3\1\u00ea\1\2\1\u00e5\1\3\1\u00eb"+
-        "\1\2\2\uffff\1\u00e5\1\3\1\u00eb\2\uffff";
+        "\1\u00ea\1\2\1\u00e8\1\2\1\u00e6\1\3\1\u00eb\1\2\1\u00e6\1\3\1\u00ec"+
+        "\1\2\2\uffff\1\u00e6\1\3\1\u00ec\2\uffff";
     static final String DFA6_acceptS =
         "\14\uffff\1\3\1\4\3\uffff\1\1\1\2";
     static final String DFA6_specialS =
@@ -1397,13 +1398,13 @@ public class DateWalker extends DebugTreeParser {
             "\1\10",
             "\1\11",
             "\1\12",
-            "\1\15\u00e2\uffff\1\13\4\uffff\1\14",
+            "\1\15\u00e3\uffff\1\13\4\uffff\1\14",
             "\1\16",
             "",
             "",
             "\1\17",
             "\1\20",
-            "\1\22\u00e7\uffff\1\21",
+            "\1\22\u00e8\uffff\1\21",
             "",
             ""
     };
@@ -1449,9 +1450,9 @@ public class DateWalker extends DebugTreeParser {
     static final String DFA10_eofS =
         "\12\uffff";
     static final String DFA10_minS =
-        "\1\u00f3\1\2\1\u00f4\1\u00f5\1\u00e5\1\u00e3\4\uffff";
+        "\1\u00f4\1\2\1\u00f5\1\u00f6\1\u00e6\1\u00e4\4\uffff";
     static final String DFA10_maxS =
-        "\1\u00f3\1\2\1\u00f4\1\u00f5\1\u00e5\1\u00f6\4\uffff";
+        "\1\u00f4\1\2\1\u00f5\1\u00f6\1\u00e6\1\u00f7\4\uffff";
     static final String DFA10_acceptS =
         "\6\uffff\1\1\1\2\1\3\1\4";
     static final String DFA10_specialS =
@@ -1507,9 +1508,9 @@ public class DateWalker extends DebugTreeParser {
     }
  
 
-    public static final BitSet FOLLOW_date_time_in_search45 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_date_time_in_search45 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000800000000L});
     public static final BitSet FOLLOW_DATE_TIME_in_date_time60 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_date_in_date_time62 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_date_in_date_time62 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
     public static final BitSet FOLLOW_time_in_date_time65 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_relative_date_in_date84 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_explicit_date_in_date91 = new BitSet(new long[]{0x0000000000000002L});
@@ -1517,7 +1518,7 @@ public class DateWalker extends DebugTreeParser {
     public static final BitSet FOLLOW_seek_in_relative_date109 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date120 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_WEEK_INDEX_in_relative_date123 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_relative_date127 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_INT_in_relative_date127 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
     public static final BitSet FOLLOW_DAY_OF_WEEK_in_relative_date130 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_INT_in_relative_date134 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_MONTH_OF_YEAR_in_relative_date138 = new BitSet(new long[]{0x0000000000000004L});
@@ -1559,30 +1560,30 @@ public class DateWalker extends DebugTreeParser {
     public static final BitSet FOLLOW_INT_in_time346 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SECONDS_OF_MINUTE_in_time357 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_INT_in_time361 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AM_PM_in_time365 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0006000000000000L});
+    public static final BitSet FOLLOW_AM_PM_in_time365 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x000C000000000000L});
     public static final BitSet FOLLOW_ZONE_in_time371 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ZONE_OFFSET_in_time377 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SEEK_in_seek402 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek404 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0020000000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek408 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_INT_in_seek412 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek404 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0040000000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek408 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_INT_in_seek412 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
     public static final BitSet FOLLOW_DAY_OF_WEEK_in_seek415 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_INT_in_seek419 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SEEK_in_seek439 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek441 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0020000000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek443 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_INT_in_seek447 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek441 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0040000000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek443 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_INT_in_seek447 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
     public static final BitSet FOLLOW_MONTH_OF_YEAR_in_seek450 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_INT_in_seek454 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SEEK_in_seek472 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek474 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0020000000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek476 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_INT_in_seek478 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0040000000000000L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek474 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0040000000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek476 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_INT_in_seek478 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0080000000000000L});
     public static final BitSet FOLLOW_SPAN_in_seek480 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SEEK_in_seek497 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek499 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0020000000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek501 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_INT_in_seek503 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000020800000000L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek499 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0040000000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek501 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_INT_in_seek503 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000041000000000L});
     public static final BitSet FOLLOW_date_in_seek505 = new BitSet(new long[]{0x0000000000000008L});
 
 }

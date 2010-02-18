@@ -1,5 +1,5 @@
 gunit Date;
-@header{package com.natty.parse;}
+@header{package com.natty.date.generated;}
 
 date_time:
 " " FAIL

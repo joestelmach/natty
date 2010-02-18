@@ -165,7 +165,7 @@ INT_95 : '95';
 INT_96 : '96';
 INT_97 : '97';
 INT_98 : '98';
-
+INT_99 : '99';
 
 ST : 'st';
 ND : 'nd';
@@ -248,7 +248,7 @@ WHITE_SPACE
   ;
   
 UNKNOWN 
-  : ~(SPACE | DIGIT)+
+  : ('a'..'z')+
   ;
   
 fragment DIGIT : '0'..'9';
