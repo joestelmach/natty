@@ -35,7 +35,7 @@ search
   ;
   
 text
-  : WHITE_SPACE ((UNKNOWN_WORD | UNKNOWN_CHAR) WHITE_SPACE)+
+  : WHITE_SPACE? ((UNKNOWN_WORD | UNKNOWN_CHAR) WHITE_SPACE?)+
   ;
   
 date_time
@@ -197,10 +197,10 @@ relative_date
   | implicit_prefix WHITE_SPACE relative_target 
       -> ^(RELATIVE_DATE ^(SEEK implicit_prefix relative_target))
       
-  // a relative target with no prefix has an implicit seek of 0
-  // monday, october
-  | relative_target
-      -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] relative_target))
+  // a day of week relative target with no prefix has an implicit seek of 0
+  // monday
+  | day_of_week
+      -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week))
       
   | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
       -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix relative_target))
