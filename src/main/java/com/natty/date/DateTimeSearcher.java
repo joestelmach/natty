@@ -110,6 +110,7 @@ public class DateTimeSearcher {
       // parse 
       parser = new DateParser(tokens, builder);
       printer = new Printer(parser.getTokenNames());
+      printer.printTokenStream(tokens);
       DateParser.date_time_return result = parser.date_time();
       
       // walk
@@ -119,6 +120,9 @@ public class DateTimeSearcher {
       DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
       walker.date_time();
       date = walker.getState().getDateTimes().get(0);
+      
+    } catch (IOException e) {
+      e.printStackTrace();
       
     } catch (Exception e) {
       e.printStackTrace();

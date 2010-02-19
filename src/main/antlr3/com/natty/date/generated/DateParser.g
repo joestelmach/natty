@@ -34,9 +34,8 @@ search
   : (((date_time)=>date_time | .*) text)+ -> date_time+
   ;
   
-
 text
-  : WHITE_SPACE (UNKNOWN WHITE_SPACE)+
+  : WHITE_SPACE ((UNKNOWN_WORD | UNKNOWN_CHAR) WHITE_SPACE)+
   ;
   
 date_time
@@ -62,8 +61,8 @@ time_date_separator
   ;
 
 date
-  : (relaxed_date)=> relaxed_date
-  | formal_date
+  : (formal_date)=> formal_date
+  | (relaxed_date)=> relaxed_date
   | relative_date
   | global_date_prefix date 
       -> ^(RELATIVE_DATE ^(SEEK global_date_prefix date))
@@ -159,12 +158,12 @@ relaxed_year_prefix
 
 formal_date
   // year first: 1979-02-28, 1980/01/02, etc.  full 4 digit year required to match
-  : formal_year_four_digits formal_date_separator formal_month_of_year formal_date_separator formal_day_of_month
-      -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month formal_year_four_digits)
- 
+  : relaxed_day_of_week? formal_year_four_digits formal_date_separator formal_month_of_year formal_date_separator formal_day_of_month
+      -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year_four_digits)
+      
   // year last: 1/02/1980, 2/28/79.  2 or 4 digit year is acceptable 
-  | formal_month_of_year formal_date_separator formal_day_of_month (formal_date_separator formal_year)?
-      -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month formal_year?)
+  | relaxed_day_of_week? formal_month_of_year formal_date_separator formal_day_of_month (formal_date_separator formal_year)?
+      -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year?)
   ;
 
 formal_month_of_year

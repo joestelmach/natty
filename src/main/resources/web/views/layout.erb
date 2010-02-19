@@ -9,7 +9,7 @@
   <body>
     <div id="nav">
       <ul>
-        <li class='first<%=" current" if @url == '/'%>'><a href="/">parser</a></li>
+        <li class='first<%=" current" if @url == '/' or @url == '/index'%>'><a href="index">parser</a></li>
         <li class='<%=" current" if @url == '/searcher'%>'><a href="searcher">searcher</a></li>
       </ul>
     </div>

@@ -273,7 +273,6 @@ public class WalkerState {
   
   public void captureDateTime() {
     Date date = _calendar.getTime();
-    _logger.info("capturing date time: " + date);
     _dateTimes.add(date);
     resetCalender();
   }

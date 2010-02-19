@@ -248,8 +248,12 @@ WHITE_SPACE
   : SPACE+
   ;
   
-UNKNOWN 
+UNKNOWN_WORD 
   : ('a'..'z')+
+  ;
+  
+UNKNOWN_CHAR
+  : .
   ;
   
 fragment DIGIT : '0'..'9';

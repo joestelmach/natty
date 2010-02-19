@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g 2010-02-19 14:07:11
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g 2010-02-19 16:19:57
  package com.natty.date.generated; 
 
 import org.antlr.runtime.*;
@@ -10,10 +10,11 @@ import org.antlr.runtime.debug.*;
 import java.io.IOException;
 public class DateWalker extends DebugTreeParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DOT", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", "TODAY", "TOMORROW", "YESTERDAY", "AM", "PM", "T", "MILITARY_HOUR_SUFFIX", "MIDNIGHT", "NOON", "MORNING", "UTC", "EST", "PST", "CST", "MST", "AKST", "HAST", "INT_00", "INT_01", "INT_02", "INT_03", "INT_04", "INT_05", "INT_06", "INT_07", "INT_08", "INT_09", "INT_0", "INT_1", "INT_2", "INT_3", "INT_4", "INT_5", "INT_6", "INT_7", "INT_8", "INT_9", "INT_10", "INT_11", "INT_12", "INT_13", "INT_14", "INT_15", "INT_16", "INT_17", "INT_18", "INT_19", "INT_20", "INT_21", "INT_22", "INT_23", "INT_24", "INT_25", "INT_26", "INT_27", "INT_28", "INT_29", "INT_30", "INT_31", "INT_32", "INT_33", "INT_34", "INT_35", "INT_36", "INT_37", "INT_38", "INT_39", "INT_40", "INT_41", "INT_42", "INT_43", "INT_44", "INT_45", "INT_46", "INT_47", "INT_48", "INT_49", "INT_50", "INT_51", "INT_52", "INT_53", "INT_54", "INT_55", "INT_56", "INT_57", "INT_58", "INT_59", "INT_60", "INT_61", "INT_62", "INT_63", "INT_64", "INT_65", "INT_66", "INT_67", "INT_68", "INT_69", "INT_70", "INT_71", "INT_72", "INT_73", "INT_74", "INT_75", "INT_76", "INT_77", "INT_78", "INT_79", "INT_80", "INT_81", "INT_82", "INT_83", "INT_84", "INT_85", "INT_86", "INT_87", "INT_88", "INT_89", "INT_90", "INT_91", "INT_92", "INT_93", "INT_94", "INT_95", "INT_96", "INT_97", "INT_98", "INT_99", "ST", "ND", "RD", "TH", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN", "TWENTY", "THIRTY", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH", "THIRTEENTH", "FOURTEENTH", "FIFTEENTH", "SIXTEENTH", "SEVENTEENTH", "EIGHTEENTH", "NINETEENTH", "TWENTIETH", "THIRTIETH", "COLON", "COMMA", "DASH", "SLASH", "PLUS", "SINGLE_QUOTE", "IN", "THE", "AT", "ON", "OF", "THIS", "LAST", "NEXT", "PAST", "COMING", "UPCOMING", "FROM", "NOW", "AGO", "BEFORE", "AFTER", "SPACE", "WHITE_SPACE", "UNKNOWN", "DIGIT", "INT", "MONTH_OF_YEAR", "DAY_OF_MONTH", "DAY_OF_WEEK", "YEAR_OF", "DATE_TIME", "EXPLICIT_DATE", "RELATIVE_DATE", "SEEK", "DIRECTION", "SEEK_BY", "SPAN", "WEEK_INDEX", "EXPLICIT_TIME", "HOURS_OF_DAY", "MINUTES_OF_HOUR", "SECONDS_OF_MINUTE", "AM_PM", "ZONE", "ZONE_OFFSET"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DOT", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", "TODAY", "TOMORROW", "YESTERDAY", "AM", "PM", "T", "MILITARY_HOUR_SUFFIX", "MIDNIGHT", "NOON", "MORNING", "UTC", "EST", "PST", "CST", "MST", "AKST", "HAST", "INT_00", "INT_01", "INT_02", "INT_03", "INT_04", "INT_05", "INT_06", "INT_07", "INT_08", "INT_09", "INT_0", "INT_1", "INT_2", "INT_3", "INT_4", "INT_5", "INT_6", "INT_7", "INT_8", "INT_9", "INT_10", "INT_11", "INT_12", "INT_13", "INT_14", "INT_15", "INT_16", "INT_17", "INT_18", "INT_19", "INT_20", "INT_21", "INT_22", "INT_23", "INT_24", "INT_25", "INT_26", "INT_27", "INT_28", "INT_29", "INT_30", "INT_31", "INT_32", "INT_33", "INT_34", "INT_35", "INT_36", "INT_37", "INT_38", "INT_39", "INT_40", "INT_41", "INT_42", "INT_43", "INT_44", "INT_45", "INT_46", "INT_47", "INT_48", "INT_49", "INT_50", "INT_51", "INT_52", "INT_53", "INT_54", "INT_55", "INT_56", "INT_57", "INT_58", "INT_59", "INT_60", "INT_61", "INT_62", "INT_63", "INT_64", "INT_65", "INT_66", "INT_67", "INT_68", "INT_69", "INT_70", "INT_71", "INT_72", "INT_73", "INT_74", "INT_75", "INT_76", "INT_77", "INT_78", "INT_79", "INT_80", "INT_81", "INT_82", "INT_83", "INT_84", "INT_85", "INT_86", "INT_87", "INT_88", "INT_89", "INT_90", "INT_91", "INT_92", "INT_93", "INT_94", "INT_95", "INT_96", "INT_97", "INT_98", "INT_99", "ST", "ND", "RD", "TH", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN", "TWENTY", "THIRTY", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH", "THIRTEENTH", "FOURTEENTH", "FIFTEENTH", "SIXTEENTH", "SEVENTEENTH", "EIGHTEENTH", "NINETEENTH", "TWENTIETH", "THIRTIETH", "COLON", "COMMA", "DASH", "SLASH", "PLUS", "SINGLE_QUOTE", "IN", "THE", "AT", "ON", "OF", "THIS", "LAST", "NEXT", "PAST", "COMING", "UPCOMING", "FROM", "NOW", "AGO", "BEFORE", "AFTER", "SPACE", "WHITE_SPACE", "UNKNOWN_WORD", "UNKNOWN_CHAR", "DIGIT", "INT", "MONTH_OF_YEAR", "DAY_OF_MONTH", "DAY_OF_WEEK", "YEAR_OF", "DATE_TIME", "EXPLICIT_DATE", "RELATIVE_DATE", "SEEK", "DIRECTION", "SEEK_BY", "SPAN", "WEEK_INDEX", "EXPLICIT_TIME", "HOURS_OF_DAY", "MINUTES_OF_HOUR", "SECONDS_OF_MINUTE", "AM_PM", "ZONE", "ZONE_OFFSET"
     };
-    public static final int DIRECTION=237;
+    public static final int DIRECTION=238;
     public static final int NINETEEN=178;
+    public static final int UNKNOWN_CHAR=227;
     public static final int INT_08=54;
     public static final int INT_09=55;
     public static final int TWENTY=179;
@@ -30,33 +31,33 @@ public class DateWalker extends DebugTreeParser {
     public static final int NOW=220;
     public static final int EOF=-1;
     public static final int MONTH=27;
-    public static final int AM_PM=245;
+    public static final int AM_PM=246;
     public static final int EIGHTEENTH=198;
-    public static final int SPAN=239;
+    public static final int SPAN=240;
     public static final int THIS=213;
     public static final int NOON=37;
     public static final int TOMORROW=30;
     public static final int FIFTEENTH=195;
     public static final int TODAY=29;
     public static final int NOVEMBER=15;
-    public static final int MONTH_OF_YEAR=229;
+    public static final int MONTH_OF_YEAR=230;
     public static final int SEVENTH=187;
     public static final int FEBRUARY=6;
     public static final int T=34;
-    public static final int DAY_OF_WEEK=231;
+    public static final int DAY_OF_WEEK=232;
     public static final int SUNDAY=17;
     public static final int SEVEN=166;
     public static final int ELEVEN=170;
     public static final int THIRTEEN=172;
-    public static final int EXPLICIT_DATE=234;
-    public static final int INT=228;
+    public static final int EXPLICIT_DATE=235;
+    public static final int INT=229;
     public static final int UPCOMING=218;
     public static final int SIX=165;
     public static final int FIFTH=185;
     public static final int MORNING=38;
     public static final int DECEMBER=16;
     public static final int AUGUST=12;
-    public static final int SECONDS_OF_MINUTE=244;
+    public static final int SECONDS_OF_MINUTE=245;
     public static final int TUESDAY=19;
     public static final int THIRD=183;
     public static final int INT_47=103;
@@ -84,7 +85,7 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_37=93;
     public static final int INT_39=95;
     public static final int NINTH=189;
-    public static final int ZONE=246;
+    public static final int ZONE=247;
     public static final int TWENTIETH=200;
     public static final int PLUS=206;
     public static final int INT_30=86;
@@ -120,7 +121,7 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_11=67;
     public static final int INT_14=70;
     public static final int INT_13=69;
-    public static final int DAY_OF_MONTH=230;
+    public static final int DAY_OF_MONTH=231;
     public static final int INT_19=75;
     public static final int FIFTEEN=174;
     public static final int NINE=168;
@@ -152,7 +153,7 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_89=145;
     public static final int PAST=216;
     public static final int SEVENTEEN=176;
-    public static final int DATE_TIME=233;
+    public static final int DATE_TIME=234;
     public static final int INT_72=128;
     public static final int INT_71=127;
     public static final int INT_70=126;
@@ -160,7 +161,7 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_75=131;
     public static final int INT_74=130;
     public static final int INT_73=129;
-    public static final int MINUTES_OF_HOUR=243;
+    public static final int MINUTES_OF_HOUR=244;
     public static final int THIRTIETH=201;
     public static final int LAST=214;
     public static final int INT_79=135;
@@ -168,7 +169,7 @@ public class DateWalker extends DebugTreeParser {
     public static final int EIGHTEEN=177;
     public static final int INT_78=134;
     public static final int ND=157;
-    public static final int RELATIVE_DATE=235;
+    public static final int RELATIVE_DATE=236;
     public static final int INT_63=119;
     public static final int INT_62=118;
     public static final int INT_65=121;
@@ -194,10 +195,10 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_51=107;
     public static final int INT_50=106;
     public static final int THURSDAY=21;
-    public static final int ZONE_OFFSET=247;
-    public static final int SEEK_BY=238;
+    public static final int ZONE_OFFSET=248;
+    public static final int SEEK_BY=239;
     public static final int PM=33;
-    public static final int EXPLICIT_TIME=241;
+    public static final int EXPLICIT_TIME=242;
     public static final int FROM=219;
     public static final int INT_59=115;
     public static final int INT_57=113;
@@ -205,15 +206,15 @@ public class DateWalker extends DebugTreeParser {
     public static final int INT_55=111;
     public static final int EIGHTH=188;
     public static final int INT_56=112;
-    public static final int HOURS_OF_DAY=242;
+    public static final int HOURS_OF_DAY=243;
     public static final int YEAR=28;
     public static final int MAY=9;
     public static final int TENTH=190;
     public static final int INT_9=65;
     public static final int INT_8=64;
     public static final int INT_7=63;
-    public static final int INT_6=62;
     public static final int SPACE=224;
+    public static final int INT_6=62;
     public static final int INT_5=61;
     public static final int UTC=39;
     public static final int INT_4=60;
@@ -227,24 +228,23 @@ public class DateWalker extends DebugTreeParser {
     public static final int CST=42;
     public static final int IN=208;
     public static final int PST=41;
-    public static final int UNKNOWN=226;
     public static final int COMMA=203;
     public static final int FIVE=164;
     public static final int THIRTY=180;
     public static final int NEXT=215;
-    public static final int DIGIT=227;
+    public static final int DIGIT=228;
     public static final int DOT=4;
     public static final int MILITARY_HOUR_SUFFIX=35;
     public static final int EST=40;
     public static final int HAST=45;
     public static final int DASH=204;
-    public static final int YEAR_OF=232;
+    public static final int YEAR_OF=233;
     public static final int TWELVE=171;
-    public static final int WEEK_INDEX=240;
+    public static final int WEEK_INDEX=241;
     public static final int BEFORE=222;
     public static final int AFTER=223;
     public static final int SIXTEENTH=196;
-    public static final int SEEK=236;
+    public static final int SEEK=237;
     public static final int INT_90=146;
     public static final int INT_97=153;
     public static final int INT_98=154;
@@ -257,13 +257,14 @@ public class DateWalker extends DebugTreeParser {
     public static final int TWELFTH=192;
     public static final int INT_99=155;
     public static final int SIXTH=186;
+    public static final int UNKNOWN_WORD=226;
 
     // delegates
     // delegators
 
     public static final String[] ruleNames = new String[] {
-        "invalidRule", "seek", "date_time", "date", "search", "explicit_date", 
-        "relative_date", "time"
+        "invalidRule", "seek", "relative_date", "search", "date_time", "time", 
+        "explicit_date", "date"
     };
      
         public int ruleLevel = 0;
@@ -1233,9 +1234,9 @@ public class DateWalker extends DebugTreeParser {
     static final String DFA11_eofS =
         "\12\uffff";
     static final String DFA11_minS =
-        "\1\u00ec\1\2\1\u00ed\1\u00ee\1\u00e4\1\u00e5\4\uffff";
+        "\1\u00ed\1\2\1\u00ee\1\u00ef\1\u00e5\1\u00e6\4\uffff";
     static final String DFA11_maxS =
-        "\1\u00ec\1\2\1\u00ed\1\u00ee\1\u00e4\1\u00ef\4\uffff";
+        "\1\u00ed\1\2\1\u00ee\1\u00ef\1\u00e5\1\u00f0\4\uffff";
     static final String DFA11_acceptS =
         "\6\uffff\1\1\1\2\1\3\1\4";
     static final String DFA11_specialS =
@@ -1291,9 +1292,9 @@ public class DateWalker extends DebugTreeParser {
     }
  
 
-    public static final BitSet FOLLOW_date_time_in_search45 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_date_time_in_search45 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000040000000000L});
     public static final BitSet FOLLOW_DATE_TIME_in_date_time67 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_date_in_date_time69 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_date_in_date_time69 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0004000000000000L});
     public static final BitSet FOLLOW_time_in_date_time72 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_relative_date_in_date91 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_explicit_date_in_date98 = new BitSet(new long[]{0x0000000000000002L});
@@ -1301,7 +1302,7 @@ public class DateWalker extends DebugTreeParser {
     public static final BitSet FOLLOW_seek_in_relative_date116 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date127 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_WEEK_INDEX_in_relative_date130 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_relative_date134 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_INT_in_relative_date134 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
     public static final BitSet FOLLOW_DAY_OF_WEEK_in_relative_date137 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_INT_in_relative_date141 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_MONTH_OF_YEAR_in_relative_date145 = new BitSet(new long[]{0x0000000000000004L});
@@ -1322,30 +1323,30 @@ public class DateWalker extends DebugTreeParser {
     public static final BitSet FOLLOW_INT_in_time259 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SECONDS_OF_MINUTE_in_time273 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_INT_in_time277 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AM_PM_in_time282 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x00C0000000000000L});
+    public static final BitSet FOLLOW_AM_PM_in_time282 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0180000000000000L});
     public static final BitSet FOLLOW_ZONE_in_time288 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_ZONE_OFFSET_in_time294 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SEEK_in_seek319 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek321 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek325 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_INT_in_seek329 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek321 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek325 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_INT_in_seek329 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
     public static final BitSet FOLLOW_DAY_OF_WEEK_in_seek332 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_INT_in_seek336 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SEEK_in_seek356 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek358 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek360 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_INT_in_seek364 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek358 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek360 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_INT_in_seek364 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
     public static final BitSet FOLLOW_MONTH_OF_YEAR_in_seek367 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_INT_in_seek371 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SEEK_in_seek389 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek391 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek393 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_INT_in_seek395 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek391 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek393 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_INT_in_seek395 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0001000000000000L});
     public static final BitSet FOLLOW_SPAN_in_seek397 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_SEEK_in_seek414 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek416 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek418 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_INT_in_seek420 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000C0000000000L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek416 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek418 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_INT_in_seek420 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000180000000000L});
     public static final BitSet FOLLOW_date_in_seek422 = new BitSet(new long[]{0x0000000000000008L});
 
 }
