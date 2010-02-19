@@ -1,9 +1,18 @@
 <script src="javascripts/Searcher.js"></script>
 
-<h1>enter or upload some text, and we'll find some dates</h1>
+<h1>enter some text, and we'll find some dates</h1>
 
 <textarea id="search_input"></textarea>
 <div id="submit_row">
-  <div id="submit">parse</div>
+  <div id="submit">search</div>
   <img src="images/loading.gif" id="loading" style="display:none" />
+</div>
+
+<div id="error" style="display:none"></div>
+<div id="results" style="display:none">
+  <h2>here's what we found</h2>
+  <ul id="result_list"></ul>
+
+  <h2>in these locations</h2>
+  <div id="annotated_results"></div>
 </div>

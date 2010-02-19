@@ -28,20 +28,20 @@ public class Printer {
     System.out.println(builder);
   }
   
-  public void printTree(Tree tree) {
+  public void printTree(Tree tree, StringBuilder builder) {
     int childCount = tree.getChildCount();
-    if(tree.getParent() != null && childCount > 0) System.out.print(" ");
-    System.out.print(childCount > 0 ? "(" : " ");
+    if(tree.getParent() != null && childCount > 0) builder.append(" ");
+    builder.append(childCount > 0 ? "(" : " ");
     
     String tokenType = _tokenNames[tree.getType()];
     String tokenValue = tree.getText();
     
-    System.out.print((tokenType.equals(tokenValue) ? tokenType : tokenType + "[" + tree.getText() + "]"));
+    builder.append((tokenType.equals(tokenValue) ? tokenType : tokenType + "[" + tree.getText() + "]"));
     
     for(int i=0; i<childCount; i++) {
-      printTree(tree.getChild(i));
+      printTree(tree.getChild(i), builder);
     }
     
-    if(childCount > 0) System.out.print(")");
+    if(childCount > 0) builder.append(")");
   }
 }

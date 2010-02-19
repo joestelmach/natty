@@ -64,9 +64,11 @@ public class ParseEventListener extends BlankDebugEventListener {
       builder.append(token.getText());
     }
     String text = builder.toString();
-    int start = _tokens.get(0).getCharPositionInLine();
+    Token startToken = _tokens.get(0);
+    int line = startToken.getLine();
+    int start = startToken.getCharPositionInLine();
     int end = start + text.length();
-    _locations.add(new Location(text, start, end));
+    _locations.add(new Location(text, line, start, end));
     _tokens.clear();
     _inDateTime = false;
   }

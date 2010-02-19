@@ -249,17 +249,17 @@ public class WalkerState {
       _calendar.setTimeZone(TimeZone.getTimeZone(zone));
     }
     
+    _calendar.set(Calendar.HOUR_OF_DAY, hoursInt);
     // hours greater than 12 are in 24-hour time
-    if(hoursInt > 12) {
-      _calendar.set(Calendar.HOUR_OF_DAY, hoursInt);
-    }
-    
-    // otherwise, we specify the meridian indicator. 
-    else {
+    if(hoursInt <= 12) {
+      int amPmInt = amPm == null ? 
+        (hoursInt > 12 ? Calendar.PM : Calendar.AM) :
+        amPm.equals("pm") ? Calendar.PM : Calendar.AM;
+      _calendar.set(Calendar.AM_PM, amPmInt);
+      
+      // calendar is whacky at 12 o'clock (must use 0)
+      if(hoursInt == 12) hoursInt = 0;
       _calendar.set(Calendar.HOUR, hoursInt);
-      _calendar.set(Calendar.AM_PM,  amPm == null ? 
-        hoursInt > 12 ? Calendar.PM : Calendar.AM :
-        amPm.equals("pm") ? Calendar.PM : Calendar.AM);
     }
     
     if(seconds != null) {

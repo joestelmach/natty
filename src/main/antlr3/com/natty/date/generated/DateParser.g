@@ -57,8 +57,8 @@ date_time_separator
   ;
   
 time_date_separator
-  : WHITE_SPACE (ON WHITE_SPACE)?
-  | COMMA WHITE_SPACE? (ON WHITE_SPACE)?
+  : WHITE_SPACE ((ON | OF) WHITE_SPACE)?
+  | COMMA WHITE_SPACE? ((ON | OF) WHITE_SPACE)?
   ;
 
 date
@@ -281,7 +281,8 @@ time
   | hours (WHITE_SPACE? meridian_indicator)? (WHITE_SPACE? time_zone)?
       -> ^(EXPLICIT_TIME hours ^(MINUTES_OF_HOUR INT["0"]) meridian_indicator? time_zone?)
       
-  | named_time
+  | named_time (WHITE_SPACE time_zone)?
+    -> ^(EXPLICIT_TIME named_time time_zone?)
   ;
  
 // hour of the day
@@ -306,8 +307,9 @@ meridian_indicator
   ;
   
 named_time
-  : NOON     -> ^(EXPLICIT_TIME ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) AM_PM["pm"])
-  | MIDNIGHT -> ^(EXPLICIT_TIME ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) AM_PM["am"])
+  : (IN WHITE_SPACE THE WHITE_SPACE)? NOON    -> ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) AM_PM["pm"]
+  | (IN WHITE_SPACE THE WHITE_SPACE)? MORNING -> ^(HOURS_OF_DAY INT["8"]) ^(MINUTES_OF_HOUR INT["0"]) AM_PM["am"]
+  | MIDNIGHT                                  -> ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) AM_PM["am"]
   ;
   
 time_zone

@@ -9,12 +9,13 @@
   <body>
     <div id="nav">
       <ul>
-        <li><a href="/">parse</a></li>
-        <li><a href="searcher">searcher</a></li>
+        <li class='first<%=" current" if @url == '/'%>'><a href="/">parser</a></li>
+        <li class='<%=" current" if @url == '/searcher'%>'><a href="searcher">searcher</a></li>
       </ul>
     </div>
     <div id="content">
       <%= yield %>
     </div>
+    <div id="margin"></div>
   </body>
 </html>

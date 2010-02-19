@@ -33,7 +33,8 @@ Parser = Class.create({
       method : 'post', 
       parameters : {value : this._input.value}, 
       onSuccess : this._onSuccess.bind(this),
-      onFailure : this._onFailure.bind(this)
+      onFailure : this._onFailure.bind(this),
+      onException : this._onFailure.bind(this)
     });
   },
 
@@ -57,8 +58,8 @@ Parser = Class.create({
   /**
   *
   */
-  _onFailure : function(e) {
-    console.log(e);
+  _onFailure : function(request, exception) {
+    console.log(exception);
   }
 });
 

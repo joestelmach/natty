@@ -23,6 +23,7 @@ import org.json.JSONObject;
 import com.natty.date.generated.DateLexer;
 import com.natty.date.generated.DateParser;
 import com.natty.date.generated.DateWalker;
+import com.natty.utility.Printer;
 
 
 public class DateTimeSearcher {
@@ -46,7 +47,6 @@ public class DateTimeSearcher {
       
       // walk
       Tree tree = (Tree) result.getTree();
-      System.out.println(tree.toStringTree());
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
       walker = new DateWalker(nodes, new BlankDebugEventListener());
@@ -62,13 +62,15 @@ public class DateTimeSearcher {
     List<Location> locations = parseListener.getLocations();
     List<Date> dateTimes = walker.getState().getDateTimes();
     
-    JSONArray jsonArray = new JSONArray();
-    for(int i=0; i<locations.size(); i++) {
-      Location location = locations.get(i);
-      Date date = dateTimes.get(i);
-      try {
+    JSONObject locationJson = new JSONObject();
+    try {
+      JSONArray jsonArray = new JSONArray();
+      for(int i=0; i<locations.size(); i++) {
+        Location location = locations.get(i);
+        Date date = dateTimes.get(i);
         JSONObject json = new JSONObject();
         json.put("text", location.getText());
+        json.put("line", location.getLine());
         json.put("start", location.getStart());
         json.put("end", location.getEnd());
         _formatter.setTimeZone(TimeZone.getTimeZone("America/New_York"));
@@ -76,14 +78,14 @@ public class DateTimeSearcher {
         _formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
         json.put("utctime", _formatter.format(date));
         jsonArray.put(json);
-      
-      } catch(JSONException e) {
-        _logger.log(Level.FINE, "could not generate json", e);
-      
       }
+      
+      locationJson.put("locations", jsonArray);
+    } catch(JSONException e) {
+      _logger.log(Level.SEVERE, "could not generate json", e);
     }
     
-    return jsonArray.toString();
+    return locationJson.toString();
   }
   
   /**
@@ -97,6 +99,8 @@ public class DateTimeSearcher {
     StructureBuilder builder = new StructureBuilder();
     Date date = new Date();
     Tree tree = null;
+    DateParser parser = null;
+    Printer printer = null;
     try {
       // lex
       input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(inputString.getBytes()));
@@ -104,7 +108,8 @@ public class DateTimeSearcher {
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
       // parse 
-      DateParser parser = new DateParser(tokens, builder);
+      parser = new DateParser(tokens, builder);
+      printer = new Printer(parser.getTokenNames());
       DateParser.date_time_return result = parser.date_time();
       
       // walk
@@ -115,10 +120,7 @@ public class DateTimeSearcher {
       walker.date_time();
       date = walker.getState().getDateTimes().get(0);
       
-    } catch (IOException e) {
-      e.printStackTrace();
-      
-    } catch (RecognitionException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
     
@@ -131,11 +133,12 @@ public class DateTimeSearcher {
       _formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
       json.put("utctime", _formatter.format(date));
       json.put("structure", builder.toJSON());
-      if(tree != null) json.put("ast", tree.toStringTree());
+      StringBuilder buffer = new StringBuilder();
+      printer.printTree(tree, buffer);
+      if(tree != null) json.put("ast", buffer.toString());
       
     } catch(JSONException e) {
-      _logger.log(Level.FINE, "could not generate json", e);
-      
+      _logger.log(Level.SEVERE, "could not generate json", e);
     }
     
     return json.toString();

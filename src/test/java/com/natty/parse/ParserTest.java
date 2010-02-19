@@ -10,8 +10,8 @@ import com.natty.date.DateTimeSearcher;
 public class ParserTest {
   public static void main(String[] args) {
     long start = System.currentTimeMillis();
-    String inputString = "nov 21 please attend my party at 6pm";
-    System.out.println(DateTimeSearcher.search(inputString));
+    String inputString = "nov 21 morning";
+    System.out.println(DateTimeSearcher.parseDate(inputString));
     System.out.println("completed in " + (System.currentTimeMillis() - start) + " millis");
   }
 }
