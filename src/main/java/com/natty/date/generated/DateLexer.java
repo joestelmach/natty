@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g 2010-02-19 16:55:35
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g 2010-02-19 17:21:09
  package com.natty.date.generated; 
 
 import org.antlr.runtime.*;
@@ -7,232 +7,233 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class DateLexer extends Lexer {
-    public static final int NINETEEN=178;
-    public static final int UNKNOWN_CHAR=227;
-    public static final int INT_08=54;
-    public static final int INT_09=55;
-    public static final int TWENTY=179;
-    public static final int INT_02=48;
-    public static final int INT_03=49;
-    public static final int INT_00=46;
-    public static final int INT_01=47;
+    public static final int NINETEEN=179;
+    public static final int UNKNOWN_CHAR=228;
+    public static final int INT_08=55;
+    public static final int INT_09=56;
+    public static final int TWENTY=180;
+    public static final int INT_02=49;
+    public static final int INT_03=50;
+    public static final int INT_00=47;
+    public static final int INT_01=48;
     public static final int APRIL=8;
-    public static final int INT_06=52;
-    public static final int COMING=217;
-    public static final int INT_07=53;
-    public static final int INT_04=50;
-    public static final int INT_05=51;
-    public static final int NOW=220;
+    public static final int INT_06=53;
+    public static final int COMING=218;
+    public static final int INT_07=54;
+    public static final int INT_04=51;
+    public static final int INT_05=52;
+    public static final int NOW=221;
     public static final int EOF=-1;
     public static final int MONTH=27;
-    public static final int EIGHTEENTH=198;
-    public static final int THIS=213;
+    public static final int EIGHTEENTH=199;
+    public static final int THIS=214;
     public static final int NOON=37;
     public static final int TOMORROW=30;
-    public static final int FIFTEENTH=195;
+    public static final int FIFTEENTH=196;
     public static final int TODAY=29;
     public static final int NOVEMBER=15;
-    public static final int SEVENTH=187;
+    public static final int SEVENTH=188;
     public static final int FEBRUARY=6;
     public static final int T=34;
     public static final int SUNDAY=17;
-    public static final int SEVEN=166;
-    public static final int ELEVEN=170;
-    public static final int THIRTEEN=172;
-    public static final int UPCOMING=218;
-    public static final int SIX=165;
-    public static final int FIFTH=185;
+    public static final int SEVEN=167;
+    public static final int ELEVEN=171;
+    public static final int THIRTEEN=173;
+    public static final int UPCOMING=219;
+    public static final int SIX=166;
+    public static final int FIFTH=186;
     public static final int MORNING=38;
     public static final int DECEMBER=16;
     public static final int AUGUST=12;
     public static final int TUESDAY=19;
-    public static final int INT_47=103;
-    public static final int THIRD=183;
-    public static final int INT_46=102;
-    public static final int INT_45=101;
-    public static final int INT_44=100;
-    public static final int RD=158;
-    public static final int INT_49=105;
-    public static final int INT_48=104;
-    public static final int THE=209;
-    public static final int WHITE_SPACE=225;
-    public static final int INT_42=98;
-    public static final int INT_43=99;
+    public static final int INT_47=104;
+    public static final int THIRD=184;
+    public static final int INT_46=103;
+    public static final int INT_45=102;
+    public static final int INT_44=101;
+    public static final int RD=159;
+    public static final int INT_49=106;
+    public static final int INT_48=105;
+    public static final int THE=210;
+    public static final int WHITE_SPACE=226;
+    public static final int INT_42=99;
+    public static final int INT_43=100;
     public static final int FRIDAY=22;
-    public static final int INT_40=96;
-    public static final int INT_41=97;
-    public static final int AT=210;
-    public static final int INT_34=90;
-    public static final int INT_33=89;
-    public static final int SINGLE_QUOTE=207;
-    public static final int INT_36=92;
-    public static final int INT_35=91;
-    public static final int SLASH=205;
-    public static final int INT_38=94;
-    public static final int INT_37=93;
-    public static final int INT_39=95;
-    public static final int NINTH=189;
-    public static final int TWENTIETH=200;
-    public static final int PLUS=206;
-    public static final int INT_30=86;
-    public static final int INT_31=87;
+    public static final int INT_40=97;
+    public static final int INT_41=98;
+    public static final int AT=211;
+    public static final int INT_34=91;
+    public static final int INT_33=90;
+    public static final int SINGLE_QUOTE=208;
+    public static final int INT_36=93;
+    public static final int INT_35=92;
+    public static final int SLASH=206;
+    public static final int INT_38=95;
+    public static final int INT_37=94;
+    public static final int INT_39=96;
+    public static final int NINTH=190;
+    public static final int TWENTIETH=201;
+    public static final int PLUS=207;
+    public static final int INT_30=87;
+    public static final int INT_31=88;
     public static final int AM=32;
-    public static final int INT_32=88;
-    public static final int INT_29=85;
-    public static final int INT_28=84;
-    public static final int INT_27=83;
-    public static final int INT_26=82;
-    public static final int INT_25=81;
-    public static final int INT_24=80;
-    public static final int INT_23=79;
-    public static final int INT_22=78;
-    public static final int TH=159;
-    public static final int FOURTEENTH=194;
-    public static final int SIXTEEN=175;
-    public static final int AGO=221;
-    public static final int ELEVENTH=191;
-    public static final int ST=156;
-    public static final int TWO=161;
-    public static final int INT_20=76;
+    public static final int INT_32=89;
+    public static final int INT_29=86;
+    public static final int INT_28=85;
+    public static final int INT_27=84;
+    public static final int INT_26=83;
+    public static final int INT_25=82;
+    public static final int INT_24=81;
+    public static final int INT_23=80;
+    public static final int INT_22=79;
+    public static final int TH=160;
+    public static final int FOURTEENTH=195;
+    public static final int SIXTEEN=176;
+    public static final int AGO=222;
+    public static final int ELEVENTH=192;
+    public static final int ST=157;
+    public static final int TWO=162;
+    public static final int INT_20=77;
     public static final int HOUR=24;
-    public static final int INT_21=77;
+    public static final int INT_21=78;
     public static final int JANUARY=5;
-    public static final int THIRTEENTH=193;
-    public static final int COLON=202;
-    public static final int INT_16=72;
-    public static final int INT_15=71;
-    public static final int INT_18=74;
-    public static final int INT_17=73;
-    public static final int INT_12=68;
-    public static final int INT_11=67;
-    public static final int INT_14=70;
-    public static final int INT_13=69;
-    public static final int INT_19=75;
-    public static final int FIFTEEN=174;
-    public static final int NINE=168;
-    public static final int THREE=162;
-    public static final int FOURTEEN=173;
-    public static final int INT_10=66;
+    public static final int THIRTEENTH=194;
+    public static final int COLON=203;
+    public static final int INT_16=73;
+    public static final int INT_15=72;
+    public static final int INT_18=75;
+    public static final int INT_17=74;
+    public static final int INT_12=69;
+    public static final int INT_11=68;
+    public static final int INT_14=71;
+    public static final int INT_13=70;
+    public static final int INT_19=76;
+    public static final int FIFTEEN=175;
+    public static final int NINE=169;
+    public static final int THREE=163;
+    public static final int FOURTEEN=174;
+    public static final int INT_10=67;
     public static final int YESTERDAY=31;
-    public static final int SEVENTEENTH=197;
-    public static final int FIRST=181;
-    public static final int INT_81=137;
-    public static final int INT_80=136;
+    public static final int SEVENTEENTH=198;
+    public static final int FIRST=182;
+    public static final int INT_81=138;
+    public static final int INT_80=137;
     public static final int SEPTEMBER=13;
     public static final int WEEK=26;
-    public static final int INT_83=139;
-    public static final int INT_82=138;
-    public static final int INT_85=141;
-    public static final int INT_84=140;
+    public static final int INT_83=140;
+    public static final int INT_82=139;
+    public static final int INT_85=142;
+    public static final int INT_84=141;
     public static final int WEDNESDAY=20;
-    public static final int INT_87=143;
-    public static final int INT_86=142;
+    public static final int INT_87=144;
+    public static final int INT_86=143;
     public static final int JULY=11;
-    public static final int NINETEENTH=199;
+    public static final int NINETEENTH=200;
     public static final int OCTOBER=14;
     public static final int DAY=25;
-    public static final int ONE=160;
+    public static final int ONE=161;
     public static final int MIDNIGHT=36;
-    public static final int INT_88=144;
+    public static final int INT_88=145;
     public static final int MARCH=7;
-    public static final int INT_89=145;
-    public static final int PAST=216;
-    public static final int SEVENTEEN=176;
-    public static final int INT_72=128;
-    public static final int INT_71=127;
-    public static final int INT_70=126;
-    public static final int INT_76=132;
-    public static final int INT_75=131;
-    public static final int INT_74=130;
-    public static final int INT_73=129;
-    public static final int THIRTIETH=201;
-    public static final int LAST=214;
-    public static final int INT_79=135;
-    public static final int INT_77=133;
-    public static final int EIGHTEEN=177;
-    public static final int INT_78=134;
-    public static final int ND=157;
-    public static final int INT_63=119;
-    public static final int INT_62=118;
-    public static final int INT_65=121;
-    public static final int INT_64=120;
-    public static final int FOURTH=184;
-    public static final int SECOND=182;
-    public static final int INT_61=117;
-    public static final int INT_60=116;
+    public static final int INT_89=146;
+    public static final int PAST=217;
+    public static final int SEVENTEEN=177;
+    public static final int INT_72=129;
+    public static final int INT_71=128;
+    public static final int INT_70=127;
+    public static final int INT_76=133;
+    public static final int INT_75=132;
+    public static final int INT_74=131;
+    public static final int INT_73=130;
+    public static final int THIRTIETH=202;
+    public static final int LAST=215;
+    public static final int INT_79=136;
+    public static final int INT_77=134;
+    public static final int EIGHTEEN=178;
+    public static final int INT_78=135;
+    public static final int ND=158;
+    public static final int INT_63=120;
+    public static final int INT_62=119;
+    public static final int INT_65=122;
+    public static final int INT_64=121;
+    public static final int FOURTH=185;
+    public static final int SECOND=183;
+    public static final int INT_61=118;
+    public static final int INT_60=117;
     public static final int SATURDAY=23;
-    public static final int FOUR=163;
-    public static final int TEN=169;
-    public static final int ON=211;
+    public static final int FOUR=164;
+    public static final int TEN=170;
+    public static final int ON=212;
     public static final int MONDAY=18;
     public static final int JUNE=10;
-    public static final int OF=212;
-    public static final int INT_66=122;
-    public static final int INT_67=123;
-    public static final int INT_68=124;
-    public static final int INT_69=125;
-    public static final int INT_54=110;
-    public static final int INT_53=109;
-    public static final int INT_52=108;
-    public static final int INT_51=107;
-    public static final int INT_50=106;
+    public static final int OF=213;
+    public static final int INT_66=123;
+    public static final int INT_67=124;
+    public static final int INT_68=125;
+    public static final int INT_69=126;
+    public static final int INT_54=111;
+    public static final int INT_53=110;
+    public static final int INT_52=109;
+    public static final int INT_51=108;
+    public static final int INT_50=107;
     public static final int THURSDAY=21;
     public static final int PM=33;
-    public static final int FROM=219;
-    public static final int INT_59=115;
-    public static final int INT_57=113;
-    public static final int INT_58=114;
-    public static final int EIGHTH=188;
-    public static final int INT_55=111;
-    public static final int INT_56=112;
+    public static final int FROM=220;
+    public static final int INT_59=116;
+    public static final int INT_57=114;
+    public static final int INT_58=115;
+    public static final int EIGHTH=189;
+    public static final int INT_55=112;
+    public static final int INT_56=113;
     public static final int YEAR=28;
-    public static final int TENTH=190;
+    public static final int TENTH=191;
     public static final int MAY=9;
-    public static final int INT_9=65;
-    public static final int INT_8=64;
-    public static final int INT_7=63;
-    public static final int SPACE=224;
-    public static final int INT_6=62;
-    public static final int INT_5=61;
-    public static final int UTC=39;
-    public static final int INT_4=60;
-    public static final int INT_3=59;
-    public static final int AKST=44;
-    public static final int INT_2=58;
-    public static final int MST=43;
-    public static final int INT_1=57;
-    public static final int EIGHT=167;
-    public static final int INT_0=56;
-    public static final int CST=42;
-    public static final int IN=208;
-    public static final int PST=41;
-    public static final int COMMA=203;
-    public static final int FIVE=164;
-    public static final int THIRTY=180;
-    public static final int NEXT=215;
-    public static final int DIGIT=228;
+    public static final int INT_9=66;
+    public static final int INT_8=65;
+    public static final int INT_7=64;
+    public static final int SPACE=225;
+    public static final int INT_6=63;
+    public static final int INT_5=62;
+    public static final int UTC=40;
+    public static final int INT_4=61;
+    public static final int INT_3=60;
+    public static final int AKST=45;
+    public static final int INT_2=59;
+    public static final int MST=44;
+    public static final int INT_1=58;
+    public static final int EIGHT=168;
+    public static final int INT_0=57;
+    public static final int CST=43;
+    public static final int IN=209;
+    public static final int PST=42;
+    public static final int COMMA=204;
+    public static final int FIVE=165;
+    public static final int THIRTY=181;
+    public static final int NEXT=216;
+    public static final int DIGIT=229;
     public static final int DOT=4;
     public static final int MILITARY_HOUR_SUFFIX=35;
-    public static final int EST=40;
-    public static final int HAST=45;
-    public static final int DASH=204;
-    public static final int TWELVE=171;
-    public static final int BEFORE=222;
-    public static final int AFTER=223;
-    public static final int SIXTEENTH=196;
-    public static final int INT_90=146;
-    public static final int INT_97=153;
-    public static final int INT_98=154;
-    public static final int INT_95=151;
-    public static final int INT_96=152;
-    public static final int INT_93=149;
-    public static final int INT_94=150;
-    public static final int INT_91=147;
-    public static final int INT_92=148;
-    public static final int TWELFTH=192;
-    public static final int INT_99=155;
-    public static final int SIXTH=186;
-    public static final int UNKNOWN_WORD=226;
+    public static final int EST=41;
+    public static final int HAST=46;
+    public static final int DASH=205;
+    public static final int TWELVE=172;
+    public static final int BEFORE=223;
+    public static final int AFTER=224;
+    public static final int SIXTEENTH=197;
+    public static final int INT_90=147;
+    public static final int NIGHT=39;
+    public static final int INT_97=154;
+    public static final int INT_98=155;
+    public static final int INT_95=152;
+    public static final int INT_96=153;
+    public static final int INT_93=150;
+    public static final int INT_94=151;
+    public static final int INT_91=148;
+    public static final int INT_92=149;
+    public static final int TWELFTH=193;
+    public static final int INT_99=156;
+    public static final int SIXTH=187;
+    public static final int UNKNOWN_WORD=227;
 
     // delegates
     // delegators
@@ -3371,12 +3372,33 @@ public class DateLexer extends Lexer {
     }
     // $ANTLR end "MORNING"
 
+    // $ANTLR start "NIGHT"
+    public final void mNIGHT() throws RecognitionException {
+        try {
+            int _type = NIGHT;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:49:10: ( 'night' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:49:12: 'night'
+            {
+            match("night"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "NIGHT"
+
     // $ANTLR start "UTC"
     public final void mUTC() throws RecognitionException {
         try {
             int _type = UTC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:50:6: ( 'utc' | 'gmt' | 'z' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:51:6: ( 'utc' | 'gmt' | 'z' )
             int alt76=3;
             switch ( input.LA(1) ) {
             case 'u':
@@ -3403,7 +3425,7 @@ public class DateLexer extends Lexer {
 
             switch (alt76) {
                 case 1 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:50:8: 'utc'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:51:8: 'utc'
                     {
                     match("utc"); 
 
@@ -3411,7 +3433,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:50:17: 'gmt'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:51:17: 'gmt'
                     {
                     match("gmt"); 
 
@@ -3419,7 +3441,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:50:26: 'z'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:51:26: 'z'
                     {
                     match('z'); 
 
@@ -3440,7 +3462,7 @@ public class DateLexer extends Lexer {
         try {
             int _type = EST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:51:6: ( 'est' | 'edt' | 'et' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:52:6: ( 'est' | 'edt' | 'et' )
             int alt77=3;
             int LA77_0 = input.LA(1);
 
@@ -3477,7 +3499,7 @@ public class DateLexer extends Lexer {
             }
             switch (alt77) {
                 case 1 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:51:8: 'est'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:52:8: 'est'
                     {
                     match("est"); 
 
@@ -3485,7 +3507,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:51:17: 'edt'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:52:17: 'edt'
                     {
                     match("edt"); 
 
@@ -3493,7 +3515,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:51:26: 'et'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:52:26: 'et'
                     {
                     match("et"); 
 
@@ -3515,7 +3537,7 @@ public class DateLexer extends Lexer {
         try {
             int _type = PST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:52:6: ( 'pst' | 'pdt' | 'pt' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:53:6: ( 'pst' | 'pdt' | 'pt' )
             int alt78=3;
             int LA78_0 = input.LA(1);
 
@@ -3552,7 +3574,7 @@ public class DateLexer extends Lexer {
             }
             switch (alt78) {
                 case 1 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:52:8: 'pst'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:53:8: 'pst'
                     {
                     match("pst"); 
 
@@ -3560,7 +3582,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:52:17: 'pdt'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:53:17: 'pdt'
                     {
                     match("pdt"); 
 
@@ -3568,7 +3590,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:52:26: 'pt'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:53:26: 'pt'
                     {
                     match("pt"); 
 
@@ -3590,7 +3612,7 @@ public class DateLexer extends Lexer {
         try {
             int _type = CST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:53:6: ( 'cst' | 'cdt' | 'ct' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:54:6: ( 'cst' | 'cdt' | 'ct' )
             int alt79=3;
             int LA79_0 = input.LA(1);
 
@@ -3627,7 +3649,7 @@ public class DateLexer extends Lexer {
             }
             switch (alt79) {
                 case 1 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:53:8: 'cst'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:54:8: 'cst'
                     {
                     match("cst"); 
 
@@ -3635,7 +3657,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:53:17: 'cdt'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:54:17: 'cdt'
                     {
                     match("cdt"); 
 
@@ -3643,7 +3665,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:53:26: 'ct'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:54:26: 'ct'
                     {
                     match("ct"); 
 
@@ -3665,7 +3687,7 @@ public class DateLexer extends Lexer {
         try {
             int _type = MST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:54:6: ( 'mst' | 'mdt' | 'mt' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:55:6: ( 'mst' | 'mdt' | 'mt' )
             int alt80=3;
             int LA80_0 = input.LA(1);
 
@@ -3702,7 +3724,7 @@ public class DateLexer extends Lexer {
             }
             switch (alt80) {
                 case 1 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:54:8: 'mst'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:55:8: 'mst'
                     {
                     match("mst"); 
 
@@ -3710,7 +3732,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:54:17: 'mdt'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:55:17: 'mdt'
                     {
                     match("mdt"); 
 
@@ -3718,7 +3740,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:54:26: 'mt'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:55:26: 'mt'
                     {
                     match("mt"); 
 
@@ -3740,7 +3762,7 @@ public class DateLexer extends Lexer {
         try {
             int _type = AKST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:55:6: ( 'akst' | 'akdt' | 'akt' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:56:6: ( 'akst' | 'akdt' | 'akt' )
             int alt81=3;
             int LA81_0 = input.LA(1);
 
@@ -3787,7 +3809,7 @@ public class DateLexer extends Lexer {
             }
             switch (alt81) {
                 case 1 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:55:8: 'akst'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:56:8: 'akst'
                     {
                     match("akst"); 
 
@@ -3795,7 +3817,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:55:17: 'akdt'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:56:17: 'akdt'
                     {
                     match("akdt"); 
 
@@ -3803,7 +3825,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:55:26: 'akt'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:56:26: 'akt'
                     {
                     match("akt"); 
 
@@ -3825,7 +3847,7 @@ public class DateLexer extends Lexer {
         try {
             int _type = HAST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:56:6: ( 'hast' | 'hadt' | 'hat' | 'hst' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:57:6: ( 'hast' | 'hadt' | 'hat' | 'hst' )
             int alt82=4;
             int LA82_0 = input.LA(1);
 
@@ -3875,7 +3897,7 @@ public class DateLexer extends Lexer {
             }
             switch (alt82) {
                 case 1 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:56:8: 'hast'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:57:8: 'hast'
                     {
                     match("hast"); 
 
@@ -3883,7 +3905,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:56:17: 'hadt'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:57:17: 'hadt'
                     {
                     match("hadt"); 
 
@@ -3891,7 +3913,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:56:26: 'hat'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:57:26: 'hat'
                     {
                     match("hat"); 
 
@@ -3899,7 +3921,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:56:34: 'hst'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:57:34: 'hst'
                     {
                     match("hst"); 
 
@@ -3921,8 +3943,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_00;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:60:8: ( '00' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:60:10: '00'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:61:8: ( '00' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:61:10: '00'
             {
             match("00"); 
 
@@ -3942,8 +3964,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_01;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:61:8: ( '01' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:61:10: '01'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:62:8: ( '01' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:62:10: '01'
             {
             match("01"); 
 
@@ -3963,8 +3985,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_02;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:62:8: ( '02' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:62:10: '02'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:63:8: ( '02' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:63:10: '02'
             {
             match("02"); 
 
@@ -3984,8 +4006,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_03;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:63:8: ( '03' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:63:10: '03'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:64:8: ( '03' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:64:10: '03'
             {
             match("03"); 
 
@@ -4005,8 +4027,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_04;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:64:8: ( '04' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:64:10: '04'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:65:8: ( '04' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:65:10: '04'
             {
             match("04"); 
 
@@ -4026,8 +4048,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_05;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:65:8: ( '05' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:65:10: '05'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:66:8: ( '05' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:66:10: '05'
             {
             match("05"); 
 
@@ -4047,8 +4069,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_06;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:66:8: ( '06' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:66:10: '06'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:67:8: ( '06' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:67:10: '06'
             {
             match("06"); 
 
@@ -4068,8 +4090,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_07;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:67:8: ( '07' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:67:10: '07'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:68:8: ( '07' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:68:10: '07'
             {
             match("07"); 
 
@@ -4089,8 +4111,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_08;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:68:8: ( '08' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:68:10: '08'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:69:8: ( '08' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:69:10: '08'
             {
             match("08"); 
 
@@ -4110,8 +4132,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_09;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:69:8: ( '09' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:69:10: '09'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:70:8: ( '09' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:70:10: '09'
             {
             match("09"); 
 
@@ -4131,8 +4153,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_0;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:70:8: ( '0' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:70:10: '0'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:71:8: ( '0' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:71:10: '0'
             {
             match('0'); 
 
@@ -4151,8 +4173,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_1;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:71:8: ( '1' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:71:10: '1'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:72:8: ( '1' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:72:10: '1'
             {
             match('1'); 
 
@@ -4171,8 +4193,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_2;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:72:8: ( '2' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:72:10: '2'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:73:8: ( '2' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:73:10: '2'
             {
             match('2'); 
 
@@ -4191,8 +4213,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_3;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:73:8: ( '3' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:73:10: '3'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:74:8: ( '3' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:74:10: '3'
             {
             match('3'); 
 
@@ -4211,8 +4233,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_4;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:74:8: ( '4' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:74:10: '4'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:75:8: ( '4' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:75:10: '4'
             {
             match('4'); 
 
@@ -4231,8 +4253,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_5;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:75:8: ( '5' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:75:10: '5'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:76:8: ( '5' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:76:10: '5'
             {
             match('5'); 
 
@@ -4251,8 +4273,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_6;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:76:8: ( '6' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:76:10: '6'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:77:8: ( '6' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:77:10: '6'
             {
             match('6'); 
 
@@ -4271,8 +4293,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_7;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:77:8: ( '7' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:77:10: '7'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:78:8: ( '7' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:78:10: '7'
             {
             match('7'); 
 
@@ -4291,8 +4313,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_8;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:78:8: ( '8' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:78:10: '8'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:79:8: ( '8' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:79:10: '8'
             {
             match('8'); 
 
@@ -4311,8 +4333,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_9;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:79:8: ( '9' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:79:10: '9'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:80:8: ( '9' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:80:10: '9'
             {
             match('9'); 
 
@@ -4331,8 +4353,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_10;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:80:8: ( '10' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:80:10: '10'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:81:8: ( '10' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:81:10: '10'
             {
             match("10"); 
 
@@ -4352,8 +4374,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:81:8: ( '11' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:81:10: '11'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:82:8: ( '11' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:82:10: '11'
             {
             match("11"); 
 
@@ -4373,8 +4395,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:82:8: ( '12' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:82:10: '12'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:83:8: ( '12' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:83:10: '12'
             {
             match("12"); 
 
@@ -4394,8 +4416,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:83:8: ( '13' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:83:10: '13'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:84:8: ( '13' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:84:10: '13'
             {
             match("13"); 
 
@@ -4415,8 +4437,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:84:8: ( '14' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:84:10: '14'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:85:8: ( '14' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:85:10: '14'
             {
             match("14"); 
 
@@ -4436,8 +4458,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:85:8: ( '15' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:85:10: '15'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:86:8: ( '15' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:86:10: '15'
             {
             match("15"); 
 
@@ -4457,8 +4479,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:86:8: ( '16' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:86:10: '16'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:87:8: ( '16' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:87:10: '16'
             {
             match("16"); 
 
@@ -4478,8 +4500,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:87:8: ( '17' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:87:10: '17'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:88:8: ( '17' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:88:10: '17'
             {
             match("17"); 
 
@@ -4499,8 +4521,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:88:8: ( '18' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:88:10: '18'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:89:8: ( '18' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:89:10: '18'
             {
             match("18"); 
 
@@ -4520,8 +4542,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:89:8: ( '19' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:89:10: '19'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:90:8: ( '19' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:90:10: '19'
             {
             match("19"); 
 
@@ -4541,8 +4563,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:90:8: ( '20' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:90:10: '20'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:91:8: ( '20' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:91:10: '20'
             {
             match("20"); 
 
@@ -4562,8 +4584,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:91:8: ( '21' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:91:10: '21'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:92:8: ( '21' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:92:10: '21'
             {
             match("21"); 
 
@@ -4583,8 +4605,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:92:8: ( '22' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:92:10: '22'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:93:8: ( '22' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:93:10: '22'
             {
             match("22"); 
 
@@ -4604,8 +4626,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:93:8: ( '23' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:93:10: '23'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:94:8: ( '23' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:94:10: '23'
             {
             match("23"); 
 
@@ -4625,8 +4647,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:94:8: ( '24' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:94:10: '24'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:95:8: ( '24' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:95:10: '24'
             {
             match("24"); 
 
@@ -4646,8 +4668,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:95:8: ( '25' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:95:10: '25'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:96:8: ( '25' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:96:10: '25'
             {
             match("25"); 
 
@@ -4667,8 +4689,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:96:8: ( '26' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:96:10: '26'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:97:8: ( '26' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:97:10: '26'
             {
             match("26"); 
 
@@ -4688,8 +4710,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:97:8: ( '27' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:97:10: '27'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:98:8: ( '27' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:98:10: '27'
             {
             match("27"); 
 
@@ -4709,8 +4731,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:98:8: ( '28' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:98:10: '28'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:99:8: ( '28' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:99:10: '28'
             {
             match("28"); 
 
@@ -4730,8 +4752,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:99:8: ( '29' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:99:10: '29'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:100:8: ( '29' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:100:10: '29'
             {
             match("29"); 
 
@@ -4751,8 +4773,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:100:8: ( '30' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:100:10: '30'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:101:8: ( '30' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:101:10: '30'
             {
             match("30"); 
 
@@ -4772,8 +4794,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:101:8: ( '31' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:101:10: '31'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:102:8: ( '31' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:102:10: '31'
             {
             match("31"); 
 
@@ -4793,8 +4815,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:102:8: ( '32' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:102:10: '32'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:103:8: ( '32' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:103:10: '32'
             {
             match("32"); 
 
@@ -4814,8 +4836,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:103:8: ( '33' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:103:10: '33'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:104:8: ( '33' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:104:10: '33'
             {
             match("33"); 
 
@@ -4835,8 +4857,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:104:8: ( '34' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:104:10: '34'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:105:8: ( '34' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:105:10: '34'
             {
             match("34"); 
 
@@ -4856,8 +4878,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:105:8: ( '35' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:105:10: '35'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:106:8: ( '35' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:106:10: '35'
             {
             match("35"); 
 
@@ -4877,8 +4899,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:106:8: ( '36' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:106:10: '36'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:107:8: ( '36' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:107:10: '36'
             {
             match("36"); 
 
@@ -4898,8 +4920,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:107:8: ( '37' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:107:10: '37'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:108:8: ( '37' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:108:10: '37'
             {
             match("37"); 
 
@@ -4919,8 +4941,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:108:8: ( '38' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:108:10: '38'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:109:8: ( '38' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:109:10: '38'
             {
             match("38"); 
 
@@ -4940,8 +4962,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:109:8: ( '39' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:109:10: '39'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:110:8: ( '39' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:110:10: '39'
             {
             match("39"); 
 
@@ -4961,8 +4983,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:110:8: ( '40' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:110:10: '40'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:111:8: ( '40' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:111:10: '40'
             {
             match("40"); 
 
@@ -4982,8 +5004,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:111:8: ( '41' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:111:10: '41'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:112:8: ( '41' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:112:10: '41'
             {
             match("41"); 
 
@@ -5003,8 +5025,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:112:8: ( '42' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:112:10: '42'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:113:8: ( '42' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:113:10: '42'
             {
             match("42"); 
 
@@ -5024,8 +5046,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:113:8: ( '43' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:113:10: '43'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:114:8: ( '43' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:114:10: '43'
             {
             match("43"); 
 
@@ -5045,8 +5067,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:114:8: ( '44' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:114:10: '44'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:115:8: ( '44' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:115:10: '44'
             {
             match("44"); 
 
@@ -5066,8 +5088,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:115:8: ( '45' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:115:10: '45'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:116:8: ( '45' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:116:10: '45'
             {
             match("45"); 
 
@@ -5087,8 +5109,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:116:8: ( '46' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:116:10: '46'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:117:8: ( '46' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:117:10: '46'
             {
             match("46"); 
 
@@ -5108,8 +5130,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:117:8: ( '47' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:117:10: '47'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:118:8: ( '47' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:118:10: '47'
             {
             match("47"); 
 
@@ -5129,8 +5151,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:118:8: ( '48' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:118:10: '48'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:119:8: ( '48' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:119:10: '48'
             {
             match("48"); 
 
@@ -5150,8 +5172,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:119:8: ( '49' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:119:10: '49'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:120:8: ( '49' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:120:10: '49'
             {
             match("49"); 
 
@@ -5171,8 +5193,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:120:8: ( '50' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:120:10: '50'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:121:8: ( '50' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:121:10: '50'
             {
             match("50"); 
 
@@ -5192,8 +5214,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:121:8: ( '51' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:121:10: '51'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:122:8: ( '51' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:122:10: '51'
             {
             match("51"); 
 
@@ -5213,8 +5235,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:122:8: ( '52' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:122:10: '52'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:123:8: ( '52' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:123:10: '52'
             {
             match("52"); 
 
@@ -5234,8 +5256,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:123:8: ( '53' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:123:10: '53'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:124:8: ( '53' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:124:10: '53'
             {
             match("53"); 
 
@@ -5255,8 +5277,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:124:8: ( '54' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:124:10: '54'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:125:8: ( '54' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:125:10: '54'
             {
             match("54"); 
 
@@ -5276,8 +5298,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:125:8: ( '55' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:125:10: '55'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:126:8: ( '55' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:126:10: '55'
             {
             match("55"); 
 
@@ -5297,8 +5319,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:126:8: ( '56' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:126:10: '56'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:127:8: ( '56' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:127:10: '56'
             {
             match("56"); 
 
@@ -5318,8 +5340,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:127:8: ( '57' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:127:10: '57'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:128:8: ( '57' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:128:10: '57'
             {
             match("57"); 
 
@@ -5339,8 +5361,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:128:8: ( '58' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:128:10: '58'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:129:8: ( '58' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:129:10: '58'
             {
             match("58"); 
 
@@ -5360,8 +5382,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:129:8: ( '59' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:129:10: '59'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:130:8: ( '59' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:130:10: '59'
             {
             match("59"); 
 
@@ -5381,8 +5403,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:130:8: ( '60' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:130:10: '60'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:131:8: ( '60' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:131:10: '60'
             {
             match("60"); 
 
@@ -5402,8 +5424,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:131:8: ( '61' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:131:10: '61'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:132:8: ( '61' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:132:10: '61'
             {
             match("61"); 
 
@@ -5423,8 +5445,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:132:8: ( '62' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:132:10: '62'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:133:8: ( '62' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:133:10: '62'
             {
             match("62"); 
 
@@ -5444,8 +5466,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:133:8: ( '63' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:133:10: '63'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:134:8: ( '63' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:134:10: '63'
             {
             match("63"); 
 
@@ -5465,8 +5487,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:134:8: ( '64' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:134:10: '64'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:135:8: ( '64' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:135:10: '64'
             {
             match("64"); 
 
@@ -5486,8 +5508,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:135:8: ( '65' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:135:10: '65'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:136:8: ( '65' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:136:10: '65'
             {
             match("65"); 
 
@@ -5507,8 +5529,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:136:8: ( '66' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:136:10: '66'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:137:8: ( '66' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:137:10: '66'
             {
             match("66"); 
 
@@ -5528,8 +5550,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:137:8: ( '67' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:137:10: '67'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:138:8: ( '67' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:138:10: '67'
             {
             match("67"); 
 
@@ -5549,8 +5571,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:138:8: ( '68' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:138:10: '68'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:139:8: ( '68' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:139:10: '68'
             {
             match("68"); 
 
@@ -5570,8 +5592,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:139:8: ( '69' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:139:10: '69'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:140:8: ( '69' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:140:10: '69'
             {
             match("69"); 
 
@@ -5591,8 +5613,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:140:8: ( '70' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:140:10: '70'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:141:8: ( '70' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:141:10: '70'
             {
             match("70"); 
 
@@ -5612,8 +5634,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:141:8: ( '71' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:141:10: '71'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:142:8: ( '71' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:142:10: '71'
             {
             match("71"); 
 
@@ -5633,8 +5655,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:142:8: ( '72' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:142:10: '72'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:143:8: ( '72' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:143:10: '72'
             {
             match("72"); 
 
@@ -5654,8 +5676,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:143:8: ( '73' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:143:10: '73'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:144:8: ( '73' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:144:10: '73'
             {
             match("73"); 
 
@@ -5675,8 +5697,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:144:8: ( '74' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:144:10: '74'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:145:8: ( '74' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:145:10: '74'
             {
             match("74"); 
 
@@ -5696,8 +5718,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:145:8: ( '75' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:145:10: '75'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:146:8: ( '75' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:146:10: '75'
             {
             match("75"); 
 
@@ -5717,8 +5739,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:146:8: ( '76' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:146:10: '76'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:147:8: ( '76' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:147:10: '76'
             {
             match("76"); 
 
@@ -5738,8 +5760,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:147:8: ( '77' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:147:10: '77'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:148:8: ( '77' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:148:10: '77'
             {
             match("77"); 
 
@@ -5759,8 +5781,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:148:8: ( '78' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:148:10: '78'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:149:8: ( '78' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:149:10: '78'
             {
             match("78"); 
 
@@ -5780,8 +5802,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:149:8: ( '79' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:149:10: '79'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:150:8: ( '79' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:150:10: '79'
             {
             match("79"); 
 
@@ -5801,8 +5823,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:150:8: ( '80' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:150:10: '80'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:151:8: ( '80' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:151:10: '80'
             {
             match("80"); 
 
@@ -5822,8 +5844,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:151:8: ( '81' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:151:10: '81'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:152:8: ( '81' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:152:10: '81'
             {
             match("81"); 
 
@@ -5843,8 +5865,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:152:8: ( '82' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:152:10: '82'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:153:8: ( '82' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:153:10: '82'
             {
             match("82"); 
 
@@ -5864,8 +5886,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:153:8: ( '83' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:153:10: '83'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:154:8: ( '83' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:154:10: '83'
             {
             match("83"); 
 
@@ -5885,8 +5907,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:154:8: ( '84' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:154:10: '84'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:155:8: ( '84' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:155:10: '84'
             {
             match("84"); 
 
@@ -5906,8 +5928,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:155:8: ( '85' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:155:10: '85'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:156:8: ( '85' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:156:10: '85'
             {
             match("85"); 
 
@@ -5927,8 +5949,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:156:8: ( '86' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:156:10: '86'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:157:8: ( '86' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:157:10: '86'
             {
             match("86"); 
 
@@ -5948,8 +5970,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:157:8: ( '87' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:157:10: '87'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:158:8: ( '87' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:158:10: '87'
             {
             match("87"); 
 
@@ -5969,8 +5991,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:158:8: ( '88' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:158:10: '88'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:159:8: ( '88' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:159:10: '88'
             {
             match("88"); 
 
@@ -5990,8 +6012,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:159:8: ( '89' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:159:10: '89'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:160:8: ( '89' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:160:10: '89'
             {
             match("89"); 
 
@@ -6011,8 +6033,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:160:8: ( '90' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:160:10: '90'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:161:8: ( '90' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:161:10: '90'
             {
             match("90"); 
 
@@ -6032,8 +6054,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:161:8: ( '91' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:161:10: '91'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:162:8: ( '91' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:162:10: '91'
             {
             match("91"); 
 
@@ -6053,8 +6075,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:162:8: ( '92' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:162:10: '92'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:163:8: ( '92' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:163:10: '92'
             {
             match("92"); 
 
@@ -6074,8 +6096,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:163:8: ( '93' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:163:10: '93'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:164:8: ( '93' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:164:10: '93'
             {
             match("93"); 
 
@@ -6095,8 +6117,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:164:8: ( '94' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:164:10: '94'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:165:8: ( '94' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:165:10: '94'
             {
             match("94"); 
 
@@ -6116,8 +6138,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:165:8: ( '95' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:165:10: '95'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:166:8: ( '95' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:166:10: '95'
             {
             match("95"); 
 
@@ -6137,8 +6159,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:166:8: ( '96' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:166:10: '96'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:167:8: ( '96' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:167:10: '96'
             {
             match("96"); 
 
@@ -6158,8 +6180,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:167:8: ( '97' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:167:10: '97'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:168:8: ( '97' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:168:10: '97'
             {
             match("97"); 
 
@@ -6179,8 +6201,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:168:8: ( '98' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:168:10: '98'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:169:8: ( '98' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:169:10: '98'
             {
             match("98"); 
 
@@ -6200,8 +6222,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = INT_99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:169:8: ( '99' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:169:10: '99'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:170:8: ( '99' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:170:10: '99'
             {
             match("99"); 
 
@@ -6221,8 +6243,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = ST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:171:4: ( 'st' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:171:6: 'st'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:172:4: ( 'st' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:172:6: 'st'
             {
             match("st"); 
 
@@ -6242,8 +6264,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = ND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:172:4: ( 'nd' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:172:6: 'nd'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:173:4: ( 'nd' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:173:6: 'nd'
             {
             match("nd"); 
 
@@ -6263,8 +6285,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = RD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:173:4: ( 'rd' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:173:6: 'rd'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:174:4: ( 'rd' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:174:6: 'rd'
             {
             match("rd"); 
 
@@ -6284,8 +6306,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:174:4: ( 'th' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:174:6: 'th'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:175:4: ( 'th' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:175:6: 'th'
             {
             match("th"); 
 
@@ -6305,8 +6327,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = ONE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:176:11: ( 'one' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:176:13: 'one'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:177:11: ( 'one' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:177:13: 'one'
             {
             match("one"); 
 
@@ -6326,8 +6348,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:177:11: ( 'two' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:177:13: 'two'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:178:11: ( 'two' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:178:13: 'two'
             {
             match("two"); 
 
@@ -6347,8 +6369,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THREE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:178:11: ( 'three' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:178:13: 'three'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:179:11: ( 'three' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:179:13: 'three'
             {
             match("three"); 
 
@@ -6368,8 +6390,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = FOUR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:179:11: ( 'four' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:179:13: 'four'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:180:11: ( 'four' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:180:13: 'four'
             {
             match("four"); 
 
@@ -6389,8 +6411,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = FIVE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:180:11: ( 'five' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:180:13: 'five'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:181:11: ( 'five' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:181:13: 'five'
             {
             match("five"); 
 
@@ -6410,8 +6432,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SIX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:181:11: ( 'six' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:181:13: 'six'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:182:11: ( 'six' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:182:13: 'six'
             {
             match("six"); 
 
@@ -6431,8 +6453,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SEVEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:182:11: ( 'seven' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:182:13: 'seven'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:183:11: ( 'seven' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:183:13: 'seven'
             {
             match("seven"); 
 
@@ -6452,8 +6474,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = EIGHT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:183:11: ( 'eight' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:183:13: 'eight'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:184:11: ( 'eight' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:184:13: 'eight'
             {
             match("eight"); 
 
@@ -6473,8 +6495,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = NINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:184:11: ( 'nine' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:184:13: 'nine'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:185:11: ( 'nine' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:185:13: 'nine'
             {
             match("nine"); 
 
@@ -6494,8 +6516,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:185:11: ( 'ten' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:185:13: 'ten'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:186:11: ( 'ten' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:186:13: 'ten'
             {
             match("ten"); 
 
@@ -6515,8 +6537,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = ELEVEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:186:11: ( 'eleven' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:186:13: 'eleven'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:187:11: ( 'eleven' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:187:13: 'eleven'
             {
             match("eleven"); 
 
@@ -6536,8 +6558,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWELVE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:187:11: ( 'twelve' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:187:13: 'twelve'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:188:11: ( 'twelve' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:188:13: 'twelve'
             {
             match("twelve"); 
 
@@ -6557,8 +6579,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIRTEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:188:11: ( 'thirteen' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:188:13: 'thirteen'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:189:11: ( 'thirteen' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:189:13: 'thirteen'
             {
             match("thirteen"); 
 
@@ -6578,8 +6600,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = FOURTEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:189:11: ( 'fourteen' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:189:13: 'fourteen'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:190:11: ( 'fourteen' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:190:13: 'fourteen'
             {
             match("fourteen"); 
 
@@ -6599,8 +6621,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = FIFTEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:190:11: ( 'fifteen' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:190:13: 'fifteen'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:191:11: ( 'fifteen' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:191:13: 'fifteen'
             {
             match("fifteen"); 
 
@@ -6620,8 +6642,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SIXTEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:191:11: ( 'sixteen' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:191:13: 'sixteen'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:192:11: ( 'sixteen' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:192:13: 'sixteen'
             {
             match("sixteen"); 
 
@@ -6641,8 +6663,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SEVENTEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:192:11: ( 'seventeen' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:192:13: 'seventeen'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:193:11: ( 'seventeen' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:193:13: 'seventeen'
             {
             match("seventeen"); 
 
@@ -6662,7 +6684,7 @@ public class DateLexer extends Lexer {
         try {
             int _type = EIGHTEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:193:11: ( 'eighteen' | 'eightteen' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:194:11: ( 'eighteen' | 'eightteen' )
             int alt83=2;
             int LA83_0 = input.LA(1);
 
@@ -6730,7 +6752,7 @@ public class DateLexer extends Lexer {
             }
             switch (alt83) {
                 case 1 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:193:13: 'eighteen'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:194:13: 'eighteen'
                     {
                     match("eighteen"); 
 
@@ -6738,7 +6760,7 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:193:26: 'eightteen'
+                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:194:26: 'eightteen'
                     {
                     match("eightteen"); 
 
@@ -6760,8 +6782,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = NINETEEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:194:11: ( 'nineteen' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:194:13: 'nineteen'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:195:11: ( 'nineteen' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:195:13: 'nineteen'
             {
             match("nineteen"); 
 
@@ -6781,8 +6803,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:195:11: ( 'twenty' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:195:13: 'twenty'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:196:11: ( 'twenty' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:196:13: 'twenty'
             {
             match("twenty"); 
 
@@ -6802,8 +6824,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIRTY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:196:11: ( 'thirty' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:196:13: 'thirty'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:197:11: ( 'thirty' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:197:13: 'thirty'
             {
             match("thirty"); 
 
@@ -6823,8 +6845,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = FIRST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:198:16: ( 'first' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:198:18: 'first'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:199:16: ( 'first' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:199:18: 'first'
             {
             match("first"); 
 
@@ -6844,8 +6866,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SECOND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:199:16: ( 'second' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:199:18: 'second'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:200:16: ( 'second' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:200:18: 'second'
             {
             match("second"); 
 
@@ -6865,8 +6887,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIRD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:200:16: ( 'third' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:200:18: 'third'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:201:16: ( 'third' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:201:18: 'third'
             {
             match("third"); 
 
@@ -6886,8 +6908,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = FOURTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:201:16: ( 'fourth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:201:18: 'fourth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:202:16: ( 'fourth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:202:18: 'fourth'
             {
             match("fourth"); 
 
@@ -6907,8 +6929,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = FIFTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:202:16: ( 'fifth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:202:18: 'fifth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:203:16: ( 'fifth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:203:18: 'fifth'
             {
             match("fifth"); 
 
@@ -6928,8 +6950,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SIXTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:203:16: ( 'sixth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:203:18: 'sixth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:204:16: ( 'sixth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:204:18: 'sixth'
             {
             match("sixth"); 
 
@@ -6949,8 +6971,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SEVENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:204:16: ( 'seventh' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:204:18: 'seventh'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:205:16: ( 'seventh' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:205:18: 'seventh'
             {
             match("seventh"); 
 
@@ -6970,8 +6992,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = EIGHTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:205:16: ( 'eigth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:205:18: 'eigth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:206:16: ( 'eigth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:206:18: 'eigth'
             {
             match("eigth"); 
 
@@ -6991,8 +7013,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = NINTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:206:16: ( 'ninth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:206:18: 'ninth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:207:16: ( 'ninth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:207:18: 'ninth'
             {
             match("ninth"); 
 
@@ -7012,8 +7034,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:207:16: ( 'tenth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:207:18: 'tenth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:208:16: ( 'tenth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:208:18: 'tenth'
             {
             match("tenth"); 
 
@@ -7033,8 +7055,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = ELEVENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:208:16: ( 'eleventh' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:208:18: 'eleventh'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:209:16: ( 'eleventh' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:209:18: 'eleventh'
             {
             match("eleventh"); 
 
@@ -7054,8 +7076,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWELFTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:209:16: ( 'twelfth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:209:18: 'twelfth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:210:16: ( 'twelfth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:210:18: 'twelfth'
             {
             match("twelfth"); 
 
@@ -7075,8 +7097,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIRTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:210:16: ( 'thirteenth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:210:18: 'thirteenth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:211:16: ( 'thirteenth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:211:18: 'thirteenth'
             {
             match("thirteenth"); 
 
@@ -7096,8 +7118,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = FOURTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:211:16: ( 'fourteenth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:211:18: 'fourteenth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:212:16: ( 'fourteenth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:212:18: 'fourteenth'
             {
             match("fourteenth"); 
 
@@ -7117,8 +7139,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = FIFTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:212:16: ( 'fifteenth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:212:18: 'fifteenth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:213:16: ( 'fifteenth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:213:18: 'fifteenth'
             {
             match("fifteenth"); 
 
@@ -7138,8 +7160,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SIXTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:213:16: ( 'sixteenth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:213:18: 'sixteenth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:214:16: ( 'sixteenth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:214:18: 'sixteenth'
             {
             match("sixteenth"); 
 
@@ -7159,8 +7181,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SEVENTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:214:16: ( 'seventeenth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:214:18: 'seventeenth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:215:16: ( 'seventeenth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:215:18: 'seventeenth'
             {
             match("seventeenth"); 
 
@@ -7180,8 +7202,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = EIGHTEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:215:16: ( 'eighteenth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:215:18: 'eighteenth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:216:16: ( 'eighteenth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:216:18: 'eighteenth'
             {
             match("eighteenth"); 
 
@@ -7201,8 +7223,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = NINETEENTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:216:16: ( 'nineteenth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:216:18: 'nineteenth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:217:16: ( 'nineteenth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:217:18: 'nineteenth'
             {
             match("nineteenth"); 
 
@@ -7222,8 +7244,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = TWENTIETH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:217:16: ( 'twentieth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:217:18: 'twentieth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:218:16: ( 'twentieth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:218:18: 'twentieth'
             {
             match("twentieth"); 
 
@@ -7243,8 +7265,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIRTIETH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:218:16: ( 'thirtieth' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:218:18: 'thirtieth'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:219:16: ( 'thirtieth' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:219:18: 'thirtieth'
             {
             match("thirtieth"); 
 
@@ -7264,8 +7286,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:222:7: ( ':' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:222:9: ':'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:223:7: ( ':' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:223:9: ':'
             {
             match(':'); 
 
@@ -7284,8 +7306,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:223:7: ( ',' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:223:9: ','
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:224:7: ( ',' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:224:9: ','
             {
             match(','); 
 
@@ -7304,8 +7326,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = DASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:224:7: ( '-' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:224:9: '-'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:225:7: ( '-' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:225:9: '-'
             {
             match('-'); 
 
@@ -7324,8 +7346,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:225:7: ( '/' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:225:9: '/'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:226:7: ( '/' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:226:9: '/'
             {
             match('/'); 
 
@@ -7344,8 +7366,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:226:7: ( '.' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:226:9: '.'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:227:7: ( '.' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:227:9: '.'
             {
             match('.'); 
 
@@ -7364,8 +7386,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:227:7: ( '+' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:227:9: '+'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:228:7: ( '+' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:228:9: '+'
             {
             match('+'); 
 
@@ -7384,8 +7406,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = SINGLE_QUOTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:228:14: ( '\\'' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:228:16: '\\''
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:229:14: ( '\\'' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:229:16: '\\''
             {
             match('\''); 
 
@@ -7404,8 +7426,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = IN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:230:10: ( 'in' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:230:12: 'in'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:231:10: ( 'in' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:231:12: 'in'
             {
             match("in"); 
 
@@ -7425,8 +7447,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:231:10: ( 'the' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:231:12: 'the'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:232:10: ( 'the' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:232:12: 'the'
             {
             match("the"); 
 
@@ -7446,8 +7468,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:232:10: ( 'at' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:232:12: 'at'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:233:10: ( 'at' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:233:12: 'at'
             {
             match("at"); 
 
@@ -7467,8 +7489,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = ON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:233:10: ( 'on' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:233:12: 'on'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:234:10: ( 'on' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:234:12: 'on'
             {
             match("on"); 
 
@@ -7488,8 +7510,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = OF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:234:10: ( 'of' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:234:12: 'of'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:235:10: ( 'of' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:235:12: 'of'
             {
             match("of"); 
 
@@ -7509,8 +7531,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = THIS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:235:10: ( 'this' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:235:12: 'this'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:236:10: ( 'this' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:236:12: 'this'
             {
             match("this"); 
 
@@ -7530,8 +7552,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = LAST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:236:10: ( 'last' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:236:12: 'last'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:237:10: ( 'last' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:237:12: 'last'
             {
             match("last"); 
 
@@ -7551,8 +7573,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = NEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:237:10: ( 'next' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:237:12: 'next'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:238:10: ( 'next' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:238:12: 'next'
             {
             match("next"); 
 
@@ -7572,8 +7594,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = PAST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:238:10: ( 'past' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:238:12: 'past'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:239:10: ( 'past' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:239:12: 'past'
             {
             match("past"); 
 
@@ -7593,8 +7615,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = COMING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:239:10: ( 'coming' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:239:12: 'coming'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:240:10: ( 'coming' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:240:12: 'coming'
             {
             match("coming"); 
 
@@ -7614,8 +7636,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = UPCOMING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:240:10: ( 'upcoming' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:240:12: 'upcoming'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:241:10: ( 'upcoming' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:241:12: 'upcoming'
             {
             match("upcoming"); 
 
@@ -7635,8 +7657,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = FROM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:241:10: ( 'from' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:241:12: 'from'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:242:10: ( 'from' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:242:12: 'from'
             {
             match("from"); 
 
@@ -7656,8 +7678,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = NOW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:242:10: ( 'now' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:242:12: 'now'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:243:10: ( 'now' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:243:12: 'now'
             {
             match("now"); 
 
@@ -7677,8 +7699,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = AGO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:243:10: ( 'ago' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:243:12: 'ago'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:244:10: ( 'ago' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:244:12: 'ago'
             {
             match("ago"); 
 
@@ -7698,8 +7720,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = BEFORE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:244:10: ( 'before' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:244:12: 'before'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:245:10: ( 'before' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:245:12: 'before'
             {
             match("before"); 
 
@@ -7719,8 +7741,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = AFTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:245:10: ( 'after' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:245:12: 'after'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:246:10: ( 'after' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:246:12: 'after'
             {
             match("after"); 
 
@@ -7740,10 +7762,10 @@ public class DateLexer extends Lexer {
         try {
             int _type = WHITE_SPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:248:3: ( ( DOT | SPACE )+ )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:248:5: ( DOT | SPACE )+
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:249:3: ( ( DOT | SPACE )+ )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:249:5: ( DOT | SPACE )+
             {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:248:5: ( DOT | SPACE )+
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:249:5: ( DOT | SPACE )+
             int cnt84=0;
             loop84:
             do {
@@ -7797,10 +7819,10 @@ public class DateLexer extends Lexer {
         try {
             int _type = UNKNOWN_WORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:252:3: ( ( 'a' .. 'z' )+ )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:252:5: ( 'a' .. 'z' )+
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:253:3: ( ( 'a' .. 'z' )+ )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:253:5: ( 'a' .. 'z' )+
             {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:252:5: ( 'a' .. 'z' )+
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:253:5: ( 'a' .. 'z' )+
             int cnt85=0;
             loop85:
             do {
@@ -7814,7 +7836,7 @@ public class DateLexer extends Lexer {
 
                 switch (alt85) {
             	case 1 :
-            	    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:252:6: 'a' .. 'z'
+            	    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:253:6: 'a' .. 'z'
             	    {
             	    matchRange('a','z'); 
 
@@ -7846,8 +7868,8 @@ public class DateLexer extends Lexer {
         try {
             int _type = UNKNOWN_CHAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:256:3: ( . )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:256:5: .
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:257:3: ( . )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:257:5: .
             {
             matchAny(); 
 
@@ -7864,8 +7886,8 @@ public class DateLexer extends Lexer {
     // $ANTLR start "DIGIT"
     public final void mDIGIT() throws RecognitionException {
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:259:16: ( '0' .. '9' )
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:259:18: '0' .. '9'
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:260:16: ( '0' .. '9' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:260:18: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -7880,7 +7902,7 @@ public class DateLexer extends Lexer {
     // $ANTLR start "SPACE"
     public final void mSPACE() throws RecognitionException {
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:261:16: ( ' ' | '\\t' | '\\n' | '\\r' )
+            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:262:16: ( ' ' | '\\t' | '\\n' | '\\r' )
             // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:
             {
             if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
@@ -7902,8 +7924,8 @@ public class DateLexer extends Lexer {
     // $ANTLR end "SPACE"
 
     public void mTokens() throws RecognitionException {
-        // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:8: ( JANUARY | FEBRUARY | MARCH | APRIL | MAY | JUNE | JULY | AUGUST | SEPTEMBER | OCTOBER | NOVEMBER | DECEMBER | SUNDAY | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | HOUR | DAY | WEEK | MONTH | YEAR | TODAY | TOMORROW | YESTERDAY | AM | PM | T | MILITARY_HOUR_SUFFIX | MIDNIGHT | NOON | MORNING | UTC | EST | PST | CST | MST | AKST | HAST | INT_00 | INT_01 | INT_02 | INT_03 | INT_04 | INT_05 | INT_06 | INT_07 | INT_08 | INT_09 | INT_0 | INT_1 | INT_2 | INT_3 | INT_4 | INT_5 | INT_6 | INT_7 | INT_8 | INT_9 | INT_10 | INT_11 | INT_12 | INT_13 | INT_14 | INT_15 | INT_16 | INT_17 | INT_18 | INT_19 | INT_20 | INT_21 | INT_22 | INT_23 | INT_24 | INT_25 | INT_26 | INT_27 | INT_28 | INT_29 | INT_30 | INT_31 | INT_32 | INT_33 | INT_34 | INT_35 | INT_36 | INT_37 | INT_38 | INT_39 | INT_40 | INT_41 | INT_42 | INT_43 | INT_44 | INT_45 | INT_46 | INT_47 | INT_48 | INT_49 | INT_50 | INT_51 | INT_52 | INT_53 | INT_54 | INT_55 | INT_56 | INT_57 | INT_58 | INT_59 | INT_60 | INT_61 | INT_62 | INT_63 | INT_64 | INT_65 | INT_66 | INT_67 | INT_68 | INT_69 | INT_70 | INT_71 | INT_72 | INT_73 | INT_74 | INT_75 | INT_76 | INT_77 | INT_78 | INT_79 | INT_80 | INT_81 | INT_82 | INT_83 | INT_84 | INT_85 | INT_86 | INT_87 | INT_88 | INT_89 | INT_90 | INT_91 | INT_92 | INT_93 | INT_94 | INT_95 | INT_96 | INT_97 | INT_98 | INT_99 | ST | ND | RD | TH | ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE | TEN | ELEVEN | TWELVE | THIRTEEN | FOURTEEN | FIFTEEN | SIXTEEN | SEVENTEEN | EIGHTEEN | NINETEEN | TWENTY | THIRTY | FIRST | SECOND | THIRD | FOURTH | FIFTH | SIXTH | SEVENTH | EIGHTH | NINTH | TENTH | ELEVENTH | TWELFTH | THIRTEENTH | FOURTEENTH | FIFTEENTH | SIXTEENTH | SEVENTEENTH | EIGHTEENTH | NINETEENTH | TWENTIETH | THIRTIETH | COLON | COMMA | DASH | SLASH | DOT | PLUS | SINGLE_QUOTE | IN | THE | AT | ON | OF | THIS | LAST | NEXT | PAST | COMING | UPCOMING | FROM | NOW | AGO | BEFORE | AFTER | WHITE_SPACE | UNKNOWN_WORD | UNKNOWN_CHAR )
-        int alt86=223;
+        // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:8: ( JANUARY | FEBRUARY | MARCH | APRIL | MAY | JUNE | JULY | AUGUST | SEPTEMBER | OCTOBER | NOVEMBER | DECEMBER | SUNDAY | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | HOUR | DAY | WEEK | MONTH | YEAR | TODAY | TOMORROW | YESTERDAY | AM | PM | T | MILITARY_HOUR_SUFFIX | MIDNIGHT | NOON | MORNING | NIGHT | UTC | EST | PST | CST | MST | AKST | HAST | INT_00 | INT_01 | INT_02 | INT_03 | INT_04 | INT_05 | INT_06 | INT_07 | INT_08 | INT_09 | INT_0 | INT_1 | INT_2 | INT_3 | INT_4 | INT_5 | INT_6 | INT_7 | INT_8 | INT_9 | INT_10 | INT_11 | INT_12 | INT_13 | INT_14 | INT_15 | INT_16 | INT_17 | INT_18 | INT_19 | INT_20 | INT_21 | INT_22 | INT_23 | INT_24 | INT_25 | INT_26 | INT_27 | INT_28 | INT_29 | INT_30 | INT_31 | INT_32 | INT_33 | INT_34 | INT_35 | INT_36 | INT_37 | INT_38 | INT_39 | INT_40 | INT_41 | INT_42 | INT_43 | INT_44 | INT_45 | INT_46 | INT_47 | INT_48 | INT_49 | INT_50 | INT_51 | INT_52 | INT_53 | INT_54 | INT_55 | INT_56 | INT_57 | INT_58 | INT_59 | INT_60 | INT_61 | INT_62 | INT_63 | INT_64 | INT_65 | INT_66 | INT_67 | INT_68 | INT_69 | INT_70 | INT_71 | INT_72 | INT_73 | INT_74 | INT_75 | INT_76 | INT_77 | INT_78 | INT_79 | INT_80 | INT_81 | INT_82 | INT_83 | INT_84 | INT_85 | INT_86 | INT_87 | INT_88 | INT_89 | INT_90 | INT_91 | INT_92 | INT_93 | INT_94 | INT_95 | INT_96 | INT_97 | INT_98 | INT_99 | ST | ND | RD | TH | ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE | TEN | ELEVEN | TWELVE | THIRTEEN | FOURTEEN | FIFTEEN | SIXTEEN | SEVENTEEN | EIGHTEEN | NINETEEN | TWENTY | THIRTY | FIRST | SECOND | THIRD | FOURTH | FIFTH | SIXTH | SEVENTH | EIGHTH | NINTH | TENTH | ELEVENTH | TWELFTH | THIRTEENTH | FOURTEENTH | FIFTEENTH | SIXTEENTH | SEVENTEENTH | EIGHTEENTH | NINETEENTH | TWENTIETH | THIRTIETH | COLON | COMMA | DASH | SLASH | DOT | PLUS | SINGLE_QUOTE | IN | THE | AT | ON | OF | THIS | LAST | NEXT | PAST | COMING | UPCOMING | FROM | NOW | AGO | BEFORE | AFTER | WHITE_SPACE | UNKNOWN_WORD | UNKNOWN_CHAR )
+        int alt86=224;
         alt86 = dfa86.predict(input);
         switch (alt86) {
             case 1 :
@@ -8145,1323 +8167,1330 @@ public class DateLexer extends Lexer {
                 }
                 break;
             case 35 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:254: UTC
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:254: NIGHT
+                {
+                mNIGHT(); 
+
+                }
+                break;
+            case 36 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:260: UTC
                 {
                 mUTC(); 
 
                 }
                 break;
-            case 36 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:258: EST
+            case 37 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:264: EST
                 {
                 mEST(); 
 
                 }
                 break;
-            case 37 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:262: PST
+            case 38 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:268: PST
                 {
                 mPST(); 
 
                 }
                 break;
-            case 38 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:266: CST
+            case 39 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:272: CST
                 {
                 mCST(); 
 
                 }
                 break;
-            case 39 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:270: MST
+            case 40 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:276: MST
                 {
                 mMST(); 
 
                 }
                 break;
-            case 40 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:274: AKST
+            case 41 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:280: AKST
                 {
                 mAKST(); 
 
                 }
                 break;
-            case 41 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:279: HAST
+            case 42 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:285: HAST
                 {
                 mHAST(); 
 
                 }
                 break;
-            case 42 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:284: INT_00
+            case 43 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:290: INT_00
                 {
                 mINT_00(); 
 
                 }
                 break;
-            case 43 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:291: INT_01
+            case 44 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:297: INT_01
                 {
                 mINT_01(); 
 
                 }
                 break;
-            case 44 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:298: INT_02
+            case 45 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:304: INT_02
                 {
                 mINT_02(); 
 
                 }
                 break;
-            case 45 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:305: INT_03
+            case 46 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:311: INT_03
                 {
                 mINT_03(); 
 
                 }
                 break;
-            case 46 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:312: INT_04
+            case 47 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:318: INT_04
                 {
                 mINT_04(); 
 
                 }
                 break;
-            case 47 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:319: INT_05
+            case 48 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:325: INT_05
                 {
                 mINT_05(); 
 
                 }
                 break;
-            case 48 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:326: INT_06
+            case 49 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:332: INT_06
                 {
                 mINT_06(); 
 
                 }
                 break;
-            case 49 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:333: INT_07
+            case 50 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:339: INT_07
                 {
                 mINT_07(); 
 
                 }
                 break;
-            case 50 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:340: INT_08
+            case 51 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:346: INT_08
                 {
                 mINT_08(); 
 
                 }
                 break;
-            case 51 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:347: INT_09
+            case 52 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:353: INT_09
                 {
                 mINT_09(); 
 
                 }
                 break;
-            case 52 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:354: INT_0
+            case 53 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:360: INT_0
                 {
                 mINT_0(); 
 
                 }
                 break;
-            case 53 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:360: INT_1
+            case 54 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:366: INT_1
                 {
                 mINT_1(); 
 
                 }
                 break;
-            case 54 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:366: INT_2
+            case 55 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:372: INT_2
                 {
                 mINT_2(); 
 
                 }
                 break;
-            case 55 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:372: INT_3
+            case 56 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:378: INT_3
                 {
                 mINT_3(); 
 
                 }
                 break;
-            case 56 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:378: INT_4
+            case 57 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:384: INT_4
                 {
                 mINT_4(); 
 
                 }
                 break;
-            case 57 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:384: INT_5
+            case 58 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:390: INT_5
                 {
                 mINT_5(); 
 
                 }
                 break;
-            case 58 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:390: INT_6
+            case 59 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:396: INT_6
                 {
                 mINT_6(); 
 
                 }
                 break;
-            case 59 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:396: INT_7
+            case 60 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:402: INT_7
                 {
                 mINT_7(); 
 
                 }
                 break;
-            case 60 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:402: INT_8
+            case 61 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:408: INT_8
                 {
                 mINT_8(); 
 
                 }
                 break;
-            case 61 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:408: INT_9
+            case 62 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:414: INT_9
                 {
                 mINT_9(); 
 
                 }
                 break;
-            case 62 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:414: INT_10
+            case 63 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:420: INT_10
                 {
                 mINT_10(); 
 
                 }
                 break;
-            case 63 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:421: INT_11
+            case 64 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:427: INT_11
                 {
                 mINT_11(); 
 
                 }
                 break;
-            case 64 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:428: INT_12
+            case 65 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:434: INT_12
                 {
                 mINT_12(); 
 
                 }
                 break;
-            case 65 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:435: INT_13
+            case 66 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:441: INT_13
                 {
                 mINT_13(); 
 
                 }
                 break;
-            case 66 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:442: INT_14
+            case 67 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:448: INT_14
                 {
                 mINT_14(); 
 
                 }
                 break;
-            case 67 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:449: INT_15
+            case 68 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:455: INT_15
                 {
                 mINT_15(); 
 
                 }
                 break;
-            case 68 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:456: INT_16
+            case 69 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:462: INT_16
                 {
                 mINT_16(); 
 
                 }
                 break;
-            case 69 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:463: INT_17
+            case 70 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:469: INT_17
                 {
                 mINT_17(); 
 
                 }
                 break;
-            case 70 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:470: INT_18
+            case 71 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:476: INT_18
                 {
                 mINT_18(); 
 
                 }
                 break;
-            case 71 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:477: INT_19
+            case 72 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:483: INT_19
                 {
                 mINT_19(); 
 
                 }
                 break;
-            case 72 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:484: INT_20
+            case 73 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:490: INT_20
                 {
                 mINT_20(); 
 
                 }
                 break;
-            case 73 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:491: INT_21
+            case 74 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:497: INT_21
                 {
                 mINT_21(); 
 
                 }
                 break;
-            case 74 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:498: INT_22
+            case 75 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:504: INT_22
                 {
                 mINT_22(); 
 
                 }
                 break;
-            case 75 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:505: INT_23
+            case 76 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:511: INT_23
                 {
                 mINT_23(); 
 
                 }
                 break;
-            case 76 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:512: INT_24
+            case 77 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:518: INT_24
                 {
                 mINT_24(); 
 
                 }
                 break;
-            case 77 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:519: INT_25
+            case 78 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:525: INT_25
                 {
                 mINT_25(); 
 
                 }
                 break;
-            case 78 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:526: INT_26
+            case 79 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:532: INT_26
                 {
                 mINT_26(); 
 
                 }
                 break;
-            case 79 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:533: INT_27
+            case 80 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:539: INT_27
                 {
                 mINT_27(); 
 
                 }
                 break;
-            case 80 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:540: INT_28
+            case 81 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:546: INT_28
                 {
                 mINT_28(); 
 
                 }
                 break;
-            case 81 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:547: INT_29
+            case 82 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:553: INT_29
                 {
                 mINT_29(); 
 
                 }
                 break;
-            case 82 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:554: INT_30
+            case 83 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:560: INT_30
                 {
                 mINT_30(); 
 
                 }
                 break;
-            case 83 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:561: INT_31
+            case 84 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:567: INT_31
                 {
                 mINT_31(); 
 
                 }
                 break;
-            case 84 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:568: INT_32
+            case 85 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:574: INT_32
                 {
                 mINT_32(); 
 
                 }
                 break;
-            case 85 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:575: INT_33
+            case 86 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:581: INT_33
                 {
                 mINT_33(); 
 
                 }
                 break;
-            case 86 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:582: INT_34
+            case 87 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:588: INT_34
                 {
                 mINT_34(); 
 
                 }
                 break;
-            case 87 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:589: INT_35
+            case 88 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:595: INT_35
                 {
                 mINT_35(); 
 
                 }
                 break;
-            case 88 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:596: INT_36
+            case 89 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:602: INT_36
                 {
                 mINT_36(); 
 
                 }
                 break;
-            case 89 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:603: INT_37
+            case 90 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:609: INT_37
                 {
                 mINT_37(); 
 
                 }
                 break;
-            case 90 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:610: INT_38
+            case 91 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:616: INT_38
                 {
                 mINT_38(); 
 
                 }
                 break;
-            case 91 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:617: INT_39
+            case 92 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:623: INT_39
                 {
                 mINT_39(); 
 
                 }
                 break;
-            case 92 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:624: INT_40
+            case 93 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:630: INT_40
                 {
                 mINT_40(); 
 
                 }
                 break;
-            case 93 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:631: INT_41
+            case 94 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:637: INT_41
                 {
                 mINT_41(); 
 
                 }
                 break;
-            case 94 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:638: INT_42
+            case 95 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:644: INT_42
                 {
                 mINT_42(); 
 
                 }
                 break;
-            case 95 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:645: INT_43
+            case 96 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:651: INT_43
                 {
                 mINT_43(); 
 
                 }
                 break;
-            case 96 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:652: INT_44
+            case 97 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:658: INT_44
                 {
                 mINT_44(); 
 
                 }
                 break;
-            case 97 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:659: INT_45
+            case 98 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:665: INT_45
                 {
                 mINT_45(); 
 
                 }
                 break;
-            case 98 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:666: INT_46
+            case 99 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:672: INT_46
                 {
                 mINT_46(); 
 
                 }
                 break;
-            case 99 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:673: INT_47
+            case 100 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:679: INT_47
                 {
                 mINT_47(); 
 
                 }
                 break;
-            case 100 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:680: INT_48
+            case 101 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:686: INT_48
                 {
                 mINT_48(); 
 
                 }
                 break;
-            case 101 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:687: INT_49
+            case 102 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:693: INT_49
                 {
                 mINT_49(); 
 
                 }
                 break;
-            case 102 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:694: INT_50
+            case 103 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:700: INT_50
                 {
                 mINT_50(); 
 
                 }
                 break;
-            case 103 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:701: INT_51
+            case 104 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:707: INT_51
                 {
                 mINT_51(); 
 
                 }
                 break;
-            case 104 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:708: INT_52
+            case 105 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:714: INT_52
                 {
                 mINT_52(); 
 
                 }
                 break;
-            case 105 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:715: INT_53
+            case 106 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:721: INT_53
                 {
                 mINT_53(); 
 
                 }
                 break;
-            case 106 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:722: INT_54
+            case 107 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:728: INT_54
                 {
                 mINT_54(); 
 
                 }
                 break;
-            case 107 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:729: INT_55
+            case 108 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:735: INT_55
                 {
                 mINT_55(); 
 
                 }
                 break;
-            case 108 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:736: INT_56
+            case 109 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:742: INT_56
                 {
                 mINT_56(); 
 
                 }
                 break;
-            case 109 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:743: INT_57
+            case 110 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:749: INT_57
                 {
                 mINT_57(); 
 
                 }
                 break;
-            case 110 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:750: INT_58
+            case 111 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:756: INT_58
                 {
                 mINT_58(); 
 
                 }
                 break;
-            case 111 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:757: INT_59
+            case 112 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:763: INT_59
                 {
                 mINT_59(); 
 
                 }
                 break;
-            case 112 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:764: INT_60
+            case 113 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:770: INT_60
                 {
                 mINT_60(); 
 
                 }
                 break;
-            case 113 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:771: INT_61
+            case 114 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:777: INT_61
                 {
                 mINT_61(); 
 
                 }
                 break;
-            case 114 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:778: INT_62
+            case 115 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:784: INT_62
                 {
                 mINT_62(); 
 
                 }
                 break;
-            case 115 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:785: INT_63
+            case 116 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:791: INT_63
                 {
                 mINT_63(); 
 
                 }
                 break;
-            case 116 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:792: INT_64
+            case 117 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:798: INT_64
                 {
                 mINT_64(); 
 
                 }
                 break;
-            case 117 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:799: INT_65
+            case 118 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:805: INT_65
                 {
                 mINT_65(); 
 
                 }
                 break;
-            case 118 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:806: INT_66
+            case 119 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:812: INT_66
                 {
                 mINT_66(); 
 
                 }
                 break;
-            case 119 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:813: INT_67
+            case 120 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:819: INT_67
                 {
                 mINT_67(); 
 
                 }
                 break;
-            case 120 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:820: INT_68
+            case 121 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:826: INT_68
                 {
                 mINT_68(); 
 
                 }
                 break;
-            case 121 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:827: INT_69
+            case 122 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:833: INT_69
                 {
                 mINT_69(); 
 
                 }
                 break;
-            case 122 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:834: INT_70
+            case 123 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:840: INT_70
                 {
                 mINT_70(); 
 
                 }
                 break;
-            case 123 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:841: INT_71
+            case 124 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:847: INT_71
                 {
                 mINT_71(); 
 
                 }
                 break;
-            case 124 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:848: INT_72
+            case 125 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:854: INT_72
                 {
                 mINT_72(); 
 
                 }
                 break;
-            case 125 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:855: INT_73
+            case 126 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:861: INT_73
                 {
                 mINT_73(); 
 
                 }
                 break;
-            case 126 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:862: INT_74
+            case 127 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:868: INT_74
                 {
                 mINT_74(); 
 
                 }
                 break;
-            case 127 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:869: INT_75
+            case 128 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:875: INT_75
                 {
                 mINT_75(); 
 
                 }
                 break;
-            case 128 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:876: INT_76
+            case 129 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:882: INT_76
                 {
                 mINT_76(); 
 
                 }
                 break;
-            case 129 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:883: INT_77
+            case 130 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:889: INT_77
                 {
                 mINT_77(); 
 
                 }
                 break;
-            case 130 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:890: INT_78
+            case 131 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:896: INT_78
                 {
                 mINT_78(); 
 
                 }
                 break;
-            case 131 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:897: INT_79
+            case 132 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:903: INT_79
                 {
                 mINT_79(); 
 
                 }
                 break;
-            case 132 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:904: INT_80
+            case 133 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:910: INT_80
                 {
                 mINT_80(); 
 
                 }
                 break;
-            case 133 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:911: INT_81
+            case 134 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:917: INT_81
                 {
                 mINT_81(); 
 
                 }
                 break;
-            case 134 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:918: INT_82
+            case 135 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:924: INT_82
                 {
                 mINT_82(); 
 
                 }
                 break;
-            case 135 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:925: INT_83
+            case 136 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:931: INT_83
                 {
                 mINT_83(); 
 
                 }
                 break;
-            case 136 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:932: INT_84
+            case 137 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:938: INT_84
                 {
                 mINT_84(); 
 
                 }
                 break;
-            case 137 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:939: INT_85
+            case 138 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:945: INT_85
                 {
                 mINT_85(); 
 
                 }
                 break;
-            case 138 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:946: INT_86
+            case 139 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:952: INT_86
                 {
                 mINT_86(); 
 
                 }
                 break;
-            case 139 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:953: INT_87
+            case 140 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:959: INT_87
                 {
                 mINT_87(); 
 
                 }
                 break;
-            case 140 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:960: INT_88
+            case 141 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:966: INT_88
                 {
                 mINT_88(); 
 
                 }
                 break;
-            case 141 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:967: INT_89
+            case 142 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:973: INT_89
                 {
                 mINT_89(); 
 
                 }
                 break;
-            case 142 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:974: INT_90
+            case 143 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:980: INT_90
                 {
                 mINT_90(); 
 
                 }
                 break;
-            case 143 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:981: INT_91
+            case 144 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:987: INT_91
                 {
                 mINT_91(); 
 
                 }
                 break;
-            case 144 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:988: INT_92
+            case 145 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:994: INT_92
                 {
                 mINT_92(); 
 
                 }
                 break;
-            case 145 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:995: INT_93
+            case 146 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1001: INT_93
                 {
                 mINT_93(); 
 
                 }
                 break;
-            case 146 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1002: INT_94
+            case 147 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1008: INT_94
                 {
                 mINT_94(); 
 
                 }
                 break;
-            case 147 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1009: INT_95
+            case 148 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1015: INT_95
                 {
                 mINT_95(); 
 
                 }
                 break;
-            case 148 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1016: INT_96
+            case 149 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1022: INT_96
                 {
                 mINT_96(); 
 
                 }
                 break;
-            case 149 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1023: INT_97
+            case 150 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1029: INT_97
                 {
                 mINT_97(); 
 
                 }
                 break;
-            case 150 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1030: INT_98
+            case 151 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1036: INT_98
                 {
                 mINT_98(); 
 
                 }
                 break;
-            case 151 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1037: INT_99
+            case 152 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1043: INT_99
                 {
                 mINT_99(); 
 
                 }
                 break;
-            case 152 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1044: ST
+            case 153 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1050: ST
                 {
                 mST(); 
 
                 }
                 break;
-            case 153 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1047: ND
+            case 154 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1053: ND
                 {
                 mND(); 
 
                 }
                 break;
-            case 154 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1050: RD
+            case 155 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1056: RD
                 {
                 mRD(); 
 
                 }
                 break;
-            case 155 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1053: TH
+            case 156 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1059: TH
                 {
                 mTH(); 
 
                 }
                 break;
-            case 156 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1056: ONE
+            case 157 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1062: ONE
                 {
                 mONE(); 
 
                 }
                 break;
-            case 157 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1060: TWO
+            case 158 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1066: TWO
                 {
                 mTWO(); 
 
                 }
                 break;
-            case 158 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1064: THREE
+            case 159 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1070: THREE
                 {
                 mTHREE(); 
 
                 }
                 break;
-            case 159 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1070: FOUR
+            case 160 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1076: FOUR
                 {
                 mFOUR(); 
 
                 }
                 break;
-            case 160 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1075: FIVE
+            case 161 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1081: FIVE
                 {
                 mFIVE(); 
 
                 }
                 break;
-            case 161 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1080: SIX
+            case 162 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1086: SIX
                 {
                 mSIX(); 
 
                 }
                 break;
-            case 162 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1084: SEVEN
+            case 163 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1090: SEVEN
                 {
                 mSEVEN(); 
 
                 }
                 break;
-            case 163 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1090: EIGHT
+            case 164 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1096: EIGHT
                 {
                 mEIGHT(); 
 
                 }
                 break;
-            case 164 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1096: NINE
+            case 165 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1102: NINE
                 {
                 mNINE(); 
 
                 }
                 break;
-            case 165 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1101: TEN
+            case 166 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1107: TEN
                 {
                 mTEN(); 
 
                 }
                 break;
-            case 166 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1105: ELEVEN
+            case 167 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1111: ELEVEN
                 {
                 mELEVEN(); 
 
                 }
                 break;
-            case 167 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1112: TWELVE
+            case 168 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1118: TWELVE
                 {
                 mTWELVE(); 
 
                 }
                 break;
-            case 168 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1119: THIRTEEN
+            case 169 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1125: THIRTEEN
                 {
                 mTHIRTEEN(); 
 
                 }
                 break;
-            case 169 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1128: FOURTEEN
+            case 170 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1134: FOURTEEN
                 {
                 mFOURTEEN(); 
 
                 }
                 break;
-            case 170 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1137: FIFTEEN
+            case 171 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1143: FIFTEEN
                 {
                 mFIFTEEN(); 
 
                 }
                 break;
-            case 171 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1145: SIXTEEN
+            case 172 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1151: SIXTEEN
                 {
                 mSIXTEEN(); 
 
                 }
                 break;
-            case 172 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1153: SEVENTEEN
+            case 173 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1159: SEVENTEEN
                 {
                 mSEVENTEEN(); 
 
                 }
                 break;
-            case 173 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1163: EIGHTEEN
+            case 174 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1169: EIGHTEEN
                 {
                 mEIGHTEEN(); 
 
                 }
                 break;
-            case 174 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1172: NINETEEN
+            case 175 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1178: NINETEEN
                 {
                 mNINETEEN(); 
 
                 }
                 break;
-            case 175 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1181: TWENTY
+            case 176 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1187: TWENTY
                 {
                 mTWENTY(); 
 
                 }
                 break;
-            case 176 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1188: THIRTY
+            case 177 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1194: THIRTY
                 {
                 mTHIRTY(); 
 
                 }
                 break;
-            case 177 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1195: FIRST
+            case 178 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1201: FIRST
                 {
                 mFIRST(); 
 
                 }
                 break;
-            case 178 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1201: SECOND
+            case 179 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1207: SECOND
                 {
                 mSECOND(); 
 
                 }
                 break;
-            case 179 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1208: THIRD
+            case 180 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1214: THIRD
                 {
                 mTHIRD(); 
 
                 }
                 break;
-            case 180 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1214: FOURTH
+            case 181 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1220: FOURTH
                 {
                 mFOURTH(); 
 
                 }
                 break;
-            case 181 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1221: FIFTH
+            case 182 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1227: FIFTH
                 {
                 mFIFTH(); 
 
                 }
                 break;
-            case 182 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1227: SIXTH
+            case 183 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1233: SIXTH
                 {
                 mSIXTH(); 
 
                 }
                 break;
-            case 183 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1233: SEVENTH
+            case 184 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1239: SEVENTH
                 {
                 mSEVENTH(); 
 
                 }
                 break;
-            case 184 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1241: EIGHTH
+            case 185 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1247: EIGHTH
                 {
                 mEIGHTH(); 
 
                 }
                 break;
-            case 185 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1248: NINTH
+            case 186 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1254: NINTH
                 {
                 mNINTH(); 
 
                 }
                 break;
-            case 186 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1254: TENTH
+            case 187 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1260: TENTH
                 {
                 mTENTH(); 
 
                 }
                 break;
-            case 187 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1260: ELEVENTH
+            case 188 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1266: ELEVENTH
                 {
                 mELEVENTH(); 
 
                 }
                 break;
-            case 188 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1269: TWELFTH
+            case 189 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1275: TWELFTH
                 {
                 mTWELFTH(); 
 
                 }
                 break;
-            case 189 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1277: THIRTEENTH
+            case 190 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1283: THIRTEENTH
                 {
                 mTHIRTEENTH(); 
 
                 }
                 break;
-            case 190 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1288: FOURTEENTH
+            case 191 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1294: FOURTEENTH
                 {
                 mFOURTEENTH(); 
 
                 }
                 break;
-            case 191 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1299: FIFTEENTH
+            case 192 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1305: FIFTEENTH
                 {
                 mFIFTEENTH(); 
 
                 }
                 break;
-            case 192 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1309: SIXTEENTH
+            case 193 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1315: SIXTEENTH
                 {
                 mSIXTEENTH(); 
 
                 }
                 break;
-            case 193 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1319: SEVENTEENTH
+            case 194 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1325: SEVENTEENTH
                 {
                 mSEVENTEENTH(); 
 
                 }
                 break;
-            case 194 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1331: EIGHTEENTH
+            case 195 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1337: EIGHTEENTH
                 {
                 mEIGHTEENTH(); 
 
                 }
                 break;
-            case 195 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1342: NINETEENTH
+            case 196 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1348: NINETEENTH
                 {
                 mNINETEENTH(); 
 
                 }
                 break;
-            case 196 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1353: TWENTIETH
+            case 197 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1359: TWENTIETH
                 {
                 mTWENTIETH(); 
 
                 }
                 break;
-            case 197 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1363: THIRTIETH
+            case 198 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1369: THIRTIETH
                 {
                 mTHIRTIETH(); 
 
                 }
                 break;
-            case 198 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1373: COLON
+            case 199 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1379: COLON
                 {
                 mCOLON(); 
 
                 }
                 break;
-            case 199 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1379: COMMA
+            case 200 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1385: COMMA
                 {
                 mCOMMA(); 
 
                 }
                 break;
-            case 200 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1385: DASH
+            case 201 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1391: DASH
                 {
                 mDASH(); 
 
                 }
                 break;
-            case 201 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1390: SLASH
+            case 202 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1396: SLASH
                 {
                 mSLASH(); 
 
                 }
                 break;
-            case 202 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1396: DOT
+            case 203 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1402: DOT
                 {
                 mDOT(); 
 
                 }
                 break;
-            case 203 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1400: PLUS
+            case 204 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1406: PLUS
                 {
                 mPLUS(); 
 
                 }
                 break;
-            case 204 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1405: SINGLE_QUOTE
+            case 205 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1411: SINGLE_QUOTE
                 {
                 mSINGLE_QUOTE(); 
 
                 }
                 break;
-            case 205 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1418: IN
+            case 206 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1424: IN
                 {
                 mIN(); 
 
                 }
                 break;
-            case 206 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1421: THE
+            case 207 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1427: THE
                 {
                 mTHE(); 
 
                 }
                 break;
-            case 207 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1425: AT
+            case 208 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1431: AT
                 {
                 mAT(); 
 
                 }
                 break;
-            case 208 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1428: ON
+            case 209 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1434: ON
                 {
                 mON(); 
 
                 }
                 break;
-            case 209 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1431: OF
+            case 210 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1437: OF
                 {
                 mOF(); 
 
                 }
                 break;
-            case 210 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1434: THIS
+            case 211 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1440: THIS
                 {
                 mTHIS(); 
 
                 }
                 break;
-            case 211 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1439: LAST
+            case 212 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1445: LAST
                 {
                 mLAST(); 
 
                 }
                 break;
-            case 212 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1444: NEXT
+            case 213 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1450: NEXT
                 {
                 mNEXT(); 
 
                 }
                 break;
-            case 213 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1449: PAST
+            case 214 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1455: PAST
                 {
                 mPAST(); 
 
                 }
                 break;
-            case 214 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1454: COMING
+            case 215 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1460: COMING
                 {
                 mCOMING(); 
 
                 }
                 break;
-            case 215 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1461: UPCOMING
+            case 216 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1467: UPCOMING
                 {
                 mUPCOMING(); 
 
                 }
                 break;
-            case 216 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1470: FROM
+            case 217 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1476: FROM
                 {
                 mFROM(); 
 
                 }
                 break;
-            case 217 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1475: NOW
+            case 218 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1481: NOW
                 {
                 mNOW(); 
 
                 }
                 break;
-            case 218 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1479: AGO
+            case 219 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1485: AGO
                 {
                 mAGO(); 
 
                 }
                 break;
-            case 219 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1483: BEFORE
+            case 220 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1489: BEFORE
                 {
                 mBEFORE(); 
 
                 }
                 break;
-            case 220 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1490: AFTER
+            case 221 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1496: AFTER
                 {
                 mAFTER(); 
 
                 }
                 break;
-            case 221 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1496: WHITE_SPACE
+            case 222 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1502: WHITE_SPACE
                 {
                 mWHITE_SPACE(); 
 
                 }
                 break;
-            case 222 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1508: UNKNOWN_WORD
+            case 223 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1514: UNKNOWN_WORD
                 {
                 mUNKNOWN_WORD(); 
 
                 }
                 break;
-            case 223 :
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1521: UNKNOWN_CHAR
+            case 224 :
+                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateLexer.g:1:1527: UNKNOWN_CHAR
                 {
                 mUNKNOWN_CHAR(); 
 
@@ -9601,173 +9630,174 @@ public class DateLexer extends Lexer {
         "\55\1\167\1\u0082\1\u008d\1\u0098\1\u00a3\1\u00ae\1\u00b9\1\u00c4"+
         "\1\u00cf\1\u00da\1\55\4\uffff\1\u00e0\2\uffff\3\55\3\uffff\2\55"+
         "\1\uffff\11\55\1\u00f8\2\55\1\73\1\uffff\2\55\1\u00ff\4\55\1\u0106"+
-        "\2\55\1\u010a\1\u010b\1\55\1\u010f\5\55\1\u0119\3\55\1\uffff\4\55"+
-        "\1\uffff\1\55\1\133\1\uffff\2\55\1\u012a\4\55\1\uffff\2\55\1\u0131"+
-        "\4\55\1\u0136\1\55\156\uffff\1\u0138\10\uffff\1\u0139\2\55\1\u013d"+
-        "\1\u013f\1\u0141\1\u0143\1\u0146\5\55\1\u014d\1\u014f\1\u0153\2"+
-        "\55\2\u00f8\1\uffff\1\u0158\1\u015a\3\55\1\u015e\1\uffff\1\u015f"+
-        "\1\u0161\2\55\1\u0166\1\u0169\1\uffff\1\u016b\1\u016d\1\u016e\2"+
-        "\uffff\1\u0170\1\55\1\u0172\1\uffff\2\55\1\u0177\1\u0179\1\u017b"+
-        "\1\u017e\2\55\1\u0182\1\uffff\2\55\1\u0186\1\55\1\u018a\1\u018d"+
-        "\4\55\2\u0192\2\55\2\u012a\1\uffff\1\55\1\143\1\55\1\143\2\u0131"+
-        "\1\uffff\2\55\2\u0136\1\uffff\1\55\2\uffff\3\55\1\uffff\1\u013f"+
-        "\1\uffff\1\u0141\1\uffff\1\55\1\uffff\1\55\1\u0146\1\uffff\1\u01a2"+
-        "\1\u01a4\1\u01a5\3\55\1\uffff\1\u014f\1\uffff\1\55\1\u0153\1\55"+
-        "\1\uffff\2\55\1\uffff\1\55\1\uffff\1\55\1\uffff\1\55\2\u015e\2\uffff"+
-        "\1\u0161\1\uffff\3\55\1\u0166\1\uffff\1\55\1\u0169\1\uffff\1\55"+
-        "\1\uffff\1\55\2\uffff\1\55\1\uffff\1\u01ba\1\uffff\1\u01bc\1\55"+
-        "\1\u01be\1\55\1\uffff\1\u0179\1\uffff\1\u017b\1\uffff\2\u017e\1"+
-        "\uffff\2\55\1\u01c5\1\uffff\3\55\1\uffff\3\55\1\uffff\1\55\1\u018d"+
-        "\1\uffff\1\u01d0\1\u01d2\2\u0192\1\uffff\1\u01d4\1\55\1\u01d6\5"+
-        "\55\1\u01dc\2\55\1\u013f\1\u0141\2\55\1\uffff\1\55\2\uffff\1\55"+
-        "\1\u01e4\1\u01e5\1\u014d\1\55\1\u01e9\2\55\1\u0158\1\55\1\u01ef"+
-        "\1\55\1\u01f2\4\55\1\u01f7\2\55\1\uffff\1\55\1\uffff\1\u01fb\1\uffff"+
-        "\2\55\1\u017e\1\u01ff\1\55\1\u0203\1\uffff\1\u0204\5\55\1\u020c"+
-        "\2\55\1\u01d0\1\uffff\1\u01d2\1\uffff\1\u01d4\1\uffff\1\55\1\uffff"+
-        "\1\55\1\u0213\1\u0214\2\55\1\uffff\3\55\1\u0146\1\55\1\u021c\1\55"+
-        "\2\uffff\1\55\1\u0153\1\u01e9\1\uffff\2\55\1\u0158\1\u015a\1\55"+
-        "\1\uffff\2\55\1\uffff\1\u0227\1\u0166\2\55\1\uffff\3\55\1\uffff"+
-        "\3\55\1\uffff\1\55\1\u0232\1\55\2\uffff\3\55\1\u0238\1\55\1\u023a"+
-        "\1\55\1\uffff\6\55\2\uffff\1\u0243\1\u0244\1\u0245\1\u013d\1\55"+
-        "\1\u0146\1\55\1\uffff\1\u024a\1\u014d\1\u0153\1\u024b\1\55\1\u015a"+
-        "\3\55\1\u0250\1\uffff\1\u0166\1\55\1\u0253\1\u016d\3\55\1\u017b"+
-        "\2\55\1\uffff\1\55\1\u025c\3\55\1\uffff\1\u0260\1\uffff\2\55\1\u0169"+
-        "\5\55\3\uffff\1\u013d\1\u0143\1\u026a\1\55\2\uffff\1\u0156\3\55"+
-        "\1\uffff\1\u0169\1\55\1\uffff\1\u016d\1\u0170\1\u0273\1\u0177\1"+
-        "\u017b\1\u017e\1\u0277\1\55\1\uffff\2\u025c\1\55\1\uffff\3\55\1"+
-        "\u027d\1\u027f\1\55\1\u0281\1\u0143\1\55\1\uffff\1\u0283\1\u01ba"+
-        "\1\u0161\1\u0286\1\u0169\1\u0287\1\u0170\1\55\1\uffff\1\u0177\1"+
-        "\u017e\1\55\1\uffff\1\u028a\1\u025c\1\u028b\1\u018d\1\u028d\1\uffff"+
-        "\1\55\1\uffff\1\u027f\1\uffff\1\u028f\1\uffff\1\u0161\1\55\2\uffff"+
-        "\1\u0291\1\u0292\2\uffff\1\u018d\1\uffff\1\u0293\1\uffff\1\u0294"+
-        "\4\uffff";
+        "\2\55\1\u010a\1\u010b\2\55\1\u0111\4\55\1\u011a\3\55\1\uffff\4\55"+
+        "\1\uffff\1\55\1\133\1\uffff\2\55\1\u012b\4\55\1\uffff\2\55\1\u0132"+
+        "\4\55\1\u0137\1\55\156\uffff\1\u0139\10\uffff\1\u013a\2\55\1\u013e"+
+        "\1\u0140\1\u0142\1\u0144\1\u0147\5\55\1\u014e\1\u0150\1\u0154\2"+
+        "\55\2\u00f8\1\uffff\1\u0159\1\u015b\3\55\1\u015f\1\uffff\1\u0160"+
+        "\1\u0162\2\55\1\u0167\1\u016a\1\uffff\1\u016c\1\u016e\1\u016f\2"+
+        "\uffff\1\u0171\1\55\1\u0173\2\55\1\uffff\1\55\1\u0179\1\u017b\1"+
+        "\u017d\1\u0180\2\55\1\u0184\1\uffff\2\55\1\u0188\1\55\1\u018c\1"+
+        "\u018f\4\55\2\u0194\2\55\2\u012b\1\uffff\1\55\1\143\1\55\1\143\2"+
+        "\u0132\1\uffff\2\55\2\u0137\1\uffff\1\55\2\uffff\3\55\1\uffff\1"+
+        "\u0140\1\uffff\1\u0142\1\uffff\1\55\1\uffff\1\55\1\u0147\1\uffff"+
+        "\1\u01a4\1\u01a6\1\u01a7\3\55\1\uffff\1\u0150\1\uffff\1\55\1\u0154"+
+        "\1\55\1\uffff\2\55\1\uffff\1\55\1\uffff\1\55\1\uffff\1\55\2\u015f"+
+        "\2\uffff\1\u0162\1\uffff\3\55\1\u0167\1\uffff\1\55\1\u016a\1\uffff"+
+        "\1\55\1\uffff\1\55\2\uffff\1\55\1\uffff\1\u01bc\1\uffff\1\55\1\u01bf"+
+        "\1\55\1\u01c1\1\55\1\uffff\1\u017b\1\uffff\1\u017d\1\uffff\2\u0180"+
+        "\1\uffff\2\55\1\u01c8\1\uffff\3\55\1\uffff\3\55\1\uffff\1\55\1\u018f"+
+        "\1\uffff\1\u01d3\1\u01d5\2\u0194\1\uffff\1\u01d7\1\55\1\u01d9\5"+
+        "\55\1\u01df\2\55\1\u0140\1\u0142\2\55\1\uffff\1\55\2\uffff\1\55"+
+        "\1\u01e7\1\u01e8\1\u014e\1\55\1\u01ec\2\55\1\u0159\1\55\1\u01f2"+
+        "\1\55\1\u01f5\4\55\1\u01fa\2\55\1\uffff\1\u01fd\1\55\1\uffff\1\u01ff"+
+        "\1\uffff\2\55\1\u0180\1\u0203\1\55\1\u0207\1\uffff\1\u0208\5\55"+
+        "\1\u0210\2\55\1\u01d3\1\uffff\1\u01d5\1\uffff\1\u01d7\1\uffff\1"+
+        "\55\1\uffff\1\55\1\u0217\1\u0218\2\55\1\uffff\3\55\1\u0147\1\55"+
+        "\1\u0220\1\55\2\uffff\1\55\1\u0154\1\u01ec\1\uffff\2\55\1\u0159"+
+        "\1\u015b\1\55\1\uffff\2\55\1\uffff\1\u022b\1\u0167\2\55\1\uffff"+
+        "\2\55\1\uffff\1\55\1\uffff\3\55\1\uffff\1\55\1\u0236\1\55\2\uffff"+
+        "\3\55\1\u023c\1\55\1\u023e\1\55\1\uffff\6\55\2\uffff\1\u0247\1\u0248"+
+        "\1\u0249\1\u013e\1\55\1\u0147\1\55\1\uffff\1\u024e\1\u014e\1\u0154"+
+        "\1\u024f\1\55\1\u015b\3\55\1\u0254\1\uffff\1\u0167\1\55\1\u0257"+
+        "\1\u016e\3\55\1\u017d\2\55\1\uffff\1\55\1\u0260\3\55\1\uffff\1\u0264"+
+        "\1\uffff\2\55\1\u016a\5\55\3\uffff\1\u013e\1\u0144\1\u026e\1\55"+
+        "\2\uffff\1\u0157\3\55\1\uffff\1\u016a\1\55\1\uffff\1\u016e\1\u0171"+
+        "\1\u0277\1\u0179\1\u017d\1\u0180\1\u027b\1\55\1\uffff\2\u0260\1"+
+        "\55\1\uffff\3\55\1\u0281\1\u0283\1\55\1\u0285\1\u0144\1\55\1\uffff"+
+        "\1\u0287\1\u01bc\1\u0162\1\u028a\1\u016a\1\u028b\1\u0171\1\55\1"+
+        "\uffff\1\u0179\1\u0180\1\55\1\uffff\1\u028e\1\u0260\1\u028f\1\u018f"+
+        "\1\u0291\1\uffff\1\55\1\uffff\1\u0283\1\uffff\1\u0293\1\uffff\1"+
+        "\u0162\1\55\2\uffff\1\u0295\1\u0296\2\uffff\1\u018f\1\uffff\1\u0297"+
+        "\1\uffff\1\u0298\4\uffff";
     static final String DFA86_eofS =
-        "\u0295\uffff";
+        "\u0299\uffff";
     static final String DFA86_minS =
         "\1\0\1\141\1\145\3\141\1\143\1\144\2\141\1\145\1\141\1\145\1\141"+
         "\1\160\1\155\1\141\2\144\12\60\1\144\4\uffff\1\11\2\uffff\1\156"+
         "\1\141\1\145\3\uffff\1\156\1\154\1\uffff\1\142\1\151\1\165\1\146"+
         "\1\162\1\156\1\144\2\164\1\141\1\162\1\147\1\141\1\uffff\1\164\1"+
         "\144\1\141\1\157\1\143\1\156\1\164\1\141\1\170\1\164\2\141\1\157"+
-        "\1\141\1\156\1\170\1\143\1\171\1\145\1\141\1\144\1\145\1\156\1\uffff"+
+        "\1\147\1\141\1\170\1\143\1\171\1\145\1\141\1\144\1\145\1\156\1\uffff"+
         "\1\144\1\165\1\144\1\164\1\uffff\2\141\1\uffff\2\164\1\141\1\163"+
         "\2\143\1\164\1\uffff\2\164\1\141\1\147\1\145\2\164\1\141\1\155\156"+
         "\uffff\1\141\10\uffff\1\141\1\163\1\146\5\141\1\155\1\162\1\145"+
         "\1\164\1\163\3\141\1\156\1\55\2\141\1\uffff\2\141\1\145\2\164\1"+
         "\141\1\uffff\2\141\1\145\1\157\2\141\1\uffff\3\141\2\uffff\1\141"+
-        "\1\156\1\141\1\uffff\1\145\1\164\4\141\1\145\1\162\1\141\1\uffff"+
-        "\1\141\1\155\1\141\1\154\2\141\1\153\1\162\2\164\2\141\1\162\1\164"+
-        "\2\141\1\uffff\1\164\1\141\1\157\3\141\1\uffff\1\150\1\166\2\141"+
-        "\1\uffff\1\151\2\uffff\1\164\1\157\1\141\1\uffff\1\141\1\uffff\1"+
-        "\141\1\uffff\1\165\1\uffff\2\141\1\uffff\3\141\1\145\1\164\1\150"+
+        "\1\156\1\141\1\150\1\145\1\uffff\1\164\4\141\1\145\1\162\1\141\1"+
+        "\uffff\1\141\1\155\1\141\1\154\2\141\1\153\1\162\2\164\2\141\1\162"+
+        "\1\164\2\141\1\uffff\1\164\1\141\1\157\3\141\1\uffff\1\150\1\166"+
+        "\2\141\1\uffff\1\151\2\uffff\1\164\1\157\1\141\1\uffff\1\141\1\uffff"+
+        "\1\141\1\uffff\1\165\1\uffff\2\141\1\uffff\3\141\1\145\1\164\1\150"+
         "\1\uffff\1\141\1\uffff\2\141\1\150\1\uffff\2\151\1\uffff\1\154\1"+
         "\uffff\1\163\1\uffff\1\162\2\141\2\uffff\1\141\1\uffff\2\156\2\141"+
         "\1\uffff\1\162\1\141\1\uffff\1\145\1\uffff\1\142\2\uffff\1\155\1"+
-        "\uffff\1\141\1\uffff\1\141\1\150\1\141\1\155\1\uffff\1\141\1\uffff"+
-        "\1\141\1\uffff\2\141\1\uffff\1\145\1\144\1\141\1\uffff\1\171\1\162"+
-        "\1\157\1\uffff\1\146\1\164\1\150\1\uffff\1\145\1\141\1\uffff\4\141"+
-        "\1\uffff\1\141\1\145\1\141\1\155\1\164\1\150\1\145\1\156\1\141\2"+
-        "\162\3\141\1\171\1\uffff\1\145\2\uffff\1\145\3\141\1\171\1\141\1"+
-        "\156\1\147\1\141\1\164\1\55\1\155\1\141\1\144\1\171\1\144\1\145"+
-        "\1\141\1\145\1\142\1\uffff\1\145\1\uffff\1\141\1\uffff\1\142\3\141"+
-        "\1\145\1\141\1\uffff\1\141\1\157\1\162\1\145\1\164\1\151\1\141\1"+
-        "\163\1\156\1\141\1\uffff\1\141\1\uffff\1\141\1\uffff\1\162\1\uffff"+
-        "\1\151\2\141\1\156\1\147\1\uffff\1\145\1\171\1\162\1\141\1\145\1"+
-        "\141\1\156\2\uffff\1\163\2\141\1\uffff\1\147\1\150\2\141\1\157\1"+
-        "\uffff\1\142\1\145\1\uffff\3\141\1\156\1\uffff\1\162\2\145\1\uffff"+
-        "\1\145\1\171\1\141\1\uffff\1\145\1\141\1\145\2\uffff\1\167\2\157"+
-        "\1\141\1\150\1\141\1\145\1\uffff\3\144\1\156\2\145\2\uffff\4\141"+
-        "\1\171\1\141\1\156\1\uffff\4\141\1\164\1\141\1\157\2\145\1\141\1"+
-        "\uffff\1\141\1\171\2\141\1\162\1\156\1\162\1\141\1\171\1\156\1\uffff"+
-        "\1\164\1\141\2\167\1\157\1\uffff\1\141\1\uffff\1\164\3\141\1\147"+
-        "\1\156\1\145\1\150\3\uffff\3\141\1\150\2\uffff\1\141\1\156\1\162"+
-        "\1\156\1\uffff\1\141\1\150\1\uffff\7\141\1\150\1\uffff\2\141\1\167"+
-        "\1\uffff\1\150\2\171\2\141\1\156\2\141\1\150\1\uffff\7\141\1\150"+
-        "\1\uffff\2\141\1\150\1\uffff\5\141\1\uffff\1\150\1\uffff\1\141\1"+
-        "\uffff\1\141\1\uffff\1\141\1\150\2\uffff\2\141\2\uffff\1\141\1\uffff"+
-        "\1\141\1\uffff\1\141\4\uffff";
+        "\uffff\1\141\1\uffff\1\164\1\141\1\150\1\141\1\155\1\uffff\1\141"+
+        "\1\uffff\1\141\1\uffff\2\141\1\uffff\1\145\1\144\1\141\1\uffff\1"+
+        "\171\1\162\1\157\1\uffff\1\146\1\164\1\150\1\uffff\1\145\1\141\1"+
+        "\uffff\4\141\1\uffff\1\141\1\145\1\141\1\155\1\164\1\150\1\145\1"+
+        "\156\1\141\2\162\3\141\1\171\1\uffff\1\145\2\uffff\1\145\3\141\1"+
+        "\171\1\141\1\156\1\147\1\141\1\164\1\55\1\155\1\141\1\144\1\171"+
+        "\1\144\1\145\1\141\1\145\1\142\1\uffff\1\141\1\145\1\uffff\1\141"+
+        "\1\uffff\1\142\3\141\1\145\1\141\1\uffff\1\141\1\157\1\162\1\145"+
+        "\1\164\1\151\1\141\1\163\1\156\1\141\1\uffff\1\141\1\uffff\1\141"+
+        "\1\uffff\1\162\1\uffff\1\151\2\141\1\156\1\147\1\uffff\1\145\1\171"+
+        "\1\162\1\141\1\145\1\141\1\156\2\uffff\1\163\2\141\1\uffff\1\147"+
+        "\1\150\2\141\1\157\1\uffff\1\142\1\145\1\uffff\3\141\1\156\1\uffff"+
+        "\1\162\1\145\1\uffff\1\145\1\uffff\1\145\1\171\1\141\1\uffff\1\145"+
+        "\1\141\1\145\2\uffff\1\167\2\157\1\141\1\150\1\141\1\145\1\uffff"+
+        "\3\144\1\156\2\145\2\uffff\4\141\1\171\1\141\1\156\1\uffff\4\141"+
+        "\1\164\1\141\1\157\2\145\1\141\1\uffff\1\141\1\171\2\141\1\162\1"+
+        "\156\1\162\1\141\1\171\1\156\1\uffff\1\164\1\141\2\167\1\157\1\uffff"+
+        "\1\141\1\uffff\1\164\3\141\1\147\1\156\1\145\1\150\3\uffff\3\141"+
+        "\1\150\2\uffff\1\141\1\156\1\162\1\156\1\uffff\1\141\1\150\1\uffff"+
+        "\7\141\1\150\1\uffff\2\141\1\167\1\uffff\1\150\2\171\2\141\1\156"+
+        "\2\141\1\150\1\uffff\7\141\1\150\1\uffff\2\141\1\150\1\uffff\5\141"+
+        "\1\uffff\1\150\1\uffff\1\141\1\uffff\1\141\1\uffff\1\141\1\150\2"+
+        "\uffff\2\141\2\uffff\1\141\1\uffff\1\141\1\uffff\1\141\4\uffff";
     static final String DFA86_maxS =
         "\1\uffff\1\165\1\162\1\164\1\172\1\165\1\156\1\157\1\145\1\172\1"+
         "\145\1\172\1\145\1\172\1\164\1\155\1\172\2\164\12\71\1\144\4\uffff"+
         "\1\56\2\uffff\1\156\1\141\1\145\3\uffff\2\156\1\uffff\1\142\1\157"+
         "\1\165\1\166\1\171\1\162\1\144\2\164\1\172\1\162\1\147\1\172\1\uffff"+
         "\2\164\1\172\1\157\1\166\1\156\1\164\1\172\1\170\1\164\2\172\1\167"+
-        "\1\172\1\156\1\170\1\143\1\171\1\145\1\172\1\155\1\157\1\156\1\uffff"+
+        "\1\156\1\172\1\170\1\143\1\171\1\145\1\172\1\155\1\157\1\156\1\uffff"+
         "\1\145\1\165\2\164\1\uffff\1\163\1\172\1\uffff\2\164\1\172\1\163"+
         "\2\143\1\164\1\uffff\2\164\1\172\1\147\1\145\2\164\1\172\1\155\156"+
         "\uffff\1\172\10\uffff\1\172\1\163\1\146\5\172\1\155\1\162\1\145"+
         "\1\164\1\163\3\172\2\156\2\172\1\uffff\2\172\1\145\2\164\1\172\1"+
         "\uffff\2\172\1\145\1\157\2\172\1\uffff\3\172\2\uffff\1\172\1\156"+
-        "\1\172\1\uffff\2\164\4\172\1\145\1\163\1\172\1\uffff\1\141\1\157"+
-        "\1\172\1\156\2\172\1\153\1\162\2\164\2\172\1\162\1\164\2\172\1\uffff"+
-        "\1\164\1\172\1\157\3\172\1\uffff\1\164\1\166\2\172\1\uffff\1\151"+
-        "\2\uffff\1\164\1\157\1\141\1\uffff\1\172\1\uffff\1\172\1\uffff\1"+
-        "\165\1\uffff\1\141\1\172\1\uffff\3\172\1\150\1\164\1\150\1\uffff"+
-        "\1\172\1\uffff\1\141\1\172\1\150\1\uffff\2\151\1\uffff\1\154\1\uffff"+
-        "\1\163\1\uffff\1\162\2\172\2\uffff\1\172\1\uffff\2\156\1\141\1\172"+
-        "\1\uffff\1\162\1\172\1\uffff\1\150\1\uffff\1\142\2\uffff\1\155\1"+
-        "\uffff\1\172\1\uffff\1\172\1\150\1\172\1\155\1\uffff\1\172\1\uffff"+
-        "\1\172\1\uffff\2\172\1\uffff\1\145\1\164\1\172\1\uffff\1\171\1\162"+
-        "\1\157\1\uffff\1\166\1\164\1\150\1\uffff\1\145\1\172\1\uffff\4\172"+
-        "\1\uffff\1\172\1\145\1\172\1\155\1\164\1\150\1\145\1\156\1\172\2"+
-        "\162\2\172\1\141\1\171\1\uffff\1\150\2\uffff\1\145\3\172\1\171\1"+
-        "\172\1\156\1\147\1\172\1\164\1\172\1\155\1\172\1\144\1\171\1\144"+
-        "\1\145\1\172\1\145\1\142\1\uffff\1\145\1\uffff\1\172\1\uffff\1\142"+
-        "\1\141\2\172\1\171\1\172\1\uffff\1\172\2\162\1\145\1\164\1\171\1"+
-        "\172\1\163\1\156\1\172\1\uffff\1\172\1\uffff\1\172\1\uffff\1\162"+
-        "\1\uffff\1\151\2\172\1\156\1\147\1\uffff\1\145\1\171\1\162\1\172"+
-        "\1\145\1\172\1\156\2\uffff\1\163\2\172\1\uffff\1\147\1\150\2\172"+
-        "\1\157\1\uffff\1\142\1\150\1\uffff\2\172\1\141\1\156\1\uffff\1\162"+
-        "\2\145\1\uffff\1\145\1\171\1\141\1\uffff\1\145\1\172\1\145\2\uffff"+
-        "\1\167\1\157\1\162\1\172\1\150\1\172\1\145\1\uffff\3\144\1\156\2"+
-        "\145\2\uffff\4\172\1\171\1\172\1\156\1\uffff\4\172\1\164\1\172\1"+
-        "\157\2\145\1\172\1\uffff\1\172\1\171\2\172\1\162\1\156\1\162\1\172"+
-        "\1\171\1\156\1\uffff\1\164\1\172\2\167\1\157\1\uffff\1\172\1\uffff"+
-        "\1\164\1\141\1\172\1\141\1\147\1\156\1\145\1\150\3\uffff\3\172\1"+
-        "\150\2\uffff\1\172\1\156\1\162\1\156\1\uffff\1\172\1\150\1\uffff"+
-        "\7\172\1\150\1\uffff\2\172\1\167\1\uffff\1\150\2\171\2\172\1\156"+
-        "\2\172\1\150\1\uffff\7\172\1\150\1\uffff\2\172\1\150\1\uffff\5\172"+
-        "\1\uffff\1\150\1\uffff\1\172\1\uffff\1\172\1\uffff\1\172\1\150\2"+
-        "\uffff\2\172\2\uffff\1\172\1\uffff\1\172\1\uffff\1\172\4\uffff";
+        "\1\172\1\150\1\164\1\uffff\1\164\4\172\1\145\1\163\1\172\1\uffff"+
+        "\1\141\1\157\1\172\1\156\2\172\1\153\1\162\2\164\2\172\1\162\1\164"+
+        "\2\172\1\uffff\1\164\1\172\1\157\3\172\1\uffff\1\164\1\166\2\172"+
+        "\1\uffff\1\151\2\uffff\1\164\1\157\1\141\1\uffff\1\172\1\uffff\1"+
+        "\172\1\uffff\1\165\1\uffff\1\141\1\172\1\uffff\3\172\1\150\1\164"+
+        "\1\150\1\uffff\1\172\1\uffff\1\141\1\172\1\150\1\uffff\2\151\1\uffff"+
+        "\1\154\1\uffff\1\163\1\uffff\1\162\2\172\2\uffff\1\172\1\uffff\2"+
+        "\156\1\141\1\172\1\uffff\1\162\1\172\1\uffff\1\150\1\uffff\1\142"+
+        "\2\uffff\1\155\1\uffff\1\172\1\uffff\1\164\1\172\1\150\1\172\1\155"+
+        "\1\uffff\1\172\1\uffff\1\172\1\uffff\2\172\1\uffff\1\145\1\164\1"+
+        "\172\1\uffff\1\171\1\162\1\157\1\uffff\1\166\1\164\1\150\1\uffff"+
+        "\1\145\1\172\1\uffff\4\172\1\uffff\1\172\1\145\1\172\1\155\1\164"+
+        "\1\150\1\145\1\156\1\172\2\162\2\172\1\141\1\171\1\uffff\1\150\2"+
+        "\uffff\1\145\3\172\1\171\1\172\1\156\1\147\1\172\1\164\1\172\1\155"+
+        "\1\172\1\144\1\171\1\144\1\145\1\172\1\145\1\142\1\uffff\1\172\1"+
+        "\145\1\uffff\1\172\1\uffff\1\142\1\141\2\172\1\171\1\172\1\uffff"+
+        "\1\172\2\162\1\145\1\164\1\171\1\172\1\163\1\156\1\172\1\uffff\1"+
+        "\172\1\uffff\1\172\1\uffff\1\162\1\uffff\1\151\2\172\1\156\1\147"+
+        "\1\uffff\1\145\1\171\1\162\1\172\1\145\1\172\1\156\2\uffff\1\163"+
+        "\2\172\1\uffff\1\147\1\150\2\172\1\157\1\uffff\1\142\1\150\1\uffff"+
+        "\2\172\1\141\1\156\1\uffff\1\162\1\145\1\uffff\1\145\1\uffff\1\145"+
+        "\1\171\1\141\1\uffff\1\145\1\172\1\145\2\uffff\1\167\1\157\1\162"+
+        "\1\172\1\150\1\172\1\145\1\uffff\3\144\1\156\2\145\2\uffff\4\172"+
+        "\1\171\1\172\1\156\1\uffff\4\172\1\164\1\172\1\157\2\145\1\172\1"+
+        "\uffff\1\172\1\171\2\172\1\162\1\156\1\162\1\172\1\171\1\156\1\uffff"+
+        "\1\164\1\172\2\167\1\157\1\uffff\1\172\1\uffff\1\164\1\141\1\172"+
+        "\1\141\1\147\1\156\1\145\1\150\3\uffff\3\172\1\150\2\uffff\1\172"+
+        "\1\156\1\162\1\156\1\uffff\1\172\1\150\1\uffff\7\172\1\150\1\uffff"+
+        "\2\172\1\167\1\uffff\1\150\2\171\2\172\1\156\2\172\1\150\1\uffff"+
+        "\7\172\1\150\1\uffff\2\172\1\150\1\uffff\5\172\1\uffff\1\150\1\uffff"+
+        "\1\172\1\uffff\1\172\1\uffff\1\172\1\150\2\uffff\2\172\2\uffff\1"+
+        "\172\1\uffff\1\172\1\uffff\1\172\4\uffff";
     static final String DFA86_acceptS =
-        "\36\uffff\1\u00c6\1\u00c7\1\u00c8\1\u00c9\1\uffff\1\u00cb\1\u00cc"+
-        "\3\uffff\1\u00dd\1\u00de\1\u00df\2\uffff\1\u00de\15\uffff\1\34\27"+
-        "\uffff\1\36\4\uffff\1\37\2\uffff\1\35\7\uffff\1\43\11\uffff\1\52"+
-        "\1\53\1\54\1\55\1\56\1\57\1\60\1\61\1\62\1\63\1\64\1\76\1\77\1\100"+
-        "\1\101\1\102\1\103\1\104\1\105\1\106\1\107\1\65\1\110\1\111\1\112"+
-        "\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1\66\1\122\1\123\1\124"+
-        "\1\125\1\126\1\127\1\130\1\131\1\132\1\133\1\67\1\134\1\135\1\136"+
-        "\1\137\1\140\1\141\1\142\1\143\1\144\1\145\1\70\1\146\1\147\1\150"+
-        "\1\151\1\152\1\153\1\154\1\155\1\156\1\157\1\71\1\160\1\161\1\162"+
-        "\1\163\1\164\1\165\1\166\1\167\1\170\1\171\1\72\1\172\1\173\1\174"+
-        "\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\73\1\u0084"+
+        "\36\uffff\1\u00c7\1\u00c8\1\u00c9\1\u00ca\1\uffff\1\u00cc\1\u00cd"+
+        "\3\uffff\1\u00de\1\u00df\1\u00e0\2\uffff\1\u00df\15\uffff\1\34\27"+
+        "\uffff\1\36\4\uffff\1\37\2\uffff\1\35\7\uffff\1\44\11\uffff\1\53"+
+        "\1\54\1\55\1\56\1\57\1\60\1\61\1\62\1\63\1\64\1\65\1\77\1\100\1"+
+        "\101\1\102\1\103\1\104\1\105\1\106\1\107\1\110\1\66\1\111\1\112"+
+        "\1\113\1\114\1\115\1\116\1\117\1\120\1\121\1\122\1\67\1\123\1\124"+
+        "\1\125\1\126\1\127\1\130\1\131\1\132\1\133\1\134\1\70\1\135\1\136"+
+        "\1\137\1\140\1\141\1\142\1\143\1\144\1\145\1\146\1\71\1\147\1\150"+
+        "\1\151\1\152\1\153\1\154\1\155\1\156\1\157\1\160\1\72\1\161\1\162"+
+        "\1\163\1\164\1\165\1\166\1\167\1\170\1\171\1\172\1\73\1\173\1\174"+
+        "\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\1\u0083\1\u0084\1\74"+
         "\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a\1\u008b\1\u008c"+
-        "\1\u008d\1\74\1\u008e\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1"+
-        "\u0094\1\u0095\1\u0096\1\u0097\1\75\1\uffff\1\u00c6\1\u00c7\1\u00c8"+
-        "\1\u00c9\1\u00ca\1\u00dd\1\u00cb\1\u00cc\24\uffff\1\47\6\uffff\1"+
-        "\u00cf\6\uffff\1\u0098\3\uffff\1\u00d0\1\u00d1\3\uffff\1\u0099\11"+
-        "\uffff\1\u009b\20\uffff\1\45\6\uffff\1\44\4\uffff\1\46\1\uffff\1"+
-        "\u009a\1\u00cd\3\uffff\1\1\1\uffff\1\6\1\uffff\1\7\1\uffff\1\2\2"+
-        "\uffff\1\22\6\uffff\1\3\1\uffff\1\5\3\uffff\1\16\2\uffff\1\40\1"+
-        "\uffff\1\4\1\uffff\1\10\3\uffff\1\50\1\u00da\1\uffff\1\11\4\uffff"+
-        "\1\15\2\uffff\1\23\1\uffff\1\u00a1\1\uffff\1\12\1\u009c\1\uffff"+
-        "\1\13\1\uffff\1\u00d9\4\uffff\1\14\1\uffff\1\25\1\uffff\1\17\2\uffff"+
-        "\1\21\3\uffff\1\u00ce\3\uffff\1\u009d\3\uffff\1\u00a5\2\uffff\1"+
-        "\20\4\uffff\1\51\17\uffff\1\u00d8\1\uffff\1\u009f\1\u00a0\24\uffff"+
-        "\1\41\1\uffff\1\u00a4\1\uffff\1\u00d4\6\uffff\1\u00d2\12\uffff\1"+
-        "\26\1\uffff\1\24\1\uffff\1\30\1\uffff\1\u00d5\5\uffff\1\u00d3\7"+
-        "\uffff\1\u00b5\1\u00b1\3\uffff\1\27\5\uffff\1\u00dc\2\uffff\1\u00a2"+
-        "\4\uffff\1\u00b6\3\uffff\1\u00b9\3\uffff\1\u009e\3\uffff\1\u00b3"+
-        "\1\31\7\uffff\1\u00ba\6\uffff\1\u00a3\1\u00b8\7\uffff\1\u00b4\12"+
-        "\uffff\1\u00b2\12\uffff\1\u00b0\5\uffff\1\u00a7\1\uffff\1\u00af"+
-        "\10\uffff\1\u00a6\1\u00d6\1\u00db\4\uffff\1\u00aa\1\42\4\uffff\1"+
-        "\u00b7\2\uffff\1\u00ab\10\uffff\1\32\3\uffff\1\u00bc\11\uffff\1"+
-        "\u00a9\10\uffff\1\u00ae\3\uffff\1\u00a8\5\uffff\1\u00d7\1\uffff"+
-        "\1\u00ad\1\uffff\1\u00bb\1\uffff\1\u00bf\2\uffff\1\u00ac\1\u00c0"+
-        "\2\uffff\1\u00c5\1\u00c4\1\uffff\1\33\1\uffff\1\u00be\1\uffff\1"+
-        "\u00c3\1\u00bd\1\u00c2\1\u00c1";
+        "\1\u008d\1\u008e\1\75\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1"+
+        "\u0094\1\u0095\1\u0096\1\u0097\1\u0098\1\76\1\uffff\1\u00c7\1\u00c8"+
+        "\1\u00c9\1\u00ca\1\u00cb\1\u00de\1\u00cc\1\u00cd\24\uffff\1\50\6"+
+        "\uffff\1\u00d0\6\uffff\1\u0099\3\uffff\1\u00d1\1\u00d2\5\uffff\1"+
+        "\u009a\10\uffff\1\u009c\20\uffff\1\46\6\uffff\1\45\4\uffff\1\47"+
+        "\1\uffff\1\u009b\1\u00ce\3\uffff\1\1\1\uffff\1\6\1\uffff\1\7\1\uffff"+
+        "\1\2\2\uffff\1\22\6\uffff\1\3\1\uffff\1\5\3\uffff\1\16\2\uffff\1"+
+        "\40\1\uffff\1\4\1\uffff\1\10\3\uffff\1\51\1\u00db\1\uffff\1\11\4"+
+        "\uffff\1\15\2\uffff\1\23\1\uffff\1\u00a2\1\uffff\1\12\1\u009d\1"+
+        "\uffff\1\13\1\uffff\1\u00da\5\uffff\1\14\1\uffff\1\25\1\uffff\1"+
+        "\17\2\uffff\1\21\3\uffff\1\u00cf\3\uffff\1\u009e\3\uffff\1\u00a6"+
+        "\2\uffff\1\20\4\uffff\1\52\17\uffff\1\u00d9\1\uffff\1\u00a0\1\u00a1"+
+        "\24\uffff\1\41\2\uffff\1\u00a5\1\uffff\1\u00d5\6\uffff\1\u00d3\12"+
+        "\uffff\1\26\1\uffff\1\24\1\uffff\1\30\1\uffff\1\u00d6\5\uffff\1"+
+        "\u00d4\7\uffff\1\u00b6\1\u00b2\3\uffff\1\27\5\uffff\1\u00dd\2\uffff"+
+        "\1\u00a3\4\uffff\1\u00b7\2\uffff\1\43\1\uffff\1\u00ba\3\uffff\1"+
+        "\u009f\3\uffff\1\u00b4\1\31\7\uffff\1\u00bb\6\uffff\1\u00a4\1\u00b9"+
+        "\7\uffff\1\u00b5\12\uffff\1\u00b3\12\uffff\1\u00b1\5\uffff\1\u00a8"+
+        "\1\uffff\1\u00b0\10\uffff\1\u00a7\1\u00d7\1\u00dc\4\uffff\1\u00ab"+
+        "\1\42\4\uffff\1\u00b8\2\uffff\1\u00ac\10\uffff\1\32\3\uffff\1\u00bd"+
+        "\11\uffff\1\u00aa\10\uffff\1\u00af\3\uffff\1\u00a9\5\uffff\1\u00d8"+
+        "\1\uffff\1\u00ae\1\uffff\1\u00bc\1\uffff\1\u00c0\2\uffff\1\u00ad"+
+        "\1\u00c1\2\uffff\1\u00c6\1\u00c5\1\uffff\1\33\1\uffff\1\u00bf\1"+
+        "\uffff\1\u00c4\1\u00be\1\u00c3\1\u00c2";
     static final String DFA86_specialS =
-        "\1\0\u0294\uffff}>";
+        "\1\0\u0298\uffff}>";
     static final String[] DFA86_transitionS = {
             "\11\52\2\50\2\52\1\50\22\52\1\50\6\52\1\44\3\52\1\43\1\37\1"+
             "\40\1\42\1\41\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1"+
@@ -9782,7 +9812,7 @@ public class DateLexer extends Lexer {
             "\5\55",
             "\1\102\3\uffff\1\100\3\uffff\1\104\12\uffff\1\103\1\101",
             "\1\105\2\uffff\1\107\7\uffff\1\106",
-            "\1\111\1\113\3\uffff\1\112\5\uffff\1\110",
+            "\1\112\1\113\3\uffff\1\111\5\uffff\1\110",
             "\1\115\3\uffff\1\114",
             "\4\55\1\122\2\55\1\117\6\55\1\120\5\55\1\116\1\55\1\121\3\55",
             "\1\124",
@@ -9857,42 +9887,42 @@ public class DateLexer extends Lexer {
             "\4\55\1\u0109\25\55",
             "\32\55",
             "\1\u010d\6\uffff\1\u010c\1\u010e",
+            "\1\u010f\6\uffff\1\u0110",
             "\32\55",
-            "\1\u0110",
-            "\1\u0111",
             "\1\u0112",
             "\1\u0113",
             "\1\u0114",
-            "\4\55\1\u0118\3\55\1\u0117\10\55\1\u0116\2\55\1\u0115\5\55",
-            "\1\u011a\10\uffff\1\u011b",
-            "\1\u011d\11\uffff\1\u011c",
-            "\1\u011e",
+            "\1\u0115",
+            "\4\55\1\u0119\3\55\1\u0118\10\55\1\u0117\2\55\1\u0116\5\55",
+            "\1\u011b\10\uffff\1\u011c",
+            "\1\u011e\11\uffff\1\u011d",
+            "\1\u011f",
             "",
-            "\1\u011f\1\u0120",
-            "\1\u0121",
-            "\1\u0123\16\uffff\1\u0122\1\u0124",
-            "\1\u0125",
+            "\1\u0120\1\u0121",
+            "\1\u0122",
+            "\1\u0124\16\uffff\1\u0123\1\u0125",
+            "\1\u0126",
             "",
-            "\1\u0126\21\uffff\1\u0127",
+            "\1\u0127\21\uffff\1\u0128",
             "\32\55",
             "",
-            "\1\u0128",
             "\1\u0129",
+            "\1\u012a",
             "\32\55",
-            "\1\u012b",
             "\1\u012c",
             "\1\u012d",
             "\1\u012e",
-            "",
             "\1\u012f",
+            "",
             "\1\u0130",
+            "\1\u0131",
             "\32\55",
-            "\1\u0132",
             "\1\u0133",
             "\1\u0134",
             "\1\u0135",
+            "\1\u0136",
             "\32\55",
-            "\1\u0137",
+            "\1\u0138",
             "",
             "",
             "",
@@ -9995,15 +10025,6 @@ public class DateLexer extends Lexer {
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\32\55",
             "",
             "",
             "",
@@ -10013,423 +10034,436 @@ public class DateLexer extends Lexer {
             "",
             "",
             "\32\55",
-            "\1\u013a",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\32\55",
             "\1\u013b",
-            "\24\55\1\u013c\5\55",
-            "\4\55\1\u013e\25\55",
-            "\30\55\1\u0140\1\55",
-            "\21\55\1\u0142\10\55",
-            "\3\55\1\u0144\16\55\1\u0145\7\55",
-            "\1\u0147",
+            "\1\u013c",
+            "\24\55\1\u013d\5\55",
+            "\4\55\1\u013f\25\55",
+            "\30\55\1\u0141\1\55",
+            "\21\55\1\u0143\10\55",
+            "\3\55\1\u0145\16\55\1\u0146\7\55",
             "\1\u0148",
             "\1\u0149",
             "\1\u014a",
             "\1\u014b",
-            "\2\55\1\u014c\27\55",
-            "\22\55\1\u014e\7\55",
-            "\3\55\1\u0150\16\55\1\u0151\1\u0152\6\55",
-            "\1\u0154",
-            "\1\u0156\100\uffff\1\u0155",
+            "\1\u014c",
+            "\2\55\1\u014d\27\55",
+            "\22\55\1\u014f\7\55",
+            "\3\55\1\u0151\16\55\1\u0152\1\u0153\6\55",
+            "\1\u0155",
+            "\1\u0157\100\uffff\1\u0156",
             "\32\55",
             "\32\55",
             "",
-            "\10\55\1\u0157\21\55",
-            "\24\55\1\u0159\5\55",
-            "\1\u015b",
+            "\10\55\1\u0158\21\55",
+            "\24\55\1\u015a\5\55",
             "\1\u015c",
             "\1\u015d",
+            "\1\u015e",
             "\32\55",
             "",
             "\32\55",
-            "\23\55\1\u0160\6\55",
-            "\1\u0162",
+            "\23\55\1\u0161\6\55",
             "\1\u0163",
-            "\3\55\1\u0164\16\55\1\u0165\7\55",
-            "\22\55\1\u0168\1\55\1\u0167\5\55",
+            "\1\u0164",
+            "\3\55\1\u0165\16\55\1\u0166\7\55",
+            "\22\55\1\u0169\1\55\1\u0168\5\55",
             "",
-            "\23\55\1\u016a\6\55",
-            "\16\55\1\u016c\13\55",
+            "\23\55\1\u016b\6\55",
+            "\16\55\1\u016d\13\55",
             "\32\55",
             "",
             "",
-            "\4\55\1\u016f\25\55",
-            "\1\u0171",
+            "\4\55\1\u0170\25\55",
+            "\1\u0172",
             "\32\55",
+            "\1\u0174",
+            "\1\u0175\16\uffff\1\u0176",
             "",
-            "\1\u0173\16\uffff\1\u0174",
-            "\1\u0175",
-            "\4\55\1\u0176\25\55",
-            "\22\55\1\u0178\7\55",
+            "\1\u0177",
+            "\4\55\1\u0178\25\55",
             "\22\55\1\u017a\7\55",
-            "\21\55\1\u017c\1\u017d\7\55",
-            "\1\u017f",
-            "\1\u0180\1\u0181",
+            "\22\55\1\u017c\7\55",
+            "\21\55\1\u017e\1\u017f\7\55",
+            "\1\u0181",
+            "\1\u0182\1\u0183",
             "\32\55",
             "",
-            "\1\u0183",
-            "\1\u0185\1\uffff\1\u0184",
+            "\1\u0185",
+            "\1\u0187\1\uffff\1\u0186",
             "\32\55",
-            "\1\u0187\1\uffff\1\u0188",
-            "\23\55\1\u0189\6\55",
-            "\15\55\1\u018b\4\55\1\u018c\7\55",
-            "\1\u018e",
-            "\1\u018f",
+            "\1\u0189\1\uffff\1\u018a",
+            "\23\55\1\u018b\6\55",
+            "\15\55\1\u018d\4\55\1\u018e\7\55",
             "\1\u0190",
             "\1\u0191",
-            "\32\55",
-            "\32\55",
+            "\1\u0192",
             "\1\u0193",
-            "\1\u0194",
             "\32\55",
             "\32\55",
-            "",
             "\1\u0195",
-            "\32\55",
             "\1\u0196",
             "\32\55",
             "\32\55",
+            "",
+            "\1\u0197",
+            "\32\55",
+            "\1\u0198",
+            "\32\55",
+            "\32\55",
             "\32\55",
             "",
-            "\1\u0197\13\uffff\1\u0198",
-            "\1\u0199",
-            "\32\55",
-            "\32\55",
-            "",
-            "\1\u019a",
-            "",
-            "",
+            "\1\u0199\13\uffff\1\u019a",
             "\1\u019b",
+            "\32\55",
+            "\32\55",
+            "",
             "\1\u019c",
+            "",
+            "",
             "\1\u019d",
+            "\1\u019e",
+            "\1\u019f",
             "",
-            "\22\55\1\u019e\7\55",
+            "\22\55\1\u01a0\7\55",
             "",
-            "\22\55\1\u019f\7\55",
+            "\22\55\1\u01a1\7\55",
             "",
-            "\1\u01a0",
+            "\1\u01a2",
             "",
-            "\1\u01a1",
+            "\1\u01a3",
             "\32\55",
             "",
             "\32\55",
-            "\23\55\1\u01a3\6\55",
+            "\23\55\1\u01a5\6\55",
             "\32\55",
-            "\1\u01a6\2\uffff\1\u01a7",
-            "\1\u01a8",
-            "\1\u01a9",
-            "",
-            "\32\55",
-            "",
+            "\1\u01a8\2\uffff\1\u01a9",
             "\1\u01aa",
-            "\32\55",
             "\1\u01ab",
             "",
+            "\32\55",
+            "",
             "\1\u01ac",
+            "\32\55",
             "\1\u01ad",
             "",
             "\1\u01ae",
-            "",
             "\1\u01af",
             "",
             "\1\u01b0",
-            "\32\55",
-            "\32\55",
             "",
-            "",
-            "\4\55\1\u01b1\25\55",
+            "\1\u01b1",
             "",
             "\1\u01b2",
-            "\1\u01b3",
+            "\32\55",
+            "\32\55",
+            "",
+            "",
+            "\4\55\1\u01b3\25\55",
+            "",
             "\1\u01b4",
-            "\32\55",
-            "",
             "\1\u01b5",
+            "\1\u01b6",
             "\32\55",
             "",
-            "\1\u01b6\2\uffff\1\u01b7",
+            "\1\u01b7",
+            "\32\55",
             "",
-            "\1\u01b8",
+            "\1\u01b8\2\uffff\1\u01b9",
+            "",
+            "\1\u01ba",
             "",
             "",
-            "\1\u01b9",
+            "\1\u01bb",
             "",
             "\32\55",
             "",
-            "\23\55\1\u01bb\6\55",
             "\1\u01bd",
+            "\23\55\1\u01be\6\55",
+            "\1\u01c0",
             "\32\55",
-            "\1\u01bf",
-            "",
-            "\32\55",
-            "",
-            "\3\55\1\u01c0\26\55",
-            "",
-            "\22\55\1\u01c1\7\55",
-            "\32\55",
-            "",
             "\1\u01c2",
-            "\1\u01c4\17\uffff\1\u01c3",
+            "",
             "\32\55",
             "",
-            "\1\u01c6",
-            "\1\u01c7",
-            "\1\u01c8",
+            "\3\55\1\u01c3\26\55",
             "",
-            "\1\u01ca\17\uffff\1\u01c9",
+            "\22\55\1\u01c4\7\55",
+            "\32\55",
+            "",
+            "\1\u01c5",
+            "\1\u01c7\17\uffff\1\u01c6",
+            "\32\55",
+            "",
+            "\1\u01c9",
+            "\1\u01ca",
             "\1\u01cb",
-            "\1\u01cc",
             "",
-            "\1\u01cd",
-            "\32\55",
+            "\1\u01cd\17\uffff\1\u01cc",
+            "\1\u01ce",
+            "\1\u01cf",
             "",
-            "\4\55\1\u01ce\15\55\1\u01cf\7\55",
-            "\22\55\1\u01d1\7\55",
-            "\32\55",
+            "\1\u01d0",
             "\32\55",
             "",
-            "\22\55\1\u01d3\7\55",
-            "\1\u01d5",
+            "\4\55\1\u01d1\15\55\1\u01d2\7\55",
+            "\22\55\1\u01d4\7\55",
             "\32\55",
-            "\1\u01d7",
+            "\32\55",
+            "",
+            "\22\55\1\u01d6\7\55",
             "\1\u01d8",
-            "\1\u01d9",
+            "\32\55",
             "\1\u01da",
             "\1\u01db",
-            "\32\55",
+            "\1\u01dc",
             "\1\u01dd",
             "\1\u01de",
             "\32\55",
-            "\32\55",
-            "\1\u01df",
             "\1\u01e0",
-            "",
-            "\1\u01e1\2\uffff\1\u01e2",
-            "",
-            "",
+            "\1\u01e1",
+            "\32\55",
+            "\32\55",
+            "\1\u01e2",
             "\1\u01e3",
+            "",
+            "\1\u01e4\2\uffff\1\u01e5",
+            "",
+            "",
+            "\1\u01e6",
             "\32\55",
             "\32\55",
-            "\4\55\1\u01e6\25\55",
-            "\1\u01e7",
-            "\22\55\1\u01e8\7\55",
+            "\4\55\1\u01e9\25\55",
             "\1\u01ea",
-            "\1\u01eb",
-            "\22\55\1\u01ec\7\55",
+            "\22\55\1\u01eb\7\55",
             "\1\u01ed",
-            "\1\u01ba\63\uffff\15\55\1\u01ee\14\55",
+            "\1\u01ee",
+            "\22\55\1\u01ef\7\55",
             "\1\u01f0",
-            "\23\55\1\u01f1\6\55",
+            "\1\u01bc\63\uffff\15\55\1\u01f1\14\55",
             "\1\u01f3",
-            "\1\u01f4",
-            "\1\u01f5",
+            "\23\55\1\u01f4\6\55",
             "\1\u01f6",
-            "\32\55",
+            "\1\u01f7",
             "\1\u01f8",
             "\1\u01f9",
-            "",
-            "\1\u01fa",
-            "",
             "\32\55",
-            "",
+            "\1\u01fb",
             "\1\u01fc",
-            "\1\u01fd",
-            "\3\55\1\u01fe\26\55",
+            "",
             "\32\55",
-            "\1\u0200\3\uffff\1\u0202\17\uffff\1\u0201",
+            "\1\u01fe",
+            "",
+            "\32\55",
+            "",
+            "\1\u0200",
+            "\1\u0201",
+            "\3\55\1\u0202\26\55",
+            "\32\55",
+            "\1\u0204\3\uffff\1\u0206\17\uffff\1\u0205",
             "\32\55",
             "",
             "\32\55",
-            "\1\u0205\2\uffff\1\u0206",
-            "\1\u0207",
-            "\1\u0208",
-            "\1\u0209",
-            "\1\u020b\17\uffff\1\u020a",
-            "\32\55",
+            "\1\u0209\2\uffff\1\u020a",
+            "\1\u020b",
+            "\1\u020c",
             "\1\u020d",
-            "\1\u020e",
+            "\1\u020f\17\uffff\1\u020e",
+            "\32\55",
+            "\1\u0211",
+            "\1\u0212",
             "\32\55",
             "",
             "\32\55",
             "",
             "\32\55",
             "",
-            "\1\u020f",
+            "\1\u0213",
             "",
-            "\1\u0210",
-            "\4\55\1\u0211\16\55\1\u0212\6\55",
+            "\1\u0214",
+            "\4\55\1\u0215\16\55\1\u0216\6\55",
             "\32\55",
-            "\1\u0215",
-            "\1\u0216",
-            "",
-            "\1\u0217",
-            "\1\u0218",
             "\1\u0219",
-            "\22\55\1\u021a\7\55",
+            "\1\u021a",
+            "",
             "\1\u021b",
-            "\32\55",
+            "\1\u021c",
             "\1\u021d",
-            "",
-            "",
-            "\1\u021e",
-            "\22\55\1\u021f\7\55",
+            "\22\55\1\u021e\7\55",
+            "\1\u021f",
             "\32\55",
-            "",
-            "\1\u0220",
             "\1\u0221",
+            "",
+            "",
+            "\1\u0222",
+            "\22\55\1\u0223\7\55",
             "\32\55",
-            "\22\55\1\u0222\7\55",
-            "\1\u0223",
             "",
             "\1\u0224",
-            "\1\u0225\2\uffff\1\u0226",
+            "\1\u0225",
+            "\32\55",
+            "\22\55\1\u0226\7\55",
+            "\1\u0227",
+            "",
+            "\1\u0228",
+            "\1\u0229\2\uffff\1\u022a",
             "",
             "\32\55",
-            "\22\55\1\u0228\7\55",
-            "\1\u0229",
-            "\1\u022a",
-            "",
-            "\1\u022b",
-            "\1\u022c",
+            "\22\55\1\u022c\7\55",
             "\1\u022d",
-            "",
             "\1\u022e",
+            "",
             "\1\u022f",
             "\1\u0230",
             "",
             "\1\u0231",
-            "\32\55",
+            "",
+            "\1\u0232",
             "\1\u0233",
-            "",
-            "",
             "\1\u0234",
-            "\1\u0235",
-            "\1\u0236\2\uffff\1\u0237",
-            "\32\55",
-            "\1\u0239",
-            "\32\55",
-            "\1\u023b",
             "",
-            "\1\u023c",
+            "\1\u0235",
+            "\32\55",
+            "\1\u0237",
+            "",
+            "",
+            "\1\u0238",
+            "\1\u0239",
+            "\1\u023a\2\uffff\1\u023b",
+            "\32\55",
             "\1\u023d",
-            "\1\u023e",
+            "\32\55",
             "\1\u023f",
+            "",
             "\1\u0240",
             "\1\u0241",
+            "\1\u0242",
+            "\1\u0243",
+            "\1\u0244",
+            "\1\u0245",
             "",
             "",
-            "\23\55\1\u0242\6\55",
+            "\23\55\1\u0246\6\55",
             "\32\55",
             "\32\55",
-            "\22\55\1\u0246\7\55",
-            "\1\u0247",
-            "\32\55",
-            "\1\u0248",
-            "",
-            "\23\55\1\u0249\6\55",
-            "\32\55",
-            "\32\55",
+            "\22\55\1\u024a\7\55",
+            "\1\u024b",
             "\32\55",
             "\1\u024c",
+            "",
+            "\23\55\1\u024d\6\55",
             "\32\55",
-            "\1\u024d",
-            "\1\u024e",
-            "\1\u024f",
+            "\32\55",
+            "\32\55",
+            "\1\u0250",
+            "\32\55",
+            "\1\u0251",
+            "\1\u0252",
+            "\1\u0253",
             "\32\55",
             "",
             "\32\55",
-            "\1\u0251",
-            "\23\55\1\u0252\6\55",
-            "\22\55\1\u0254\7\55",
             "\1\u0255",
-            "\1\u0256",
-            "\1\u0257",
+            "\23\55\1\u0256\6\55",
             "\22\55\1\u0258\7\55",
             "\1\u0259",
             "\1\u025a",
-            "",
             "\1\u025b",
-            "\32\55",
+            "\22\55\1\u025c\7\55",
             "\1\u025d",
             "\1\u025e",
+            "",
             "\1\u025f",
-            "",
             "\32\55",
-            "",
             "\1\u0261",
             "\1\u0262",
-            "\32\55",
             "\1\u0263",
-            "\1\u0264",
+            "",
+            "\32\55",
+            "",
             "\1\u0265",
             "\1\u0266",
-            "\1\u0267",
-            "",
-            "",
-            "",
             "\32\55",
-            "\22\55\1\u0268\7\55",
-            "\23\55\1\u0269\6\55",
+            "\1\u0267",
+            "\1\u0268",
+            "\1\u0269",
+            "\1\u026a",
             "\1\u026b",
             "",
             "",
-            "\32\55",
-            "\1\u026c",
-            "\1\u026d",
-            "\1\u026e",
             "",
-            "\22\55\1\u026f\7\55",
+            "\32\55",
+            "\22\55\1\u026c\7\55",
+            "\23\55\1\u026d\6\55",
+            "\1\u026f",
+            "",
+            "",
+            "\32\55",
             "\1\u0270",
+            "\1\u0271",
+            "\1\u0272",
             "",
-            "\32\55",
-            "\22\55\1\u0271\7\55",
-            "\23\55\1\u0272\6\55",
-            "\22\55\1\u0274\7\55",
+            "\22\55\1\u0273\7\55",
+            "\1\u0274",
+            "",
             "\32\55",
             "\22\55\1\u0275\7\55",
             "\23\55\1\u0276\6\55",
-            "\1\u0278",
-            "",
+            "\22\55\1\u0278\7\55",
             "\32\55",
-            "\32\55",
-            "\1\u0279",
-            "",
-            "\1\u027a",
-            "\1\u027b",
+            "\22\55\1\u0279\7\55",
+            "\23\55\1\u027a\6\55",
             "\1\u027c",
+            "",
             "\32\55",
-            "\23\55\1\u027e\6\55",
+            "\32\55",
+            "\1\u027d",
+            "",
+            "\1\u027e",
+            "\1\u027f",
             "\1\u0280",
             "\32\55",
+            "\23\55\1\u0282\6\55",
+            "\1\u0284",
             "\32\55",
-            "\1\u0282",
+            "\32\55",
+            "\1\u0286",
             "",
             "\32\55",
             "\32\55",
-            "\22\55\1\u0284\7\55",
-            "\23\55\1\u0285\6\55",
+            "\22\55\1\u0288\7\55",
+            "\23\55\1\u0289\6\55",
             "\32\55",
             "\32\55",
             "\32\55",
-            "\1\u0288",
+            "\1\u028c",
             "",
             "\32\55",
             "\32\55",
-            "\1\u0289",
+            "\1\u028d",
             "",
             "\32\55",
             "\32\55",
             "\32\55",
-            "\22\55\1\u028c\7\55",
+            "\22\55\1\u0290\7\55",
             "\32\55",
             "",
-            "\1\u028e",
-            "",
-            "\32\55",
+            "\1\u0292",
             "",
             "\32\55",
             "",
             "\32\55",
-            "\1\u0290",
+            "",
+            "\32\55",
+            "\1\u0294",
             "",
             "",
             "\32\55",
@@ -10477,7 +10511,7 @@ public class DateLexer extends Lexer {
             this.transition = DFA86_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( JANUARY | FEBRUARY | MARCH | APRIL | MAY | JUNE | JULY | AUGUST | SEPTEMBER | OCTOBER | NOVEMBER | DECEMBER | SUNDAY | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | HOUR | DAY | WEEK | MONTH | YEAR | TODAY | TOMORROW | YESTERDAY | AM | PM | T | MILITARY_HOUR_SUFFIX | MIDNIGHT | NOON | MORNING | UTC | EST | PST | CST | MST | AKST | HAST | INT_00 | INT_01 | INT_02 | INT_03 | INT_04 | INT_05 | INT_06 | INT_07 | INT_08 | INT_09 | INT_0 | INT_1 | INT_2 | INT_3 | INT_4 | INT_5 | INT_6 | INT_7 | INT_8 | INT_9 | INT_10 | INT_11 | INT_12 | INT_13 | INT_14 | INT_15 | INT_16 | INT_17 | INT_18 | INT_19 | INT_20 | INT_21 | INT_22 | INT_23 | INT_24 | INT_25 | INT_26 | INT_27 | INT_28 | INT_29 | INT_30 | INT_31 | INT_32 | INT_33 | INT_34 | INT_35 | INT_36 | INT_37 | INT_38 | INT_39 | INT_40 | INT_41 | INT_42 | INT_43 | INT_44 | INT_45 | INT_46 | INT_47 | INT_48 | INT_49 | INT_50 | INT_51 | INT_52 | INT_53 | INT_54 | INT_55 | INT_56 | INT_57 | INT_58 | INT_59 | INT_60 | INT_61 | INT_62 | INT_63 | INT_64 | INT_65 | INT_66 | INT_67 | INT_68 | INT_69 | INT_70 | INT_71 | INT_72 | INT_73 | INT_74 | INT_75 | INT_76 | INT_77 | INT_78 | INT_79 | INT_80 | INT_81 | INT_82 | INT_83 | INT_84 | INT_85 | INT_86 | INT_87 | INT_88 | INT_89 | INT_90 | INT_91 | INT_92 | INT_93 | INT_94 | INT_95 | INT_96 | INT_97 | INT_98 | INT_99 | ST | ND | RD | TH | ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE | TEN | ELEVEN | TWELVE | THIRTEEN | FOURTEEN | FIFTEEN | SIXTEEN | SEVENTEEN | EIGHTEEN | NINETEEN | TWENTY | THIRTY | FIRST | SECOND | THIRD | FOURTH | FIFTH | SIXTH | SEVENTH | EIGHTH | NINTH | TENTH | ELEVENTH | TWELFTH | THIRTEENTH | FOURTEENTH | FIFTEENTH | SIXTEENTH | SEVENTEENTH | EIGHTEENTH | NINETEENTH | TWENTIETH | THIRTIETH | COLON | COMMA | DASH | SLASH | DOT | PLUS | SINGLE_QUOTE | IN | THE | AT | ON | OF | THIS | LAST | NEXT | PAST | COMING | UPCOMING | FROM | NOW | AGO | BEFORE | AFTER | WHITE_SPACE | UNKNOWN_WORD | UNKNOWN_CHAR );";
+            return "1:1: Tokens : ( JANUARY | FEBRUARY | MARCH | APRIL | MAY | JUNE | JULY | AUGUST | SEPTEMBER | OCTOBER | NOVEMBER | DECEMBER | SUNDAY | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | HOUR | DAY | WEEK | MONTH | YEAR | TODAY | TOMORROW | YESTERDAY | AM | PM | T | MILITARY_HOUR_SUFFIX | MIDNIGHT | NOON | MORNING | NIGHT | UTC | EST | PST | CST | MST | AKST | HAST | INT_00 | INT_01 | INT_02 | INT_03 | INT_04 | INT_05 | INT_06 | INT_07 | INT_08 | INT_09 | INT_0 | INT_1 | INT_2 | INT_3 | INT_4 | INT_5 | INT_6 | INT_7 | INT_8 | INT_9 | INT_10 | INT_11 | INT_12 | INT_13 | INT_14 | INT_15 | INT_16 | INT_17 | INT_18 | INT_19 | INT_20 | INT_21 | INT_22 | INT_23 | INT_24 | INT_25 | INT_26 | INT_27 | INT_28 | INT_29 | INT_30 | INT_31 | INT_32 | INT_33 | INT_34 | INT_35 | INT_36 | INT_37 | INT_38 | INT_39 | INT_40 | INT_41 | INT_42 | INT_43 | INT_44 | INT_45 | INT_46 | INT_47 | INT_48 | INT_49 | INT_50 | INT_51 | INT_52 | INT_53 | INT_54 | INT_55 | INT_56 | INT_57 | INT_58 | INT_59 | INT_60 | INT_61 | INT_62 | INT_63 | INT_64 | INT_65 | INT_66 | INT_67 | INT_68 | INT_69 | INT_70 | INT_71 | INT_72 | INT_73 | INT_74 | INT_75 | INT_76 | INT_77 | INT_78 | INT_79 | INT_80 | INT_81 | INT_82 | INT_83 | INT_84 | INT_85 | INT_86 | INT_87 | INT_88 | INT_89 | INT_90 | INT_91 | INT_92 | INT_93 | INT_94 | INT_95 | INT_96 | INT_97 | INT_98 | INT_99 | ST | ND | RD | TH | ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE | TEN | ELEVEN | TWELVE | THIRTEEN | FOURTEEN | FIFTEEN | SIXTEEN | SEVENTEEN | EIGHTEEN | NINETEEN | TWENTY | THIRTY | FIRST | SECOND | THIRD | FOURTH | FIFTH | SIXTH | SEVENTH | EIGHTH | NINTH | TENTH | ELEVENTH | TWELFTH | THIRTEENTH | FOURTEENTH | FIFTEENTH | SIXTEENTH | SEVENTEENTH | EIGHTEENTH | NINETEENTH | TWENTIETH | THIRTIETH | COLON | COMMA | DASH | SLASH | DOT | PLUS | SINGLE_QUOTE | IN | THE | AT | ON | OF | THIS | LAST | NEXT | PAST | COMING | UPCOMING | FROM | NOW | AGO | BEFORE | AFTER | WHITE_SPACE | UNKNOWN_WORD | UNKNOWN_CHAR );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;

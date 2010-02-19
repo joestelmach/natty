@@ -46,6 +46,7 @@ MILITARY_HOUR_SUFFIX : 'h';
 MIDNIGHT : 'midnight' | 'mid-night';
 NOON     : 'noon'     | 'afternoon' | 'after-noon';
 MORNING  : 'morning';
+NIGHT    : 'night'; 
 
 UTC  : 'utc'  | 'gmt'  | 'z';
 EST  : 'est'  | 'edt'  | 'et';
