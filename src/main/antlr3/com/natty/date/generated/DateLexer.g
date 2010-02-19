@@ -245,7 +245,7 @@ BEFORE   : 'before';
 AFTER    : 'after';
 
 WHITE_SPACE
-  : SPACE+
+  : (DOT | SPACE)+
   ;
   
 UNKNOWN_WORD 

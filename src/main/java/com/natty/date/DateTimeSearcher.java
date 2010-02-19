@@ -100,7 +100,6 @@ public class DateTimeSearcher {
     Date date = new Date();
     Tree tree = null;
     DateParser parser = null;
-    Printer printer = null;
     try {
       // lex
       input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(inputString.getBytes()));
@@ -109,8 +108,6 @@ public class DateTimeSearcher {
       
       // parse 
       parser = new DateParser(tokens, builder);
-      printer = new Printer(parser.getTokenNames());
-      printer.printTokenStream(tokens);
       DateParser.date_time_return result = parser.date_time();
       
       // walk
@@ -138,7 +135,6 @@ public class DateTimeSearcher {
       json.put("utctime", _formatter.format(date));
       json.put("structure", builder.toJSON());
       StringBuilder buffer = new StringBuilder();
-      printer.printTree(tree, buffer);
       if(tree != null) json.put("ast", buffer.toString());
       
     } catch(JSONException e) {

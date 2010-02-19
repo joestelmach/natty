@@ -111,7 +111,7 @@ relaxed_date
   ;
   
 relaxed_day_of_week
-  : day_of_week ((COMMA WHITE_SPACE?) | WHITE_SPACE) -> day_of_week
+  : ((relative_prefix | implicit_prefix) WHITE_SPACE)? day_of_week ((COMMA WHITE_SPACE?) | WHITE_SPACE) -> day_of_week
   ;
   
   

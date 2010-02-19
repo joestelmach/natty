@@ -59,6 +59,8 @@ public class ParseEventListener extends BlankDebugEventListener {
    * Consumes the current token list as a date_time
    */
   private void consumeDateTime() {
+    _inDateTime = false;
+    if(_tokens.size() == 0) return;
     StringBuilder builder = new StringBuilder();
     for (Token token : _tokens) {
       builder.append(token.getText());
@@ -70,6 +72,5 @@ public class ParseEventListener extends BlankDebugEventListener {
     int end = start + text.length();
     _locations.add(new Location(text, line, start, end));
     _tokens.clear();
-    _inDateTime = false;
   }
 }
