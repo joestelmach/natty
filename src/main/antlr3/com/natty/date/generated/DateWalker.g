@@ -16,11 +16,19 @@ options {
 }
 
 search
-  : date_time+
+  : ^(LIST (date_time | date_time_alternative)+)
+  ;
+  
+date_time_alternative
+  : ^(DATE_TIME_ALTERNATIVE date_time+)
   ;
 
 date_time
+  @init {
+    System.out.println("entering"); 
+  }
   @after {
+    System.out.println("exiting"); 
     _walkerState.captureDateTime(); 
   }
   : ^(DATE_TIME date? time?)

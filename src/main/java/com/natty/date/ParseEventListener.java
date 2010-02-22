@@ -60,6 +60,7 @@ public class ParseEventListener extends BlankDebugEventListener {
    */
   private void consumeDateTime() {
     _inDateTime = false;
+    System.out.println("consuming");
     if(_tokens.size() == 0) return;
     StringBuilder builder = new StringBuilder();
     for (Token token : _tokens) {

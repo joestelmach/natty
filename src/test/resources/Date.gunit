@@ -45,6 +45,8 @@ date:
 global_date_prefix:
 "the day after " -> "> by_day 1"
 "day after " -> "> by_day 1"
+"2 days after " -> "> by_day 2"
+"three days before " -> "< by_day 3"
 "the day before " -> "< by_day 1"
 "day before " -> "< by_day 1"
 

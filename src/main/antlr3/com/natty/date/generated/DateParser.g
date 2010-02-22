@@ -12,6 +12,7 @@ tokens {
   DAY_OF_WEEK;
   YEAR_OF;
   DATE_TIME;
+  DATE_TIME_ALTERNATIVE;
   EXPLICIT_DATE;
   RELATIVE_DATE;
   SEEK;
@@ -26,12 +27,19 @@ tokens {
   AM_PM;
   ZONE;
   ZONE_OFFSET;
+  LIST;
 }
 
 @header { package com.natty.date.generated; }
 
 search 
-  : (((date_time)=>date_time | .*) text)+ -> date_time+
+  : (((date_time_entry)=> date_time_entry | .*) text)+ 
+      -> ^(LIST date_time_entry+)
+  ;
+  
+date_time_entry
+  : (date_time_alternative)=> date_time_alternative
+  | date_time
   ;
   
 text
@@ -64,28 +72,38 @@ date
   : (formal_date)=> formal_date
   | (relaxed_date)=> relaxed_date
   | relative_date
-  | global_date_prefix date 
+  | global_date_prefix WHITE_SPACE date 
       -> ^(RELATIVE_DATE ^(SEEK global_date_prefix date))
+  ;
+  
+date_time_alternative
+  : (date WHITE_SPACE OR WHITE_SPACE date)=> d1=date WHITE_SPACE OR WHITE_SPACE d2=date (date_time_separator time)?
+      -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME $d1 time?) ^(DATE_TIME $d2 time?))
+      
+  // today or the day after that, feb 16th or 2 days after that, january fourth or the friday after
+  | date WHITE_SPACE OR WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator time)?
+      -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date time?) ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) time?)))
+    
   ;
   
 global_date_prefix
   // the day after
-  : (THE WHITE_SPACE)? DAY WHITE_SPACE prefix_direction WHITE_SPACE 
+  : (THE WHITE_SPACE)? DAY WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_day"] INT["1"]
   
   // 3 days before
-  | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE DAY WHITE_SPACE prefix_direction WHITE_SPACE
+  | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE DAY WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix
       
   // the friday after
-  | (THE WHITE_SPACE)? day_of_week WHITE_SPACE prefix_direction WHITE_SPACE
+  | (THE WHITE_SPACE)? day_of_week WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_day"] INT["1"] day_of_week
       
   // 3 fridays before
-  | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE day_of_week WHITE_SPACE prefix_direction WHITE_SPACE
+  | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE day_of_week WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix day_of_week
       
-  | (THE WHITE_SPACE)? spelled_first_to_thirty_first WHITE_SPACE day_of_week WHITE_SPACE prefix_direction WHITE_SPACE
+  | (THE WHITE_SPACE)? spelled_first_to_thirty_first WHITE_SPACE day_of_week WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_day"] spelled_first_to_thirty_first day_of_week
   ; 
   

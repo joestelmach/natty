@@ -230,10 +230,12 @@ SINGLE_QUOTE : '\'';
 
 IN       : 'in';
 THE      : 'the';
+OR       : 'or';
 AT       : 'at';
 ON       : 'on';
 OF       : 'of';
 THIS     : 'this';
+THAT     : 'that';
 LAST     : 'last';
 NEXT     : 'next';
 PAST     : 'past';
