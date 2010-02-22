@@ -16,6 +16,8 @@ date_time:
 "3am october first 2010" -> (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 2010)) (EXPLICIT_TIME (HOURS_OF_DAY 3) (MINUTES_OF_HOUR 0) am))
 "next wed. at 5pm" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))) (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0) pm))
 "3 days after next wed" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 3 (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))))))
+"the sunday after next wed" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 1 (DAY_OF_WEEK 1) (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))))))
+"3 sundays after next wed" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 3 (DAY_OF_WEEK 1) (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))))))
 "september 11, 2010" OK
 
 date_time_separator:

@@ -22,7 +22,7 @@ import com.natty.utility.Printer;
  */
 public class ParserTest {
   public static void main(String[] args) {
-    String inputString = "February 23rd!";
+    String inputString = "three sundays after 10/4/2003";
     ANTLRInputStream input = null;
     Date date = new Date();
     Tree tree = null;
@@ -35,7 +35,8 @@ public class ParserTest {
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
       // parse 
-      parser = new DateParser(tokens, new BlankDebugEventListener());
+      //parser = new DateParser(tokens, new BlankDebugEventListener());
+      parser = new DateParser(tokens);
       printer = new Printer(parser.getTokenNames());
       printer.printTokenStream(tokens);
       DateParser.date_time_return result = parser.date_time();
@@ -49,7 +50,8 @@ public class ParserTest {
       // and walk it
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
-      DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
+      //DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
+      DateWalker walker = new DateWalker(nodes);
       walker.date_time();
       date = walker.getState().getDateTimes().get(0);
       System.out.println(date);

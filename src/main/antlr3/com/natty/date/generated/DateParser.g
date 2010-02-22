@@ -69,11 +69,21 @@ date
   ;
   
 global_date_prefix
+  // the day after
   : (THE WHITE_SPACE)? DAY WHITE_SPACE prefix_direction WHITE_SPACE 
       -> prefix_direction SEEK_BY["by_day"] INT["1"]
   
+  // 3 days before
   | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE DAY WHITE_SPACE prefix_direction WHITE_SPACE
       -> prefix_direction SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix
+      
+  // the friday after
+  | (THE WHITE_SPACE)? day_of_week WHITE_SPACE prefix_direction WHITE_SPACE
+      -> prefix_direction SEEK_BY["by_day"] INT["1"] day_of_week
+      
+  // 3 fridays before
+  | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE day_of_week WHITE_SPACE prefix_direction WHITE_SPACE
+      -> prefix_direction SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix day_of_week
   ; 
   
 prefix_direction
