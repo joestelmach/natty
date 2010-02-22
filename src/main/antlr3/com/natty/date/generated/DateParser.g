@@ -84,6 +84,9 @@ global_date_prefix
   // 3 fridays before
   | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE day_of_week WHITE_SPACE prefix_direction WHITE_SPACE
       -> prefix_direction SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix day_of_week
+      
+  | (THE WHITE_SPACE)? spelled_first_to_thirty_first WHITE_SPACE day_of_week WHITE_SPACE prefix_direction WHITE_SPACE
+      -> prefix_direction SEEK_BY["by_day"] spelled_first_to_thirty_first day_of_week
   ; 
   
 prefix_direction

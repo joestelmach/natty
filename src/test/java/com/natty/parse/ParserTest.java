@@ -22,7 +22,7 @@ import com.natty.utility.Printer;
  */
 public class ParserTest {
   public static void main(String[] args) {
-    String inputString = "three sundays after 10/4/2003";
+    String inputString = "the 2nd sunday after 10/4";
     ANTLRInputStream input = null;
     Date date = new Date();
     Tree tree = null;
