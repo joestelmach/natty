@@ -20,6 +20,16 @@ date_time:
 "3 sundays after next wed" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 3 (DAY_OF_WEEK 1) (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))))))
 "september 11, 2010" OK
 
+date_time_alternative:
+"this wed. or next at 5pm" -> (DATE_TIME_ALTERNATIVE (DATE_TIME (RELATIVE_DATE (SEEK > by_day 0 (DAY_OF_WEEK 4))) (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0) pm)) (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))) (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0) pm)))
+"feb 28th or 2 days after" -> (DATE_TIME_ALTERNATIVE (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 2) (DAY_OF_MONTH 28))) (DATE_TIME (RELATIVE_DATE (SEEK > by_day 2 (EXPLICIT_DATE (MONTH_OF_YEAR 2) (DAY_OF_MONTH 28))))))
+"january fourth or the friday after" -> (DATE_TIME_ALTERNATIVE (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 1) (DAY_OF_MONTH 4))) (DATE_TIME (RELATIVE_DATE (SEEK > by_day 1 (DAY_OF_WEEK 6) (EXPLICIT_DATE (MONTH_OF_YEAR 1) (DAY_OF_MONTH 4))))))
+"10/10/2008 or 10/12/2008" -> (DATE_TIME_ALTERNATIVE (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 10) (YEAR_OF 2008))) (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 12) (YEAR_OF 2008))))
+"next wed or thursday" -> (DATE_TIME_ALTERNATIVE (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4)))) (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4) (DAY_OF_WEEK 5)))))
+"next wed, thurs, fri" -> (DATE_TIME_ALTERNATIVE (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4)))) (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4) (DAY_OF_WEEK 5)))) (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4) (DAY_OF_WEEK 6)))))
+"next wed, thurs, or fri at 6pm" -> (DATE_TIME_ALTERNATIVE (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))) (EXPLICIT_TIME (HOURS_OF_DAY 6) (MINUTES_OF_HOUR 0) pm)) (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4) (DAY_OF_WEEK 5))) (EXPLICIT_TIME (HOURS_OF_DAY 6) (MINUTES_OF_HOUR 0) pm)) (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4) (DAY_OF_WEEK 6))) (EXPLICIT_TIME (HOURS_OF_DAY 6) (MINUTES_OF_HOUR 0) pm)))
+"10/10 or 12/30 or 10/15 at 5pm" -> (DATE_TIME_ALTERNATIVE (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 10)) (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0) pm)) (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 12) (DAY_OF_MONTH 30)) (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0) pm)) (DATE_TIME (EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 15)) (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0) pm)))
+
 date_time_separator:
 "," OK
 ", " OK
@@ -43,12 +53,12 @@ date:
 //"the day before the day before yesterday" -> 
 
 global_date_prefix:
-"the day after " -> "> by_day 1"
-"day after " -> "> by_day 1"
-"2 days after " -> "> by_day 2"
-"three days before " -> "< by_day 3"
-"the day before " -> "< by_day 1"
-"day before " -> "< by_day 1"
+"the day after" -> "> by_day 1"
+"day after" -> "> by_day 1"
+"2 days after" -> "> by_day 2"
+"three days before" -> "< by_day 3"
+"the day before" -> "< by_day 1"
+"day before" -> "< by_day 1"
 
 // ********** relaxed date tests **********
 

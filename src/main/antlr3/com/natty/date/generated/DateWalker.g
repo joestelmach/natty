@@ -20,15 +20,17 @@ search
   ;
   
 date_time_alternative
+  @init {
+    _walkerState.enterDateTimeAlternative();
+  }
+  @after {
+    _walkerState.exitDateTimeAlternative();
+  }
   : ^(DATE_TIME_ALTERNATIVE date_time+)
   ;
 
 date_time
-  @init {
-    System.out.println("entering"); 
-  }
   @after {
-    System.out.println("exiting"); 
     _walkerState.captureDateTime(); 
   }
   : ^(DATE_TIME date? time?)

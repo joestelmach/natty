@@ -77,13 +77,53 @@ date
   ;
   
 date_time_alternative
-  : (date WHITE_SPACE OR WHITE_SPACE date)=> d1=date WHITE_SPACE OR WHITE_SPACE d2=date (date_time_separator time)?
-      -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME $d1 time?) ^(DATE_TIME $d2 time?))
-      
+  // next wed or thurs, next wed, thurs, or fri
+  : (alternative_day_of_week_list)=> alternative_day_of_week_list
+      -> ^(DATE_TIME_ALTERNATIVE alternative_day_of_week_list)
+  
+  // this wed. or next
+  | ((THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction)=> 
+      (THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction (date_time_separator time)?
+      {System.out.println("match 2");}
+      -> ^(DATE_TIME_ALTERNATIVE 
+            ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week)) time?) 
+            ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) time?)
+          )
+          
   // today or the day after that, feb 16th or 2 days after that, january fourth or the friday after
-  | date WHITE_SPACE OR WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator time)?
+  | (date WHITE_SPACE OR WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator time)?)=>
+      date WHITE_SPACE OR WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator time)?
+      {System.out.println("match 3");}
       -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date time?) ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) time?)))
-    
+      
+  // date or date, in any format
+  | alternative_date_list
+      -> ^(DATE_TIME_ALTERNATIVE alternative_date_list)
+  ;
+  
+alternative_day_of_week_list
+  : alternative_direction WHITE_SPACE day_of_week (day_of_week_list_separator day_of_week)* (date_time_separator time)?
+      -> (^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) time?))+
+  ;
+  
+alternative_date_list
+  : date (date_list_separator date)* (date_time_separator time)?
+      -> (^(DATE_TIME date time?))+
+  ;
+  
+day_of_week_list_separator
+  : (COMMA WHITE_SPACE? | WHITE_SPACE) (OR WHITE_SPACE)?
+  ;
+  
+date_list_separator
+  : COMMA? WHITE_SPACE OR WHITE_SPACE
+  ;
+  
+alternative_direction
+  : NEXT -> DIRECTION[">"] SEEK_BY["by_week"] INT["1"]
+  | LAST -> DIRECTION["<"] SEEK_BY["by_week"] INT["1"]
+  | THIS -> DIRECTION[">"] SEEK_BY["by_day"] INT["0"]
+  | -> DIRECTION[">"] SEEK_BY["by_day"] INT["0"]
   ;
   
 global_date_prefix

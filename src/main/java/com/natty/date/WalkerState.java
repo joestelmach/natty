@@ -15,7 +15,9 @@ public class WalkerState {
   private GregorianCalendar _calendar;
   private int _currentYear;
   private static final int TWO_DIGIT_YEAR_CENTURY_THRESHOLD = 20;
-  private List<Date> _dateTimes;
+  private List<List<Date>> _dateTimes;
+  private List<Date> _currentDateTimes;
+  private boolean _inAlternative = false;
   private static final Logger _logger = Logger.getLogger(WalkerState.class.getName());
   
   /**
@@ -24,7 +26,8 @@ public class WalkerState {
    */
   public WalkerState() {
     resetCalender();
-    _dateTimes = new ArrayList<Date>();
+    _currentDateTimes = new ArrayList<Date>();
+    _dateTimes = new ArrayList<List<Date>>();
   }
   
   /**
@@ -273,11 +276,26 @@ public class WalkerState {
   
   public void captureDateTime() {
     Date date = _calendar.getTime();
-    _dateTimes.add(date);
+    _currentDateTimes.add(date);
     resetCalender();
+    
+    if(!_inAlternative) {
+      _dateTimes.add(_currentDateTimes);
+      _currentDateTimes = new ArrayList<Date>();
+    }
   }
   
-  public List<Date> getDateTimes() {
+  public void enterDateTimeAlternative() {
+    _inAlternative = true;
+  }
+  
+  public void exitDateTimeAlternative() {
+    _inAlternative = false;
+    _dateTimes.add(_currentDateTimes);
+    _currentDateTimes = new ArrayList<Date>();
+  }
+  
+  public List<List<Date>> getDateTimes() {
     return _dateTimes;
   }
   

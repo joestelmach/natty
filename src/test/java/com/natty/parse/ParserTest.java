@@ -26,7 +26,7 @@ import com.natty.utility.Printer;
  */
 public class ParserTest {
   public static void main(String[] args) {
-    String inputString = "10/10/2008 or 10/14 at 5pm pst";
+    String inputString = "10/10 or 12/30 or 10/15 at 5pm";
     ANTLRInputStream input = null;
     Tree tree = null;
     DateParser parser = null;
@@ -39,8 +39,8 @@ public class ParserTest {
       
       // parse 
       ParseEventListener parseListener = new ParseEventListener();
-      parser = new DateParser(tokens, parseListener);
-      //parser = new DateParser(tokens);
+      //parser = new DateParser(tokens, parseListener);
+      parser = new DateParser(tokens);
       printer = new Printer(parser.getTokenNames());
       printer.printTokenStream(tokens);
       DateParser.search_return result = parser.search();
@@ -50,23 +50,23 @@ public class ParserTest {
       StringBuilder builder = new StringBuilder();
       printer.printTree(tree, builder);
       System.out.println(builder.toString());
+      System.out.println(tree.toStringTree());
       
       // and walk it
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
-      DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
-      //DateWalker walker = new DateWalker(nodes);
+      //DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
+      DateWalker walker = new DateWalker(nodes);
       walker.search();
       
-      System.out.println(Arrays.toString(walker.getState().getDateTimes().toArray()));
-      /*
+      System.out.println("-----");
+      System.out.println("-----");
       List<Location> locations = parseListener.getLocations();
       for(int i=0; i<locations.size(); i++) {
         Location loc = locations.get(i);
-        Date date = walker.getState().getDateTimes().get(i);
-        System.out.println(loc.getText() + ": " + loc.getStart() + " to " + loc.getEnd() + " -> " + date);
+        List<Date> dateList = walker.getState().getDateTimes().get(i);
+        System.out.println(loc.getText() + ": " + loc.getStart() + " to " + loc.getEnd() + " -> " + Arrays.toString(dateList.toArray()));
       }
-      */
       
     } catch (Exception e) {
       e.printStackTrace();

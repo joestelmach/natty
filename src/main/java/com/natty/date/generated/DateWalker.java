@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g 2010-02-22 16:40:03
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g 2010-02-23 10:55:18
  package com.natty.date.generated; 
 
 import org.antlr.runtime.*;
@@ -6,9 +6,7 @@ import org.antlr.runtime.tree.*;import java.util.Stack;
 import java.util.List;
 import java.util.ArrayList;
 
-import org.antlr.runtime.debug.*;
-import java.io.IOException;
-public class DateWalker extends DebugTreeParser {
+public class DateWalker extends TreeParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DOT", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", "TODAY", "TOMORROW", "YESTERDAY", "AM", "PM", "T", "MILITARY_HOUR_SUFFIX", "MIDNIGHT", "NOON", "MORNING", "NIGHT", "UTC", "EST", "PST", "CST", "MST", "AKST", "HAST", "INT_00", "INT_01", "INT_02", "INT_03", "INT_04", "INT_05", "INT_06", "INT_07", "INT_08", "INT_09", "INT_0", "INT_1", "INT_2", "INT_3", "INT_4", "INT_5", "INT_6", "INT_7", "INT_8", "INT_9", "INT_10", "INT_11", "INT_12", "INT_13", "INT_14", "INT_15", "INT_16", "INT_17", "INT_18", "INT_19", "INT_20", "INT_21", "INT_22", "INT_23", "INT_24", "INT_25", "INT_26", "INT_27", "INT_28", "INT_29", "INT_30", "INT_31", "INT_32", "INT_33", "INT_34", "INT_35", "INT_36", "INT_37", "INT_38", "INT_39", "INT_40", "INT_41", "INT_42", "INT_43", "INT_44", "INT_45", "INT_46", "INT_47", "INT_48", "INT_49", "INT_50", "INT_51", "INT_52", "INT_53", "INT_54", "INT_55", "INT_56", "INT_57", "INT_58", "INT_59", "INT_60", "INT_61", "INT_62", "INT_63", "INT_64", "INT_65", "INT_66", "INT_67", "INT_68", "INT_69", "INT_70", "INT_71", "INT_72", "INT_73", "INT_74", "INT_75", "INT_76", "INT_77", "INT_78", "INT_79", "INT_80", "INT_81", "INT_82", "INT_83", "INT_84", "INT_85", "INT_86", "INT_87", "INT_88", "INT_89", "INT_90", "INT_91", "INT_92", "INT_93", "INT_94", "INT_95", "INT_96", "INT_97", "INT_98", "INT_99", "ST", "ND", "RD", "TH", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN", "TWENTY", "THIRTY", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH", "THIRTEENTH", "FOURTEENTH", "FIFTEENTH", "SIXTEENTH", "SEVENTEENTH", "EIGHTEENTH", "NINETEENTH", "TWENTIETH", "THIRTIETH", "COLON", "COMMA", "DASH", "SLASH", "PLUS", "SINGLE_QUOTE", "IN", "THE", "OR", "AT", "ON", "OF", "THIS", "THAT", "LAST", "NEXT", "PAST", "COMING", "UPCOMING", "FROM", "NOW", "AGO", "BEFORE", "AFTER", "SPACE", "WHITE_SPACE", "UNKNOWN_WORD", "UNKNOWN_CHAR", "DIGIT", "INT", "MONTH_OF_YEAR", "DAY_OF_MONTH", "DAY_OF_WEEK", "YEAR_OF", "DATE_TIME", "DATE_TIME_ALTERNATIVE", "EXPLICIT_DATE", "RELATIVE_DATE", "SEEK", "DIRECTION", "SEEK_BY", "SPAN", "WEEK_INDEX", "EXPLICIT_TIME", "HOURS_OF_DAY", "MINUTES_OF_HOUR", "SECONDS_OF_MINUTE", "AM_PM", "ZONE", "ZONE_OFFSET", "LIST"
     };
@@ -267,42 +265,18 @@ public class DateWalker extends DebugTreeParser {
     // delegates
     // delegators
 
-    public static final String[] ruleNames = new String[] {
-        "invalidRule", "date_time_alternative", "explicit_date", "seek", 
-        "search", "date", "relative_date", "date_time", "time"
-    };
-     
-        public int ruleLevel = 0;
-        public int getRuleLevel() { return ruleLevel; }
-        public void incRuleLevel() { ruleLevel++; }
-        public void decRuleLevel() { ruleLevel--; }
+
         public DateWalker(TreeNodeStream input) {
-            this(input, DebugEventSocketProxy.DEFAULT_DEBUGGER_PORT, new RecognizerSharedState());
+            this(input, new RecognizerSharedState());
         }
-        public DateWalker(TreeNodeStream input, int port, RecognizerSharedState state) {
+        public DateWalker(TreeNodeStream input, RecognizerSharedState state) {
             super(input, state);
-            DebugEventSocketProxy proxy =
-                new DebugEventSocketProxy(this, port, input.getTreeAdaptor());
-            setDebugListener(proxy);
-            try {
-                proxy.handshake();
-            }
-            catch (IOException ioe) {
-                reportError(ioe);
-            }
+             
         }
-    public DateWalker(TreeNodeStream input, DebugEventListener dbg) {
-        super(input, dbg, new RecognizerSharedState());
-
-    }
-    protected boolean evalPredicate(boolean result, String predicate) {
-        dbg.semanticPredicate(result, predicate);
-        return result;
-    }
-
+        
 
     public String[] getTokenNames() { return DateWalker.tokenNames; }
-    public String getGrammarFileName() { return "/Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g"; }
+    public String getGrammarFileName() { return "/Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g"; }
 
 
       private com.natty.date.WalkerState _walkerState = new com.natty.date.WalkerState();
@@ -314,34 +288,20 @@ public class DateWalker extends DebugTreeParser {
 
 
     // $ANTLR start "search"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:18:1: search : ^( LIST ( date_time | date_time_alternative )+ ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:18:1: search : ^( LIST ( date_time | date_time_alternative )+ ) ;
     public final void search() throws RecognitionException {
-        try { dbg.enterRule(getGrammarFileName(), "search");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(18, 1);
-
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:3: ( ^( LIST ( date_time | date_time_alternative )+ ) )
-            dbg.enterAlt(1);
-
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:5: ^( LIST ( date_time | date_time_alternative )+ )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:3: ( ^( LIST ( date_time | date_time_alternative )+ ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:5: ^( LIST ( date_time | date_time_alternative )+ )
             {
-            dbg.location(19,5);
-            dbg.location(19,7);
             match(input,LIST,FOLLOW_LIST_in_search46); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(19,12);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:12: ( date_time | date_time_alternative )+
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:12: ( date_time | date_time_alternative )+
             int cnt1=0;
-            try { dbg.enterSubRule(1);
-
             loop1:
             do {
                 int alt1=3;
-                try { dbg.enterDecision(1);
-
                 int LA1_0 = input.LA(1);
 
                 if ( (LA1_0==DATE_TIME) ) {
@@ -352,15 +312,10 @@ public class DateWalker extends DebugTreeParser {
                 }
 
 
-                } finally {dbg.exitDecision(1);}
-
                 switch (alt1) {
             	case 1 :
-            	    dbg.enterAlt(1);
-
-            	    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:13: date_time
+            	    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:13: date_time
             	    {
-            	    dbg.location(19,13);
             	    pushFollow(FOLLOW_date_time_in_search49);
             	    date_time();
 
@@ -370,11 +325,8 @@ public class DateWalker extends DebugTreeParser {
             	    }
             	    break;
             	case 2 :
-            	    dbg.enterAlt(2);
-
-            	    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:25: date_time_alternative
+            	    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:19:25: date_time_alternative
             	    {
-            	    dbg.location(19,25);
             	    pushFollow(FOLLOW_date_time_alternative_in_search53);
             	    date_time_alternative();
 
@@ -388,13 +340,10 @@ public class DateWalker extends DebugTreeParser {
             	    if ( cnt1 >= 1 ) break loop1;
                         EarlyExitException eee =
                             new EarlyExitException(1, input);
-                        dbg.recognitionException(eee);
-
                         throw eee;
                 }
                 cnt1++;
             } while (true);
-            } finally {dbg.exitSubRule(1);}
 
 
             match(input, Token.UP, null); 
@@ -408,49 +357,29 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(20, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "search");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "search"
 
 
     // $ANTLR start "date_time_alternative"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:22:1: date_time_alternative : ^( DATE_TIME_ALTERNATIVE ( date_time )+ ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:22:1: date_time_alternative : ^( DATE_TIME_ALTERNATIVE ( date_time )+ ) ;
     public final void date_time_alternative() throws RecognitionException {
-        try { dbg.enterRule(getGrammarFileName(), "date_time_alternative");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(22, 1);
 
+            _walkerState.enterDateTimeAlternative();
+          
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:3: ( ^( DATE_TIME_ALTERNATIVE ( date_time )+ ) )
-            dbg.enterAlt(1);
-
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:5: ^( DATE_TIME_ALTERNATIVE ( date_time )+ )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:29:3: ( ^( DATE_TIME_ALTERNATIVE ( date_time )+ ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:29:5: ^( DATE_TIME_ALTERNATIVE ( date_time )+ )
             {
-            dbg.location(23,5);
-            dbg.location(23,7);
-            match(input,DATE_TIME_ALTERNATIVE,FOLLOW_DATE_TIME_ALTERNATIVE_in_date_time_alternative72); 
+            match(input,DATE_TIME_ALTERNATIVE,FOLLOW_DATE_TIME_ALTERNATIVE_in_date_time_alternative86); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(23,29);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:29: ( date_time )+
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:29:29: ( date_time )+
             int cnt2=0;
-            try { dbg.enterSubRule(2);
-
             loop2:
             do {
                 int alt2=2;
-                try { dbg.enterDecision(2);
-
                 int LA2_0 = input.LA(1);
 
                 if ( (LA2_0==DATE_TIME) ) {
@@ -458,16 +387,11 @@ public class DateWalker extends DebugTreeParser {
                 }
 
 
-                } finally {dbg.exitDecision(2);}
-
                 switch (alt2) {
             	case 1 :
-            	    dbg.enterAlt(1);
-
-            	    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:23:29: date_time
+            	    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:29:29: date_time
             	    {
-            	    dbg.location(23,29);
-            	    pushFollow(FOLLOW_date_time_in_date_time_alternative74);
+            	    pushFollow(FOLLOW_date_time_in_date_time_alternative88);
             	    date_time();
 
             	    state._fsp--;
@@ -480,19 +404,19 @@ public class DateWalker extends DebugTreeParser {
             	    if ( cnt2 >= 1 ) break loop2;
                         EarlyExitException eee =
                             new EarlyExitException(2, input);
-                        dbg.recognitionException(eee);
-
                         throw eee;
                 }
                 cnt2++;
             } while (true);
-            } finally {dbg.exitSubRule(2);}
 
 
             match(input, Token.UP, null); 
 
             }
 
+
+                _walkerState.exitDateTimeAlternative();
+              
         }
         catch (RecognitionException re) {
             reportError(re);
@@ -500,64 +424,34 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(24, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "date_time_alternative");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "date_time_alternative"
 
 
     // $ANTLR start "date_time"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:26:1: date_time : ^( DATE_TIME ( date )? ( time )? ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:32:1: date_time : ^( DATE_TIME ( date )? ( time )? ) ;
     public final void date_time() throws RecognitionException {
-
-            System.out.println("entering"); 
-          
-        try { dbg.enterRule(getGrammarFileName(), "date_time");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(26, 1);
-
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:34:3: ( ^( DATE_TIME ( date )? ( time )? ) )
-            dbg.enterAlt(1);
-
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:34:5: ^( DATE_TIME ( date )? ( time )? )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:36:3: ( ^( DATE_TIME ( date )? ( time )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:36:5: ^( DATE_TIME ( date )? ( time )? )
             {
-            dbg.location(34,5);
-            dbg.location(34,7);
-            match(input,DATE_TIME,FOLLOW_DATE_TIME_in_date_time104); 
+            match(input,DATE_TIME,FOLLOW_DATE_TIME_in_date_time111); 
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                dbg.location(34,17);
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:34:17: ( date )?
+                // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:36:17: ( date )?
                 int alt3=2;
-                try { dbg.enterSubRule(3);
-                try { dbg.enterDecision(3);
-
                 int LA3_0 = input.LA(1);
 
                 if ( ((LA3_0>=EXPLICIT_DATE && LA3_0<=RELATIVE_DATE)) ) {
                     alt3=1;
                 }
-                } finally {dbg.exitDecision(3);}
-
                 switch (alt3) {
                     case 1 :
-                        dbg.enterAlt(1);
-
-                        // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:34:17: date
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:36:17: date
                         {
-                        dbg.location(34,17);
-                        pushFollow(FOLLOW_date_in_date_time106);
+                        pushFollow(FOLLOW_date_in_date_time113);
                         date();
 
                         state._fsp--;
@@ -567,29 +461,19 @@ public class DateWalker extends DebugTreeParser {
                         break;
 
                 }
-                } finally {dbg.exitSubRule(3);}
 
-                dbg.location(34,23);
-                // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:34:23: ( time )?
+                // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:36:23: ( time )?
                 int alt4=2;
-                try { dbg.enterSubRule(4);
-                try { dbg.enterDecision(4);
-
                 int LA4_0 = input.LA(1);
 
                 if ( (LA4_0==EXPLICIT_TIME) ) {
                     alt4=1;
                 }
-                } finally {dbg.exitDecision(4);}
-
                 switch (alt4) {
                     case 1 :
-                        dbg.enterAlt(1);
-
-                        // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:34:23: time
+                        // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:36:23: time
                         {
-                        dbg.location(34,23);
-                        pushFollow(FOLLOW_time_in_date_time109);
+                        pushFollow(FOLLOW_time_in_date_time116);
                         time();
 
                         state._fsp--;
@@ -599,7 +483,6 @@ public class DateWalker extends DebugTreeParser {
                         break;
 
                 }
-                } finally {dbg.exitSubRule(4);}
 
 
                 match(input, Token.UP, null); 
@@ -608,7 +491,6 @@ public class DateWalker extends DebugTreeParser {
             }
 
 
-                System.out.println("exiting"); 
                 _walkerState.captureDateTime(); 
               
         }
@@ -618,33 +500,17 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(35, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "date_time");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "date_time"
 
 
     // $ANTLR start "date"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:37:1: date : ( relative_date | explicit_date );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:39:1: date : ( relative_date | explicit_date );
     public final void date() throws RecognitionException {
-        try { dbg.enterRule(getGrammarFileName(), "date");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(37, 1);
-
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:38:3: ( relative_date | explicit_date )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:40:3: ( relative_date | explicit_date )
             int alt5=2;
-            try { dbg.enterDecision(5);
-
             int LA5_0 = input.LA(1);
 
             if ( (LA5_0==RELATIVE_DATE) ) {
@@ -657,19 +523,13 @@ public class DateWalker extends DebugTreeParser {
                 NoViableAltException nvae =
                     new NoViableAltException("", 5, 0, input);
 
-                dbg.recognitionException(nvae);
                 throw nvae;
             }
-            } finally {dbg.exitDecision(5);}
-
             switch (alt5) {
                 case 1 :
-                    dbg.enterAlt(1);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:38:5: relative_date
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:40:5: relative_date
                     {
-                    dbg.location(38,5);
-                    pushFollow(FOLLOW_relative_date_in_date128);
+                    pushFollow(FOLLOW_relative_date_in_date135);
                     relative_date();
 
                     state._fsp--;
@@ -678,12 +538,9 @@ public class DateWalker extends DebugTreeParser {
                     }
                     break;
                 case 2 :
-                    dbg.enterAlt(2);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:39:5: explicit_date
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:41:5: explicit_date
                     {
-                    dbg.location(39,5);
-                    pushFollow(FOLLOW_explicit_date_in_date135);
+                    pushFollow(FOLLOW_explicit_date_in_date142);
                     explicit_date();
 
                     state._fsp--;
@@ -700,37 +557,21 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(40, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "date");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "date"
 
 
     // $ANTLR start "relative_date"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:42:1: relative_date : ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:44:1: relative_date : ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) );
     public final void relative_date() throws RecognitionException {
         CommonTree index=null;
         CommonTree day=null;
         CommonTree month=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "relative_date");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(42, 1);
-
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:43:3: ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:45:3: ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) )
             int alt6=2;
-            try { dbg.enterDecision(6);
-
             int LA6_0 = input.LA(1);
 
             if ( (LA6_0==RELATIVE_DATE) ) {
@@ -749,7 +590,6 @@ public class DateWalker extends DebugTreeParser {
                         NoViableAltException nvae =
                             new NoViableAltException("", 6, 2, input);
 
-                        dbg.recognitionException(nvae);
                         throw nvae;
                     }
                 }
@@ -757,7 +597,6 @@ public class DateWalker extends DebugTreeParser {
                     NoViableAltException nvae =
                         new NoViableAltException("", 6, 1, input);
 
-                    dbg.recognitionException(nvae);
                     throw nvae;
                 }
             }
@@ -765,24 +604,16 @@ public class DateWalker extends DebugTreeParser {
                 NoViableAltException nvae =
                     new NoViableAltException("", 6, 0, input);
 
-                dbg.recognitionException(nvae);
                 throw nvae;
             }
-            } finally {dbg.exitDecision(6);}
-
             switch (alt6) {
                 case 1 :
-                    dbg.enterAlt(1);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:43:5: ^( RELATIVE_DATE seek )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:45:5: ^( RELATIVE_DATE seek )
                     {
-                    dbg.location(43,5);
-                    dbg.location(43,7);
-                    match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date151); 
+                    match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date158); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(43,21);
-                    pushFollow(FOLLOW_seek_in_relative_date153);
+                    pushFollow(FOLLOW_seek_in_relative_date160);
                     seek();
 
                     state._fsp--;
@@ -793,45 +624,31 @@ public class DateWalker extends DebugTreeParser {
                     }
                     break;
                 case 2 :
-                    dbg.enterAlt(2);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:45:5: ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:47:5: ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) )
                     {
-                    dbg.location(45,5);
-                    dbg.location(45,7);
-                    match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date164); 
+                    match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date171); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(45,21);
-                    dbg.location(45,23);
-                    match(input,WEEK_INDEX,FOLLOW_WEEK_INDEX_in_relative_date167); 
+                    match(input,WEEK_INDEX,FOLLOW_WEEK_INDEX_in_relative_date174); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(45,39);
-                    index=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date171); 
-                    dbg.location(45,44);
-                    dbg.location(45,46);
-                    match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_relative_date174); 
+                    index=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date178); 
+                    match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_relative_date181); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(45,61);
-                    day=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date178); 
+                    day=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date185); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(45,67);
-                    dbg.location(45,69);
-                    match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_relative_date182); 
+                    match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_relative_date189); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(45,88);
-                    month=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date186); 
+                    month=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date193); 
 
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(46,5);
                     _walkerState.setDayOfWeekIndex((index!=null?index.getText():null), (day!=null?day.getText():null), (month!=null?month.getText():null));
 
                     }
@@ -845,88 +662,53 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(47, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "relative_date");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "relative_date"
 
 
     // $ANTLR start "explicit_date"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:49:1: explicit_date : ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:51:1: explicit_date : ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? ) ;
     public final void explicit_date() throws RecognitionException {
         CommonTree month=null;
         CommonTree dom=null;
         CommonTree dow=null;
         CommonTree year=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "explicit_date");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(49, 1);
-
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:50:3: ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? ) )
-            dbg.enterAlt(1);
-
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:50:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:3: ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:52:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? )
             {
-            dbg.location(50,5);
-            dbg.location(50,7);
-            match(input,EXPLICIT_DATE,FOLLOW_EXPLICIT_DATE_in_explicit_date211); 
+            match(input,EXPLICIT_DATE,FOLLOW_EXPLICIT_DATE_in_explicit_date218); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(50,21);
-            dbg.location(50,23);
-            match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_explicit_date214); 
+            match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_explicit_date221); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(50,42);
-            month=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date218); 
+            month=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date225); 
 
             match(input, Token.UP, null); 
-            dbg.location(50,48);
-            dbg.location(50,50);
-            match(input,DAY_OF_MONTH,FOLLOW_DAY_OF_MONTH_in_explicit_date222); 
+            match(input,DAY_OF_MONTH,FOLLOW_DAY_OF_MONTH_in_explicit_date229); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(50,66);
-            dom=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date226); 
+            dom=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date233); 
 
             match(input, Token.UP, null); 
-            dbg.location(51,9);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:51:9: ( ^( DAY_OF_WEEK dow= INT ) )?
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:53:9: ( ^( DAY_OF_WEEK dow= INT ) )?
             int alt7=2;
-            try { dbg.enterSubRule(7);
-            try { dbg.enterDecision(7);
-
             int LA7_0 = input.LA(1);
 
             if ( (LA7_0==DAY_OF_WEEK) ) {
                 alt7=1;
             }
-            } finally {dbg.exitDecision(7);}
-
             switch (alt7) {
                 case 1 :
-                    dbg.enterAlt(1);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:51:10: ^( DAY_OF_WEEK dow= INT )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:53:10: ^( DAY_OF_WEEK dow= INT )
                     {
-                    dbg.location(51,10);
-                    dbg.location(51,12);
-                    match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_explicit_date240); 
+                    match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_explicit_date247); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(51,27);
-                    dow=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date244); 
+                    dow=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date251); 
 
                     match(input, Token.UP, null); 
 
@@ -934,34 +716,22 @@ public class DateWalker extends DebugTreeParser {
                     break;
 
             }
-            } finally {dbg.exitSubRule(7);}
 
-            dbg.location(51,35);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:51:35: ( ^( YEAR_OF year= INT ) )?
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:53:35: ( ^( YEAR_OF year= INT ) )?
             int alt8=2;
-            try { dbg.enterSubRule(8);
-            try { dbg.enterDecision(8);
-
             int LA8_0 = input.LA(1);
 
             if ( (LA8_0==YEAR_OF) ) {
                 alt8=1;
             }
-            } finally {dbg.exitDecision(8);}
-
             switch (alt8) {
                 case 1 :
-                    dbg.enterAlt(1);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:51:36: ^( YEAR_OF year= INT )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:53:36: ^( YEAR_OF year= INT )
                     {
-                    dbg.location(51,36);
-                    dbg.location(51,38);
-                    match(input,YEAR_OF,FOLLOW_YEAR_OF_in_explicit_date251); 
+                    match(input,YEAR_OF,FOLLOW_YEAR_OF_in_explicit_date258); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(51,50);
-                    year=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date255); 
+                    year=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date262); 
 
                     match(input, Token.UP, null); 
 
@@ -969,11 +739,9 @@ public class DateWalker extends DebugTreeParser {
                     break;
 
             }
-            } finally {dbg.exitSubRule(8);}
 
 
             match(input, Token.UP, null); 
-            dbg.location(52,5);
             _walkerState.setExplicitDate((month!=null?month.getText():null), (dom!=null?dom.getText():null), (dow!=null?dow.getText():null), (year!=null?year.getText():null));
 
             }
@@ -985,22 +753,13 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(53, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "explicit_date");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "explicit_date"
 
 
     // $ANTLR start "time"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:55:1: time : ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) ;
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:1: time : ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) ;
     public final void time() throws RecognitionException {
         CommonTree hours=null;
         CommonTree minutes=null;
@@ -1008,66 +767,40 @@ public class DateWalker extends DebugTreeParser {
         CommonTree zone=null;
         CommonTree AM_PM1=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "time");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(55, 1);
-
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:56:3: ( ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) )
-            dbg.enterAlt(1);
-
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:56:5: ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:58:3: ( ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:58:5: ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? )
             {
-            dbg.location(56,5);
-            dbg.location(56,7);
-            match(input,EXPLICIT_TIME,FOLLOW_EXPLICIT_TIME_in_time281); 
+            match(input,EXPLICIT_TIME,FOLLOW_EXPLICIT_TIME_in_time288); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(56,21);
-            dbg.location(56,23);
-            match(input,HOURS_OF_DAY,FOLLOW_HOURS_OF_DAY_in_time284); 
+            match(input,HOURS_OF_DAY,FOLLOW_HOURS_OF_DAY_in_time291); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(56,41);
-            hours=(CommonTree)match(input,INT,FOLLOW_INT_in_time288); 
+            hours=(CommonTree)match(input,INT,FOLLOW_INT_in_time295); 
 
             match(input, Token.UP, null); 
-            dbg.location(56,47);
-            dbg.location(56,49);
-            match(input,MINUTES_OF_HOUR,FOLLOW_MINUTES_OF_HOUR_in_time292); 
+            match(input,MINUTES_OF_HOUR,FOLLOW_MINUTES_OF_HOUR_in_time299); 
 
             match(input, Token.DOWN, null); 
-            dbg.location(56,72);
-            minutes=(CommonTree)match(input,INT,FOLLOW_INT_in_time296); 
+            minutes=(CommonTree)match(input,INT,FOLLOW_INT_in_time303); 
 
             match(input, Token.UP, null); 
-            dbg.location(57,9);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:9: ( ^( SECONDS_OF_MINUTE seconds= INT ) )?
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:59:9: ( ^( SECONDS_OF_MINUTE seconds= INT ) )?
             int alt9=2;
-            try { dbg.enterSubRule(9);
-            try { dbg.enterDecision(9);
-
             int LA9_0 = input.LA(1);
 
             if ( (LA9_0==SECONDS_OF_MINUTE) ) {
                 alt9=1;
             }
-            } finally {dbg.exitDecision(9);}
-
             switch (alt9) {
                 case 1 :
-                    dbg.enterAlt(1);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:10: ^( SECONDS_OF_MINUTE seconds= INT )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:59:10: ^( SECONDS_OF_MINUTE seconds= INT )
                     {
-                    dbg.location(57,10);
-                    dbg.location(57,12);
-                    match(input,SECONDS_OF_MINUTE,FOLLOW_SECONDS_OF_MINUTE_in_time310); 
+                    match(input,SECONDS_OF_MINUTE,FOLLOW_SECONDS_OF_MINUTE_in_time317); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(57,37);
-                    seconds=(CommonTree)match(input,INT,FOLLOW_INT_in_time314); 
+                    seconds=(CommonTree)match(input,INT,FOLLOW_INT_in_time321); 
 
                     match(input, Token.UP, null); 
 
@@ -1075,42 +808,27 @@ public class DateWalker extends DebugTreeParser {
                     break;
 
             }
-            } finally {dbg.exitSubRule(9);}
 
-            dbg.location(57,45);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:45: ( AM_PM )?
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:59:45: ( AM_PM )?
             int alt10=2;
-            try { dbg.enterSubRule(10);
-            try { dbg.enterDecision(10);
-
             int LA10_0 = input.LA(1);
 
             if ( (LA10_0==AM_PM) ) {
                 alt10=1;
             }
-            } finally {dbg.exitDecision(10);}
-
             switch (alt10) {
                 case 1 :
-                    dbg.enterAlt(1);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:45: AM_PM
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:59:45: AM_PM
                     {
-                    dbg.location(57,45);
-                    AM_PM1=(CommonTree)match(input,AM_PM,FOLLOW_AM_PM_in_time319); 
+                    AM_PM1=(CommonTree)match(input,AM_PM,FOLLOW_AM_PM_in_time326); 
 
                     }
                     break;
 
             }
-            } finally {dbg.exitSubRule(10);}
 
-            dbg.location(57,52);
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:52: (zone= ZONE | zone= ZONE_OFFSET )?
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:59:52: (zone= ZONE | zone= ZONE_OFFSET )?
             int alt11=3;
-            try { dbg.enterSubRule(11);
-            try { dbg.enterDecision(11);
-
             int LA11_0 = input.LA(1);
 
             if ( (LA11_0==ZONE) ) {
@@ -1119,36 +837,26 @@ public class DateWalker extends DebugTreeParser {
             else if ( (LA11_0==ZONE_OFFSET) ) {
                 alt11=2;
             }
-            } finally {dbg.exitDecision(11);}
-
             switch (alt11) {
                 case 1 :
-                    dbg.enterAlt(1);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:53: zone= ZONE
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:59:53: zone= ZONE
                     {
-                    dbg.location(57,57);
-                    zone=(CommonTree)match(input,ZONE,FOLLOW_ZONE_in_time325); 
+                    zone=(CommonTree)match(input,ZONE,FOLLOW_ZONE_in_time332); 
 
                     }
                     break;
                 case 2 :
-                    dbg.enterAlt(2);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:57:65: zone= ZONE_OFFSET
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:59:65: zone= ZONE_OFFSET
                     {
-                    dbg.location(57,69);
-                    zone=(CommonTree)match(input,ZONE_OFFSET,FOLLOW_ZONE_OFFSET_in_time331); 
+                    zone=(CommonTree)match(input,ZONE_OFFSET,FOLLOW_ZONE_OFFSET_in_time338); 
 
                     }
                     break;
 
             }
-            } finally {dbg.exitSubRule(11);}
 
 
             match(input, Token.UP, null); 
-            dbg.location(58,5);
             _walkerState.setExplicitTime((hours!=null?hours.getText():null), (minutes!=null?minutes.getText():null), (seconds!=null?seconds.getText():null), (AM_PM1!=null?AM_PM1.getText():null), (zone!=null?zone.getText():null));
 
             }
@@ -1160,22 +868,13 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(59, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "time");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "time"
 
 
     // $ANTLR start "seek"
-    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:61:1: seek : ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) );
+    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:63:1: seek : ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) );
     public final void seek() throws RecognitionException {
         CommonTree by=null;
         CommonTree amount=null;
@@ -1189,73 +888,38 @@ public class DateWalker extends DebugTreeParser {
         CommonTree DIRECTION7=null;
         CommonTree INT8=null;
 
-        try { dbg.enterRule(getGrammarFileName(), "seek");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(61, 1);
-
         try {
-            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:62:3: ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) )
+            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:64:3: ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) )
             int alt13=4;
-            try { dbg.enterDecision(13);
-
-            try {
-                isCyclicDecision = true;
-                alt13 = dfa13.predict(input);
-            }
-            catch (NoViableAltException nvae) {
-                dbg.recognitionException(nvae);
-                throw nvae;
-            }
-            } finally {dbg.exitDecision(13);}
-
+            alt13 = dfa13.predict(input);
             switch (alt13) {
                 case 1 :
-                    dbg.enterAlt(1);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:62:5: ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:64:5: ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? )
                     {
-                    dbg.location(62,5);
-                    dbg.location(62,7);
-                    match(input,SEEK,FOLLOW_SEEK_in_seek356); 
+                    match(input,SEEK,FOLLOW_SEEK_in_seek363); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(62,12);
-                    DIRECTION2=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek358); 
-                    dbg.location(62,24);
-                    by=(CommonTree)match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek362); 
-                    dbg.location(62,39);
-                    amount=(CommonTree)match(input,INT,FOLLOW_INT_in_seek366); 
-                    dbg.location(62,44);
-                    dbg.location(62,46);
-                    match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_seek369); 
+                    DIRECTION2=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek365); 
+                    by=(CommonTree)match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek369); 
+                    amount=(CommonTree)match(input,INT,FOLLOW_INT_in_seek373); 
+                    match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_seek376); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(62,61);
-                    day=(CommonTree)match(input,INT,FOLLOW_INT_in_seek373); 
+                    day=(CommonTree)match(input,INT,FOLLOW_INT_in_seek380); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(62,67);
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:62:67: ( date )?
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:64:67: ( date )?
                     int alt12=2;
-                    try { dbg.enterSubRule(12);
-                    try { dbg.enterDecision(12);
-
                     int LA12_0 = input.LA(1);
 
                     if ( ((LA12_0>=EXPLICIT_DATE && LA12_0<=RELATIVE_DATE)) ) {
                         alt12=1;
                     }
-                    } finally {dbg.exitDecision(12);}
-
                     switch (alt12) {
                         case 1 :
-                            dbg.enterAlt(1);
-
-                            // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:62:67: date
+                            // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:64:67: date
                             {
-                            dbg.location(62,67);
-                            pushFollow(FOLLOW_date_in_seek376);
+                            pushFollow(FOLLOW_date_in_seek383);
                             date();
 
                             state._fsp--;
@@ -1265,97 +929,66 @@ public class DateWalker extends DebugTreeParser {
                             break;
 
                     }
-                    } finally {dbg.exitSubRule(12);}
 
 
                     match(input, Token.UP, null); 
-                    dbg.location(63,5);
                     _walkerState.seekToDayOfWeek((DIRECTION2!=null?DIRECTION2.getText():null), (by!=null?by.getText():null), (amount!=null?amount.getText():null), (day!=null?day.getText():null));
 
                     }
                     break;
                 case 2 :
-                    dbg.enterAlt(2);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:65:5: ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:67:5: ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) )
                     {
-                    dbg.location(65,5);
-                    dbg.location(65,7);
-                    match(input,SEEK,FOLLOW_SEEK_in_seek396); 
+                    match(input,SEEK,FOLLOW_SEEK_in_seek403); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(65,12);
-                    DIRECTION3=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek398); 
-                    dbg.location(65,22);
-                    match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek400); 
-                    dbg.location(65,36);
-                    amount=(CommonTree)match(input,INT,FOLLOW_INT_in_seek404); 
-                    dbg.location(65,41);
-                    dbg.location(65,43);
-                    match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_seek407); 
+                    DIRECTION3=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek405); 
+                    match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek407); 
+                    amount=(CommonTree)match(input,INT,FOLLOW_INT_in_seek411); 
+                    match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_seek414); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(65,62);
-                    month=(CommonTree)match(input,INT,FOLLOW_INT_in_seek411); 
+                    month=(CommonTree)match(input,INT,FOLLOW_INT_in_seek418); 
 
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(66,5);
                     _walkerState.seekToMonth((DIRECTION3!=null?DIRECTION3.getText():null), (amount!=null?amount.getText():null), (month!=null?month.getText():null));
 
                     }
                     break;
                 case 3 :
-                    dbg.enterAlt(3);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:68:5: ^( SEEK DIRECTION SEEK_BY INT SPAN )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:70:5: ^( SEEK DIRECTION SEEK_BY INT SPAN )
                     {
-                    dbg.location(68,5);
-                    dbg.location(68,7);
-                    match(input,SEEK,FOLLOW_SEEK_in_seek429); 
+                    match(input,SEEK,FOLLOW_SEEK_in_seek436); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(68,12);
-                    DIRECTION4=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek431); 
-                    dbg.location(68,22);
-                    match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek433); 
-                    dbg.location(68,30);
-                    INT5=(CommonTree)match(input,INT,FOLLOW_INT_in_seek435); 
-                    dbg.location(68,34);
-                    SPAN6=(CommonTree)match(input,SPAN,FOLLOW_SPAN_in_seek437); 
+                    DIRECTION4=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek438); 
+                    match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek440); 
+                    INT5=(CommonTree)match(input,INT,FOLLOW_INT_in_seek442); 
+                    SPAN6=(CommonTree)match(input,SPAN,FOLLOW_SPAN_in_seek444); 
 
                     match(input, Token.UP, null); 
-                    dbg.location(69,5);
                     _walkerState.seekBySpan((DIRECTION4!=null?DIRECTION4.getText():null), (INT5!=null?INT5.getText():null), (SPAN6!=null?SPAN6.getText():null));
 
                     }
                     break;
                 case 4 :
-                    dbg.enterAlt(4);
-
-                    // /Users/joe/antlr_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:71:5: ^( SEEK DIRECTION SEEK_BY INT date )
+                    // /Users/joe/java_workspace/natty/src/main/antlr3/com/natty/date/generated/DateWalker.g:73:5: ^( SEEK DIRECTION SEEK_BY INT date )
                     {
-                    dbg.location(71,5);
-                    dbg.location(71,7);
-                    match(input,SEEK,FOLLOW_SEEK_in_seek454); 
+                    match(input,SEEK,FOLLOW_SEEK_in_seek461); 
 
                     match(input, Token.DOWN, null); 
-                    dbg.location(71,12);
-                    DIRECTION7=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek456); 
-                    dbg.location(71,22);
-                    match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek458); 
-                    dbg.location(71,30);
-                    INT8=(CommonTree)match(input,INT,FOLLOW_INT_in_seek460); 
-                    dbg.location(71,34);
-                    pushFollow(FOLLOW_date_in_seek462);
+                    DIRECTION7=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek463); 
+                    match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek465); 
+                    INT8=(CommonTree)match(input,INT,FOLLOW_INT_in_seek467); 
+                    pushFollow(FOLLOW_date_in_seek469);
                     date();
 
                     state._fsp--;
 
 
                     match(input, Token.UP, null); 
-                    dbg.location(72,5);
                     _walkerState.seekBySpan((DIRECTION7!=null?DIRECTION7.getText():null), (INT8!=null?INT8.getText():null), "day");
 
                     }
@@ -1369,15 +1002,6 @@ public class DateWalker extends DebugTreeParser {
         }
         finally {
         }
-        dbg.location(73, 3);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "seek");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
         return ;
     }
     // $ANTLR end "seek"
@@ -1441,10 +1065,7 @@ public class DateWalker extends DebugTreeParser {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "61:1: seek : ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) );";
-        }
-        public void error(NoViableAltException nvae) {
-            dbg.recognitionException(nvae);
+            return "63:1: seek : ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) );";
         }
     }
  
@@ -1452,63 +1073,63 @@ public class DateWalker extends DebugTreeParser {
     public static final BitSet FOLLOW_LIST_in_search46 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_date_time_in_search49 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0000600000000000L});
     public static final BitSet FOLLOW_date_time_alternative_in_search53 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0000600000000000L});
-    public static final BitSet FOLLOW_DATE_TIME_ALTERNATIVE_in_date_time_alternative72 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_date_time_in_date_time_alternative74 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_DATE_TIME_in_date_time104 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_date_in_date_time106 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0040000000000000L});
-    public static final BitSet FOLLOW_time_in_date_time109 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_relative_date_in_date128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_explicit_date_in_date135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date151 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_seek_in_relative_date153 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date164 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_WEEK_INDEX_in_relative_date167 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_relative_date171 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000080000000000L});
-    public static final BitSet FOLLOW_DAY_OF_WEEK_in_relative_date174 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_relative_date178 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_MONTH_OF_YEAR_in_relative_date182 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_relative_date186 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_EXPLICIT_DATE_in_explicit_date211 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_MONTH_OF_YEAR_in_explicit_date214 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_explicit_date218 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_DAY_OF_MONTH_in_explicit_date222 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_explicit_date226 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_DAY_OF_WEEK_in_explicit_date240 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_explicit_date244 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_YEAR_OF_in_explicit_date251 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_explicit_date255 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_EXPLICIT_TIME_in_time281 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_HOURS_OF_DAY_in_time284 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_time288 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_MINUTES_OF_HOUR_in_time292 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_time296 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SECONDS_OF_MINUTE_in_time310 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_time314 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AM_PM_in_time319 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x1800000000000000L});
-    public static final BitSet FOLLOW_ZONE_in_time325 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ZONE_OFFSET_in_time331 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SEEK_in_seek356 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek358 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek362 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_INT_in_seek366 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000080000000000L});
-    public static final BitSet FOLLOW_DAY_OF_WEEK_in_seek369 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_seek373 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_date_in_seek376 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SEEK_in_seek396 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek398 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek400 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_INT_in_seek404 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000020000000000L});
-    public static final BitSet FOLLOW_MONTH_OF_YEAR_in_seek407 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_INT_in_seek411 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SEEK_in_seek429 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek431 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek433 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_INT_in_seek435 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0010000000000000L});
-    public static final BitSet FOLLOW_SPAN_in_seek437 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SEEK_in_seek454 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_DIRECTION_in_seek456 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_SEEK_BY_in_seek458 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_INT_in_seek460 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0001800000000000L});
-    public static final BitSet FOLLOW_date_in_seek462 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_DATE_TIME_ALTERNATIVE_in_date_time_alternative86 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_date_time_in_date_time_alternative88 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_DATE_TIME_in_date_time111 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_date_in_date_time113 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x0040000000000000L});
+    public static final BitSet FOLLOW_time_in_date_time116 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_relative_date_in_date135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_explicit_date_in_date142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date158 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_seek_in_relative_date160 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_RELATIVE_DATE_in_relative_date171 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_WEEK_INDEX_in_relative_date174 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_relative_date178 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_DAY_OF_WEEK_in_relative_date181 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_relative_date185 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_MONTH_OF_YEAR_in_relative_date189 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_relative_date193 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_EXPLICIT_DATE_in_explicit_date218 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_MONTH_OF_YEAR_in_explicit_date221 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_explicit_date225 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_DAY_OF_MONTH_in_explicit_date229 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_explicit_date233 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_DAY_OF_WEEK_in_explicit_date247 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_explicit_date251 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_YEAR_OF_in_explicit_date258 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_explicit_date262 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_EXPLICIT_TIME_in_time288 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_HOURS_OF_DAY_in_time291 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_time295 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_MINUTES_OF_HOUR_in_time299 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_time303 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SECONDS_OF_MINUTE_in_time317 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_time321 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AM_PM_in_time326 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x0000000000000000L,0x1800000000000000L});
+    public static final BitSet FOLLOW_ZONE_in_time332 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ZONE_OFFSET_in_time338 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SEEK_in_seek363 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek365 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek369 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_INT_in_seek373 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_DAY_OF_WEEK_in_seek376 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_seek380 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_date_in_seek383 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SEEK_in_seek403 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek405 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek407 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_INT_in_seek411 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_MONTH_OF_YEAR_in_seek414 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_INT_in_seek418 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SEEK_in_seek436 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek438 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek440 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_INT_in_seek442 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0010000000000000L});
+    public static final BitSet FOLLOW_SPAN_in_seek444 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SEEK_in_seek461 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_DIRECTION_in_seek463 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_SEEK_BY_in_seek465 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_INT_in_seek467 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0001800000000000L});
+    public static final BitSet FOLLOW_date_in_seek469 = new BitSet(new long[]{0x0000000000000008L});
 
 }

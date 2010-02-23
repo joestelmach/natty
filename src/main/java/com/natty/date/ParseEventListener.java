@@ -13,6 +13,7 @@ public class ParseEventListener extends BlankDebugEventListener {
   private int _backtracking = 0;
   private List<Token> _tokens;
   private List<Location> _locations;
+  private boolean _inDateTimeAlternative = false;
   private boolean _inDateTime = false;
   
   public ParseEventListener() {
@@ -38,29 +39,41 @@ public class ParseEventListener extends BlankDebugEventListener {
   public void enterRule(String filename, String ruleName) {
     if (_backtracking > 0) return;
     
-    if(ruleName.equals("date_time")) _inDateTime = true;
+    if(isDateTime(ruleName)) _inDateTime = true;
+    if(isDateTimeAlternative(ruleName)) _inDateTimeAlternative = true;
   }
   
   @Override
   public void exitRule(String filename, String ruleName) {
     if (_backtracking > 0) return;
     
-    if(ruleName.equals("date_time")) consumeDateTime();
+    if(isDateTimeAlternative(ruleName) || isDateTime(ruleName) && !_inDateTimeAlternative) {
+      consumeLocation();
+    }
+    
+    if(isDateTime(ruleName)) _inDateTime = false;
+    if(isDateTimeAlternative(ruleName)) _inDateTimeAlternative = false;
   }
 
   @Override
   public void consumeToken(Token token) {
     if (_backtracking > 0) return;
     
-    if(_inDateTime) _tokens.add(token);
+    if(_inDateTime || _inDateTimeAlternative) _tokens.add(token);
+  }
+  
+  private boolean isDateTime(final String ruleName) {
+    return ruleName.equals("date_time");
+  }
+  
+  private boolean isDateTimeAlternative(final String ruleName) {
+    return ruleName.equals("date_time_alternative");
   }
   
   /**
    * Consumes the current token list as a date_time
    */
-  private void consumeDateTime() {
-    _inDateTime = false;
-    System.out.println("consuming");
+  private void consumeLocation() {
     if(_tokens.size() == 0) return;
     StringBuilder builder = new StringBuilder();
     for (Token token : _tokens) {

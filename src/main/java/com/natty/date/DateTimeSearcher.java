@@ -1,6 +1,7 @@
 package com.natty.date;
 
 import java.io.ByteArrayInputStream;
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -23,8 +24,6 @@ import org.json.JSONObject;
 import com.natty.date.generated.DateLexer;
 import com.natty.date.generated.DateParser;
 import com.natty.date.generated.DateWalker;
-import com.natty.utility.Printer;
-
 
 public class DateTimeSearcher {
   private static final Logger _logger = Logger.getLogger(DateTimeSearcher.class.getName());
@@ -60,23 +59,35 @@ public class DateTimeSearcher {
     }
     
     List<Location> locations = parseListener.getLocations();
-    List<Date> dateTimes = walker.getState().getDateTimes();
+    List<List<Date>> dateTimeLists = walker.getState().getDateTimes();
     
     JSONObject locationJson = new JSONObject();
     try {
       JSONArray jsonArray = new JSONArray();
       for(int i=0; i<locations.size(); i++) {
-        Location location = locations.get(i);
-        Date date = dateTimes.get(i);
+        
         JSONObject json = new JSONObject();
+        
+        // add date times
+        JSONArray dateTimeArray = new JSONArray();
+        List<Date> dateTimeList = dateTimeLists.get(i);
+        for(Date date:dateTimeList) {
+          JSONObject dateTimeJson = new JSONObject();
+          _formatter.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+          dateTimeJson.put("localtime", _formatter.format(date));
+          _formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+          dateTimeJson.put("utctime", _formatter.format(date));
+          dateTimeArray.put(dateTimeJson);
+        }
+        json.put("date_times", dateTimeArray);
+        
+        
+        Location location = locations.get(i);
         json.put("text", location.getText());
         json.put("line", location.getLine());
         json.put("start", location.getStart());
         json.put("end", location.getEnd());
-        _formatter.setTimeZone(TimeZone.getTimeZone("America/New_York"));
-        json.put("localtime", _formatter.format(date));
-        _formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
-        json.put("utctime", _formatter.format(date));
+        
         jsonArray.put(json);
       }
       
@@ -97,7 +108,7 @@ public class DateTimeSearcher {
   public static String parseDate(final String inputString) {
     ANTLRInputStream input = null;
     StructureBuilder builder = new StructureBuilder();
-    Date date = new Date();
+    List<Date> dateTimes;
     Tree tree = null;
     DateParser parser = null;
     try {
@@ -116,7 +127,7 @@ public class DateTimeSearcher {
       nodes.setTokenStream(tokens);
       DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
       walker.date_time();
-      date = walker.getState().getDateTimes().get(0);
+      dateTimes = walker.getState().getDateTimes().get(0);
       
     } catch (IOException e) {
       e.printStackTrace();
@@ -127,12 +138,12 @@ public class DateTimeSearcher {
     
     JSONObject json = new JSONObject();
     try {
-      DateFormat friendlyFormatter = new SimpleDateFormat("EEE MMM dd, yyyy hh:mm a z");
-      json.put("iso8601", friendlyFormatter.format(date));
-      _formatter.setTimeZone(TimeZone.getTimeZone("America/New_York"));
-      json.put("localtime", _formatter.format(date));
-      _formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
-      json.put("utctime", _formatter.format(date));
+      //DateFormat friendlyFormatter = new SimpleDateFormat("EEE MMM dd, yyyy hh:mm a z");
+      //json.put("iso8601", friendlyFormatter.format(date));
+      //_formatter.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+      //json.put("localtime", _formatter.format(date));
+      //_formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+      //json.put("utctime", _formatter.format(date));
       json.put("structure", builder.toJSON());
       StringBuilder buffer = new StringBuilder();
       if(tree != null) json.put("ast", buffer.toString());
