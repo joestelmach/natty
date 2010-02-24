@@ -39,7 +39,7 @@ search
   
 date_time_entry
   : (date_time_alternative)=> date_time_alternative
-  | date_time
+  | date_time -> ^(DATE_TIME_ALTERNATIVE date_time)
   ;
   
 text
@@ -77,10 +77,14 @@ date
   ;
   
 date_time_alternative
-  // next wed or thurs, next wed, thurs, or fri
+  // "next wed or thurs" , "next wed, thurs, or fri"
   : (alternative_day_of_week_list)=> alternative_day_of_week_list
       -> ^(DATE_TIME_ALTERNATIVE alternative_day_of_week_list)
   
+  // date or date, in any format
+  | alternative_date_list
+      -> ^(DATE_TIME_ALTERNATIVE alternative_date_list)
+      
   // this wed. or next
   | ((THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction)=> 
       (THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction (date_time_separator time)?
@@ -95,28 +99,24 @@ date_time_alternative
       date WHITE_SPACE OR WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator time)?
       {System.out.println("match 3");}
       -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date time?) ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) time?)))
-      
-  // date or date, in any format
-  | alternative_date_list
-      -> ^(DATE_TIME_ALTERNATIVE alternative_date_list)
   ;
   
 alternative_day_of_week_list
-  : alternative_direction WHITE_SPACE day_of_week (day_of_week_list_separator day_of_week)* (date_time_separator time)?
-      -> (^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) time?))+
-  ;
-  
-alternative_date_list
-  : date (date_list_separator date)* (date_time_separator time)?
-      -> (^(DATE_TIME date time?))+
+  : alternative_direction (day_of_week_list_separator day_of_week)+ (date_time_separator time)?
+      -> ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) time?)+
   ;
   
 day_of_week_list_separator
   : (COMMA WHITE_SPACE? | WHITE_SPACE) (OR WHITE_SPACE)?
   ;
   
+alternative_date_list
+  : date (date_list_separator date)+ (date_time_separator time)?
+      -> (^(DATE_TIME date time?))+
+  ;
+  
 date_list_separator
-  : COMMA? WHITE_SPACE OR WHITE_SPACE
+  : (COMMA WHITE_SPACE?) | (WHITE_SPACE OR WHITE_SPACE)
   ;
   
 alternative_direction

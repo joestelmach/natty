@@ -5,6 +5,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
@@ -46,15 +47,13 @@ public class DateTimeSearcher {
       
       // walk
       Tree tree = (Tree) result.getTree();
+      System.out.println(tree.toStringTree());
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
       walker = new DateWalker(nodes, new BlankDebugEventListener());
       walker.search();
       
-    } catch (IOException e) {
-      e.printStackTrace();
-      
-    } catch (RecognitionException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
     
@@ -62,6 +61,8 @@ public class DateTimeSearcher {
     List<List<Date>> dateTimeLists = walker.getState().getDateTimes();
     
     JSONObject locationJson = new JSONObject();
+    System.out.println(Arrays.asList(locations.toArray()));
+    System.out.println(Arrays.asList(dateTimeLists.toArray()));
     try {
       JSONArray jsonArray = new JSONArray();
       for(int i=0; i<locations.size(); i++) {

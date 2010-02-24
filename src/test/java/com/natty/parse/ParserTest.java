@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.debug.BlankDebugEventListener;
+import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
 
@@ -17,6 +17,7 @@ import com.natty.date.ParseEventListener;
 import com.natty.date.generated.DateLexer;
 import com.natty.date.generated.DateParser;
 import com.natty.date.generated.DateWalker;
+import com.natty.date.generated.TreeRewrite;
 import com.natty.utility.Printer;
 
 /**
@@ -26,7 +27,7 @@ import com.natty.utility.Printer;
  */
 public class ParserTest {
   public static void main(String[] args) {
-    String inputString = "10/10 or 12/30 or 10/15 at 5pm";
+    String inputString = "next wed, thurs, or fri asdfas fs fd oct. 1st";
     ANTLRInputStream input = null;
     Tree tree = null;
     DateParser parser = null;
@@ -47,13 +48,19 @@ public class ParserTest {
       
       // grab the tree
       tree = (Tree) result.getTree();
+      System.out.println(tree.toStringTree());
+      
+      // rewrite it (temporarily)
+      CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+      TreeRewrite s = new TreeRewrite(nodes);
+      tree = (CommonTree)s.downup(tree);
       StringBuilder builder = new StringBuilder();
       printer.printTree(tree, builder);
-      System.out.println(builder.toString());
+      //System.out.println(builder.toString());
       System.out.println(tree.toStringTree());
       
       // and walk it
-      CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+      nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
       //DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
       DateWalker walker = new DateWalker(nodes);
