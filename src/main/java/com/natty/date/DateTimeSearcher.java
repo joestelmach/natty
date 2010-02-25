@@ -1,11 +1,9 @@
 package com.natty.date;
 
 import java.io.ByteArrayInputStream;
-
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
@@ -14,8 +12,8 @@ import java.util.logging.Logger;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.debug.BlankDebugEventListener;
+import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
 import org.json.JSONArray;
@@ -25,13 +23,15 @@ import org.json.JSONObject;
 import com.natty.date.generated.DateLexer;
 import com.natty.date.generated.DateParser;
 import com.natty.date.generated.DateWalker;
+import com.natty.date.generated.TreeRewrite;
 
 public class DateTimeSearcher {
   private static final Logger _logger = Logger.getLogger(DateTimeSearcher.class.getName());
   private static final DateFormat _formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+  private static final String PREFIX_SUFFIX = " text ";
   
   public static String search(String inputString) {
-    inputString = inputString.trim() + " foo";
+    inputString = PREFIX_SUFFIX + inputString + PREFIX_SUFFIX;
     ANTLRInputStream input = null;
     ParseEventListener parseListener = new ParseEventListener();
     DateWalker walker = null;
@@ -44,11 +44,15 @@ public class DateTimeSearcher {
       // parse 
       DateParser parser = new DateParser(tokens, parseListener);
       DateParser.search_return result = parser.search();
-      
-      // walk
       Tree tree = (Tree) result.getTree();
-      System.out.println(tree.toStringTree());
+      
+      // rewrite the AST (temporarily)
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+      TreeRewrite s = new TreeRewrite(nodes);
+      tree = (CommonTree)s.downup(tree);
+      
+      // and walk it
+      nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
       walker = new DateWalker(nodes, new BlankDebugEventListener());
       walker.search();
@@ -61,8 +65,6 @@ public class DateTimeSearcher {
     List<List<Date>> dateTimeLists = walker.getState().getDateTimes();
     
     JSONObject locationJson = new JSONObject();
-    System.out.println(Arrays.asList(locations.toArray()));
-    System.out.println(Arrays.asList(dateTimeLists.toArray()));
     try {
       JSONArray jsonArray = new JSONArray();
       for(int i=0; i<locations.size(); i++) {
@@ -82,12 +84,14 @@ public class DateTimeSearcher {
         }
         json.put("date_times", dateTimeArray);
         
-        
         Location location = locations.get(i);
+        int line = location.getLine();
+        int start = location.getStart() - (line == 1 ? PREFIX_SUFFIX.length() : 0);
+        int end = location.getEnd() - (line == 1 ? PREFIX_SUFFIX.length() : 0);
         json.put("text", location.getText());
         json.put("line", location.getLine());
-        json.put("start", location.getStart());
-        json.put("end", location.getEnd());
+        json.put("start", start);
+        json.put("end", end);
         
         jsonArray.put(json);
       }

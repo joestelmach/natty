@@ -31,10 +31,13 @@ tokens {
 }
 
 @header { package com.natty.date.generated; }
-
 search 
-  : (((date_time_entry)=> date_time_entry | .*) text)+ 
-      -> ^(LIST date_time_entry+)
+  : text (((date_time_entry)=> date_time_entry | known_token) text)+ 
+      -> ^(LIST date_time_entry*)
+  ;
+  
+known_token
+  : ~(UNKNOWN | WHITE_SPACE)
   ;
   
 date_time_entry
@@ -43,12 +46,12 @@ date_time_entry
   ;
   
 text
-  : WHITE_SPACE? ((UNKNOWN_WORD | UNKNOWN_CHAR) WHITE_SPACE?)+
+  : WHITE_SPACE (UNKNOWN WHITE_SPACE)+
   ;
   
 date_time
   : (
-      | (date (date_time_separator time)?)=>
+      (date (date_time_separator time)?)=>
           date (date_time_separator time)?
           
       | (date) => date
@@ -81,38 +84,26 @@ date_time_alternative
   : (alternative_day_of_week_list)=> alternative_day_of_week_list
       -> ^(DATE_TIME_ALTERNATIVE alternative_day_of_week_list)
   
-  // date or date, in any format
-  | alternative_date_list
-      -> ^(DATE_TIME_ALTERNATIVE alternative_date_list)
-      
   // this wed. or next
-  | ((THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction)=> 
-      (THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction (date_time_separator time)?
-      {System.out.println("match 2");}
+   | (THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction (date_time_separator time)?
       -> ^(DATE_TIME_ALTERNATIVE 
             ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week)) time?) 
             ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) time?)
           )
           
   // today or the day after that, feb 16th or 2 days after that, january fourth or the friday after
-  | (date WHITE_SPACE OR WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator time)?)=>
-      date WHITE_SPACE OR WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator time)?
-      {System.out.println("match 3");}
+  | date WHITE_SPACE OR WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator time)?
       -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date time?) ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) time?)))
   ;
   
 alternative_day_of_week_list
-  : alternative_direction (day_of_week_list_separator day_of_week)+ (date_time_separator time)?
+  : alternative_direction WHITE_SPACE day_of_week (day_of_week_list_separator day_of_week)+ (date_time_separator time)?
       -> ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) time?)+
   ;
   
 day_of_week_list_separator
-  : (COMMA WHITE_SPACE? | WHITE_SPACE) (OR WHITE_SPACE)?
-  ;
-  
-alternative_date_list
-  : date (date_list_separator date)+ (date_time_separator time)?
-      -> (^(DATE_TIME date time?))+
+  : COMMA (WHITE_SPACE | WHITE_SPACE OR WHITE_SPACE)
+  | WHITE_SPACE OR WHITE_SPACE
   ;
   
 date_list_separator

@@ -22,7 +22,6 @@ search
 date_time_alternative
   @init {
     _walkerState.enterDateTimeAlternative();
-    System.out.println("entering alternative");
   }
   @after {
     _walkerState.exitDateTimeAlternative();
@@ -31,12 +30,8 @@ date_time_alternative
   ;
 
 date_time
-  @init {
-    System.out.println("entering date time");
-  }
   @after {
     _walkerState.captureDateTime(); 
-    System.out.println("exiting date time");
   }
   : ^(DATE_TIME date time?)
   ;  

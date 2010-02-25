@@ -46,7 +46,14 @@ Searcher = Class.create({
 
   _insertList : function(json) {
     $A(json.locations).each(function(loc) {
-      var li = '<li><span class="highlight">' + loc.text + '</span>&nbsp;-&gt;&nbsp;' + loc.localtime + '</li>';
+      var dateList = loc.date_times.collect(function(dt) { return dt.localtime; });
+      var li = new Element("li");
+      li.insert("<span class='highlight'>" + loc.text + "</span>");
+      var ul = new Element('ul');
+      dateList.each(function(d) { 
+        ul.insert(new Element('li').insert(d));
+      });
+      li.insert(ul);
       $('result_list').insert(li);
     });
   },

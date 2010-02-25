@@ -251,12 +251,12 @@ WHITE_SPACE
   : (DOT | SPACE)+
   ;
   
-UNKNOWN_WORD 
-  : ('a'..'z')+
+UNKNOWN
+  : ('a'..'z')+ | UNKNOWN_CHAR
   ;
   
-UNKNOWN_CHAR
-  : .
+fragment UNKNOWN_CHAR
+  : ~(SPACE | DOT)
   ;
   
 fragment DIGIT : '0'..'9';
