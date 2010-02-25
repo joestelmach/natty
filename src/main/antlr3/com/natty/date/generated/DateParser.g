@@ -83,9 +83,14 @@ date_time_alternative
   // "next wed or thurs" , "next wed, thurs, or fri"
   : (alternative_day_of_week_list)=> alternative_day_of_week_list
       -> ^(DATE_TIME_ALTERNATIVE alternative_day_of_week_list)
+      
+  // date and time OR date and time
+  | (date WHITE_SPACE OR WHITE_SPACE date)=> date WHITE_SPACE OR WHITE_SPACE date (date_time_separator time)?
+      -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date time)+)
   
   // this wed. or next
-   | (THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction (date_time_separator time)?
+   | ((THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction)=>
+     (THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction (date_time_separator time)?
       -> ^(DATE_TIME_ALTERNATIVE 
             ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week)) time?) 
             ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) time?)

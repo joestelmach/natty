@@ -28,7 +28,7 @@ import com.natty.utility.Printer;
  */
 public class ParserTest {
   public static void main(String[] args) {
-    String inputString = "oct 1st next wed or thurs at 3pm";
+    String inputString = "this friday or next tuesday at 6pm";
     inputString = " text " + inputString + " text ";
     ANTLRInputStream input = null;
     Tree tree = null;
