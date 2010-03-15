@@ -30,7 +30,17 @@ tokens {
   LIST;
 }
 
-@header { package com.natty.date.generated; }
+@header {
+  package com.natty.date.generated;
+}
+
+@members {
+  private com.natty.date.ParserState _state = new com.natty.date.ParserState();
+  public com.natty.date.ParserState getState() {
+    return _state; 
+  }
+}
+
 search 
   : text (((date_time_entry)=> date_time_entry | known_token) text)+ 
       -> ^(LIST date_time_entry*)
@@ -50,6 +60,8 @@ text
   ;
   
 date_time
+  @after {_state.captureLocation($date_time.text, $date_time.start, $date_time.stop);}
+  
   : (
       (date (date_time_separator time)?)=>
           date (date_time_separator time)?
@@ -80,17 +92,19 @@ date
   ;
   
 date_time_alternative
-  // "next wed or thurs" , "next wed, thurs, or fri"
+  @after {_state.captureLocation($date_time_alternative.text, $date_time_alternative.start, $date_time_alternative.stop);}
+  
+    // "next wed or thurs" , "next wed, thurs, or fri"
   : (alternative_day_of_week_list)=> alternative_day_of_week_list
       -> ^(DATE_TIME_ALTERNATIVE alternative_day_of_week_list)
       
   // date and time OR date and time
   | (date WHITE_SPACE OR WHITE_SPACE date)=> date WHITE_SPACE OR WHITE_SPACE date (date_time_separator time)?
-      -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date time)+)
+      -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date time?)+)
   
   // this wed. or next
-   | ((THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction)=>
-     (THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction (date_time_separator time)?
+  | ((THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction)=>
+    (THIS WHITE_SPACE)? day_of_week WHITE_SPACE OR WHITE_SPACE alternative_direction (date_time_separator time)?
       -> ^(DATE_TIME_ALTERNATIVE 
             ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week)) time?) 
             ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) time?)

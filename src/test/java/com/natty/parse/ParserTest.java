@@ -7,14 +7,12 @@ import java.util.List;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.debug.BlankDebugEventListener;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
 
 import com.natty.date.ANTLRNoCaseInputStream;
 import com.natty.date.Location;
-import com.natty.date.ParseEventListener;
 import com.natty.date.generated.DateLexer;
 import com.natty.date.generated.DateParser;
 import com.natty.date.generated.DateWalker;
@@ -28,7 +26,8 @@ import com.natty.utility.Printer;
  */
 public class ParserTest {
   public static void main(String[] args) {
-    String inputString = "this friday or next tuesday at 6pm";
+    long start = System.currentTimeMillis();
+    String inputString = "oct 1st or nov 2nd";
     inputString = " text " + inputString + " text ";
     ANTLRInputStream input = null;
     Tree tree = null;
@@ -41,8 +40,7 @@ public class ParserTest {
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
       // parse 
-      ParseEventListener parseListener = new ParseEventListener();
-      parser = new DateParser(tokens, parseListener);
+      parser = new DateParser(tokens);
       //parser = new DateParser(tokens);
       printer = new Printer(parser.getTokenNames());
       printer.printTokenStream(tokens);
@@ -64,18 +62,20 @@ public class ParserTest {
       // and walk it
       nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
-      DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
+      DateWalker walker = new DateWalker(nodes);
       //DateWalker walker = new DateWalker(nodes);
       walker.search();
       
       System.out.println("-----");
       System.out.println("-----");
-      List<Location> locations = parseListener.getLocations();
+      List<Location> locations = parser.getState().getLocations();
       for(int i=0; i<locations.size(); i++) {
         Location loc = locations.get(i);
         List<Date> dateList = walker.getState().getDateTimes().get(i);
-        System.out.println(loc.getText() + ": " + loc.getStart() + " to " + loc.getEnd() + " -> " + Arrays.toString(dateList.toArray()));
+        System.out.println(loc.getText() + ": chars " + loc.getStart() + " to " + loc.getEnd() + " -> " + Arrays.toString(dateList.toArray()));
       }
+      
+      System.out.println((System.currentTimeMillis() - start) + " ms");
       
     } catch (Exception e) {
       e.printStackTrace();

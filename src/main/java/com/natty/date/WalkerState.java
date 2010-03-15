@@ -274,6 +274,9 @@ public class WalkerState {
     _calendar.set(Calendar.MINUTE, minutesInt);
   }
   
+  /**
+   * captures the current state of the calendar as a date time
+   */
   public void captureDateTime() {
     Date date = _calendar.getTime();
     _currentDateTimes.add(date);
@@ -285,16 +288,25 @@ public class WalkerState {
     }
   }
   
+  /**
+   * invoked when we enter a date time alternative
+   */
   public void enterDateTimeAlternative() {
     _inAlternative = true;
   }
   
+  /**
+   * invoked when we exit a date time alternative
+   */
   public void exitDateTimeAlternative() {
     _inAlternative = false;
     _dateTimes.add(_currentDateTimes);
     _currentDateTimes = new ArrayList<Date>();
   }
   
+  /**
+   * @return the list of date times found 
+   */
   public List<List<Date>> getDateTimes() {
     return _dateTimes;
   }

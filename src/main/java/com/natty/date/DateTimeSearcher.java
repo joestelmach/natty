@@ -33,7 +33,7 @@ public class DateTimeSearcher {
   public static String search(String inputString) {
     inputString = PREFIX_SUFFIX + inputString + PREFIX_SUFFIX;
     ANTLRInputStream input = null;
-    ParseEventListener parseListener = new ParseEventListener();
+    DateParser parser = null;
     DateWalker walker = null;
     try {
       // lex
@@ -42,7 +42,7 @@ public class DateTimeSearcher {
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
       // parse 
-      DateParser parser = new DateParser(tokens, parseListener);
+      parser = new DateParser(tokens);
       DateParser.search_return result = parser.search();
       Tree tree = (Tree) result.getTree();
       
@@ -54,14 +54,14 @@ public class DateTimeSearcher {
       // and walk it
       nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
-      walker = new DateWalker(nodes, new BlankDebugEventListener());
+      walker = new DateWalker(nodes);
       walker.search();
       
     } catch (Exception e) {
       e.printStackTrace();
     }
     
-    List<Location> locations = parseListener.getLocations();
+    List<Location> locations = parser.getState().getLocations();
     List<List<Date>> dateTimeLists = walker.getState().getDateTimes();
     
     JSONObject locationJson = new JSONObject();
@@ -123,14 +123,14 @@ public class DateTimeSearcher {
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
       // parse 
-      parser = new DateParser(tokens, builder);
+      parser = new DateParser(tokens);
       DateParser.date_time_return result = parser.date_time();
       
       // walk
       tree = (Tree) result.getTree();
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
-      DateWalker walker = new DateWalker(nodes, new BlankDebugEventListener());
+      DateWalker walker = new DateWalker(nodes);
       walker.date_time();
       dateTimes = walker.getState().getDateTimes().get(0);
       
@@ -149,7 +149,7 @@ public class DateTimeSearcher {
       //json.put("localtime", _formatter.format(date));
       //_formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
       //json.put("utctime", _formatter.format(date));
-      json.put("structure", builder.toJSON());
+      //json.put("structure", builder.toJSON());
       StringBuilder buffer = new StringBuilder();
       if(tree != null) json.put("ast", buffer.toString());
       
