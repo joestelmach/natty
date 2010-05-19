@@ -15,17 +15,7 @@ options {
   }
 }
 
-search
-  : ^(LIST date_time_alternative+)
-  ;
-  
 date_time_alternative
-  @init {
-    _walkerState.enterDateTimeAlternative();
-  }
-  @after {
-    _walkerState.exitDateTimeAlternative();
-  }
   : ^(DATE_TIME_ALTERNATIVE date_time+)
   ;
 

@@ -169,11 +169,6 @@ INT_97 : '97';
 INT_98 : '98';
 INT_99 : '99';
 
-ST : 'st';
-ND : 'nd';
-RD : 'rd';
-TH : 'th';
-   
 ONE       : 'one';
 TWO       : 'two';
 THREE     : 'three';
@@ -217,6 +212,12 @@ EIGHTEENTH     : 'eighteenth';
 NINETEENTH     : 'nineteenth';
 TWENTIETH      : 'twentieth';
 THIRTIETH      : 'thirtieth';
+
+// ********** suffixes **********
+ST : 'st';
+ND : 'nd';
+RD : 'rd';
+TH : 'th';
    
 // ********** common rules **********
 
@@ -249,14 +250,6 @@ AFTER    : 'after';
 
 WHITE_SPACE
   : (DOT | SPACE)+
-  ;
-  
-UNKNOWN
-  : ('a'..'z')+ | UNKNOWN_CHAR
-  ;
-  
-fragment UNKNOWN_CHAR
-  : ~(SPACE | DOT)
   ;
   
 fragment DIGIT : '0'..'9';

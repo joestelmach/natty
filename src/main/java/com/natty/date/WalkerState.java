@@ -13,21 +13,24 @@ import java.util.logging.Logger;
  */
 public class WalkerState {
   private GregorianCalendar _calendar;
+  private TimeZone _defaultTimeZone;
   private int _currentYear;
   private static final int TWO_DIGIT_YEAR_CENTURY_THRESHOLD = 20;
-  private List<List<Date>> _dateTimes;
   private List<Date> _currentDateTimes;
   private boolean _inAlternative = false;
   private static final Logger _logger = Logger.getLogger(WalkerState.class.getName());
   
   /**
-   * Creates a new SeekableDateTime representing the start of u
+   * Creates a new WalkerState representing the start of
    * the next hour from the current time
    */
   public WalkerState() {
     resetCalender();
     _currentDateTimes = new ArrayList<Date>();
-    _dateTimes = new ArrayList<List<Date>>();
+  }
+  
+  public void setDefaultTimeZone(final TimeZone zone) {
+    _defaultTimeZone = zone;
   }
   
   /**
@@ -238,19 +241,23 @@ public class WalkerState {
    *     - zoneinfo format (America/New_York, America/Los_Angeles, etc)
    *     - GMT offset (+05:00, -0500, +5, etc)
    */
-  public void setExplicitTime(String hours, String minutes, String seconds, String amPm, String zone) {
+  public void setExplicitTime(String hours, String minutes, String seconds, String amPm, String zoneString) {
     int hoursInt = Integer.parseInt(hours);
     int minutesInt = Integer.parseInt(minutes);
     assert(amPm == null || amPm.equals("am") || amPm.equals("pm"));
     assert(hoursInt >= 0 && hoursInt <= 23); 
     assert(minutesInt >= 0 && minutesInt < 60); 
     
-    if(zone != null) {
-      if(zone.startsWith("+") || zone.startsWith("-")) {
-        zone = "GMT" + zone;
+    // if no explicit zone is given, we use our own
+    TimeZone zone = null;
+    if(zoneString != null) {
+      if(zoneString.startsWith("+") || zoneString.startsWith("-")) {
+        zoneString = "GMT" + zoneString;
       }
-      _calendar.setTimeZone(TimeZone.getTimeZone(zone));
+      zone = TimeZone.getTimeZone(zoneString);
     }
+    
+    _calendar.setTimeZone(zone != null ? zone : _defaultTimeZone);
     
     _calendar.set(Calendar.HOUR_OF_DAY, hoursInt);
     // hours greater than 12 are in 24-hour time
@@ -275,17 +282,12 @@ public class WalkerState {
   }
   
   /**
-   * captures the current state of the calendar as a date time
+   * 
    */
   public void captureDateTime() {
     Date date = _calendar.getTime();
     _currentDateTimes.add(date);
     resetCalender();
-    
-    if(!_inAlternative) {
-      _dateTimes.add(_currentDateTimes);
-      _currentDateTimes = new ArrayList<Date>();
-    }
   }
   
   /**
@@ -296,19 +298,10 @@ public class WalkerState {
   }
   
   /**
-   * invoked when we exit a date time alternative
-   */
-  public void exitDateTimeAlternative() {
-    _inAlternative = false;
-    _dateTimes.add(_currentDateTimes);
-    _currentDateTimes = new ArrayList<Date>();
-  }
-  
-  /**
    * @return the list of date times found 
    */
-  public List<List<Date>> getDateTimes() {
-    return _dateTimes;
+  public List<Date> getDateTimes() {
+    return _currentDateTimes;
   }
   
   /**
