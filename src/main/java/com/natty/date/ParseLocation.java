@@ -1,0 +1,45 @@
+package com.natty.date;
+
+
+public class ParseLocation {
+  private String _ruleName;
+  private String _text;
+  private int _start;
+  private int _end;
+  
+  public String getRuleName() {
+    return _ruleName;
+  }
+  
+  public void setRuleName(String ruleName) {
+    _ruleName = ruleName;
+  }
+  
+  public String getText() {
+    return _text;
+  }
+  
+  public void setText(String text) {
+    _text = text;
+  }
+  
+  public int getStart() {
+    return _start;
+  }
+
+  public void setStart(int start) {
+    _start = start;
+  }
+
+  public int getEnd() {
+    return _end;
+  }
+
+  public void setEnd(int end) {
+    _end = end;
+  }
+
+  public String toString() {
+    return _ruleName + ": '" + _text + "', " + _start + ", " + _end;
+  }
+}

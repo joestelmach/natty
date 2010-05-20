@@ -11,6 +11,7 @@ public class CommandLine {
     }
     
     Parser parser = new Parser();
+    parser.setDebug(true);
     System.out.println(parser.parse(args[0]));
   }
 }

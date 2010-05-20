@@ -2,7 +2,6 @@ package com.natty.date;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.lang.reflect.Constructor;
 import java.util.TimeZone;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,8 +9,6 @@ import java.util.logging.Logger;
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.debug.DebugEventListener;
-import org.antlr.runtime.debug.DebugParser;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
@@ -19,34 +16,15 @@ import org.antlr.runtime.tree.Tree;
 import com.natty.date.generated.DateLexer;
 import com.natty.date.generated.DateParser;
 import com.natty.date.generated.DateWalker;
+import com.natty.date.generated.DebugDateParser;
 import com.natty.date.generated.TreeRewrite;
 
 public class Parser {
   private TimeZone _defaultTimeZone;
   
-  private static Constructor<?> _debugConstructor;
-  private static boolean _isDebug;
-  private StructureBuilder _debugListener;
-  
+  private boolean _debug;
+  private ParseListener _debugListener;
   private static final Logger _logger = Logger.getLogger(Parser.class.getName());
-  
-  // we need to check if the parser was built with debug support or not
-  static {
-    _isDebug = false;
-    System.out.println(DateParser.class.getSuperclass().getName());
-    if(DateParser.class.getSuperclass().equals(DebugParser.class)) {
-      @SuppressWarnings("unchecked")
-      Constructor<DateParser>[] constructors = (Constructor<DateParser>[]) DateParser.class.getDeclaredConstructors();
-      for(Constructor<?> constructor:constructors) {
-        Class<?>[] parameterTypes = constructor.getParameterTypes();
-        if(parameterTypes.length == 2 && parameterTypes[1] == DebugEventListener.class) {
-          _isDebug = true;
-          _debugConstructor = constructor;
-          break;
-        }
-      }
-    }
-  }
   
   public Parser(TimeZone zone) {
     _defaultTimeZone = zone;
@@ -54,6 +32,14 @@ public class Parser {
   
   public Parser() {
     _defaultTimeZone = TimeZone.getTimeZone("America/New_York");
+  }
+  
+  /**
+   * 
+   * @param debug
+   */
+  public void setDebug(final boolean debug) {
+    _debug = debug;
   }
   
   /**
@@ -70,12 +56,24 @@ public class Parser {
       DateLexer lexer = new DateLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
-      // parse 
-      DateParser parser = getParser(tokens);
-      DateParser.parse_return parseReturn = parser.parse();
+      // parse with debug
+      Tree tree = null;
+      if(_debug) {
+        _debugListener = new ParseListener();
+        DebugDateParser parser = new DebugDateParser(tokens, _debugListener);
+        DebugDateParser.parse_return parseReturn = parser.parse();
+        tree = (Tree) parseReturn.getTree();
+        result.setParseLocations(_debugListener.getLocations());
+      }
+      
+      // or parse without debug
+      else {
+        DateParser parser = new DateParser(tokens);
+        DateParser.parse_return parseReturn = parser.parse();
+        tree = (Tree) parseReturn.getTree();
+      }
       
       // grab the tree
-      Tree tree = (Tree) parseReturn.getTree();
       System.out.println(tree.toStringTree());
       
       // rewrite it (temporary fix for http://www.antlr.org/jira/browse/ANTLR-427)
@@ -91,9 +89,6 @@ public class Parser {
       walker.date_time_alternative();
       
       result.setDateTimes(walker.getState().getDateTimes());
-      if(_debugListener != null) {
-        System.out.println(_debugListener.toJSON());
-      }
       
     } catch(IOException e) {
       _logger.log(Level.SEVERE, "Could not read from input stream", e);
@@ -103,32 +98,5 @@ public class Parser {
     }
     
     return result;
-  }
-  
-  /**
-   * 
-   * @param tokens
-   * @return
-   */
-  private DateParser getParser(CommonTokenStream tokens) {
-    
-    DateParser dateParser = null;
-    _debugListener = null;
-    
-    if(!_isDebug) {
-      dateParser = new DateParser(tokens);
-    }
-    else {
-      try {
-        _debugListener = new StructureBuilder();
-        dateParser = (DateParser) _debugConstructor.newInstance(tokens, _debugListener);
-        
-      } catch (Exception e) {
-        _logger.log(Level.WARNING, "Could not reflect debug parser", e);
-        dateParser = new DateParser(tokens);
-      }
-    }
-    
-    return dateParser;
   }
 }

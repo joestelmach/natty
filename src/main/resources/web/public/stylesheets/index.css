@@ -7,7 +7,7 @@ body {
   font-family:Helvetica;
   padding:0;
   margin:0;
-  background:url(../images/bg.gif) #f4f9fd repeat-y 180px 0;
+  background:url(../images/bg.gif) #f4f9fd repeat-y 50% 0;
 }
 
 h1,
@@ -21,43 +21,10 @@ h2 {
   font-size:20px;  
 }
 
-#nav {
-  float:left; 
-  width:180px;
-}
-
-#nav ul {
-  list-style-type:none;
-  padding:0;
-  margin:34px 0 0 0;
-}
-
-#nav ul li {
-  border-bottom:1px solid #ccc;
-  text-align:right;
-}
-
-#nav ul li.first {
-  border-top:1px solid #ccc;
-}
-
-#nav ul li.current a {
-  background-color:#fff;
-  color:#000;
-}
-
-#nav ul li a {
-  display:block;
-  padding: 10px 20px 10px 10px;
-  text-decoration : none;
-  color:#888;
-  background-color:#fff;
-}
-
 #content {
   width : 660px;
   padding:20px;
-  margin:0 0 0 180px;
+  margin:0 auto 0 auto;
   top:0;
   bottom:0;
 }

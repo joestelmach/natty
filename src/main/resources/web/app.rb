@@ -23,25 +23,6 @@ post '/parse' do
   output
 end
 
-post '/search' do
-  puts 'searching'
-
-  # invoke the parser with the given input
-  output = ''
-  IO.popen("java -jar parser.jar --search \"#{params[:value]}\"") do |parser|
-    parser.each{|line| output << line} 
-  end
-
-  unless((output =~ /^\{/) == 0)
-    string = output.strip();
-    string = string.length > 0 ? string : 'no dates found'
-    output = "{\"errors\":\"#{string}\"}"
-  end
-
-  content_type :json
-  output
-end
-
 get '/:view' do
   erb params[:view].to_sym
 end

@@ -5,23 +5,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.debug.BlankDebugEventListener;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-public class StructureBuilder extends BlankDebugEventListener {
+public class ParseListener extends BlankDebugEventListener {
   
   private static final Map<String, String> INTERESTING_RULES;
   
   static {
     INTERESTING_RULES = new HashMap<String, String>();
     INTERESTING_RULES.put("date_time", "date and time");
-    //INTERESTING_RULES.put("date", "date");
+    INTERESTING_RULES.put("date", "date");
     INTERESTING_RULES.put("global_date_prefix", "date prefix");
     INTERESTING_RULES.put("relative_date", "relative date");
     INTERESTING_RULES.put("relaxed_date", "relaxed date");
@@ -49,18 +44,17 @@ public class StructureBuilder extends BlankDebugEventListener {
 
   private int backtracking = 0;
   private Map<String, Stack<List<Token>>> _ruleMap;
-  private JSONObject _json;
-  private static final Logger _logger = Logger.getLogger(StructureBuilder.class.getName());
-
-  public StructureBuilder() {
+  private List<ParseLocation> _locations;
+  
+  public ParseListener() {
     _ruleMap = new HashMap<String, Stack<List<Token>>>();
-    _json = new JSONObject();
+    _locations = new ArrayList<ParseLocation>();
   }
   
-  public JSONObject toJSON() {
-    return _json;
+  public List<ParseLocation> getLocations() {
+    return _locations;
   }
-
+  
   /** Backtracking or cyclic DFA, don't want to add nodes to tree */
   public void enterDecision(int d) {
     backtracking++;
@@ -95,18 +89,13 @@ public class StructureBuilder extends BlankDebugEventListener {
       String text = builder.toString();
       int start = tokenList.get(0).getCharPositionInLine();
       int end = start + text.length();
-            
-      JSONObject json = new JSONObject();
-      try {
-        json.put("text", text);
-        json.put("start", start);
-        json.put("end", end);
-        _json.put(INTERESTING_RULES.get(ruleName), json);
-        
-      } catch(JSONException e) {
-        _logger.log(Level.FINE, "could not add json", e);
-        
-      }
+      
+      ParseLocation location = new ParseLocation();
+      location.setRuleName(INTERESTING_RULES.get(ruleName));
+      location.setText(text);
+      location.setStart(start);
+      location.setEnd(end);
+      _locations.add(location);
     }
   }
 

@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/natty/date/generated/DateWalker.g 2010-05-19 23:09:41
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/natty/date/generated/DebugDateWalker.g 2010-05-19 23:09:53
  
   package com.natty.date.generated;
   import com.natty.date.WalkerState;
@@ -9,7 +9,9 @@ import org.antlr.runtime.tree.*;import java.util.Stack;
 import java.util.List;
 import java.util.ArrayList;
 
-public class DateWalker extends TreeParser {
+import org.antlr.runtime.debug.*;
+import java.io.IOException;
+public class DebugDateWalker extends DebugTreeParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "DOT", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", "TODAY", "TOMORROW", "YESTERDAY", "AM", "PM", "T", "MILITARY_HOUR_SUFFIX", "MIDNIGHT", "NOON", "MORNING", "NIGHT", "UTC", "EST", "PST", "CST", "MST", "AKST", "HAST", "INT_00", "INT_01", "INT_02", "INT_03", "INT_04", "INT_05", "INT_06", "INT_07", "INT_08", "INT_09", "INT_0", "INT_1", "INT_2", "INT_3", "INT_4", "INT_5", "INT_6", "INT_7", "INT_8", "INT_9", "INT_10", "INT_11", "INT_12", "INT_13", "INT_14", "INT_15", "INT_16", "INT_17", "INT_18", "INT_19", "INT_20", "INT_21", "INT_22", "INT_23", "INT_24", "INT_25", "INT_26", "INT_27", "INT_28", "INT_29", "INT_30", "INT_31", "INT_32", "INT_33", "INT_34", "INT_35", "INT_36", "INT_37", "INT_38", "INT_39", "INT_40", "INT_41", "INT_42", "INT_43", "INT_44", "INT_45", "INT_46", "INT_47", "INT_48", "INT_49", "INT_50", "INT_51", "INT_52", "INT_53", "INT_54", "INT_55", "INT_56", "INT_57", "INT_58", "INT_59", "INT_60", "INT_61", "INT_62", "INT_63", "INT_64", "INT_65", "INT_66", "INT_67", "INT_68", "INT_69", "INT_70", "INT_71", "INT_72", "INT_73", "INT_74", "INT_75", "INT_76", "INT_77", "INT_78", "INT_79", "INT_80", "INT_81", "INT_82", "INT_83", "INT_84", "INT_85", "INT_86", "INT_87", "INT_88", "INT_89", "INT_90", "INT_91", "INT_92", "INT_93", "INT_94", "INT_95", "INT_96", "INT_97", "INT_98", "INT_99", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN", "TWENTY", "THIRTY", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH", "THIRTEENTH", "FOURTEENTH", "FIFTEENTH", "SIXTEENTH", "SEVENTEENTH", "EIGHTEENTH", "NINETEENTH", "TWENTIETH", "THIRTIETH", "ST", "ND", "RD", "TH", "COLON", "COMMA", "DASH", "SLASH", "PLUS", "SINGLE_QUOTE", "IN", "THE", "OR", "AT", "ON", "OF", "THIS", "THAT", "LAST", "NEXT", "PAST", "COMING", "UPCOMING", "FROM", "NOW", "AGO", "BEFORE", "AFTER", "SPACE", "WHITE_SPACE", "DIGIT", "INT", "MONTH_OF_YEAR", "DAY_OF_MONTH", "DAY_OF_WEEK", "YEAR_OF", "DATE_TIME", "DATE_TIME_ALTERNATIVE", "EXPLICIT_DATE", "RELATIVE_DATE", "SEEK", "DIRECTION", "SEEK_BY", "SPAN", "WEEK_INDEX", "EXPLICIT_TIME", "HOURS_OF_DAY", "MINUTES_OF_HOUR", "SECONDS_OF_MINUTE", "AM_PM", "ZONE", "ZONE_OFFSET", "LIST"
     };
@@ -266,18 +268,42 @@ public class DateWalker extends TreeParser {
     // delegates
     // delegators
 
-
-        public DateWalker(TreeNodeStream input) {
-            this(input, new RecognizerSharedState());
+    public static final String[] ruleNames = new String[] {
+        "invalidRule", "date_time_alternative", "seek", "time", "date", 
+        "explicit_date", "relative_date", "date_time"
+    };
+     
+        public int ruleLevel = 0;
+        public int getRuleLevel() { return ruleLevel; }
+        public void incRuleLevel() { ruleLevel++; }
+        public void decRuleLevel() { ruleLevel--; }
+        public DebugDateWalker(TreeNodeStream input) {
+            this(input, DebugEventSocketProxy.DEFAULT_DEBUGGER_PORT, new RecognizerSharedState());
         }
-        public DateWalker(TreeNodeStream input, RecognizerSharedState state) {
+        public DebugDateWalker(TreeNodeStream input, int port, RecognizerSharedState state) {
             super(input, state);
-             
+            DebugEventSocketProxy proxy =
+                new DebugEventSocketProxy(this, port, input.getTreeAdaptor());
+            setDebugListener(proxy);
+            try {
+                proxy.handshake();
+            }
+            catch (IOException ioe) {
+                reportError(ioe);
+            }
         }
-        
+    public DebugDateWalker(TreeNodeStream input, DebugEventListener dbg) {
+        super(input, dbg, new RecognizerSharedState());
 
-    public String[] getTokenNames() { return DateWalker.tokenNames; }
-    public String getGrammarFileName() { return "com/natty/date/generated/DateWalker.g"; }
+    }
+    protected boolean evalPredicate(boolean result, String predicate) {
+        dbg.semanticPredicate(result, predicate);
+        return result;
+    }
+
+
+    public String[] getTokenNames() { return DebugDateWalker.tokenNames; }
+    public String getGrammarFileName() { return "com/natty/date/generated/DebugDateWalker.g"; }
 
 
       private com.natty.date.WalkerState _walkerState = new com.natty.date.WalkerState();
@@ -289,20 +315,34 @@ public class DateWalker extends TreeParser {
 
 
     // $ANTLR start "date_time_alternative"
-    // com/natty/date/generated/DateWalker.g:21:1: date_time_alternative : ^( DATE_TIME_ALTERNATIVE ( date_time )+ ) ;
+    // com/natty/date/generated/DebugDateWalker.g:21:1: date_time_alternative : ^( DATE_TIME_ALTERNATIVE ( date_time )+ ) ;
     public final void date_time_alternative() throws RecognitionException {
+        try { dbg.enterRule(getGrammarFileName(), "date_time_alternative");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(21, 1);
+
         try {
-            // com/natty/date/generated/DateWalker.g:22:3: ( ^( DATE_TIME_ALTERNATIVE ( date_time )+ ) )
-            // com/natty/date/generated/DateWalker.g:22:5: ^( DATE_TIME_ALTERNATIVE ( date_time )+ )
+            // com/natty/date/generated/DebugDateWalker.g:22:3: ( ^( DATE_TIME_ALTERNATIVE ( date_time )+ ) )
+            dbg.enterAlt(1);
+
+            // com/natty/date/generated/DebugDateWalker.g:22:5: ^( DATE_TIME_ALTERNATIVE ( date_time )+ )
             {
+            dbg.location(22,5);
+            dbg.location(22,7);
             match(input,DATE_TIME_ALTERNATIVE,FOLLOW_DATE_TIME_ALTERNATIVE_in_date_time_alternative46); 
 
             match(input, Token.DOWN, null); 
-            // com/natty/date/generated/DateWalker.g:22:29: ( date_time )+
+            dbg.location(22,29);
+            // com/natty/date/generated/DebugDateWalker.g:22:29: ( date_time )+
             int cnt1=0;
+            try { dbg.enterSubRule(1);
+
             loop1:
             do {
                 int alt1=2;
+                try { dbg.enterDecision(1);
+
                 switch ( input.LA(1) ) {
                 case DATE_TIME:
                     {
@@ -312,10 +352,15 @@ public class DateWalker extends TreeParser {
 
                 }
 
+                } finally {dbg.exitDecision(1);}
+
                 switch (alt1) {
             	case 1 :
-            	    // com/natty/date/generated/DateWalker.g:22:29: date_time
+            	    dbg.enterAlt(1);
+
+            	    // com/natty/date/generated/DebugDateWalker.g:22:29: date_time
             	    {
+            	    dbg.location(22,29);
             	    pushFollow(FOLLOW_date_time_in_date_time_alternative48);
             	    date_time();
 
@@ -329,10 +374,13 @@ public class DateWalker extends TreeParser {
             	    if ( cnt1 >= 1 ) break loop1;
                         EarlyExitException eee =
                             new EarlyExitException(1, input);
+                        dbg.recognitionException(eee);
+
                         throw eee;
                 }
                 cnt1++;
             } while (true);
+            } finally {dbg.exitSubRule(1);}
 
 
             match(input, Token.UP, null); 
@@ -346,28 +394,51 @@ public class DateWalker extends TreeParser {
         }
         finally {
         }
+        dbg.location(23, 3);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "date_time_alternative");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
         return ;
     }
     // $ANTLR end "date_time_alternative"
 
 
     // $ANTLR start "date_time"
-    // com/natty/date/generated/DateWalker.g:25:1: date_time : ^( DATE_TIME date ( time )? ) ;
+    // com/natty/date/generated/DebugDateWalker.g:25:1: date_time : ^( DATE_TIME date ( time )? ) ;
     public final void date_time() throws RecognitionException {
+        try { dbg.enterRule(getGrammarFileName(), "date_time");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(25, 1);
+
         try {
-            // com/natty/date/generated/DateWalker.g:29:3: ( ^( DATE_TIME date ( time )? ) )
-            // com/natty/date/generated/DateWalker.g:29:5: ^( DATE_TIME date ( time )? )
+            // com/natty/date/generated/DebugDateWalker.g:29:3: ( ^( DATE_TIME date ( time )? ) )
+            dbg.enterAlt(1);
+
+            // com/natty/date/generated/DebugDateWalker.g:29:5: ^( DATE_TIME date ( time )? )
             {
+            dbg.location(29,5);
+            dbg.location(29,7);
             match(input,DATE_TIME,FOLLOW_DATE_TIME_in_date_time71); 
 
             match(input, Token.DOWN, null); 
+            dbg.location(29,17);
             pushFollow(FOLLOW_date_in_date_time73);
             date();
 
             state._fsp--;
 
-            // com/natty/date/generated/DateWalker.g:29:22: ( time )?
+            dbg.location(29,22);
+            // com/natty/date/generated/DebugDateWalker.g:29:22: ( time )?
             int alt2=2;
+            try { dbg.enterSubRule(2);
+            try { dbg.enterDecision(2);
+
             switch ( input.LA(1) ) {
                 case EXPLICIT_TIME:
                     {
@@ -376,10 +447,15 @@ public class DateWalker extends TreeParser {
                     break;
             }
 
+            } finally {dbg.exitDecision(2);}
+
             switch (alt2) {
                 case 1 :
-                    // com/natty/date/generated/DateWalker.g:29:22: time
+                    dbg.enterAlt(1);
+
+                    // com/natty/date/generated/DebugDateWalker.g:29:22: time
                     {
+                    dbg.location(29,22);
                     pushFollow(FOLLOW_time_in_date_time75);
                     time();
 
@@ -390,6 +466,7 @@ public class DateWalker extends TreeParser {
                     break;
 
             }
+            } finally {dbg.exitSubRule(2);}
 
 
             match(input, Token.UP, null); 
@@ -406,17 +483,33 @@ public class DateWalker extends TreeParser {
         }
         finally {
         }
+        dbg.location(30, 3);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "date_time");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
         return ;
     }
     // $ANTLR end "date_time"
 
 
     // $ANTLR start "date"
-    // com/natty/date/generated/DateWalker.g:32:1: date : ( relative_date | explicit_date );
+    // com/natty/date/generated/DebugDateWalker.g:32:1: date : ( relative_date | explicit_date );
     public final void date() throws RecognitionException {
+        try { dbg.enterRule(getGrammarFileName(), "date");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(32, 1);
+
         try {
-            // com/natty/date/generated/DateWalker.g:33:3: ( relative_date | explicit_date )
+            // com/natty/date/generated/DebugDateWalker.g:33:3: ( relative_date | explicit_date )
             int alt3=2;
+            try { dbg.enterDecision(3);
+
             switch ( input.LA(1) ) {
             case RELATIVE_DATE:
                 {
@@ -432,13 +525,19 @@ public class DateWalker extends TreeParser {
                 NoViableAltException nvae =
                     new NoViableAltException("", 3, 0, input);
 
+                dbg.recognitionException(nvae);
                 throw nvae;
             }
 
+            } finally {dbg.exitDecision(3);}
+
             switch (alt3) {
                 case 1 :
-                    // com/natty/date/generated/DateWalker.g:33:5: relative_date
+                    dbg.enterAlt(1);
+
+                    // com/natty/date/generated/DebugDateWalker.g:33:5: relative_date
                     {
+                    dbg.location(33,5);
                     pushFollow(FOLLOW_relative_date_in_date94);
                     relative_date();
 
@@ -448,8 +547,11 @@ public class DateWalker extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // com/natty/date/generated/DateWalker.g:34:5: explicit_date
+                    dbg.enterAlt(2);
+
+                    // com/natty/date/generated/DebugDateWalker.g:34:5: explicit_date
                     {
+                    dbg.location(34,5);
                     pushFollow(FOLLOW_explicit_date_in_date101);
                     explicit_date();
 
@@ -467,21 +569,37 @@ public class DateWalker extends TreeParser {
         }
         finally {
         }
+        dbg.location(35, 3);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "date");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
         return ;
     }
     // $ANTLR end "date"
 
 
     // $ANTLR start "relative_date"
-    // com/natty/date/generated/DateWalker.g:37:1: relative_date : ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) );
+    // com/natty/date/generated/DebugDateWalker.g:37:1: relative_date : ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) );
     public final void relative_date() throws RecognitionException {
         CommonTree index=null;
         CommonTree day=null;
         CommonTree month=null;
 
+        try { dbg.enterRule(getGrammarFileName(), "relative_date");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(37, 1);
+
         try {
-            // com/natty/date/generated/DateWalker.g:38:3: ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) )
+            // com/natty/date/generated/DebugDateWalker.g:38:3: ( ^( RELATIVE_DATE seek ) | ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) ) )
             int alt4=2;
+            try { dbg.enterDecision(4);
+
             switch ( input.LA(1) ) {
             case RELATIVE_DATE:
                 {
@@ -503,6 +621,7 @@ public class DateWalker extends TreeParser {
                         NoViableAltException nvae =
                             new NoViableAltException("", 4, 2, input);
 
+                        dbg.recognitionException(nvae);
                         throw nvae;
                     }
 
@@ -512,6 +631,7 @@ public class DateWalker extends TreeParser {
                     NoViableAltException nvae =
                         new NoViableAltException("", 4, 1, input);
 
+                    dbg.recognitionException(nvae);
                     throw nvae;
                 }
 
@@ -521,16 +641,24 @@ public class DateWalker extends TreeParser {
                 NoViableAltException nvae =
                     new NoViableAltException("", 4, 0, input);
 
+                dbg.recognitionException(nvae);
                 throw nvae;
             }
 
+            } finally {dbg.exitDecision(4);}
+
             switch (alt4) {
                 case 1 :
-                    // com/natty/date/generated/DateWalker.g:38:5: ^( RELATIVE_DATE seek )
+                    dbg.enterAlt(1);
+
+                    // com/natty/date/generated/DebugDateWalker.g:38:5: ^( RELATIVE_DATE seek )
                     {
+                    dbg.location(38,5);
+                    dbg.location(38,7);
                     match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date117); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(38,21);
                     pushFollow(FOLLOW_seek_in_relative_date119);
                     seek();
 
@@ -542,24 +670,37 @@ public class DateWalker extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // com/natty/date/generated/DateWalker.g:40:5: ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) )
+                    dbg.enterAlt(2);
+
+                    // com/natty/date/generated/DebugDateWalker.g:40:5: ^( RELATIVE_DATE ^( WEEK_INDEX index= INT ^( DAY_OF_WEEK day= INT ) ^( MONTH_OF_YEAR month= INT ) ) )
                     {
+                    dbg.location(40,5);
+                    dbg.location(40,7);
                     match(input,RELATIVE_DATE,FOLLOW_RELATIVE_DATE_in_relative_date130); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(40,21);
+                    dbg.location(40,23);
                     match(input,WEEK_INDEX,FOLLOW_WEEK_INDEX_in_relative_date133); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(40,39);
                     index=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date137); 
+                    dbg.location(40,44);
+                    dbg.location(40,46);
                     match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_relative_date140); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(40,61);
                     day=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date144); 
 
                     match(input, Token.UP, null); 
+                    dbg.location(40,67);
+                    dbg.location(40,69);
                     match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_relative_date148); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(40,88);
                     month=(CommonTree)match(input,INT,FOLLOW_INT_in_relative_date152); 
 
                     match(input, Token.UP, null); 
@@ -567,6 +708,7 @@ public class DateWalker extends TreeParser {
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
+                    dbg.location(41,5);
                     _walkerState.setDayOfWeekIndex((index!=null?index.getText():null), (day!=null?day.getText():null), (month!=null?month.getText():null));
 
                     }
@@ -580,40 +722,68 @@ public class DateWalker extends TreeParser {
         }
         finally {
         }
+        dbg.location(42, 3);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "relative_date");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
         return ;
     }
     // $ANTLR end "relative_date"
 
 
     // $ANTLR start "explicit_date"
-    // com/natty/date/generated/DateWalker.g:44:1: explicit_date : ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? ) ;
+    // com/natty/date/generated/DebugDateWalker.g:44:1: explicit_date : ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? ) ;
     public final void explicit_date() throws RecognitionException {
         CommonTree month=null;
         CommonTree dom=null;
         CommonTree dow=null;
         CommonTree year=null;
 
+        try { dbg.enterRule(getGrammarFileName(), "explicit_date");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(44, 1);
+
         try {
-            // com/natty/date/generated/DateWalker.g:45:3: ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? ) )
-            // com/natty/date/generated/DateWalker.g:45:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? )
+            // com/natty/date/generated/DebugDateWalker.g:45:3: ( ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? ) )
+            dbg.enterAlt(1);
+
+            // com/natty/date/generated/DebugDateWalker.g:45:5: ^( EXPLICIT_DATE ^( MONTH_OF_YEAR month= INT ) ^( DAY_OF_MONTH dom= INT ) ( ^( DAY_OF_WEEK dow= INT ) )? ( ^( YEAR_OF year= INT ) )? )
             {
+            dbg.location(45,5);
+            dbg.location(45,7);
             match(input,EXPLICIT_DATE,FOLLOW_EXPLICIT_DATE_in_explicit_date177); 
 
             match(input, Token.DOWN, null); 
+            dbg.location(45,21);
+            dbg.location(45,23);
             match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_explicit_date180); 
 
             match(input, Token.DOWN, null); 
+            dbg.location(45,42);
             month=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date184); 
 
             match(input, Token.UP, null); 
+            dbg.location(45,48);
+            dbg.location(45,50);
             match(input,DAY_OF_MONTH,FOLLOW_DAY_OF_MONTH_in_explicit_date188); 
 
             match(input, Token.DOWN, null); 
+            dbg.location(45,66);
             dom=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date192); 
 
             match(input, Token.UP, null); 
-            // com/natty/date/generated/DateWalker.g:46:9: ( ^( DAY_OF_WEEK dow= INT ) )?
+            dbg.location(46,9);
+            // com/natty/date/generated/DebugDateWalker.g:46:9: ( ^( DAY_OF_WEEK dow= INT ) )?
             int alt5=2;
+            try { dbg.enterSubRule(5);
+            try { dbg.enterDecision(5);
+
             switch ( input.LA(1) ) {
                 case DAY_OF_WEEK:
                     {
@@ -622,13 +792,20 @@ public class DateWalker extends TreeParser {
                     break;
             }
 
+            } finally {dbg.exitDecision(5);}
+
             switch (alt5) {
                 case 1 :
-                    // com/natty/date/generated/DateWalker.g:46:10: ^( DAY_OF_WEEK dow= INT )
+                    dbg.enterAlt(1);
+
+                    // com/natty/date/generated/DebugDateWalker.g:46:10: ^( DAY_OF_WEEK dow= INT )
                     {
+                    dbg.location(46,10);
+                    dbg.location(46,12);
                     match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_explicit_date206); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(46,27);
                     dow=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date210); 
 
                     match(input, Token.UP, null); 
@@ -637,9 +814,14 @@ public class DateWalker extends TreeParser {
                     break;
 
             }
+            } finally {dbg.exitSubRule(5);}
 
-            // com/natty/date/generated/DateWalker.g:46:35: ( ^( YEAR_OF year= INT ) )?
+            dbg.location(46,35);
+            // com/natty/date/generated/DebugDateWalker.g:46:35: ( ^( YEAR_OF year= INT ) )?
             int alt6=2;
+            try { dbg.enterSubRule(6);
+            try { dbg.enterDecision(6);
+
             switch ( input.LA(1) ) {
                 case YEAR_OF:
                     {
@@ -648,13 +830,20 @@ public class DateWalker extends TreeParser {
                     break;
             }
 
+            } finally {dbg.exitDecision(6);}
+
             switch (alt6) {
                 case 1 :
-                    // com/natty/date/generated/DateWalker.g:46:36: ^( YEAR_OF year= INT )
+                    dbg.enterAlt(1);
+
+                    // com/natty/date/generated/DebugDateWalker.g:46:36: ^( YEAR_OF year= INT )
                     {
+                    dbg.location(46,36);
+                    dbg.location(46,38);
                     match(input,YEAR_OF,FOLLOW_YEAR_OF_in_explicit_date217); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(46,50);
                     year=(CommonTree)match(input,INT,FOLLOW_INT_in_explicit_date221); 
 
                     match(input, Token.UP, null); 
@@ -663,9 +852,11 @@ public class DateWalker extends TreeParser {
                     break;
 
             }
+            } finally {dbg.exitSubRule(6);}
 
 
             match(input, Token.UP, null); 
+            dbg.location(47,5);
             _walkerState.setExplicitDate((month!=null?month.getText():null), (dom!=null?dom.getText():null), (dow!=null?dow.getText():null), (year!=null?year.getText():null));
 
             }
@@ -677,13 +868,22 @@ public class DateWalker extends TreeParser {
         }
         finally {
         }
+        dbg.location(48, 3);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "explicit_date");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
         return ;
     }
     // $ANTLR end "explicit_date"
 
 
     // $ANTLR start "time"
-    // com/natty/date/generated/DateWalker.g:50:1: time : ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) ;
+    // com/natty/date/generated/DebugDateWalker.g:50:1: time : ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) ;
     public final void time() throws RecognitionException {
         CommonTree hours=null;
         CommonTree minutes=null;
@@ -691,27 +891,46 @@ public class DateWalker extends TreeParser {
         CommonTree zone=null;
         CommonTree AM_PM1=null;
 
+        try { dbg.enterRule(getGrammarFileName(), "time");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(50, 1);
+
         try {
-            // com/natty/date/generated/DateWalker.g:51:3: ( ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) )
-            // com/natty/date/generated/DateWalker.g:51:5: ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? )
+            // com/natty/date/generated/DebugDateWalker.g:51:3: ( ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? ) )
+            dbg.enterAlt(1);
+
+            // com/natty/date/generated/DebugDateWalker.g:51:5: ^( EXPLICIT_TIME ^( HOURS_OF_DAY hours= INT ) ^( MINUTES_OF_HOUR minutes= INT ) ( ^( SECONDS_OF_MINUTE seconds= INT ) )? ( AM_PM )? (zone= ZONE | zone= ZONE_OFFSET )? )
             {
+            dbg.location(51,5);
+            dbg.location(51,7);
             match(input,EXPLICIT_TIME,FOLLOW_EXPLICIT_TIME_in_time247); 
 
             match(input, Token.DOWN, null); 
+            dbg.location(51,21);
+            dbg.location(51,23);
             match(input,HOURS_OF_DAY,FOLLOW_HOURS_OF_DAY_in_time250); 
 
             match(input, Token.DOWN, null); 
+            dbg.location(51,41);
             hours=(CommonTree)match(input,INT,FOLLOW_INT_in_time254); 
 
             match(input, Token.UP, null); 
+            dbg.location(51,47);
+            dbg.location(51,49);
             match(input,MINUTES_OF_HOUR,FOLLOW_MINUTES_OF_HOUR_in_time258); 
 
             match(input, Token.DOWN, null); 
+            dbg.location(51,72);
             minutes=(CommonTree)match(input,INT,FOLLOW_INT_in_time262); 
 
             match(input, Token.UP, null); 
-            // com/natty/date/generated/DateWalker.g:52:9: ( ^( SECONDS_OF_MINUTE seconds= INT ) )?
+            dbg.location(52,9);
+            // com/natty/date/generated/DebugDateWalker.g:52:9: ( ^( SECONDS_OF_MINUTE seconds= INT ) )?
             int alt7=2;
+            try { dbg.enterSubRule(7);
+            try { dbg.enterDecision(7);
+
             switch ( input.LA(1) ) {
                 case SECONDS_OF_MINUTE:
                     {
@@ -720,13 +939,20 @@ public class DateWalker extends TreeParser {
                     break;
             }
 
+            } finally {dbg.exitDecision(7);}
+
             switch (alt7) {
                 case 1 :
-                    // com/natty/date/generated/DateWalker.g:52:10: ^( SECONDS_OF_MINUTE seconds= INT )
+                    dbg.enterAlt(1);
+
+                    // com/natty/date/generated/DebugDateWalker.g:52:10: ^( SECONDS_OF_MINUTE seconds= INT )
                     {
+                    dbg.location(52,10);
+                    dbg.location(52,12);
                     match(input,SECONDS_OF_MINUTE,FOLLOW_SECONDS_OF_MINUTE_in_time276); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(52,37);
                     seconds=(CommonTree)match(input,INT,FOLLOW_INT_in_time280); 
 
                     match(input, Token.UP, null); 
@@ -735,9 +961,14 @@ public class DateWalker extends TreeParser {
                     break;
 
             }
+            } finally {dbg.exitSubRule(7);}
 
-            // com/natty/date/generated/DateWalker.g:52:45: ( AM_PM )?
+            dbg.location(52,45);
+            // com/natty/date/generated/DebugDateWalker.g:52:45: ( AM_PM )?
             int alt8=2;
+            try { dbg.enterSubRule(8);
+            try { dbg.enterDecision(8);
+
             switch ( input.LA(1) ) {
                 case AM_PM:
                     {
@@ -746,19 +977,29 @@ public class DateWalker extends TreeParser {
                     break;
             }
 
+            } finally {dbg.exitDecision(8);}
+
             switch (alt8) {
                 case 1 :
-                    // com/natty/date/generated/DateWalker.g:52:45: AM_PM
+                    dbg.enterAlt(1);
+
+                    // com/natty/date/generated/DebugDateWalker.g:52:45: AM_PM
                     {
+                    dbg.location(52,45);
                     AM_PM1=(CommonTree)match(input,AM_PM,FOLLOW_AM_PM_in_time285); 
 
                     }
                     break;
 
             }
+            } finally {dbg.exitSubRule(8);}
 
-            // com/natty/date/generated/DateWalker.g:52:52: (zone= ZONE | zone= ZONE_OFFSET )?
+            dbg.location(52,52);
+            // com/natty/date/generated/DebugDateWalker.g:52:52: (zone= ZONE | zone= ZONE_OFFSET )?
             int alt9=3;
+            try { dbg.enterSubRule(9);
+            try { dbg.enterDecision(9);
+
             switch ( input.LA(1) ) {
                 case ZONE:
                     {
@@ -772,26 +1013,36 @@ public class DateWalker extends TreeParser {
                     break;
             }
 
+            } finally {dbg.exitDecision(9);}
+
             switch (alt9) {
                 case 1 :
-                    // com/natty/date/generated/DateWalker.g:52:53: zone= ZONE
+                    dbg.enterAlt(1);
+
+                    // com/natty/date/generated/DebugDateWalker.g:52:53: zone= ZONE
                     {
+                    dbg.location(52,57);
                     zone=(CommonTree)match(input,ZONE,FOLLOW_ZONE_in_time291); 
 
                     }
                     break;
                 case 2 :
-                    // com/natty/date/generated/DateWalker.g:52:65: zone= ZONE_OFFSET
+                    dbg.enterAlt(2);
+
+                    // com/natty/date/generated/DebugDateWalker.g:52:65: zone= ZONE_OFFSET
                     {
+                    dbg.location(52,69);
                     zone=(CommonTree)match(input,ZONE_OFFSET,FOLLOW_ZONE_OFFSET_in_time297); 
 
                     }
                     break;
 
             }
+            } finally {dbg.exitSubRule(9);}
 
 
             match(input, Token.UP, null); 
+            dbg.location(53,5);
             _walkerState.setExplicitTime((hours!=null?hours.getText():null), (minutes!=null?minutes.getText():null), (seconds!=null?seconds.getText():null), (AM_PM1!=null?AM_PM1.getText():null), (zone!=null?zone.getText():null));
 
             }
@@ -803,13 +1054,22 @@ public class DateWalker extends TreeParser {
         }
         finally {
         }
+        dbg.location(54, 3);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "time");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
         return ;
     }
     // $ANTLR end "time"
 
 
     // $ANTLR start "seek"
-    // com/natty/date/generated/DateWalker.g:56:1: seek : ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) );
+    // com/natty/date/generated/DebugDateWalker.g:56:1: seek : ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) );
     public final void seek() throws RecognitionException {
         CommonTree by=null;
         CommonTree amount=null;
@@ -823,28 +1083,58 @@ public class DateWalker extends TreeParser {
         CommonTree DIRECTION7=null;
         CommonTree INT8=null;
 
+        try { dbg.enterRule(getGrammarFileName(), "seek");
+        if ( getRuleLevel()==0 ) {dbg.commence();}
+        incRuleLevel();
+        dbg.location(56, 1);
+
         try {
-            // com/natty/date/generated/DateWalker.g:57:3: ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) )
+            // com/natty/date/generated/DebugDateWalker.g:57:3: ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) )
             int alt11=4;
-            alt11 = dfa11.predict(input);
+            try { dbg.enterDecision(11);
+
+            try {
+                isCyclicDecision = true;
+                alt11 = dfa11.predict(input);
+            }
+            catch (NoViableAltException nvae) {
+                dbg.recognitionException(nvae);
+                throw nvae;
+            }
+            } finally {dbg.exitDecision(11);}
+
             switch (alt11) {
                 case 1 :
-                    // com/natty/date/generated/DateWalker.g:57:5: ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? )
+                    dbg.enterAlt(1);
+
+                    // com/natty/date/generated/DebugDateWalker.g:57:5: ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? )
                     {
+                    dbg.location(57,5);
+                    dbg.location(57,7);
                     match(input,SEEK,FOLLOW_SEEK_in_seek322); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(57,12);
                     DIRECTION2=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek324); 
+                    dbg.location(57,24);
                     by=(CommonTree)match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek328); 
+                    dbg.location(57,39);
                     amount=(CommonTree)match(input,INT,FOLLOW_INT_in_seek332); 
+                    dbg.location(57,44);
+                    dbg.location(57,46);
                     match(input,DAY_OF_WEEK,FOLLOW_DAY_OF_WEEK_in_seek335); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(57,61);
                     day=(CommonTree)match(input,INT,FOLLOW_INT_in_seek339); 
 
                     match(input, Token.UP, null); 
-                    // com/natty/date/generated/DateWalker.g:57:67: ( date )?
+                    dbg.location(57,67);
+                    // com/natty/date/generated/DebugDateWalker.g:57:67: ( date )?
                     int alt10=2;
+                    try { dbg.enterSubRule(10);
+                    try { dbg.enterDecision(10);
+
                     switch ( input.LA(1) ) {
                         case EXPLICIT_DATE:
                         case RELATIVE_DATE:
@@ -854,10 +1144,15 @@ public class DateWalker extends TreeParser {
                             break;
                     }
 
+                    } finally {dbg.exitDecision(10);}
+
                     switch (alt10) {
                         case 1 :
-                            // com/natty/date/generated/DateWalker.g:57:67: date
+                            dbg.enterAlt(1);
+
+                            // com/natty/date/generated/DebugDateWalker.g:57:67: date
                             {
+                            dbg.location(57,67);
                             pushFollow(FOLLOW_date_in_seek342);
                             date();
 
@@ -868,59 +1163,89 @@ public class DateWalker extends TreeParser {
                             break;
 
                     }
+                    } finally {dbg.exitSubRule(10);}
 
 
                     match(input, Token.UP, null); 
+                    dbg.location(58,5);
                     _walkerState.seekToDayOfWeek((DIRECTION2!=null?DIRECTION2.getText():null), (by!=null?by.getText():null), (amount!=null?amount.getText():null), (day!=null?day.getText():null));
 
                     }
                     break;
                 case 2 :
-                    // com/natty/date/generated/DateWalker.g:60:5: ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) )
+                    dbg.enterAlt(2);
+
+                    // com/natty/date/generated/DebugDateWalker.g:60:5: ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) )
                     {
+                    dbg.location(60,5);
+                    dbg.location(60,7);
                     match(input,SEEK,FOLLOW_SEEK_in_seek362); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(60,12);
                     DIRECTION3=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek364); 
+                    dbg.location(60,22);
                     match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek366); 
+                    dbg.location(60,36);
                     amount=(CommonTree)match(input,INT,FOLLOW_INT_in_seek370); 
+                    dbg.location(60,41);
+                    dbg.location(60,43);
                     match(input,MONTH_OF_YEAR,FOLLOW_MONTH_OF_YEAR_in_seek373); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(60,62);
                     month=(CommonTree)match(input,INT,FOLLOW_INT_in_seek377); 
 
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
+                    dbg.location(61,5);
                     _walkerState.seekToMonth((DIRECTION3!=null?DIRECTION3.getText():null), (amount!=null?amount.getText():null), (month!=null?month.getText():null));
 
                     }
                     break;
                 case 3 :
-                    // com/natty/date/generated/DateWalker.g:63:5: ^( SEEK DIRECTION SEEK_BY INT SPAN )
+                    dbg.enterAlt(3);
+
+                    // com/natty/date/generated/DebugDateWalker.g:63:5: ^( SEEK DIRECTION SEEK_BY INT SPAN )
                     {
+                    dbg.location(63,5);
+                    dbg.location(63,7);
                     match(input,SEEK,FOLLOW_SEEK_in_seek395); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(63,12);
                     DIRECTION4=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek397); 
+                    dbg.location(63,22);
                     match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek399); 
+                    dbg.location(63,30);
                     INT5=(CommonTree)match(input,INT,FOLLOW_INT_in_seek401); 
+                    dbg.location(63,34);
                     SPAN6=(CommonTree)match(input,SPAN,FOLLOW_SPAN_in_seek403); 
 
                     match(input, Token.UP, null); 
+                    dbg.location(64,5);
                     _walkerState.seekBySpan((DIRECTION4!=null?DIRECTION4.getText():null), (INT5!=null?INT5.getText():null), (SPAN6!=null?SPAN6.getText():null));
 
                     }
                     break;
                 case 4 :
-                    // com/natty/date/generated/DateWalker.g:66:5: ^( SEEK DIRECTION SEEK_BY INT date )
+                    dbg.enterAlt(4);
+
+                    // com/natty/date/generated/DebugDateWalker.g:66:5: ^( SEEK DIRECTION SEEK_BY INT date )
                     {
+                    dbg.location(66,5);
+                    dbg.location(66,7);
                     match(input,SEEK,FOLLOW_SEEK_in_seek420); 
 
                     match(input, Token.DOWN, null); 
+                    dbg.location(66,12);
                     DIRECTION7=(CommonTree)match(input,DIRECTION,FOLLOW_DIRECTION_in_seek422); 
+                    dbg.location(66,22);
                     match(input,SEEK_BY,FOLLOW_SEEK_BY_in_seek424); 
+                    dbg.location(66,30);
                     INT8=(CommonTree)match(input,INT,FOLLOW_INT_in_seek426); 
+                    dbg.location(66,34);
                     pushFollow(FOLLOW_date_in_seek428);
                     date();
 
@@ -928,6 +1253,7 @@ public class DateWalker extends TreeParser {
 
 
                     match(input, Token.UP, null); 
+                    dbg.location(67,5);
                     _walkerState.seekBySpan((DIRECTION7!=null?DIRECTION7.getText():null), (INT8!=null?INT8.getText():null), "day");
 
                     }
@@ -941,6 +1267,15 @@ public class DateWalker extends TreeParser {
         }
         finally {
         }
+        dbg.location(68, 3);
+
+        }
+        finally {
+            dbg.exitRule(getGrammarFileName(), "seek");
+            decRuleLevel();
+            if ( getRuleLevel()==0 ) {dbg.terminate();}
+        }
+
         return ;
     }
     // $ANTLR end "seek"
@@ -1005,6 +1340,9 @@ public class DateWalker extends TreeParser {
         }
         public String getDescription() {
             return "56:1: seek : ( ^( SEEK DIRECTION by= SEEK_BY amount= INT ^( DAY_OF_WEEK day= INT ) ( date )? ) | ^( SEEK DIRECTION SEEK_BY amount= INT ^( MONTH_OF_YEAR month= INT ) ) | ^( SEEK DIRECTION SEEK_BY INT SPAN ) | ^( SEEK DIRECTION SEEK_BY INT date ) );";
+        }
+        public void error(NoViableAltException nvae) {
+            dbg.recognitionException(nvae);
         }
     }
  

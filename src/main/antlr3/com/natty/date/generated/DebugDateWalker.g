@@ -1,4 +1,4 @@
-tree grammar DateWalker;
+tree grammar DebugDateWalker;
 
 options {
   tokenVocab=DateParser;

@@ -6,6 +6,7 @@
   
   <properties>
     <debug>false</debug>
+    <grammar.dir>${basedir}/src/main/antlr3/com/natty/date/generated</grammar.dir>
     
     <project.build.sourceEncoding>
       UTF-8
@@ -16,19 +17,27 @@
     </project.reporting.outputEncoding>
   </properties>
   
+  <distributionManagement>
+    <repository>
+      <id>joetelmach.com</id>
+      <name>Joe Stelmach's Repository</name>
+      <url>scp://joestelmach.com:/home/stel7036/repository.joestelmach.com/maven/repository</url>
+    </repository>
+  </distributionManagement>
+  
   <build>
   	<plugins>
+  	
+      <!-- compiler plugin -->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>1.5</source>
           <target>1.5</target>
-          <meminitial>128m</meminitial>
-          <maxmem>512m</maxmem>
         </configuration>
       </plugin>
       
-      <!-- while cleaning, remove any generated parser files -->
+      <!-- clean plugin -->
       <plugin>
 		    <artifactId>maven-clean-plugin</artifactId>
 		    <version>2.4.1</version>
@@ -44,52 +53,97 @@
 		      </filesets>
 		    </configuration>
 		  </plugin>
-      
+		  
+		  <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>createDebugGrammars</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <delete file="${grammar.dir}/DebugDateParser.g" />
+                <delete file="${grammar.dir}/DebugDateWalker.g" />
+                <copy file="${grammar.dir}/DateParser.g" tofile="${grammar.dir}/DebugDateParser.g" />
+                <copy file="${grammar.dir}/DateWalker.g" tofile="${grammar.dir}/DebugDateWalker.g" />
+                <replace file="${grammar.dir}/DebugDateParser.g" token="grammar DateParser" value="grammar DebugDateParser"/>
+                <replace file="${grammar.dir}/DebugDateWalker.g" token="grammar DateWalker" value="grammar DebugDateWalker"/>
+              </tasks>
+            </configuration>
+          </execution>
+          <execution>
+            <id>deleteDebugGrammars</id>
+            <phase>test</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <delete file="src/main/antlr3/com/natty/date/generated/DebugDateParser.g" />
+                <delete file="src/main/antlr3/com/natty/date/generated/DebugDateWalker.g" />
+                <delete>
+                  <fileset dir="src/main/java" includes="*.tokens"/>
+                </delete>
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+     </plugin>
+  	
+      <!-- ANTLR plugin -->
       <plugin>
         <groupId>org.antlr</groupId>
         <artifactId>antlr3-maven-plugin</artifactId>
         <version>3.2</version>
-        <executions>
         
-          <!-- 
-            execution for all grammars except DateParser, since these grammars
-            should always be generated without debugging information
-          -->
+        <!-- The rest of our grammars should be generated with debugging enabled if requested -->
+        <executions>
           <execution>
-            <id>allButDateParser</id>
+            <id>non-debug</id>
             <goals>
               <goal>antlr</goal>
             </goals>
             <configuration>
-              <outputDirectory>src/main/java</outputDirectory>
               <debug>false</debug>
+              <outputDirectory>src/main/java</outputDirectory>
               <excludes>
-                <exclude>com/natty/date/generated/DateParser.g</exclude> 
+                <exclude>com/natty/date/generated/DebugDateParser.g</exclude> 
+                <exclude>com/natty/date/generated/DebugDateWalker.g</exclude> 
               </excludes>
             </configuration>
           </execution>
           
-          <!-- 
-            execution for just the DateParser, allowing the debug mode to 
-            be set with the -Ddebug parameter 
-          -->
           <execution>
-            <id>dateParser</id>
+            <id>debug</id>
             <goals>
               <goal>antlr</goal>
             </goals>
             <configuration>
+              <debug>true</debug>
               <outputDirectory>src/main/java</outputDirectory>
-              <debug>${debug}</debug>
               <includes>
-                <include>com/natty/date/generated/DateParser.g</include> 
+                <include>com/natty/date/generated/DebugDateParser.g</include> 
+                <include>com/natty/date/generated/DebugDateWalker.g</include> 
               </includes>
             </configuration>
           </execution>
+          
         </executions>
       </plugin>
-      
-      <plugin> 
+		  
+      <!-- surefire plugin -->
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <skip>${debug}</skip>
+        </configuration>
+      </plugin>
+    
+		  <!-- gUnit plugin --> 
+	    <plugin> 
 		    <groupId>org.antlr</groupId> 
 		    <artifactId>maven-gunit-plugin</artifactId> 
 		    <version>3.2</version> 
@@ -101,27 +155,12 @@
 		          <goal>gunit</goal> 
 		        </goals> 
 		        <configuration>
-              <skip>${debug}</skip>
-            </configuration>
+		          <skip>${debug}</skip> 
+		        </configuration>
 		      </execution> 
 		    </executions> 
-		  </plugin> 
-      
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.2-beta-5</version>
-        <configuration>
-          <descriptors>
-            <descriptor>src/main/assembly/cli.xml</descriptor>
-          </descriptors>
-          <archive>
-            <manifest>
-              <mainClass>${mainClass}</mainClass>
-            </manifest>
-          </archive>
-        </configuration>
-      </plugin>
-    </plugins>
+	    </plugin> 
+		</plugins>
   </build>
   
   <dependencies>

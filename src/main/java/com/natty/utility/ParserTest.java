@@ -15,6 +15,7 @@ public class ParserTest {
   public static void main(String[] args) {
     String inputString = "10/10 or 12/30 or 10/15 at 5pm";
     Parser parser = new Parser();
+    parser.setDebug(true);
     List<Date> dateTimes = parser.parse(inputString).getDateTimes();
     System.out.println(Arrays.toString(dateTimes.toArray()));
   }

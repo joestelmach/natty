@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/natty/date/generated/TreeRewrite.g 2010-05-19 17:33:15
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/natty/date/generated/TreeRewrite.g 2010-05-19 23:09:41
  package com.natty.date.generated; 
 
 import org.antlr.runtime.*;
@@ -401,7 +401,7 @@ public class TreeRewrite extends TreeRewriter {
 
 
             // AST REWRITE
-            // elements: DIRECTION, DAY_OF_WEEK, INT, dow, SEEK_BY, SEEK
+            // elements: SEEK, DAY_OF_WEEK, dow, DIRECTION, SEEK_BY, INT
             // token labels: dow
             // rule labels: retval
             // token list labels: 

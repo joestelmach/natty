@@ -7,12 +7,6 @@
   </head>
   
   <body>
-    <div id="nav">
-      <ul>
-        <li class='first<%=" current" if @url == '/' or @url == '/index'%>'><a href="index">parser</a></li>
-        <li class='<%=" current" if @url == '/searcher'%>'><a href="searcher">searcher</a></li>
-      </ul>
-    </div>
     <div id="content">
       <%= yield %>
     </div>
