@@ -1,5 +1,5 @@
 gunit Date;
-@header{package com.natty.date.generated;}
+@header{package com.joestelmach.natty.generated;}
 
 date_time:
 " " FAIL

@@ -1,20 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.natty</groupId>
-  <artifactId>parser</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <groupId>com.joestelmach</groupId>
+  <artifactId>natty</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
   
   <properties>
     <debug>false</debug>
-    <grammar.dir>${basedir}/src/main/antlr3/com/natty/date/generated</grammar.dir>
-    
-    <project.build.sourceEncoding>
-      UTF-8
-    </project.build.sourceEncoding>
-
-    <project.reporting.outputEncoding>
-      UTF-8
-    </project.reporting.outputEncoding>
+    <grammar.dir>${basedir}/src/main/antlr3/com/joestelmach/natty/generated</grammar.dir>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   
   <distributionManagement>
@@ -44,7 +38,7 @@
 		    <configuration>
 		      <filesets>
 		        <fileset>
-		          <directory>src/main/java/com/natty/date/generated</directory>
+		          <directory>src/main/java/com/joestelmach/natty/generated</directory>
 		          <includes>
 		            <include>**/*.java</include>
 		          </includes>
@@ -82,8 +76,8 @@
             </goals>
             <configuration>
               <tasks>
-                <delete file="src/main/antlr3/com/natty/date/generated/DebugDateParser.g" />
-                <delete file="src/main/antlr3/com/natty/date/generated/DebugDateWalker.g" />
+                <delete file="${grammar.dir}/generated/DebugDateParser.g" />
+                <delete file="${grammar.dir}/generated/DebugDateWalker.g" />
                 <delete>
                   <fileset dir="src/main/java" includes="*.tokens"/>
                 </delete>
@@ -110,8 +104,8 @@
               <debug>false</debug>
               <outputDirectory>src/main/java</outputDirectory>
               <excludes>
-                <exclude>com/natty/date/generated/DebugDateParser.g</exclude> 
-                <exclude>com/natty/date/generated/DebugDateWalker.g</exclude> 
+                <exclude>com/joestelmach/natty/generated/DebugDateParser.g</exclude> 
+                <exclude>com/joestelmach/natty/generated/DebugDateWalker.g</exclude> 
               </excludes>
             </configuration>
           </execution>
@@ -125,8 +119,8 @@
               <debug>true</debug>
               <outputDirectory>src/main/java</outputDirectory>
               <includes>
-                <include>com/natty/date/generated/DebugDateParser.g</include> 
-                <include>com/natty/date/generated/DebugDateWalker.g</include> 
+                <include>com/joestelmach/natty/generated/DebugDateParser.g</include> 
+                <include>com/joestelmach/natty/generated/DebugDateWalker.g</include> 
               </includes>
             </configuration>
           </execution>
@@ -171,27 +165,21 @@
     </dependency> 
     
     <dependency> 
-      <groupId>org.antlr</groupId>
-      <artifactId>gunit</artifactId>
-      <version>3.2</version>
-    </dependency> 
-    
-    <dependency> 
       <groupId>antlr</groupId>
       <artifactId>antlr</artifactId>
       <version>2.7.7</version>
     </dependency> 
     
     <dependency>
-      <groupId>org.json</groupId>
-    	<artifactId>json</artifactId>
-      <version>20090211</version>
-    </dependency>
-    
-    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.1</version>
     </dependency>
+    
+    <dependency> 
+      <groupId>org.antlr</groupId>
+      <artifactId>gunit</artifactId>
+      <version>3.2</version>
+    </dependency> 
   </dependencies>
 </project>
