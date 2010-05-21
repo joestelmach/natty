@@ -11,6 +11,11 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.debug.BlankDebugEventListener;
 
+/**
+ * Responsible for collecting parse information from the debug parser
+ * 
+ * @author Joe Stelmach 
+ */
 public class ParseListener extends BlankDebugEventListener {
   
   private static final Map<String, String> INTERESTING_RULES;
@@ -59,7 +64,7 @@ public class ParseListener extends BlankDebugEventListener {
     return _locations;
   }
   
-  /** Backtracking or cyclic DFA, don't want to add nodes to tree */
+  // don't add backtracking or cyclic DFA nodes 
   public void enterDecision(int d) {
     backtracking++;
   }

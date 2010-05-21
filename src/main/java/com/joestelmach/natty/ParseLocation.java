@@ -2,8 +2,8 @@ package com.joestelmach.natty;
 
 /**
  * Represents an invocation of a parse rule
+ * 
  * @author Joe Stelmach
- *
  */
 public class ParseLocation {
   private String _ruleName;

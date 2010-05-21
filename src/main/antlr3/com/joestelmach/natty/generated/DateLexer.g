@@ -6,7 +6,7 @@ lexer grammar DateLexer;
 
 JANUARY   : 'january' 's'?   | 'jan' DOT?;
 FEBRUARY  : 'february' 's'?  | 'feb' DOT?;
-MARCH     : 'march' 'es'?     | 'mar' DOT?;
+MARCH     : 'march' 'es'?    | 'mar' DOT?;
 APRIL     : 'april' 's'?     | 'apr' DOT?;
 MAY       : 'may' 's'?;
 JUNE      : 'june' 's'?      | 'jun' DOT?;
