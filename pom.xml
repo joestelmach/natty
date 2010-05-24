@@ -3,7 +3,7 @@
   <groupId>com.joestelmach</groupId>
   <artifactId>natty</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.1.0</version>
   <name>Natty Date Parser</name>
   <description>natural language date parser</description>
   <url>https://nattyparser.appspot.com/</url>
@@ -86,8 +86,8 @@
                 <delete file="${grammar.dir}/DebugDateWalker.g" />
                 <copy file="${grammar.dir}/DateParser.g" tofile="${grammar.dir}/DebugDateParser.g" />
                 <copy file="${grammar.dir}/DateWalker.g" tofile="${grammar.dir}/DebugDateWalker.g" />
-                <replace file="${grammar.dir}/DebugDateParser.g" token="grammar DateParser" value="grammar DebugDateParser"/>
-                <replace file="${grammar.dir}/DebugDateWalker.g" token="grammar DateWalker" value="grammar DebugDateWalker"/>
+                <replace file="${grammar.dir}/DebugDateParser.g" token="grammar DateParser" value="grammar DebugDateParser" />
+                <replace file="${grammar.dir}/DebugDateWalker.g" token="grammar DateWalker" value="grammar DebugDateWalker" />
               </tasks>
             </configuration>
           </execution>
@@ -102,7 +102,7 @@
                 <delete file="${grammar.dir}/generated/DebugDateParser.g" />
                 <delete file="${grammar.dir}/generated/DebugDateWalker.g" />
                 <delete>
-                  <fileset dir="src/main/java" includes="*.tokens"/>
+                  <fileset dir="src/main/java" includes="*.tokens" />
                 </delete>
               </tasks>
             </configuration>
