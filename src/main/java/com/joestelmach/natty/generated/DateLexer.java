@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/joestelmach/natty/generated/DateLexer.g 2010-05-20 20:18:44
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/joestelmach/natty/generated/DateLexer.g 2010-05-23 23:39:17
  package com.joestelmach.natty.generated; 
 
 import org.antlr.runtime.*;
@@ -574,11 +574,11 @@ public class DateLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/joestelmach/natty/generated/DateLexer.g:9:33: 'mar' ( DOT )?
+                    // com/joestelmach/natty/generated/DateLexer.g:9:32: 'mar' ( DOT )?
                     {
                     match("mar"); 
 
-                    // com/joestelmach/natty/generated/DateLexer.g:9:39: ( DOT )?
+                    // com/joestelmach/natty/generated/DateLexer.g:9:38: ( DOT )?
                     int alt8=2;
                     switch ( input.LA(1) ) {
                         case '.':
@@ -590,7 +590,7 @@ public class DateLexer extends Lexer {
 
                     switch (alt8) {
                         case 1 :
-                            // com/joestelmach/natty/generated/DateLexer.g:9:39: DOT
+                            // com/joestelmach/natty/generated/DateLexer.g:9:38: DOT
                             {
                             mDOT(); 
 
@@ -7293,10 +7293,10 @@ public class DateLexer extends Lexer {
         try {
             int _type = EIGHTH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/joestelmach/natty/generated/DateLexer.g:201:16: ( 'eigth' )
-            // com/joestelmach/natty/generated/DateLexer.g:201:18: 'eigth'
+            // com/joestelmach/natty/generated/DateLexer.g:201:16: ( 'eighth' )
+            // com/joestelmach/natty/generated/DateLexer.g:201:18: 'eighth'
             {
-            match("eigth"); 
+            match("eighth"); 
 
 
             }
@@ -9993,10 +9993,10 @@ public class DateLexer extends Lexer {
         "\4\uffff\1\64\4\uffff\1\115\1\uffff\1\121\1\uffff\1\123\4\uffff"+
         "\1\146\1\161\1\174\1\u0087\1\u0092\1\u009d\1\u00a8\1\u00b3\1\u00be"+
         "\1\u00c9\5\uffff\1\u00ca\35\uffff\1\u00dd\11\uffff\1\u00e8\u008b"+
-        "\uffff\1\u00f6\5\uffff\1\u00fb\21\uffff\1\u0103\6\uffff\1\u0109"+
-        "\7\uffff\1\u0111\7\uffff\1\u0117\7\uffff\1\u011d\1\u011f\12\uffff"+
-        "\1\u0129\21\uffff\1\u0134\1\uffff\1\u0137\2\uffff\1\u013a\5\uffff"+
-        "\1\u013f\5\uffff\1\u0142\1\u0144\1\u0128\2\uffff\1\u0147\7\uffff";
+        "\uffff\1\u00f6\5\uffff\1\u00fb\21\uffff\1\u0103\6\uffff\1\u0108"+
+        "\7\uffff\1\u0110\7\uffff\1\u0116\6\uffff\1\u011c\1\u011e\12\uffff"+
+        "\1\u0129\22\uffff\1\u0134\1\uffff\1\u0137\2\uffff\1\u013a\5\uffff"+
+        "\1\u013f\5\uffff\1\u0142\1\u0144\1\u0127\2\uffff\1\u0147\7\uffff";
     static final String DFA85_eofS =
         "\u0148\uffff";
     static final String DFA85_minS =
@@ -10009,11 +10009,11 @@ public class DateLexer extends Lexer {
         "\1\145\1\uffff\1\164\6\uffff\1\145\2\uffff\1\162\6\uffff\1\154\1"+
         "\164\1\uffff\1\153\2\uffff\1\150\1\166\1\164\1\145\2\uffff\1\162"+
         "\1\156\1\145\1\uffff\1\164\1\uffff\1\144\1\uffff\1\146\1\164\2\uffff"+
-        "\1\145\1\164\1\uffff\2\145\1\uffff\1\145\1\uffff\1\55\1\164\1\145"+
-        "\1\uffff\1\145\1\uffff\1\145\3\uffff\1\151\1\uffff\1\145\1\156\1"+
-        "\145\1\uffff\1\156\1\uffff\1\145\1\uffff\1\156\2\145\4\uffff\1\145"+
-        "\2\uffff\1\164\1\156\1\164\1\145\1\uffff\1\164\3\156\2\uffff\1\164"+
-        "\2\uffff\1\156\2\uffff\3\164\2\uffff\1\164\7\uffff";
+        "\1\145\1\164\2\145\1\uffff\1\145\1\uffff\1\55\1\164\1\145\1\uffff"+
+        "\1\145\1\uffff\1\145\3\uffff\1\151\1\uffff\1\145\1\156\1\145\1\uffff"+
+        "\1\156\1\uffff\1\145\1\uffff\1\156\2\145\4\uffff\1\145\3\uffff\1"+
+        "\164\1\156\1\164\1\145\1\uffff\1\164\3\156\2\uffff\1\164\2\uffff"+
+        "\1\156\2\uffff\3\164\2\uffff\1\164\7\uffff";
     static final String DFA85_maxS =
         "\1\172\1\165\1\162\1\164\2\165\1\162\1\157\1\145\1\167\1\145\1\163"+
         "\1\145\2\164\1\uffff\2\164\12\71\5\uffff\1\56\7\uffff\1\156\1\uffff"+
@@ -10022,13 +10022,13 @@ public class DateLexer extends Lexer {
         "\1\156\1\uffff\1\145\3\uffff\1\163\5\uffff\1\147\1\145\165\uffff"+
         "\1\162\1\uffff\1\164\3\uffff\1\164\1\uffff\1\145\1\uffff\1\145\1"+
         "\uffff\1\164\6\uffff\1\164\2\uffff\1\163\6\uffff\1\156\1\164\1\uffff"+
-        "\1\153\2\uffff\1\164\1\166\1\164\1\150\2\uffff\1\162\1\156\1\150"+
+        "\1\153\2\uffff\1\150\1\166\1\164\1\150\2\uffff\1\162\1\156\1\150"+
         "\1\uffff\1\164\1\uffff\1\164\1\uffff\1\166\1\164\2\uffff\1\145\1"+
-        "\164\1\uffff\1\145\1\150\1\uffff\1\145\1\uffff\1\156\1\164\1\145"+
-        "\1\uffff\1\145\1\uffff\1\171\3\uffff\1\171\1\uffff\1\164\1\156\1"+
-        "\145\1\uffff\1\156\1\uffff\1\150\1\uffff\1\156\2\145\4\uffff\1\145"+
-        "\2\uffff\1\164\1\156\1\164\1\145\1\uffff\1\164\3\156\2\uffff\1\164"+
-        "\2\uffff\1\156\2\uffff\3\164\2\uffff\1\164\7\uffff";
+        "\164\1\145\1\150\1\uffff\1\145\1\uffff\1\156\1\164\1\145\1\uffff"+
+        "\1\145\1\uffff\1\171\3\uffff\1\171\1\uffff\1\164\1\156\1\145\1\uffff"+
+        "\1\156\1\uffff\1\150\1\uffff\1\156\2\145\4\uffff\1\145\3\uffff\1"+
+        "\164\1\156\1\164\1\145\1\uffff\1\164\3\156\2\uffff\1\164\2\uffff"+
+        "\1\156\2\uffff\3\164\2\uffff\1\164\7\uffff";
     static final String DFA85_acceptS =
         "\17\uffff\1\44\14\uffff\1\u00c5\1\u00c7\1\u00c8\1\u00c9\1\u00ca"+
         "\1\uffff\1\u00cc\1\u00cd\1\u00ce\1\u00d6\1\u00de\1\u00e0\1\1\1\uffff"+
@@ -10052,13 +10052,13 @@ public class DateLexer extends Lexer {
         "\1\41\1\u00dc\1\43\1\uffff\1\21\1\u009b\1\uffff\1\u00cf\1\u00d5"+
         "\1\u00c6\1\31\1\32\1\u009a\2\uffff\1\20\1\uffff\1\30\1\33\4\uffff"+
         "\1\16\1\27\3\uffff\1\u009e\1\uffff\1\u00b6\1\uffff\1\u00d4\2\uffff"+
-        "\1\u00b7\1\u00a2\2\uffff\1\u00b5\2\uffff\1\u009c\1\uffff\1\u00b2"+
-        "\3\uffff\1\u00b3\1\uffff\1\u00a1\1\uffff\1\u00b0\1\u00a4\1\u00b9"+
-        "\1\uffff\1\26\3\uffff\1\u00b1\1\uffff\1\u00df\1\uffff\1\u009f\3"+
-        "\uffff\1\u00ad\1\u00c2\1\u00ac\1\u00c1\1\uffff\1\u00aa\1\u00a0\4"+
-        "\uffff\1\u00b4\4\uffff\1\u00b8\1\u00a3\1\uffff\1\u00bc\1\u00a7\1"+
-        "\uffff\1\u00bd\1\u00a8\3\uffff\1\u00bb\1\u00a6\1\uffff\1\u00c0\1"+
-        "\u00ab\1\u00ba\1\u00a5\1\u00bf\1\u00be\1\u00a9";
+        "\1\u00b7\1\u00a2\4\uffff\1\u009c\1\uffff\1\u00b2\3\uffff\1\u00b3"+
+        "\1\uffff\1\u00a1\1\uffff\1\u00b0\1\u00a4\1\u00b9\1\uffff\1\26\3"+
+        "\uffff\1\u00b1\1\uffff\1\u00df\1\uffff\1\u009f\3\uffff\1\u00ad\1"+
+        "\u00c2\1\u00ac\1\u00c1\1\uffff\1\u00aa\1\u00b5\1\u00a0\4\uffff\1"+
+        "\u00b4\4\uffff\1\u00b8\1\u00a3\1\uffff\1\u00bc\1\u00a7\1\uffff\1"+
+        "\u00bd\1\u00a8\3\uffff\1\u00bb\1\u00a6\1\uffff\1\u00c0\1\u00ab\1"+
+        "\u00ba\1\u00a5\1\u00bf\1\u00be\1\u00a9";
     static final String DFA85_specialS =
         "\u0148\uffff}>";
     static final String[] DFA85_transitionS = {
@@ -10317,45 +10317,44 @@ public class DateLexer extends Lexer {
             "\1\u0104",
             "",
             "",
-            "\1\u0105\13\uffff\1\u0106",
+            "\1\u0105",
+            "\1\u0106",
             "\1\u0107",
-            "\1\u0108",
-            "\1\u010a\2\uffff\1\u010b",
+            "\1\u0109\2\uffff\1\u010a",
             "",
             "",
+            "\1\u010b",
             "\1\u010c",
-            "\1\u010d",
-            "\1\u010e\2\uffff\1\u010f",
+            "\1\u010d\2\uffff\1\u010e",
             "",
-            "\1\u0110",
+            "\1\u010f",
             "",
-            "\1\u0113\17\uffff\1\u0112",
+            "\1\u0112\17\uffff\1\u0111",
             "",
-            "\1\u0115\17\uffff\1\u0114",
-            "\1\u0116",
+            "\1\u0114\17\uffff\1\u0113",
+            "\1\u0115",
             "",
             "",
             "\1\73",
+            "\1\u0117",
             "\1\u0118",
+            "\1\u0119\2\uffff\1\u011a",
             "",
-            "\1\u0119",
-            "\1\u011a\2\uffff\1\u011b",
-            "",
-            "\1\u011c",
+            "\1\u011b",
             "",
             "\1\u00df\100\uffff\1\u00df",
-            "\1\u011e",
+            "\1\u011d",
+            "\1\u011f",
+            "",
             "\1\u0120",
             "",
-            "\1\u0121",
-            "",
-            "\1\u0122\3\uffff\1\u0124\17\uffff\1\u0123",
+            "\1\u0121\3\uffff\1\u0123\17\uffff\1\u0122",
             "",
             "",
             "",
-            "\1\u0126\17\uffff\1\u0125",
+            "\1\u0125\17\uffff\1\u0124",
             "",
-            "\1\u0127\16\uffff\1\u0128",
+            "\1\u0126\2\uffff\1\u0128\13\uffff\1\u0127",
             "\1\u012a",
             "\1\u012b",
             "",
@@ -10371,6 +10370,7 @@ public class DateLexer extends Lexer {
             "",
             "",
             "\1\u0132",
+            "",
             "",
             "",
             "\1\u0133",

@@ -198,7 +198,7 @@ FOURTH         : 'fourth';
 FIFTH          : 'fifth';
 SIXTH          : 'sixth';
 SEVENTH        : 'seventh';
-EIGHTH         : 'eigth';
+EIGHTH         : 'eighth';
 NINTH          : 'ninth';
 TENTH          : 'tenth';
 ELEVENTH       : 'eleventh';

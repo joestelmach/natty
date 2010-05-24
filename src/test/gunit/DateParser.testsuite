@@ -1019,7 +1019,7 @@ spelled_first_to_thirty_first:
 "6th" -> "6"
 "seventh" -> "7"
 "7th" -> "7"
-"eigth" -> "8"
+"eighth" -> "8"
 "8th" -> "8"
 "ninth" -> "9"
 "9th" -> "9"
@@ -1066,8 +1066,8 @@ spelled_first_to_thirty_first:
 "twenty-seventh" -> "27"
 "twenty seventh" -> "27"
 "27th" -> "27"
-"twenty-eigth" -> "28"
-"twenty eigth" -> "28"
+"twenty-eighth" -> "28"
+"twenty eighth" -> "28"
 "28th" -> "28"
 "twenty-ninth" -> "29"
 "twenty ninth" -> "29"
@@ -1632,7 +1632,7 @@ FOURTH: "fourth" OK
 FIFTH: "fifth" OK
 SIXTH: "sixth" OK
 SEVENTH: "seventh" OK
-EIGHTH: "eigth" OK
+EIGHTH: "eighth" OK
 NINTH: "ninth" OK
 TENTH: "tenth" OK
 ELEVENTH: "eleventh" OK

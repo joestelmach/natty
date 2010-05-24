@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/joestelmach/natty/generated/DateParser.g 2010-05-20 20:18:55
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/joestelmach/natty/generated/DateParser.g 2010-05-23 23:39:46
 
   package com.joestelmach.natty.generated;
 
@@ -1483,7 +1483,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: time, date
+                    // elements: date, time
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1769,7 +1769,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: day_of_week, alternative_direction, time, time, day_of_week
+                    // elements: day_of_week, time, alternative_direction, time, day_of_week
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1956,7 +1956,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: time, time, date, global_date_prefix, date
+                    // elements: date, global_date_prefix, time, date, time
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2316,7 +2316,7 @@ public class DateParser extends Parser {
 
 
             // AST REWRITE
-            // elements: relaxed_day_of_month, time, relaxed_month
+            // elements: relaxed_day_of_month, relaxed_month, time
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -2557,7 +2557,7 @@ public class DateParser extends Parser {
 
 
             // AST REWRITE
-            // elements: day_of_week, alternative_direction, time
+            // elements: day_of_week, time, alternative_direction
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3464,7 +3464,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: prefix_direction, day_of_week, spelled_or_int_01_to_31_optional_prefix
+                    // elements: spelled_or_int_01_to_31_optional_prefix, day_of_week, prefix_direction
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -6982,7 +6982,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: formal_day_of_month, formal_month_of_year, formal_year_four_digits, relaxed_day_of_week
+                    // elements: formal_month_of_year, formal_year_four_digits, relaxed_day_of_week, formal_day_of_month
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -7197,7 +7197,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: formal_year, formal_month_of_year, relaxed_day_of_week, formal_day_of_month
+                    // elements: relaxed_day_of_week, formal_day_of_month, formal_year, formal_month_of_year
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -8599,7 +8599,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: relative_target, relative_prefix
+                    // elements: relative_prefix, relative_target
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -8657,7 +8657,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: relative_target, implicit_prefix
+                    // elements: implicit_prefix, relative_target
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -8775,7 +8775,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: relative_target, relative_suffix, spelled_or_int_01_to_31_optional_prefix
+                    // elements: relative_suffix, relative_target, spelled_or_int_01_to_31_optional_prefix
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -8875,7 +8875,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: relaxed_month, relative_occurrence_index, day_of_week
+                    // elements: relaxed_month, day_of_week, relative_occurrence_index
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -11936,7 +11936,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: minutes, seconds, hours, time_zone, meridian_indicator
+                    // elements: minutes, seconds, meridian_indicator, time_zone, hours
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -12240,7 +12240,7 @@ public class DateParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: time_zone, named_time
+                    // elements: named_time, time_zone
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 

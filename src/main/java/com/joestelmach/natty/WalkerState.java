@@ -245,6 +245,9 @@ public class WalkerState {
     assert(hoursInt >= 0 && hoursInt <= 23); 
     assert(minutesInt >= 0 && minutesInt < 60); 
     
+    // reset milliseconds to 0
+    _calendar.set(Calendar.MILLISECOND, 0);
+    
     // if no explicit zone is given, we use our own
     TimeZone zone = null;
     if(zoneString != null) {

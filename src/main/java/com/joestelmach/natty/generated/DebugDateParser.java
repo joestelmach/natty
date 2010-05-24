@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/joestelmach/natty/generated/DebugDateParser.g 2010-05-20 20:19:09
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/joestelmach/natty/generated/DebugDateParser.g 2010-05-23 23:39:58
 
   package com.joestelmach.natty.generated;
 
@@ -272,28 +272,28 @@ public class DebugDateParser extends DebugParser {
     // delegators
 
     public static final String[] ruleNames = new String[] {
-        "invalidRule", "relative_occurrence_index", "relaxed_day_of_month", 
-        "synpred2_DebugDateParser", "relative_suffix", "time_zone", "relaxed_month", 
-        "int_1_to_5", "synpred6_DebugDateParser", "int_32_to_59", "formal_date", 
-        "synpred10_DebugDateParser", "relative_prefix", "int_01_to_12", 
-        "date_time_separator", "time", "formal_year", "synpred5_DebugDateParser", 
-        "date_time", "parse", "relative_date", "synpred4_DebugDateParser", 
-        "relaxed_year", "relaxed_day_of_week", "synpred11_DebugDateParser", 
-        "formal_date_separator", "synpred1_DebugDateParser", "prefix_direction", 
-        "time_date_separator", "day_of_week", "int_00_to_23_optional_prefix", 
-        "alternative_day_of_month_list", "synpred12_DebugDateParser", "time_zone_offset", 
-        "named_time", "formal_day_of_month", "relative_date_span", "named_relative_date", 
-        "synpred8_DebugDateParser", "int_24_to_31", "spelled_or_int_01_to_31_optional_prefix", 
-        "int_13_to_23", "minutes", "seconds", "synpred9_DebugDateParser", 
-        "relative_target", "int_01_to_12_optional_prefix", "relaxed_year_prefix", 
-        "int_four_digits", "formal_year_four_digits", "relaxed_date", "date", 
-        "date_list_separator", "int_01_to_31_optional_prefix", "date_time_alternative", 
-        "synpred7_DebugDateParser", "int_1_to_9", "day_of_week_list_separator", 
-        "int_00_to_59_mandatory_prefix", "int_60_to_99", "synpred3_DebugDateParser", 
-        "alternative_direction", "implicit_prefix", "meridian_indicator", 
-        "time_zone_abbreviation", "spelled_one_to_thirty_one", "alternative_day_of_week_list", 
-        "formal_month_of_year", "relaxed_day_of_month_prefix", "hours", 
-        "global_date_prefix", "spelled_first_to_thirty_first", "int_00_to_99_mandatory_prefix"
+        "invalidRule", "relaxed_year", "parse", "relative_target", "alternative_day_of_week_list", 
+        "formal_day_of_month", "relative_date", "synpred9_DebugDateParser", 
+        "int_1_to_5", "formal_date", "synpred6_DebugDateParser", "int_00_to_23_optional_prefix", 
+        "time_zone", "synpred2_DebugDateParser", "date_list_separator", 
+        "relaxed_year_prefix", "relaxed_day_of_month", "formal_year_four_digits", 
+        "date_time_alternative", "day_of_week_list_separator", "int_01_to_12_optional_prefix", 
+        "synpred7_DebugDateParser", "int_01_to_12", "prefix_direction", 
+        "synpred1_DebugDateParser", "time", "minutes", "relaxed_date", "int_32_to_59", 
+        "date_time", "time_zone_abbreviation", "formal_year", "formal_month_of_year", 
+        "synpred5_DebugDateParser", "spelled_or_int_01_to_31_optional_prefix", 
+        "alternative_direction", "int_1_to_9", "meridian_indicator", "synpred8_DebugDateParser", 
+        "int_13_to_23", "relative_date_span", "named_relative_date", "synpred4_DebugDateParser", 
+        "date_time_separator", "spelled_one_to_thirty_one", "spelled_first_to_thirty_first", 
+        "synpred3_DebugDateParser", "int_60_to_99", "synpred10_DebugDateParser", 
+        "int_24_to_31", "implicit_prefix", "relaxed_day_of_month_prefix", 
+        "time_date_separator", "relative_prefix", "formal_date_separator", 
+        "int_00_to_99_mandatory_prefix", "int_01_to_31_optional_prefix", 
+        "relaxed_month", "date", "int_four_digits", "hours", "relative_suffix", 
+        "synpred12_DebugDateParser", "synpred11_DebugDateParser", "day_of_week", 
+        "alternative_day_of_month_list", "relaxed_day_of_week", "relative_occurrence_index", 
+        "global_date_prefix", "time_zone_offset", "seconds", "named_time", 
+        "int_00_to_59_mandatory_prefix"
     };
      
         public int ruleLevel = 0;
@@ -1407,7 +1407,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: global_date_prefix, date
+                    // elements: date, global_date_prefix
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1861,7 +1861,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: date, time
+                    // elements: time, date
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2049,7 +2049,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: date, time
+                    // elements: time, date
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2222,7 +2222,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: time, day_of_week, alternative_direction, day_of_week, time
+                    // elements: day_of_week, time, day_of_week, alternative_direction, time
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2462,7 +2462,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: global_date_prefix, time, date, date, time
+                    // elements: global_date_prefix, date, date, time, time
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2901,7 +2901,7 @@ public class DebugDateParser extends DebugParser {
 
 
             // AST REWRITE
-            // elements: time, relaxed_month, relaxed_day_of_month
+            // elements: time, relaxed_day_of_month, relaxed_month
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -2915,10 +2915,10 @@ public class DebugDateParser extends DebugParser {
             // 106:7: -> ( ^( DATE_TIME ^( EXPLICIT_DATE relaxed_month relaxed_day_of_month ) ( time )? ) )+
             {
                 dbg.location(106,10);
-                if ( !(stream_relaxed_month.hasNext()||stream_relaxed_day_of_month.hasNext()) ) {
+                if ( !(stream_relaxed_day_of_month.hasNext()||stream_relaxed_month.hasNext()) ) {
                     throw new RewriteEarlyExitException();
                 }
-                while ( stream_relaxed_month.hasNext()||stream_relaxed_day_of_month.hasNext() ) {
+                while ( stream_relaxed_day_of_month.hasNext()||stream_relaxed_month.hasNext() ) {
                     dbg.location(106,10);
                     // com/joestelmach/natty/generated/DebugDateParser.g:106:10: ^( DATE_TIME ^( EXPLICIT_DATE relaxed_month relaxed_day_of_month ) ( time )? )
                     {
@@ -2953,8 +2953,8 @@ public class DebugDateParser extends DebugParser {
                     }
 
                 }
-                stream_relaxed_month.reset();
                 stream_relaxed_day_of_month.reset();
+                stream_relaxed_month.reset();
 
             }
 
@@ -3195,7 +3195,7 @@ public class DebugDateParser extends DebugParser {
 
 
             // AST REWRITE
-            // elements: day_of_week, alternative_direction, time
+            // elements: time, day_of_week, alternative_direction
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -4171,7 +4171,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: prefix_direction, spelled_or_int_01_to_31_optional_prefix
+                    // elements: spelled_or_int_01_to_31_optional_prefix, prefix_direction
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -4323,7 +4323,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: prefix_direction, day_of_week, spelled_or_int_01_to_31_optional_prefix
+                    // elements: spelled_or_int_01_to_31_optional_prefix, day_of_week, prefix_direction
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -4424,7 +4424,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: spelled_first_to_thirty_first, day_of_week, prefix_direction
+                    // elements: prefix_direction, spelled_first_to_thirty_first, day_of_week
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -5314,7 +5314,7 @@ public class DebugDateParser extends DebugParser {
 
 
             // AST REWRITE
-            // elements: relaxed_year, relaxed_month, relaxed_day_of_month, relaxed_day_of_week
+            // elements: relaxed_day_of_week, relaxed_day_of_month, relaxed_month, relaxed_year
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -8437,7 +8437,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: relaxed_day_of_week, formal_month_of_year, formal_year_four_digits, formal_day_of_month
+                    // elements: relaxed_day_of_week, formal_day_of_month, formal_year_four_digits, formal_month_of_year
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -8685,7 +8685,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: relaxed_day_of_week, formal_month_of_year, formal_year, formal_day_of_month
+                    // elements: formal_month_of_year, relaxed_day_of_week, formal_day_of_month, formal_year
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -10237,7 +10237,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: relative_prefix, relative_target
+                    // elements: relative_target, relative_prefix
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -10306,7 +10306,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: implicit_prefix, relative_target
+                    // elements: relative_target, implicit_prefix
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -10448,7 +10448,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: relative_target, spelled_or_int_01_to_31_optional_prefix, relative_suffix
+                    // elements: spelled_or_int_01_to_31_optional_prefix, relative_suffix, relative_target
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -10575,7 +10575,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: relative_occurrence_index, day_of_week, relaxed_month
+                    // elements: relaxed_month, day_of_week, relative_occurrence_index
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -14167,7 +14167,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: hours, meridian_indicator, time_zone, seconds, minutes
+                    // elements: hours, seconds, minutes, meridian_indicator, time_zone
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -14419,7 +14419,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: meridian_indicator, hours, time_zone
+                    // elements: time_zone, meridian_indicator, hours
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -14548,7 +14548,7 @@ public class DebugDateParser extends DebugParser {
 
 
                     // AST REWRITE
-                    // elements: named_time, time_zone
+                    // elements: time_zone, named_time
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
