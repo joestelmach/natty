@@ -1,0 +1,6 @@
+Natty is a natural language date parser written in Java.  Given a date 
+expression, natty will apply standard language recognition and translation 
+techniques to produce a list of corresponding dates with optional parse and 
+syntax information.  Please visit http://nattyparser.appspot.com for 
+complete documentation or to give natty a try to see how it may benefit
+your project.

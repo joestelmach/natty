@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/joestelmach/natty/generated/DebugDateWalker.g 2010-05-23 23:40:00
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/joestelmach/natty/generated/DebugDateWalker.g 2010-05-23 23:44:16
  package com.joestelmach.natty.generated; 
 
 import org.antlr.runtime.*;
@@ -266,8 +266,8 @@ public class DebugDateWalker extends DebugTreeParser {
     // delegators
 
     public static final String[] ruleNames = new String[] {
-        "invalidRule", "relative_date", "date_time_alternative", "time", 
-        "date_time", "explicit_date", "seek", "date"
+        "invalidRule", "date_time_alternative", "time", "explicit_date", 
+        "date_time", "relative_date", "seek", "date"
     };
      
         public int ruleLevel = 0;

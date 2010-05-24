@@ -3,3 +3,4 @@
 .project
 bin
 target
+src/main/java/com/joestelmach/natty/generated/*
