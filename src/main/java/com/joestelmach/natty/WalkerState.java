@@ -77,6 +77,18 @@ public class WalkerState {
   }
   
   /**
+   * Seeks to the given day within the current month 
+   * @param dayOfMonth
+   * @param dayOfMonth the day of the month to seek to, represented as an integer
+   *     from 1 to 31. Must be guaranteed to parse as an Integer
+   */
+  public void seekToDayOfMonth(String dayOfMonth) {
+    int dayOfMonthInt = Integer.parseInt(dayOfMonth);
+    assert(dayOfMonthInt >= 1 && dayOfMonthInt <= 31);
+    _calendar.set(Calendar.DAY_OF_MONTH, dayOfMonthInt);
+  }
+  
+  /**
    * seeks to a particular month
    * 
    * @param direction the direction to seek: two possibilities 

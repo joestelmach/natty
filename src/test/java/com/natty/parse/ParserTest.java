@@ -26,10 +26,22 @@ public class ParserTest {
   }
 
   public static void main(String[] args) {
-    String inputString = "next friday or saturday at 5pm";
+  String inputString = "";
+  //inputString = "10th of 3 octobers from now";
+  //inputString = "10th of next month";
+  //inputString = "28th of last month";
+  //inputString = "10th of next october";
+  //inputString = "the 30th of this month";
+  //inputString = "monday of last week";
+  //inputString = "tuesday of next week";
+  //inputString = "the monday of 2 weeks ago";
+  inputString = "tuesday of 3 weeks from now";
+    //String inputString = "monday of 3 weeks from now";
     Parser parser = new Parser();
     parser.setDebug(true);
-    List<Date> dateTimes = parser.parse(inputString).getDates();
+    ParseResult result = parser.parse(inputString);
+    System.out.println(result.getSyntaxTree());
+    List<Date> dateTimes = result.getDates();
     System.out.println(Arrays.toString(dateTimes.toArray()));
   }
 }

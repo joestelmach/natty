@@ -18,6 +18,7 @@ tokens {
   SEEK;
   DIRECTION;
   SEEK_BY;
+  EXPLICIT_SEEK;
   SPAN;
   WEEK_INDEX;
   EXPLICIT_TIME;
@@ -27,7 +28,6 @@ tokens {
   AM_PM;
   ZONE;
   ZONE_OFFSET;
-  LIST;
 }
 
 @header {
@@ -64,6 +64,7 @@ time_date_separator
 date
   : (formal_date)=> formal_date
   | (relaxed_date)=> relaxed_date
+  | explicit_relative_date
   | relative_date
   | global_date_prefix WHITE_SPACE date 
       -> ^(RELATIVE_DATE ^(SEEK global_date_prefix date))
@@ -183,9 +184,8 @@ relaxed_date
   ;
   
 relaxed_day_of_week
-  : ((relative_prefix | implicit_prefix) WHITE_SPACE)? day_of_week ((COMMA WHITE_SPACE?) | WHITE_SPACE) -> day_of_week
+  : (prefix WHITE_SPACE)? day_of_week ((COMMA WHITE_SPACE?) | WHITE_SPACE) -> day_of_week
   ;
-  
   
 relaxed_day_of_month_prefix
   : (THE WHITE_SPACE) | (COMMA WHITE_SPACE?)
@@ -263,17 +263,20 @@ formal_date_separator
 // ********** relative date rules **********
   
 relative_date
-  : relative_prefix WHITE_SPACE relative_target
+  // next wed, last month
+  : relative_prefix WHITE_SPACE relative_target 
       -> ^(RELATIVE_DATE ^(SEEK relative_prefix relative_target))
       
+  // this month, this week
   | implicit_prefix WHITE_SPACE relative_target 
       -> ^(RELATIVE_DATE ^(SEEK implicit_prefix relative_target))
       
-  // a day of week relative target with no prefix has an implicit seek of 0
-  // monday
+  // monday, tuesday
   | day_of_week
+  		// relative target with no prefix has an implicit seek of 0
       -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week))
       
+  // one month from now
   | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
       -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix relative_target))
       
@@ -281,7 +284,40 @@ relative_date
   | (THE WHITE_SPACE)? relative_occurrence_index WHITE_SPACE day_of_week WHITE_SPACE IN WHITE_SPACE relaxed_month
       -> ^(RELATIVE_DATE ^(WEEK_INDEX relative_occurrence_index day_of_week relaxed_month))
       
+  // today, tomorrow
   | named_relative_date 
+  ;
+  
+// an explicit point in time within a relative range
+explicit_relative_date
+  // 1st of three months ago, 10th of 3 octobers from now
+  : (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE OF WHITE_SPACE spelled_or_int_01_to_31_optional_prefix WHITE_SPACE explicit_relative_month WHITE_SPACE relative_suffix
+      -> ^(RELATIVE_DATE 
+          ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix explicit_relative_month)
+          ^(EXPLICIT_SEEK relaxed_day_of_month))
+  
+	// 10th of next month, 31st of last month, 10th of next october, 30th of this month
+  | (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE OF WHITE_SPACE prefix WHITE_SPACE explicit_relative_month
+      -> ^(RELATIVE_DATE 
+          ^(SEEK prefix explicit_relative_month)
+          ^(EXPLICIT_SEEK relaxed_day_of_month))
+      
+  // monday of last week, tuesday of next week
+  | (THE WHITE_SPACE)? relaxed_day_of_week OF WHITE_SPACE prefix WHITE_SPACE WEEK
+      -> ^(RELATIVE_DATE 
+          ^(SEEK prefix SPAN["week"])
+          ^(EXPLICIT_SEEK relaxed_day_of_week))
+          
+  // monday of 2 weeks ago, tuesday of 3 weeks from now
+  | (THE WHITE_SPACE)? relaxed_day_of_week OF WHITE_SPACE spelled_or_int_01_to_31_optional_prefix WHITE_SPACE WEEK WHITE_SPACE relative_suffix
+      -> ^(RELATIVE_DATE 
+          ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix SPAN["week"])
+          ^(EXPLICIT_SEEK relaxed_day_of_week))
+  ;
+  
+explicit_relative_month
+  : relaxed_month
+  | MONTH -> SPAN["month"]
   ;
   
 relative_occurrence_index
@@ -312,6 +348,11 @@ relative_prefix
   | (THIS WHITE_SPACE)? UPCOMING -> DIRECTION[">"] SEEK_BY["by_day"] INT["1"]
   | (IN WHITE_SPACE)? spelled_or_int_01_to_31_optional_prefix 
       -> DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix
+  ;
+  
+prefix
+  : relative_prefix
+  | implicit_prefix
   ;
   
 relative_suffix

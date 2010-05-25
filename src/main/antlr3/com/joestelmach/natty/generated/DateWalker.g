@@ -32,7 +32,7 @@ date
   ;
   
 relative_date
-  : ^(RELATIVE_DATE seek)
+  : ^(RELATIVE_DATE seek explicit_seek?)
   
   | ^(RELATIVE_DATE ^(WEEK_INDEX index=INT ^(DAY_OF_WEEK day=INT) ^(MONTH_OF_YEAR month=INT)))
     {_walkerState.setDayOfWeekIndex($index.text, $day.text, $month.text);}
@@ -63,3 +63,11 @@ seek
   | ^(SEEK DIRECTION SEEK_BY INT date)
     {_walkerState.seekBySpan($DIRECTION.text, $INT.text, "day");}
   ;
+  
+explicit_seek
+  : ^(EXPLICIT_SEEK ^(DAY_OF_MONTH month=INT))
+    {_walkerState.seekToDayOfMonth($month.text);}
+    
+  | ^(EXPLICIT_SEEK ^(DAY_OF_WEEK day=INT))
+    {_walkerState.seekToDayOfWeek(">", "by_week", "0", $day.text);}
+  ;  

@@ -30,10 +30,17 @@ public class Parser {
   private ParseListener _debugListener;
   private static final Logger _logger = Logger.getLogger(Parser.class.getName());
   
-  public Parser(TimeZone zone) {
-    _defaultTimeZone = zone;
+  /**
+   * Creates a new parser using the given time zone as the default
+   * @param defaultTimeZone
+   */
+  public Parser(TimeZone defaultTimeZone) {
+    _defaultTimeZone = defaultTimeZone;
   }
   
+  /**
+   * Creates a new parser with no explicit default time zone (default will be US/Eastern)
+   */
   public Parser() {
     _defaultTimeZone = TimeZone.getTimeZone("America/New_York");
   }
