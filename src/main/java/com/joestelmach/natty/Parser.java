@@ -56,7 +56,8 @@ public class Parser {
     ParseResult result = new ParseResult();
     try {
       // lex
-      ANTLRInputStream input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(inputString.getBytes()));
+      ANTLRInputStream input = new ANTLRNoCaseInputStream(
+          new ByteArrayInputStream(inputString.trim().getBytes()));
       DateLexer lexer = new DateLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       

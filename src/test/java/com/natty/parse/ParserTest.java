@@ -8,6 +8,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
+import com.joestelmach.natty.ParseResult;
 import com.joestelmach.natty.Parser;
 
 /**
@@ -18,8 +19,10 @@ import com.joestelmach.natty.Parser;
 public class ParserTest {
   
   @Test
-  public void todo() {
-    Assert.assertTrue(true);
+  public void leadingSpace() {
+    Parser parser = new Parser();
+    ParseResult result = parser.parse("  02/18/1985 ");
+    Assert.assertEquals(1, result.getDates().size());
   }
 
   public static void main(String[] args) {
