@@ -5,4 +5,5 @@ bin
 target
 src/main/java/com/joestelmach/natty/generated/*
 src/main/java/*.tokens
-src/main/antlr3/com/joestelmach/natty/generated/Debug*
+src/main/antlr3/com/joestelmach/natty/generated/DebugDateParser.g
+src/main/antlr3/com/joestelmach/natty/generated/DebugDateWalker.g
