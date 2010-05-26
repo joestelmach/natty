@@ -1,5 +1,20 @@
 Natty is a natural language date parser written in Java.  Given a date 
 expression, natty will apply standard language recognition and translation 
-techniques to produce a list of corresponding dates with optional parse and 
-syntax information.  Please visit http://nattyparser.appspot.com for 
-complete documentation or to give natty a try.
+techniques to produce a list of corresponding dates with optional parse and
+syntax information.  Visit http://natty.joestelmach.com for complete documentation.
+
+========== USAGE ==========
+
+import com.joestelmach.natty.*;
+
+Parser parser = new Parser();
+ParseResult result = parser.parse("next monday");
+List<Date> dates = result.getDates();
+
+========== CHANGELOG ==========
+
+- v.0.2.0
+implemented explicit relative dates like 'wed of next week'
+
+- v.0.1.0
+initial release
