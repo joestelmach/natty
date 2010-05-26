@@ -149,19 +149,14 @@ public class WalkerState {
    * @param dayOfWeek
    * @param month
    */
-  public void setDayOfWeekIndex(String index, String dayOfWeek, String month) {
+  public void setDayOfWeekIndex(String index, String dayOfWeek) {
     int indexInt = Integer.parseInt(index);
     assert(indexInt > 0 && indexInt < 6);
     
     int dayOfWeekInt = Integer.parseInt(dayOfWeek);
     assert(dayOfWeekInt >= 1 && dayOfWeekInt <= 7);
     
-    int monthInt = Integer.parseInt(month);
-    assert(monthInt > 0 && monthInt <= 12);
-    
-    
-    // seek to the first day of the requested month
-    _calendar.set(Calendar.MONTH, monthInt -1);
+    // seek to the first day of the current month
     _calendar.set(Calendar.DAY_OF_MONTH, 1);
     
     // if we already passed the day we're looking for, we add a week

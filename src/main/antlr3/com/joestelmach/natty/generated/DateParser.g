@@ -20,7 +20,6 @@ tokens {
   SEEK_BY;
   EXPLICIT_SEEK;
   SPAN;
-  WEEK_INDEX;
   EXPLICIT_TIME;
   HOURS_OF_DAY;
   MINUTES_OF_HOUR;
@@ -237,7 +236,7 @@ formal_date
   | relaxed_day_of_week? formal_month_of_year formal_date_separator formal_day_of_month (formal_date_separator formal_year)?
       -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year?)
   ;
-
+  
 formal_month_of_year
   : int_01_to_12_optional_prefix -> ^(MONTH_OF_YEAR int_01_to_12_optional_prefix)
   ;
@@ -280,39 +279,59 @@ relative_date
   | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
       -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix relative_target))
       
-  // the last thursday in november
-  | (THE WHITE_SPACE)? relative_occurrence_index WHITE_SPACE day_of_week WHITE_SPACE IN WHITE_SPACE relaxed_month
-      -> ^(RELATIVE_DATE ^(WEEK_INDEX relative_occurrence_index day_of_week relaxed_month))
-      
   // today, tomorrow
   | named_relative_date 
   ;
   
-// an explicit point in time within a relative range
+// ********** explicit relative date rules **********
+// these represent explicit points within a relative range
+
 explicit_relative_date
   // 1st of three months ago, 10th of 3 octobers from now
-  : (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE OF WHITE_SPACE spelled_or_int_01_to_31_optional_prefix WHITE_SPACE explicit_relative_month WHITE_SPACE relative_suffix
+  : (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (IN | OF) WHITE_SPACE spelled_or_int_01_to_31_optional_prefix
+        WHITE_SPACE explicit_relative_month WHITE_SPACE relative_suffix
       -> ^(RELATIVE_DATE 
           ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix explicit_relative_month)
           ^(EXPLICIT_SEEK relaxed_day_of_month))
   
 	// 10th of next month, 31st of last month, 10th of next october, 30th of this month
-  | (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE OF WHITE_SPACE prefix WHITE_SPACE explicit_relative_month
+  | (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (IN | OF) WHITE_SPACE prefix WHITE_SPACE explicit_relative_month
       -> ^(RELATIVE_DATE 
           ^(SEEK prefix explicit_relative_month)
           ^(EXPLICIT_SEEK relaxed_day_of_month))
-      
+          
   // monday of last week, tuesday of next week
-  | (THE WHITE_SPACE)? relaxed_day_of_week OF WHITE_SPACE prefix WHITE_SPACE WEEK
+  | (THE WHITE_SPACE)? relaxed_day_of_week (IN | OF) WHITE_SPACE prefix WHITE_SPACE WEEK
       -> ^(RELATIVE_DATE 
           ^(SEEK prefix SPAN["week"])
           ^(EXPLICIT_SEEK relaxed_day_of_week))
           
   // monday of 2 weeks ago, tuesday of 3 weeks from now
-  | (THE WHITE_SPACE)? relaxed_day_of_week OF WHITE_SPACE spelled_or_int_01_to_31_optional_prefix WHITE_SPACE WEEK WHITE_SPACE relative_suffix
+  | (THE WHITE_SPACE)? relaxed_day_of_week (IN | OF) WHITE_SPACE spelled_or_int_01_to_31_optional_prefix 
+        WHITE_SPACE WEEK WHITE_SPACE relative_suffix
       -> ^(RELATIVE_DATE 
           ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix SPAN["week"])
           ^(EXPLICIT_SEEK relaxed_day_of_week))
+      
+  // the last thursday in november
+  | (THE WHITE_SPACE)? relative_occurrence_index WHITE_SPACE day_of_week WHITE_SPACE (IN | OF) WHITE_SPACE relaxed_month
+      -> ^(RELATIVE_DATE 
+          ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] relaxed_month)
+          ^(EXPLICIT_SEEK relative_occurrence_index day_of_week))
+      
+  // the last thursday of last november
+  | (THE WHITE_SPACE)? relative_occurrence_index WHITE_SPACE day_of_week 
+        WHITE_SPACE (IN | OF) WHITE_SPACE prefix WHITE_SPACE explicit_relative_month
+      -> ^(RELATIVE_DATE
+          ^(SEEK prefix explicit_relative_month)
+          ^(EXPLICIT_SEEK relative_occurrence_index day_of_week) )
+          
+  // the last monday in 2 novembers ago
+  | (THE WHITE_SPACE)? relative_occurrence_index WHITE_SPACE day_of_week WHITE_SPACE (IN | OF) 
+        WHITE_SPACE spelled_or_int_01_to_31_optional_prefix WHITE_SPACE explicit_relative_month WHITE_SPACE relative_suffix
+      -> ^(RELATIVE_DATE 
+          ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix explicit_relative_month)
+          ^(EXPLICIT_SEEK relative_occurrence_index day_of_week))
   ;
   
 explicit_relative_month
@@ -321,13 +340,12 @@ explicit_relative_month
   ;
   
 relative_occurrence_index
-  : int_1_to_5 -> INT[$int_1_to_5.text]
-  | FIRST      -> INT["1"]
-  | SECOND     -> INT["2"]
-  | THIRD      -> INT["3"]
-  | FOURTH     -> INT["4"]
-  | FIFTH      -> INT["5"]
-  | LAST       -> INT["5"]
+  : (FIRST  | INT_1 ST?) -> INT["1"]
+  | (SECOND | INT_2 ND?) -> INT["2"]
+  | (THIRD  | INT_3 RD?) -> INT["3"]
+  | (FOURTH | INT_4 TH?) -> INT["4"]
+  | (FIFTH  | INT_5 TH?) -> INT["5"]
+  | LAST                -> INT["5"]
   ;
   
 relative_target
