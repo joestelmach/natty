@@ -229,24 +229,27 @@ DOT   : '.';
 PLUS  : '+';
 SINGLE_QUOTE : '\'';
 
-IN       : 'in';
-THE      : 'the';
-OR       : 'or';
-AT       : 'at';
-ON       : 'on';
-OF       : 'of';
-THIS     : 'this';
-THAT     : 'that';
-LAST     : 'last';
-NEXT     : 'next';
-PAST     : 'past';
-COMING   : 'coming';
-UPCOMING : 'upcoming';
-FROM     : 'from';
-NOW      : 'now';
-AGO      : 'ago';
-BEFORE   : 'before';
-AFTER    : 'after';
+IN        : 'in';
+THE       : 'the';
+OR        : 'or';
+AT        : 'at';
+ON        : 'on';
+OF        : 'of';
+THIS      : 'this';
+THAT      : 'that';
+LAST      : 'last';
+NEXT      : 'next';
+PAST      : 'past';
+COMING    : 'coming';
+UPCOMING  : 'upcoming';
+FROM      : 'from';
+NOW       : 'now';
+AGO       : 'ago';
+BEFORE    : 'before';
+AFTER     : 'after';
+BEGINNING : 'beginning' | 'begining';
+START     : 'start';
+END       : 'end';
 
 WHITE_SPACE
   : (DOT | SPACE)+

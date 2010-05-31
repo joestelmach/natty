@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import com.joestelmach.natty.ParseResult;
 import com.joestelmach.natty.Parser;
+import com.joestelmach.natty.WalkerState;
 
 /**
  * Runs the DateParser through it's paces
@@ -24,9 +25,11 @@ public class ParserTest {
     ParseResult result = parser.parse("  02/18/1985 ");
     Assert.assertEquals(1, result.getDates().size());
   }
-
+  
   public static void main(String[] args) {
-    String inputString = "the last monday in 2 novembers ago";
+    String inputString = "in the end of june";
+    inputString = "the second day of april";
+    inputString = "the thirtieth day of 3 aprils ago";
     Parser parser = new Parser();
     parser.setDebug(true);
     ParseResult result = parser.parse(inputString);

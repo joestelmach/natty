@@ -78,14 +78,33 @@ public class WalkerState {
   
   /**
    * Seeks to the given day within the current month 
-   * @param dayOfMonth
    * @param dayOfMonth the day of the month to seek to, represented as an integer
-   *     from 1 to 31. Must be guaranteed to parse as an Integer
+   *     from 1 to 31. Must be guaranteed to parse as an Integer.  If this day is
+   *     beyond the last day of the current month, the actual last day of the month
+   *     will be used.
    */
   public void seekToDayOfMonth(String dayOfMonth) {
     int dayOfMonthInt = Integer.parseInt(dayOfMonth);
     assert(dayOfMonthInt >= 1 && dayOfMonthInt <= 31);
+    dayOfMonthInt = Math.min(dayOfMonthInt, _calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
     _calendar.set(Calendar.DAY_OF_MONTH, dayOfMonthInt);
+  }
+  
+  /**
+   * 
+   * @param year
+   */
+  public void seekToYear(String year) {
+    int yearInt = Integer.parseInt(year);
+    assert(yearInt > 0 && yearInt < 9999);
+    
+    // two digit years require us to choose a reasonable century.
+    if(year.length() == 2) {
+      int century = (yearInt > ((_currentYear - 2000) + TWO_DIGIT_YEAR_CENTURY_THRESHOLD)) ? 1900 : 2000;
+      yearInt = yearInt + century;
+    }
+    
+    _calendar.set(Calendar.YEAR, yearInt);
   }
   
   /**
@@ -105,6 +124,11 @@ public class WalkerState {
     int monthInt = Integer.parseInt(month);
     assert(direction.equals("<") || direction.equals(">"));
     assert(monthInt >= 1 && monthInt <= 12);
+    
+    // set the day to the first of month. This step is necessary because if we seek to the 
+    // current day of a month whose number of days is less than the current day, we will 
+    // pushed into the next month.
+    _calendar.set(Calendar.DAY_OF_MONTH, 1);
     
     // seek to the appropriate year
     int currentMonth = _calendar.get(Calendar.MONTH) + 1;
@@ -203,17 +227,8 @@ public class WalkerState {
     _calendar.set(Calendar.MONTH, monthInt - 1);
     _calendar.set(Calendar.DAY_OF_MONTH, dayOfMonthInt);
     
-    int yearInt = -1;
     if(year != null) {
-      yearInt = Integer.parseInt(year);
-      assert(yearInt > 0 && yearInt < 9999);
-      // two digit years require us to choose a reasonable century.
-      if(year.length() == 2) {
-        int century = (yearInt > ((_currentYear - 2000) + TWO_DIGIT_YEAR_CENTURY_THRESHOLD)) ? 1900 : 2000;
-        yearInt = yearInt + century;
-      }
-      
-      _calendar.set(Calendar.YEAR, yearInt);
+      seekToYear(year);
     }
     
     // if no year is given, but a day of week is, we ensure that the resulting

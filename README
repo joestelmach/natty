@@ -13,8 +13,23 @@ List<Date> dates = result.getDates();
 
 ========== CHANGELOG ==========
 
-- v.0.2.0
-implemented explicit relative dates like 'wed of next week'
+* v.0.2.1
 
-- v.0.1.0
-initial release
+  - implemented beginning/end syntax:
+    'beginning of next month'
+    'start of last week'
+    'last day of 3 octobers from now'
+    
+  - implemented day of month:
+    'the thirtieth day of 3 aprils ago'
+  
+  - bug fix: when seeking to a month whose maximum number of days is less than
+             the current day, the parser would roll into the next month.
+
+* v.0.2.0
+
+  - implemented explicit relative dates like 'wed of next week'
+
+* v.0.1.0
+
+  initial release
