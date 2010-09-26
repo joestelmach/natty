@@ -259,6 +259,8 @@ relative_date:
 "three months ago" ->(RELATIVE_DATE (SEEK < by_day 3 month))
 "in 3 years" ->(RELATIVE_DATE (SEEK > by_day 3 year))
 "seven years ago" ->(RELATIVE_DATE (SEEK < by_day 7 year))
+"60 years ago" ->(RELATIVE_DATE (SEEK < by_day 60 year))
+"32 days ago" ->(RELATIVE_DATE (SEEK < by_day 32 day))
 "next monday" -> (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 2)))
 "next mon" -> (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 2)))
 "4 mondays from now" -> (RELATIVE_DATE (SEEK > by_day 4 (DAY_OF_WEEK 2)))
@@ -1004,6 +1006,17 @@ spelled_or_int_01_to_31_optional_prefix:
 "29" -> "29"
 "30" -> "30"
 "31" -> "31"
+
+spelled_or_int_optional_prefix:
+"00" FAIL
+"0" FAIL
+"01" -> "01"
+"60" -> "60"
+"99" -> "99"
+"1" -> "1"
+"zero" FAIL
+"one" -> "1"
+"two" -> "2"
 
 spelled_one_to_thirty_one:
 "zero" FAIL

@@ -133,16 +133,16 @@ global_date_prefix
       -> prefix_direction SEEK_BY["by_day"] INT["1"]
   
   // 3 days before
-  | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE DAY WHITE_SPACE prefix_direction
-      -> prefix_direction SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix
+  | spelled_or_int_optional_prefix WHITE_SPACE DAY WHITE_SPACE prefix_direction
+      -> prefix_direction SEEK_BY["by_day"] spelled_or_int_optional_prefix
       
   // the friday after
   | (THE WHITE_SPACE)? day_of_week WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_day"] INT["1"] day_of_week
       
   // 3 fridays before
-  | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE day_of_week WHITE_SPACE prefix_direction
-      -> prefix_direction SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix day_of_week
+  | spelled_or_int_optional_prefix WHITE_SPACE day_of_week WHITE_SPACE prefix_direction
+      -> prefix_direction SEEK_BY["by_day"] spelled_or_int_optional_prefix day_of_week
       
   | (THE WHITE_SPACE)? spelled_first_to_thirty_first WHITE_SPACE day_of_week WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_day"] spelled_first_to_thirty_first day_of_week
@@ -276,8 +276,8 @@ relative_date
       -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week))
       
   // one month from now
-  | spelled_or_int_01_to_31_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
-      -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix relative_target))
+  | spelled_or_int_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
+      -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_optional_prefix relative_target))
       
   // today, tomorrow
   | named_relative_date 
@@ -288,10 +288,10 @@ relative_date
 
 explicit_relative_date
   // 1st of three months ago, 10th of 3 octobers from now, the last monday in 2 novembers ago
-  : explicit_day_of_month_part WHITE_SPACE spelled_or_int_01_to_31_optional_prefix 
+  : explicit_day_of_month_part WHITE_SPACE spelled_or_int_optional_prefix 
         WHITE_SPACE explicit_relative_month WHITE_SPACE relative_suffix
       -> ^(RELATIVE_DATE 
-          ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix explicit_relative_month)
+          ^(SEEK relative_suffix spelled_or_int_optional_prefix explicit_relative_month)
           explicit_day_of_month_part)
           
   // 10th of next month, 31st of last month, 10th of next october, 30th of this month, the last thursday of last november
@@ -307,10 +307,10 @@ explicit_relative_date
           explicit_day_of_week_part)
           
   // monday of 2 weeks ago, tuesday of 3 weeks from now
-  | explicit_day_of_week_part WHITE_SPACE spelled_or_int_01_to_31_optional_prefix 
+  | explicit_day_of_week_part WHITE_SPACE spelled_or_int_optional_prefix 
         WHITE_SPACE WEEK WHITE_SPACE relative_suffix
       -> ^(RELATIVE_DATE 
-          ^(SEEK relative_suffix spelled_or_int_01_to_31_optional_prefix SPAN["week"])
+          ^(SEEK relative_suffix spelled_or_int_optional_prefix SPAN["week"])
           explicit_day_of_week_part)
           
   // the last thursday in november 1999
@@ -408,8 +408,8 @@ relative_prefix
   | (THIS WHITE_SPACE)? PAST     -> DIRECTION["<"] SEEK_BY["by_day"] INT["1"]
   | (THIS WHITE_SPACE)? COMING   -> DIRECTION[">"] SEEK_BY["by_day"] INT["1"]
   | (THIS WHITE_SPACE)? UPCOMING -> DIRECTION[">"] SEEK_BY["by_day"] INT["1"]
-  | (IN WHITE_SPACE)? spelled_or_int_01_to_31_optional_prefix 
-      -> DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_01_to_31_optional_prefix
+  | (IN WHITE_SPACE)? spelled_or_int_optional_prefix 
+      -> DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_optional_prefix
   ;
   
 prefix
@@ -509,15 +509,6 @@ time_zone_abbreviation
   
 // ********** numeric rules **********
 
-// a number between 0 and 23 inclusive, with an optional 0 prefix before numbers 0-9
-int_00_to_23_optional_prefix
-  : (INT_00 
-  | INT_0
-  | int_1_to_9
-  | int_01_to_12
-  | int_13_to_23) -> INT[$int_00_to_23_optional_prefix.text]
-  ;
- 
 // a number between 00 and 59 inclusive, with a mandatory 0 prefix before numbers 0-9
 int_00_to_59_mandatory_prefix
   : (INT_00
@@ -536,6 +527,15 @@ int_00_to_99_mandatory_prefix
 // a number between 1 and 12 inclusive, with an optional 0 prefix before numbers 1-9
 int_01_to_12_optional_prefix
   : (int_1_to_9 | int_01_to_12) -> INT[$int_01_to_12_optional_prefix.text]
+  ;
+  
+// a number between 0 and 23 inclusive, with an optional 0 prefix before numbers 0-9
+int_00_to_23_optional_prefix
+  : (INT_00 
+  | INT_0
+  | int_1_to_9
+  | int_01_to_12
+  | int_13_to_23) -> INT[$int_00_to_23_optional_prefix.text]
   ;
   
 // a number between 1 and 31 inclusive, with an optional 0 prefix before numbers 1-9
@@ -557,6 +557,15 @@ int_four_digits
 spelled_or_int_01_to_31_optional_prefix
   : int_01_to_31_optional_prefix
   | spelled_one_to_thirty_one
+  ;
+  
+// a number between 1 and 9999 either spelled-out, or as an
+// integer with an optional 0 prefix for numbers betwen 1 and 9
+spelled_or_int_optional_prefix
+  : spelled_one_to_thirty_one // TODO expand this spelled range to at least ninety-nine
+  | ((int_01_to_31_optional_prefix | int_32_to_59 | int_60_to_99)
+     (int_01_to_31_optional_prefix | int_32_to_59 | int_60_to_99)? 
+       -> INT[$spelled_or_int_optional_prefix.text])
   ;
   
 // a spelled number between one and thirty-one (one, two, etc.)
