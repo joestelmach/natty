@@ -17,6 +17,8 @@ date_time:
 "next wed. at 5pm" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))) (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0) pm))
 "3 days after next wed" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 3 (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))))))
 "the sunday after next wed" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 1 (DAY_OF_WEEK 1) (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))))))
+"two days after today" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 2 day)))
+"two days from today" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 2 day)))
 "3 sundays after next wed" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 3 (DAY_OF_WEEK 1) (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))))))
 "september 11, 2010" OK
 
@@ -57,6 +59,9 @@ global_date_prefix:
 "day after" -> "> by_day 1"
 "2 days after" -> "> by_day 2"
 "three days before" -> "< by_day 3"
+"six months after" -> "> by_month 6"
+"3 weeks before" -> "< by_week 3"
+"10 years after" -> "> by_year 10"
 "the day before" -> "< by_day 1"
 "day before" -> "< by_day 1"
 
@@ -264,6 +269,7 @@ relative_date:
 "next monday" -> (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 2)))
 "next mon" -> (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 2)))
 "4 mondays from now" -> (RELATIVE_DATE (SEEK > by_day 4 (DAY_OF_WEEK 2)))
+"4 mondays from today" -> (RELATIVE_DATE (SEEK > by_day 4 (DAY_OF_WEEK 2)))
 "next weekend" -> (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 7)))
 "six mondays ago" -> (RELATIVE_DATE (SEEK < by_day 6 (DAY_OF_WEEK 2)))
 "last monday" -> (RELATIVE_DATE (SEEK < by_week 1 (DAY_OF_WEEK 2)))
@@ -444,6 +450,7 @@ day_of_week:
 
 named_relative_date:
 "today"     -> (RELATIVE_DATE (SEEK > by_day 0 day))
+"now"       -> (RELATIVE_DATE (SEEK > by_day 0 day))
 "tomorow"   -> (RELATIVE_DATE (SEEK > by_day 1 day))
 "tomorrow"  -> (RELATIVE_DATE (SEEK > by_day 1 day))
 "tommorow"  -> (RELATIVE_DATE (SEEK > by_day 1 day))
@@ -1462,6 +1469,8 @@ YEAR:
 "years" OK
 
 TODAY:"today" OK
+
+NOW:"now" OK
 
 TOMORROW:
 "tomorow" OK

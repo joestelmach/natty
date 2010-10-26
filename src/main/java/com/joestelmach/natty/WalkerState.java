@@ -153,6 +153,7 @@ public class WalkerState {
    * @param span
    */
   public void seekBySpan(String direction, String seekAmount, String span) {
+    if(span.startsWith("by_")) span = span.substring(3);
     int seekAmountInt = Integer.parseInt(seekAmount);
     assert(direction.equals("<") || direction.equals(">"));
     assert(span.equals("day") || span.equals("week") || span.equals("month") || span.equals("year"));

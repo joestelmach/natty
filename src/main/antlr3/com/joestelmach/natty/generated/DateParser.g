@@ -136,6 +136,18 @@ global_date_prefix
   | spelled_or_int_optional_prefix WHITE_SPACE DAY WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_day"] spelled_or_int_optional_prefix
       
+  // 2 weeks before
+  | spelled_or_int_optional_prefix WHITE_SPACE WEEK WHITE_SPACE prefix_direction
+      -> prefix_direction SEEK_BY["by_week"] spelled_or_int_optional_prefix
+      
+  // 6 months before
+  | spelled_or_int_optional_prefix WHITE_SPACE MONTH WHITE_SPACE prefix_direction
+      -> prefix_direction SEEK_BY["by_month"] spelled_or_int_optional_prefix
+      
+  // 6 years before
+  | spelled_or_int_optional_prefix WHITE_SPACE YEAR WHITE_SPACE prefix_direction
+      -> prefix_direction SEEK_BY["by_year"] spelled_or_int_optional_prefix
+      
   // the friday after
   | (THE WHITE_SPACE)? day_of_week WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_day"] INT["1"] day_of_week
@@ -418,8 +430,8 @@ prefix
   ;
   
 relative_suffix
-  : FROM WHITE_SPACE NOW -> DIRECTION[">"] SEEK_BY["by_day"]
-  | AGO                  -> DIRECTION["<"] SEEK_BY["by_day"]
+  : (FROM | AFTER) WHITE_SPACE (NOW | TODAY) -> DIRECTION[">"] SEEK_BY["by_day"]
+  | AGO -> DIRECTION["<"] SEEK_BY["by_day"]
   ;
   
 relative_date_span
@@ -440,9 +452,9 @@ day_of_week
   ;
   
 named_relative_date
-  : TODAY     -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"]))
-  | TOMORROW  -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["1"] SPAN["day"]))
-  | YESTERDAY -> ^(RELATIVE_DATE ^(SEEK DIRECTION["<"] SEEK_BY["by_day"] INT["1"] SPAN["day"]))
+  : (TODAY | NOW) -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"]))
+  | TOMORROW      -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["1"] SPAN["day"]))
+  | YESTERDAY     -> ^(RELATIVE_DATE ^(SEEK DIRECTION["<"] SEEK_BY["by_day"] INT["1"] SPAN["day"]))
   ;
   
 // ********** time rules **********

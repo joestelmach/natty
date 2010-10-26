@@ -63,7 +63,7 @@ seek
     {_walkerState.seekBySpan($DIRECTION.text, $INT.text, $SPAN.text);}
   
   | ^(SEEK DIRECTION SEEK_BY INT date)
-    {_walkerState.seekBySpan($DIRECTION.text, $INT.text, "day");}
+    {_walkerState.seekBySpan($DIRECTION.text, $INT.text, $SEEK_BY.text);}
   ;
   
 explicit_seek
