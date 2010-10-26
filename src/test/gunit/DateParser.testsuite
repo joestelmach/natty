@@ -21,6 +21,10 @@ date_time:
 "two days from today" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 2 day)))
 "3 sundays after next wed" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 3 (DAY_OF_WEEK 1) (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))))))
 "september 11, 2010" OK
+"the day after next" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 2 day)))
+"the week after next" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 2 week)))
+"the month after next" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 2 month)))
+"the year after next" -> (DATE_TIME (RELATIVE_DATE (SEEK > by_day 2 year)))
 
 date_time_alternative:
 "this wed. or next at 5pm" -> (DATE_TIME_ALTERNATIVE (DATE_TIME (RELATIVE_DATE (SEEK > by_day 0 (DAY_OF_WEEK 4))) (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0) pm)) (DATE_TIME (RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 4))) (EXPLICIT_TIME (HOURS_OF_DAY 5) (MINUTES_OF_HOUR 0) pm)))

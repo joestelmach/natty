@@ -290,6 +290,10 @@ relative_date
   // one month from now
   | spelled_or_int_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
       -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_optional_prefix relative_target))
+  
+  // the week after next
+  | (THE WHITE_SPACE)? relative_date_span WHITE_SPACE AFTER WHITE_SPACE NEXT
+      -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["2"] relative_date_span))
       
   // today, tomorrow
   | named_relative_date 
