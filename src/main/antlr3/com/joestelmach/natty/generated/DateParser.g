@@ -316,6 +316,13 @@ explicit_relative_date
           ^(SEEK prefix explicit_relative_month)
           explicit_day_of_month_part)
           
+  // 10th of the month after next
+  | (explicit_day_of_month_part WHITE_SPACE THE WHITE_SPACE MONTH WHITE_SPACE AFTER WHITE_SPACE NEXT)=>
+    explicit_day_of_month_part WHITE_SPACE THE WHITE_SPACE MONTH WHITE_SPACE AFTER WHITE_SPACE NEXT
+      -> ^(RELATIVE_DATE 
+          ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["2"] SPAN["month"])
+          explicit_day_of_month_part)
+          
   // monday of last week, tuesday of next week
   | explicit_day_of_week_part WHITE_SPACE prefix WHITE_SPACE WEEK
       -> ^(RELATIVE_DATE 
@@ -327,6 +334,12 @@ explicit_relative_date
         WHITE_SPACE WEEK WHITE_SPACE relative_suffix
       -> ^(RELATIVE_DATE 
           ^(SEEK relative_suffix spelled_or_int_optional_prefix SPAN["week"])
+          explicit_day_of_week_part)
+          
+  // monday of the week after next
+  | explicit_day_of_week_part WHITE_SPACE THE WHITE_SPACE WEEK WHITE_SPACE AFTER WHITE_SPACE NEXT
+      -> ^(RELATIVE_DATE 
+          ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["2"] SPAN["week"])
           explicit_day_of_week_part)
           
   // the last thursday in november 1999
