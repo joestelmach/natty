@@ -1,16 +1,13 @@
 package com.natty.parse;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import junit.framework.Assert;
-
-import org.junit.Test;
-
 import com.joestelmach.natty.ParseResult;
 import com.joestelmach.natty.Parser;
-import com.joestelmach.natty.WalkerState;
 
 /**
  * Runs the DateParser through it's paces
@@ -19,22 +16,25 @@ import com.joestelmach.natty.WalkerState;
  */
 public class ParserTest {
   
-  @Test
-  public void leadingSpace() {
-    Parser parser = new Parser();
-    ParseResult result = parser.parse("  02/18/1985 ");
-    Assert.assertEquals(1, result.getDates().size());
-  }
-  
-  public static void main(String[] args) {
-    String inputString = "in the end of june";
-    inputString = "the second day of april";
-    inputString = "the thirtieth day of 3 aprils ago";
+  public static void main(String[] args) throws Exception {
     Parser parser = new Parser();
     parser.setDebug(true);
-    ParseResult result = parser.parse(inputString);
-    System.out.println(result.getSyntaxTree());
-    List<Date> dateTimes = result.getDates();
-    System.out.println(Arrays.toString(dateTimes.toArray()));
+    
+    BufferedReader in = new BufferedReader(new InputStreamReader(ParserTest.class.getResourceAsStream("/cpan.txt")));
+    String line = null;
+    while((line = in.readLine()) != null) {
+      if(line.startsWith("!")) continue;
+      if(line.startsWith("#")) line = line.substring(1);
+      
+      System.out.print(line + " -> ");
+      try {
+        ParseResult result = parser.parse(line.trim());
+        //System.out.println(result.getSyntaxTree());
+        List<Date> dateTimes = result.getDates();
+        System.out.print(Arrays.toString(dateTimes.toArray()) + "\n");
+      } catch(Exception e) {
+        System.out.print("no good");
+      }
+    }
   }
 }
