@@ -23,7 +23,7 @@ date_time
   @after {
     _walkerState.captureDateTime(); 
   }
-  : ^(DATE_TIME date time?)
+  : ^(DATE_TIME date? time?)
   ;  
   
 date
