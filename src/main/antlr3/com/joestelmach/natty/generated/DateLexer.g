@@ -43,10 +43,11 @@ T  : 't';
 
 MILITARY_HOUR_SUFFIX : 'h';
 
-MIDNIGHT : 'midnight' | 'mid-night';
-NOON     : 'noon'     | 'afternoon' | 'after-noon';
-MORNING  : 'morning';
-NIGHT    : 'night'; 
+MIDNIGHT  : 'midnight' | 'mid-night';
+NOON      : 'noon'     | 'afternoon' | 'after-noon';
+MORNING   : 'morning';
+EVENING   : 'evening';
+NIGHT     : 'night'; 
 
 UTC  : 'utc'  | 'gmt'  | 'z';
 EST  : 'est'  | 'edt'  | 'et';
@@ -232,12 +233,12 @@ SINGLE_QUOTE : '\'';
 IN        : 'in';
 THE       : 'the';
 OR        : 'or';
-AT        : 'at';
+AT        : 'at' | '@';
 ON        : 'on';
 OF        : 'of';
 THIS      : 'this';
 THAT      : 'that';
-LAST      : 'last';
+LAST      : 'last' | 'final';
 NEXT      : 'next';
 PAST      : 'past';
 COMING    : 'coming';
