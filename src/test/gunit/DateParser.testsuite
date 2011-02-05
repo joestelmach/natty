@@ -480,7 +480,7 @@ named_relative_date:
 "yesterday" -> (RELATIVE_DATE (SEEK < by_day 1 day))
 
 // ********** time tests **********
-time:
+explicit_time:
 "0600h" -> (EXPLICIT_TIME (HOURS_OF_DAY 06) (MINUTES_OF_HOUR 00))
 "06:00h" -> (EXPLICIT_TIME (HOURS_OF_DAY 06) (MINUTES_OF_HOUR 00))
 "06:00 hours" -> (EXPLICIT_TIME (HOURS_OF_DAY 06) (MINUTES_OF_HOUR 00))
