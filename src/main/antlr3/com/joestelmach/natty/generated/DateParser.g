@@ -21,6 +21,7 @@ tokens {
   EXPLICIT_SEEK;
   SPAN;
   EXPLICIT_TIME;
+  RELATIVE_TIME;
   HOURS_OF_DAY;
   MINUTES_OF_HOUR;
   SECONDS_OF_MINUTE;
@@ -43,6 +44,8 @@ date_time
       (date)=> date (date_time_separator explicit_time)?
       | explicit_time (time_date_separator date)?
     ) -> ^(DATE_TIME date? explicit_time?)
+  | relative_time
+    -> ^(DATE_TIME relative_time?)
   ;
   
 date_time_separator
@@ -423,6 +426,10 @@ relative_target
   | relative_date_span
   ;
   
+relative_time_target
+  : HOUR
+  ;
+  
 implicit_prefix
   : THIS -> DIRECTION[">"] SEEK_BY["by_day"] INT["0"]
   ;
@@ -471,6 +478,11 @@ named_relative_date
   ;
   
 // ********** time rules **********
+
+relative_time
+  : spelled_or_int_optional_prefix WHITE_SPACE relative_time_target WHITE_SPACE relative_suffix 
+    -> ^(RELATIVE_TIME ^(SEEK relative_suffix spelled_or_int_optional_prefix relative_time_target))
+  ;
 
 // a time with an hour, optional minutes, and optional meridian indicator
 explicit_time

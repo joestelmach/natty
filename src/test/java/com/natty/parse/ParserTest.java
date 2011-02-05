@@ -28,21 +28,7 @@ public class ParserTest {
     Parser parser = new Parser();
     parser.setDebug(true);
     String[] strings = new String[]{
-        "6 in the morning",
-        "4 in the afternoon",
-        "monday 6 in the morning",
-        "monday 4 in the afternoon",
-        "monday 9 in the evening",
-        "evening",
-        "this morning",
-        "this afternoon",
-        "this evening",
-        "today evening",
-        "tomorrow evening",
-        "thursday evening",
-        "final thursday in april",
-        "final thurs in sep",
-        "tomorrow @ noon"
+        "6 hours ago"
     };
     
     for(String s:strings) {
