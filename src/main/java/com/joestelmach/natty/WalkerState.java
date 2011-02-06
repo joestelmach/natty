@@ -164,6 +164,9 @@ public class WalkerState {
       span.equals("week") ? Calendar.WEEK_OF_YEAR :
       span.equals("month") ? Calendar.MONTH :
       span.equals("year") ? Calendar.YEAR : 
+      span.equals("hour") ? Calendar.HOUR: 
+      span.equals("minute") ? Calendar.MINUTE: 
+      span.equals("second") ? Calendar.SECOND: 
       null;
     if(field > 0) _calendar.add(field, seekAmountInt * sign);
   }
