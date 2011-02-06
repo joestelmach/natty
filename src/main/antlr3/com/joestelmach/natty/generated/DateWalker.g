@@ -46,23 +46,33 @@ explicit_date
     {_walkerState.setExplicitDate($month.text, $dom.text, $dow.text, $year.text);}
   ;
   
+  
 time
+  : explicit_time
+  | relative_time
+  ;
+  
+explicit_time
   : ^(EXPLICIT_TIME ^(HOURS_OF_DAY hours=INT) ^(MINUTES_OF_HOUR minutes=INT) 
         (^(SECONDS_OF_MINUTE seconds=INT))? AM_PM? (zone=ZONE | zone=ZONE_OFFSET)?)
     {_walkerState.setExplicitTime($hours.text, $minutes.text, $seconds.text, $AM_PM.text, $zone.text);}
   ;
   
+relative_time
+  : ^(RELATIVE_TIME seek)
+  ;
+  
 seek
-  : ^(SEEK DIRECTION by=SEEK_BY amount=INT ^(DAY_OF_WEEK day=INT) date?)
+  : ^(SEEK DIRECTION by=SEEK_BY amount=INT ^(DAY_OF_WEEK day=INT))
     {_walkerState.seekToDayOfWeek($DIRECTION.text, $by.text, $amount.text, $day.text);}
     
   | ^(SEEK DIRECTION SEEK_BY amount=INT ^(MONTH_OF_YEAR month=INT))
     {_walkerState.seekToMonth($DIRECTION.text, $amount.text, $month.text);}
   
-  | ^(SEEK DIRECTION SEEK_BY INT SPAN)
+  | ^(SEEK DIRECTION SEEK_BY (explicit_seek | relative_date)? INT SPAN)
     {_walkerState.seekBySpan($DIRECTION.text, $INT.text, $SPAN.text);}
   
-  | ^(SEEK DIRECTION SEEK_BY INT date)
+  | ^(SEEK DIRECTION SEEK_BY INT)
     {_walkerState.seekBySpan($DIRECTION.text, $INT.text, $SEEK_BY.text);}
   ;
   
@@ -78,4 +88,6 @@ explicit_seek
     
   | ^(EXPLICIT_SEEK index=INT ^(DAY_OF_WEEK day=INT))
     {_walkerState.setDayOfWeekIndex($index.text, $day.text);}
+    
+  | ^(EXPLICIT_SEEK explicit_time)
   ;  

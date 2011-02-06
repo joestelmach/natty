@@ -274,8 +274,8 @@ formal_date_separator
   
 relative_date
   // next wed, last month
-  : relative_prefix WHITE_SPACE relative_target 
-      -> ^(RELATIVE_DATE ^(SEEK relative_prefix relative_target))
+  : relative_date_prefix WHITE_SPACE relative_target 
+      -> ^(RELATIVE_DATE ^(SEEK relative_date_prefix relative_target))
       
   // this month, this week
   | implicit_prefix WHITE_SPACE relative_target 
@@ -287,8 +287,8 @@ relative_date
       -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week))
       
   // one month from now
-  | spelled_or_int_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_suffix 
-      -> ^(RELATIVE_DATE ^(SEEK relative_suffix spelled_or_int_optional_prefix relative_target))
+  | spelled_or_int_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_date_suffix 
+      -> ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix relative_target))
   
   // the week after next
   | (THE WHITE_SPACE)? relative_date_span WHITE_SPACE AFTER WHITE_SPACE NEXT
@@ -304,9 +304,9 @@ relative_date
 explicit_relative_date
   // 1st of three months ago, 10th of 3 octobers from now, the last monday in 2 novembers ago
   : explicit_day_of_month_part WHITE_SPACE spelled_or_int_optional_prefix 
-        WHITE_SPACE explicit_relative_month WHITE_SPACE relative_suffix
+        WHITE_SPACE explicit_relative_month WHITE_SPACE relative_date_suffix
       -> ^(RELATIVE_DATE 
-          ^(SEEK relative_suffix spelled_or_int_optional_prefix explicit_relative_month)
+          ^(SEEK relative_date_suffix spelled_or_int_optional_prefix explicit_relative_month)
           explicit_day_of_month_part)
           
   // 10th of next month, 31st of last month, 10th of next october, 30th of this month, the last thursday of last november
@@ -330,9 +330,9 @@ explicit_relative_date
           
   // monday of 2 weeks ago, tuesday of 3 weeks from now
   | explicit_day_of_week_part WHITE_SPACE spelled_or_int_optional_prefix 
-        WHITE_SPACE WEEK WHITE_SPACE relative_suffix
+        WHITE_SPACE WEEK WHITE_SPACE relative_date_suffix
       -> ^(RELATIVE_DATE 
-          ^(SEEK relative_suffix spelled_or_int_optional_prefix SPAN["week"])
+          ^(SEEK relative_date_suffix spelled_or_int_optional_prefix SPAN["week"])
           explicit_day_of_week_part)
           
   // monday of the week after next
@@ -427,14 +427,20 @@ relative_target
   ;
   
 relative_time_target
-  : HOUR
+  : relative_time_span
+  ;
+  
+relative_time_span
+  : HOUR   -> SPAN["hour"]
+  | MINUTE -> SPAN["minute"]
+  | SECOND -> SPAN["second"]
   ;
   
 implicit_prefix
   : THIS -> DIRECTION[">"] SEEK_BY["by_day"] INT["0"]
   ;
   
-relative_prefix
+relative_date_prefix
   : (THIS WHITE_SPACE)? LAST     -> DIRECTION["<"] SEEK_BY["by_week"] INT["1"]
   | (THIS WHITE_SPACE)? NEXT     -> DIRECTION[">"] SEEK_BY["by_week"] INT["1"]
   | (THIS WHITE_SPACE)? PAST     -> DIRECTION["<"] SEEK_BY["by_day"] INT["1"]
@@ -445,13 +451,33 @@ relative_prefix
   ;
   
 prefix
-  : relative_prefix
+  : relative_date_prefix
   | implicit_prefix
   ;
   
-relative_suffix
+relative_date_suffix
+  // from now, after today
   : (FROM | AFTER) WHITE_SPACE (NOW | TODAY) -> DIRECTION[">"] SEEK_BY["by_day"]
   | AGO -> DIRECTION["<"] SEEK_BY["by_day"]
+  ;
+  
+relative_time_suffix
+  // from now, after today, before noon, after 4pm
+  : (FROM | AFTER) (WHITE_SPACE relative_time_suffix_anchor)?
+      -> DIRECTION[">"] SEEK_BY["by_day"] relative_time_suffix_anchor
+      
+  // before noon, before 3pm
+  | BEFORE (WHITE_SPACE relative_time_suffix_anchor)?
+      -> DIRECTION["<"] SEEK_BY["by_day"] relative_time_suffix_anchor
+      
+  | AGO 
+      -> DIRECTION["<"] SEEK_BY["by_day"]
+  ;
+  
+relative_time_suffix_anchor
+  : named_relative_time 
+  | explicit_time
+    -> ^(EXPLICIT_SEEK explicit_time)
   ;
   
 relative_date_span
@@ -477,11 +503,19 @@ named_relative_date
   | YESTERDAY     -> ^(RELATIVE_DATE ^(SEEK DIRECTION["<"] SEEK_BY["by_day"] INT["1"] SPAN["day"]))
   ;
   
+named_relative_time
+  : NOW -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"]))
+  ;
+  
 // ********** time rules **********
 
 relative_time
-  : spelled_or_int_optional_prefix WHITE_SPACE relative_time_target WHITE_SPACE relative_suffix 
-    -> ^(RELATIVE_TIME ^(SEEK relative_suffix spelled_or_int_optional_prefix relative_time_target))
+  // 10 hours ago, 20 minutes before noon
+  : spelled_or_int_optional_prefix WHITE_SPACE relative_time_target WHITE_SPACE relative_time_suffix 
+    -> ^(RELATIVE_TIME ^(SEEK relative_time_suffix spelled_or_int_optional_prefix relative_time_target))
+    
+  | IN WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE relative_time_target
+    -> ^(RELATIVE_TIME ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_time_target))
   ;
 
 // a time with an hour, optional minutes, and optional meridian indicator

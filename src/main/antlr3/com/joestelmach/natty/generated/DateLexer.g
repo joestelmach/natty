@@ -25,11 +25,12 @@ THURSDAY  : 'thursday' 's'?  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thurs
 FRIDAY    : 'friday' 's'?    | 'fri' DOT?  | 'fris' DOT?;
 SATURDAY  : 'saturday' 's'?  | 'sat' DOT?  | 'sats' DOT?  | 'weekend';
 
-HOUR  : 'hour'  | 'hours' ;
-DAY   : 'day'   | 'days' ;
-WEEK  : 'week'  | 'weeks' ;
-MONTH : 'month' | 'months' ;
-YEAR  : 'year'  | 'years' ;
+HOUR   : 'hour'   | 'hours'   | 'hr'  | 'hrs';
+MINUTE : 'minute' | 'minutes' | 'min' | 'mins';
+DAY    : 'day'    | 'days' ;
+WEEK   : 'week'   | 'weeks'   | 'wks';
+MONTH  : 'month'  | 'months';
+YEAR   : 'year'   | 'years'   | 'yrs';
 
 TODAY     : 'today';
 TOMORROW  : 'tomorow'   | 'tomorrow'   | 'tommorow' | 'tommorrow';
@@ -193,7 +194,7 @@ TWENTY    : 'twenty';
 THIRTY    : 'thirty';
 
 FIRST          : 'first';
-SECOND         : 'second';
+SECOND         : 'second' | 'seconds' | 'sec' | 'secs';
 THIRD          : 'third';
 FOURTH         : 'fourth';
 FIFTH          : 'fifth';
