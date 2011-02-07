@@ -234,6 +234,7 @@ SINGLE_QUOTE : '\'';
 IN        : 'in';
 THE       : 'the';
 OR        : 'or';
+TO        : 'to';
 AT        : 'at' | '@';
 ON        : 'on';
 OF        : 'of';
