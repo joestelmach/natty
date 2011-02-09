@@ -11,10 +11,19 @@ import java.util.TimeZone;
  * @author Joe Stelmach
  */
 public class WalkerState {
+  
+  private static final int TWO_DIGIT_YEAR_CENTURY_THRESHOLD = 20;
+  private static final String MONTH = "month";
+  private static final String DAY = "day";
+  private static final String YEAR = "year";
+  private static final String WEEK = "week";
+  private static final String HOUR = "hour";
+  private static final String MINUTE = "minute";
+  private static final String SECOND = "second";
+  
   private GregorianCalendar _calendar;
   private TimeZone _defaultTimeZone;
   private int _currentYear;
-  private static final int TWO_DIGIT_YEAR_CENTURY_THRESHOLD = 20;
   private List<Date> _currentDateTimes;
   
   /**
@@ -131,11 +140,13 @@ public class WalkerState {
     _calendar.set(Calendar.DAY_OF_MONTH, 1);
     
     // seek to the appropriate year
-    int currentMonth = _calendar.get(Calendar.MONTH) + 1;
-    int sign = direction.equals(">") ? 1 : -1;
-    int numYearsToShift = seekAmountInt + 
-      (currentMonth <= monthInt ? sign > 0 ? -1 : 0 : sign > 0 ? 0 : -1);
-    _calendar.add(Calendar.YEAR, (numYearsToShift * sign));
+    if(seekAmountInt > 0) {
+      int currentMonth = _calendar.get(Calendar.MONTH) + 1;
+      int sign = direction.equals(">") ? 1 : -1;
+      int numYearsToShift = seekAmountInt + 
+        (currentMonth <= monthInt ? sign > 0 ? -1 : 0 : sign > 0 ? 0 : -1);
+      _calendar.add(Calendar.YEAR, (numYearsToShift * sign));
+    }
     
     // now set the month
     _calendar.set(Calendar.MONTH, monthInt -1);
@@ -156,17 +167,19 @@ public class WalkerState {
     if(span.startsWith("by_")) span = span.substring(3);
     int seekAmountInt = Integer.parseInt(seekAmount);
     assert(direction.equals("<") || direction.equals(">"));
-    assert(span.equals("day") || span.equals("week") || span.equals("month") || span.equals("year"));
+    assert(span.equals(DAY) || span.equals(WEEK) || span.equals(MONTH) || 
+        span.equals(YEAR) || span.equals(HOUR) || span.equals(MINUTE) || 
+        span.equals(SECOND));
     
     int sign = direction.equals(">") ? 1 : -1;
     int field = 
-      span.equals("day") ? Calendar.DAY_OF_YEAR : 
-      span.equals("week") ? Calendar.WEEK_OF_YEAR :
-      span.equals("month") ? Calendar.MONTH :
-      span.equals("year") ? Calendar.YEAR : 
-      span.equals("hour") ? Calendar.HOUR: 
-      span.equals("minute") ? Calendar.MINUTE: 
-      span.equals("second") ? Calendar.SECOND: 
+      span.equals(DAY) ? Calendar.DAY_OF_YEAR : 
+      span.equals(WEEK) ? Calendar.WEEK_OF_YEAR :
+      span.equals(MONTH) ? Calendar.MONTH :
+      span.equals(YEAR) ? Calendar.YEAR : 
+      span.equals(HOUR) ? Calendar.HOUR: 
+      span.equals(MINUTE) ? Calendar.MINUTE: 
+      span.equals(SECOND) ? Calendar.SECOND: 
       null;
     if(field > 0) _calendar.add(field, seekAmountInt * sign);
   }
@@ -289,7 +302,7 @@ public class WalkerState {
     // hours greater than 12 are in 24-hour time
     if(hoursInt <= 12) {
       int amPmInt = amPm == null ? 
-        (hoursInt > 12 ? Calendar.PM : Calendar.AM) :
+        (hoursInt >= 12 ? Calendar.PM : Calendar.AM) :
         amPm.equals("pm") ? Calendar.PM : Calendar.AM;
       _calendar.set(Calendar.AM_PM, amPmInt);
       
@@ -302,6 +315,9 @@ public class WalkerState {
       int secondsInt = Integer.parseInt(seconds);
       assert(secondsInt >= 0 && secondsInt < 60); 
       _calendar.set(Calendar.SECOND, secondsInt);
+    }
+    else {
+      _calendar.set(Calendar.SECOND, 0);
     }
     
     _calendar.set(Calendar.MINUTE, minutesInt);
@@ -327,7 +343,14 @@ public class WalkerState {
    *  Resets the calendar
    */
   private void resetCalender() {
-    _calendar = new GregorianCalendar();
+    _calendar = getCalendar();
     _currentYear = _calendar.get(Calendar.YEAR);
+  }
+  
+  /**
+   * @return the current calendar
+   */
+  protected GregorianCalendar getCalendar() {
+    return CalendarSource.getCurrentCalendar();
   }
 }

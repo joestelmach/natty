@@ -81,8 +81,7 @@ public class Parser {
       // or parse without debug
       else {
         DateParser parser = new DateParser(tokens);
-        //DateParser.parse_return parseReturn = parser.parse();
-        DateParser.date_time_alternative_return parseReturn = parser.date_time_alternative();
+        DateParser.parse_return parseReturn = parser.parse();
         tree = (Tree) parseReturn.getTree();
       }
       
