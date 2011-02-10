@@ -1,5 +1,6 @@
 package com.natty.parse;
 
+import java.io.ByteArrayInputStream;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -7,11 +8,23 @@ import java.util.List;
 
 import junit.framework.Assert;
 
+import org.antlr.runtime.ANTLRInputStream;
+import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.tree.CommonTree;
+import org.antlr.runtime.tree.CommonTreeNodeStream;
+import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
 
+import com.joestelmach.natty.ANTLRNoCaseInputStream;
 import com.joestelmach.natty.CalendarSource;
+import com.joestelmach.natty.ParseListener;
+import com.joestelmach.natty.ParseLocation;
 import com.joestelmach.natty.ParseResult;
 import com.joestelmach.natty.Parser;
+import com.joestelmach.natty.generated.DateLexer;
+import com.joestelmach.natty.generated.DateWalker;
+import com.joestelmach.natty.generated.DebugDateParser;
+import com.joestelmach.natty.generated.TreeRewrite;
 
 /**
  * Runs the parser through the various date formats 
@@ -136,11 +149,22 @@ public class DateTest extends AbstractTest {
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 5, 1, 2011);
     validateDate(dates.get(1), 5, 31, 2011);
+    
+    dates = parseCollection("feb 28th or 2 days after");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 2, 28, 2011);
+    validateDate(dates.get(1), 3, 2, 2011);
+    
   }
   
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception{
+    String inputString = "foo bar feb 12 th blah blah";
     Parser parser = new Parser();
-    ParseResult result = parser.parse("evening");
+    ParseResult result = parser.parse(inputString);
     System.out.println(result.getSyntaxTree());
+    System.out.println(result.getDates().get(0));
+    //for(ParseLocation l:result.getParseLocations()) {
+      //System.out.println(l.getRuleName());
+    //}
   }
 }

@@ -35,8 +35,19 @@ tokens {
 }
 
 parse
-  : (date_time_alternative)=> date_time_alternative
-  | date_time -> ^(DATE_TIME_ALTERNATIVE date_time)
+  : (text ((entry)=>entry | known_token)?)+ -> entry*
+  ;
+  
+entry 
+  : date_time_alternative
+  ;
+  
+known_token
+  : ~(UNKNOWN | WHITE_SPACE)
+  ;
+  
+text
+  : WHITE_SPACE (UNKNOWN WHITE_SPACE)+
   ;
 
 date_time
@@ -60,31 +71,40 @@ time_date_separator
   ;
 
 date
-  : (formal_date)=> formal_date
-  | (relaxed_date)=> relaxed_date
-  | explicit_relative_date
+  : explicit_relative_date
+  | formal_date
+  | relaxed_date
   | relative_date
   | global_date_prefix WHITE_SPACE date 
       -> ^(RELATIVE_DATE ^(SEEK global_date_prefix date))
   ;
   
 date_time_alternative
-    // "next wed or thurs" , "next wed, thurs, or fri"
-  : (alternative_day_of_week_list)=> alternative_day_of_week_list
+          
+  // today or the day after that, feb 16th or 2 days after that, january fourth or the friday after
+  : (date WHITE_SPACE (OR | TO) WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator explicit_time)?)=>
+      date WHITE_SPACE (OR | TO) WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator explicit_time)?
+        -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?) ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) explicit_time?)))
+        
+  // "next wed or thurs" , "next wed, thurs, or fri"
+  | (alternative_day_of_week_list)=> alternative_day_of_week_list
       -> ^(DATE_TIME_ALTERNATIVE alternative_day_of_week_list)
       
   // month day or day explicit_time
   | (alternative_day_of_month_list)=> alternative_day_of_month_list
       -> ^(DATE_TIME_ALTERNATIVE alternative_day_of_month_list)
-      
-  // date and time OR date and time, 1/2 at 2pm or 1/3 at 3pm
-  | (date (WHITE_SPACE (OR | TO) WHITE_SPACE date (date_time_separator explicit_time)?)+) => 
-     date (WHITE_SPACE (OR | TO) WHITE_SPACE date (date_time_separator explicit_time)?)+
-     -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?)+)
-       
+        
+  // this wed. or next
+  | ((THIS WHITE_SPACE)? day_of_week WHITE_SPACE (OR | TO) WHITE_SPACE alternative_direction (date_time_separator explicit_time)?)=>
+    (THIS WHITE_SPACE)? day_of_week WHITE_SPACE (OR | TO) WHITE_SPACE alternative_direction (date_time_separator explicit_time)?
+      -> ^(DATE_TIME_ALTERNATIVE 
+            ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week)) explicit_time?) 
+            ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) explicit_time?)
+          )
+        
   // date OR date time, 1/2 to 1/4 at 6pm
-  | (date (WHITE_SPACE (OR | TO) WHITE_SPACE date)+ (date_time_separator explicit_time)?) =>
-      date (WHITE_SPACE (OR | TO) WHITE_SPACE date)+ (date_time_separator explicit_time)?
+  | (date (WHITE_SPACE (TO | OR) WHITE_SPACE date)+ (date_time_separator explicit_time)?)=>
+      date (WHITE_SPACE (TO | OR) WHITE_SPACE date)+ (date_time_separator explicit_time)?
         -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?)+)
         
   // date time or time
@@ -96,18 +116,13 @@ date_time_alternative
   | (explicit_time time_date_separator date WHITE_SPACE (OR | TO) WHITE_SPACE end_time=explicit_time)=>
       explicit_time time_date_separator date WHITE_SPACE (OR | TO) WHITE_SPACE end_time=explicit_time
         -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time) ^(DATE_TIME date $end_time))
-  
-  // this wed. or next
-  | ((THIS WHITE_SPACE)? day_of_week WHITE_SPACE (OR | TO) WHITE_SPACE alternative_direction)=>
-    (THIS WHITE_SPACE)? day_of_week WHITE_SPACE (OR | TO) WHITE_SPACE alternative_direction (date_time_separator explicit_time)?
-      -> ^(DATE_TIME_ALTERNATIVE 
-            ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week)) explicit_time?) 
-            ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) explicit_time?)
-          )
-          
-  // today or the day after that, feb 16th or 2 days after that, january fourth or the friday after
-  | date WHITE_SPACE (OR | TO) WHITE_SPACE global_date_prefix (WHITE_SPACE THAT)? (date_time_separator explicit_time)?
-      -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?) ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) explicit_time?)))
+        
+  | (date_time WHITE_SPACE TO WHITE_SPACE date_time)=>
+    date_time WHITE_SPACE TO WHITE_SPACE date_time
+      -> ^(DATE_TIME_ALTERNATIVE date_time date_time)
+      
+        
+  | date_time -> ^(DATE_TIME_ALTERNATIVE date_time)
   ;
   
 alternative_day_of_month_list
