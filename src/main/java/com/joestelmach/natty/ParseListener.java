@@ -43,12 +43,16 @@ public class ParseListener extends BlankDebugEventListener {
     INTERESTING_RULES.put("day_of_week", "weekday");
     INTERESTING_RULES.put("date", "date");
     INTERESTING_RULES.put("date_time_alternative", "alternative");
+    INTERESTING_RULES.put("date_time", "date_time");
     INTERESTING_RULES.put("alternative_direction", "direction");
     INTERESTING_RULES.put("hours", "hours");
     INTERESTING_RULES.put("minutes", "minutes");
     INTERESTING_RULES.put("meridian_indicator", "am/pm");
     INTERESTING_RULES.put("time_zone", "zone");
     INTERESTING_RULES.put("time", "time");
+    INTERESTING_RULES.put("text", "text");
+    INTERESTING_RULES.put("entry", "entry");
+    INTERESTING_RULES.put("known_token", "known_token");
   }
 
   private int backtracking = 0;

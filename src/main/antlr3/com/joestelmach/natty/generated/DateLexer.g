@@ -258,6 +258,14 @@ WHITE_SPACE
   : (DOT | SPACE)+
   ;
   
+UNKNOWN
+  : ('a'..'z')+ | UNKNOWN_CHAR
+  ;
+  
+fragment UNKNOWN_CHAR
+  : ~(SPACE | DOT)
+  ;
+  
 fragment DIGIT : '0'..'9';
   
 fragment SPACE : ' ' | '\t' | '\n' | '\r' ;
