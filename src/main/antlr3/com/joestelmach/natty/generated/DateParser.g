@@ -196,7 +196,7 @@ relaxed_date
   ;
   
 relaxed_day_of_week
-  : (prefix WHITE_SPACE)? day_of_week ((COMMA WHITE_SPACE?) | WHITE_SPACE) -> day_of_week
+  : (prefix WHITE_SPACE)? day_of_week COMMA? WHITE_SPACE? -> day_of_week
   ;
   
 relaxed_day_of_month_prefix
@@ -378,7 +378,7 @@ explicit_day_of_month_part
 
 explicit_day_of_week_part
   // monday of, tuesday of
-  : (THE WHITE_SPACE)? relaxed_day_of_week (IN | OF)
+  : (THE WHITE_SPACE)? relaxed_day_of_week (IN | OF)?
       ->  ^(EXPLICIT_SEEK relaxed_day_of_week)
       
   // in the end of, at the beginning of

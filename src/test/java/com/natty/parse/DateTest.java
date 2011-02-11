@@ -90,6 +90,9 @@ public class DateTest extends AbstractTest {
     validateDate("last week", 2, 21, 2011);
     validateDate("next year", 2, 28, 2012);
     validateDate("last year", 2, 28, 2010);
+    validateDate("tues this week", 3, 1, 2011);
+    validateDate("tuesday this week", 3, 1, 2011);
+    validateDate("tuesday next week", 3, 8, 2011);
   }
   
   @Test
@@ -144,7 +147,7 @@ public class DateTest extends AbstractTest {
   }
   
   public static void main(String[] args) throws Exception{
-    String inputString = "foo 2009-03-10 9:00 to 11:00 bar on baz 12/12 on asfdladsf a afasdfdasf sadf dasfsda";
+    String inputString = "3/3 21:00 to in 5 days";
     Parser parser = new Parser();
     ParseResult result = parser.parse(inputString);
     System.out.println(result.getSyntaxTree());
