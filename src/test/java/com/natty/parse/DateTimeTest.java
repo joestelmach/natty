@@ -86,7 +86,7 @@ public class DateTimeTest extends AbstractTest {
     validateDateTime(dates.get(1), 12, 5, 2010, 7, 0, 0);
     
     /*
-    dates = parseCollection("3/3 21:00 to in 5 days");
+    List<Date> dates = parseCollection("3/3 21:00 to in 5 days");
     Assert.assertEquals(2, dates.size());
     validateDateTime(dates.get(0), 3, 3, 2010, 21, 0, 0);
     validateDateTime(dates.get(1), 6, 17, 2010, 21, 0, 0);
