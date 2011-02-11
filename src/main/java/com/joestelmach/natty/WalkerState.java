@@ -7,6 +7,8 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.TimeZone;
 
+import org.omg.CORBA._IDLTypeStub;
+
 /**
  * @author Joe Stelmach
  */
@@ -25,6 +27,7 @@ public class WalkerState {
   private TimeZone _defaultTimeZone;
   private int _currentYear;
   private List<Date> _currentDateTimes;
+  private boolean _firstDateInvocation = true;
   
   /**
    * Creates a new WalkerState representing the start of
@@ -64,6 +67,8 @@ public class WalkerState {
     assert(seekType.equals("by_day") || seekType.equals("by_week"));
     assert(dayOfWeekInt >= 1 && dayOfWeekInt <= 7);
     
+    markDateInvocation();
+    
     int sign = direction.equals(">") ? 1 : -1;
     if(seekType.equals("by_week")) {
       // set our calendar to this weeks requested day of the week,
@@ -95,6 +100,9 @@ public class WalkerState {
   public void seekToDayOfMonth(String dayOfMonth) {
     int dayOfMonthInt = Integer.parseInt(dayOfMonth);
     assert(dayOfMonthInt >= 1 && dayOfMonthInt <= 31);
+    
+    markDateInvocation();
+    
     dayOfMonthInt = Math.min(dayOfMonthInt, _calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
     _calendar.set(Calendar.DAY_OF_MONTH, dayOfMonthInt);
   }
@@ -106,6 +114,8 @@ public class WalkerState {
   public void seekToYear(String year) {
     int yearInt = Integer.parseInt(year);
     assert(yearInt > 0 && yearInt < 9999);
+    
+    markDateInvocation();
     
     // two digit years require us to choose a reasonable century.
     if(year.length() == 2) {
@@ -133,6 +143,8 @@ public class WalkerState {
     int monthInt = Integer.parseInt(month);
     assert(direction.equals("<") || direction.equals(">"));
     assert(monthInt >= 1 && monthInt <= 12);
+    
+    markDateInvocation();
     
     // set the day to the first of month. This step is necessary because if we seek to the 
     // current day of a month whose number of days is less than the current day, we will 
@@ -171,6 +183,10 @@ public class WalkerState {
         span.equals(YEAR) || span.equals(HOUR) || span.equals(MINUTE) || 
         span.equals(SECOND));
     
+    boolean isDateSeek = span.equals(DAY) || span.equals(WEEK) || 
+      span.equals(MONTH) || span.equals(YEAR);
+    if(isDateSeek) markDateInvocation();
+    
     int sign = direction.equals(">") ? 1 : -1;
     int field = 
       span.equals(DAY) ? Calendar.DAY_OF_YEAR : 
@@ -196,6 +212,8 @@ public class WalkerState {
     
     int dayOfWeekInt = Integer.parseInt(dayOfWeek);
     assert(dayOfWeekInt >= 1 && dayOfWeekInt <= 7);
+    
+    markDateInvocation();
     
     // seek to the first day of the current month
     _calendar.set(Calendar.DAY_OF_MONTH, 1);
@@ -240,6 +258,8 @@ public class WalkerState {
     
     int dayOfMonthInt = Integer.parseInt(dayOfMonth);
     assert(dayOfMonthInt > 0 && dayOfMonthInt <= 31);
+    
+    markDateInvocation();
     
     _calendar.set(Calendar.MONTH, monthInt - 1);
     _calendar.set(Calendar.DAY_OF_MONTH, dayOfMonthInt);
@@ -329,7 +349,12 @@ public class WalkerState {
   public void captureDateTime() {
     Date date = _calendar.getTime();
     _currentDateTimes.add(date);
-    resetCalender();
+    
+    // once a date time is captured, we don't reset the calendar just yet
+    // until the first date seek invocation occurrs.  This allows us to keep 
+    // the date fixed while seeking to a different time after the capture
+    // e.g. feb 28th at 6pm or 7pm
+    _firstDateInvocation = true;
   }
   
   /**
@@ -345,6 +370,17 @@ public class WalkerState {
   private void resetCalender() {
     _calendar = getCalendar();
     _currentYear = _calendar.get(Calendar.YEAR);
+  }
+  
+  /**
+   * ensures that the first invocation of a date seeking
+   * rule is captured
+   */
+  private void markDateInvocation() {
+    if(_firstDateInvocation) {
+      resetCalender();
+      _firstDateInvocation = false;
+    }
   }
   
   /**
