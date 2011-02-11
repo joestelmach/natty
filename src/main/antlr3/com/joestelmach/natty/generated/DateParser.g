@@ -35,14 +35,7 @@ tokens {
 }
 
 parse
-  //: (text ((entry)=>entry | (WHITE_SPACE | known_token)?))+ -> entry*
-  //: ((WHITE_SPACE UNKNOWN)+ WHITE_SPACE ((entry)=>entry | known_token))+ -> entry* 
-  //: (((entry)=>entry | known_token | UNKNOWN) WHITE_SPACE)+ -> entry*
-  : date_time_alternative
-  ;
-  
-entry 
-  : date_time_alternative
+  : text (((date_time_alternative)=>date_time_alternative | known_token) text)+ -> date_time_alternative*
   ;
   
 known_token
@@ -50,7 +43,7 @@ known_token
   ;
   
 text
-  : WHITE_SPACE (UNKNOWN WHITE_SPACE)+
+  : WHITE_SPACE (UNKNOWN+ WHITE_SPACE)+
   ;
 
 date_time
@@ -58,8 +51,7 @@ date_time
       (date)=> date (date_time_separator explicit_time)?
       | explicit_time (time_date_separator date)?
     ) -> ^(DATE_TIME date? explicit_time?)
-  | relative_time
-    -> ^(DATE_TIME relative_time?)
+  | relative_time -> ^(DATE_TIME relative_time?)
   ;
   
 date_time_separator
@@ -187,10 +179,6 @@ prefix_direction
 // relaxed date with a spelled-out or abbreviated month
 relaxed_date
   : (
-      // this is a bit tricky since a time can be placed directly after a date, and a year
-      // can look like a time (four digits, no colon i.e. 0500)  Since a year would be more
-      // common in this context, we choose to swallow the year as part of the date.
-      
       // The 31st of April in the year 2008
       // RFC822 style: Fri, 21 Nov 1997
       (relaxed_day_of_week? relaxed_day_of_month_prefix? relaxed_day_of_month 
@@ -199,15 +187,11 @@ relaxed_date
             WHITE_SPACE (OF WHITE_SPACE)? relaxed_month relaxed_year_prefix relaxed_year
         
       // above without the year restriction
-      | relaxed_day_of_week? relaxed_day_of_month_prefix? relaxed_day_of_month WHITE_SPACE (OF WHITE_SPACE)? relaxed_month
+      | relaxed_day_of_week? relaxed_day_of_month_prefix? relaxed_day_of_month 
+            WHITE_SPACE (OF WHITE_SPACE)? relaxed_month
     
-      // Jan 21, 1997
-      // Sun, Nov 21
-      | (relaxed_day_of_week? relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year_prefix relaxed_year)=>
-        relaxed_day_of_week? relaxed_month WHITE_SPACE relaxed_day_of_month relaxed_year_prefix relaxed_year
-      
-      // jan 1st, february 28th
-      | relaxed_day_of_week? relaxed_month WHITE_SPACE relaxed_day_of_month
+      // Jan 21, 1997   Sun, Nov 21
+      | relaxed_day_of_week? relaxed_month WHITE_SPACE relaxed_day_of_month (relaxed_year_prefix relaxed_year)?
     ) -> ^(EXPLICIT_DATE relaxed_month relaxed_day_of_month relaxed_day_of_week? relaxed_year?)
   ;
   
@@ -321,14 +305,16 @@ relative_date
 
 explicit_relative_date
   // 1st of three months ago, 10th of 3 octobers from now, the last monday in 2 novembers ago
-  : explicit_day_of_month_part WHITE_SPACE spelled_or_int_optional_prefix 
+  : (explicit_day_of_month_part WHITE_SPACE spelled_or_int_optional_prefix)=>
+    explicit_day_of_month_part WHITE_SPACE spelled_or_int_optional_prefix 
         WHITE_SPACE explicit_relative_month WHITE_SPACE relative_date_suffix
       -> ^(RELATIVE_DATE 
           ^(SEEK relative_date_suffix spelled_or_int_optional_prefix explicit_relative_month)
           explicit_day_of_month_part)
           
   // 10th of next month, 31st of last month, 10th of next october, 30th of this month, the last thursday of last november
-  | explicit_day_of_month_part WHITE_SPACE prefix WHITE_SPACE explicit_relative_month
+  | (explicit_day_of_month_part WHITE_SPACE prefix)=>
+    explicit_day_of_month_part WHITE_SPACE prefix WHITE_SPACE explicit_relative_month
       -> ^(RELATIVE_DATE 
           ^(SEEK prefix explicit_relative_month)
           explicit_day_of_month_part)
@@ -341,13 +327,15 @@ explicit_relative_date
           explicit_day_of_month_part)
           
   // monday of last week, tuesday of next week
-  | explicit_day_of_week_part WHITE_SPACE prefix WHITE_SPACE WEEK
+  | (explicit_day_of_week_part WHITE_SPACE prefix WHITE_SPACE WEEK)=>
+      explicit_day_of_week_part WHITE_SPACE prefix WHITE_SPACE WEEK
       -> ^(RELATIVE_DATE 
           ^(SEEK prefix SPAN["week"])
           explicit_day_of_week_part)
           
   // monday of 2 weeks ago, tuesday of 3 weeks from now
-  | explicit_day_of_week_part WHITE_SPACE spelled_or_int_optional_prefix 
+  | (explicit_day_of_week_part WHITE_SPACE spelled_or_int_optional_prefix)=>
+    explicit_day_of_week_part WHITE_SPACE spelled_or_int_optional_prefix 
         WHITE_SPACE WEEK WHITE_SPACE relative_date_suffix
       -> ^(RELATIVE_DATE 
           ^(SEEK relative_date_suffix spelled_or_int_optional_prefix SPAN["week"])

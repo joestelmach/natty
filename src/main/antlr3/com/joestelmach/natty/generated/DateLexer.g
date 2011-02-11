@@ -259,7 +259,7 @@ WHITE_SPACE
   ;
   
 UNKNOWN
-  : ('a'..'z')+ | UNKNOWN_CHAR
+  : UNKNOWN_CHAR
   ;
   
 fragment UNKNOWN_CHAR

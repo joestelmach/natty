@@ -149,6 +149,7 @@
             <configuration>
               <debug>false</debug>
               <outputDirectory>src/main/java</outputDirectory>
+              <conversionTimeout>100000</conversionTimeout>
               <excludes>
                 <exclude>com/joestelmach/natty/generated/DebugDateParser.g</exclude> 
                 <exclude>com/joestelmach/natty/generated/DebugDateWalker.g</exclude> 
@@ -165,6 +166,7 @@
             <configuration>
               <debug>true</debug>
               <outputDirectory>src/main/java</outputDirectory>
+              <conversionTimeout>100000</conversionTimeout>
               <includes>
                 <include>com/joestelmach/natty/generated/DebugDateParser.g</include> 
                 <include>com/joestelmach/natty/generated/DebugDateWalker.g</include> 
