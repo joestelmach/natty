@@ -7,8 +7,6 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.TimeZone;
 
-import org.omg.CORBA._IDLTypeStub;
-
 /**
  * @author Joe Stelmach
  */
@@ -22,6 +20,16 @@ public class WalkerState {
   private static final String HOUR = "hour";
   private static final String MINUTE = "minute";
   private static final String SECOND = "second";
+  private static final String AM = "am";
+  private static final String PM = "pm";
+  private static final String DIR_LEFT = "<";
+  private static final String DIR_RIGHT = ">";
+  private static final String SEEK_PREFIX = "by_";
+  private static final String SEEK_BY_DAY = "by_day";
+  private static final String SEEK_BY_WEEK = "by_week";
+  private static final String PLUS = "+";
+  private static final String MINUS = "-";
+  private static final String GMT = "GMT";
   
   private GregorianCalendar _calendar;
   private TimeZone _defaultTimeZone;
@@ -63,21 +71,21 @@ public class WalkerState {
   public void seekToDayOfWeek(String direction, String seekType, String seekAmount, String dayOfWeek) {
     int dayOfWeekInt = Integer.parseInt(dayOfWeek);
     int seekAmountInt = Integer.parseInt(seekAmount);
-    assert(direction.equals("<") || direction.equals(">"));
-    assert(seekType.equals("by_day") || seekType.equals("by_week"));
+    assert(direction.equals(DIR_LEFT) || direction.equals(DIR_RIGHT));
+    assert(seekType.equals(SEEK_BY_DAY) || seekType.equals(SEEK_BY_WEEK));
     assert(dayOfWeekInt >= 1 && dayOfWeekInt <= 7);
     
     markDateInvocation();
     
-    int sign = direction.equals(">") ? 1 : -1;
-    if(seekType.equals("by_week")) {
+    int sign = direction.equals(DIR_RIGHT) ? 1 : -1;
+    if(seekType.equals(SEEK_BY_WEEK)) {
       // set our calendar to this weeks requested day of the week,
       // then add or subtract the week(s)
       _calendar.set(Calendar.DAY_OF_WEEK, dayOfWeekInt);
       _calendar.add(Calendar.DAY_OF_YEAR, seekAmountInt * 7 * sign);
     }
     
-    else if(seekType.equals("by_day")) {
+    else if(seekType.equals(SEEK_BY_DAY)) {
       // find the closest day
       do {
         _calendar.roll(Calendar.DAY_OF_YEAR, sign);
@@ -141,7 +149,7 @@ public class WalkerState {
   public void seekToMonth(String direction, String seekAmount, String month) {
     int seekAmountInt = Integer.parseInt(seekAmount);
     int monthInt = Integer.parseInt(month);
-    assert(direction.equals("<") || direction.equals(">"));
+    assert(direction.equals(DIR_LEFT) || direction.equals(DIR_RIGHT));
     assert(monthInt >= 1 && monthInt <= 12);
     
     markDateInvocation();
@@ -154,7 +162,7 @@ public class WalkerState {
     // seek to the appropriate year
     if(seekAmountInt > 0) {
       int currentMonth = _calendar.get(Calendar.MONTH) + 1;
-      int sign = direction.equals(">") ? 1 : -1;
+      int sign = direction.equals(DIR_RIGHT) ? 1 : -1;
       int numYearsToShift = seekAmountInt + 
         (currentMonth <= monthInt ? sign > 0 ? -1 : 0 : sign > 0 ? 0 : -1);
       _calendar.add(Calendar.YEAR, (numYearsToShift * sign));
@@ -176,9 +184,9 @@ public class WalkerState {
    * @param span
    */
   public void seekBySpan(String direction, String seekAmount, String span) {
-    if(span.startsWith("by_")) span = span.substring(3);
+    if(span.startsWith(SEEK_PREFIX)) span = span.substring(3);
     int seekAmountInt = Integer.parseInt(seekAmount);
-    assert(direction.equals("<") || direction.equals(">"));
+    assert(direction.equals(DIR_LEFT) || direction.equals(DIR_RIGHT));
     assert(span.equals(DAY) || span.equals(WEEK) || span.equals(MONTH) || 
         span.equals(YEAR) || span.equals(HOUR) || span.equals(MINUTE) || 
         span.equals(SECOND));
@@ -187,7 +195,7 @@ public class WalkerState {
       span.equals(MONTH) || span.equals(YEAR);
     if(isDateSeek) markDateInvocation();
     
-    int sign = direction.equals(">") ? 1 : -1;
+    int sign = direction.equals(DIR_RIGHT) ? 1 : -1;
     int field = 
       span.equals(DAY) ? Calendar.DAY_OF_YEAR : 
       span.equals(WEEK) ? Calendar.WEEK_OF_YEAR :
@@ -300,7 +308,7 @@ public class WalkerState {
   public void setExplicitTime(String hours, String minutes, String seconds, String amPm, String zoneString) {
     int hoursInt = Integer.parseInt(hours);
     int minutesInt = Integer.parseInt(minutes);
-    assert(amPm == null || amPm.equals("am") || amPm.equals("pm"));
+    assert(amPm == null || amPm.equals(AM) || amPm.equals(PM));
     assert(hoursInt >= 0 && hoursInt <= 23); 
     assert(minutesInt >= 0 && minutesInt < 60); 
     
@@ -310,8 +318,8 @@ public class WalkerState {
     // if no explicit zone is given, we use our own
     TimeZone zone = null;
     if(zoneString != null) {
-      if(zoneString.startsWith("+") || zoneString.startsWith("-")) {
-        zoneString = "GMT" + zoneString;
+      if(zoneString.startsWith(PLUS) || zoneString.startsWith(MINUS)) {
+        zoneString = GMT + zoneString;
       }
       zone = TimeZone.getTimeZone(zoneString);
     }
@@ -323,7 +331,7 @@ public class WalkerState {
     if(hoursInt <= 12) {
       int amPmInt = amPm == null ? 
         (hoursInt >= 12 ? Calendar.PM : Calendar.AM) :
-        amPm.equals("pm") ? Calendar.PM : Calendar.AM;
+        amPm.equals(PM) ? Calendar.PM : Calendar.AM;
       _calendar.set(Calendar.AM_PM, amPmInt);
       
       // calendar is whacky at 12 o'clock (must use 0)
@@ -350,10 +358,10 @@ public class WalkerState {
     Date date = _calendar.getTime();
     _currentDateTimes.add(date);
     
-    // once a date time is captured, we don't reset the calendar just yet
-    // until the first date seek invocation occurrs.  This allows us to keep 
-    // the date fixed while seeking to a different time after the capture
-    // e.g. feb 28th at 6pm or 7pm
+    // once a date time is captured, we don't reset the calendar until 
+    // the first date seek invocation occurrs.  This allows us to keep 
+    // the date fixed while seeking to a different time after the
+    // capture. For example: feb 28th at 6pm or 7pm.
     _firstDateInvocation = true;
   }
   

@@ -29,6 +29,7 @@ public class Parser {
   private boolean _debug;
   private ParseListener _debugListener;
   
+  private static final String MARKER = " ___ ";
   private static final Logger _logger = Logger.getLogger(Parser.class.getName());
   
   /**
@@ -63,9 +64,11 @@ public class Parser {
   public ParseResult parse(final String inputString) {
     ParseResult result = new ParseResult();
     try {
+      String cleanedInput = MARKER + inputString.trim() + MARKER;
+      
       // lex
       ANTLRInputStream input = new ANTLRNoCaseInputStream(
-          new ByteArrayInputStream(inputString.trim().getBytes()));
+          new ByteArrayInputStream(cleanedInput.getBytes()));
       DateLexer lexer = new DateLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
