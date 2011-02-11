@@ -28,7 +28,6 @@ public class Parser {
   
   private boolean _debug;
   private ParseListener _debugListener;
-  private static final String PREFIX_SUFFIX = " text ";
   
   private static final Logger _logger = Logger.getLogger(Parser.class.getName());
   
@@ -65,9 +64,8 @@ public class Parser {
     ParseResult result = new ParseResult();
     try {
       // lex
-      String cleanedInputString = PREFIX_SUFFIX + inputString.trim() + PREFIX_SUFFIX;
       ANTLRInputStream input = new ANTLRNoCaseInputStream(
-          new ByteArrayInputStream(cleanedInputString.getBytes()));
+          new ByteArrayInputStream(inputString.trim().getBytes()));
       DateLexer lexer = new DateLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
