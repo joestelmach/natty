@@ -35,7 +35,8 @@ public class WalkerState {
   private TimeZone _defaultTimeZone;
   private int _currentYear;
   private List<Date> _currentDateTimes;
-  private boolean _firstDateInvocation = true;
+  private boolean _firstDateInvocationInGroup = true;
+  private boolean _timeGivenInGroup = false;
   
   /**
    * Creates a new WalkerState representing the start of
@@ -193,7 +194,7 @@ public class WalkerState {
     
     boolean isDateSeek = span.equals(DAY) || span.equals(WEEK) || 
       span.equals(MONTH) || span.equals(YEAR);
-    if(isDateSeek) markDateInvocation();
+    if(isDateSeek) markDateInvocation(); else markTimeInvocation();
     
     int sign = direction.equals(DIR_RIGHT) ? 1 : -1;
     int field = 
@@ -312,6 +313,8 @@ public class WalkerState {
     assert(hoursInt >= 0 && hoursInt <= 23); 
     assert(minutesInt >= 0 && minutesInt < 60); 
     
+    markTimeInvocation();
+    
     // reset milliseconds to 0
     _calendar.set(Calendar.MILLISECOND, 0);
     
@@ -357,12 +360,7 @@ public class WalkerState {
   public void captureDateTime() {
     Date date = _calendar.getTime();
     _currentDateTimes.add(date);
-    
-    // once a date time is captured, we don't reset the calendar until 
-    // the first date seek invocation occurrs.  This allows us to keep 
-    // the date fixed while seeking to a different time after the
-    // capture. For example: feb 28th at 6pm or 7pm.
-    _firstDateInvocation = true;
+    _firstDateInvocationInGroup = true;
   }
   
   /**
@@ -385,10 +383,30 @@ public class WalkerState {
    * rule is captured
    */
   private void markDateInvocation() {
-    if(_firstDateInvocation) {
-      resetCalender();
-      _firstDateInvocation = false;
+    if(_firstDateInvocationInGroup) {
+      // if a time has been given within the current date group, 
+      // we capture the current time before resetting the calendar
+      if(_timeGivenInGroup) {
+        int hours = _calendar.get(Calendar.HOUR_OF_DAY);
+        int minutes = _calendar.get(Calendar.MINUTE);
+        int seconds = _calendar.get(Calendar.SECOND);
+        resetCalender();
+        _calendar.set(Calendar.HOUR_OF_DAY, hours);
+        _calendar.set(Calendar.MINUTE, minutes);
+        _calendar.set(Calendar.SECOND, seconds);
+      }
+      else {
+        resetCalender();
+      }
+      _firstDateInvocationInGroup = false;
     }
+  }
+  
+  /**
+   * 
+   */
+  private void markTimeInvocation() {
+    _timeGivenInGroup = true;
   }
   
   /**
