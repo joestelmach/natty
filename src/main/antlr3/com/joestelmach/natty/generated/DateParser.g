@@ -10,6 +10,7 @@ tokens {
   MONTH_OF_YEAR;
   DAY_OF_MONTH;
   DAY_OF_WEEK;
+  DAY_OF_YEAR;
   YEAR_OF;
   DATE_TIME;
   DATE_TIME_ALTERNATIVE;
@@ -66,15 +67,16 @@ time_date_separator
   ;
 
 date
-  : explicit_relative_date
-  | formal_date
+  : formal_date
   | relaxed_date
   | relative_date
+  | explicit_relative_date
   | global_date_prefix WHITE_SPACE date 
       -> ^(RELATIVE_DATE ^(SEEK global_date_prefix date))
   ;
   
 date_time_alternative
+      
   // today or the day after that, feb 16th or 2 days after that, january fourth or the friday after
   : (date conjunction global_date_prefix)=>
       date conjunction global_date_prefix (WHITE_SPACE THAT)? (date_time_separator explicit_time)?
@@ -101,6 +103,13 @@ date_time_alternative
       date (conjunction date)+ (date_time_separator explicit_time)?
         -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?)+)
         
+  // first or last day of 2009
+ | (explicit_day_of_year_part conjunction explicit_day_of_year_part WHITE_SPACE relaxed_year)=>
+    first=explicit_day_of_year_part conjunction second=explicit_day_of_year_part WHITE_SPACE relaxed_year
+        -> ^(DATE_TIME_ALTERNATIVE
+             ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK relaxed_year) $first))
+             ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK relaxed_year) $second)))
+             
   // catch all date_time to date_time range
   | (date_time conjunction date_time)=>
     date_time conjunction date_time
@@ -115,8 +124,28 @@ conjunction
   ;
   
 alternative_day_of_month_list
+  // mon may 15 or tues may 16
   : ((relaxed_day_of_week? relaxed_month WHITE_SPACE relaxed_day_of_month (conjunction relaxed_day_of_month)+) (date_time_separator explicit_time)?)
       -> ^(DATE_TIME ^(EXPLICIT_DATE relaxed_month relaxed_day_of_month) explicit_time?)+
+      
+  // first or last day of september
+  | (explicit_day_of_month_part conjunction explicit_day_of_month_part WHITE_SPACE explicit_relative_month)=>
+      first=explicit_day_of_month_part conjunction second=explicit_day_of_month_part WHITE_SPACE explicit_relative_month
+        -> ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK explicit_relative_month) $first))
+           ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK explicit_relative_month) $second))
+           
+  // first or last day of next september
+  | (explicit_day_of_month_part conjunction explicit_day_of_month_part WHITE_SPACE prefix WHITE_SPACE explicit_relative_month)=>
+      first=explicit_day_of_month_part conjunction second=explicit_day_of_month_part WHITE_SPACE prefix WHITE_SPACE explicit_relative_month
+        -> ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK prefix explicit_relative_month) $first))
+           ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK prefix explicit_relative_month) $second))
+           
+  // first or last day of 2 septembers from now
+  | (explicit_day_of_month_part conjunction explicit_day_of_month_part WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE explicit_relative_month WHITE_SPACE relative_date_suffix)=>
+      first=explicit_day_of_month_part conjunction second=explicit_day_of_month_part WHITE_SPACE 
+        spelled_or_int_optional_prefix WHITE_SPACE explicit_relative_month WHITE_SPACE relative_date_suffix
+          -> ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix explicit_relative_month) $first))
+             ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix explicit_relative_month) $second))
   ;
   
 alternative_day_of_week_list
@@ -225,6 +254,15 @@ relaxed_day_of_month
       -> ^(DAY_OF_MONTH spelled_first_to_thirty_first)
   ;
   
+// TODO expand these to 366
+relaxed_day_of_year
+  : spelled_or_int_01_to_31_optional_prefix
+      -> ^(DAY_OF_YEAR spelled_or_int_01_to_31_optional_prefix)
+      
+  | spelled_first_to_thirty_first
+      -> ^(DAY_OF_YEAR spelled_first_to_thirty_first)
+  ;
+  
 relaxed_year
   : SINGLE_QUOTE? int_00_to_99_mandatory_prefix
       -> ^(YEAR_OF int_00_to_99_mandatory_prefix)
@@ -307,9 +345,7 @@ explicit_relative_date
   : (explicit_day_of_month_part WHITE_SPACE spelled_or_int_optional_prefix)=>
     explicit_day_of_month_part WHITE_SPACE spelled_or_int_optional_prefix 
         WHITE_SPACE explicit_relative_month WHITE_SPACE relative_date_suffix
-      -> ^(RELATIVE_DATE 
-          ^(SEEK relative_date_suffix spelled_or_int_optional_prefix explicit_relative_month)
-          explicit_day_of_month_part)
+      -> ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix explicit_relative_month) explicit_day_of_month_part)
           
   // 10th of next month, 31st of last month, 10th of next october, 30th of this month, the last thursday of last november
   | (explicit_day_of_month_part WHITE_SPACE prefix)=>
@@ -359,19 +395,23 @@ explicit_relative_date
       -> ^(RELATIVE_DATE 
           ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] relaxed_month)
           explicit_day_of_month_part)
+          
+  // the first day of 2009
+  | explicit_day_of_year_part WHITE_SPACE relaxed_year
+      -> ^(RELATIVE_DATE ^(EXPLICIT_SEEK relaxed_year) explicit_day_of_year_part)
   ;
   
 explicit_day_of_month_part
   // first of, 10th of, 31st of,
-  : (THE WHITE_SPACE)? relaxed_day_of_month WHITE_SPACE (IN | OF)
+  : (THE WHITE_SPACE)? relaxed_day_of_month (WHITE_SPACE (IN | OF))?
       -> ^(EXPLICIT_SEEK relaxed_day_of_month)
       
   // the last thursday
-  | (THE WHITE_SPACE)? relative_occurrence_index WHITE_SPACE day_of_week WHITE_SPACE (IN | OF)
+  | (THE WHITE_SPACE)? relative_occurrence_index WHITE_SPACE day_of_week (WHITE_SPACE (IN | OF))?
       -> ^(EXPLICIT_SEEK relative_occurrence_index day_of_week)
       
   // in the start of, at the beginning of, the end of, last day of, first day of
-  | (((IN | AT) WHITE_SPACE)? THE WHITE_SPACE)? explicit_day_of_month_bound WHITE_SPACE (OF | IN)
+  | (((IN | AT) WHITE_SPACE)? THE WHITE_SPACE)? explicit_day_of_month_bound (WHITE_SPACE (OF | IN))?
       -> explicit_day_of_month_bound
   ;
 
@@ -383,6 +423,31 @@ explicit_day_of_week_part
   // in the end of, at the beginning of
   | (((IN | AT) WHITE_SPACE)? THE WHITE_SPACE)? explicit_day_of_week_bound WHITE_SPACE (OF | IN)
       -> explicit_day_of_week_bound
+  ;
+  
+explicit_day_of_year_part
+  // last of, first of, 15th day of
+  : (THE WHITE_SPACE)? relaxed_day_of_year (WHITE_SPACE (IN | OF))?
+      -> ^(EXPLICIT_SEEK relaxed_day_of_year)
+      
+  // in the start of, at the beginning of, the end of, last day of, first day of
+  | (((IN | AT) WHITE_SPACE)? THE WHITE_SPACE)? explicit_day_of_year_bound (WHITE_SPACE (OF | IN))?
+      -> explicit_day_of_year_bound
+  ;
+  
+// the lower or upper bound when talking about days in a year
+explicit_day_of_year_bound
+  // beginning, start
+  : (BEGINNING | START)
+      -> ^(EXPLICIT_SEEK ^(DAY_OF_YEAR INT["1"]))
+      
+  // first day, 2nd day, etc
+  | (spelled_first_to_thirty_first WHITE_SPACE DAY)
+      -> ^(EXPLICIT_SEEK ^(DAY_OF_YEAR spelled_first_to_thirty_first))
+  
+  // end, last day
+  | (END | (LAST WHITE_SPACE DAY))
+      -> ^(EXPLICIT_SEEK ^(DAY_OF_YEAR INT["366"]))
   ;
   
 // the lower or upper bound when talking about days in a month
@@ -671,18 +736,28 @@ spelled_one_to_thirty_one
   | SEVENTEEN  -> INT["17"]
   | EIGHTEEN   -> INT["18"]
   | NINETEEN   -> INT["19"]
-  | TWENTY     -> INT["20"]
-  | TWENTY (DASH | WHITE_SPACE)? ONE   -> INT["21"]
-  | TWENTY (DASH | WHITE_SPACE)? TWO   -> INT["22"]
-  | TWENTY (DASH | WHITE_SPACE)? THREE -> INT["23"]
-  | TWENTY (DASH | WHITE_SPACE)? FOUR  -> INT["24"]
-  | TWENTY (DASH | WHITE_SPACE)? FIVE  -> INT["25"]
-  | TWENTY (DASH | WHITE_SPACE)? SIX   -> INT["26"]
-  | TWENTY (DASH | WHITE_SPACE)? SEVEN -> INT["27"]
-  | TWENTY (DASH | WHITE_SPACE)? EIGHT -> INT["28"]
-  | TWENTY (DASH | WHITE_SPACE)? NINE  -> INT["29"]
-  | THIRTY                             -> INT["30"]
-  | THIRTY (DASH | WHITE_SPACE)? ONE   -> INT["31"]
+  | (TWENTY WHITE_SPACE ONE)=>   TWENTY WHITE_SPACE ONE   -> INT["21"]
+  | TWENTY DASH? ONE                                      -> INT["21"]
+  | (TWENTY WHITE_SPACE TWO)=>   TWENTY WHITE_SPACE TWO   -> INT["22"]
+  | TWENTY DASH? TWO                                      -> INT["22"]
+  | (TWENTY WHITE_SPACE THREE)=> TWENTY WHITE_SPACE THREE -> INT["23"]
+  | TWENTY DASH? THREE                                    -> INT["23"]
+  | (TWENTY WHITE_SPACE FOUR)=>  TWENTY WHITE_SPACE FOUR  -> INT["24"]
+  | TWENTY DASH? FOUR                                     -> INT["24"]
+  | (TWENTY WHITE_SPACE FIVE)=>  TWENTY WHITE_SPACE FIVE  -> INT["25"]
+  | TWENTY DASH? FIVE                                     -> INT["25"]
+  | (TWENTY WHITE_SPACE SIX)=>   TWENTY WHITE_SPACE SIX   -> INT["26"]
+  | TWENTY DASH? SIX                                      -> INT["26"]
+  | (TWENTY WHITE_SPACE SEVEN)=> TWENTY WHITE_SPACE SEVEN -> INT["27"]
+  | TWENTY DASH? SEVEN                                    -> INT["27"]
+  | (TWENTY WHITE_SPACE EIGHT)=> TWENTY WHITE_SPACE EIGHT -> INT["28"]
+  | TWENTY DASH? EIGHT                                    -> INT["28"]
+  | (TWENTY WHITE_SPACE NINE)=>  TWENTY WHITE_SPACE NINE  -> INT["29"]
+  | TWENTY DASH? NINE                                     -> INT["29"]
+  | TWENTY                                                -> INT["20"]
+  | (THIRTY WHITE_SPACE ONE)=>   THIRTY WHITE_SPACE ONE   -> INT["31"]
+  | THIRTY DASH? ONE                                      -> INT["31"]
+  | THIRTY                                                -> INT["30"]
   ;
   
 // a spelled number in sequence between first and thirty-first

@@ -117,6 +117,23 @@ public class WalkerState {
   }
   
   /**
+   * Seeks to the given day within the current year
+   * @param dayOfYear the day of the year to seek to, represented as an integer
+   *     from 1 to 366. Must be guaranteed to parse as an Integer.  If this day is
+   *     beyond the last day of the current year, the actual last day of the year
+   *     will be used.
+   */
+  public void seekToDayOfYear(String dayOfYear) {
+    int dayOfYearInt = Integer.parseInt(dayOfYear);
+    assert(dayOfYearInt >= 1 && dayOfYearInt <= 366);
+    
+    markDateInvocation();
+    
+    dayOfYearInt = Math.min(dayOfYearInt, _calendar.getActualMaximum(Calendar.DAY_OF_YEAR));
+    _calendar.set(Calendar.DAY_OF_YEAR, dayOfYearInt);
+  }
+  
+  /**
    * 
    * @param year
    */
