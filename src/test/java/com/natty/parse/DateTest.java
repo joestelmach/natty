@@ -144,10 +144,20 @@ public class DateTest extends AbstractTest {
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 2, 28, 2011);
     validateDate(dates.get(1), 3, 2, 2011);
+    
+    dates = parseCollection("tomorrow at 10 and monday at 11");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 1, 3, 2011);
+    validateDate(dates.get(1), 1, 3, 2011);
+    
+    dates = parseCollection("tomorrow at 10 through tues at 11");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 1, 3, 2011);
+    validateDate(dates.get(1), 1, 4, 2011);
   }
   
   public static void main(String[] args) throws Exception{
-    String inputString = "3/3 21:00 to in 5 days";
+    String inputString = "tomorrow at 10 and monday at 11";
     Parser parser = new Parser();
     ParseResult result = parser.parse(inputString);
     System.out.println(result.getSyntaxTree());

@@ -44,7 +44,7 @@ public class Parser {
    * Creates a new parser with no explicit default time zone (default will be US/Eastern)
    */
   public Parser() {
-    _defaultTimeZone = TimeZone.getTimeZone("America/New_York");
+    _defaultTimeZone = TimeZone.getDefault();
   }
   
   /**
