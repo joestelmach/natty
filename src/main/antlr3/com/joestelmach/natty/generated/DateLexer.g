@@ -4,26 +4,26 @@ lexer grammar DateLexer;
 
 // ********** date rules ********** 
 
-JANUARY   : 'january' 's'?   | 'jan' DOT?;
-FEBRUARY  : 'february' 's'?  | 'feb' DOT?;
-MARCH     : 'march' 'es'?    | 'mar' DOT?;
-APRIL     : 'april' 's'?     | 'apr' DOT?;
-MAY       : 'may' 's'?;
-JUNE      : 'june' 's'?      | 'jun' DOT?;
-JULY      : 'july' 's'?      | 'jul' DOT?;
-AUGUST    : 'august' 's'?    | 'aug' DOT?;
-SEPTEMBER : 'september' 's'? | 'sep' DOT? | 'sept' DOT?;
-OCTOBER   : 'october' 's'?   | 'oct' DOT?;
-NOVEMBER  : 'november' 's'?  | 'nov' DOT?;
-DECEMBER  : 'december' 's'?  | 'dec' DOT?;
+JANUARY   : 'january'   's'?  | 'jan' DOT?;
+FEBRUARY  : 'february'  's'?  | 'feb' DOT?;
+MARCH     : 'march'     'es'? | 'mar' DOT?;
+APRIL     : 'april'     's'?  | 'apr' DOT?;
+MAY       : 'may'       's'?;
+JUNE      : 'june'      's'?  | 'jun' DOT?;
+JULY      : 'july'      's'?  | 'jul' DOT?;
+AUGUST    : 'august'    's'?  | 'aug' DOT?;
+SEPTEMBER : 'september' 's'?  | 'sep' DOT? | 'sept' DOT?;
+OCTOBER   : 'october'   's'?  | 'oct' DOT?;
+NOVEMBER  : 'november'  's'?  | 'nov' DOT?;
+DECEMBER  : 'december'  's'?  | 'dec' DOT?;
   
-SUNDAY    : 'sunday' 's'?    | 'sun' DOT?  | 'suns' DOT?;
-MONDAY    : 'monday' 's'?    | 'mon' DOT?  | 'mons' DOT?;
-TUESDAY   : 'tuesday' 's'?   | 'tues' DOT? | 'tue' DOT?;
-WEDNESDAY : 'wednesday' 's'? | 'wed' DOT?  | 'weds' DOT?;
-THURSDAY  : 'thursday' 's'?  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thurs' DOT?;
-FRIDAY    : 'friday' 's'?    | 'fri' DOT?  | 'fris' DOT?;
-SATURDAY  : 'saturday' 's'?  | 'sat' DOT?  | 'sats' DOT?  | 'weekend';
+SUNDAY    : 'sunday'    's'?  | 'sun' DOT?  | 'suns' DOT?;
+MONDAY    : 'monday'    's'?  | 'mon' DOT?  | 'mons' DOT?;
+TUESDAY   : 'tuesday'   's'?  | 'tues' DOT? | 'tue' DOT?;
+WEDNESDAY : 'wednesday' 's'?  | 'wed' DOT?  | 'weds' DOT?;
+THURSDAY  : 'thursday'  's'?  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thurs' DOT?;
+FRIDAY    : 'friday'    's'?  | 'fri' DOT?  | 'fris' DOT?;
+SATURDAY  : 'saturday'  's'?  | 'sat' DOT?  | 'sats' DOT?  | 'weekend';
 
 HOUR   : 'hour'   | 'hours'   | 'hr'  | 'hrs';
 MINUTE : 'minute' | 'minutes' | 'min' | 'mins';

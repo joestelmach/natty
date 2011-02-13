@@ -10,6 +10,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import com.joestelmach.natty.CalendarSource;
+import com.joestelmach.natty.ParseLocation;
 import com.joestelmach.natty.ParseResult;
 import com.joestelmach.natty.Parser;
 
@@ -154,12 +155,48 @@ public class DateTest extends AbstractTest {
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 1, 4, 2011);
+    
+    dates = parseCollection("first day of 2009 to last day of 2009");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 1, 1, 2009);
+    validateDate(dates.get(1), 12, 31, 2009);
+    
+    dates = parseCollection("first to last day of 2008");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 1, 1, 2008);
+    validateDate(dates.get(1), 12, 31, 2008);
+    
+    dates = parseCollection("first to last day of september");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 9, 1, 2011);
+    validateDate(dates.get(1), 9, 30, 2011);
+    
+    dates = parseCollection("first to last day of this september");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 9, 1, 2011);
+    validateDate(dates.get(1), 9, 30, 2011);
+    
+    dates = parseCollection("first to last day of 2 septembers ago");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 9, 1, 2009);
+    validateDate(dates.get(1), 9, 30, 2009);
+    
+    dates = parseCollection("first to last day of 2 septembers from now");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 9, 1, 2012);
+    validateDate(dates.get(1), 9, 30, 2012);
   }
   
   public static void main(String[] args) throws Exception{
-    String inputString = "tomorrow at 10 and monday at 11";
+    //String inputString = "first to last day of this september";
+    String inputString = "first to last day of september";
+    //String inputString = "1st oct in the year '89 1300 hours";
     Parser parser = new Parser();
+    parser.setDebug(true);
     ParseResult result = parser.parse(inputString);
+    for(ParseLocation loc:result.getParseLocations()) {
+      System.out.println(loc.getRuleName());
+    }
     System.out.println(result.getSyntaxTree());
     System.out.println(result.getDates());
   }
