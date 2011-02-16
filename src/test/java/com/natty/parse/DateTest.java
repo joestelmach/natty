@@ -187,7 +187,7 @@ public class DateTest extends AbstractTest {
   }
   
   public static void main(String[] args) throws Exception{
-    String inputString = "asdf dasf saf first to last day of september asdf asf oct 1st, 1980 asfda ";
+    String inputString = "golf tomorrow at 9 AM ssdf pebble beach";
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(inputString);
     for(DateGroup group:groups) {
