@@ -34,9 +34,11 @@ public class WalkerState {
   private GregorianCalendar _calendar;
   private TimeZone _defaultTimeZone;
   private int _currentYear;
-  private List<Date> _currentDateTimes;
   private boolean _firstDateInvocationInGroup = true;
   private boolean _timeGivenInGroup = false;
+  
+  private List<DateGroup> _dateGroups;
+  private DateGroup _currentDateGroup;
   
   /**
    * Creates a new WalkerState representing the start of
@@ -44,7 +46,8 @@ public class WalkerState {
    */
   public WalkerState() {
     resetCalender();
-    _currentDateTimes = new ArrayList<Date>();
+    _currentDateGroup = new DateGroup();
+    _dateGroups = new ArrayList<DateGroup>();
   }
   
   public void setDefaultTimeZone(final TimeZone zone) {
@@ -376,15 +379,23 @@ public class WalkerState {
    */
   public void captureDateTime() {
     Date date = _calendar.getTime();
-    _currentDateTimes.add(date);
+    _currentDateGroup.addDate(date);
     _firstDateInvocationInGroup = true;
+  }
+  
+  /**
+   * 
+   */
+  public void captureDateGroup() {
+    _dateGroups.add(_currentDateGroup);
+    _currentDateGroup = new DateGroup();
   }
   
   /**
    * @return the list of date times found 
    */
-  public List<Date> getDateTimes() {
-    return _currentDateTimes;
+  public List<DateGroup> getDateGroups() {
+    return _dateGroups;
   }
   
   /**

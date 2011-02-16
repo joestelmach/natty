@@ -10,8 +10,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import com.joestelmach.natty.CalendarSource;
-import com.joestelmach.natty.ParseLocation;
-import com.joestelmach.natty.ParseResult;
+import com.joestelmach.natty.DateGroup;
 import com.joestelmach.natty.Parser;
 
 /**
@@ -188,16 +187,14 @@ public class DateTest extends AbstractTest {
   }
   
   public static void main(String[] args) throws Exception{
-    //String inputString = "first to last day of this september";
-    String inputString = "first to last day of september";
-    //String inputString = "1st oct in the year '89 1300 hours";
+    String inputString = "asdf dasf saf first to last day of september asdf asf oct 1st, 1980 asfda ";
     Parser parser = new Parser();
-    parser.setDebug(true);
-    ParseResult result = parser.parse(inputString);
-    for(ParseLocation loc:result.getParseLocations()) {
-      System.out.println(loc.getRuleName());
+    List<DateGroup> groups = parser.parse(inputString);
+    for(DateGroup group:groups) {
+      System.out.println(group.getDates());
+      System.out.println(group.getLine());
+      System.out.println(group.getPosition());
+      System.out.println(group.getText());
     }
-    System.out.println(result.getSyntaxTree());
-    System.out.println(result.getDates());
   }
 }

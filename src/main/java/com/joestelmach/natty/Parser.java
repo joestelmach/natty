@@ -2,6 +2,7 @@ package com.joestelmach.natty;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.TimeZone;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +17,6 @@ import org.antlr.runtime.tree.Tree;
 import com.joestelmach.natty.generated.DateLexer;
 import com.joestelmach.natty.generated.DateParser;
 import com.joestelmach.natty.generated.DateWalker;
-import com.joestelmach.natty.generated.DebugDateParser;
 import com.joestelmach.natty.generated.TreeRewrite;
 
 /**
@@ -25,9 +25,6 @@ import com.joestelmach.natty.generated.TreeRewrite;
  */
 public class Parser {
   private TimeZone _defaultTimeZone;
-  
-  private boolean _debug;
-  private ParseListener _debugListener;
   
   private static final String MARKER = " ___ ";
   private static final Logger _logger = Logger.getLogger(Parser.class.getName());
@@ -48,21 +45,13 @@ public class Parser {
   }
   
   /**
-   * Enables the collection of parse information
-   * @param debug
-   */
-  public void setDebug(final boolean debug) {
-    _debug = debug;
-  }
-  
-  /**
    * Parses the input string for a list of date times, assuming no
    * extraneous text is present.
    * @param inputString
    * @return
    */
-  public ParseResult parse(final String inputString) {
-    ParseResult result = new ParseResult();
+  public List<DateGroup> parse(final String inputString) {
+    List<DateGroup> groups = null;
     try {
       String cleanedInput = MARKER + inputString.trim() + MARKER;
       
@@ -72,36 +61,36 @@ public class Parser {
       DateLexer lexer = new DateLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       
-      // parse with debug
-      Tree tree = null;
-      if(_debug) {
-        _debugListener = new ParseListener();
-        DebugDateParser parser = new DebugDateParser(tokens, _debugListener);
-        DebugDateParser.parse_return parseReturn = parser.parse();
-        tree = (Tree) parseReturn.getTree();
-        result.setParseLocations(_debugListener.getLocations());
-      }
-      
-      // or parse without debug
-      else {
-        DateParser parser = new DateParser(tokens);
-        DateParser.parse_return parseReturn = parser.parse();
-        tree = (Tree) parseReturn.getTree();
-      }
+      // parse 
+      ParseListener listener = new ParseListener();
+      DateParser parser = new DateParser(tokens, listener);
+      DateParser.parse_return parseReturn = parser.parse();
+      Tree tree = (Tree) parseReturn.getTree();
       
       // rewrite the tree (temporary fix for http://www.antlr.org/jira/browse/ANTLR-427)
       CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
       TreeRewrite s = new TreeRewrite(nodes);
       tree = (CommonTree)s.downup(tree);
-      result.setSyntaxTree(tree.toStringTree());
       
       // and walk it
       nodes = new CommonTreeNodeStream(tree);
       nodes.setTokenStream(tokens);
       DateWalker walker = new DateWalker(nodes);
       walker.getState().setDefaultTimeZone(_defaultTimeZone);
-      walker.date_time_alternative();
-      result.setDateTimes(walker.getState().getDateTimes());
+      walker.list();
+      
+      // run through the results and append the parse information
+      groups = walker.getState().getDateGroups();
+      List<ParseLocation> groupLocations = listener.getDateGroupLocations();
+      for(int i=0; i<groups.size(); i++) {
+        if(groupLocations.size() > i) {
+          DateGroup group = groups.get(i);
+          ParseLocation location = groupLocations.get(i);
+          group.setLine(location.getLine());
+          group.setText(location.getText());
+          group.setPosition(location.getStart());
+        }
+      }
       
     } catch(IOException e) {
       _logger.log(Level.SEVERE, "Could not read from input stream", e);
@@ -110,6 +99,6 @@ public class Parser {
       _logger.log(Level.SEVERE, "Could not parse input", e);
     }
     
-    return result;
+    return groups;
   }
 }

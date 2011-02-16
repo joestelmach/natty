@@ -50,22 +50,25 @@ public class ParseListener extends BlankDebugEventListener {
     INTERESTING_RULES.put("meridian_indicator", "am/pm");
     INTERESTING_RULES.put("time_zone", "zone");
     INTERESTING_RULES.put("time", "time");
-    INTERESTING_RULES.put("text", "text");
-    INTERESTING_RULES.put("entry", "entry");
-    INTERESTING_RULES.put("known_token", "known_token");
   }
 
   private int backtracking = 0;
   private Map<String, Stack<List<Token>>> _ruleMap;
   private List<ParseLocation> _locations;
+  private List<ParseLocation> _dateGroupLocations;
   
   public ParseListener() {
     _ruleMap = new HashMap<String, Stack<List<Token>>>();
     _locations = new ArrayList<ParseLocation>();
+    _dateGroupLocations = new ArrayList<ParseLocation>();
   }
   
   public List<ParseLocation> getLocations() {
     return _locations;
+  }
+  
+  public List<ParseLocation> getDateGroupLocations() {
+    return _dateGroupLocations;
   }
   
   // don't add backtracking or cyclic DFA nodes 
@@ -93,22 +96,35 @@ public class ParseListener extends BlankDebugEventListener {
     if (backtracking > 0) return;
     
     List<Token> tokenList = _ruleMap.get(ruleName).pop();
-    if(tokenList.size() > 0 && INTERESTING_RULES.keySet().contains(ruleName)) { 
+    
+    if(tokenList.size() > 0) {
+      boolean isAlternative = ruleName.equals("date_time_alternative");
+      boolean isInteresting = INTERESTING_RULES.keySet().contains(ruleName);
+      if(isAlternative || isInteresting) {
+        StringBuilder builder = new StringBuilder();
+        for(Token token:tokenList) {
+          builder.append(token.getText());
+        }
+        String text = builder.toString();
+        int line = tokenList.get(0).getLine();
+        int start = tokenList.get(0).getCharPositionInLine();
+        int end = start + text.length();
         
-      StringBuilder builder = new StringBuilder();
-      for(Token token:tokenList) {
-        builder.append(token.getText());
-      }
-      String text = builder.toString();
-      int start = tokenList.get(0).getCharPositionInLine();
-      int end = start + text.length();
+        ParseLocation location = new ParseLocation();
+        location.setRuleName(ruleName);
+        location.setText(text);
+        location.setLine(line);
+        location.setStart(start);
+        location.setEnd(end);
       
-      ParseLocation location = new ParseLocation();
-      location.setRuleName(INTERESTING_RULES.get(ruleName));
-      location.setText(text);
-      location.setStart(start);
-      location.setEnd(end);
-      _locations.add(location);
+        if(isAlternative) {
+          _dateGroupLocations.add(location);
+        }
+        
+        if(INTERESTING_RULES.keySet().contains(ruleName)) { 
+          _locations.add(location);
+        }
+      }
     }
   }
 
