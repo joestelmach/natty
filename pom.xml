@@ -100,23 +100,6 @@
         <version>3.2</version>
         
         <executions>
-          <!-- default execution ignores our debug parser and walker -->
-          <execution>
-            <id>non-debug</id>
-            <goals>
-              <goal>antlr</goal>
-            </goals>
-            <configuration>
-              <debug>false</debug>
-              <outputDirectory>src/main/java</outputDirectory>
-              <conversionTimeout>100000</conversionTimeout>
-              <excludes>
-                <exclude>com/joestelmach/natty/generated/DateParser.g</exclude> 
-              </excludes>
-            </configuration>
-          </execution>
-          
-          <!-- seperate execution enables debug code generation for our debug parser and walker -->
           <execution>
             <id>debug</id>
             <goals>
@@ -125,30 +108,34 @@
             <configuration>
               <debug>true</debug>
               <outputDirectory>src/main/java</outputDirectory>
-              <conversionTimeout>100000</conversionTimeout>
+              <conversionTimeout>10000</conversionTimeout>
               <includes>
+                <include>com/joestelmach/natty/generated/DateLexer.g</include> 
                 <include>com/joestelmach/natty/generated/DateParser.g</include> 
               </includes>
             </configuration>
           </execution>
+
+          <execution>
+            <id>non-debug</id>
+            <goals>
+              <goal>antlr</goal>
+            </goals>
+            <configuration>
+              <debug>false</debug>
+              <outputDirectory>src/main/java</outputDirectory>
+              <conversionTimeout>10000</conversionTimeout>
+              <includes>
+              </includes>
+              <excludes>
+                <exclude>com/joestelmach/natty/generated/DateLexer.g</exclude> 
+                <exclude>com/joestelmach/natty/generated/DateParser.g</exclude> 
+              </excludes>
+            </configuration>
+          </execution>
+          
         </executions>
       </plugin>
-      
-      <!-- gUnit plugin --> 
-      <plugin> 
-        <groupId>org.antlr</groupId> 
-        <artifactId>maven-gunit-plugin</artifactId> 
-        <version>3.2</version> 
-        <executions> 
-          <execution> 
-            <id>maven-gunit-plugin</id> 
-            <phase>test</phase> 
-            <goals> 
-              <goal>gunit</goal> 
-            </goals> 
-          </execution> 
-        </executions> 
-      </plugin> 
     </plugins>
   </build>
   

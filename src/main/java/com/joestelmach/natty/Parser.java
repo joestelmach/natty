@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.antlr.runtime.ANTLRInputStream;
+import org.antlr.runtime.CommonToken;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTree;
@@ -64,6 +65,11 @@ public class Parser {
       // parse 
       ParseListener listener = new ParseListener();
       DateParser parser = new DateParser(tokens, listener);
+      
+      for(Object t:tokens.getTokens()) {
+        System.out.println(parser.getTokenNames()[((CommonToken)t).getType()]);
+      }
+      
       DateParser.parse_return parseReturn = parser.parse();
       Tree tree = (Tree) parseReturn.getTree();
       
