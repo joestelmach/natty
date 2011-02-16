@@ -1,6 +1,5 @@
 package com.joestelmach.natty;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,16 +9,16 @@ import java.util.List;
  */
 public class ParseResult {
   
-  private List<Date> _dateTimes;
+  private List<DateGroup> _dateGroups;
   private List<ParseLocation> _parseLocations;
   private String _syntaxTree;
   
-  public List<Date> getDates() {
-    return _dateTimes;
+  public List<DateGroup> getDateGroups() {
+    return _dateGroups;
   }
 
-  public void setDateTimes(List<Date> dateTimes) {
-    _dateTimes = dateTimes;
+  public void setDateGroups(List<DateGroup> dateGroups) {
+    _dateGroups = dateGroups;
   }
 
   public List<ParseLocation> getParseLocations() {

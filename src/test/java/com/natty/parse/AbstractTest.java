@@ -8,7 +8,6 @@ import org.junit.Assert;
 import org.junit.Before;
 
 import com.joestelmach.natty.CalendarSource;
-import com.joestelmach.natty.ParseResult;
 import com.joestelmach.natty.Parser;
 
 public abstract class AbstractTest {
@@ -30,8 +29,7 @@ public abstract class AbstractTest {
    * @return
    */
   protected List<Date> parseCollection(String value) {
-    ParseResult result = _parser.parse(value);
-    return result.getDates();
+    return _parser.parse(value).get(0).getDates();
   }
   
   /**

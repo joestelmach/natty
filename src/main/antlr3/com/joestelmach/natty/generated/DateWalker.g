@@ -15,7 +15,14 @@ options {
   }
 }
 
+list
+  : date_time_alternative+
+  ;
+
 date_time_alternative
+  @after {
+    _walkerState.captureDateGroup(); 
+  }
   : ^(DATE_TIME_ALTERNATIVE date_time+)
   ;
 

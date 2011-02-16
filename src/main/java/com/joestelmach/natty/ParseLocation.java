@@ -8,6 +8,7 @@ package com.joestelmach.natty;
 public class ParseLocation {
   private String _ruleName;
   private String _text;
+  private int _line;
   private int _start;
   private int _end;
   
@@ -27,6 +28,14 @@ public class ParseLocation {
     _text = text;
   }
   
+  public int getLine() {
+    return _line;
+  }
+
+  public void setLine(int line) {
+    _line = line;
+  }
+
   public int getStart() {
     return _start;
   }

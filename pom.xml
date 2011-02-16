@@ -93,46 +93,6 @@
         </configuration>
       </plugin>
 
-      <!-- custom ant task to copy our parser and walker grammars for debug code generation -->
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>createDebugGrammars</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-            <configuration>
-              <tasks>
-                <delete file="${grammar.dir}/DebugDateParser.g" />
-                <delete file="${grammar.dir}/DebugDateWalker.g" />
-                <copy file="${grammar.dir}/DateParser.g" tofile="${grammar.dir}/DebugDateParser.g" />
-                <copy file="${grammar.dir}/DateWalker.g" tofile="${grammar.dir}/DebugDateWalker.g" />
-                <replace file="${grammar.dir}/DebugDateParser.g" token="grammar DateParser" value="grammar DebugDateParser" />
-                <replace file="${grammar.dir}/DebugDateWalker.g" token="grammar DateWalker" value="grammar DebugDateWalker" />
-              </tasks>
-            </configuration>
-          </execution>
-          <execution>
-            <id>deleteDebugGrammars</id>
-            <phase>test</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-            <configuration>
-              <tasks>
-                <delete file="${grammar.dir}/generated/DebugDateParser.g" />
-                <delete file="${grammar.dir}/generated/DebugDateWalker.g" />
-                <delete>
-                  <fileset dir="src/main/java" includes="*.tokens" />
-                </delete>
-              </tasks>
-            </configuration>
-          </execution>
-        </executions>
-     </plugin>
-     
       <!-- ANTLR code generation plugin -->
       <plugin>
         <groupId>org.antlr</groupId>
@@ -151,8 +111,7 @@
               <outputDirectory>src/main/java</outputDirectory>
               <conversionTimeout>100000</conversionTimeout>
               <excludes>
-                <exclude>com/joestelmach/natty/generated/DebugDateParser.g</exclude> 
-                <exclude>com/joestelmach/natty/generated/DebugDateWalker.g</exclude> 
+                <exclude>com/joestelmach/natty/generated/DateParser.g</exclude> 
               </excludes>
             </configuration>
           </execution>
@@ -168,8 +127,7 @@
               <outputDirectory>src/main/java</outputDirectory>
               <conversionTimeout>100000</conversionTimeout>
               <includes>
-                <include>com/joestelmach/natty/generated/DebugDateParser.g</include> 
-                <include>com/joestelmach/natty/generated/DebugDateWalker.g</include> 
+                <include>com/joestelmach/natty/generated/DateParser.g</include> 
               </includes>
             </configuration>
           </execution>
