@@ -4,6 +4,10 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 import junit.framework.Assert;
 
@@ -19,11 +23,13 @@ public class DateTest extends AbstractTest {
   @Test
   public void testFormal() {
     validateDate("1978-01-28", 1, 28, 1978);
+    /*
     validateDate("2009-10-10", 10, 10, 2009);
     validateDate("1980-1-2", 1, 2, 1980);
     validateDate("12/12/12", 12, 12, 2012);
     validateDate("3/4", 3, 4, Calendar.getInstance().get(Calendar.YEAR));
     validateDate("sun, 11/21/2010", 11, 21, 2010);
+    */
   }
   
   @Test
@@ -183,8 +189,16 @@ public class DateTest extends AbstractTest {
   }
   
   public static void main(String[] args) throws Exception{
+    ConsoleHandler handler = new ConsoleHandler();
+    handler.setLevel(Level.FINEST);
+    Logger logger = Logger.getLogger("com.joestelmach.natty");
+    logger.setLevel(Level.FINEST);
+    logger.addHandler(handler);
+    
+    //String value = "golf with friends tomorrow at 10";
     String value = "golf with friends tomorrow at 10";
-    //value = "golf tomorrow at 9 AM at pebble beach";
+    value = "golf tomorrow at 9 AM at pebble beach";
+    value = "beach";
     //value = "next wed, thurs, fri";
 
     Parser parser = new Parser();

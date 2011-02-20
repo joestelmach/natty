@@ -36,9 +36,13 @@ tokens {
 }
 
 parse
-  : date_time_alternative
+  : empty date_time_alternative
   ;
-
+  
+empty
+  :
+  ;
+  
 date_time
   : (
       (date)=>date (date_time_separator explicit_time)?
