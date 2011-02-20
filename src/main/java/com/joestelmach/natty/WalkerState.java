@@ -1,10 +1,8 @@
 package com.joestelmach.natty;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.TimeZone;
 
 /**
@@ -37,8 +35,7 @@ public class WalkerState {
   private boolean _firstDateInvocationInGroup = true;
   private boolean _timeGivenInGroup = false;
   
-  private List<DateGroup> _dateGroups;
-  private DateGroup _currentDateGroup;
+  private DateGroup _dateGroup;
   
   /**
    * Creates a new WalkerState representing the start of
@@ -46,8 +43,7 @@ public class WalkerState {
    */
   public WalkerState() {
     resetCalender();
-    _currentDateGroup = new DateGroup();
-    _dateGroups = new ArrayList<DateGroup>();
+    _dateGroup = new DateGroup();
   }
   
   public void setDefaultTimeZone(final TimeZone zone) {
@@ -379,23 +375,15 @@ public class WalkerState {
    */
   public void captureDateTime() {
     Date date = _calendar.getTime();
-    _currentDateGroup.addDate(date);
+    _dateGroup.addDate(date);
     _firstDateInvocationInGroup = true;
-  }
-  
-  /**
-   * 
-   */
-  public void captureDateGroup() {
-    _dateGroups.add(_currentDateGroup);
-    _currentDateGroup = new DateGroup();
   }
   
   /**
    * @return the list of date times found 
    */
-  public List<DateGroup> getDateGroups() {
-    return _dateGroups;
+  public DateGroup getDateGroup() {
+    return _dateGroup;
   }
   
   /**

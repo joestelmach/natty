@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.antlr.runtime.tree.Tree;
+
 /**
  * 
  * @author Joe Stelmach
@@ -14,6 +16,8 @@ public class DateGroup {
   private String _text;
   private int _line;
   private int _position;
+  private List<ParseLocation> _parseLocations;
+  private Tree _syntaxTree;
 
   public DateGroup() {
     _dates = new ArrayList<Date>();
@@ -45,5 +49,21 @@ public class DateGroup {
   }
   public void setPosition(int position) {
     _position = position;
+  }
+
+  public List<ParseLocation> getParseLocations() {
+    return _parseLocations;
+  }
+
+  public void setParseLocations(List<ParseLocation> parseLocations) {
+    _parseLocations = parseLocations;
+  }
+
+  public Tree getSyntaxTree() {
+    return _syntaxTree;
+  }
+
+  public void setSyntaxTree(Tree syntaxTree) {
+    _syntaxTree = syntaxTree;
   }
 }

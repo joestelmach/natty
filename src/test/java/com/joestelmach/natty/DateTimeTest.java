@@ -1,4 +1,4 @@
-package com.natty.parse;
+package com.joestelmach.natty;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -15,6 +15,7 @@ import com.joestelmach.natty.CalendarSource;
  * @author Joe Stelmach
  */
 public class DateTimeTest extends AbstractTest {
+  
   @Test
   public void testSpecific() {
     validateDateTime("1st oct in the year '89 1300 hours", 10, 1, 1989, 13, 0, 0);

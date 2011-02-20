@@ -38,6 +38,9 @@ YESTERDAY : 'yesterday';
 
 // ********** time rules ********** 
   
+AT        : 'at' | '@';
+AFTER     : 'after';
+PAST      : 'past';
 AM : 'am' | 'a.m.' | 'a';
 PM : 'pm' | 'p.m.' | 'p';
 T  : 't';
@@ -237,21 +240,18 @@ OR        : 'or';
 AND       : 'and';
 TO        : 'to';
 THROUGH   : 'through';
-AT        : 'at' | '@';
 ON        : 'on';
 OF        : 'of';
 THIS      : 'this';
 THAT      : 'that';
 LAST      : 'last' | 'final';
 NEXT      : 'next';
-PAST      : 'past';
 COMING    : 'coming';
 UPCOMING  : 'upcoming';
 FROM      : 'from';
 NOW       : 'now';
 AGO       : 'ago';
 BEFORE    : 'before';
-AFTER     : 'after';
 BEGINNING : 'beginning' | 'begining';
 START     : 'start';
 END       : 'end';

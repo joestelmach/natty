@@ -1,8 +1,8 @@
 parser grammar DateParser;
 
 options {
-  output=AST;
   tokenVocab=DateLexer;
+  output=AST;
 }
 
 tokens {
@@ -36,20 +36,12 @@ tokens {
 }
 
 parse
-  : text (((date_time_alternative)=>date_time_alternative | known_token) text)+ -> date_time_alternative*
-  ;
-  
-known_token
-  : ~(UNKNOWN | WHITE_SPACE)
-  ;
-  
-text
-  : WHITE_SPACE (UNKNOWN+ WHITE_SPACE)+
+  : date_time_alternative
   ;
 
 date_time
   : (
-      (date)=> date (date_time_separator explicit_time)?
+      (date)=>date (date_time_separator explicit_time)?
       | explicit_time (time_date_separator date)?
     ) -> ^(DATE_TIME date? explicit_time?)
   | relative_time -> ^(DATE_TIME relative_time?)
@@ -130,22 +122,22 @@ alternative_day_of_month_list
       
   // first or last day of september
   | (explicit_day_of_month_part conjunction explicit_day_of_month_part WHITE_SPACE explicit_relative_month)=>
-      first=explicit_day_of_month_part conjunction second=explicit_day_of_month_part WHITE_SPACE explicit_relative_month
-        -> ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK explicit_relative_month) $first))
-           ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK explicit_relative_month) $second))
+      first=explicit_day_of_month_part conjunction second=explicit_day_of_month_part WHITE_SPACE explicit_relative_month (date_time_separator explicit_time)?
+        -> ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK explicit_relative_month) $first) explicit_time?)
+           ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK explicit_relative_month) $second) explicit_time?)
            
   // first or last day of next september
   | (explicit_day_of_month_part conjunction explicit_day_of_month_part WHITE_SPACE prefix WHITE_SPACE explicit_relative_month)=>
-      first=explicit_day_of_month_part conjunction second=explicit_day_of_month_part WHITE_SPACE prefix WHITE_SPACE explicit_relative_month
-        -> ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK prefix explicit_relative_month) $first))
-           ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK prefix explicit_relative_month) $second))
+      first=explicit_day_of_month_part conjunction second=explicit_day_of_month_part WHITE_SPACE prefix WHITE_SPACE explicit_relative_month (date_time_separator explicit_time)?
+        -> ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK prefix explicit_relative_month) $first) explicit_time?)
+           ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK prefix explicit_relative_month) $second) explicit_time?)
            
   // first or last day of 2 septembers from now
   | (explicit_day_of_month_part conjunction explicit_day_of_month_part WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE explicit_relative_month WHITE_SPACE relative_date_suffix)=>
       first=explicit_day_of_month_part conjunction second=explicit_day_of_month_part WHITE_SPACE 
-        spelled_or_int_optional_prefix WHITE_SPACE explicit_relative_month WHITE_SPACE relative_date_suffix
-          -> ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix explicit_relative_month) $first))
-             ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix explicit_relative_month) $second))
+        spelled_or_int_optional_prefix WHITE_SPACE explicit_relative_month WHITE_SPACE relative_date_suffix (date_time_separator explicit_time)?
+          -> ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix explicit_relative_month) $first) explicit_time?)
+             ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix explicit_relative_month) $second) explicit_time?)
   ;
   
 alternative_day_of_week_list

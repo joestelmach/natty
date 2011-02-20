@@ -1,4 +1,4 @@
-package com.natty.parse;
+package com.joestelmach.natty;
 
 import java.util.Calendar;
 import java.util.Date;
