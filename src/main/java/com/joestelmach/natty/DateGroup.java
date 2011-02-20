@@ -9,7 +9,6 @@ import org.antlr.runtime.tree.Tree;
 /**
  * 
  * @author Joe Stelmach
- *
  */
 public class DateGroup {
   private List<Date> _dates;

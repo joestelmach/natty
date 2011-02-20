@@ -138,6 +138,22 @@
           
         </executions>
       </plugin>
+      
+      <!-- gUnit plugin --> 
+      <plugin> 
+        <groupId>org.antlr</groupId> 
+        <artifactId>maven-gunit-plugin</artifactId> 
+        <version>3.2</version> 
+        <executions> 
+          <execution> 
+            <id>maven-gunit-plugin</id> 
+            <phase>test</phase> 
+            <goals> 
+              <goal>gunit</goal> 
+            </goals> 
+          </execution> 
+        </executions> 
+      </plugin> 
     </plugins>
   </build>
   

@@ -72,7 +72,7 @@ public class Parser {
     List<DateGroup> groups = new ArrayList<DateGroup>();
     for(TokenStream stream:streams) {
       DateGroup group = singleParse(stream);
-      if(group.getDates().size() > 0) {
+      if(group != null && group.getDates().size() > 0) {
         groups.add(group);
       }
     }
@@ -96,26 +96,30 @@ public class Parser {
       DateParser.parse_return parseReturn = parser.parse();
       Tree tree = (Tree) parseReturn.getTree();
       
-      // rewrite the tree (temporary fix for http://www.antlr.org/jira/browse/ANTLR-427)
-      CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
-      TreeRewrite s = new TreeRewrite(nodes);
-      tree = (CommonTree)s.downup(tree);
+      // we only coninue if a meaningful syntax tree has been built
+      if(tree.getChildCount() > 0) {
       
-      // and walk it
-      nodes = new CommonTreeNodeStream(tree);
-      nodes.setTokenStream(stream);
-      DateWalker walker = new DateWalker(nodes);
-      walker.getState().setDefaultTimeZone(_defaultTimeZone);
-      walker.date_time_alternative();
-      
-      // run through the results and append the parse information
-      group = walker.getState().getDateGroup();
-      ParseLocation location = listener.getDateGroupLocation();
-      group.setLine(location.getLine());
-      group.setText(location.getText());
-      group.setPosition(location.getStart());
-      group.setSyntaxTree(tree);
-      group.setParseLocations(listener.getLocations());
+        // rewrite the tree (temporary fix for http://www.antlr.org/jira/browse/ANTLR-427)
+        CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+        TreeRewrite s = new TreeRewrite(nodes);
+        tree = (CommonTree)s.downup(tree);
+        
+        // and walk it
+        nodes = new CommonTreeNodeStream(tree);
+        nodes.setTokenStream(stream);
+        DateWalker walker = new DateWalker(nodes);
+        walker.getState().setDefaultTimeZone(_defaultTimeZone);
+        walker.date_time_alternative();
+        
+        // run through the results and append the parse information
+        group = walker.getState().getDateGroup();
+        ParseLocation location = listener.getDateGroupLocation();
+        group.setLine(location.getLine());
+        group.setText(location.getText());
+        group.setPosition(location.getStart());
+        group.setSyntaxTree(tree);
+        group.setParseLocations(listener.getLocations());
+      }
       
     } catch(RecognitionException e) {
       _logger.log(Level.SEVERE, "Could not parse input", e);
@@ -157,7 +161,9 @@ public class Parser {
         else {
           // if this is an unknown token, we need to end the current group
           if(currentToken.getType() == DateLexer.UNKNOWN) {
-            groups.add(new CommonTokenStream(new NattyTokenSource(currentGroup)));
+            if(currentGroup.size() > 0) {
+              groups.add(new CommonTokenStream(new NattyTokenSource(currentGroup)));
+            }
             currentGroup = null;
           }
           // otherwise, the token is known and we're currently collecting for
