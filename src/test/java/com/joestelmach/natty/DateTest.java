@@ -184,13 +184,13 @@ public class DateTest extends AbstractTest {
   
   public static void main(String[] args) throws Exception{
     String value = "golf with friends tomorrow at 10";
-    value = "golf tomorrow at 9 AM at pebble beach";
+    //value = "golf tomorrow at 9 AM at pebble beach";
+    //value = "next wed, thurs, fri";
 
-    String inputString = "1978-01-28";
     Parser parser = new Parser();
-    List<DateGroup> groups = parser.parse(inputString);
+    List<DateGroup> groups = parser.parse(value);
     for(DateGroup group:groups) {
-      System.out.println(inputString);
+      System.out.println(value);
       System.out.println(group.getSyntaxTree().toStringTree());
       System.out.println("line: " + group.getLine() + ", column: " + group.getPosition());
       System.out.println(group.getText());

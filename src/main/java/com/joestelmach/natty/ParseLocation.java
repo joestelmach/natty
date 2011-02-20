@@ -15,7 +15,6 @@ public class ParseLocation {
   public String getRuleName() {
     return _ruleName;
   }
-  
   public void setRuleName(String ruleName) {
     _ruleName = ruleName;
   }
@@ -23,7 +22,6 @@ public class ParseLocation {
   public String getText() {
     return _text;
   }
-  
   public void setText(String text) {
     _text = text;
   }
@@ -31,7 +29,6 @@ public class ParseLocation {
   public int getLine() {
     return _line;
   }
-
   public void setLine(int line) {
     _line = line;
   }
@@ -39,7 +36,6 @@ public class ParseLocation {
   public int getStart() {
     return _start;
   }
-
   public void setStart(int start) {
     _start = start;
   }
@@ -47,7 +43,6 @@ public class ParseLocation {
   public int getEnd() {
     return _end;
   }
-
   public void setEnd(int end) {
     _end = end;
   }
