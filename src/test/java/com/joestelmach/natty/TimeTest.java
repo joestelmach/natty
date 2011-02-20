@@ -1,4 +1,4 @@
-package com.natty.parse;
+package com.joestelmach.natty;
 
 import java.text.DateFormat;
 

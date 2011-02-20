@@ -1,4 +1,4 @@
-package com.natty.parse;
+package com.joestelmach.natty;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -8,10 +8,6 @@ import java.util.List;
 import junit.framework.Assert;
 
 import org.junit.Test;
-
-import com.joestelmach.natty.CalendarSource;
-import com.joestelmach.natty.DateGroup;
-import com.joestelmach.natty.Parser;
 
 /**
  * Runs the parser through the various date formats 
@@ -187,14 +183,18 @@ public class DateTest extends AbstractTest {
   }
   
   public static void main(String[] args) throws Exception{
-    String inputString = "golf tomorrow at 9 AM ssdf pebble beach";
+    String value = "golf with friends tomorrow at 10";
+    value = "golf tomorrow at 9 AM at pebble beach";
+
+    String inputString = "1978-01-28";
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(inputString);
     for(DateGroup group:groups) {
-      System.out.println(group.getDates());
-      System.out.println(group.getLine());
-      System.out.println(group.getPosition());
+      System.out.println(inputString);
+      System.out.println(group.getSyntaxTree().toStringTree());
+      System.out.println("line: " + group.getLine() + ", column: " + group.getPosition());
       System.out.println(group.getText());
+      System.out.println(group.getDates());
     }
   }
 }

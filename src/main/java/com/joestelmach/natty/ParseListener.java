@@ -55,20 +55,19 @@ public class ParseListener extends BlankDebugEventListener {
   private int backtracking = 0;
   private Map<String, Stack<List<Token>>> _ruleMap;
   private List<ParseLocation> _locations;
-  private List<ParseLocation> _dateGroupLocations;
+  private ParseLocation _dateGroupLocation;
   
   public ParseListener() {
     _ruleMap = new HashMap<String, Stack<List<Token>>>();
     _locations = new ArrayList<ParseLocation>();
-    _dateGroupLocations = new ArrayList<ParseLocation>();
   }
   
   public List<ParseLocation> getLocations() {
     return _locations;
   }
   
-  public List<ParseLocation> getDateGroupLocations() {
-    return _dateGroupLocations;
+  public ParseLocation getDateGroupLocation() {
+    return _dateGroupLocation;
   }
   
   // don't add backtracking or cyclic DFA nodes 
@@ -118,7 +117,7 @@ public class ParseListener extends BlankDebugEventListener {
         location.setEnd(end);
       
         if(isAlternative) {
-          _dateGroupLocations.add(location);
+          _dateGroupLocation = location;
         }
         
         if(INTERESTING_RULES.keySet().contains(ruleName)) { 

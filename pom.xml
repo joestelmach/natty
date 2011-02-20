@@ -107,12 +107,15 @@
             </goals>
             <configuration>
               <debug>true</debug>
+              <libDirectory>src/main/antlr3/com/joestelmach/natty/generated/imports</libDirectory>
               <outputDirectory>src/main/java</outputDirectory>
               <conversionTimeout>10000</conversionTimeout>
               <includes>
                 <include>com/joestelmach/natty/generated/DateLexer.g</include> 
                 <include>com/joestelmach/natty/generated/DateParser.g</include> 
               </includes>
+              <excludes>
+              </excludes>
             </configuration>
           </execution>
 
@@ -124,9 +127,8 @@
             <configuration>
               <debug>false</debug>
               <outputDirectory>src/main/java</outputDirectory>
+              <libDirectory>src/main/antlr3/com/joestelmach/natty/generated/imports</libDirectory>
               <conversionTimeout>10000</conversionTimeout>
-              <includes>
-              </includes>
               <excludes>
                 <exclude>com/joestelmach/natty/generated/DateLexer.g</exclude> 
                 <exclude>com/joestelmach/natty/generated/DateParser.g</exclude> 
