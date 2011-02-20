@@ -38,22 +38,13 @@ YESTERDAY : 'yesterday';
 
 // ********** time rules ********** 
   
-AT        : 'at' | '@';
-AFTER     : 'after';
-PAST      : 'past';
-AM : 'am' | 'a.m.' | 'a';
-PM : 'pm' | 'p.m.' | 'p';
-T  : 't';
-
-MILITARY_HOUR_SUFFIX : 'h';
+NOON      : 'noon'     | 'afternoon' | 'after-noon';
 
 MIDNIGHT  : 'midnight' | 'mid-night';
-NOON      : 'noon'     | 'afternoon' | 'after-noon';
 MORNING   : 'morning';
 EVENING   : 'evening';
 NIGHT     : 'night'; 
 
-UTC  : 'utc'  | 'gmt'  | 'z';
 EST  : 'est'  | 'edt'  | 'et';
 PST  : 'pst'  | 'pdt'  | 'pt';
 CST  : 'cst'  | 'cdt'  | 'ct';
@@ -74,15 +65,6 @@ INT_07 : '07';
 INT_08 : '08';
 INT_09 : '09';
 INT_0  : '0';
-INT_1  : '1';
-INT_2  : '2';
-INT_3  : '3';
-INT_4  : '4';
-INT_5  : '5';
-INT_6  : '6';
-INT_7  : '7';
-INT_8  : '8';
-INT_9  : '9';
 INT_10 : '10';
 INT_11 : '11';
 INT_12 : '12';
@@ -173,6 +155,15 @@ INT_96 : '96';
 INT_97 : '97';
 INT_98 : '98';
 INT_99 : '99';
+INT_1  : '1';
+INT_2  : '2';
+INT_3  : '3';
+INT_4  : '4';
+INT_5  : '5';
+INT_6  : '6';
+INT_7  : '7';
+INT_8  : '8';
+INT_9  : '9';
 
 ONE       : 'one';
 TWO       : 'two';
@@ -234,6 +225,9 @@ DOT   : '.';
 PLUS  : '+';
 SINGLE_QUOTE : '\'';
 
+AT        : 'at' | '@';
+AFTER     : 'after';
+PAST      : 'past';
 IN        : 'in';
 THE       : 'the';
 OR        : 'or';
@@ -255,13 +249,21 @@ BEFORE    : 'before';
 BEGINNING : 'beginning' | 'begining';
 START     : 'start';
 END       : 'end';
+  
+// single character rules need to be at the bottom
+AM : 'am' | 'a.m.' | 'a';
+PM : 'pm' | 'p.m.' | 'p';
+T  : 't';
+UTC  : 'utc'  | 'gmt'  | 'z';
+
+MILITARY_HOUR_SUFFIX : 'h';
 
 WHITE_SPACE
   : (DOT | SPACE)+
   ;
   
 UNKNOWN
-  : UNKNOWN_CHAR
+  : ~(SPACE | DOT)
   ;
   
 fragment UNKNOWN_CHAR

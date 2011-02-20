@@ -20,4 +20,8 @@ public class NattyTokenSource implements TokenSource {
   public String getSourceName() {
     return "natty";
   }
+  
+  public List<Token> getTokens() {
+    return _tokens;  
+  }
 }

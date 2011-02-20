@@ -29,7 +29,7 @@ import com.joestelmach.natty.generated.TreeRewrite;
 public class Parser {
   private TimeZone _defaultTimeZone;
   
-  private static final Logger _logger = Logger.getLogger(Parser.class.getName());
+  private static final Logger _logger = Logger.getLogger("com.joestelmach.natty");
   
   /**
    * Creates a new parser using the given time zone as the default
@@ -88,6 +88,13 @@ public class Parser {
    * @return
    */
   private DateGroup singleParse(TokenStream stream) {
+    StringBuilder tokenString = new StringBuilder();
+    for(Token token:((NattyTokenSource) stream.getTokenSource()).getTokens()) {
+      tokenString.append(DateParser.tokenNames[token.getType()]);
+      tokenString.append(" ");
+    }
+    _logger.fine("sub-token stream: " + tokenString.toString());
+    
     DateGroup group = null;
     try {
       // parse 
@@ -95,6 +102,7 @@ public class Parser {
       DateParser parser = new DateParser(stream, listener);
       DateParser.parse_return parseReturn = parser.parse();
       Tree tree = (Tree) parseReturn.getTree();
+      //System.out.println(tree.toStringTree());
       
       // we only coninue if a meaningful syntax tree has been built
       if(tree.getChildCount() > 0) {
@@ -137,19 +145,28 @@ public class Parser {
    * @return
    */
   private List<TokenStream> collectTokenStreams(TokenStream stream) {
-    // now we'll walk through the token stream and build a collection 
+    
+    // walk through the token stream and build a collection 
     // of sub token streams that represent possible date locations
     List<Token> currentGroup = null;
     List<TokenStream> groups = new ArrayList<TokenStream>();
     Token currentToken;
+    StringBuilder tokenString = new StringBuilder();
     while((currentToken = stream.getTokenSource().nextToken()).getType() != DateLexer.EOF) {
+      if(_logger.getLevel() != null && _logger.getLevel().intValue() <= Level.FINE.intValue()) {
+        tokenString.append(DateParser.tokenNames[currentToken.getType()]);
+        tokenString.append(" ");
+      }
+      
       // we're currently NOT collecting for a possible date group
       if(currentGroup == null) {
         // ignore white space in-between possible rules
         if(currentToken.getType() != DateLexer.WHITE_SPACE) {
           // if the token is a possible date start token, we start a new collection
-          currentGroup = new ArrayList<Token>();
-          currentGroup.add(currentToken);
+          if(DateParser.FOLLOW_empty_in_parse159.member(currentToken.getType())) {
+            currentGroup = new ArrayList<Token>();
+            currentGroup.add(currentToken);
+          }
         }
       }
       // we're currently collecting
@@ -177,6 +194,8 @@ public class Parser {
     if(currentGroup != null) {
       groups.add(new CommonTokenStream(new NattyTokenSource(currentGroup)));
     }
+    
+    _logger.fine("global token stream: " + tokenString.toString());
     
     return groups;
   }
