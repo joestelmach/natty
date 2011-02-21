@@ -9,6 +9,13 @@ options {
 
 @members {
   private com.joestelmach.natty.WalkerState _walkerState = new com.joestelmach.natty.WalkerState();
+  private java.util.logging.Logger _logger = java.util.logging.Logger.getLogger("com.joestelmach.natty");
+  
+  public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
+    String hdr = getErrorHeader(e);
+    String msg = getErrorMessage(e, tokenNames);
+    _logger.fine(msg);
+  }
   
   public com.joestelmach.natty.WalkerState getState() {
     return _walkerState;

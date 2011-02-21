@@ -3,6 +3,7 @@ package com.joestelmach.natty;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.antlr.runtime.tree.Tree;
 
@@ -15,7 +16,7 @@ public class DateGroup {
   private String _text;
   private int _line;
   private int _position;
-  private List<ParseLocation> _parseLocations;
+  private Map<String, List<ParseLocation>> _parseLocations;
   private Tree _syntaxTree;
 
   public DateGroup() {
@@ -49,12 +50,12 @@ public class DateGroup {
   public void setPosition(int position) {
     _position = position;
   }
+  
 
-  public List<ParseLocation> getParseLocations() {
+  public Map<String, List<ParseLocation>> getParseLocations() {
     return _parseLocations;
   }
-
-  public void setParseLocations(List<ParseLocation> parseLocations) {
+  public void setParseLocations(Map<String, List<ParseLocation>> parseLocations) {
     _parseLocations = parseLocations;
   }
 

@@ -35,6 +35,16 @@ tokens {
   package com.joestelmach.natty.generated;
 }
 
+@members {
+  private java.util.logging.Logger _logger = java.util.logging.Logger.getLogger("com.joestelmach.natty");
+  
+  public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
+    String hdr = getErrorHeader(e);
+    String msg = getErrorMessage(e, tokenNames);
+    _logger.fine(msg);
+  }
+}
+
 parse
   : empty date_time_alternative
   ;
@@ -116,7 +126,7 @@ date_time_alternative
   ;
   
 conjunction
-  : WHITE_SPACE (AND | OR | TO | THROUGH) WHITE_SPACE
+  : COMMA? WHITE_SPACE (AND | OR | TO | THROUGH) WHITE_SPACE
   ;
   
 alternative_day_of_month_list
@@ -145,12 +155,8 @@ alternative_day_of_month_list
   ;
   
 alternative_day_of_week_list
-  : alternative_direction WHITE_SPACE day_of_week (day_of_week_list_separator day_of_week)+ (date_time_separator explicit_time)?
+  : alternative_direction WHITE_SPACE day_of_week (conjunction day_of_week)+ (date_time_separator explicit_time)?
       -> ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK alternative_direction day_of_week)) explicit_time?)+
-  ;
-  
-day_of_week_list_separator
-  : COMMA (WHITE_SPACE | conjunction) | conjunction
   ;
   
 alternative_direction

@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import junit.framework.Assert;
@@ -190,16 +189,13 @@ public class DateTest extends AbstractTest {
   
   public static void main(String[] args) throws Exception{
     ConsoleHandler handler = new ConsoleHandler();
-    handler.setLevel(Level.FINEST);
+    handler.setLevel(Level.ALL);
     Logger logger = Logger.getLogger("com.joestelmach.natty");
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    //String value = "golf with friends tomorrow at 10";
     String value = "golf with friends tomorrow at 10";
     value = "golf tomorrow at 9 AM at pebble beach";
-    value = "beach";
-    //value = "next wed, thurs, fri";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
@@ -209,6 +205,14 @@ public class DateTest extends AbstractTest {
       System.out.println("line: " + group.getLine() + ", column: " + group.getPosition());
       System.out.println(group.getText());
       System.out.println(group.getDates());
+      
+      System.out.print("conjunctions: ");
+      List<ParseLocation> conjunctionLocations = group.getParseLocations().get("conjunction");
+      if(conjunctionLocations != null) {
+        for(ParseLocation location:conjunctionLocations) {
+          System.out.print(location.getText() + " ");
+        }
+      }
     }
   }
 }

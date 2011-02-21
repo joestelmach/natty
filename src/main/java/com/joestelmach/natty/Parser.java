@@ -163,7 +163,7 @@ public class Parser {
         // ignore white space in-between possible rules
         if(currentToken.getType() != DateLexer.WHITE_SPACE) {
           // if the token is a possible date start token, we start a new collection
-          if(DateParser.FOLLOW_empty_in_parse159.member(currentToken.getType())) {
+          if(DateParser.FOLLOW_empty_in_parse165.member(currentToken.getType())) {
             currentGroup = new ArrayList<Token>();
             currentGroup.add(currentToken);
           }

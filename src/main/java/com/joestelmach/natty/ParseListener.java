@@ -2,7 +2,6 @@ package com.joestelmach.natty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
@@ -18,51 +17,17 @@ import org.antlr.runtime.debug.BlankDebugEventListener;
  */
 public class ParseListener extends BlankDebugEventListener {
   
-  private static final Map<String, String> INTERESTING_RULES;
-  
-  static {
-    INTERESTING_RULES = new LinkedHashMap<String, String>();
-    INTERESTING_RULES.put("global_date_prefix", "date prefix");
-    INTERESTING_RULES.put("relative_date", "relative date");
-    INTERESTING_RULES.put("relaxed_date", "relaxed date");
-    INTERESTING_RULES.put("formal_date", "formal date");
-    INTERESTING_RULES.put("explicit_date", "explicit date");
-    INTERESTING_RULES.put("relaxed_day_of_month", "day");
-    INTERESTING_RULES.put("relaxed_month", "month");
-    INTERESTING_RULES.put("relaxed_year", "year");
-    INTERESTING_RULES.put("formal_month_of_year", "month");
-    INTERESTING_RULES.put("formal_day_of_month", "day");
-    INTERESTING_RULES.put("formal_year", "year");
-    INTERESTING_RULES.put("relative_prefix", "relative prefix");
-    INTERESTING_RULES.put("implicit_prefix", "implicit prefix");
-    INTERESTING_RULES.put("relative_suffix", "relative suffix");
-    INTERESTING_RULES.put("relative_target", "relative target");
-    INTERESTING_RULES.put("relative_date_span", "span");
-    INTERESTING_RULES.put("relative_occurrence_index", "relative occurrence index");
-    INTERESTING_RULES.put("named_relative_date", "named relative date");
-    INTERESTING_RULES.put("day_of_week", "weekday");
-    INTERESTING_RULES.put("date", "date");
-    INTERESTING_RULES.put("date_time_alternative", "alternative");
-    INTERESTING_RULES.put("date_time", "date_time");
-    INTERESTING_RULES.put("alternative_direction", "direction");
-    INTERESTING_RULES.put("hours", "hours");
-    INTERESTING_RULES.put("minutes", "minutes");
-    INTERESTING_RULES.put("meridian_indicator", "am/pm");
-    INTERESTING_RULES.put("time_zone", "zone");
-    INTERESTING_RULES.put("time", "time");
-  }
-
   private int backtracking = 0;
   private Map<String, Stack<List<Token>>> _ruleMap;
-  private List<ParseLocation> _locations;
+  private Map<String, List<ParseLocation>> _locations;
   private ParseLocation _dateGroupLocation;
   
   public ParseListener() {
     _ruleMap = new HashMap<String, Stack<List<Token>>>();
-    _locations = new ArrayList<ParseLocation>();
+    _locations = new HashMap<String, List<ParseLocation>>();
   }
   
-  public List<ParseLocation> getLocations() {
+  public Map<String, List<ParseLocation>> getLocations() {
     return _locations;
   }
   
@@ -98,32 +63,33 @@ public class ParseListener extends BlankDebugEventListener {
     
     if(tokenList.size() > 0) {
       boolean isAlternative = ruleName.equals("date_time_alternative");
-      boolean isInteresting = INTERESTING_RULES.keySet().contains(ruleName);
-      if(isAlternative || isInteresting) {
-        StringBuilder builder = new StringBuilder();
-        for(Token token:tokenList) {
-          builder.append(token.getText());
-        }
-        String text = builder.toString();
-        int line = tokenList.get(0).getLine();
-        int start = tokenList.get(0).getCharPositionInLine();
-        int end = start + text.length();
-        
-        ParseLocation location = new ParseLocation();
-        location.setRuleName(ruleName);
-        location.setText(text);
-        location.setLine(line);
-        location.setStart(start);
-        location.setEnd(end);
-      
-        if(isAlternative) {
-          _dateGroupLocation = location;
-        }
-        
-        if(INTERESTING_RULES.keySet().contains(ruleName)) { 
-          _locations.add(location);
-        }
+      StringBuilder builder = new StringBuilder();
+      for(Token token:tokenList) {
+        builder.append(token.getText());
       }
+      String text = builder.toString();
+      int line = tokenList.get(0).getLine();
+      int start = tokenList.get(0).getCharPositionInLine();
+      int end = start + text.length();
+        
+      ParseLocation location = new ParseLocation();
+      location.setRuleName(ruleName);
+      location.setText(text);
+      location.setLine(line);
+      location.setStart(start);
+      location.setEnd(end);
+      
+      if(isAlternative) {
+        _dateGroupLocation = location;
+      }
+        
+      List<ParseLocation> list = _locations.get(location.getRuleName());
+      if(list == null) {
+        list = new ArrayList<ParseLocation>(); 
+        _locations.put(location.getRuleName(), list);
+      }
+      
+      list.add(location);
     }
   }
 
