@@ -46,4 +46,8 @@ public class ParseLocation {
   public void setEnd(int end) {
     _end = end;
   }
+  
+  public String toString() {
+    return _text;
+  }
 }
