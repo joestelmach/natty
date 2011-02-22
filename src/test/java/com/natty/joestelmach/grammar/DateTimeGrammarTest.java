@@ -2,7 +2,7 @@ package com.natty.joestelmach.grammar;
 
 import org.junit.Test;
 
-public class DateTimeGrammar extends AbstractGrammarTest {
+public class DateTimeGrammarTest extends AbstractGrammarTest {
   
   @Test
   public void date_time_alternative() throws Exception {

@@ -187,15 +187,14 @@ public class DateTest extends AbstractTest {
     validateDate(dates.get(1), 9, 30, 2012);
   }
   
-  public static void main(String[] args) throws Exception{
+  public static void main(String[] args) {
     ConsoleHandler handler = new ConsoleHandler();
     handler.setLevel(Level.ALL);
     Logger logger = Logger.getLogger("com.joestelmach.natty");
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "golf with friends tomorrow at 10";
-    value = "golf tomorrow at 9 AM at pebble beach";
+    String value = "golf tomorrow at 9 AM at pebble beach";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

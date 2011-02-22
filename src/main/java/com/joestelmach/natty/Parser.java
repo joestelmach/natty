@@ -102,7 +102,7 @@ public class Parser {
       DateParser parser = new DateParser(stream, listener);
       DateParser.parse_return parseReturn = parser.parse();
       Tree tree = (Tree) parseReturn.getTree();
-      //System.out.println(tree.toStringTree());
+      _logger.fine("AST: " + tree.toStringTree());
       
       // we only coninue if a meaningful syntax tree has been built
       if(tree.getChildCount() > 0) {
@@ -163,7 +163,7 @@ public class Parser {
         // ignore white space in-between possible rules
         if(currentToken.getType() != DateLexer.WHITE_SPACE) {
           // if the token is a possible date start token, we start a new collection
-          if(DateParser.FOLLOW_empty_in_parse165.member(currentToken.getType())) {
+          if(DateParser.FOLLOW_empty_in_parse171.member(currentToken.getType())) {
             currentGroup = new ArrayList<Token>();
             currentGroup.add(currentToken);
           }
