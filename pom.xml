@@ -115,6 +115,7 @@
                 <include>com/joestelmach/natty/generated/DateParser.g</include> 
               </includes>
               <excludes>
+                <exclude>com/joestelmach/natty/generated/imports/NumericRules.g</exclude> 
               </excludes>
             </configuration>
           </execution>
@@ -132,6 +133,7 @@
               <excludes>
                 <exclude>com/joestelmach/natty/generated/DateLexer.g</exclude> 
                 <exclude>com/joestelmach/natty/generated/DateParser.g</exclude> 
+                <exclude>com/joestelmach/natty/generated/imports/NumericRules.g</exclude> 
               </excludes>
             </configuration>
           </execution>
