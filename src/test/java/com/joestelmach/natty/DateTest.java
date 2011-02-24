@@ -194,7 +194,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "golf tomorrow at 9 AM at pebble beach";
+    String value = "I want to go to park tomorrow and then email john@aol.com";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
@@ -212,6 +212,7 @@ public class DateTest extends AbstractTest {
           System.out.print(location.getText() + " ");
         }
       }
+      System.out.print("\n\n");
     }
   }
 }

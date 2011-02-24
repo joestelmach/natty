@@ -387,6 +387,13 @@ public class WalkerState {
   }
   
   /**
+   * Clears any date/times that have been captured
+   */
+  public void clearDateGroup() {
+    _dateGroup = new DateGroup();
+  }
+  
+  /**
    *  Resets the calendar
    */
   private void resetCalender() {
