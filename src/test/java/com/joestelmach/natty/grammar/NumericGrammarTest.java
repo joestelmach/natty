@@ -1,4 +1,4 @@
-package com.natty.joestelmach.grammar;
+package com.joestelmach.natty.grammar;
 
 import org.junit.Test;
 
