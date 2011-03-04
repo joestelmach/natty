@@ -8,6 +8,14 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
+import com.joestelmach.natty.CalendarSource;
+import com.joestelmach.natty.DateGroup;
+import com.joestelmach.natty.Parser;
+
+/**
+ * 
+ * @author Joe Stelmach
+ */
 public class SearchTest extends AbstractTest {
   
   @Test

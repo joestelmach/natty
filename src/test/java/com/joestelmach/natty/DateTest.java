@@ -12,6 +12,11 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
+import com.joestelmach.natty.CalendarSource;
+import com.joestelmach.natty.DateGroup;
+import com.joestelmach.natty.ParseLocation;
+import com.joestelmach.natty.Parser;
+
 /**
  * Runs the parser through the various date formats 
  * 
@@ -22,13 +27,11 @@ public class DateTest extends AbstractTest {
   @Test
   public void testFormal() {
     validateDate("1978-01-28", 1, 28, 1978);
-    /*
     validateDate("2009-10-10", 10, 10, 2009);
     validateDate("1980-1-2", 1, 2, 1980);
     validateDate("12/12/12", 12, 12, 2012);
     validateDate("3/4", 3, 4, Calendar.getInstance().get(Calendar.YEAR));
     validateDate("sun, 11/21/2010", 11, 21, 2010);
-    */
   }
   
   @Test
@@ -194,7 +197,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "golf tomorrow at 9 AM at pebble beach";
+    String value = "every monday until three mondays from now";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
@@ -204,6 +207,8 @@ public class DateTest extends AbstractTest {
       System.out.println("line: " + group.getLine() + ", column: " + group.getPosition());
       System.out.println(group.getText());
       System.out.println(group.getDates());
+      System.out.println("is recurring: " + group.isRecurring());
+      System.out.println("recurs until: " + group.getRecursUntil());
       
       System.out.print("conjunctions: ");
       List<ParseLocation> conjunctionLocations = group.getParseLocations().get("conjunction");

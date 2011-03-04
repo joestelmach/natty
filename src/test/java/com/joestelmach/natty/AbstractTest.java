@@ -10,9 +10,13 @@ import org.junit.Before;
 import com.joestelmach.natty.CalendarSource;
 import com.joestelmach.natty.Parser;
 
+/**
+ * 
+ * @author Joe Stelmach
+ */
 public abstract class AbstractTest {
   private static final Calendar _calendar = Calendar.getInstance();
-  private static final Parser _parser = new Parser();
+  protected static final Parser _parser = new Parser();
   
   /**
    * Resets the calendar source time before each test
