@@ -46,8 +46,14 @@ TODAY     : 'today';
 TOMORROW  : 'tomorow'   | 'tomorrow'   | 'tommorow' | 'tommorrow';
 YESTERDAY : 'yesterday';
 
-// ********** time rules ********** 
+// ********** recurrence rules **********
+
+EVERY : 'every';
+UNTIL : 'until';
   
+
+// ********** time rules ********** 
+
 AT        : 'at' | '@';
 AFTER     : 'after';
 PAST      : 'past';

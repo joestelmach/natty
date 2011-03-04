@@ -31,6 +31,7 @@ tokens {
   AM_PM;
   ZONE;
   ZONE_OFFSET;
+  RECURRENCE;
 }
 
 @header {
@@ -48,7 +49,12 @@ tokens {
 }
 
 parse
-  : empty date_time_alternative
+  : empty ((recurrence)=>recurrence | date_time_alternative)
+  ;
+  
+recurrence
+  : EVERY WHITE_SPACE date_time_alternative (WHITE_SPACE UNTIL WHITE_SPACE date_time)?
+      -> date_time_alternative ^(RECURRENCE date_time?)
   ;
   
 empty

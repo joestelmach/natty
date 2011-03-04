@@ -22,6 +22,17 @@ options {
   }
 }
 
+parse
+  : date_time_alternative recurrence?
+  ;
+  
+recurrence
+  @init { 
+    _walkerState.setRecurring();
+  }
+  : ^(RECURRENCE date_time?{ _walkerState.captureDateTime(); })
+  ;
+  
 date_time_alternative
   : ^(DATE_TIME_ALTERNATIVE date_time+)
   ;

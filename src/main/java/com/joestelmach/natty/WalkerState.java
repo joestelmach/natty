@@ -373,9 +373,21 @@ public class WalkerState {
   /**
    * 
    */
+  public void setRecurring() {
+    _dateGroup.setRecurring(true);
+  }
+  
+  /**
+   * 
+   */
   public void captureDateTime() {
     Date date = _calendar.getTime();
-    _dateGroup.addDate(date);
+    if(_dateGroup.isRecurring()) {
+      _dateGroup.setRecurringUntil(date);
+    }
+    else {
+      _dateGroup.addDate(date);
+    }
     _firstDateInvocationInGroup = true;
   }
   

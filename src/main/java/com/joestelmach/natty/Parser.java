@@ -117,7 +117,7 @@ public class Parser {
         nodes.setTokenStream(stream);
         DateWalker walker = new DateWalker(nodes);
         walker.getState().setDefaultTimeZone(_defaultTimeZone);
-        walker.date_time_alternative();
+        walker.parse();
         
         // run through the results and append the parse information
         group = walker.getState().getDateGroup();
@@ -163,7 +163,7 @@ public class Parser {
         // ignore white space in-between possible rules
         if(currentToken.getType() != DateLexer.WHITE_SPACE) {
           // if the token is a possible date start token, we start a new collection
-          if(DateParser.FOLLOW_empty_in_parse171.member(currentToken.getType())) {
+          if(DateParser.FOLLOW_empty_in_parse176.member(currentToken.getType())) {
             currentGroup = new ArrayList<Token>();
             currentGroup.add(currentToken);
           }

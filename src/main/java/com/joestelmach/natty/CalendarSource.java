@@ -11,7 +11,7 @@ import java.util.GregorianCalendar;
  * 
  * @author Joe Stelmach
  */
-public class CalendarSource {
+class CalendarSource {
   private static Date _baseDate;
   
   public static void setBaseDate(Date baseDate) {

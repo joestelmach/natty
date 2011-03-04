@@ -16,6 +16,8 @@ public class DateGroup {
   private String _text;
   private int _line;
   private int _position;
+  private boolean _isRecurring;
+  private Date _recurringUntil;
   private Map<String, List<ParseLocation>> _parseLocations;
   private Tree _syntaxTree;
 
@@ -51,6 +53,19 @@ public class DateGroup {
     _position = position;
   }
   
+  public boolean isRecurring() {
+    return _isRecurring;
+  }
+  public void setRecurring(boolean isRecurring) {
+    _isRecurring = isRecurring;
+  }
+  
+  public Date getRecursUntil() {
+    return _recurringUntil;
+  }
+  public void setRecurringUntil(Date recurringUntil) {
+    _recurringUntil = recurringUntil;
+  }
 
   public Map<String, List<ParseLocation>> getParseLocations() {
     return _parseLocations;
