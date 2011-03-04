@@ -217,6 +217,7 @@ public class DateTest extends AbstractTest {
           System.out.print(location.getText() + " ");
         }
       }
+      System.out.print("\n\n");
     }
   }
 }

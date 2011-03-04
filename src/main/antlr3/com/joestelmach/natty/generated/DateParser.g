@@ -41,10 +41,10 @@ tokens {
 @members {
   private java.util.logging.Logger _logger = java.util.logging.Logger.getLogger("com.joestelmach.natty");
   
-  public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
-    String hdr = getErrorHeader(e);
-    String msg = getErrorMessage(e, tokenNames);
-    _logger.fine(msg);
+  public void displayRecognitionError(String[] tokenNames, RecognitionException re) {
+    String message = getErrorHeader(re);
+    try { message += getErrorMessage(re, tokenNames); } catch(Exception e) {}
+    _logger.fine(message);
   }
 }
 
