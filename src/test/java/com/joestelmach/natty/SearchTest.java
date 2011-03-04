@@ -60,5 +60,11 @@ public class SearchTest extends AbstractTest {
     validateTime(dates.get(0), 9, 0, 0); 
     validateDate(dates.get(1), 2, 24, 2011); 
     validateTime(dates.get(1), 10, 0, 0); 
+    
+    groups = parser.parse("I want to go to park tomorrow and then email john@aol.com");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 2, 21, 2011); 
   }
 }

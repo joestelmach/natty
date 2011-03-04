@@ -9,6 +9,16 @@ options {
 
 @header { package com.joestelmach.natty.generated; }
 
+@members {
+  private java.util.logging.Logger _logger = java.util.logging.Logger.getLogger("com.joestelmach.natty");
+  
+  public void displayRecognitionError(String[] tokenNames, RecognitionException re) {
+    String message = getErrorHeader(re);
+    try { message += getErrorMessage(re, tokenNames); } catch(Exception e) {}
+    _logger.fine(message);
+  }
+}
+
 topdown
   : ^(SEEK DIRECTION SEEK_BY INT ^(DAY_OF_WEEK INT) ^(DAY_OF_WEEK dow=INT))
       -> ^(SEEK DIRECTION SEEK_BY INT ^(DAY_OF_WEEK $dow))
