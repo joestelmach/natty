@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenStream;
 import org.antlr.runtime.tree.CommonTree;
@@ -101,6 +100,7 @@ public class Parser {
       ParseListener listener = new ParseListener();
       DateParser parser = new DateParser(stream, listener);
       DateParser.parse_return parseReturn = parser.parse();
+      
       Tree tree = (Tree) parseReturn.getTree();
       _logger.fine("AST: " + tree.toStringTree());
       
@@ -129,7 +129,7 @@ public class Parser {
         group.setParseLocations(listener.getLocations());
       }
       
-    } catch(RecognitionException e) {
+    } catch(Exception e) {
       _logger.log(Level.SEVERE, "Could not parse input", e);
     }
     
