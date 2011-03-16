@@ -118,12 +118,24 @@ date_time_alternative
         -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?)+)
         
   // first or last day of 2009
- | (explicit_day_of_year_part conjunction explicit_day_of_year_part WHITE_SPACE relaxed_year)=>
-    first=explicit_day_of_year_part conjunction second=explicit_day_of_year_part WHITE_SPACE relaxed_year
+  | (explicit_day_of_year_part conjunction explicit_day_of_year_part WHITE_SPACE relaxed_year)=>
+      first=explicit_day_of_year_part conjunction second=explicit_day_of_year_part WHITE_SPACE relaxed_year
         -> ^(DATE_TIME_ALTERNATIVE
              ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK relaxed_year) $first))
              ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK relaxed_year) $second)))
              
+  // for 3 days, for 7 months, for twenty seconds
+  | FOR WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE
+      (relative_date_span -> 
+        ^(DATE_TIME_ALTERNATIVE
+           ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"])))
+           ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_date_span))))
+      | relative_time_span ->
+        ^(DATE_TIME_ALTERNATIVE
+          ^(DATE_TIME ^(RELATIVE_TIME ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"])))
+          ^(DATE_TIME ^(RELATIVE_TIME ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_time_span))))
+      )
+  
   // catch all date_time to date_time range
   | (date_time conjunction date_time)=>
     date_time conjunction date_time
@@ -598,8 +610,13 @@ relative_time
   : spelled_or_int_optional_prefix WHITE_SPACE relative_time_target WHITE_SPACE relative_time_suffix 
     -> ^(RELATIVE_TIME ^(SEEK relative_time_suffix spelled_or_int_optional_prefix relative_time_target))
     
+  // in 3 minutes
   | IN WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE relative_time_target
     -> ^(RELATIVE_TIME ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_time_target))
+    
+  // next hour, last minute
+  | prefix WHITE_SPACE relative_time_target
+    -> ^(RELATIVE_TIME ^(SEEK prefix relative_time_target))
   ;
 
 // a time with an hour, optional minutes, and optional meridian indicator

@@ -250,6 +250,7 @@ DOT   : '.';
 PLUS  : '+';
 SINGLE_QUOTE : '\'';
 
+FOR       : 'for';
 IN        : 'in';
 THE       : 'the';
 OR        : 'or';
