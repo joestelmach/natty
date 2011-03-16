@@ -188,6 +188,21 @@ public class DateTest extends AbstractTest {
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 9, 1, 2012);
     validateDate(dates.get(1), 9, 30, 2012);
+    
+    dates = parseCollection("for 5 days");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 1, 2, 2011);
+    validateDate(dates.get(1), 1, 7, 2011);
+    
+    dates = parseCollection("for ten months");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 1, 2, 2011);
+    validateDate(dates.get(1), 11, 2, 2011);
+    
+    dates = parseCollection("for twenty-five years");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 1, 2, 2011);
+    validateDate(dates.get(1), 1, 2, 2036);
   }
   
   public static void main(String[] args) {
@@ -197,7 +212,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "every monday until three mondays from now";
+    String value = "this evening";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

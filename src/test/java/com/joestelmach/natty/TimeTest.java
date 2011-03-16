@@ -1,10 +1,11 @@
 package com.joestelmach.natty;
 
 import java.text.DateFormat;
+import java.util.Date;
+import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
-
-import com.joestelmach.natty.CalendarSource;
 
 /**
  * Runs the parser through the various time formats 
@@ -63,5 +64,31 @@ public class TimeTest extends AbstractTest {
     validateTime("4 seconds from now", 12, 0, 4);
     validateTime("4 minutes from now", 12, 4, 0);
     validateTime("4 hours from now", 16, 0, 0);
+    validateTime("next minute", 12, 1, 0);
+    validateTime("last minute", 11, 59, 0);
+    validateTime("next second", 12, 0, 1);
+    validateTime("this second", 12, 0, 0);
+    validateTime("this minute", 12, 0, 0);
+    validateTime("this hour", 12, 0, 0);
+  }
+  
+  @Test
+  public void testRange() throws Exception {
+    CalendarSource.setBaseDate(DateFormat.getTimeInstance(DateFormat.SHORT).parse("12:00 pm"));
+    
+    List<Date> dates = parseCollection("for six hours");
+    Assert.assertEquals(2, dates.size());
+    validateTime(dates.get(0), 12, 0, 0);
+    validateTime(dates.get(1), 18, 0, 0);
+    
+    dates = parseCollection("for 12 minutes");
+    Assert.assertEquals(2, dates.size());
+    validateTime(dates.get(0), 12, 0, 0);
+    validateTime(dates.get(1), 12, 12, 0);
+    
+    dates = parseCollection("for 10 seconds");
+    Assert.assertEquals(2, dates.size());
+    validateTime(dates.get(0), 12, 0, 0);
+    validateTime(dates.get(1), 12, 0, 10);
   }
 }
