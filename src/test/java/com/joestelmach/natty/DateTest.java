@@ -4,18 +4,15 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import junit.framework.Assert;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
-
-import com.joestelmach.natty.CalendarSource;
-import com.joestelmach.natty.DateGroup;
-import com.joestelmach.natty.ParseLocation;
-import com.joestelmach.natty.Parser;
 
 /**
  * Runs the parser through the various date formats 
@@ -23,6 +20,10 @@ import com.joestelmach.natty.Parser;
  * @author Joe Stelmach
  */
 public class DateTest extends AbstractTest {
+  @BeforeClass
+  public static void oneTime() {
+    TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
+  }
   
   @Test
   public void testFormal() {
@@ -212,7 +213,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "march 2004";
+    String value = "2011-06-17T07:00:00Z";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
