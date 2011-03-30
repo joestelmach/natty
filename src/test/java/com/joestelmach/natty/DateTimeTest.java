@@ -3,11 +3,11 @@ package com.joestelmach.natty;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
-
-import com.joestelmach.natty.CalendarSource;
 
 /**
  * Runs the parser through the various datetime formats 
@@ -15,6 +15,10 @@ import com.joestelmach.natty.CalendarSource;
  * @author Joe Stelmach
  */
 public class DateTimeTest extends AbstractTest {
+  @BeforeClass
+  public static void oneTime() {
+    TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
+  }
   
   @Test
   public void testSpecific() {
@@ -28,6 +32,7 @@ public class DateTimeTest extends AbstractTest {
     validateDateTime("3am,october first 2010", 10, 1, 2010, 3, 0, 0);
     validateDateTime("3am, on october first 2010", 10, 1, 2010, 3, 0, 0);
     validateDateTime("3am october first 2010", 10, 1, 2010, 3, 0, 0);
+    validateDateTime("2011-06-17T07:00:00Z", 6, 17, 2011, 3, 0, 0);
   }
   
   @Test

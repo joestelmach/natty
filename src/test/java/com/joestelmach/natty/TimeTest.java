@@ -3,8 +3,10 @@ package com.joestelmach.natty;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -13,6 +15,10 @@ import org.junit.Test;
  * @author Joe Stelmach
  */
 public class TimeTest extends AbstractTest {
+  @BeforeClass
+  public static void oneTime() {
+    TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
+  }
   
   /**
    * Runs the parser through the various time formats 
