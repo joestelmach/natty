@@ -66,5 +66,48 @@ public class SearchTest extends AbstractTest {
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 2, 21, 2011); 
+    
+    groups = parser.parse("I want to pay off all my debt in the next two years.");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 2, 20, 2013); 
+    
+    groups = parser.parse("I want to purchase a car in the next month.");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 3, 20, 2011); 
+    
+    groups = parser.parse("I want to plan a get-together with my friends for this Friday.");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 2, 25, 2011); 
+    
+    groups = parser.parse("I want to lose five pounds in the next two months.");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 4, 20, 2011); 
+    
+    groups = parser.parse("I want to finalize my college schedule by next week.");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 2, 27, 2011); 
+    
+    groups = parser.parse("I want to read this weekend.");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 2, 26, 2011); 
+    
+    groups = parser.parse("I want to travel a big chunk of world next year.");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 2, 20, 2012); 
+    
   }
 }
