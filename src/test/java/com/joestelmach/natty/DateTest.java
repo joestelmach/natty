@@ -213,7 +213,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "2011-06-17T07:00:00Z";
+    String value = "I want to purchase a car in the next month.";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

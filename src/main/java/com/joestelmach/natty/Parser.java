@@ -3,6 +3,7 @@ package com.joestelmach.natty;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.logging.Level;
@@ -70,7 +71,35 @@ public class Parser {
     // and parse each of them
     List<DateGroup> groups = new ArrayList<DateGroup>();
     for(TokenStream stream:streams) {
+    List<Token> tokens = ((NattyTokenSource) stream.getTokenSource()).getTokens();
       DateGroup group = singleParse(stream);
+      while((group == null || group.getDates().size() == 0) && tokens.size() > 0) {
+        if(group == null || group.getDates().size() == 0) {
+          // if we're down to only two tokens in our token stream, we can't continue
+          if(tokens.size() <= 2) {
+            tokens.clear();
+          }
+        
+          // otherwise, we look at the token stream for anotherpossible starting point, 
+          // and attempt to reparse with that sub-sequence of tokens
+          else {
+            tokens = tokens.subList(2, tokens.size());
+            Iterator<Token> iter = tokens.iterator();
+            while(iter.hasNext()) {
+              Token token = iter.next();
+              if(!DateParser.FOLLOW_empty_in_parse176.member(token.getType())) {
+                iter.remove();
+              }
+              else {
+                break;
+              }
+            }
+            TokenStream newStream = new CommonTokenStream(new NattyTokenSource(tokens));
+            group = singleParse(newStream);
+          }
+        }
+      }
+      // if a group with some date(s) was found, we add it
       if(group != null && group.getDates().size() > 0) {
         groups.add(group);
       }
@@ -184,8 +213,8 @@ public class Parser {
             currentGroup = null;
           }
           // otherwise, the token is known and we're currently collecting for
-          // a group, so we add it
-          else {
+          // a group, we add it if it's not a dot
+          else if(currentToken.getType() != DateLexer.DOT) {
             currentGroup.add(currentToken);
           }
         }
