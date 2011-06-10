@@ -204,6 +204,16 @@ public class DateTest extends AbstractTest {
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 1, 2, 2036);
+    
+    dates = parseCollection("I want to go shopping in Knoxville, TN in the next five to six months.");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 6, 2, 2011);
+    validateDate(dates.get(1), 7, 2, 2011);
+    
+    dates = parseCollection("I want to watch the fireworks in the next two to three months.");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 3, 2, 2011);
+    validateDate(dates.get(1), 4, 2, 2011);
   }
   
   public static void main(String[] args) {
@@ -213,7 +223,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "I want to purchase a car in the next month.";
+    String value = "I want to go shopping in Knoxville, TN in the next five to six months.";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

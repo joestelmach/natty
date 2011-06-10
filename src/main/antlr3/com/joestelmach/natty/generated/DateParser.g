@@ -95,6 +95,13 @@ date_time_alternative
   : (date conjunction global_date_prefix)=>
       date conjunction global_date_prefix (WHITE_SPACE THAT)? (date_time_separator explicit_time)?
         -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?) ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) explicit_time?)))
+      
+  // in 2 to 3 months
+  | ((IN | FOR | NEXT) WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE TO)=>
+      (IN | FOR | NEXT) WHITE_SPACE one=spelled_or_int_optional_prefix WHITE_SPACE TO WHITE_SPACE two=spelled_or_int_optional_prefix WHITE_SPACE relative_date_span
+        -> ^(DATE_TIME_ALTERNATIVE
+          ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] $one relative_date_span)))
+          ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] $two relative_date_span))))
         
   // "next wed or thurs" , "next wed, thurs, or fri"
   | (alternative_day_of_week_list)=> alternative_day_of_week_list
@@ -128,8 +135,8 @@ date_time_alternative
   | FOR WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE
       (relative_date_span -> 
         ^(DATE_TIME_ALTERNATIVE
-           ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"])))
-           ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_date_span))))
+          ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"])))
+          ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_date_span))))
       | relative_time_span ->
         ^(DATE_TIME_ALTERNATIVE
           ^(DATE_TIME ^(RELATIVE_TIME ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"])))
