@@ -132,7 +132,8 @@ date_time_alternative
              ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK relaxed_year) $second)))
              
   // for 3 days, for 7 months, for twenty seconds
-  | FOR WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE
+  | ((FOR | NEXT) WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE)=>
+    (FOR | NEXT) WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE
       (relative_date_span -> 
         ^(DATE_TIME_ALTERNATIVE
           ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"])))
@@ -141,6 +142,19 @@ date_time_alternative
         ^(DATE_TIME_ALTERNATIVE
           ^(DATE_TIME ^(RELATIVE_TIME ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"])))
           ^(DATE_TIME ^(RELATIVE_TIME ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_time_span))))
+      )
+      
+  // last 3 days, last 7 months, past twenty seconds
+  | ((LAST | PAST) WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE)=>
+    (LAST | PAST) WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE
+      (relative_date_span -> 
+        ^(DATE_TIME_ALTERNATIVE
+          ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION["<"] SEEK_BY["by_day"] INT["0"] SPAN["day"])))
+          ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION["<"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_date_span))))
+      | relative_time_span ->
+        ^(DATE_TIME_ALTERNATIVE
+          ^(DATE_TIME ^(RELATIVE_TIME ^(SEEK DIRECTION["<"] SEEK_BY["by_day"] INT["0"] SPAN["day"])))
+          ^(DATE_TIME ^(RELATIVE_TIME ^(SEEK DIRECTION["<"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_time_span))))
       )
   
   // catch all date_time to date_time range
