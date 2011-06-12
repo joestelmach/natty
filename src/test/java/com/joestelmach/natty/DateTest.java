@@ -223,7 +223,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "I want to go shopping in Knoxville, TN in the next five to six months.";
+    String value = "last 2 weeks";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

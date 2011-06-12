@@ -70,8 +70,9 @@ public class SearchTest extends AbstractTest {
     groups = parser.parse("I want to pay off all my debt in the next two years.");
     Assert.assertEquals(1, groups.size());
     dates = groups.get(0).getDates();
-    Assert.assertEquals(1, dates.size());
-    validateDate(dates.get(0), 2, 20, 2013); 
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 2, 20, 2011); 
+    validateDate(dates.get(1), 2, 20, 2013); 
     
     groups = parser.parse("I want to purchase a car in the next month.");
     Assert.assertEquals(1, groups.size());
@@ -88,8 +89,9 @@ public class SearchTest extends AbstractTest {
     groups = parser.parse("I want to lose five pounds in the next two months.");
     Assert.assertEquals(1, groups.size());
     dates = groups.get(0).getDates();
-    Assert.assertEquals(1, dates.size());
-    validateDate(dates.get(0), 4, 20, 2011); 
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 2, 20, 2011); 
+    validateDate(dates.get(1), 4, 20, 2011); 
     
     groups = parser.parse("I want to finalize my college schedule by next week.");
     Assert.assertEquals(1, groups.size());
@@ -109,5 +111,25 @@ public class SearchTest extends AbstractTest {
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 2, 20, 2012); 
     
+    groups = parser.parse("last 2 weeks");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 2, 20, 2011); 
+    validateDate(dates.get(1), 2, 6, 2011); 
+    
+    groups = parser.parse("last 5 years");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 2, 20, 2011); 
+    validateDate(dates.get(1), 2, 20, 2006); 
+    
+    groups = parser.parse("next 5 years");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 2, 20, 2011); 
+    validateDate(dates.get(1), 2, 20, 2016); 
   }
 }
