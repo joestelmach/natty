@@ -208,6 +208,7 @@ public class Parser {
           // if this is an unknown token, we need to end the current group
           if(currentToken.getType() == DateLexer.UNKNOWN) {
             if(currentGroup.size() > 0) {
+              cleanupGroup(currentGroup);
               groups.add(new CommonTokenStream(new NattyTokenSource(currentGroup)));
             }
             currentGroup = null;
@@ -221,11 +222,24 @@ public class Parser {
       }
     }
     if(currentGroup != null) {
+      cleanupGroup(currentGroup);
       groups.add(new CommonTokenStream(new NattyTokenSource(currentGroup)));
     }
     
     _logger.fine("global token stream: " + tokenString.toString());
     
     return groups;
+  }
+  
+  /**
+   * Removes unwanted tokens from the given token group
+   * @param group
+   */
+  private void cleanupGroup(List<Token> group) {
+    // remove trailing white space
+    Token lastToken = group.get(group.size() - 1);
+    if(lastToken.getType() == DateParser.WHITE_SPACE) {
+      group.remove(lastToken);
+    }
   }
 }
