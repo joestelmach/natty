@@ -214,6 +214,14 @@ public class DateTest extends AbstractTest {
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 4, 2, 2011);
+    
+    dates = parseCollection("september 7th something");
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 9, 7, 2011);
+    
+    dates = parseCollection("september 7th something happened here");
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 9, 7, 2011);
   }
   
   public static void main(String[] args) {
