@@ -370,6 +370,10 @@ public class WalkerState {
     _calendar.set(Calendar.MINUTE, minutesInt);
   }
   
+  public void seekToHoliday(String direction, String amount, String holiday) {
+    System.out.println("seeking " + direction + " " + amount + " " + holiday);
+  }
+  
   /**
    * 
    */

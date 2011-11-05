@@ -35,12 +35,12 @@ THURSDAY  : 'thursday'  's'?  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thur
 FRIDAY    : 'friday'    's'?  | 'fri' DOT?  | 'fris' DOT?;
 SATURDAY  : 'saturday'  's'?  | 'sat' DOT?  | 'sats' DOT?  | 'weekend';
 
-HOUR   : 'hour'   | 'hours'   | 'hr'  | 'hrs';
-MINUTE : 'minute' | 'minutes' | 'min' | 'mins';
+HOUR   : 'hour'   | 'hours'   | 'hr' DOT?  | 'hrs' DOT?;
+MINUTE : 'minute' | 'minutes' | 'min' DOT? | 'mins' DOT?;
 DAY    : 'day'    | 'days' ;
-WEEK   : 'week'   | 'weeks'   | 'wks';
+WEEK   : 'week'   | 'weeks'   | 'wks' DOT?;
 MONTH  : 'month'  | 'months';
-YEAR   : 'year'   | 'years'   | 'yrs';
+YEAR   : 'year'   | 'year' SINGLE_QUOTE? 's' | 'yrs' DOT?;
 
 TODAY     : 'today';
 TOMORROW  : 'tomorow'   | 'tomorrow'   | 'tommorow' | 'tommorrow';
@@ -50,7 +50,6 @@ YESTERDAY : 'yesterday';
 
 EVERY : 'every';
 UNTIL : 'until';
-  
 
 // ********** time rules ********** 
 
@@ -66,7 +65,7 @@ MILITARY_HOUR_SUFFIX : 'h';
 MIDNIGHT  : 'midnight' | 'mid-night';
 NOON      : 'noon'     | 'afternoon' | 'after-noon';
 MORNING   : 'morning';
-EVENING   : 'evening';
+EVENING   : 'evening' | 'eve';
 NIGHT     : 'night'; 
 
 UTC  : 'utc'  | 'gmt'  | 'z';
@@ -276,6 +275,40 @@ END       : 'end';
 WHITE_SPACE
   : (DOT | SPACE)+
   ;
+  
+// ********** holiday specific **********
+
+FOOL         : 'fool' | 'fools' | 'fool' SINGLE_QUOTE 's';
+BLACK        : 'black';
+CHRISTMAS    : ('christmas' | 'xmas' | 'x-mas') 'es'?;
+COLUMBUS     : 'columbus';
+EARTH        : 'earth';
+EASTER       : 'easter';
+FATHER       : 'father' | 'fathers' | 'father' SINGLE_QUOTE 's';
+FLAG         : 'flag';
+GOOD         : 'good';
+GROUNDHOG    : GROUND WHITE_SPACE? HOG SINGLE_QUOTE? 's'?;
+HALLOWEEN    : ('halloween' | 'haloween') 's'?;
+INAUGURATION : 'inauguration' | 'inaugaration';
+INDEPENDENCE : 'independence' | 'independance';
+KWANZAA      : ('kwanza' 'a'?) 's'?;
+LABOR        : 'labor';
+MLK          : 'mlk' | 'martin' WHITE_SPACE 'luther' WHITE_SPACE 'king' SINGLE_QUOTE? 's'? ('jr' DOT? SINGLE_QUOTE? 's'?)?;
+MEMORIAL     : 'memorial';
+MOTHER       : 'mother' SINGLE_QUOTE? 's'?;
+NEW          : 'new';
+PALM         : 'palm';
+PATRIOT      : 'patriot' SINGLE_QUOTE? 's'?;
+PRESIDENT    : 'president' SINGLE_QUOTE? 's'?;
+PATRICK      : 'patrick' SINGLE_QUOTE? 's'? | 'paddy' SINGLE_QUOTE? 's'?;
+SAINT        : 'saint';
+TAX          : 'tax';
+THANKSGIVING : 'thanksgiving' 's'?;
+ELECTION     : 'election';
+VALENTINE    : 'valentine' SINGLE_QUOTE? 's'?;
+VETERAN      : 'veteran' SINGLE_QUOTE? 's'?;
+fragment GROUND : 'ground';
+fragment HOG    : 'hog';
   
 UNKNOWN
   : UNKNOWN_CHAR

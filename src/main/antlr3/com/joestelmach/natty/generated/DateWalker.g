@@ -96,6 +96,9 @@ seek
   
   | ^(SEEK DIRECTION SEEK_BY INT date)
     {_walkerState.seekBySpan($DIRECTION.text, $INT.text, $SEEK_BY.text);}
+    
+  | ^(SEEK DIRECTION SEEK_BY INT HOLIDAY)
+    {_walkerState.seekToHoliday($DIRECTION.text, $INT.text, $HOLIDAY.text);}
   ;
   
 explicit_seek
