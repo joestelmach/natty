@@ -32,6 +32,7 @@ tokens {
   ZONE;
   ZONE_OFFSET;
   RECURRENCE;
+  HOLIDAY;
 }
 
 @header {
@@ -85,6 +86,7 @@ date
   | relaxed_date
   | relative_date
   | explicit_relative_date
+  | holiday
   | global_date_prefix WHITE_SPACE date 
       -> ^(RELATIVE_DATE ^(SEEK global_date_prefix date))
   ;
@@ -382,6 +384,9 @@ relative_date
       
   // today, tomorrow
   | named_relative_date 
+  
+  | holiday
+    -> ^(RELATIVE_DATE holiday)
   ;
   
 // ********** explicit relative date rules **********
@@ -623,6 +628,109 @@ named_relative_date
 named_relative_time
   : NOW -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] SPAN["day"]))
   ;
+  
+// ********** holidays **********
+
+holiday 
+  : relative_date_prefix WHITE_SPACE holiday_name
+    -> ^(SEEK relative_date_prefix holiday_name)
+    
+  | spelled_or_int_optional_prefix WHITE_SPACE holiday_name WHITE_SPACE relative_date_suffix
+    -> ^(SEEK relative_date_suffix spelled_or_int_optional_prefix holiday_name)
+    
+  | holiday_name
+    -> ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["1"] holiday_name)
+  ;
+
+holiday_name
+  : APRIL WHITE_SPACE FOOL (WHITE_SPACE DAY)?
+    -> HOLIDAY["APRIL_FOOLS_DAY"]
+    
+  | BLACK WHITE_SPACE FRIDAY
+    -> HOLIDAY["BLACK_FRIDAY"]
+    
+  | CHRISTMAS WHITE_SPACE EVENING 
+    -> HOLIDAY["CHRISTMAS_EVE"]
+    
+  | CHRISTMAS (WHITE_SPACE DAY)? 
+    -> HOLIDAY["CHRISTMAS"]
+    
+  | COLUMBUS WHITE_SPACE DAY   
+    -> HOLIDAY["COLUMBUS_DAY"]
+    
+  | EARTH WHITE_SPACE DAY
+    -> HOLIDAY["EARTH_DAY"]
+    
+  | EASTER (WHITE_SPACE (SUNDAY | DAY))?
+    -> HOLIDAY["EASTER"]
+    
+  | FATHER WHITE_SPACE DAY
+    -> HOLIDAY["FATHERS_DAY"]
+    
+  | FLAG WHITE_SPACE DAY
+    -> HOLIDAY["FLAG_DAY"]
+    
+  | GOOD WHITE_SPACE FRIDAY
+    -> HOLIDAY["GOOD_FRIDAY"]
+    
+  | GROUNDHOG WHITE_SPACE? DAY
+    -> HOLIDAY["GROUNDHOG_DAY"]
+    
+  | HALLOWEEN (WHITE_SPACE DAY)?
+    -> HOLIDAY["HALLOWEEN"]
+    
+  | INAUGURATION WHITE_SPACE DAY
+    -> HOLIDAY["INAUGURATION_DAY"]
+    
+  | INDEPENDENCE WHITE_SPACE DAY 
+    -> HOLIDAY["INDEPENDENCE_DAY"]
+    
+  | KWANZAA (WHITE_SPACE DAY)?
+    -> HOLIDAY["KWANZAA"]
+    
+  | LABOR WHITE_SPACE DAY
+    -> HOLIDAY["LABOR_DAY"]
+    
+  | MLK WHITE_SPACE DAY
+    -> HOLIDAY["MLK_DAY"]
+    
+  | MEMORIAL WHITE_SPACE DAY
+    -> HOLIDAY["MEMORIAL_DAY"]
+    
+  | MOTHER WHITE_SPACE DAY
+    -> HOLIDAY["MOTHERS_DAY"]
+    
+  | NEW WHITE_SPACE YEAR WHITE_SPACE EVENING
+    -> HOLIDAY["NEW_YEARS_EVE"]
+    
+  | NEW WHITE_SPACE YEAR (WHITE_SPACE DAY)?
+    -> HOLIDAY["NEW_YEARS_DAY"]
+    
+  | PATRIOT WHITE_SPACE DAY
+    -> HOLIDAY["PATRIOT_DAY"]
+    
+  | PRESIDENT WHITE_SPACE DAY
+    -> HOLIDAY["PRESIDENTS_DAY"]
+    
+  | (SAINT | ST DOT?) WHITE_SPACE PATRICK WHITE_SPACE DAY
+    -> HOLIDAY["ST_PATRICKS_DAY"]
+    
+  | TAX WHITE_SPACE DAY
+    -> HOLIDAY["TAX_DAY"]
+    
+  | THANKSGIVING (WHITE_SPACE DAY)?
+    -> HOLIDAY["THANKSGIVING"]
+    
+  | ELECTION WHITE_SPACE DAY
+    -> HOLIDAY["ELECTION_DAY"]
+    
+  | VALENTINE WHITE_SPACE DAY
+    -> HOLIDAY["VALENTINES_DAY"]
+    
+  | VETERAN WHITE_SPACE DAY
+    -> HOLIDAY["VETERANS_DAY"]
+  ;
+  
   
 // ********** time rules **********
 

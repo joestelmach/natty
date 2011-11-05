@@ -44,6 +44,16 @@ public class Parser {
    */
   public Parser() {
     _defaultTimeZone = TimeZone.getDefault();
+    
+    try {
+      //FileInputStream fin = new FileInputStream("mycalendar.ics");
+
+      //CalendarBuilder builder = new CalendarBuilder();
+
+      //Calendar calendar = builder.build(fin);
+    } catch(Exception e) {
+      e.printStackTrace();
+    }
   }
   
   /**
@@ -80,14 +90,14 @@ public class Parser {
             tokens.clear();
           }
         
-          // otherwise, we look at the token stream for anotherpossible starting point, 
-          // and attempt to reparse with that sub-sequence of tokens
+          // otherwise, we look at the token stream for another possible starting point, 
+          // and attempt to re-parse with that sub-sequence of tokens
           else {
             tokens = tokens.subList(2, tokens.size());
             Iterator<Token> iter = tokens.iterator();
             while(iter.hasNext()) {
               Token token = iter.next();
-              if(!DateParser.FOLLOW_empty_in_parse176.member(token.getType())) {
+              if(!DateParser.FOLLOW_empty_in_parse181.member(token.getType())) {
                 iter.remove();
               }
               else {
@@ -133,7 +143,7 @@ public class Parser {
       Tree tree = (Tree) parseReturn.getTree();
       _logger.fine("AST: " + tree.toStringTree());
       
-      // we only coninue if a meaningful syntax tree has been built
+      // we only continue if a meaningful syntax tree has been built
       if(tree.getChildCount() > 0) {
       
         // rewrite the tree (temporary fix for http://www.antlr.org/jira/browse/ANTLR-427)
@@ -192,7 +202,7 @@ public class Parser {
         // ignore white space in-between possible rules
         if(currentToken.getType() != DateLexer.WHITE_SPACE) {
           // if the token is a possible date start token, we start a new collection
-          if(DateParser.FOLLOW_empty_in_parse176.member(currentToken.getType())) {
+          if(DateParser.FOLLOW_empty_in_parse181.member(currentToken.getType())) {
             currentGroup = new ArrayList<Token>();
             currentGroup.add(currentToken);
           }

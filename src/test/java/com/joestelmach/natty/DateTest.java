@@ -231,7 +231,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "last 2 weeks";
+    String value = "april fool's day";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
