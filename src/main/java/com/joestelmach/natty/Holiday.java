@@ -16,7 +16,6 @@ public enum Holiday {
   GOOD_FRIDAY("Good Friday"),
   GROUNDHOG_DAY("Groundhog's Day"),
   HALLOWEEN("Halloween"),
-  INAUGURATION_DAY("Inauguration Day"),
   INDEPENDENCE_DAY("Independence Day"),
   KWANZAA("Kwanzaa"),
   LABOR_DAY("Labor Day"),

@@ -300,7 +300,7 @@ NEW          : 'new';
 PALM         : 'palm';
 PATRIOT      : 'patriot' SINGLE_QUOTE? 's'?;
 PRESIDENT    : 'president' SINGLE_QUOTE? 's'?;
-PATRICK      : 'patrick' SINGLE_QUOTE? 's'? | 'paddy' SINGLE_QUOTE? 's'?;
+PATRICK      : ('patrick' | 'patty' | 'paddy') SINGLE_QUOTE? 's'?;
 SAINT        : 'saint';
 TAX          : 'tax';
 THANKSGIVING : 'thanksgiving' 's'?;
