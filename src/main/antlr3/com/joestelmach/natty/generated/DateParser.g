@@ -86,7 +86,6 @@ date
   | relaxed_date
   | relative_date
   | explicit_relative_date
-  | holiday
   | global_date_prefix WHITE_SPACE date 
       -> ^(RELATIVE_DATE ^(SEEK global_date_prefix date))
   ;
@@ -385,6 +384,7 @@ relative_date
   // today, tomorrow
   | named_relative_date 
   
+  // next christmas, 2 thanksgivings ago
   | holiday
     -> ^(RELATIVE_DATE holiday)
   ;
@@ -632,11 +632,14 @@ named_relative_time
 // ********** holidays **********
 
 holiday 
-  : relative_date_prefix WHITE_SPACE holiday_name
+  : spelled_or_int_optional_prefix WHITE_SPACE holiday_name WHITE_SPACE relative_date_suffix
+    -> ^(SEEK relative_date_suffix spelled_or_int_optional_prefix holiday_name)
+    
+  | relative_date_prefix WHITE_SPACE holiday_name
     -> ^(SEEK relative_date_prefix holiday_name)
     
-  | spelled_or_int_optional_prefix WHITE_SPACE holiday_name WHITE_SPACE relative_date_suffix
-    -> ^(SEEK relative_date_suffix spelled_or_int_optional_prefix holiday_name)
+  | holiday_name relaxed_year_prefix relaxed_year
+    -> ^(EXPLICIT_SEEK holiday_name relaxed_year)
     
   | holiday_name
     -> ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["1"] holiday_name)

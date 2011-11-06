@@ -48,9 +48,6 @@ public class HolidayGrammarTest extends AbstractGrammarTest {
     assertAST("haloween", "HALLOWEEN");
     assertAST("halloween day", "HALLOWEEN");
     
-    assertAST("inauguration day", "INAUGURATION_DAY");
-    assertAST("inaugaration day", "INAUGURATION_DAY");
-    
     assertAST("independence day", "INDEPENDENCE_DAY");
     
     assertAST("kwanzaa", "KWANZAA");
@@ -125,7 +122,11 @@ public class HolidayGrammarTest extends AbstractGrammarTest {
     
     assertAST("three christmases from now", "(SEEK > by_day 3 CHRISTMAS)");
     assertAST("3 christmases ago", "(SEEK < by_day 3 CHRISTMAS)");
+    assertAST("2 april fool's days ago", "(SEEK < by_day 2 APRIL_FOOLS_DAY)");
     
     assertAST("in 10 thanksgivings", "(SEEK > by_day 10 THANKSGIVING)");
+    
+    assertAST("thanksgiving 2011", "(EXPLICIT_SEEK THANKSGIVING (YEAR_OF 2011))");
+    assertAST("christmas, '95", "(EXPLICIT_SEEK CHRISTMAS (YEAR_OF 95))");
   }
 }

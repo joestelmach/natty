@@ -1,9 +1,23 @@
 package com.joestelmach.natty;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.TimeZone;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import net.fortuna.ical4j.data.CalendarBuilder;
+import net.fortuna.ical4j.data.ParserException;
+import net.fortuna.ical4j.model.Component;
+import net.fortuna.ical4j.model.DateTime;
+import net.fortuna.ical4j.model.Period;
+import net.fortuna.ical4j.model.PeriodList;
 
 /**
  * @author Joe Stelmach
@@ -28,12 +42,17 @@ public class WalkerState {
   private static final String PLUS = "+";
   private static final String MINUS = "-";
   private static final String GMT = "GMT";
+  private static final String VEVENT = "VEVENT";
+  private static final String SUMMARY = "SUMMARY";
+  private static final String HOLIDAY_ICS_FILE = "/holidays.ics";
+  private static final Logger _logger = Logger.getLogger("com.joestelmach.natty");
   
   private GregorianCalendar _calendar;
   private TimeZone _defaultTimeZone;
   private int _currentYear;
   private boolean _firstDateInvocationInGroup = true;
   private boolean _timeGivenInGroup = false;
+  private net.fortuna.ical4j.model.Calendar _holidayCalendar;
   
   private DateGroup _dateGroup;
   
@@ -142,13 +161,7 @@ public class WalkerState {
     
     markDateInvocation();
     
-    // two digit years require us to choose a reasonable century.
-    if(year.length() == 2) {
-      int century = (yearInt > ((_currentYear - 2000) + TWO_DIGIT_YEAR_CENTURY_THRESHOLD)) ? 1900 : 2000;
-      yearInt = yearInt + century;
-    }
-    
-    _calendar.set(Calendar.YEAR, yearInt);
+    _calendar.set(Calendar.YEAR, getFullYear(yearInt));
   }
   
   /**
@@ -370,8 +383,73 @@ public class WalkerState {
     _calendar.set(Calendar.MINUTE, minutesInt);
   }
   
-  public void seekToHoliday(String direction, String amount, String holiday) {
-    System.out.println("seeking " + direction + " " + amount + " " + holiday);
+  /**
+   * Seeks forward or backwards to a particular holiday based on the current date
+   * 
+   * @param holidayString The holiday to seek to
+   * @param direction     The direction to seek 
+   * @param seekAmount    The number of years to seek
+   */
+  public void seekToHoliday(String holidayString, String direction, String seekAmount) {
+    
+    Holiday holiday = Holiday.valueOf(holidayString);
+    int seekAmountInt = Integer.parseInt(seekAmount);
+    assert(direction.equals(DIR_LEFT) || direction.equals(DIR_RIGHT));
+    assert(seekAmountInt >= 0);
+    assert(holiday != null);
+    
+    markDateInvocation();
+    
+    // get the current year
+    Calendar cal = new GregorianCalendar();
+    cal.setTimeZone(_defaultTimeZone);
+    int currentYear = cal.get(Calendar.YEAR);
+    
+    // look up a suitable period of holiday occurrences
+    boolean forwards = direction.equals(DIR_RIGHT);
+    int startYear = forwards ? currentYear : currentYear - seekAmountInt - 1; 
+    int endYear = forwards ? currentYear + seekAmountInt + 1 : currentYear;
+    Map<Integer, Date> dates = getDatesForHoliday(startYear, endYear, holiday);
+    
+    // grab the right one
+    boolean hasPassed = cal.getTime().after(dates.get(currentYear));
+    int targetYear = currentYear + 
+        (forwards ? seekAmountInt + (hasPassed ? 0 : -1) : 
+          (seekAmountInt - (hasPassed ? 1 : 0)) * -1);
+    
+    cal.setTimeZone(_calendar.getTimeZone());
+    cal.setTime(dates.get(targetYear));
+    _calendar.set(Calendar.YEAR, cal.get(Calendar.YEAR));
+    _calendar.set(Calendar.MONTH, cal.get(Calendar.MONTH));
+    _calendar.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH));
+  }
+  
+  /**
+   * Seeks to the given holiday within the given year
+   * 
+   * @param holidayString
+   * @param yearString
+   */
+  public void seekToHolidayYear(String holidayString, String yearString) {
+    Holiday holiday = Holiday.valueOf(holidayString);
+    int yearInt = Integer.parseInt(yearString);
+    assert(holiday != null);
+    assert(yearInt >= 0);
+    
+    markDateInvocation();
+    
+    int year = getFullYear(yearInt);
+    Map<Integer, Date> dates = getDatesForHoliday(year, year, holiday);
+    Date date = dates.get(year - (holiday.equals(Holiday.NEW_YEARS_EVE) ? 1 : 0));
+    
+    if(date != null) {
+      Calendar cal = new GregorianCalendar();
+      cal.setTimeZone(_calendar.getTimeZone());
+      cal.setTime(date);
+      _calendar.set(Calendar.YEAR, cal.get(Calendar.YEAR));
+      _calendar.set(Calendar.MONTH, cal.get(Calendar.MONTH));
+      _calendar.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH));
+    }
   }
   
   /**
@@ -446,6 +524,74 @@ public class WalkerState {
    */
   private void markTimeInvocation() {
     _timeGivenInGroup = true;
+  }
+  
+  private Map<Integer, Date> getDatesForHoliday(int startYear, int endYear, Holiday holiday) {
+    Map<Integer, Date> holidays = new HashMap<Integer, Date>(); 
+    
+    if(_holidayCalendar == null) {
+      InputStream fin = WalkerState.class.getResourceAsStream(HOLIDAY_ICS_FILE);
+      try {
+        _holidayCalendar = new CalendarBuilder().build(fin);
+        
+      } catch (IOException e) {
+        _logger.severe("Couln't open " + HOLIDAY_ICS_FILE);
+        return holidays;
+        
+      } catch (ParserException e) {
+        _logger.severe("Couln't parse " + HOLIDAY_ICS_FILE);
+        return holidays;
+      }
+    }
+    
+    Period period = null;
+    try {
+      DateTime from = new DateTime(startYear + "0101T000000Z");
+      DateTime to = new DateTime(endYear + "1231T000000Z");;
+      period = new Period(from, to);
+      
+    } catch (ParseException e) {
+      _logger.log(Level.SEVERE, "Invalid start or end year: " + startYear + ", " + endYear, e);
+      return holidays;
+    }
+    
+    for (Object  component : _holidayCalendar.getComponents(VEVENT)) {
+      Component vevent = (Component) component;
+      String summary = vevent.getProperty(SUMMARY).getValue();
+      if(summary.equals(holiday.getSummary())) {
+        PeriodList list = vevent.calculateRecurrenceSet(period);
+        for(Object p : list) {
+          DateTime date = ((Period) p).getStart();
+          
+          // this date is at the date of the holiday at 12 AM UTC
+          Calendar utcCal = new GregorianCalendar();
+          utcCal.setTimeZone(TimeZone.getTimeZone(GMT));
+          utcCal.setTime(date);
+          
+          // use the year, month and day components of our UTC date to form a new local date
+          Calendar localCal = new GregorianCalendar();
+          localCal.setTimeZone(_defaultTimeZone);
+          localCal.set(Calendar.YEAR, utcCal.get(Calendar.YEAR));
+          localCal.set(Calendar.MONTH, utcCal.get(Calendar.MONTH));
+          localCal.set(Calendar.DAY_OF_MONTH, utcCal.get(Calendar.DAY_OF_MONTH));
+          
+          holidays.put(localCal.get(Calendar.YEAR), localCal.getTime());
+        }
+      }
+    }
+  
+    return holidays;
+  }
+  
+  private int getFullYear(Integer year) {
+    int result = year;
+    
+    if(year.toString().length() <= 2) {
+      int century = (year > ((_currentYear - 2000) + TWO_DIGIT_YEAR_CENTURY_THRESHOLD)) ? 1900 : 2000;
+      result = year + century;
+    }
+    
+    return result;
   }
   
   /**
