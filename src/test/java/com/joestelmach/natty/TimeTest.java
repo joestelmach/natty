@@ -26,6 +26,8 @@ public class TimeTest extends AbstractTest {
    */
   @Test
   public void testFormal() throws Exception {
+    Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("1/02/2011");
+    CalendarSource.setBaseDate(reference);
     validateTime("0600h", 6, 0, 0);
     validateTime("06:00h", 6, 0, 0);
     validateTime("06:00 hours", 6, 0, 0);
@@ -48,6 +50,8 @@ public class TimeTest extends AbstractTest {
   
   @Test
   public void testRelaxed() throws Exception {
+    Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("1/02/2011");
+    CalendarSource.setBaseDate(reference);
     validateTime("noon", 12, 0, 0);
     validateTime("afternoon", 12, 0, 0);
     validateTime("midnight", 0, 0, 0);
