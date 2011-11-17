@@ -231,7 +231,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "5 hours after midnight";
+    String value = "Sunday, November 20 2 p.m. - 3 p.m";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

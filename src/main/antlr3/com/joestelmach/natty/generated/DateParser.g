@@ -168,7 +168,7 @@ date_time_alternative
   ;
   
 conjunction
-  : COMMA? WHITE_SPACE (AND | OR | TO | THROUGH) WHITE_SPACE
+  : COMMA? WHITE_SPACE (AND | OR | TO | THROUGH | DASH) WHITE_SPACE
   ;
   
 alternative_day_of_month_list
