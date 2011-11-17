@@ -56,8 +56,8 @@ UNTIL : 'until';
 AT        : 'at' | '@';
 AFTER     : 'after';
 PAST      : 'past';
-AM : 'am' | 'a.m.' | 'a';
-PM : 'pm' | 'p.m.' | 'p';
+AM : 'am' | 'a.m' DOT? | 'a';
+PM : 'pm' | 'p.m' DOT? | 'p';
 T  : 't';
 
 MILITARY_HOUR_SUFFIX : 'h';

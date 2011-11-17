@@ -95,5 +95,15 @@ public class DateTimeTest extends AbstractTest {
     Assert.assertEquals(2, dates.size());
     validateDateTime(dates.get(0), 3, 3, 2010, 21, 0, 0);
     validateDateTime(dates.get(1), 6, 17, 2010, 21, 0, 0);
+    
+    dates = parseCollection("November 20 2 p.m. to 3 p.m");
+    Assert.assertEquals(2, dates.size());
+    validateDateTime(dates.get(0), 11, 20, 2010, 14, 0, 0);
+    validateDateTime(dates.get(1), 11, 20, 2010, 15, 0, 0);
+    
+    dates = parseCollection("November 20 2 p.m. - 3 p.m.");
+    Assert.assertEquals(2, dates.size());
+    validateDateTime(dates.get(0), 11, 20, 2010, 14, 0, 0);
+    validateDateTime(dates.get(1), 11, 20, 2010, 15, 0, 0);
   }
 }

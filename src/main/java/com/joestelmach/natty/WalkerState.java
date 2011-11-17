@@ -401,7 +401,7 @@ public class WalkerState {
     markDateInvocation();
     
     // get the current year
-    Calendar cal = new GregorianCalendar();
+    Calendar cal = getCalendar();
     cal.setTimeZone(_defaultTimeZone);
     int currentYear = cal.get(Calendar.YEAR);
     
@@ -443,7 +443,7 @@ public class WalkerState {
     Date date = dates.get(year - (holiday.equals(Holiday.NEW_YEARS_EVE) ? 1 : 0));
     
     if(date != null) {
-      Calendar cal = new GregorianCalendar();
+      Calendar cal = getCalendar();
       cal.setTimeZone(_calendar.getTimeZone());
       cal.setTime(date);
       _calendar.set(Calendar.YEAR, cal.get(Calendar.YEAR));
@@ -564,12 +564,12 @@ public class WalkerState {
           DateTime date = ((Period) p).getStart();
           
           // this date is at the date of the holiday at 12 AM UTC
-          Calendar utcCal = new GregorianCalendar();
+          Calendar utcCal = getCalendar();
           utcCal.setTimeZone(TimeZone.getTimeZone(GMT));
           utcCal.setTime(date);
           
           // use the year, month and day components of our UTC date to form a new local date
-          Calendar localCal = new GregorianCalendar();
+          Calendar localCal = getCalendar();
           localCal.setTimeZone(_defaultTimeZone);
           localCal.set(Calendar.YEAR, utcCal.get(Calendar.YEAR));
           localCal.set(Calendar.MONTH, utcCal.get(Calendar.MONTH));
