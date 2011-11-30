@@ -251,6 +251,7 @@ SINGLE_QUOTE : '\'';
 
 FOR       : 'for';
 IN        : 'in';
+AN        : 'an';
 THE       : 'the';
 OR        : 'or';
 AND       : 'and';

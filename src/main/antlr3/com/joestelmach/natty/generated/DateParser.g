@@ -373,6 +373,10 @@ relative_date
       // relative target with no prefix has an implicit seek of 0
       -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] day_of_week))
       
+  // january, february
+  | relaxed_month
+      -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] relaxed_month))
+      
   // one month from now
   | spelled_or_int_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_date_suffix 
       -> ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix relative_target))
@@ -568,6 +572,7 @@ relative_date_prefix
   | (THIS WHITE_SPACE)? PAST     -> DIRECTION["<"] SEEK_BY["by_day"] INT["1"]
   | (THIS WHITE_SPACE)? COMING   -> DIRECTION[">"] SEEK_BY["by_day"] INT["1"]
   | (THIS WHITE_SPACE)? UPCOMING -> DIRECTION[">"] SEEK_BY["by_day"] INT["1"]
+  | IN WHITE_SPACE (AM | AN)     -> DIRECTION[">"] SEEK_BY["by_day"] INT["1"]
   | (IN WHITE_SPACE)? spelled_or_int_optional_prefix 
       -> DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_optional_prefix
   ;

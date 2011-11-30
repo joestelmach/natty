@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.TimeZone;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
@@ -98,6 +99,14 @@ public class DateTest extends AbstractTest {
     validateDate("tues this week", 3, 1, 2011);
     validateDate("tuesday this week", 3, 1, 2011);
     validateDate("tuesday next week", 3, 8, 2011);
+    validateDate("this september", 9, 1, 2011);
+    validateDate("in a september", 9, 1, 2011);
+    validateDate("in an october", 10, 1, 2011);
+    validateDate("september", 9, 1, 2011);
+    validateDate("last september", 9, 1, 2010);
+    validateDate("next september", 9, 1, 2011);
+    validateDate("in a year", 2, 28, 2012);
+    validateDate("in a week", 3, 7, 2011);
   }
   
   @Test
@@ -231,7 +240,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "Sunday, November 20 2 p.m. - 3 p.m";
+    String value = "in a week";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
@@ -244,9 +253,16 @@ public class DateTest extends AbstractTest {
       System.out.println("is recurring: " + group.isRecurring());
       System.out.println("recurs until: " + group.getRecursUntil());
       
-      System.out.print("conjunctions: ");
+      System.out.println("\n** Parse Locations **");
+      for(Entry<String, List<ParseLocation>> entry:group.getParseLocations().entrySet()) {
+        for(ParseLocation loc:entry.getValue()) {
+          System.out.println(loc.getRuleName());
+        }
+      }
+      
       List<ParseLocation> conjunctionLocations = group.getParseLocations().get("conjunction");
       if(conjunctionLocations != null) {
+        System.out.print("\nconjunctions: ");
         for(ParseLocation location:conjunctionLocations) {
           System.out.print(location.getText() + " ");
         }
