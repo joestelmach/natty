@@ -240,7 +240,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "in a week";
+    String value = "i want to eat chinese tonight";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

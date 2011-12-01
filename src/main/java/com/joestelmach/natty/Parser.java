@@ -44,16 +44,6 @@ public class Parser {
    */
   public Parser() {
     _defaultTimeZone = TimeZone.getDefault();
-    
-    try {
-      //FileInputStream fin = new FileInputStream("mycalendar.ics");
-
-      //CalendarBuilder builder = new CalendarBuilder();
-
-      //Calendar calendar = builder.build(fin);
-    } catch(Exception e) {
-      e.printStackTrace();
-    }
   }
   
   /**
@@ -104,6 +94,7 @@ public class Parser {
                 break;
               }
             }
+            cleanupGroup(tokens);
             TokenStream newStream = new CommonTokenStream(new NattyTokenSource(tokens));
             group = singleParse(newStream);
           }
@@ -246,10 +237,20 @@ public class Parser {
    * @param group
    */
   private void cleanupGroup(List<Token> group) {
-    // remove trailing white space
-    Token lastToken = group.get(group.size() - 1);
-    if(lastToken.getType() == DateParser.WHITE_SPACE) {
-      group.remove(lastToken);
+    // remove leading white space
+    if(group.size() > 0) {
+      Token firstToken = group.get(0);
+      if(firstToken.getType() == DateParser.WHITE_SPACE) {
+        group.remove(firstToken);
+      }
+    }
+    
+    // and trailing white space
+    if(group.size() > 0) {
+      Token lastToken = group.get(group.size() - 1);
+      if(lastToken.getType() == DateParser.WHITE_SPACE) {
+        group.remove(lastToken);
+      }
     }
   }
 }

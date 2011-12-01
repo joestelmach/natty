@@ -267,7 +267,7 @@ relaxed_date
             WHITE_SPACE (OF WHITE_SPACE)? relaxed_month
     
       // Jan 21, 1997   Sun, Nov 21
-      | relaxed_day_of_week? relaxed_month WHITE_SPACE relaxed_day_of_month (relaxed_year_prefix relaxed_year)?
+      | relaxed_day_of_week? relaxed_month COMMA? WHITE_SPACE relaxed_day_of_month (relaxed_year_prefix relaxed_year)?
     ) -> ^(EXPLICIT_DATE relaxed_month relaxed_day_of_month relaxed_day_of_week? relaxed_year?)
   ;
   
