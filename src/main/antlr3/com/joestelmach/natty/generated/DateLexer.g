@@ -44,6 +44,7 @@ YEAR   : 'year'   | 'year' SINGLE_QUOTE? 's' | 'yrs' DOT?;
 
 TODAY     : 'today';
 TOMORROW  : 'tomorow'   | 'tomorrow'   | 'tommorow' | 'tommorrow';
+TONIGHT   : 'tonight'; 
 YESTERDAY : 'yesterday';
 
 // ********** recurrence rules **********

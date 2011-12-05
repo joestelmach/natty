@@ -237,6 +237,20 @@ public class Parser {
    * @param group
    */
   private void cleanupGroup(List<Token> group) {
+    
+    // remove contiguous white space
+    Iterator<Token> iter = group.iterator();
+    Token previousToken = null;
+    while(iter.hasNext()) {
+      Token token = iter.next();
+      if(previousToken != null && previousToken.getType() == DateParser.WHITE_SPACE) {
+        if(token.getType() == DateParser.WHITE_SPACE) {
+          iter.remove();
+        }
+      }
+      previousToken = token;
+    }
+    
     // remove leading white space
     if(group.size() > 0) {
       Token firstToken = group.get(0);
