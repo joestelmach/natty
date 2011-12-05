@@ -211,6 +211,7 @@ public class SearchTest extends AbstractTest {
     Assert.assertEquals(1, groups.size());
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
-    validateDate(dates.get(0), 2, 20, 2011); 
+    validateDateTime(dates.get(0), 2, 20, 2011, 20, 0, 0); 
+    
   }
 }
