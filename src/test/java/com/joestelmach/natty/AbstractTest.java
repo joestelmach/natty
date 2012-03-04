@@ -2,22 +2,31 @@ package com.joestelmach.natty;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.junit.Assert;
 import org.junit.Before;
 
 import com.joestelmach.natty.CalendarSource;
 import com.joestelmach.natty.Parser;
+import org.junit.BeforeClass;
 
 /**
  * 
  * @author Joe Stelmach
  */
 public abstract class AbstractTest {
-  private static final Calendar _calendar = Calendar.getInstance();
-  protected static final Parser _parser = new Parser();
-  
+  private static Calendar _calendar;
+  protected static Parser _parser;
+
+
+  public static void initCalendarAndParser() {
+    _calendar = Calendar.getInstance();
+    _parser = new Parser();
+  }
+
   /**
    * Resets the calendar source time before each test
    */
@@ -141,7 +150,7 @@ public abstract class AbstractTest {
    */
   protected void validateDateTime(Date date, int month, int day, int year, 
       int hours, int minutes, int seconds) {
-    
+
     _calendar.setTime(date);
     Assert.assertEquals(month -1, _calendar.get(Calendar.MONTH));
     Assert.assertEquals(day, _calendar.get(Calendar.DAY_OF_MONTH));
