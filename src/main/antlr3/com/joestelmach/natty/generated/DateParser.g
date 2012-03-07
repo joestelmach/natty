@@ -92,17 +92,17 @@ date
   
 date_time_alternative
       
-  // today or the day after that, feb 16th or 2 days after that, january fourth or the friday after
-  : (date conjunction global_date_prefix)=>
-      date conjunction global_date_prefix (WHITE_SPACE THAT)? (date_time_separator explicit_time)?
-        -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?) ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) explicit_time?)))
-      
-  // in 2 to 3 months
-  | ((IN | FOR | NEXT) WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE TO)=>
-      (IN | FOR | NEXT) WHITE_SPACE one=spelled_or_int_optional_prefix WHITE_SPACE TO WHITE_SPACE two=spelled_or_int_optional_prefix WHITE_SPACE relative_date_span
+  // in 2 to 3 months, 4 and 7 months
+  : (((IN | FOR | NEXT) WHITE_SPACE)? spelled_or_int_optional_prefix conjunction)=>
+      ((IN | FOR | NEXT) WHITE_SPACE)? one=spelled_or_int_optional_prefix conjunction two=spelled_or_int_optional_prefix WHITE_SPACE relative_date_span
         -> ^(DATE_TIME_ALTERNATIVE
           ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] $one relative_date_span)))
           ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] $two relative_date_span))))
+      
+  // today or the day after that, feb 16th or 2 days after that, january fourth or the friday after
+  | (date conjunction global_date_prefix)=>
+      date conjunction global_date_prefix (WHITE_SPACE THAT)? (date_time_separator explicit_time)?
+        -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?) ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) explicit_time?)))
         
   // "next wed or thurs" , "next wed, thurs, or fri"
   | (alternative_day_of_week_list)=> alternative_day_of_week_list
@@ -177,10 +177,10 @@ alternative_day_of_month_list
       -> ^(DATE_TIME ^(EXPLICIT_DATE relaxed_month relaxed_day_of_month) explicit_time?)+
       
   // first or last day of september
-  | (explicit_day_of_month_part conjunction explicit_day_of_month_part WHITE_SPACE explicit_relative_month)=>
-      first=explicit_day_of_month_part conjunction second=explicit_day_of_month_part WHITE_SPACE explicit_relative_month (date_time_separator explicit_time)?
-        -> ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK explicit_relative_month) $first) explicit_time?)
-           ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK explicit_relative_month) $second) explicit_time?)
+  | (explicit_day_of_month_part conjunction explicit_day_of_month_part WHITE_SPACE relaxed_month)=>
+      first=explicit_day_of_month_part conjunction second=explicit_day_of_month_part WHITE_SPACE relaxed_month (date_time_separator explicit_time)?
+        -> ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK relaxed_month) $first) explicit_time?)
+           ^(DATE_TIME ^(RELATIVE_DATE ^(EXPLICIT_SEEK relaxed_month) $second) explicit_time?)
            
   // first or last day of next september
   | (explicit_day_of_month_part conjunction explicit_day_of_month_part WHITE_SPACE prefix WHITE_SPACE explicit_relative_month)=>
