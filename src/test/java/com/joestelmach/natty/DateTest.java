@@ -234,6 +234,11 @@ public class DateTest extends AbstractTest {
     dates = parseCollection("september 7th something happened here");
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 9, 7, 2011);
+    
+    dates = parseCollection("bla bla bla 2 and 4 month");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 3, 2, 2011);
+    validateDate(dates.get(1), 5, 2, 2011);
   }
   
   public static void main(String[] args) {
@@ -243,7 +248,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "i want to eat chinese tonight";
+    String value = "bla bla bla 2 and 4 month";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
