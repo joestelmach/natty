@@ -2,6 +2,7 @@ package com.joestelmach.natty;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 import org.junit.BeforeClass;
@@ -12,7 +13,9 @@ public class HolidayTest extends AbstractTest {
    
   @BeforeClass
   public static void oneTime() {
+    Locale.setDefault(Locale.US);
     TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
+    initCalendarAndParser();
   }
   
   @Test

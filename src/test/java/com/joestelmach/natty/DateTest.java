@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map.Entry;
 import java.util.TimeZone;
 import java.util.logging.ConsoleHandler;
@@ -23,7 +24,9 @@ import org.junit.Test;
 public class DateTest extends AbstractTest {
   @BeforeClass
   public static void oneTime() {
+    Locale.setDefault(Locale.US);
     TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
+    initCalendarAndParser();
   }
   
   @Test
