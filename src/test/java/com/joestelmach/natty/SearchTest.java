@@ -3,10 +3,13 @@ package com.joestelmach.natty;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
+import org.junit.BeforeClass;
 
 import com.joestelmach.natty.CalendarSource;
 import com.joestelmach.natty.DateGroup;
@@ -17,6 +20,12 @@ import com.joestelmach.natty.Parser;
  * @author Joe Stelmach
  */
 public class SearchTest extends AbstractTest {
+  @BeforeClass
+  public static void oneTime() {
+    Locale.setDefault(Locale.US);
+    TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
+    initCalendarAndParser();
+  }
   
   @Test
   public void test() throws Exception {
