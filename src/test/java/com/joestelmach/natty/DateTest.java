@@ -45,7 +45,7 @@ public class DateTest extends AbstractTest {
     validateDate("oct. 1, 1980", 10, 1, 1980);
     validateDate("oct 1,1980", 10, 1, 1980);
     validateDate("1st oct in the year '89", 10, 1, 1989);
-    validateDate("thirty first of december 80", 12, 31, 1980);
+    validateDate("thirty first of december '80", 12, 31, 1980);
     validateDate("the first of december in the year 1980", 12, 1, 1980);
     validateDate("the 2 of february in the year 1980", 2, 2, 1980);
     validateDate("the 2nd of february in the year 1980", 2, 2, 1980);
@@ -248,7 +248,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "bla bla bla 2 and 4 month";
+    String value = "april 20th, 10am";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
