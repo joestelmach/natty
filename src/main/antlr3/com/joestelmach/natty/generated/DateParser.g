@@ -121,9 +121,10 @@ date_time_alternative
           )
         
   // 1/2 or 1/4 or 1/6 at 6pm
-  | (date (conjunction date)+ (date_time_separator explicit_time)?)=>
-      date (conjunction date)+ (date_time_separator explicit_time)?
-        -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?)+)
+  // Aug 16 at 10am or Sept 28th at 11am
+  | (date_time conjunction date_time)=>
+    date_time (conjunction date_time)+
+      -> ^(DATE_TIME_ALTERNATIVE date_time+)
         
   // first or last day of 2009
   | (explicit_day_of_year_part conjunction explicit_day_of_year_part WHITE_SPACE relaxed_year)=>
@@ -158,11 +159,6 @@ date_time_alternative
           ^(DATE_TIME ^(RELATIVE_TIME ^(SEEK DIRECTION["<"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_time_span))))
       )
   
-  // catch all date_time to date_time range
-  | (date_time conjunction date_time)=>
-    date_time conjunction date_time
-      -> ^(DATE_TIME_ALTERNATIVE date_time date_time)
-      
   // single date_time
   | date_time -> ^(DATE_TIME_ALTERNATIVE date_time)
   ;

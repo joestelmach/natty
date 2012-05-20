@@ -116,4 +116,35 @@ public class DateTimeTest extends AbstractTest {
     validateDateTime(dates.get(0), 11, 20, 2010, 14, 0, 0);
     validateDateTime(dates.get(1), 11, 20, 2010, 15, 0, 0);
   }
+  
+  @Test
+  public void testList() throws Exception {
+    Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("05/19/2012");
+    CalendarSource.setBaseDate(reference);
+    
+    List<Date> dates = parseCollection("June 25th at 9am and July 2nd at 10am and August 16th at 11am");
+    Assert.assertEquals(3, dates.size());
+    validateDateTime(dates.get(0), 6, 25, 2012, 9, 0, 0);
+    validateDateTime(dates.get(1), 7, 2, 2012, 10, 0, 0);
+    validateDateTime(dates.get(2), 8, 16, 2012, 11, 0, 0);
+    
+    dates = parseCollection("June 25th at 10am and July 2nd and August 16th");
+    Assert.assertEquals(3, dates.size());
+    validateDateTime(dates.get(0), 6, 25, 2012, 10, 0, 0);
+    validateDateTime(dates.get(1), 7, 2, 2012, 10, 0, 0);
+    validateDateTime(dates.get(2), 8, 16, 2012, 10, 0, 0);
+    
+    dates = parseCollection("June 25th and July 2nd at 10am and August 16th");
+    Assert.assertEquals(3, dates.size());
+    validateDateTime(dates.get(0), 6, 25, 2012, 0, 0, 0);
+    validateDateTime(dates.get(1), 7, 2, 2012, 10, 0, 0);
+    validateDateTime(dates.get(2), 8, 16, 2012, 10, 0, 0);
+    
+    dates = parseCollection("June 25th and July 2nd and August 16th at 10am");
+    Assert.assertEquals(3, dates.size());
+    validateDateTime(dates.get(0), 6, 25, 2012, 0, 0, 0);
+    validateDateTime(dates.get(1), 7, 2, 2012, 0, 0, 0);
+    validateDateTime(dates.get(2), 8, 16, 2012, 10, 0, 0);
+    
+  }
 }
