@@ -70,7 +70,7 @@ public class DateGrammarTest extends AbstractGrammarTest {
     assertAST("oct. 1, 1980", "(EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 1980))");
     assertAST("oct 1,1980", "(EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 1980))");
     assertAST("1st oct in the year '89", "(EXPLICIT_DATE (MONTH_OF_YEAR 10) (DAY_OF_MONTH 1) (YEAR_OF 89))");
-    assertAST("thirty first of december 80", "(EXPLICIT_DATE (MONTH_OF_YEAR 12) (DAY_OF_MONTH 31) (YEAR_OF 80))");
+    assertAST("thirty first of december '80", "(EXPLICIT_DATE (MONTH_OF_YEAR 12) (DAY_OF_MONTH 31) (YEAR_OF 80))");
     assertAST("the first of december in the year 1980", "(EXPLICIT_DATE (MONTH_OF_YEAR 12) (DAY_OF_MONTH 1) (YEAR_OF 1980))");
     assertAST("the 2 of february in the year 1980", "(EXPLICIT_DATE (MONTH_OF_YEAR 2) (DAY_OF_MONTH 2) (YEAR_OF 1980))");
     assertAST("the 2nd of february in the year 1980", "(EXPLICIT_DATE (MONTH_OF_YEAR 2) (DAY_OF_MONTH 2) (YEAR_OF 1980))");

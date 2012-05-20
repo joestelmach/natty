@@ -312,7 +312,7 @@ relaxed_day_of_year
   ;
   
 relaxed_year
-  : SINGLE_QUOTE? int_00_to_99_mandatory_prefix
+  : SINGLE_QUOTE int_00_to_99_mandatory_prefix
       -> ^(YEAR_OF int_00_to_99_mandatory_prefix)
       
   | int_four_digits

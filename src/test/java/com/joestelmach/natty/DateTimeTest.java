@@ -24,7 +24,11 @@ public class DateTimeTest extends AbstractTest {
   }
   
   @Test
-  public void testSpecific() {
+  public void testSpecific() throws Exception {
+    Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT, 
+        DateFormat.SHORT).parse("5/19/2012 12:00 am");
+    CalendarSource.setBaseDate(reference);
+    
     validateDateTime("1st oct in the year '89 1300 hours", 10, 1, 1989, 13, 0, 0);
     validateDateTime("1st oct in the year '89 at 1300 hours", 10, 1, 1989, 13, 0, 0);
     validateDateTime("1st oct in the year '89, 13:00", 10, 1, 1989, 13, 0, 0);
@@ -36,6 +40,9 @@ public class DateTimeTest extends AbstractTest {
     validateDateTime("3am, on october first 2010", 10, 1, 2010, 3, 0, 0);
     validateDateTime("3am october first 2010", 10, 1, 2010, 3, 0, 0);
     validateDateTime("2011-06-17T07:00:00Z", 6, 17, 2011, 3, 0, 0);
+    validateDateTime("April 20, 10am", 4, 20, 2012, 10, 0, 0);
+    validateDateTime("April 20 10", 4, 20, 2012, 10, 0, 0);
+    validateDateTime("April 20 at 10 am", 4, 20, 2012, 10, 0, 0);
   }
   
   @Test
