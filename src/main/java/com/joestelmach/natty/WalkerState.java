@@ -61,13 +61,13 @@ public class WalkerState {
    * the next hour from the current time
    */
   public WalkerState() {
-    resetCalender();
+    resetCalendar();
     _dateGroup = new DateGroup();
   }
   
   public void setDefaultTimeZone(final TimeZone zone) {
     _defaultTimeZone = zone;
-    resetCalender();
+    resetCalendar();
   }
   
   /**
@@ -83,7 +83,7 @@ public class WalkerState {
    *     next (or previous,) week (or multiple of next or previous week depending
    *     on the seek amount.)
    *     
-   * @param amount the amount to seek.  Must be guaranteed to parse as an integer
+   * @param seekAmount the amount to seek.  Must be guaranteed to parse as an integer
    *     
    * @param dayOfWeek the day of the week to seek to, represented as an integer from 
    *     1 to 7 (1 being Sunday, 7 being Saturday.) Must be guaranteed to parse as an Integer
@@ -172,7 +172,7 @@ public class WalkerState {
    *    '<' go backward 
    *    '>' go forward
    *    
-   * @param amount the amount to seek.  Must be guaranteed to parse as an integer
+   * @param seekAmount the amount to seek.  Must be guaranteed to parse as an integer
    *     
    * @param month the month to seek to.  Must be guaranteed to parse as an integer
    *     between 1 and 12 
@@ -210,7 +210,7 @@ public class WalkerState {
    *    '<' go backward 
    *    '>' go forward
    *    
-   * @param amount the amount to seek.  Must be guaranteed to parse as an integer
+   * @param seekAmount the amount to seek.  Must be guaranteed to parse as an integer
    *     
    * @param span
    */
@@ -243,7 +243,6 @@ public class WalkerState {
    * 
    * @param index
    * @param dayOfWeek
-   * @param month
    */
   public void setDayOfWeekIndex(String index, String dayOfWeek) {
     int indexInt = Integer.parseInt(index);
@@ -332,7 +331,7 @@ public class WalkerState {
    *     
    * @param amPm the meridian indicator to use.  Must be either 'am' or 'pm'
    * 
-   * @param zone the time zone to use in one of two formats:
+   * @param zoneString the time zone to use in one of two formats:
    *     - zoneinfo format (America/New_York, America/Los_Angeles, etc)
    *     - GMT offset (+05:00, -0500, +5, etc)
    */
@@ -491,7 +490,7 @@ public class WalkerState {
   /**
    *  Resets the calendar
    */
-  private void resetCalender() {
+  private void resetCalendar() {
     _calendar = getCalendar();
     if (_defaultTimeZone != null) {
       _calendar.setTimeZone(_defaultTimeZone);
@@ -511,13 +510,13 @@ public class WalkerState {
         int hours = _calendar.get(Calendar.HOUR_OF_DAY);
         int minutes = _calendar.get(Calendar.MINUTE);
         int seconds = _calendar.get(Calendar.SECOND);
-        resetCalender();
+        resetCalendar();
         _calendar.set(Calendar.HOUR_OF_DAY, hours);
         _calendar.set(Calendar.MINUTE, minutes);
         _calendar.set(Calendar.SECOND, seconds);
       }
       else {
-        resetCalender();
+        resetCalendar();
       }
       _firstDateInvocationInGroup = false;
     }
