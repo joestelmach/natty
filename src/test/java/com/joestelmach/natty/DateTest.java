@@ -3,6 +3,7 @@ package com.joestelmach.natty;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map.Entry;
@@ -239,6 +240,28 @@ public class DateTest extends AbstractTest {
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);
+  }
+
+  // https://github.com/joestelmach/natty/issues/38
+  @Test
+  public void testRelativeDateDifferentTimezone() {
+    // Prepare
+    TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
+    Parser parser = new Parser(TimeZone.getTimeZone("US/Pacific"));
+    // 2012, June 3, Sunday, 1 a.m. in US/Eastern GMT -4
+    // Same time as
+    // 2012, June 2, Saturday, 10 p.m. in US/Mountaint GMT -7
+    Calendar earlySunday = new GregorianCalendar(2012, 5, 3, 1, 0);
+    CalendarSource.setBaseDate(earlySunday.getTime());
+
+    // Run
+    Date result = parser.parse("Sunday at 10am").get(0).getDates().get(0);
+
+    // Validate
+    // Result should be June 3, 2012
+    validateDate(result, 6, 3, 2012);
+
+    TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
   }
   
   public static void main(String[] args) {
