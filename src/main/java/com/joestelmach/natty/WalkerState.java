@@ -67,6 +67,7 @@ public class WalkerState {
   
   public void setDefaultTimeZone(final TimeZone zone) {
     _defaultTimeZone = zone;
+    resetCalender();
   }
   
   /**
@@ -492,6 +493,9 @@ public class WalkerState {
    */
   private void resetCalender() {
     _calendar = getCalendar();
+    if (_defaultTimeZone != null) {
+      _calendar.setTimeZone(_defaultTimeZone);
+    }
     _currentYear = _calendar.get(Calendar.YEAR);
   }
   
