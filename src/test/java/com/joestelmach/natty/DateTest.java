@@ -250,7 +250,7 @@ public class DateTest extends AbstractTest {
     Parser parser = new Parser(TimeZone.getTimeZone("US/Pacific"));
     // 2012, June 3, Sunday, 1 a.m. in US/Eastern GMT -4
     // Same time as
-    // 2012, June 2, Saturday, 10 p.m. in US/Mountaint GMT -7
+    // 2012, June 2, Saturday, 10 p.m. in US/Pacific GMT -7
     Calendar earlySunday = new GregorianCalendar(2012, 5, 3, 1, 0);
     CalendarSource.setBaseDate(earlySunday.getTime());
 
