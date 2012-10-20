@@ -1,5 +1,6 @@
 package com.joestelmach.natty;
 
+import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,14 +18,16 @@ public class DateGroup {
   private int _line;
   private int _position;
   private boolean _isRecurring;
+  private boolean _isTimeInferred;
   private Date _recurringUntil;
   private Map<String, List<ParseLocation>> _parseLocations;
   private Tree _syntaxTree;
 
   public DateGroup() {
     _dates = new ArrayList<Date>();
+    _isTimeInferred = true;
   }
-  
+
   public List<Date> getDates() {
     return _dates;
   }
@@ -58,6 +61,17 @@ public class DateGroup {
   }
   public void setRecurring(boolean isRecurring) {
     _isRecurring = isRecurring;
+  }
+  
+  /**
+   * @return true if the time information in this date group has been inferred
+   * as opposed to being explicity defined in the _text input.
+   */
+  public boolean isTimeInferred() {
+    return _isTimeInferred;
+  }
+  public void setIsTimeInferred(boolean isTimeInferred) {
+    this._isTimeInferred = isTimeInferred;
   }
   
   public Date getRecursUntil() {

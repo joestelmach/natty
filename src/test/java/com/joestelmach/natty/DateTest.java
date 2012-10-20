@@ -274,7 +274,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "June 25th and July 2nd at 10am and August 16th";
+    String value = "Jan 5th at 10pm to Jan 7th";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
@@ -284,6 +284,7 @@ public class DateTest extends AbstractTest {
       System.out.println("line: " + group.getLine() + ", column: " + group.getPosition());
       System.out.println(group.getText());
       System.out.println(group.getDates());
+      System.out.println("is time inferred: " + group.isTimeInferred());
       System.out.println("is recurring: " + group.isRecurring());
       System.out.println("recurs until: " + group.getRecursUntil());
       
