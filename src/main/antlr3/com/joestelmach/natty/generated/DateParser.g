@@ -329,6 +329,9 @@ formal_date
   // year last: 1/02/1980, 2/28/79.  2 or 4 digit year is acceptable 
   | relaxed_day_of_week? formal_month_of_year formal_date_separator formal_day_of_month (formal_date_separator formal_year)?
       -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year?)
+      
+  | relaxed_month WHITE_SPACE relaxed_year
+      -> ^(EXPLICIT_DATE relaxed_month ^(DAY_OF_MONTH INT["1"]) relaxed_year?)
   ;
   
 formal_month_of_year
