@@ -527,6 +527,7 @@ public class WalkerState {
    */
   private void markTimeInvocation() {
     _timeGivenInGroup = true;
+    _dateGroup.setIsTimeInferred(false);
   }
   
   private Map<Integer, Date> getDatesForHoliday(int startYear, int endYear, Holiday holiday) {
