@@ -75,28 +75,44 @@ public class Parser {
       DateGroup group = singleParse(stream);
       while((group == null || group.getDates().size() == 0) && tokens.size() > 0) {
         if(group == null || group.getDates().size() == 0) {
+          
           // if we're down to only two tokens in our token stream, we can't continue
           if(tokens.size() <= 2) {
             tokens.clear();
           }
         
-          // otherwise, we look at the token stream for another possible starting point, 
-          // and attempt to re-parse with that sub-sequence of tokens
+          // otherwise, we have two options:
           else {
-            tokens = tokens.subList(2, tokens.size());
-            Iterator<Token> iter = tokens.iterator();
-            while(iter.hasNext()) {
-              Token token = iter.next();
-              if(!DateParser.FOLLOW_empty_in_parse181.member(token.getType())) {
-                iter.remove();
-              }
-              else {
-                break;
-              }
+            
+            // 1. Continuously remove tokens from the end of the stream and re-parse.  This will
+            //    recover from the case of an extaneous token at the end of the token stream.
+            //    For example: 'june 20th on'
+            List<Token> endRemovedTokens = new ArrayList<Token>(tokens);
+            while((group == null || group.getDates().isEmpty()) && !endRemovedTokens.isEmpty()) {
+              endRemovedTokens = endRemovedTokens.subList(0, endRemovedTokens.size() - 1);
+              cleanupGroup(endRemovedTokens);
+              TokenStream newStream = new CommonTokenStream(new NattyTokenSource(endRemovedTokens));
+              group = singleParse(newStream);
             }
-            cleanupGroup(tokens);
-            TokenStream newStream = new CommonTokenStream(new NattyTokenSource(tokens));
-            group = singleParse(newStream);
+            
+            // 2. Continuously look for another possible starting point in the token 
+            //    stream and re-parse.
+            if(group == null || group.getDates().isEmpty()) {
+              tokens = tokens.subList(2, tokens.size());
+              Iterator<Token> iter = tokens.iterator();
+              while(iter.hasNext()) {
+                Token token = iter.next();
+                if(!DateParser.FOLLOW_empty_in_parse181.member(token.getType())) {
+                  iter.remove();
+                }
+                else {
+                  break;
+                }
+              }
+              cleanupGroup(tokens);
+              TokenStream newStream = new CommonTokenStream(new NattyTokenSource(tokens));
+              group = singleParse(newStream);
+            }
           }
         }
       }

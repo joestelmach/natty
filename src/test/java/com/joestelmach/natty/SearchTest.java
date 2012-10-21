@@ -222,5 +222,23 @@ public class SearchTest extends AbstractTest {
     Assert.assertEquals(1, dates.size());
     validateDateTime(dates.get(0), 2, 20, 2011, 20, 0, 0); 
     
+    groups = parser.parse("Watch School Spirits on June 20 on syfy channel");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 6, 20, 2011);
+    
+    groups = parser.parse("Watch School Spirits on June 20 on");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 6, 20, 2011);
+    
+    groups = parser.parse("Watch School Spirits on June 20");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 6, 20, 2011);
+    
   }
 }
