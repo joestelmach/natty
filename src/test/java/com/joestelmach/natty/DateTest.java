@@ -274,7 +274,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
     
-    String value = "Watch School Spirits on June 20 on syfy channel";
+    String value = "next fall";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

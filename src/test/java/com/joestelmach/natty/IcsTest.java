@@ -9,13 +9,25 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 
-public class HolidayTest extends AbstractTest {
+public class IcsTest extends AbstractTest {
    
   @BeforeClass
   public static void oneTime() {
     Locale.setDefault(Locale.US);
     TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
     initCalendarAndParser();
+  }
+  
+  @Test
+  public void testUpcomingSeason() throws Exception {
+    Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("5/05/2011");
+    CalendarSource.setBaseDate(reference);
+    
+    validateDate("spring", 3, 20, 2012);
+    validateDate("summer", 6, 21, 2011);
+    validateDate("fall", 9, 23, 2011);
+    validateDate("autumn", 9, 23, 2011);
+    validateDate("winter", 12, 22, 2011);
   }
   
   @Test
@@ -63,6 +75,25 @@ public class HolidayTest extends AbstractTest {
   }
   
   @Test
+  public void testSeasonsByYear() throws Exception {
+    Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("11/05/2011");
+    CalendarSource.setBaseDate(reference);
+    
+    validateDate("spring 2010", 3, 20, 2010);
+    validateDate("spring 2018", 3, 20, 2018);
+    
+    validateDate("summer 2012", 6, 20, 2012);
+    validateDate("summer 2015", 6, 21, 2015);
+    
+    validateDate("fall 2011", 9, 23, 2011);
+    validateDate("fall 2012", 9, 22, 2012);
+    validateDate("autumn 2016", 9, 22, 2016);
+    
+    validateDate("winter 2016", 12, 21, 2016);
+    validateDate("winter 2011", 12, 22, 2011);
+  }
+  
+  @Test
   public void testHolidaysByYear() throws Exception {
     Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("11/05/2011");
     CalendarSource.setBaseDate(reference);
@@ -104,5 +135,15 @@ public class HolidayTest extends AbstractTest {
     
     validateDate("four days before veterans day 2013", 11, 7, 2013);
     validateDate("two days after two thanksgivings from now", 11, 24, 2012);
+  }
+  
+  @Test
+  public void testSeasonsWithModifiers() throws Exception {
+    Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("11/05/2011");
+    CalendarSource.setBaseDate(reference);
+    
+    validateDate("four days before fall 2013", 9, 18, 2013);
+    validateDate("two days after two summers from now", 6, 23, 2013);
+    validateDate("three summers ago", 6, 21, 2009);
   }
 }

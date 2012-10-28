@@ -311,6 +311,14 @@ VALENTINE    : 'valentine' SINGLE_QUOTE? 's'?;
 VETERAN      : 'veteran' SINGLE_QUOTE? 's'?;
 fragment GROUND : 'ground';
 fragment HOG    : 'hog';
+
+// ********** season specific **********
+
+WINTER : 'winter' 's'?;
+FALL   : 'fall'   's'?;
+AUTUMN : 'autumn' 's'?;
+SPRING : 'spring' 's'?;
+SUMMER : 'summer' 's'?;
   
 UNKNOWN
   : UNKNOWN_CHAR
