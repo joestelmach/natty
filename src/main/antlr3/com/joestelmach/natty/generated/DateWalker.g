@@ -99,6 +99,9 @@ seek
     
   | ^(SEEK DIRECTION SEEK_BY INT HOLIDAY)
     {_walkerState.seekToHoliday($HOLIDAY.text, $DIRECTION.text, $INT.text);}
+    
+  | ^(SEEK DIRECTION SEEK_BY INT SEASON)
+    {_walkerState.seekToSeason($SEASON.text, $DIRECTION.text, $INT.text);}
   ;
   
 explicit_seek
@@ -119,6 +122,9 @@ explicit_seek
     
   | ^(EXPLICIT_SEEK HOLIDAY ^(YEAR_OF year=INT))
     {_walkerState.seekToHolidayYear($HOLIDAY.text, $year.text);}
+    
+  | ^(EXPLICIT_SEEK SEASON ^(YEAR_OF year=INT))
+    {_walkerState.seekToSeasonYear($SEASON.text, $year.text);}
     
   | ^(EXPLICIT_SEEK index=INT ^(DAY_OF_WEEK day=INT))
     {_walkerState.setDayOfWeekIndex($index.text, $day.text);}

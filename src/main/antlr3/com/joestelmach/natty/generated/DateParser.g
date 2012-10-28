@@ -33,6 +33,7 @@ tokens {
   ZONE_OFFSET;
   RECURRENCE;
   HOLIDAY;
+  SEASON;
 }
 
 @header {
@@ -390,6 +391,10 @@ relative_date
   // next christmas, 2 thanksgivings ago
   | holiday
     -> ^(RELATIVE_DATE holiday)
+    
+  // next fall, 2 summers from now
+  | season 
+    -> ^(RELATIVE_DATE season)
   ;
   
 // ********** explicit relative date rules **********
@@ -738,6 +743,30 @@ holiday_name
     -> HOLIDAY["VETERANS_DAY"]
   ;
   
+season
+  : spelled_or_int_optional_prefix WHITE_SPACE season_name WHITE_SPACE relative_date_suffix
+    -> ^(SEEK relative_date_suffix spelled_or_int_optional_prefix season_name)
+    
+  | relative_date_prefix WHITE_SPACE season_name 
+    -> ^(SEEK relative_date_prefix season_name)
+    
+  | season_name relaxed_year_prefix relaxed_year
+    -> ^(EXPLICIT_SEEK season_name relaxed_year)
+    
+  | season_name
+    -> ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["1"] season_name)
+  ;
+  
+season_name
+  :WINTER
+    -> SEASON["WINTER"]
+  | SPRING 
+    -> SEASON["SPRING"]
+  | SUMMER 
+    -> SEASON["SUMMER"]
+  | (FALL | AUTUMN)
+    -> SEASON["FALL"]
+  ;
   
 // ********** time rules **********
 
