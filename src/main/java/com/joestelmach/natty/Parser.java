@@ -98,7 +98,7 @@ public class Parser {
             // 2. Continuously look for another possible starting point in the token 
             //    stream and re-parse.
             if(group == null || group.getDates().isEmpty()) {
-              tokens = tokens.subList(2, tokens.size());
+              tokens = tokens.subList(1, tokens.size());
               Iterator<Token> iter = tokens.iterator();
               while(iter.hasNext()) {
                 Token token = iter.next();

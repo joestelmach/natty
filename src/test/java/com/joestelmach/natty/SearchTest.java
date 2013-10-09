@@ -240,5 +240,36 @@ public class SearchTest extends AbstractTest {
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 6, 20, 2011);
     
+    groups = parser.parse("hillary clinton sep 13, 2013");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 9, 13, 2013);
+    Assert.assertEquals(16, groups.get(0).getPosition());
+    Assert.assertEquals("sep 13, 2013", groups.get(0).getText());
+    
+    groups = parser.parse("hillary clinton 9/13/2013");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 9, 13, 2013);
+    Assert.assertEquals(16, groups.get(0).getPosition());
+    Assert.assertEquals("9/13/2013", groups.get(0).getText());
+    
+    groups = parser.parse("hillary clintoo sep 13, 2013");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 9, 13, 2013);
+    Assert.assertEquals(16, groups.get(0).getPosition());
+    Assert.assertEquals("sep 13, 2013", groups.get(0).getText());
+    
+    groups = parser.parse("clinton sep 13 2013");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 9, 13, 2013);
+    Assert.assertEquals(8, groups.get(0).getPosition());
+    Assert.assertEquals("sep 13 2013", groups.get(0).getText());
   }
 }
