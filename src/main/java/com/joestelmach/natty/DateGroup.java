@@ -1,6 +1,5 @@
 package com.joestelmach.natty;
 
-import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

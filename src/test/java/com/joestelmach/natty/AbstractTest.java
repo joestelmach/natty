@@ -2,16 +2,10 @@ package com.joestelmach.natty;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.TimeZone;
 
 import org.junit.Assert;
 import org.junit.Before;
-
-import com.joestelmach.natty.CalendarSource;
-import com.joestelmach.natty.Parser;
-import org.junit.BeforeClass;
 
 /**
  * 
