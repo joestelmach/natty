@@ -239,6 +239,12 @@ ST : 'st';
 ND : 'nd';
 RD : 'rd';
 TH : 'th';
+
+// ********** foreign language support *********   
+
+CHINESE_YEAR  : '\u5E74';
+CHINESE_MONTH : '\u6708';
+CHINESE_DAY   : '\u65E5';
    
 // ********** common rules **********
 
