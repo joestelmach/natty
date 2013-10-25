@@ -335,9 +335,8 @@ formal_date
       -> ^(EXPLICIT_DATE relaxed_month ^(DAY_OF_MONTH INT["1"]) relaxed_year?)
   
   // chinese/japanese, year first: 1979Y02M22D, 2 or 4 digit year is acceptable
-  | relaxed_day_of_week? formal_year CHINESE_YEAR formal_month_of_year CHINESE_MONTH formal_day_of_month 
+  | relaxed_day_of_week? formal_year CHINESE_YEAR formal_month_of_year CHINESE_MONTH formal_day_of_month CHINESE_DAY 
       -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year)
-
   ;
   
 formal_month_of_year
