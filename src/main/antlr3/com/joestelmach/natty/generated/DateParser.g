@@ -836,13 +836,17 @@ named_time
   ;
   
 time_zone
-  : time_zone_abbreviation
-  | time_zone_offset
+  : time_zone_plus_offset
+  | time_zone_abbreviation
   ;
   
+time_zone_plus_offset
+  : UTC? time_zone_offset -> ZONE_OFFSET[$time_zone_offset.text]
+  ;
+
+
 time_zone_offset
   : (PLUS | DASH) hours (COLON? minutes)? 
-      -> ZONE_OFFSET[$time_zone_offset.text]
   ;
       
 time_zone_abbreviation
