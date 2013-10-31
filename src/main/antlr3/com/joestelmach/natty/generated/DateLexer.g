@@ -242,9 +242,9 @@ TH : 'th';
 
 // ********** foreign language support *********   
 
-CJK_YEAR  : '\u5E74';
-CJK_MONTH : '\u6708';
-CJK_DAY   : '\u65E5';
+CJK_YEAR  : '\u5E74' | '\uB144' ;
+CJK_MONTH : '\u6708' | '\uC6D4' ;
+CJK_DAY   : '\u65E5' | '\uC77C' ;
    
 // ********** common rules **********
 

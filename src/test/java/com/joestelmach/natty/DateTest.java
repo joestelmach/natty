@@ -42,6 +42,7 @@ public class DateTest extends AbstractTest {
     validateDate("feb 1979", 2, 1, 1979);
     validateDate("jan '80", 1, 1, 1980);
     validateDate("1980年3月19日", 3, 19, 1980);
+    validateDate("1980년3월19일", 3, 19, 1980);
   }
   
   @Test

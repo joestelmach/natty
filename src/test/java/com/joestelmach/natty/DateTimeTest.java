@@ -44,9 +44,11 @@ public class DateTimeTest extends AbstractTest {
     validateDateTime("April 20 10", 4, 20, 2012, 10, 0, 0);
     validateDateTime("April 20 at 10 am", 4, 20, 2012, 10, 0, 0);
     validateDateTime("1980年3月19日 13:00", 3, 19, 1980, 13, 0, 0);
+    validateDateTime("1980년3월19일 13:00", 3, 19, 1980, 13, 0, 0);
     validateDateTime("5/1/13 01:00:00-8", 5, 1, 2013, 5, 0, 0);
     validateDateTime("5/1/13 01:00:00 UTC", 4, 30, 2013, 21, 0, 0);
     validateDateTime("5/1/13 01:00:00 UTC+8", 4, 30, 2013, 13, 0, 0);
+    validateDateTime("5/1/13 01:00:00 UTC+4:30", 4, 30, 2013, 16, 30, 0);
     validateDateTime("5/1/13 01:00:00 GMT-1", 4, 30, 2013, 22, 0, 0);
   }
   
