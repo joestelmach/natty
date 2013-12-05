@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
+import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -71,7 +73,7 @@ public class Parser {
     // and parse each of them
     List<DateGroup> groups = new ArrayList<DateGroup>();
     for(TokenStream stream:streams) {
-    List<Token> tokens = ((NattyTokenSource) stream.getTokenSource()).getTokens();
+      List<Token> tokens = ((NattyTokenSource) stream.getTokenSource()).getTokens();
       DateGroup group = singleParse(stream);
       while((group == null || group.getDates().size() == 0) && tokens.size() > 0) {
         if(group == null || group.getDates().size() == 0) {
@@ -88,7 +90,7 @@ public class Parser {
             //    recover from the case of an extaneous token at the end of the token stream.
             //    For example: 'june 20th on'
             List<Token> endRemovedTokens = new ArrayList<Token>(tokens);
-            while((group == null || group.getDates().isEmpty()) && !endRemovedTokens.isEmpty()) {
+            while((group == null || group.getDates().isEmpty()) && endRemovedTokens.size() > 2) {
               endRemovedTokens = endRemovedTokens.subList(0, endRemovedTokens.size() - 1);
               cleanupGroup(endRemovedTokens);
               TokenStream newStream = new CommonTokenStream(new NattyTokenSource(endRemovedTokens));
@@ -133,14 +135,17 @@ public class Parser {
    * @return
    */
   private DateGroup singleParse(TokenStream stream) {
+	DateGroup group = null;
+	List<Token> tokens = ((NattyTokenSource) stream.getTokenSource()).getTokens();
+	if(tokens.isEmpty()) return group;
+		
     StringBuilder tokenString = new StringBuilder();
-    for(Token token:((NattyTokenSource) stream.getTokenSource()).getTokens()) {
+    for(Token token:tokens) {
       tokenString.append(DateParser.tokenNames[token.getType()]);
       tokenString.append(" ");
     }
     _logger.fine("sub-token stream: " + tokenString.toString());
     
-    DateGroup group = null;
     try {
       // parse 
       ParseListener listener = new ParseListener();
@@ -209,7 +214,7 @@ public class Parser {
         // ignore white space in-between possible rules
         if(currentToken.getType() != DateLexer.WHITE_SPACE) {
           // if the token is a possible date start token, we start a new collection
-          if(DateParser.FOLLOW_empty_in_parse186.member(currentToken.getType())) {
+          if(DateParser.FOLLOW_empty_in_parse186.member(currentToken.getType()) || currentToken.getType() == DateLexer.UNKNOWN) {
             currentGroup = new ArrayList<Token>();
             currentGroup.add(currentToken);
           }
@@ -225,6 +230,7 @@ public class Parser {
           // if this is an unknown token, we need to end the current group
           if(currentToken.getType() == DateLexer.UNKNOWN) {
             if(currentGroup.size() > 0) {
+              currentGroup.add(currentToken);
               cleanupGroup(currentGroup);
               groups.add(new CommonTokenStream(new NattyTokenSource(currentGroup)));
             }
@@ -254,7 +260,7 @@ public class Parser {
    */
   private void cleanupGroup(List<Token> group) {
     
-    // remove contiguous white space
+	// remove contiguous white space
     Iterator<Token> iter = group.iterator();
     Token previousToken = null;
     while(iter.hasNext()) {
@@ -269,17 +275,41 @@ public class Parser {
     
     // remove leading white space
     if(group.size() > 0) {
-      Token firstToken = group.get(0);
-      if(firstToken.getType() == DateParser.WHITE_SPACE) {
-        group.remove(firstToken);
+      boolean skip = false;
+      Iterator<Token> it1 = group.iterator();
+      while(it1.hasNext()) {
+    	  Token tk = it1.next();
+    	  if(tk.getType() == DateParser.WHITE_SPACE) {
+    		  it1.remove();
+    		  skip = false;
+    	  } else if(tk.getType() == DateParser.UNKNOWN) {
+    		  it1.remove();
+    		  skip = true;
+    	  } else if(skip) {
+    		  it1.remove();
+    	  } else if(!DateParser.FOLLOW_empty_in_parse186.member(tk.getType())) {
+    		  it1.remove();
+    	  } else break;
       }
     }
     
     // and trailing white space
     if(group.size() > 0) {
-      Token lastToken = group.get(group.size() - 1);
-      if(lastToken.getType() == DateParser.WHITE_SPACE) {
-        group.remove(lastToken);
+      boolean skip = false;
+      while(group.size() > 0) {
+    	  Token lastToken = group.get(group.size() - 1);
+    	  if(lastToken.getType() == DateParser.WHITE_SPACE) {
+    		  group.remove(lastToken);
+    		  skip = false;
+    	  }
+    	  else if(lastToken.getType() == DateParser.UNKNOWN) {
+    		  group.remove(lastToken);
+    		  skip = true;
+    	  }
+    	  else if(skip) {
+    		  group.remove(lastToken);
+    	  }
+    	  else break;
       }
     }
   }
