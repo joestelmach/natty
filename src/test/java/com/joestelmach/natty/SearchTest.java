@@ -199,11 +199,8 @@ public class SearchTest extends AbstractTest {
     validateDate(dates.get(0), 2, 20, 2011); 
     
     groups = parser.parse("save $1000 by September");
-    Assert.assertEquals(2, groups.size());
+    Assert.assertEquals(1, groups.size());
     dates = groups.get(0).getDates();
-    Assert.assertEquals(1, dates.size());
-    validateDateTime(dates.get(0), 2, 20, 2011, 10, 0, 0); 
-    dates = groups.get(1).getDates();
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 9, 1, 2011); 
     
@@ -271,5 +268,20 @@ public class SearchTest extends AbstractTest {
     validateDate(dates.get(0), 9, 13, 2013);
     Assert.assertEquals(8, groups.get(0).getPosition());
     Assert.assertEquals("sep 13 2013", groups.get(0).getText());
+    
+    groups = parser.parse("wedding dinner with Pam");
+    Assert.assertEquals(0, groups.size());
+    
+    groups = parser.parse("yummy fried chicken");
+    Assert.assertEquals(0, groups.size());
+    
+    groups = parser.parse("I am friend with Pam");
+    Assert.assertEquals(0, groups.size());
+    
+    groups = parser.parse("bfriday blah blah");
+    Assert.assertEquals(0, groups.size());
+    
+    groups = parser.parse("dinner bmong friends");
+    Assert.assertEquals(0, groups.size());
   }
 }
