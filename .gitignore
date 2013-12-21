@@ -1,8 +1,6 @@
 .classpath
 .settings
 .project
-.idea
-*.iml
 bin
 target
 src/main/java/com/joestelmach/natty/generated/*
