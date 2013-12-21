@@ -420,7 +420,19 @@ explicit_relative_date
       -> ^(RELATIVE_DATE 
           ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["2"] SPAN["month"])
           explicit_day_of_month_part)
-          
+
+  // monday after next
+  | (explicit_day_of_week_part WHITE_SPACE AFTER WHITE_SPACE NEXT)
+      -> ^(RELATIVE_DATE
+          ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["2"] SPAN["week"])
+          explicit_day_of_week_part)
+
+  // saturday before last
+  | (explicit_day_of_week_part WHITE_SPACE BEFORE WHITE_SPACE LAST)
+      -> ^(RELATIVE_DATE
+          ^(SEEK DIRECTION["<"] SEEK_BY["by_day"] INT["2"] SPAN["week"])
+          explicit_day_of_week_part)
+
   // monday of last week, tuesday of next week
   | (explicit_day_of_week_part WHITE_SPACE prefix WHITE_SPACE WEEK)=>
       explicit_day_of_week_part WHITE_SPACE prefix WHITE_SPACE WEEK
