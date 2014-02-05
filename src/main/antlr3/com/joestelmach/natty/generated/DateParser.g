@@ -333,6 +333,10 @@ formal_date
       
   | relaxed_month WHITE_SPACE relaxed_year
       -> ^(EXPLICIT_DATE relaxed_month ^(DAY_OF_MONTH INT["1"]) relaxed_year?)
+  
+  // chinese/japanese, year first: 1979Y02M22D, 2 or 4 digit year is acceptable
+  | relaxed_day_of_week? formal_year CJK_YEAR formal_month_of_year CJK_MONTH formal_day_of_month CJK_DAY 
+      -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year)
   ;
   
 formal_month_of_year
@@ -844,13 +848,17 @@ named_time
   ;
   
 time_zone
-  : time_zone_abbreviation
-  | time_zone_offset
+  : time_zone_plus_offset
+  | time_zone_abbreviation
   ;
   
+time_zone_plus_offset
+  : UTC? time_zone_offset -> ZONE_OFFSET[$time_zone_offset.text]
+  ;
+
+
 time_zone_offset
   : (PLUS | DASH) hours (COLON? minutes)? 
-      -> ZONE_OFFSET[$time_zone_offset.text]
   ;
       
 time_zone_abbreviation
