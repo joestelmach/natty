@@ -1,21 +1,15 @@
 package com.joestelmach.natty;
 
+import junit.framework.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import java.text.DateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.TimeZone;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import junit.framework.Assert;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 /**
  * Runs the parser through the various date formats 
@@ -116,6 +110,11 @@ public class DateTest extends AbstractTest {
     validateDate("in a week", 3, 7, 2011);
     validateDate("the saturday after next", 3, 19, 2011);
     validateDate("tuesday before last", 2, 15, 2011);
+    validateDate("a week from now", 3, 7, 2011);
+    validateDate("a month from today", 3, 28, 2011);
+    validateDate("a week after this friday", 3, 11, 2011);
+    validateDate("a week from this friday", 3, 11, 2011);
+    validateDate("two weeks from this friday", 3, 18, 2011);
   }
   
   @Test
@@ -245,6 +244,7 @@ public class DateTest extends AbstractTest {
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);
+
   }
 
   // https://github.com/joestelmach/natty/issues/38
@@ -275,8 +275,8 @@ public class DateTest extends AbstractTest {
     Logger logger = Logger.getLogger("com.joestelmach.natty");
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
-    
-    String value = "the saturday after next";
+
+    String value = "a week from this friday";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

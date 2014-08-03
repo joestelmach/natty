@@ -221,7 +221,10 @@ global_date_prefix
   // 2 weeks before
   | spelled_or_int_optional_prefix WHITE_SPACE WEEK WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_week"] spelled_or_int_optional_prefix
-      
+
+  | WEEK WHITE_SPACE prefix_direction
+      -> prefix_direction SEEK_BY["by_week"] INT["1"]
+
   // 6 months before
   | spelled_or_int_optional_prefix WHITE_SPACE MONTH WHITE_SPACE prefix_direction
       -> prefix_direction SEEK_BY["by_month"] spelled_or_int_optional_prefix
@@ -243,7 +246,7 @@ global_date_prefix
   ; 
   
 prefix_direction
-  : AFTER  -> DIRECTION[">"]
+  : (AFTER | FROM) -> DIRECTION[">"]
   | BEFORE -> DIRECTION["<"]
   ;
   
@@ -378,9 +381,13 @@ relative_date
       -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["0"] relaxed_month))
       
   // one month from now
-  | spelled_or_int_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_date_suffix 
+  | spelled_or_int_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_date_suffix
       -> ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix relative_target))
-  
+
+  // a month from now
+  | relative_target WHITE_SPACE relative_date_suffix
+      -> ^(RELATIVE_DATE ^(SEEK relative_date_suffix INT["1"] relative_target))
+
   // the week after next
   | (THE WHITE_SPACE)? relative_date_span WHITE_SPACE AFTER WHITE_SPACE NEXT
       -> ^(RELATIVE_DATE ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["2"] relative_date_span))
@@ -563,7 +570,7 @@ relative_occurrence_index
   ;
   
 relative_target
-  : day_of_week 
+  : day_of_week
   | relaxed_month
   | relative_date_span
   ;
