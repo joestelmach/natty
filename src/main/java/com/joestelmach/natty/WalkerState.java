@@ -1,10 +1,6 @@
 package com.joestelmach.natty;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Map;
-import java.util.TimeZone;
+import java.util.*;
 import java.util.logging.Logger;
 
 /**
@@ -41,7 +37,8 @@ public class WalkerState {
   private int _currentYear;
   private boolean _firstDateInvocationInGroup = true;
   private boolean _timeGivenInGroup = false;
-  
+  private boolean _dateGivenInGroup = false;
+  private boolean _updatePreviousDates = false;
   private DateGroup _dateGroup;
   
   /**
@@ -436,6 +433,23 @@ public class WalkerState {
    * 
    */
   public void captureDateTime() {
+    // if other dates have already been added to the date group, we'll
+    // update their date portion to match this one
+    if(_updatePreviousDates) {
+      List<Date> dates = _dateGroup.getDates();
+      if (!dates.isEmpty()) {
+        for (Date date : dates) {
+          Calendar calendar = getCalendar();
+          calendar.setTime(date);
+          for (int field : new int[] { Calendar.DAY_OF_MONTH, Calendar.MONTH, Calendar.YEAR }) {
+            calendar.set(field, _calendar.get(field));
+          }
+          date.setTime(calendar.getTimeInMillis());
+        }
+      }
+      _updatePreviousDates = false;
+    }
+
     Date date = _calendar.getTime();
     if(_dateGroup.isRecurring()) {
       _dateGroup.setRecurringUntil(date);
@@ -528,6 +542,10 @@ public class WalkerState {
    * rule is captured
    */
   private void markDateInvocation() {
+
+    _updatePreviousDates = !_dateGivenInGroup;
+    _dateGivenInGroup = true;
+
     if(_firstDateInvocationInGroup) {
       // if a time has been given within the current date group, 
       // we capture the current time before resetting the calendar
