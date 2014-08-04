@@ -330,4 +330,4 @@ fragment UNKNOWN_CHAR
   
 fragment DIGIT : '0'..'9';
   
-fragment SPACE : ' ' | '\t' | '\n' | '\r' ;
+fragment SPACE : ' ' | '\t' | '\n' | '\r' | '\u00A0';
