@@ -35,6 +35,9 @@ public class DateTest extends AbstractTest {
     validateDate("in october 2006", 10, 1, 2006);
     validateDate("feb 1979", 2, 1, 1979);
     validateDate("jan '80", 1, 1, 1980);
+    validateDate("2006-Jun-16", 6, 16, 2006);
+    validateDate("28-Feb-2010", 2, 28, 2010);
+    validateDate("9-Apr", 4, 9, Calendar.getInstance().get(Calendar.YEAR));
   }
   
   @Test
@@ -277,7 +280,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
 
-    String value = "A week on tuesday";
+    String value = "05-Aug-2013 14:10:56 UTC";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

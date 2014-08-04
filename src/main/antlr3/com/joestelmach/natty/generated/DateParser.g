@@ -327,13 +327,17 @@ relaxed_year_prefix
 
 formal_date
   // year first: 1979-02-28, 1980/01/02, etc.  full 4 digit year required to match
-  : relaxed_day_of_week? formal_year_four_digits formal_date_separator formal_month_of_year formal_date_separator formal_day_of_month
-      -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year_four_digits)
+  : relaxed_day_of_week? formal_year_four_digits formal_date_separator (formal_month_of_year | relaxed_month) formal_date_separator formal_day_of_month
+      -> ^(EXPLICIT_DATE formal_month_of_year? relaxed_month? formal_day_of_month relaxed_day_of_week? formal_year_four_digits)
       
   // year last: 1/02/1980, 2/28/79.  2 or 4 digit year is acceptable 
   | relaxed_day_of_week? formal_month_of_year formal_date_separator formal_day_of_month (formal_date_separator formal_year)?
       -> ^(EXPLICIT_DATE formal_month_of_year formal_day_of_month relaxed_day_of_week? formal_year?)
-      
+
+  // 15-Apr-2014
+  | formal_day_of_month formal_date_separator relaxed_month (formal_date_separator formal_year_four_digits)?
+      -> ^(EXPLICIT_DATE relaxed_month formal_day_of_month formal_year_four_digits?)
+
   | relaxed_month WHITE_SPACE relaxed_year
       -> ^(EXPLICIT_DATE relaxed_month ^(DAY_OF_MONTH INT["1"]) relaxed_year?)
   ;
