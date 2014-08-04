@@ -116,6 +116,7 @@ public class DateTest extends AbstractTest {
     validateDate("a week from this friday", 3, 11, 2011);
     validateDate("two weeks from this friday", 3, 18, 2011);
     validateDate("It's gonna snow! How about skiing tomorrow", 3, 1, 2011);
+    validateDate("A week on tuesday", 3, 8, 2011);
   }
   
   @Test
@@ -245,7 +246,6 @@ public class DateTest extends AbstractTest {
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);
-
   }
 
   // https://github.com/joestelmach/natty/issues/38
@@ -277,7 +277,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
 
-    String value = "Acknowledged. Let's meet at 9pm.";
+    String value = "A week on tuesday";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
