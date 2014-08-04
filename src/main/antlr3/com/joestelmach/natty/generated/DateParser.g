@@ -246,7 +246,7 @@ global_date_prefix
   ; 
   
 prefix_direction
-  : (AFTER | FROM) -> DIRECTION[">"]
+  : (AFTER | FROM | ON) -> DIRECTION[">"]
   | BEFORE -> DIRECTION["<"]
   ;
   
