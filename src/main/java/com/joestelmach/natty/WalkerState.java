@@ -143,7 +143,7 @@ public class WalkerState {
    */
   public void seekToYear(String year) {
     int yearInt = Integer.parseInt(year);
-    assert(yearInt > 0 && yearInt < 9999);
+    assert(yearInt >= 0 && yearInt < 9999);
     
     markDateInvocation();
     
