@@ -121,6 +121,9 @@ public class DateTest extends AbstractTest {
     validateDate("two weeks from this friday", 3, 18, 2011);
     validateDate("It's gonna snow! How about skiing tomorrow", 3, 1, 2011);
     validateDate("A week on tuesday", 3, 8, 2011);
+    validateDate("A month ago", 1, 28, 2011);
+    validateDate("A week ago", 2, 21, 2011);
+    validateDate("A year ago", 2, 28, 2010);
   }
   
   @Test
@@ -281,7 +284,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
 
-    String value = "jan 10, '00";
+    String value = "a month ago";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
