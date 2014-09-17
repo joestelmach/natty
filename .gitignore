@@ -2,6 +2,7 @@
 .settings
 .project
 .idea
+.idea/misc.xml
 workspace.xml
 bin
 target

@@ -629,4 +629,19 @@ public class DateGrammarTest extends AbstractGrammarTest {
     assertAST("tommorrow", "(RELATIVE_DATE (SEEK > by_day 1 day))");
     assertAST("yesterday", "(RELATIVE_DATE (SEEK < by_day 1 day))");
   }
+
+  @Test
+  public void date_time_should_parse_YYYY_as_explicit_date() throws Exception {
+    _ruleName = "date_time";
+
+    assertAST("2014", "(DATE_TIME (EXPLICIT_DATE (YEAR_OF 2014)))");
+  }
+
+  @Test
+  public void date_should_parse_YYYY_as_explicit_date() throws Exception {
+    _ruleName = "date";
+
+    assertAST("2014", "(EXPLICIT_DATE (YEAR_OF 2014))");
+  }
+
 }

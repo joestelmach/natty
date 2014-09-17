@@ -13,7 +13,7 @@ import org.junit.Test;
  * @author Joe Stelmach
  */
 public class CPANTest {
-  
+
   @Test
   public void sanityCheck() throws Exception {
     BufferedReader reader = new BufferedReader(new InputStreamReader(

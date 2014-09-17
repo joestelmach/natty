@@ -94,4 +94,5 @@ public class DateGroup {
   public void setSyntaxTree(Tree syntaxTree) {
     _syntaxTree = syntaxTree;
   }
+
 }

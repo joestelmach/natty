@@ -52,6 +52,7 @@ date_time
 date
   : relative_date 
   | explicit_date
+  | explicit_year_only_date
   ;
   
 relative_date
@@ -68,7 +69,12 @@ explicit_date
         (^(DAY_OF_WEEK dow=INT))? (^(YEAR_OF year=INT))?)
     {_walkerState.setExplicitDate($month.text, $dom.text, $dow.text, $year.text);}
   ;
-  
+
+explicit_year_only_date
+  : ^(EXPLICIT_DATE ^(YEAR_OF year=INT))
+    {_walkerState.setExplicitYearOnlyDate($year.text);}
+  ;
+
 time
   : explicit_time
   | relative_time
