@@ -334,6 +334,8 @@ formal_date
 
   | relaxed_month WHITE_SPACE relaxed_year
       -> ^(EXPLICIT_DATE relaxed_month ^(DAY_OF_MONTH INT["1"]) relaxed_year?)
+  | formal_year_four_digits
+      -> ^(EXPLICIT_DATE formal_year_four_digits)
   ;
   
 formal_month_of_year

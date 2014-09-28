@@ -146,11 +146,11 @@ public abstract class AbstractTest {
       int hours, int minutes, int seconds) {
 
     _calendar.setTime(date);
-    Assert.assertEquals(month -1, _calendar.get(Calendar.MONTH));
-    Assert.assertEquals(day, _calendar.get(Calendar.DAY_OF_MONTH));
-    Assert.assertEquals(year, _calendar.get(Calendar.YEAR));
-    Assert.assertEquals(hours, _calendar.get(Calendar.HOUR_OF_DAY));
-    Assert.assertEquals(minutes, _calendar.get(Calendar.MINUTE));
-    Assert.assertEquals(seconds, _calendar.get(Calendar.SECOND));
+    Assert.assertEquals("month", month -1, _calendar.get(Calendar.MONTH));
+    Assert.assertEquals("day of the month", day, _calendar.get(Calendar.DAY_OF_MONTH));
+    Assert.assertEquals("year", year, _calendar.get(Calendar.YEAR));
+    Assert.assertEquals("hour", hours, _calendar.get(Calendar.HOUR_OF_DAY));
+    Assert.assertEquals("minutes", minutes, _calendar.get(Calendar.MINUTE));
+    Assert.assertEquals("seconds", seconds, _calendar.get(Calendar.SECOND));
   }
 }
