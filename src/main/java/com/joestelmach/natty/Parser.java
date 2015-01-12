@@ -2,14 +2,13 @@ package com.joestelmach.natty;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
-import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -28,7 +27,10 @@ import com.joestelmach.natty.generated.TreeRewrite;
  * 
  * @author Joe Stelmach
  */
-public class Parser {
+public class Parser implements Serializable {
+
+  private static final long serialVersionUID = 233282586086252203L;
+
   private TimeZone _defaultTimeZone;
   
   private static final Logger _logger = Logger.getLogger("com.joestelmach.natty");
