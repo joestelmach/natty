@@ -17,6 +17,8 @@ import org.antlr.runtime.TokenStream;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import com.joestelmach.natty.generated.DateLexer;
 import com.joestelmach.natty.generated.DateParser;
@@ -314,5 +316,28 @@ public class Parser implements Serializable {
     	  else break;
       }
     }
+  }
+  
+  @Override
+  public int hashCode() {
+	  // use two randomly chosen prime numbers
+      return new HashCodeBuilder(17, 31).
+          append(_defaultTimeZone).
+          toHashCode();
+  }
+  
+  @Override
+  public boolean equals(Object obj) {
+	  boolean isEqual = false;
+	  
+	  if (obj instanceof Parser) {
+		  Parser other = (Parser) obj;
+		  
+		  isEqual = new EqualsBuilder().
+				  append(_defaultTimeZone, other._defaultTimeZone).
+				  isEquals();
+	  }
+	  
+	  return isEqual;
   }
 }
