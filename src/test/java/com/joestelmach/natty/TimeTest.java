@@ -1,14 +1,14 @@
 package com.joestelmach.natty;
 
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
-
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 /**
  * Runs the parser through the various time formats 
@@ -45,10 +45,12 @@ public class TimeTest extends AbstractTest {
     validateTime("10:00am", 10, 0, 0);
     validateTime("10a", 10, 0, 0);
     validateTime("10am", 10, 0, 0);
+    validateTime("10a_m", 10, 0, 0);
     validateTime("10", 10, 0, 0);
     validateTime("8p", 20, 0, 0);
     validateTime("8pm", 20, 0, 0);
     validateTime("8 pm", 20, 0, 0);
+    validateTime("8 p_m", 20, 0, 0);
   }
   
   @Test
