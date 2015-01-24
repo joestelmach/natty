@@ -68,6 +68,7 @@ public class TimeTest extends AbstractTest {
     validateTime("10 hours before midnight", 14, 0, 0);
     validateTime("5 hours after noon", 17, 0, 0);
     validateTime("5 hours after midnight", 5, 0, 0);
+    validateTime("tonight", 20, 0, 0);
   }
   
   @Test

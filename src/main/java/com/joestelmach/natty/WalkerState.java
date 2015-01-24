@@ -322,9 +322,9 @@ public class WalkerState {
    */
   public void setExplicitTime(String hours, String minutes, String seconds, String amPm, String zoneString) {
     int hoursInt = Integer.parseInt(hours);
-    int minutesInt = Integer.parseInt(minutes);
+    int minutesInt = minutes != null ? Integer.parseInt(minutes) : 0;
     assert(amPm == null || amPm.equals(AM) || amPm.equals(PM));
-    assert(hoursInt >= 0 && hoursInt <= 23); 
+    assert(hoursInt >= 0);
     assert(minutesInt >= 0 && minutesInt < 60); 
     
     markTimeInvocation();
