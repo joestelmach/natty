@@ -75,7 +75,7 @@ time
   ;
   
 explicit_time
-  : ^(EXPLICIT_TIME ^(HOURS_OF_DAY hours=INT) ^(MINUTES_OF_HOUR minutes=INT) 
+  : ^(EXPLICIT_TIME ^(HOURS_OF_DAY hours=INT) (^(MINUTES_OF_HOUR minutes=INT))?
         (^(SECONDS_OF_MINUTE seconds=INT))? AM_PM? (zone=ZONE | zone=ZONE_OFFSET)?)
     {_walkerState.setExplicitTime($hours.text, $minutes.text, $seconds.text, $AM_PM.text, $zone.text);}
   ;

@@ -75,6 +75,15 @@ public class DateTimeTest extends AbstractTest {
     validateDateTime("tomorrow @ noon", 2, 25, 2011, 12, 0, 0);
     validateDateTime("Acknowledged. Let's meet at 9pm.", 2, 24, 2011, 21, 0, 0);
     validateDateTime("tuesday,\u00A012:50 PM", 3, 1, 2011, 12, 50, 0);
+    validateDateTime("tonight at 6:30", 2, 24, 2011, 18, 30, 0);
+    validateDateTime("tonight at 6", 2, 24, 2011, 18, 0, 0);
+    validateDateTime("tonight at 2", 2, 25, 2011, 2, 0, 0);
+    validateDateTime("tonight at 4:59", 2, 25, 2011, 4, 59, 0);
+    validateDateTime("tonight at 5", 2, 24, 2011, 17, 0, 0);
+    validateDateTime("this evening at 5", 2, 24, 2011, 17, 0, 0);
+    validateDateTime("this evening at 2", 2, 25, 2011, 2, 0, 0);
+    validateDateTime("tomorrow evening at 5", 2, 25, 2011, 17, 0, 0);
+    validateDateTime("wed evening at 8:30", 3, 2, 2011, 20, 30, 0);
   }
 
   @Test

@@ -830,19 +830,38 @@ seconds
   
 // meridian am/pm indicator
 meridian_indicator
+  : simple_meridian_indicator
+  | friendly_meridian_indicator
+  ;
+
+simple_meridian_indicator
   : AM -> AM_PM["am"]
   | PM -> AM_PM["pm"]
-  | (IN WHITE_SPACE THE WHITE_SPACE)? MORNING -> AM_PM["am"]
+  ;
+
+friendly_meridian_indicator
+  : (IN WHITE_SPACE THE WHITE_SPACE)? MORNING -> AM_PM["am"]
   | (IN WHITE_SPACE THE WHITE_SPACE)? NOON -> AM_PM["pm"]
   | (IN WHITE_SPACE THE WHITE_SPACE)? EVENING -> AM_PM["pm"]
   | (AT WHITE_SPACE)? NIGHT -> AM_PM["pm"]
-  
   ;
-  
+
 named_time
   : (IN WHITE_SPACE THE WHITE_SPACE)? NOON    -> ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) ^(SECONDS_OF_MINUTE INT["0"]) AM_PM["pm"]
   | (IN WHITE_SPACE THE WHITE_SPACE)? MORNING -> ^(HOURS_OF_DAY INT["8"]) ^(MINUTES_OF_HOUR INT["0"]) ^(SECONDS_OF_MINUTE INT["0"]) AM_PM["am"]
   | (IN WHITE_SPACE THE WHITE_SPACE)? NIGHT   -> ^(HOURS_OF_DAY INT["8"]) ^(MINUTES_OF_HOUR INT["0"]) ^(SECONDS_OF_MINUTE INT["0"]) AM_PM["pm"]
+
+  // tonight at 7, this evening at 6:30
+  | ((TONIGHT | EVENING) WHITE_SPACE AT WHITE_SPACE int_01_to_31_optional_prefix)=>
+      (TONIGHT | EVENING) WHITE_SPACE AT WHITE_SPACE hour=int_01_to_31_optional_prefix (COLON? minutes)?
+
+        // If the hour given is before 5, we'll assume tomorrow morning
+        -> {Integer.parseInt($hour.text) < 5}?
+             ^(HOURS_OF_DAY INT[Integer.toString(Integer.parseInt($hour.text) + 24)])
+             minutes? ^(SECONDS_OF_MINUTE INT["0"]) AM_PM["am"]
+
+        -> ^(HOURS_OF_DAY $hour) minutes? ^(SECONDS_OF_MINUTE INT["0"]) AM_PM["pm"]
+
   | TONIGHT                                   -> ^(HOURS_OF_DAY INT["8"]) ^(MINUTES_OF_HOUR INT["0"]) ^(SECONDS_OF_MINUTE INT["0"]) AM_PM["pm"]
   | (AT WHITE_SPACE)? MIDNIGHT                -> ^(HOURS_OF_DAY INT["12"]) ^(MINUTES_OF_HOUR INT["0"]) ^(SECONDS_OF_MINUTE INT["0"]) AM_PM["am"]
   | (IN WHITE_SPACE THE WHITE_SPACE)? EVENING -> ^(HOURS_OF_DAY INT["7"]) ^(MINUTES_OF_HOUR INT["0"]) ^(SECONDS_OF_MINUTE INT["0"]) AM_PM["pm"]
