@@ -70,12 +70,12 @@ EVENING   : 'evening' | 'eve';
 NIGHT     : 'night'; 
 
 UTC  : 'utc'  | 'gmt'  | 'z';
-EST  : 'est'  | 'edt'  | 'et';
-PST  : 'pst'  | 'pdt'  | 'pt';
-CST  : 'cst'  | 'cdt'  | 'ct';
-MST  : 'mst'  | 'mdt'  | 'mt';
-AKST : 'akst' | 'akdt' | 'akt';
-HAST : 'hast' | 'hadt' | 'hat' | 'hst';
+EST  : 'est'  | 'edt'  | 'et'  | 'eastern';
+PST  : 'pst'  | 'pdt'  | 'pt'  | 'pacific';
+CST  : 'cst'  | 'cdt'  | 'ct'  | 'central';
+MST  : 'mst'  | 'mdt'  | 'mt'  | 'mountain';
+AKST : 'akst' | 'akdt' | 'akt' | 'alaska';
+HAST : 'hast' | 'hadt' | 'hat' | 'hst' | 'hawaii';
 
 // ********* numeric rules **********
 
