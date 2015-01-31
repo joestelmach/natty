@@ -58,6 +58,7 @@ public class TimeTest extends AbstractTest {
     Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("1/02/2011");
     CalendarSource.setBaseDate(reference);
     validateTime("noon", 12, 0, 0);
+    validateTime("at noon", 12, 0, 0);
     validateTime("afternoon", 12, 0, 0);
     validateTime("midnight", 0, 0, 0);
     validateTime("mid-night", 0, 0, 0);

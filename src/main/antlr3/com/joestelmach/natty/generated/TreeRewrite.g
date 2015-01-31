@@ -32,6 +32,9 @@ topdown
   | ^(SEEK DIRECTION SEEK_BY INT ^(MONTH_OF_YEAR INT) amount=INT ^(MONTH_OF_YEAR dow=INT))
       -> ^(SEEK DIRECTION SEEK_BY $amount ^(MONTH_OF_YEAR $dow))
 
+  | ^(SEEK DIRECTION SEEK_BY INT SPAN amt=INT span=SPAN)
+      -> ^(SEEK DIRECTION SEEK_BY $amt $span)
+
   // ensure year seek happens before day of week seek
 
   | ^(RELATIVE_DATE ^(SEEK dir=DIRECTION seekby=SEEK_BY day=INT ^(MONTH_OF_YEAR month=INT))

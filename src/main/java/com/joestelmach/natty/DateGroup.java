@@ -1,11 +1,11 @@
 package com.joestelmach.natty;
 
+import org.antlr.runtime.tree.Tree;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-
-import org.antlr.runtime.tree.Tree;
 
 /**
  * 
@@ -64,7 +64,7 @@ public class DateGroup {
   
   /**
    * @return true if the time information in this date group has been inferred
-   * as opposed to being explicity defined in the _text input.
+   * as opposed to being explicity defined in the input.
    */
   public boolean isTimeInferred() {
     return _isTimeInferred;
