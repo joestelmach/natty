@@ -250,6 +250,7 @@ DOT   : '.';
 PLUS  : '+';
 SINGLE_QUOTE : '\'';
 
+CURRENT   : 'current';
 FOR       : 'for';
 IN        : 'in';
 AN        : 'an';
