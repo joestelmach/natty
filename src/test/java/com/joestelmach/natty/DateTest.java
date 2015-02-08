@@ -339,7 +339,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
 
-    String value = "Second Monday in October 2017";
+    String value = "this year";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

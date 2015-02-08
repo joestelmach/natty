@@ -99,7 +99,9 @@ date_time_alternative
   // today or the day after that, feb 16th or 2 days after that, january fourth or the friday after
   | (date conjunction global_date_prefix)=>
       date conjunction global_date_prefix (WHITE_SPACE THAT)? (date_time_separator explicit_time)?
-        -> ^(DATE_TIME_ALTERNATIVE ^(DATE_TIME date explicit_time?) ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) explicit_time?)))
+        -> ^(DATE_TIME_ALTERNATIVE
+             ^(DATE_TIME date explicit_time?)
+             ^(DATE_TIME ^(RELATIVE_DATE ^(SEEK global_date_prefix date) explicit_time?)))
 
   // first or last day of 2009
   | (alternative_day_of_year_list)=> alternative_day_of_year_list
@@ -488,8 +490,7 @@ explicit_day_of_month_part
   ;
 
 day_of_month_suffix
-  : (WHITE_SPACE (IN | OF))=>
-      WHITE_SPACE (IN | OF)
+  : WHITE_SPACE (IN | OF)
   ;
 
 explicit_day_of_week_part
