@@ -585,7 +585,7 @@ relative_time_span
   ;
   
 implicit_prefix
-  : THIS -> DIRECTION[">"] SEEK_BY["by_day"] INT["0"]
+  : (THIS | CURRENT) -> DIRECTION[">"] SEEK_BY["by_day"] INT["0"]
   ;
   
 relative_date_prefix
