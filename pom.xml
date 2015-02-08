@@ -98,7 +98,7 @@
       <plugin>
         <groupId>org.antlr</groupId>
         <artifactId>antlr3-maven-plugin</artifactId>
-        <version>3.2</version>
+        <version>3.3</version>
         
         <executions>
           <execution>
@@ -110,7 +110,6 @@
               <debug>true</debug>
               <libDirectory>src/main/antlr3/com/joestelmach/natty/generated/imports</libDirectory>
               <outputDirectory>src/main/java</outputDirectory>
-              <conversionTimeout>10000</conversionTimeout>
               <includes>
                 <include>com/joestelmach/natty/generated/DateLexer.g</include> 
                 <include>com/joestelmach/natty/generated/DateParser.g</include> 
@@ -130,7 +129,6 @@
               <debug>false</debug>
               <outputDirectory>src/main/java</outputDirectory>
               <libDirectory>src/main/antlr3/com/joestelmach/natty/generated/imports</libDirectory>
-              <conversionTimeout>10000</conversionTimeout>
               <excludes>
                 <exclude>com/joestelmach/natty/generated/DateLexer.g</exclude> 
                 <exclude>com/joestelmach/natty/generated/DateParser.g</exclude> 
@@ -146,7 +144,7 @@
       <plugin> 
         <groupId>org.antlr</groupId> 
         <artifactId>maven-gunit-plugin</artifactId> 
-        <version>3.2</version>
+        <version>3.3</version>
         <executions> 
           <execution> 
             <id>maven-gunit-plugin</id> 
@@ -230,7 +228,7 @@
     <dependency> 
       <groupId>org.antlr</groupId>
       <artifactId>antlr-runtime</artifactId>
-      <version>3.2</version>
+      <version>3.3</version>
     </dependency> 
     
     <dependency>
@@ -249,7 +247,7 @@
     <dependency> 
       <groupId>org.antlr</groupId>
       <artifactId>gunit</artifactId>
-      <version>3.2</version>
+      <version>3.3</version>
       <scope>test</scope>
     </dependency> 
   </dependencies>
