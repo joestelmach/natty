@@ -7,20 +7,20 @@
   <name>Natty Date Parser</name>
   <description>natural language date parser</description>
   <url>http://natty.joestelmach.com</url>
-  
+
   <licenses>
     <license>
       <name>MIT License</name>
       <url>LICENSE</url>
     </license>
   </licenses>
-  
+
   <scm>
     <connection>scm:git:git@github.com:joestelmach/natty.git</connection>
     <url>scm:git:git@github.com:joestelmach/natty.git</url>
-    <developerConnection>scm:git:git@github.com:joestelmach/natty.git</developerConnection>  
+    <developerConnection>scm:git:git@github.com:joestelmach/natty.git</developerConnection>
   </scm>
-  
+
   <developers>
     <developer>
       <id>joe</id>
@@ -33,30 +33,30 @@
       <timezone>-5</timezone>
     </developer>
   </developers>
-  
+
   <properties>
     <grammar.dir>${basedir}/src/main/antlr3/com/joestelmach/natty/generated</grammar.dir>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
-  
+
   <distributionManagement>
     <snapshotRepository>
       <id>sonatype-nexus-snapshots</id>
       <name>Sonatype Nexus Snapshots</name>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
-    
+
     <repository>
       <id>sonatype-nexus-staging</id>
       <name>Nexus Release Repository</name>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
   </distributionManagement>
-  
+
   <build>
     <plugins>
-      
+
       <!-- need to force a new version of the release plugin for git support-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -66,7 +66,7 @@
           <mavenExecutorId>forked-path</mavenExecutorId>
         </configuration>
       </plugin>
-    
+
       <!-- compiler plugin -->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -76,7 +76,7 @@
           <target>1.6</target>
         </configuration>
       </plugin>
-      
+
       <!-- clean plugin -->
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
@@ -98,8 +98,8 @@
       <plugin>
         <groupId>org.antlr</groupId>
         <artifactId>antlr3-maven-plugin</artifactId>
-        <version>3.3</version>
-        
+        <version>3.5</version>
+
         <executions>
           <execution>
             <id>debug</id>
@@ -111,11 +111,11 @@
               <libDirectory>src/main/antlr3/com/joestelmach/natty/generated/imports</libDirectory>
               <outputDirectory>src/main/java</outputDirectory>
               <includes>
-                <include>com/joestelmach/natty/generated/DateLexer.g</include> 
-                <include>com/joestelmach/natty/generated/DateParser.g</include> 
+                <include>com/joestelmach/natty/generated/DateLexer.g</include>
+                <include>com/joestelmach/natty/generated/DateParser.g</include>
               </includes>
               <excludes>
-                <exclude>com/joestelmach/natty/generated/imports/NumericRules.g</exclude> 
+                <exclude>com/joestelmach/natty/generated/imports/NumericRules.g</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -130,34 +130,34 @@
               <outputDirectory>src/main/java</outputDirectory>
               <libDirectory>src/main/antlr3/com/joestelmach/natty/generated/imports</libDirectory>
               <excludes>
-                <exclude>com/joestelmach/natty/generated/DateLexer.g</exclude> 
-                <exclude>com/joestelmach/natty/generated/DateParser.g</exclude> 
-                <exclude>com/joestelmach/natty/generated/imports/NumericRules.g</exclude> 
+                <exclude>com/joestelmach/natty/generated/DateLexer.g</exclude>
+                <exclude>com/joestelmach/natty/generated/DateParser.g</exclude>
+                <exclude>com/joestelmach/natty/generated/imports/NumericRules.g</exclude>
               </excludes>
             </configuration>
           </execution>
-          
+
         </executions>
       </plugin>
-      
-      <!-- gUnit plugin --> 
-      <plugin> 
-        <groupId>org.antlr</groupId> 
-        <artifactId>maven-gunit-plugin</artifactId> 
-        <version>3.3</version>
-        <executions> 
-          <execution> 
-            <id>maven-gunit-plugin</id> 
-            <phase>test</phase> 
-            <goals> 
-              <goal>gunit</goal> 
-            </goals> 
-          </execution> 
-        </executions> 
-      </plugin> 
+
+      <!-- gUnit plugin -->
+      <plugin>
+        <groupId>org.antlr</groupId>
+        <artifactId>maven-gunit-plugin</artifactId>
+        <version>3.5</version>
+        <executions>
+          <execution>
+            <id>maven-gunit-plugin</id>
+            <phase>test</phase>
+            <goals>
+              <goal>gunit</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
-  
+
   <!-- release profile -->
   <profiles>
     <profile>
@@ -170,7 +170,7 @@
       </activation>
       <build>
         <plugins>
-        
+
           <!-- sign artifacts -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -186,7 +186,7 @@
               </execution>
             </executions>
           </plugin>
-          
+
           <!-- generate javadoc.jar -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -203,7 +203,7 @@
             <configuration>
             </configuration>
           </plugin>
-      
+
           <!-- generate sources.jar -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -222,33 +222,33 @@
       </build>
     </profile>
   </profiles>
-  
+
   <!-- dependencies -->
   <dependencies>
-    <dependency> 
+    <dependency>
       <groupId>org.antlr</groupId>
       <artifactId>antlr-runtime</artifactId>
-      <version>3.3</version>
-    </dependency> 
-    
+      <version>3.5</version>
+    </dependency>
+
     <dependency>
       <groupId>org.mnode.ical4j</groupId>
       <artifactId>ical4j</artifactId>
       <version>1.0.2</version>
     </dependency>
-    
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    
-    <dependency> 
+
+    <dependency>
       <groupId>org.antlr</groupId>
       <artifactId>gunit</artifactId>
-      <version>3.3</version>
+      <version>3.5</version>
       <scope>test</scope>
-    </dependency> 
+    </dependency>
   </dependencies>
 </project>
