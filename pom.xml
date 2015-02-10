@@ -98,7 +98,7 @@
       <plugin>
         <groupId>org.antlr</groupId>
         <artifactId>antlr3-maven-plugin</artifactId>
-        <version>3.3</version>
+        <version>3.5.2</version>
         
         <executions>
           <execution>
@@ -144,7 +144,7 @@
       <plugin> 
         <groupId>org.antlr</groupId> 
         <artifactId>maven-gunit-plugin</artifactId> 
-        <version>3.3</version>
+        <version>3.5.2</version>
         <executions> 
           <execution> 
             <id>maven-gunit-plugin</id> 
@@ -228,7 +228,7 @@
     <dependency> 
       <groupId>org.antlr</groupId>
       <artifactId>antlr-runtime</artifactId>
-      <version>3.3</version>
+      <version>3.5.2</version>
     </dependency> 
     
     <dependency>
@@ -247,7 +247,7 @@
     <dependency> 
       <groupId>org.antlr</groupId>
       <artifactId>gunit</artifactId>
-      <version>3.3</version>
+      <version>3.5.2</version>
       <scope>test</scope>
     </dependency> 
   </dependencies>
