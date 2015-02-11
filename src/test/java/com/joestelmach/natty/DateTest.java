@@ -135,6 +135,16 @@ public class DateTest extends AbstractTest {
     validateDate("this month", 2, 28, 2011);
     validateDate("current month", 2, 28, 2011);
     validateDate("current year", 2, 28, 2011);
+    validateDate("first monday in 1 month", 3, 7, 2011);
+    validateDate("first monday of month in 1 month", 3, 7, 2011);
+    validateDate("first monday of 1 month", 3, 7, 2011);
+    validateDate("first monday in 2 months", 4, 4, 2011);
+    validateDate("first monday of 2 months", 4, 4, 2011);
+    validateDate("first monday of month 2 months", 4, 4, 2011);
+    validateDate("first monday of month in 2 months", 4, 4, 2011);
+    validateDate("first monday in 3 months", 5, 2, 2011);
+    validateDate("first monday of 3 months", 5, 2, 2011);
+    validateDate("first monday of month in 3 months", 5, 2, 2011);
   }
   
   @Test
@@ -346,7 +356,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
 
-    String value = "Monday before May 25";
+    String value = "first monday of 2 months";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
