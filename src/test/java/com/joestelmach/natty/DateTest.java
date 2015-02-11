@@ -117,12 +117,16 @@ public class DateTest extends AbstractTest {
     validateDate("the saturday after next", 3, 19, 2011);
     validateDate("the monday after next", 3, 14, 2011);
     validateDate("the monday after next monday", 3, 14, 2011);
+    validateDate("the monday before May 25", 5, 23, 2011);
+    validateDate("the 2nd monday before May 25", 5, 16, 2011);
+    validateDate("3 mondays after May 25", 6, 13, 2011);
     validateDate("tuesday before last", 2, 15, 2011);
     validateDate("a week from now", 3, 7, 2011);
     validateDate("a month from today", 3, 28, 2011);
     validateDate("a week after this friday", 3, 11, 2011);
     validateDate("a week from this friday", 3, 11, 2011);
     validateDate("two weeks from this friday", 3, 18, 2011);
+    validateDate("the second week after this friday", 3, 18, 2011);
     validateDate("It's gonna snow! How about skiing tomorrow", 3, 1, 2011);
     validateDate("A week on tuesday", 3, 8, 2011);
     validateDate("A month ago", 1, 28, 2011);
@@ -342,7 +346,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
 
-    String value = "current year";
+    String value = "Monday before May 25";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);

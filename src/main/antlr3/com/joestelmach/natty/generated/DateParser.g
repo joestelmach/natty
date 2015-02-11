@@ -229,22 +229,23 @@ global_date_prefix
       -> prefix_direction SEEK_BY["by_day"] INT["1"]
 
   // 2 weeks from now
-  | (amt=spelled_or_int_optional_prefix WHITE_SPACE)? global_date_prefix_seek prefix_direction
-      -> {$amt.text != null}?
-           prefix_direction global_date_prefix_seek spelled_or_int_optional_prefix
+  | (global_date_prefix_amount WHITE_SPACE)? global_date_prefix_seek prefix_direction
+      -> {$global_date_prefix_amount.text != null}?
+           prefix_direction global_date_prefix_seek global_date_prefix_amount
 
       ->   prefix_direction global_date_prefix_seek INT["1"]
 
-  // 3 fridays before
-  | (spelled_or_int_optional_prefix WHITE_SPACE)? day_of_week WHITE_SPACE prefix_direction
-      -> prefix_direction SEEK_BY["by_day"] spelled_or_int_optional_prefix day_of_week
-
-  // the friday after, 2 fridays from now
-  | (THE WHITE_SPACE)? (spelled_first_to_thirty_first WHITE_SPACE)? day_of_week WHITE_SPACE prefix_direction
-      -> {$spelled_first_to_thirty_first.text != null}?
-           prefix_direction SEEK_BY["by_day"] spelled_first_to_thirty_first day_of_week
+  // 3 fridays before, the friday after, 2 fridays from now
+  | (THE WHITE_SPACE)? (global_date_prefix_amount WHITE_SPACE)? day_of_week WHITE_SPACE prefix_direction
+      -> {$global_date_prefix_amount.text != null}?
+           prefix_direction SEEK_BY["by_day"] global_date_prefix_amount day_of_week
 
       -> prefix_direction SEEK_BY["by_day"] INT["1"] day_of_week
+  ;
+
+global_date_prefix_amount
+  : spelled_first_to_thirty_first
+  | spelled_or_int_optional_prefix
   ;
 
 global_date_prefix_seek
@@ -865,8 +866,7 @@ named_time
          ^(MINUTES_OF_HOUR INT[$hm.minutes])
          ^(SECONDS_OF_MINUTE INT["0"]) AM_PM[$named_hour.ampm]
 
-    ->
-         ^(HOURS_OF_DAY INT[$hm.hours])
+    ->   ^(HOURS_OF_DAY INT[$hm.hours])
          ^(MINUTES_OF_HOUR INT[$hm.minutes])
          ^(SECONDS_OF_MINUTE INT["0"]) AM_PM[$named_hour.ampm]
 
