@@ -491,7 +491,7 @@ explicit_day_of_month_part
   ;
 
 day_of_month_suffix
-  : WHITE_SPACE (IN | OF)
+  : WHITE_SPACE (IN | OF) (WHITE_SPACE MONTH)?
   ;
 
 explicit_day_of_week_part
