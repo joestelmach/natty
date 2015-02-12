@@ -1,7 +1,6 @@
 package com.joestelmach.natty;
 
 import java.util.*;
-import java.util.logging.Logger;
 
 /**
  * @author Joe Stelmach
@@ -26,12 +25,9 @@ public class WalkerState {
   private static final String PLUS = "+";
   private static final String MINUS = "-";
   private static final String GMT = "GMT";
-  private static final String VEVENT = "VEVENT";
-  private static final String SUMMARY = "SUMMARY";
   private static final String HOLIDAY_ICS_FILE = "/holidays.ics";
   private static final String SEASON_ICS_FILE = "/seasons.ics";
-  private static final Logger _logger = Logger.getLogger("com.joestelmach.natty");
-  
+
   private GregorianCalendar _calendar;
   private TimeZone _defaultTimeZone;
   private int _currentYear;
@@ -40,7 +36,9 @@ public class WalkerState {
   private boolean _dateGivenInGroup = false;
   private boolean _updatePreviousDates = false;
   private DateGroup _dateGroup;
-  
+  private List<String> _amPmGivenPerCapture = new ArrayList<String>();
+  private List<Boolean> _timeGivenPerCapture = new ArrayList<Boolean>();
+
   /**
    * Creates a new WalkerState representing the start of
    * the next hour from the current time
@@ -209,7 +207,13 @@ public class WalkerState {
     
     boolean isDateSeek = span.equals(DAY) || span.equals(WEEK) || 
       span.equals(MONTH) || span.equals(YEAR);
-    if(isDateSeek) markDateInvocation(); else markTimeInvocation();
+
+    if(isDateSeek) {
+      markDateInvocation();
+    }
+    else {
+      markTimeInvocation(null);
+    }
     
     int sign = direction.equals(DIR_RIGHT) ? 1 : -1;
     int field = 
@@ -219,7 +223,7 @@ public class WalkerState {
       span.equals(YEAR) ? Calendar.YEAR : 
       span.equals(HOUR) ? Calendar.HOUR: 
       span.equals(MINUTE) ? Calendar.MINUTE: 
-      span.equals(SECOND) ? Calendar.SECOND: 
+      span.equals(SECOND) ? Calendar.SECOND:
       null;
     if(field > 0) _calendar.add(field, seekAmountInt * sign);
   }
@@ -327,7 +331,7 @@ public class WalkerState {
     assert(hoursInt >= 0);
     assert(minutesInt >= 0 && minutesInt < 60); 
     
-    markTimeInvocation();
+    markTimeInvocation(amPm);
     
     // reset milliseconds to 0
     _calendar.set(Calendar.MILLISECOND, 0);
@@ -433,8 +437,20 @@ public class WalkerState {
    * 
    */
   public void captureDateTime() {
+
+    // The list of times found per capture should always be 1 larger than the number of captures.
+    // If not, that mean no time was given for this capture
+    if(_timeGivenPerCapture.size() < _dateGroup.getDates().size() + 1) {
+      _timeGivenPerCapture.add(false);
+    }
+
+    // ditto for meridien indicators found per capture
+    if(_amPmGivenPerCapture.size() < _dateGroup.getDates().size() + 1) {
+      _amPmGivenPerCapture.add(null);
+    }
+
     // if other dates have already been added to the date group, we'll
-    // update their date portion to match this one
+    // update them to match this one
     if(_updatePreviousDates) {
       List<Date> dates = _dateGroup.getDates();
       if (!dates.isEmpty()) {
@@ -448,6 +464,46 @@ public class WalkerState {
         }
       }
       _updatePreviousDates = false;
+    }
+
+    // if a time was given in this capture, we'll want to use the same time for any previous
+    // captures that lacked time information
+    boolean thisTimeGiven = _timeGivenPerCapture.get(_timeGivenPerCapture.size() - 1);
+    if(thisTimeGiven) {
+      for (int i = 0; i < _timeGivenPerCapture.size() - 1; i++) {
+        boolean timeGiven = _timeGivenPerCapture.get(i);
+        if (!timeGiven) {
+          Date date = _dateGroup.getDates().get(i);
+          Calendar calendar = getCalendar();
+          calendar.setTime(date);
+          for (int field : new int[] { Calendar.HOUR_OF_DAY, Calendar.MINUTE, Calendar.SECOND, Calendar.MILLISECOND}) {
+            calendar.set(field, _calendar.get(field));
+          }
+          date.setTime(calendar.getTimeInMillis());
+        }
+      }
+    }
+
+    // similarly, if a meridian indicator was given in this capture, we'll want to use the same
+    // indicator for any previous times found without an explicit indicator
+    String thisAmPm = _amPmGivenPerCapture.get(_amPmGivenPerCapture.size() - 1);
+    if (thisAmPm != null) {
+      for (int i = 0; i < _amPmGivenPerCapture.size() - 1; i++) {
+        String amPm = _amPmGivenPerCapture.get(i);
+        if (amPm == null && _timeGivenPerCapture.get(i)) {
+          Date date = _dateGroup.getDates().get(i);
+          Calendar calendar = getCalendar();
+          calendar.setTime(date);
+          int hour = calendar.get(Calendar.HOUR_OF_DAY);
+          if(thisAmPm.equals("am") && hour > 11) {
+            calendar.set(Calendar.HOUR_OF_DAY, hour - 12);
+          }
+          if(thisAmPm.equals("pm") && calendar.get(Calendar.HOUR_OF_DAY) < 12) {
+            calendar.set(Calendar.HOUR_OF_DAY, hour + 12);
+          }
+          date.setTime(calendar.getTimeInMillis());
+        }
+      }
     }
 
     Date date = _calendar.getTime();
@@ -526,7 +582,7 @@ public class WalkerState {
     int year = getFullYear(yearInt);
     Map<Integer, Date> dates = getDatesFromIcs(icsFileName, eventSummary, year, year);
     Date date = dates.get(year - (eventSummary.equals(Holiday.NEW_YEARS_EVE.getSummary()) ? 1 : 0));
-    
+
     if(date != null) {
       Calendar cal = getCalendar();
       cal.setTimeZone(_calendar.getTimeZone());
@@ -568,9 +624,11 @@ public class WalkerState {
   /**
    * 
    */
-  private void markTimeInvocation() {
+  private void markTimeInvocation(String amPm) {
     _timeGivenInGroup = true;
     _dateGroup.setIsTimeInferred(false);
+    _amPmGivenPerCapture.add(amPm);
+    _timeGivenPerCapture.add(true);
   }
   
   private Map<Integer, Date> getDatesFromIcs(String icsFileName, 
