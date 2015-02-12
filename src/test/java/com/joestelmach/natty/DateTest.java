@@ -85,6 +85,8 @@ public class DateTest extends AbstractTest {
     validateDate("seven years ago", 2, 28, 2004);
     validateDate("60 years ago", 2, 28, 1951);
     validateDate("32 days ago", 1, 27, 2011);
+    validateDate("320 days ago", 4, 14, 2010);
+    validateDate("1200 days ago", 11, 16, 2007);
     validateDate("next monday", 3, 7, 2011);
     validateDate("next mon", 3, 7, 2011);
     validateDate("4 mondays from now", 3, 28, 2011);
