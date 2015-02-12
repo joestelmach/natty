@@ -221,6 +221,8 @@ public class DateGrammarTest extends AbstractGrammarTest {
     assertAST("seven years ago", "(RELATIVE_DATE (SEEK < by_day 7 year))");
     assertAST("60 years ago", "(RELATIVE_DATE (SEEK < by_day 60 year))");
     assertAST("32 days ago", "(RELATIVE_DATE (SEEK < by_day 32 day))");
+    assertAST("150 days ago", "(RELATIVE_DATE (SEEK < by_day 150 day))");
+    assertAST("1500 days ago", "(RELATIVE_DATE (SEEK < by_day 1500 day))");
     assertAST("next monday", "(RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 2)))");
     assertAST("next mon", "(RELATIVE_DATE (SEEK > by_week 1 (DAY_OF_WEEK 2)))");
     assertAST("4 mondays from now", "(RELATIVE_DATE (SEEK > by_day 4 (DAY_OF_WEEK 2)))");
