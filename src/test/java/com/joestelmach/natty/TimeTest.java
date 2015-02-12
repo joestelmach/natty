@@ -88,7 +88,32 @@ public class TimeTest extends AbstractTest {
     validateTime("this minute", 12, 0, 0);
     validateTime("this hour", 12, 0, 0);
   }
-  
+
+  @Test
+  public void testAlternatives() throws Exception {
+    CalendarSource.setBaseDate(DateFormat.getTimeInstance(DateFormat.SHORT).parse("12:00 pm"));
+
+    List<Date> dates = parseCollection("12 or 12:30");
+    Assert.assertEquals(2, dates.size());
+    validateTime(dates.get(0), 12, 0, 0);
+    validateTime(dates.get(1), 12, 30, 0);
+
+    dates = parseCollection("12pm or 12:30");
+    Assert.assertEquals(2, dates.size());
+    validateTime(dates.get(0), 12, 0, 0);
+    validateTime(dates.get(1), 12, 30, 0);
+
+    dates = parseCollection("noon or 12:30");
+    Assert.assertEquals(2, dates.size());
+    validateTime(dates.get(0), 12, 0, 0);
+    validateTime(dates.get(1), 12, 30, 0);
+
+    dates = parseCollection("12 or 12:30am");
+    Assert.assertEquals(2, dates.size());
+    validateTime(dates.get(0), 0, 0, 0);
+    validateTime(dates.get(1), 0, 30, 0);
+  }
+
   @Test
   public void testRange() throws Exception {
     CalendarSource.setBaseDate(DateFormat.getTimeInstance(DateFormat.SHORT).parse("12:00 pm"));
