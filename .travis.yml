@@ -1,0 +1,13 @@
+##
+# Which language are we using.
+language: java
+
+##
+# Not doing sudo things so use a fast-starting build container.
+sudo: false
+
+##
+# Test against the popular implementations of Java.
+jdk:
+  - oraclejdk7
+  - openjdk7
