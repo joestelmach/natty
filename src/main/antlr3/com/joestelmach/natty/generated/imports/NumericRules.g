@@ -65,7 +65,8 @@ spelled_or_int_01_to_31_optional_prefix
 spelled_or_int_optional_prefix
   : spelled_one_to_thirty_one // TODO expand this spelled range to at least ninety-nine
   | ((int_01_to_31_optional_prefix | int_32_to_59 | int_60_to_99)
-     (int_01_to_31_optional_prefix | int_32_to_59 | int_60_to_99)?
+     ( INT_0 | INT_00 | int_01_to_31_optional_prefix | int_32_to_59 | int_60_to_99)?
+     
        -> INT[$spelled_or_int_optional_prefix.text])
   ;
   
