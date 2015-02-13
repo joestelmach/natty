@@ -75,6 +75,7 @@ public class DateTest extends AbstractTest {
     
     validateDate("yesterday", 2, 27, 2011);
     validateDate("tomorrow", 3, 1, 2011);
+    validateDate("tmr", 3, 1, 2011);
     validateDate("in 3 days", 3, 3, 2011);
     validateDate("3 days ago", 2, 25, 2011);
     validateDate("in 3 weeks", 3, 21, 2011);
@@ -361,7 +362,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
 
-    String value = "96 months from now";
+    String value = "a month ago";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
