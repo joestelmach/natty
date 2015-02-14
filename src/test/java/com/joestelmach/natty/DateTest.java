@@ -302,6 +302,11 @@ public class DateTest extends AbstractTest {
     validateDate(dates.get(0), 11, 2, 2010);
     validateDate(dates.get(1), 9, 2, 2010);
 
+    dates = parseCollection("2 or 3 days ago");
+    Assert.assertEquals(2, dates.size());
+    validateDate(dates.get(0), 12, 31, 2010);
+    validateDate(dates.get(1), 12, 30, 2010);
+
     dates = parseCollection("1 to 2 days");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
@@ -362,7 +367,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
 
-    String value = "a month ago";
+    String value = "Two or three days ago";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
