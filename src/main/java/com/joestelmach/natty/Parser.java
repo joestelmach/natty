@@ -2,14 +2,13 @@ package com.joestelmach.natty;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
-import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -18,6 +17,8 @@ import org.antlr.runtime.TokenStream;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import com.joestelmach.natty.generated.DateLexer;
 import com.joestelmach.natty.generated.DateParser;
@@ -28,7 +29,10 @@ import com.joestelmach.natty.generated.TreeRewrite;
  * 
  * @author Joe Stelmach
  */
-public class Parser {
+public class Parser implements Serializable {
+
+  private static final long serialVersionUID = 233282586086252203L;
+
   private TimeZone _defaultTimeZone;
   
   private static final Logger _logger = Logger.getLogger("com.joestelmach.natty");
@@ -312,5 +316,28 @@ public class Parser {
     	  else break;
       }
     }
+  }
+  
+  @Override
+  public int hashCode() {
+	  // use two randomly chosen prime numbers
+      return new HashCodeBuilder(17, 31).
+          append(_defaultTimeZone).
+          toHashCode();
+  }
+  
+  @Override
+  public boolean equals(Object obj) {
+	  boolean isEqual = false;
+	  
+	  if (obj instanceof Parser) {
+		  Parser other = (Parser) obj;
+		  
+		  isEqual = new EqualsBuilder().
+				  append(_defaultTimeZone, other._defaultTimeZone).
+				  isEquals();
+	  }
+	  
+	  return isEqual;
   }
 }
