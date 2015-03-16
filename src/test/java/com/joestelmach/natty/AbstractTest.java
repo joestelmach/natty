@@ -1,11 +1,12 @@
 package com.joestelmach.natty;
 
+import org.junit.Assert;
+import org.junit.Before;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import org.junit.Assert;
-import org.junit.Before;
 
 /**
  * 
@@ -36,7 +37,8 @@ public abstract class AbstractTest {
    * @return
    */
   protected List<Date> parseCollection(String value) {
-    return _parser.parse(value).get(0).getDates();
+    List<DateGroup> dateGroup = _parser.parse(value);
+    return dateGroup.isEmpty() ? new ArrayList<Date>() : dateGroup.get(0).getDates();
   }
   
   /**
