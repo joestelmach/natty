@@ -359,7 +359,13 @@ public class DateTest extends AbstractTest {
 
     TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
   }
-  
+
+  @Test
+  public void testNoDates() {
+    List<Date> dates = parseCollection("Fried Chicken, Wedding Dinner");
+    Assert.assertEquals(0, dates.size());
+  }
+
   public static void main(String[] args) {
     ConsoleHandler handler = new ConsoleHandler();
     handler.setLevel(Level.ALL);
@@ -367,7 +373,7 @@ public class DateTest extends AbstractTest {
     logger.setLevel(Level.FINEST);
     logger.addHandler(handler);
 
-    String value = "Two or three days ago";
+    String value = "Fried Chicken, Wedding Dinner";
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
