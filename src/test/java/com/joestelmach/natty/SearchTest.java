@@ -1,19 +1,14 @@
 package com.joestelmach.natty;
 
+import junit.framework.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
-
-import junit.framework.Assert;
-
-import org.junit.Test;
-import org.junit.BeforeClass;
-
-import com.joestelmach.natty.CalendarSource;
-import com.joestelmach.natty.DateGroup;
-import com.joestelmach.natty.Parser;
 
 /**
  * 
@@ -283,5 +278,11 @@ public class SearchTest extends AbstractTest {
     
     groups = parser.parse("dinner bmong friends");
     Assert.assertEquals(0, groups.size());
+
+    groups = parser.parse("I know we should meet tomorrow");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 2, 21, 2011);
   }
 }
