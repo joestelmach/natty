@@ -1,16 +1,9 @@
 package com.joestelmach.natty;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TimeZone;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
-
+import com.joestelmach.natty.generated.DateLexer;
+import com.joestelmach.natty.generated.DateParser;
+import com.joestelmach.natty.generated.DateWalker;
+import com.joestelmach.natty.generated.TreeRewrite;
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.Token;
@@ -19,10 +12,11 @@ import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
 
-import com.joestelmach.natty.generated.DateLexer;
-import com.joestelmach.natty.generated.DateParser;
-import com.joestelmach.natty.generated.DateWalker;
-import com.joestelmach.natty.generated.TreeRewrite;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * 
@@ -202,6 +196,7 @@ public class Parser {
     List<Token> currentGroup = null;
     List<TokenStream> groups = new ArrayList<TokenStream>();
     Token currentToken;
+    Token previousToken = null;
     StringBuilder tokenString = new StringBuilder();
     while((currentToken = stream.getTokenSource().nextToken()).getType() != DateLexer.EOF) {
       if(_logger.getLevel() != null && _logger.getLevel().intValue() <= Level.FINE.intValue()) {
@@ -211,21 +206,28 @@ public class Parser {
       
       // we're currently NOT collecting for a possible date group
       if(currentGroup == null) {
-        // ignore white space in-between possible rules
-        if(currentToken.getType() != DateLexer.WHITE_SPACE) {
+        // skip over white space, unknowns, and tokens directly prefixed by unknown. (For example:
+        // 'know' will lex to UNKNOWN NOW, but NOW can only be valid if not part of a larger word.
+        if(currentToken.getType() != DateLexer.WHITE_SPACE &&
+            (previousToken == null || previousToken.getType() != DateLexer.UNKNOWN)) {
+
           // if the token is a possible date start token, we start a new collection
-          if(DateParser.FOLLOW_empty_in_parse186.member(currentToken.getType()) || currentToken.getType() == DateLexer.UNKNOWN) {
+          if(DateParser.FOLLOW_empty_in_parse186.member(
+              currentToken.getType()) || currentToken.getType() == DateLexer.UNKNOWN) {
+
             currentGroup = new ArrayList<Token>();
             currentGroup.add(currentToken);
           }
         }
       }
+
       // we're currently collecting
       else {
         // preserve white space
         if(currentToken.getType() == DateLexer.WHITE_SPACE) {
           currentGroup.add(currentToken);
         }
+
         else {
           // if this is an unknown token, we need to end the current group
           if(currentToken.getType() == DateLexer.UNKNOWN) {
@@ -243,7 +245,10 @@ public class Parser {
           }
         }
       }
+
+      previousToken = currentToken;
     }
+
     if(currentGroup != null) {
       cleanupGroup(currentGroup);
       groups.add(new CommonTokenStream(new NattyTokenSource(currentGroup)));
@@ -260,7 +265,7 @@ public class Parser {
    */
   private void cleanupGroup(List<Token> group) {
     
-	// remove contiguous white space
+	  // remove contiguous white space
     Iterator<Token> iter = group.iterator();
     Token previousToken = null;
     while(iter.hasNext()) {
@@ -272,7 +277,7 @@ public class Parser {
       }
       previousToken = token;
     }
-    
+
     // remove leading white space
     if(group.size() > 0) {
       boolean skip = false;
@@ -312,5 +317,6 @@ public class Parser {
     	  else break;
       }
     }
+
   }
 }
