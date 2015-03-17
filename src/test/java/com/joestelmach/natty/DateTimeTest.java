@@ -84,6 +84,8 @@ public class DateTimeTest extends AbstractTest {
     validateDateTime("this evening at 2", 2, 25, 2011, 2, 0, 0);
     validateDateTime("tomorrow evening at 5", 2, 25, 2011, 17, 0, 0);
     validateDateTime("wed evening at 8:30", 3, 2, 2011, 20, 30, 0);
+    validateDateTime("750 minutes from now", 2, 24, 2011, 12, 30, 0);
+    validateDateTime("1500 minutes from now", 2, 25, 2011, 1, 0, 0);
   }
 
   @Test
