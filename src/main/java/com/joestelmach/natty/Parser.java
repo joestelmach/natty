@@ -4,19 +4,19 @@ import com.joestelmach.natty.generated.DateLexer;
 import com.joestelmach.natty.generated.DateParser;
 import com.joestelmach.natty.generated.DateWalker;
 import com.joestelmach.natty.generated.TreeRewrite;
-import org.antlr.runtime.ANTLRInputStream;
-import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.Token;
-import org.antlr.runtime.TokenStream;
+import org.antlr.runtime.*;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.TimeZone;
 
 /**
  * 
@@ -25,8 +25,8 @@ import java.util.logging.Logger;
 public class Parser {
   private TimeZone _defaultTimeZone;
   
-  private static final Logger _logger = Logger.getLogger("com.joestelmach.natty");
-  
+  private static final Logger _logger = LoggerFactory.getLogger(Parser.class);
+
   /**
    * Creates a new parser using the given time zone as the default
    * @param defaultTimeZone
@@ -57,7 +57,7 @@ public class Parser {
       input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(value.trim().getBytes()));
       
     } catch (IOException e) {
-      _logger.log(Level.SEVERE, "could not lex input", e);
+      _logger.error("could not lex input", e);
     }
     DateLexer lexer = new DateLexer(input);
     
@@ -138,8 +138,7 @@ public class Parser {
       tokenString.append(DateParser.tokenNames[token.getType()]);
       tokenString.append(" ");
     }
-    _logger.fine("sub-token stream: " + tokenString.toString());
-    
+
     try {
       // parse 
       ParseListener listener = new ParseListener();
@@ -147,23 +146,24 @@ public class Parser {
       DateParser.parse_return parseReturn = parser.parse();
       
       Tree tree = (Tree) parseReturn.getTree();
-      _logger.fine("AST: " + tree.toStringTree());
-      
+
       // we only continue if a meaningful syntax tree has been built
       if(tree.getChildCount() > 0) {
-      
+        _logger.info("sub-token stream: " + tokenString.toString());
+
         // rewrite the tree (temporary fix for http://www.antlr.org/jira/browse/ANTLR-427)
         CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
         TreeRewrite s = new TreeRewrite(nodes);
         tree = (CommonTree)s.downup(tree);
-        
+
         // and walk it
         nodes = new CommonTreeNodeStream(tree);
         nodes.setTokenStream(stream);
         DateWalker walker = new DateWalker(nodes);
         walker.getState().setDefaultTimeZone(_defaultTimeZone);
         walker.parse();
-        
+        _logger.info("AST: " + tree.toStringTree());
+
         // run through the results and append the parse information
         group = walker.getState().getDateGroup();
         ParseLocation location = listener.getDateGroupLocation();
@@ -173,9 +173,9 @@ public class Parser {
         group.setSyntaxTree(tree);
         group.setParseLocations(listener.getLocations());
       }
-      
-    } catch(Exception e) {
-      _logger.log(Level.SEVERE, "Could not parse input", e);
+
+    } catch(RecognitionException e) {
+      _logger.debug("Could not parse input", e);
     }
     
     return group;
@@ -199,11 +199,8 @@ public class Parser {
     Token previousToken = null;
     StringBuilder tokenString = new StringBuilder();
     while((currentToken = stream.getTokenSource().nextToken()).getType() != DateLexer.EOF) {
-      if(_logger.getLevel() != null && _logger.getLevel().intValue() <= Level.FINE.intValue()) {
-        tokenString.append(DateParser.tokenNames[currentToken.getType()]);
-        tokenString.append(" ");
-      }
-      
+      tokenString.append(DateParser.tokenNames[currentToken.getType()]).append(" ");
+
       // we're currently NOT collecting for a possible date group
       if(currentGroup == null) {
         // skip over white space, unknowns, and tokens directly prefixed by unknown. (For example:
@@ -252,7 +249,7 @@ public class Parser {
       groups.add(currentGroup);
     }
     
-    _logger.fine("global token stream: " + tokenString.toString());
+    _logger.info("global token stream: " + tokenString.toString());
     List<TokenStream> streams = new ArrayList<TokenStream>();
     for(List<Token> group:groups) {
       cleanupGroup(group);
@@ -261,7 +258,7 @@ public class Parser {
         for (Token token : group) {
           builder.append(DateParser.tokenNames[token.getType()]).append(" ");
         }
-        _logger.fine(builder.toString());
+        _logger.info(builder.toString());
 
         streams.add(new CommonTokenStream(new NattyTokenSource(group)));
       }

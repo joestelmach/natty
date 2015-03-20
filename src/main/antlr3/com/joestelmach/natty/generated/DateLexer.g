@@ -3,12 +3,14 @@ lexer grammar DateLexer;
 @header { package com.joestelmach.natty.generated; }
 
 @members {
-  private java.util.logging.Logger _logger = java.util.logging.Logger.getLogger("com.joestelmach.natty");
-  
+  private org.slf4j.Logger _logger =
+    org.slf4j.LoggerFactory.getLogger(com.joestelmach.natty.generated.DateLexer.class);
+
+  @Override
   public void displayRecognitionError(String[] tokenNames, RecognitionException re) {
     String message = getErrorHeader(re);
     try { message += getErrorMessage(re, tokenNames); } catch(Exception e) {}
-    _logger.fine(message);
+    _logger.warn(message);
   }
 }
 
@@ -296,7 +298,7 @@ INAUGURATION : 'inauguration' | 'inaugaration';
 INDEPENDENCE : 'independence' | 'independance';
 KWANZAA      : ('kwanza' 'a'?) 's'?;
 LABOR        : 'labor';
-MLK          : 'mlk' | 'martin' WHITE_SPACE 'luther' WHITE_SPACE 'king' SINGLE_QUOTE? 's'? ('jr' DOT? SINGLE_QUOTE? 's'?)?;
+MLK          : 'mlk' | 'martin' WHITE_SPACE 'luther' WHITE_SPACE 'king' (COMMA SPACE 'jr' DOT)?;
 MEMORIAL     : 'memorial';
 MOTHER       : 'mother' SINGLE_QUOTE? 's'?;
 NEW          : 'new';
