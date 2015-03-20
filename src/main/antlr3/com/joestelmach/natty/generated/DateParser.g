@@ -41,12 +41,14 @@ tokens {
 }
 
 @members {
-  private java.util.logging.Logger _logger = java.util.logging.Logger.getLogger("com.joestelmach.natty");
-  
+  private org.slf4j.Logger _logger =
+    org.slf4j.LoggerFactory.getLogger(com.joestelmach.natty.generated.DateParser.class);
+
+  @Override
   public void displayRecognitionError(String[] tokenNames, RecognitionException re) {
     String message = getErrorHeader(re);
     try { message += getErrorMessage(re, tokenNames); } catch(Exception e) {}
-    _logger.fine(message);
+    _logger.warn(message);
   }
 }
 
@@ -724,7 +726,7 @@ holiday_name
   | LABOR WHITE_SPACE DAY
     -> HOLIDAY["LABOR_DAY"]
     
-  | MLK WHITE_SPACE DAY
+  | MLK (WHITE_SPACE DAY)?
     -> HOLIDAY["MLK_DAY"]
     
   | MEMORIAL WHITE_SPACE DAY

@@ -1,15 +1,13 @@
 package com.joestelmach.natty;
 
 import junit.framework.Assert;
+import org.apache.log4j.Level;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.text.DateFormat;
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Runs the parser through the various date formats 
@@ -367,13 +365,9 @@ public class DateTest extends AbstractTest {
   }
 
   public static void main(String[] args) {
-    ConsoleHandler handler = new ConsoleHandler();
-    handler.setLevel(Level.ALL);
-    Logger logger = Logger.getLogger("com.joestelmach.natty");
-    logger.setLevel(Level.FINEST);
-    logger.addHandler(handler);
 
-    String value = "Fried Chicken, Wedding Dinner";
+    String value = "martin luther king, jr. day";
+    org.apache.log4j.Logger.getRootLogger().setLevel(Level.INFO);
 
     Parser parser = new Parser();
     List<DateGroup> groups = parser.parse(value);
