@@ -194,7 +194,7 @@ public class Parser {
     // walk through the token stream and build a collection 
     // of sub token streams that represent possible date locations
     List<Token> currentGroup = null;
-    List<TokenStream> groups = new ArrayList<TokenStream>();
+    List<List<Token>> groups = new ArrayList<List<Token>>();
     Token currentToken;
     Token previousToken = null;
     StringBuilder tokenString = new StringBuilder();
@@ -233,8 +233,7 @@ public class Parser {
           if(currentToken.getType() == DateLexer.UNKNOWN) {
             if(currentGroup.size() > 0) {
               currentGroup.add(currentToken);
-              cleanupGroup(currentGroup);
-              groups.add(new CommonTokenStream(new NattyTokenSource(currentGroup)));
+              groups.add(currentGroup);
             }
             currentGroup = null;
           }
@@ -250,13 +249,25 @@ public class Parser {
     }
 
     if(currentGroup != null) {
-      cleanupGroup(currentGroup);
-      groups.add(new CommonTokenStream(new NattyTokenSource(currentGroup)));
+      groups.add(currentGroup);
     }
     
     _logger.fine("global token stream: " + tokenString.toString());
-    
-    return groups;
+    List<TokenStream> streams = new ArrayList<TokenStream>();
+    for(List<Token> group:groups) {
+      cleanupGroup(group);
+      if(!group.isEmpty()) {
+        StringBuilder builder = new StringBuilder();
+        for (Token token : group) {
+          builder.append(DateParser.tokenNames[token.getType()]).append(" ");
+        }
+        _logger.fine(builder.toString());
+
+        streams.add(new CommonTokenStream(new NattyTokenSource(group)));
+      }
+    }
+
+    return streams;
   }
   
   /**
