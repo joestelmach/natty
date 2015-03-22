@@ -133,4 +133,23 @@ public class TimeTest extends AbstractTest {
     validateTime(dates.get(0), 12, 0, 0);
     validateTime(dates.get(1), 12, 0, 10);
   }
+
+  @Test
+  public void testText() throws Exception {
+    CalendarSource.setBaseDate(DateFormat.getTimeInstance(DateFormat.SHORT).parse("12:00 pm"));
+
+    List<DateGroup> groups = _parser.parse("5.30pm");
+    Assert.assertEquals(1, groups.size());
+    DateGroup group = groups.get(0);
+    Assert.assertEquals(1, group.getDates().size());
+    validateTime(group.getDates().get(0), 17, 30, 0);
+    Assert.assertEquals("5.30pm", group.getText());
+
+    groups = _parser.parse("5:30pm");
+    Assert.assertEquals(1, groups.size());
+    group = groups.get(0);
+    Assert.assertEquals(1, group.getDates().size());
+    validateTime(group.getDates().get(0), 17, 30, 0);
+    Assert.assertEquals("5:30pm", group.getText());
+  }
 }
