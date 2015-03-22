@@ -13,10 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TimeZone;
+import java.util.*;
 
 /**
  * 
@@ -26,6 +23,23 @@ public class Parser {
   private TimeZone _defaultTimeZone;
   
   private static final Logger _logger = LoggerFactory.getLogger(Parser.class);
+
+  /**
+   * Tokens that should be removed from the end any list of tokens before parsing. These are
+   * valid tokens, but could never add any meaningful parsing information when located at the
+   * end of a token stream.
+   */
+  private static final Set<Integer> IGNORED_TRAILING_TOKENS =
+      new HashSet<Integer>(Arrays.asList(new Integer[] {
+          DateLexer.DOT,
+          DateLexer.COLON,
+          DateLexer.COMMA,
+          DateLexer.DASH,
+          DateLexer.SLASH,
+          DateLexer.DOT,
+          DateLexer.PLUS,
+          DateLexer.SINGLE_QUOTE
+      }));
 
   /**
    * Creates a new parser using the given time zone as the default
@@ -236,16 +250,17 @@ public class Parser {
     List<Token> currentGroup = null;
     List<List<Token>> groups = new ArrayList<List<Token>>();
     Token currentToken;
+    int currentTokenType;
     StringBuilder tokenString = new StringBuilder();
     while((currentToken = stream.getTokenSource().nextToken()).getType() != DateLexer.EOF) {
-      tokenString.append(DateParser.tokenNames[currentToken.getType()]).append(" ");
+      currentTokenType = currentToken.getType();
+      tokenString.append(DateParser.tokenNames[currentTokenType]).append(" ");
 
       // we're currently NOT collecting for a possible date group
       if(currentGroup == null) {
-        // skip over white space and tokens not immediately followed by white space or
-        // known tokens that cannot be the start of a date
-        if(currentToken.getType() != DateLexer.WHITE_SPACE &&
-            DateParser.FOLLOW_empty_in_parse186.member(currentToken.getType())) {
+        // skip over white space and known tokens that cannot be the start of a date
+        if(currentTokenType != DateLexer.WHITE_SPACE &&
+            DateParser.FOLLOW_empty_in_parse186.member(currentTokenType)) {
 
           currentGroup = new ArrayList<Token>();
           currentGroup.add(currentToken);
@@ -255,21 +270,19 @@ public class Parser {
       // we're currently collecting
       else {
         // preserve white space
-        if(currentToken.getType() == DateLexer.WHITE_SPACE) {
+        if(currentTokenType == DateLexer.WHITE_SPACE) {
           currentGroup.add(currentToken);
         }
 
         else {
           // if this is an unknown token, we'll close out the current group
-          if(currentToken.getType() == DateLexer.UNKNOWN) {
-            if(!currentGroup.isEmpty()) {
-              groups.add(currentGroup);
-            }
+          if(currentTokenType == DateLexer.UNKNOWN) {
+            addGroup(currentGroup, groups);
             currentGroup = null;
           }
           // otherwise, the token is known and we're currently collecting for
-          // a group, so we'll add it if it's not a dot
-          else if(currentToken.getType() != DateLexer.DOT) {
+          // a group, so we'll add it to the current group
+          else {
             currentGroup.add(currentToken);
           }
         }
@@ -277,7 +290,7 @@ public class Parser {
     }
 
     if(currentGroup != null) {
-      groups.add(currentGroup);
+      addGroup(currentGroup, groups);
     }
     
     _logger.info("STREAM: " + tokenString.toString());
@@ -297,5 +310,25 @@ public class Parser {
 
     return streams;
   }
-  
+
+  /**
+   * Cleans up the given group and adds it to the list of groups if still valid
+   * @param group
+   * @param groups
+   */
+  private void addGroup(List<Token> group, List<List<Token>> groups) {
+
+    if(group.isEmpty()) return;
+
+    // remove trailing tokens that should be ignored
+    while(!group.isEmpty() && IGNORED_TRAILING_TOKENS.contains(
+        group.get(group.size() - 1).getType())) {
+      group.remove(group.size() - 1);
+    }
+
+    // if the group still has some tokens left, we'll add it to our list of groups
+    if(!group.isEmpty()) {
+      groups.add(group);
+    }
+  }
 }

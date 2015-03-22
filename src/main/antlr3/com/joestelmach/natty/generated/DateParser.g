@@ -815,7 +815,7 @@ explicit_time
   ;
 
 explicit_time_hours_minutes returns [String hours, String minutes, String ampm]
-  : hours COLON? minutes (COLON? seconds)? (WHITE_SPACE? (meridian_indicator | (MILITARY_HOUR_SUFFIX | HOUR)))?
+  : hours (COLON | DOT)? minutes ((COLON | DOT)? seconds)? (WHITE_SPACE? (meridian_indicator | (MILITARY_HOUR_SUFFIX | HOUR)))?
       {$hours=$hours.text; $minutes=$minutes.text; $ampm=$meridian_indicator.text;}
       -> hours minutes seconds? meridian_indicator?
 
