@@ -65,7 +65,7 @@ public class ParseListener extends BlankDebugEventListener {
       }
       String text = builder.toString();
       int line = tokenList.get(0).getLine();
-      int start = tokenList.get(0).getCharPositionInLine();
+      int start = tokenList.get(0).getCharPositionInLine() + 1;
       int end = start + text.length();
         
       ParseLocation location = new ParseLocation();

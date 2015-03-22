@@ -358,15 +358,10 @@ public class DateTest extends AbstractTest {
     TimeZone.setDefault(TimeZone.getTimeZone("US/Eastern"));
   }
 
-  @Test
-  public void testNoDates() {
-    List<Date> dates = parseCollection("Fried Chicken, Wedding Dinner");
-    Assert.assertEquals(0, dates.size());
-  }
-
   public static void main(String[] args) {
 
-    String value = "martin luther king, jr. day";
+    String value="this friday.";
+
     org.apache.log4j.Logger.getRootLogger().setLevel(Level.INFO);
 
     Parser parser = new Parser();

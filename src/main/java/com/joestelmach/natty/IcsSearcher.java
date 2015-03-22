@@ -1,28 +1,24 @@
 package com.joestelmach.natty;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TimeZone;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.data.ParserException;
 import net.fortuna.ical4j.model.Component;
 import net.fortuna.ical4j.model.DateTime;
 import net.fortuna.ical4j.model.Period;
 import net.fortuna.ical4j.model.PeriodList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.ParseException;
+import java.util.*;
 
 public class IcsSearcher {
   private static final String GMT = "GMT";
   private static final String VEVENT = "VEVENT";
   private static final String SUMMARY = "SUMMARY";
-  private static final Logger _logger = Logger.getLogger("com.joestelmach.natty");
+  private static final Logger _logger = LoggerFactory.getLogger(IcsSearcher.class);
   private net.fortuna.ical4j.model.Calendar _holidayCalendar;
   private String _calendarFileName;
   private TimeZone _timeZone;
@@ -41,11 +37,11 @@ public class IcsSearcher {
         _holidayCalendar = new CalendarBuilder().build(fin);
         
       } catch (IOException e) {
-        _logger.severe("Couln't open " + _calendarFileName);
+        _logger.error("Couln't open " + _calendarFileName);
         return holidays;
         
       } catch (ParserException e) {
-        _logger.severe("Couln't parse " + _calendarFileName);
+        _logger.error("Couln't parse " + _calendarFileName);
         return holidays;
       }
     }
@@ -57,7 +53,7 @@ public class IcsSearcher {
       period = new Period(from, to);
       
     } catch (ParseException e) {
-      _logger.log(Level.SEVERE, "Invalid start or end year: " + startYear + ", " + endYear, e);
+      _logger.error("Invalid start or end year: " + startYear + ", " + endYear, e);
       return holidays;
     }
     

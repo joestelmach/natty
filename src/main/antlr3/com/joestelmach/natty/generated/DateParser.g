@@ -48,7 +48,7 @@ tokens {
   public void displayRecognitionError(String[] tokenNames, RecognitionException re) {
     String message = getErrorHeader(re);
     try { message += getErrorMessage(re, tokenNames); } catch(Exception e) {}
-    _logger.warn(message);
+    _logger.debug(message);
   }
 }
 
@@ -807,7 +807,7 @@ relative_time
 
 // a time with an hour, optional minutes, and optional meridian indicator
 explicit_time
-  : explicit_time_hours_minutes (WHITE_SPACE? time_zone)?
+  : (AT WHITE_SPACE)? explicit_time_hours_minutes (WHITE_SPACE? time_zone)?
     -> ^(EXPLICIT_TIME explicit_time_hours_minutes time_zone?)
 
   | named_time (WHITE_SPACE time_zone)?
