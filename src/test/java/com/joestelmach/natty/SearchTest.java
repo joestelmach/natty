@@ -32,7 +32,7 @@ public class SearchTest extends AbstractTest {
     Assert.assertEquals(1, groups.size());
     DateGroup group = groups.get(0);
     Assert.assertEquals(1, group.getLine());
-    Assert.assertEquals(5, group.getPosition());
+    Assert.assertEquals(6, group.getPosition());
     Assert.assertEquals(1, group.getDates().size());
     validateDate(group.getDates().get(0), 2, 21, 2011);
     validateTime(group.getDates().get(0), 9, 0, 0);
@@ -41,7 +41,7 @@ public class SearchTest extends AbstractTest {
     Assert.assertEquals(1, groups.size());
     group = groups.get(0);
     Assert.assertEquals(1, group.getLine());
-    Assert.assertEquals(18, group.getPosition());
+    Assert.assertEquals(19, group.getPosition());
     Assert.assertEquals(1, group.getDates().size());
     validateDate(group.getDates().get(0), 2, 21, 2011);
     validateTime(group.getDates().get(0), 10, 0, 0);
@@ -161,20 +161,14 @@ public class SearchTest extends AbstractTest {
     validateDate(dates.get(0), 2, 27, 2011); 
     
     groups = parser.parse("I want to be able to jog 3 miles non-stop by September.");
-    Assert.assertEquals(2, groups.size());
+    Assert.assertEquals(1, groups.size());
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
-    validateDateTime(dates.get(0), 2, 20, 2011, 3, 0, 0); 
-    dates = groups.get(1).getDates();
-    Assert.assertEquals(1, dates.size());
-    validateDate(dates.get(0), 9, 1, 2011); 
+    validateDate(dates.get(0), 9, 1, 2011);
     
     groups = parser.parse("I want to lose 10 lbs in 10 days");
-    Assert.assertEquals(2, groups.size());
+    Assert.assertEquals(1, groups.size());
     dates = groups.get(0).getDates();
-    Assert.assertEquals(1, dates.size());
-    validateDateTime(dates.get(0), 2, 20, 2011, 10, 0, 0); 
-    dates = groups.get(1).getDates();
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 3, 2, 2011); 
     
@@ -185,26 +179,20 @@ public class SearchTest extends AbstractTest {
     validateDate(dates.get(0), 12, 30, 2011); 
     
     groups = parser.parse("i want to have 1 kid this year");
-    Assert.assertEquals(2, groups.size());
+    Assert.assertEquals(1, groups.size());
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
-    validateDateTime(dates.get(0), 2, 20, 2011, 1, 0, 0); 
-    dates = groups.get(1).getDates();
-    Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 2, 20, 2011); 
-    
+
     groups = parser.parse("save $1000 by September");
     Assert.assertEquals(1, groups.size());
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
-    validateDate(dates.get(0), 9, 1, 2011); 
-    
+    validateDate(dates.get(0), 9, 1, 2011);
+
     groups = parser.parse("have my son play at muse music in provo UT at the 3 band cause they always have fog on the third band at 7:30");
-    Assert.assertEquals(2, groups.size());
+    Assert.assertEquals(1, groups.size());
     dates = groups.get(0).getDates();
-    Assert.assertEquals(1, dates.size());
-    validateDateTime(dates.get(0), 2, 20, 2011, 3, 0, 0); 
-    dates = groups.get(1).getDates();
     Assert.assertEquals(1, dates.size());
     validateDateTime(dates.get(0), 2, 20, 2011, 7, 30, 0); 
     
@@ -237,7 +225,7 @@ public class SearchTest extends AbstractTest {
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 9, 13, 2013);
-    Assert.assertEquals(16, groups.get(0).getPosition());
+    Assert.assertEquals(17, groups.get(0).getPosition());
     Assert.assertEquals("sep 13, 2013", groups.get(0).getText());
     
     groups = parser.parse("hillary clinton 9/13/2013");
@@ -245,7 +233,7 @@ public class SearchTest extends AbstractTest {
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 9, 13, 2013);
-    Assert.assertEquals(16, groups.get(0).getPosition());
+    Assert.assertEquals(17, groups.get(0).getPosition());
     Assert.assertEquals("9/13/2013", groups.get(0).getText());
     
     groups = parser.parse("hillary clintoo sep 13, 2013");
@@ -253,7 +241,7 @@ public class SearchTest extends AbstractTest {
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 9, 13, 2013);
-    Assert.assertEquals(16, groups.get(0).getPosition());
+    Assert.assertEquals(17, groups.get(0).getPosition());
     Assert.assertEquals("sep 13, 2013", groups.get(0).getText());
     
     groups = parser.parse("clinton sep 13 2013");
@@ -261,7 +249,7 @@ public class SearchTest extends AbstractTest {
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 9, 13, 2013);
-    Assert.assertEquals(8, groups.get(0).getPosition());
+    Assert.assertEquals(9, groups.get(0).getPosition());
     Assert.assertEquals("sep 13 2013", groups.get(0).getText());
     
     groups = parser.parse("wedding dinner with Pam");
@@ -284,5 +272,117 @@ public class SearchTest extends AbstractTest {
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 2, 21, 2011);
+
+    groups = parser.parse("**SHOT 01/31/15**");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 1, 31, 2015);
+
+    groups = parser.parse("KOSTROMA REGION, RUSSIA. SEPTEMBER 24, 2014. A woman cleaning up fallen leaves on the grounds of the Shchelykovo museum reserve of Russian playwright Alexander Ostrovsky.");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 9, 24, 2014);
+
+    groups = parser.parse("21 November 2014-NYC-USA **** STRICTLY NOT AVAILABLE FOR USA ***");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 11, 21, 2014);
   }
+
+  @Test
+  public void testLocations() throws Exception {
+    Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("2/20/2011");
+    CalendarSource.setBaseDate(reference);
+
+    Parser parser = new Parser();
+    List<DateGroup> groups = parser.parse("I want to go to the movies on september 1st.  Or maybe we should go on October 3rd.");
+    Assert.assertEquals(2, groups.size());
+    DateGroup group = groups.get(0);
+    Assert.assertEquals(1, group.getLine());
+    Assert.assertEquals(31, group.getPosition());
+    group = groups.get(1);
+    Assert.assertEquals(1, group.getLine());
+    Assert.assertEquals(72, group.getPosition());
+
+    groups = parser.parse("I want to go to \nthe movies on september 1st to see The Alan Turing Movie.");
+    Assert.assertEquals(1, groups.size());
+    group = groups.get(0);
+    Assert.assertEquals(2, group.getLine());
+    Assert.assertEquals(15, group.getPosition());
+  }
+
+  @Test
+  public void testPrefixSuffix() throws Exception {
+
+    Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("2/20/2011");
+    CalendarSource.setBaseDate(reference);
+
+    // no prefix or suffix
+    Parser parser = new Parser();
+    List<DateGroup> groups = parser.parse("Sept. 1st");
+    Assert.assertEquals(1, groups.size());
+    DateGroup group = groups.get(0);
+    Assert.assertEquals(0, group.getPrefix(3).length());
+    Assert.assertEquals(0, group.getSuffix(3).length());
+
+    // no prefix
+    groups = parser.parse("Sept. 1st is the date");
+    Assert.assertEquals(1, groups.size());
+    group = groups.get(0);
+    Assert.assertEquals(0, group.getPrefix(3).length());
+    String suffix = group.getSuffix(3);
+    Assert.assertEquals(3, suffix.length());
+    Assert.assertEquals(" is",suffix);
+
+    // no suffix
+    groups = parser.parse("The date is Sept. 1st");
+    Assert.assertEquals(1, groups.size());
+    group = groups.get(0);
+    String prefix = group.getPrefix(3);
+    Assert.assertEquals(3, prefix.length());
+    Assert.assertEquals("is ", prefix);
+    Assert.assertEquals(0, group.getSuffix(3).length());
+
+    // ask for a larger prefix than available
+    groups = parser.parse("a Sept. 1st");
+    Assert.assertEquals(1, groups.size());
+    group = groups.get(0);
+    prefix = group.getPrefix(5);
+    Assert.assertEquals(2, prefix.length());
+    Assert.assertEquals("a ", prefix);
+    Assert.assertEquals(0, group.getSuffix(3).length());
+
+    // ask for a larger suffix than available
+    groups = parser.parse("Sept. 1st a");
+    Assert.assertEquals(1, groups.size());
+    group = groups.get(0);
+    suffix = group.getSuffix(5);
+    Assert.assertEquals(2,suffix.length());
+    Assert.assertEquals(" a", suffix);
+    Assert.assertEquals(0, group.getPrefix(3).length());
+
+    // ask for a larger prefix and suffix than available
+    groups = parser.parse("a Sept. 1st a");
+    Assert.assertEquals(1, groups.size());
+    group = groups.get(0);
+    prefix = group.getPrefix(5);
+    suffix = group.getSuffix(5);
+    Assert.assertEquals(2,prefix.length());
+    Assert.assertEquals("a ", prefix);
+    Assert.assertEquals(2,suffix.length());
+    Assert.assertEquals(" a", suffix);
+  }
+
+  @Test
+  public void testNoDates() {
+    List<Date> dates = parseCollection("Fried Chicken, Wedding Dinner");
+    Assert.assertEquals(0, dates.size());
+
+    parseCollection("Cleveland");
+    Assert.assertEquals(0, dates.size());
+  }
+
 }

@@ -601,6 +601,7 @@ public class WalkerState {
 
     _updatePreviousDates = !_dateGivenInGroup;
     _dateGivenInGroup = true;
+    _dateGroup.setDateInferred(false);
 
     if(_firstDateInvocationInGroup) {
       // if a time has been given within the current date group, 
