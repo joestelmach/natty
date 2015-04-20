@@ -61,7 +61,7 @@ date
   ;
   
 relative_date
-  : ^(RELATIVE_DATE seek? explicit_seek*)
+  : ^(RELATIVE_DATE seek* explicit_seek*)
   ;
   
 week_index
