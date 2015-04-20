@@ -380,8 +380,8 @@ formal_date_separator
   
 relative_date
   // next wed, last month
-  : relative_date_prefix WHITE_SPACE relative_target 
-      -> ^(RELATIVE_DATE ^(SEEK relative_date_prefix relative_target))
+  : relative_date_prefix WHITE_SPACE relative_target (WHITE_SPACE spelled_or_int_optional_prefix WHITE_SPACE relative_date_span)*
+      -> ^(RELATIVE_DATE ^(SEEK relative_date_prefix relative_target) ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] spelled_or_int_optional_prefix relative_date_span)*)
       
   // this month, this week
   | implicit_prefix WHITE_SPACE relative_target 
@@ -399,6 +399,9 @@ relative_date
   // one month from now
   | spelled_or_int_optional_prefix WHITE_SPACE relative_target WHITE_SPACE relative_date_suffix
       -> ^(RELATIVE_DATE ^(SEEK relative_date_suffix spelled_or_int_optional_prefix relative_target))
+            
+  | one=spelled_or_int_optional_prefix WHITE_SPACE relative_target (WHITE_SPACE two+=spelled_or_int_optional_prefix WHITE_SPACE relative_date_span)+ WHITE_SPACE relative_date_suffix
+      -> ^(RELATIVE_DATE ^(SEEK relative_date_suffix $one relative_target) ^(SEEK relative_date_suffix $two relative_date_span)*)
 
   // a month from now
   | relative_target WHITE_SPACE relative_date_suffix
