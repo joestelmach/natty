@@ -149,6 +149,10 @@ public class DateTest extends AbstractTest {
     validateDate("first monday in 3 months", 5, 2, 2011);
     validateDate("first monday of 3 months", 5, 2, 2011);
     validateDate("first monday of month in 3 months", 5, 2, 2011);
+    validateDate("1 year 9 months from now", 11, 28, 2012);
+    validateDate("1 year 9 months 1 day from now", 11, 29, 2012);
+    validateDate("2 years 4 months ago", 10, 28, 2008);
+    validateDate("2 years 4 months 5 days ago", 10, 23, 2008);
   }
   
   @Test
