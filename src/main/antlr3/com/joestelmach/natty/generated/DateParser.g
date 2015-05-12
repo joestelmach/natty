@@ -123,7 +123,9 @@ date_time_alternative
   ;
 
 date_time_alternative_range
-  : (
+  : (range_direction spelled_or_int_optional_prefix WHITE_SPACE range_span (WHITE_SPACE AND WHITE_SPACE)?)+
+
+  | (
     // in two days, in 3 or 4 days
     range_direction one=spelled_or_int_optional_prefix
       (conjunction two=spelled_or_int_optional_prefix)? WHITE_SPACE range_span
@@ -637,6 +639,7 @@ relative_date_span
   | WEEK  -> SPAN["week"]
   | MONTH -> SPAN["month"]
   | YEAR  -> SPAN["year"]
+  | SCORE -> SPAN["score"]
   ;
  
 day_of_week

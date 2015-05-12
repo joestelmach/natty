@@ -8,6 +8,7 @@ import java.util.*;
 public class WalkerState {
   
   private static final int TWO_DIGIT_YEAR_CENTURY_THRESHOLD = 20;
+  private static final String SCORE = "score";
   private static final String MONTH = "month";
   private static final String DAY = "day";
   private static final String YEAR = "year";
@@ -203,7 +204,7 @@ public class WalkerState {
     assert(direction.equals(DIR_LEFT) || direction.equals(DIR_RIGHT));
     assert(span.equals(DAY) || span.equals(WEEK) || span.equals(MONTH) || 
         span.equals(YEAR) || span.equals(HOUR) || span.equals(MINUTE) || 
-        span.equals(SECOND));
+        span.equals(SECOND) || span.equals(SCORE));
     
     boolean isDateSeek = span.equals(DAY) || span.equals(WEEK) || 
       span.equals(MONTH) || span.equals(YEAR);
@@ -214,18 +215,19 @@ public class WalkerState {
     else {
       markTimeInvocation(null);
     }
-    
+
+    boolean isScore = span.equals(SCORE);
     int sign = direction.equals(DIR_RIGHT) ? 1 : -1;
-    int field = 
-      span.equals(DAY) ? Calendar.DAY_OF_YEAR : 
-      span.equals(WEEK) ? Calendar.WEEK_OF_YEAR :
-      span.equals(MONTH) ? Calendar.MONTH :
-      span.equals(YEAR) ? Calendar.YEAR : 
-      span.equals(HOUR) ? Calendar.HOUR: 
-      span.equals(MINUTE) ? Calendar.MINUTE: 
-      span.equals(SECOND) ? Calendar.SECOND:
-      null;
-    if(field > 0) _calendar.add(field, seekAmountInt * sign);
+    int field =
+        (span.equals(YEAR) || isScore) ? Calendar.YEAR :
+        span.equals(DAY) ? Calendar.DAY_OF_YEAR :
+        span.equals(WEEK) ? Calendar.WEEK_OF_YEAR :
+        span.equals(MONTH) ? Calendar.MONTH :
+        span.equals(HOUR) ? Calendar.HOUR :
+        span.equals(MINUTE) ? Calendar.MINUTE :
+        span.equals(SECOND) ? Calendar.SECOND :
+        null;
+    if(field > 0) _calendar.add(field, (isScore ? (seekAmountInt * 20) : seekAmountInt) * sign);
   }
   
   /**

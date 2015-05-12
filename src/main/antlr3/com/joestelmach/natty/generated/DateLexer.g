@@ -43,6 +43,7 @@ DAY    : 'day'    | 'days' ;
 WEEK   : 'week'   | 'weeks'   | 'wks' DOT?;
 MONTH  : 'month'  | 'months';
 YEAR   : 'year'   | 'year' SINGLE_QUOTE? 's' | 'yrs' DOT?;
+SCORE  : 'score';
 
 TODAY     : 'today';
 TOMORROW  : 'tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow' | 'tmr';

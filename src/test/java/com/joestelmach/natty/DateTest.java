@@ -360,9 +360,7 @@ public class DateTest extends AbstractTest {
 
   public static void main(String[] args) {
 
-    String value="5.30pm";
-    value = "this friday.";
-    value = "I want to plan a get-together with my friends for this Friday.";
+    String value="2 years and 2 days";
 
     org.apache.log4j.Logger.getRootLogger().setLevel(Level.INFO);
 
