@@ -3,7 +3,7 @@
   <groupId>com.joestelmach</groupId>
   <artifactId>natty</artifactId>
   <packaging>jar</packaging>
-  <version>0.11-SNAPSHOT</version>
+  <version>0.11</version>
   <name>Natty Date Parser</name>
   <description>natural language date parser</description>
   <url>http://natty.joestelmach.com</url>
