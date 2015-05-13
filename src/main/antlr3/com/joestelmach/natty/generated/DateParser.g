@@ -616,11 +616,11 @@ relative_date_suffix
 relative_time_suffix
   // from now, after today, before noon, after 4pm
   : (FROM | AFTER) (WHITE_SPACE relative_time_suffix_anchor)?
-      -> DIRECTION[">"] SEEK_BY["by_day"] relative_time_suffix_anchor
+      -> DIRECTION[">"] SEEK_BY["by_day"] relative_time_suffix_anchor?
       
   // before noon, before 3pm
   | BEFORE (WHITE_SPACE relative_time_suffix_anchor)?
-      -> DIRECTION["<"] SEEK_BY["by_day"] relative_time_suffix_anchor
+      -> DIRECTION["<"] SEEK_BY["by_day"] relative_time_suffix_anchor?
       
   | AGO 
       -> DIRECTION["<"] SEEK_BY["by_day"]

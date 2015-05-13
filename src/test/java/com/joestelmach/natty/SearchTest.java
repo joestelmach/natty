@@ -290,6 +290,12 @@ public class SearchTest extends AbstractTest {
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 11, 21, 2014);
+
+    groups = parser.parse("...all the backstory I needed in the first two minutes. From there, I....");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDateTime(dates.get(0), 2, 20, 2011, 0, 2, 0);
   }
 
   @Test
