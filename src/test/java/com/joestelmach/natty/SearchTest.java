@@ -296,6 +296,12 @@ public class SearchTest extends AbstractTest {
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
     validateDateTime(dates.get(0), 2, 20, 2011, 0, 2, 0);
+
+    groups = parser.parse("earthquake occured 5km NNW of Vincent, California at 07:34 UTC! #earthquake #Vincent http://t.co/6e4fAC6hTU");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDateTime(dates.get(0), 2, 20, 2011, 2, 34, 0);
   }
 
   @Test
