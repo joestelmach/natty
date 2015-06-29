@@ -116,6 +116,9 @@ public class DateTest extends AbstractTest {
     validateDate("september", 9, 1, 2011);
     validateDate("last september", 9, 1, 2010);
     validateDate("next september", 9, 1, 2011);
+    validateDate("next february", 2, 1, 2012);
+    validateDate("last february", 2, 1, 2010);
+    validateDate("february ", 2, 1, 2011);
     validateDate("in a year", 2, 28, 2012);
     validateDate("in a week", 3, 7, 2011);
     validateDate("the saturday after next", 3, 19, 2011);
