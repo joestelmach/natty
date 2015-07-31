@@ -177,13 +177,14 @@ public class WalkerState {
     if(seekAmountInt > 0) {
       int currentMonth = _calendar.get(Calendar.MONTH) + 1;
       int sign = direction.equals(DIR_RIGHT) ? 1 : -1;
-      int numYearsToShift = seekAmountInt + 
-        (currentMonth <= monthInt ? sign > 0 ? -1 : 0 : sign > 0 ? 0 : -1);
+      int numYearsToShift = seekAmountInt +
+              (currentMonth == monthInt ? 0 : (currentMonth < monthInt ? sign > 0 ? -1 : 0 : sign > 0 ? 0 : -1));
+
       _calendar.add(Calendar.YEAR, (numYearsToShift * sign));
     }
     
     // now set the month
-    _calendar.set(Calendar.MONTH, monthInt -1);
+    _calendar.set(Calendar.MONTH, monthInt - 1);
   }
   
   /**
