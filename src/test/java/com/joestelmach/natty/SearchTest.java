@@ -302,6 +302,18 @@ public class SearchTest extends AbstractTest {
     dates = groups.get(0).getDates();
     Assert.assertEquals(1, dates.size());
     validateDateTime(dates.get(0), 2, 20, 2011, 2, 34, 0);
+
+    groups = parser.parse("Caricature: Person with anti-German foreign press. From: Le Rire, Paris, Spring 1933.");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 3, 20, 1933);
+
+    groups = parser.parse("Person with Generaloberst von Seeckt in Bad Nauheim. Photograph. Autumn 1936");
+    Assert.assertEquals(1, groups.size());
+    dates = groups.get(0).getDates();
+    Assert.assertEquals(1, dates.size());
+    validateDate(dates.get(0), 9, 23, 1936);
   }
 
   @Test

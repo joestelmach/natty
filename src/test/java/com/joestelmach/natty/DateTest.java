@@ -370,7 +370,7 @@ public class DateTest extends AbstractTest {
 
   public static void main(String[] args) {
 
-    String value="earthquake occured 5km NNW of Vincent, California at 07:34 UTC! #earthquake #Vincent http://t.co/6e4fAC6hTU";
+    String value="easter '06";
 
     org.apache.log4j.Logger.getRootLogger().setLevel(Level.INFO);
 

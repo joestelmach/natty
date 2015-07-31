@@ -579,10 +579,22 @@ public class WalkerState {
     assert(yearInt >= 0);
     
     markDateInvocation();
-    
+
+    // if we couldn't find a date for the given year due to it falling outside of the range of
+    // years present in the ics file, we'll make an educated guess based on the current year.
+    // This is likely to represent the correct start date of the given season, but is not
+    // guaranteed as these dates do shift over time
     int year = getFullYear(yearInt);
-    Map<Integer, Date> dates = getDatesFromIcs(icsFileName, eventSummary, year, year);
-    Date date = dates.get(year - (eventSummary.equals(Holiday.NEW_YEARS_EVE.getSummary()) ? 1 : 0));
+    Date date = seasonalDateFromIcs(icsFileName, eventSummary, year);
+    if(date == null) {
+      date = seasonalDateFromIcs(icsFileName, eventSummary, getCalendar().get(Calendar.YEAR));
+      if(date != null) {
+        Calendar cal = getCalendar();
+        cal.setTime(date);
+        cal.set(Calendar.YEAR, year);
+        date = cal.getTime();
+      }
+    }
 
     if(date != null) {
       Calendar cal = getCalendar();
@@ -593,7 +605,16 @@ public class WalkerState {
       _calendar.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH));
     }
   }
-  
+
+  /**
+   * Finds and returns the date for the given event summary and year within the given ics file,
+   * or null if not present.
+   */
+  private Date seasonalDateFromIcs(String icsFileName, String eventSummary, int year) {
+    Map<Integer, Date> dates = getDatesFromIcs(icsFileName, eventSummary, year, year);
+    return dates.get(year - (eventSummary.equals(Holiday.NEW_YEARS_EVE.getSummary()) ? 1 : 0));
+  }
+
   /**
    * ensures that the first invocation of a date seeking
    * rule is captured

@@ -1,12 +1,12 @@
 package com.joestelmach.natty;
 
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 
 public class IcsTest extends AbstractTest {
@@ -81,16 +81,20 @@ public class IcsTest extends AbstractTest {
     
     validateDate("spring 2010", 3, 20, 2010);
     validateDate("spring 2018", 3, 20, 2018);
-    
+    validateDate("spring 1928", 3, 20, 1928);
+
     validateDate("summer 2012", 6, 20, 2012);
     validateDate("summer 2015", 6, 21, 2015);
-    
+    validateDate("summer 1960", 6, 21, 1960);
+
     validateDate("fall 2011", 9, 23, 2011);
     validateDate("fall 2012", 9, 22, 2012);
     validateDate("autumn 2016", 9, 22, 2016);
-    
+    validateDate("autumn 1800", 9, 23, 1800);
+
     validateDate("winter 2016", 12, 21, 2016);
     validateDate("winter 2011", 12, 22, 2011);
+    validateDate("winter 1900", 12, 22, 1900);
   }
   
   @Test
