@@ -88,6 +88,11 @@ public class DateTimeTest extends AbstractTest {
     validateDateTime("wed evening at 8:30", 3, 2, 2011, 20, 30, 0);
     validateDateTime("750 minutes from now", 2, 24, 2011, 12, 30, 0);
     validateDateTime("1500 minutes from now", 2, 25, 2011, 1, 0, 0);
+
+    // year boundary
+    reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("12/29/2015");
+    CalendarSource.setBaseDate(reference);
+    validateDateTime("Friday 2pm", 1, 1, 2016, 14, 0, 0);
   }
 
   @Test

@@ -91,7 +91,7 @@ public class WalkerState {
     else if(seekType.equals(SEEK_BY_DAY)) {
       // find the closest day
       do {
-        _calendar.roll(Calendar.DAY_OF_YEAR, sign);
+        _calendar.add(Calendar.DAY_OF_YEAR, sign);
       } while(_calendar.get(Calendar.DAY_OF_WEEK) != dayOfWeekInt);
       
       // now add/subtract any additional days
