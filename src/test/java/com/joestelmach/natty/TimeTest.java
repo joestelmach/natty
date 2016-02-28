@@ -95,22 +95,22 @@ public class TimeTest extends AbstractTest {
     Date reference = DateFormat.getTimeInstance(DateFormat.SHORT).parse("12:00 pm");
     calendarSource = new CalendarSource(reference);
 
-    List<Date> dates = parseCollection("12 or 12:30", reference);
+    List<Date> dates = parseCollection(reference, "12 or 12:30");
     Assert.assertEquals(2, dates.size());
     validateTime(dates.get(0), 12, 0, 0);
     validateTime(dates.get(1), 12, 30, 0);
 
-    dates = parseCollection("12pm or 12:30", reference);
+    dates = parseCollection(reference, "12pm or 12:30");
     Assert.assertEquals(2, dates.size());
     validateTime(dates.get(0), 12, 0, 0);
     validateTime(dates.get(1), 12, 30, 0);
 
-    dates = parseCollection("noon or 12:30", reference);
+    dates = parseCollection(reference, "noon or 12:30");
     Assert.assertEquals(2, dates.size());
     validateTime(dates.get(0), 12, 0, 0);
     validateTime(dates.get(1), 12, 30, 0);
 
-    dates = parseCollection("12 or 12:30am", reference);
+    dates = parseCollection(reference, "12 or 12:30am");
     Assert.assertEquals(2, dates.size());
     validateTime(dates.get(0), 0, 0, 0);
     validateTime(dates.get(1), 0, 30, 0);
@@ -121,17 +121,17 @@ public class TimeTest extends AbstractTest {
     Date reference = DateFormat.getTimeInstance(DateFormat.SHORT).parse("12:00 pm");
     calendarSource = new CalendarSource(reference);
 
-    List<Date> dates = parseCollection("for six hours", reference);
+    List<Date> dates = parseCollection(reference, "for six hours");
     Assert.assertEquals(2, dates.size());
     validateTime(dates.get(0), 12, 0, 0);
     validateTime(dates.get(1), 18, 0, 0);
     
-    dates = parseCollection("for 12 minutes", reference);
+    dates = parseCollection(reference, "for 12 minutes");
     Assert.assertEquals(2, dates.size());
     validateTime(dates.get(0), 12, 0, 0);
     validateTime(dates.get(1), 12, 12, 0);
     
-    dates = parseCollection("for 10 seconds", reference);
+    dates = parseCollection(reference, "for 10 seconds");
     Assert.assertEquals(2, dates.size());
     validateTime(dates.get(0), 12, 0, 0);
     validateTime(dates.get(1), 12, 0, 10);

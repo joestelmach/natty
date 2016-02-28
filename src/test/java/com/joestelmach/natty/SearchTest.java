@@ -402,10 +402,10 @@ public class SearchTest extends AbstractTest {
 
   @Test
   public void testNoDates() {
-    List<Date> dates = parseCollection("Fried Chicken, Wedding Dinner", new Date());
+    List<Date> dates = parseCollection(new Date(), "Fried Chicken, Wedding Dinner");
     Assert.assertEquals(0, dates.size());
 
-    parseCollection("Cleveland", new Date());
+    parseCollection(new Date(), "Cleveland");
     Assert.assertEquals(0, dates.size());
   }
 

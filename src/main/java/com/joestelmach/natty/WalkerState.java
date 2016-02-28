@@ -48,8 +48,8 @@ public class WalkerState {
     this(new Date());
   }
 
-  public WalkerState(Date baseDate) {
-    calendarSource = new CalendarSource(baseDate);
+  public WalkerState(Date referenceDate) {
+    calendarSource = new CalendarSource(referenceDate);
     resetCalendar();
     _dateGroup = new DateGroup();
   }

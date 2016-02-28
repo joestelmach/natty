@@ -37,7 +37,7 @@ public abstract class AbstractTest {
    * @param value
    * @return
    */
-  protected List<Date> parseCollection(String value, Date baseDate) {
+  protected List<Date> parseCollection(Date baseDate, String value) {
     List<DateGroup> dateGroup = _parser.parse(value, baseDate);
     return dateGroup.isEmpty() ? new ArrayList<Date>() : dateGroup.get(0).getDates();
   }
@@ -49,7 +49,7 @@ public abstract class AbstractTest {
    * @return
    */
   protected Date parseSingleDate(String value, Date baseDate) {
-    List<Date> dates = parseCollection(value, baseDate);
+    List<Date> dates = parseCollection(baseDate, value);
     Assert.assertEquals(1, dates.size());
     return dates.get(0);
   }
@@ -66,6 +66,10 @@ public abstract class AbstractTest {
   protected void validateDate(Date baseDate, String value, int month, int day, int year) {
     Date date = parseSingleDate(value, baseDate);
     validateDate(date, month, day, year);
+  }
+
+  protected void validateDate(String value, int month, int day, int year) {
+    validateDate(new Date(), value, month, day, year);
   }
   
   /**

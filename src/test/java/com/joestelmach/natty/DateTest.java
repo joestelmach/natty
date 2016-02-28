@@ -24,36 +24,36 @@ public class DateTest extends AbstractTest {
   
   @Test
   public void testFormal() {
-    validateDate(new Date(), "1978-01-28", 1, 28, 1978);
-    validateDate(new Date(), "2009-10-10", 10, 10, 2009);
-    validateDate(new Date(), "1980-1-2", 1, 2, 1980);
-    validateDate(new Date(), "12/12/12", 12, 12, 2012);
-    validateDate(new Date(), "3/4", 3, 4, Calendar.getInstance().get(Calendar.YEAR));
-    validateDate(new Date(), "sun, 11/21/2010", 11, 21, 2010);
-    validateDate(new Date(), "in october 2006", 10, 1, 2006);
-    validateDate(new Date(), "feb 1979", 2, 1, 1979);
-    validateDate(new Date(), "jan '80", 1, 1, 1980);
-    validateDate(new Date(), "2006-Jun-16", 6, 16, 2006);
-    validateDate(new Date(), "28-Feb-2010", 2, 28, 2010);
-    validateDate(new Date(), "9-Apr", 4, 9, Calendar.getInstance().get(Calendar.YEAR));
-    validateDate(new Date(), "jan 10, '00", 1, 10, 2000);
+    validateDate("1978-01-28", 1, 28, 1978);
+    validateDate("2009-10-10", 10, 10, 2009);
+    validateDate("1980-1-2", 1, 2, 1980);
+    validateDate("12/12/12", 12, 12, 2012);
+    validateDate("3/4", 3, 4, Calendar.getInstance().get(Calendar.YEAR));
+    validateDate("sun, 11/21/2010", 11, 21, 2010);
+    validateDate("in october 2006", 10, 1, 2006);
+    validateDate("feb 1979", 2, 1, 1979);
+    validateDate("jan '80", 1, 1, 1980);
+    validateDate("2006-Jun-16", 6, 16, 2006);
+    validateDate("28-Feb-2010", 2, 28, 2010);
+    validateDate("9-Apr", 4, 9, Calendar.getInstance().get(Calendar.YEAR));
+    validateDate("jan 10, '00", 1, 10, 2000);
   }
   
   @Test
   public void testRelaxed() {
-    validateDate(new Date(), "oct 1, 1980", 10, 1, 1980);
-    validateDate(new Date(), "oct. 1, 1980", 10, 1, 1980);
-    validateDate(new Date(), "oct 1,1980", 10, 1, 1980);
-    validateDate(new Date(), "1st oct in the year '89", 10, 1, 1989);
-    validateDate(new Date(), "thirty first of december '80", 12, 31, 1980);
-    validateDate(new Date(), "the first of december in the year 1980", 12, 1, 1980);
-    validateDate(new Date(), "the 2 of february in the year 1980", 2, 2, 1980);
-    validateDate(new Date(), "the 2nd of february in the year 1980", 2, 2, 1980);
-    validateDate(new Date(), "the second of february in the year 1980", 2, 2, 1980);
-    validateDate(new Date(), "jan. 2nd", 1, 2, Calendar.getInstance().get(Calendar.YEAR));
-    validateDate(new Date(), "sun, nov 21 2010", 11, 21, 2010);
-    validateDate(new Date(), "Second Monday in October 2017", 10, 9, 2017);
-    validateDate(new Date(), "2nd thursday in sept. '02", 9, 12, 2002);
+    validateDate("oct 1, 1980", 10, 1, 1980);
+    validateDate("oct. 1, 1980", 10, 1, 1980);
+    validateDate("oct 1,1980", 10, 1, 1980);
+    validateDate("1st oct in the year '89", 10, 1, 1989);
+    validateDate("thirty first of december '80", 12, 31, 1980);
+    validateDate("the first of december in the year 1980", 12, 1, 1980);
+    validateDate("the 2 of february in the year 1980", 2, 2, 1980);
+    validateDate("the 2nd of february in the year 1980", 2, 2, 1980);
+    validateDate("the second of february in the year 1980", 2, 2, 1980);
+    validateDate("jan. 2nd", 1, 2, Calendar.getInstance().get(Calendar.YEAR));
+    validateDate("sun, nov 21 2010", 11, 21, 2010);
+    validateDate("Second Monday in October 2017", 10, 9, 2017);
+    validateDate("2nd thursday in sept. '02", 9, 12, 2002);
   }
   
   @Test
@@ -166,181 +166,181 @@ public class DateTest extends AbstractTest {
     Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("1/02/2011");
     calendarSource = new CalendarSource(reference);
 
-    List<Date> dates = parseCollection("monday to friday", reference);
+    List<Date> dates = parseCollection(reference, "monday to friday");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 1, 7, 2011);
     
-    dates = parseCollection("1999-12-31 to tomorrow", reference);
+    dates = parseCollection(reference, "1999-12-31 to tomorrow");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 12, 31, 1999);
     validateDate(dates.get(1), 1, 3, 2011);
     
-    dates = parseCollection("now to 2010-01-01", reference);
+    dates = parseCollection(reference, "now to 2010-01-01");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 1, 1, 2010);
     
-    dates = parseCollection("jan 1 to 2", reference);
+    dates = parseCollection(reference, "jan 1 to 2");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 1, 2011);
     validateDate(dates.get(1), 1, 2, 2011);
     
-    dates = parseCollection("may 2nd to 5th", reference);
+    dates = parseCollection(reference, "may 2nd to 5th");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 5, 2, 2011);
     validateDate(dates.get(1), 5, 5, 2011);
     
-    dates = parseCollection("1/3 to 2/3", reference);
+    dates = parseCollection(reference, "1/3 to 2/3");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 2, 3, 2011);
     
-    dates = parseCollection("2/3 to in one week", reference);
+    dates = parseCollection(reference, "2/3 to in one week");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 2, 3, 2011);
     validateDate(dates.get(1), 1, 9, 2011);
     
-    dates = parseCollection("first day of may to last day of may", reference);
+    dates = parseCollection(reference, "first day of may to last day of may");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 5, 1, 2011);
     validateDate(dates.get(1), 5, 31, 2011);
     
-    dates = parseCollection("feb 28th or 2 days after", reference);
+    dates = parseCollection(reference, "feb 28th or 2 days after");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 2, 28, 2011);
     validateDate(dates.get(1), 3, 2, 2011);
     
-    dates = parseCollection("tomorrow at 10 and monday at 11", reference);
+    dates = parseCollection(reference, "tomorrow at 10 and monday at 11");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 1, 3, 2011);
     
-    dates = parseCollection("tomorrow at 10 through tues at 11", reference);
+    dates = parseCollection(reference, "tomorrow at 10 through tues at 11");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 1, 4, 2011);
     
-    dates = parseCollection("first day of 2009 to last day of 2009", reference);
+    dates = parseCollection(reference, "first day of 2009 to last day of 2009");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 1, 2009);
     validateDate(dates.get(1), 12, 31, 2009);
     
-    dates = parseCollection("first to last day of 2008", reference);
+    dates = parseCollection(reference, "first to last day of 2008");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 1, 2008);
     validateDate(dates.get(1), 12, 31, 2008);
     
-    dates = parseCollection("first to last day of september", reference);
+    dates = parseCollection(reference, "first to last day of september");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 9, 1, 2011);
     validateDate(dates.get(1), 9, 30, 2011);
     
-    dates = parseCollection("first to last day of this september", reference);
+    dates = parseCollection(reference, "first to last day of this september");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 9, 1, 2011);
     validateDate(dates.get(1), 9, 30, 2011);
     
-    dates = parseCollection("first to last day of 2 septembers ago", reference);
+    dates = parseCollection(reference, "first to last day of 2 septembers ago");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 9, 1, 2009);
     validateDate(dates.get(1), 9, 30, 2009);
     
-    dates = parseCollection("first to last day of 2 septembers from now", reference);
+    dates = parseCollection(reference, "first to last day of 2 septembers from now");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 9, 1, 2012);
     validateDate(dates.get(1), 9, 30, 2012);
     
-    dates = parseCollection("for 5 days", reference);
+    dates = parseCollection(reference, "for 5 days");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 1, 7, 2011);
     
-    dates = parseCollection("for ten months", reference);
+    dates = parseCollection(reference, "for ten months");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 11, 2, 2011);
     
-    dates = parseCollection("for twenty-five years", reference);
+    dates = parseCollection(reference, "for twenty-five years");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 1, 2, 2036);
 
-    dates = parseCollection("2 and 4 months", reference);
+    dates = parseCollection(reference, "2 and 4 months");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);
 
-    dates = parseCollection("in 2 to 4 months", reference);
+    dates = parseCollection(reference, "in 2 to 4 months");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);
 
-    dates = parseCollection("for 2 to 4 months", reference);
+    dates = parseCollection(reference, "for 2 to 4 months");
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 3, 2, 2011);
     validateDate(dates.get(2), 5, 2, 2011);
 
-    dates = parseCollection("next 2 to 4 months", reference);
+    dates = parseCollection(reference, "next 2 to 4 months");
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 3, 2, 2011);
     validateDate(dates.get(2), 5, 2, 2011);
 
-    dates = parseCollection("2 to 4 months from now", reference);
+    dates = parseCollection(reference, "2 to 4 months from now");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);
 
-    dates = parseCollection("last 2 to 4 months", reference);
+    dates = parseCollection(reference, "last 2 to 4 months");
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 11, 2, 2010);
     validateDate(dates.get(2), 9, 2, 2010);
 
-    dates = parseCollection("past 2 to 4 months", reference);
+    dates = parseCollection(reference, "past 2 to 4 months");
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 11, 2, 2010);
     validateDate(dates.get(2), 9, 2, 2010);
 
-    dates = parseCollection("2 to 4 months ago", reference);
+    dates = parseCollection(reference, "2 to 4 months ago");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 11, 2, 2010);
     validateDate(dates.get(1), 9, 2, 2010);
 
-    dates = parseCollection("2 or 3 days ago", reference);
+    dates = parseCollection(reference, "2 or 3 days ago");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 12, 31, 2010);
     validateDate(dates.get(1), 12, 30, 2010);
 
-    dates = parseCollection("1 to 2 days", reference);
+    dates = parseCollection(reference, "1 to 2 days");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 1, 4, 2011);
 
-    dates = parseCollection("I want to go shopping in Knoxville, TN in the next five to six months.", reference);
+    dates = parseCollection(reference, "I want to go shopping in Knoxville, TN in the next five to six months.");
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 6, 2, 2011);
     validateDate(dates.get(2), 7, 2, 2011);
 
-    dates = parseCollection("I want to watch the fireworks in the next two to three months.", reference);
+    dates = parseCollection(reference, "I want to watch the fireworks in the next two to three months.");
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 3, 2, 2011);
     validateDate(dates.get(2), 4, 2, 2011);
 
-    dates = parseCollection("september 7th something", reference);
+    dates = parseCollection(reference, "september 7th something");
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 9, 7, 2011);
     
-    dates = parseCollection("september 7th something happened here", reference);
+    dates = parseCollection(reference, "september 7th something happened here");
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 9, 7, 2011);
     
-    dates = parseCollection("bla bla bla 2 and 4 month", reference);
+    dates = parseCollection(reference, "bla bla bla 2 and 4 month");
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);

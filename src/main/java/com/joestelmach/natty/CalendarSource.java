@@ -12,19 +12,19 @@ import java.util.GregorianCalendar;
  * @author Joe Stelmach
  */
 public class CalendarSource {
-  private Date _baseDate;
+  private Date referenceDate;
 
   public CalendarSource() {
-    this._baseDate = new Date();
+    this.referenceDate = new Date();
   }
 
-  public CalendarSource(Date baseDate) {
-    this._baseDate = baseDate;
+  public CalendarSource(Date referenceDate) {
+    this.referenceDate = referenceDate;
   }
 
   public GregorianCalendar getCurrentCalendar() {
     GregorianCalendar calendar = new GregorianCalendar();
-    calendar.setTime(_baseDate);
+    calendar.setTime(referenceDate);
     return calendar;
   }
 }

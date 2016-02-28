@@ -70,13 +70,13 @@ public class Parser {
   /**
    * Parses the given input value for one or more groups of
    * date alternatives with relative dates resolved according
-   * to baseDate
+   * to referenceDate
    *
    * @param value
-   * @param baseDate
+   * @param referenceDate
    * @return
    */
-  public List<DateGroup> parse(String value, Date baseDate) {
+  public List<DateGroup> parse(String value, Date referenceDate) {
 
     // lex the input value to obtain our global token stream
     ANTLRInputStream input = null;
@@ -97,7 +97,7 @@ public class Parser {
     for(TokenStream stream:streams) {
       lastStream = stream;
       List<Token> tokens = ((NattyTokenSource) stream.getTokenSource()).getTokens();
-      DateGroup group = singleParse(stream, value, baseDate);
+      DateGroup group = singleParse(stream, value, referenceDate);
       while((group == null || group.getDates().size() == 0) && tokens.size() > 0) {
         if(group == null || group.getDates().size() == 0) {
           
@@ -109,7 +109,7 @@ public class Parser {
           while((group == null || group.getDates().isEmpty()) && !endRemovedTokens.isEmpty()) {
             endRemovedTokens = endRemovedTokens.subList(0, endRemovedTokens.size() - 1);
             TokenStream newStream = new CommonTokenStream(new NattyTokenSource(endRemovedTokens));
-            group = singleParse(newStream, value, baseDate);
+            group = singleParse(newStream, value, referenceDate);
             lastStream = newStream;
           }
 
@@ -128,7 +128,7 @@ public class Parser {
               }
             }
             TokenStream newStream = new CommonTokenStream(new NattyTokenSource(tokens));
-            group = singleParse(newStream, value, baseDate);
+            group = singleParse(newStream, value, referenceDate);
             lastStream = newStream;
           }
         }
@@ -183,7 +183,7 @@ public class Parser {
    * @param stream
    * @return
    */
-  private DateGroup singleParse(TokenStream stream, String fullText, Date baseDate) {
+  private DateGroup singleParse(TokenStream stream, String fullText, Date referenceDate) {
 	DateGroup group = null;
 	List<Token> tokens = ((NattyTokenSource) stream.getTokenSource()).getTokens();
 	if(tokens.isEmpty()) return group;
@@ -215,7 +215,7 @@ public class Parser {
         nodes = new CommonTreeNodeStream(tree);
         nodes.setTokenStream(stream);
         DateWalker walker = new DateWalker(nodes);
-        walker.setBaseDate(baseDate);
+        walker.setBaseDate(referenceDate);
         walker.getState().setDefaultTimeZone(_defaultTimeZone);
         walker.parse();
         _logger.info("AST: " + tree.toStringTree());

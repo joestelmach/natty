@@ -24,8 +24,8 @@ public class IcsSearcher {
   private TimeZone _timeZone;
   private CalendarSource calendarSource;
 
-  public IcsSearcher(String calendarFileName, TimeZone timeZone, Date baseDate) {
-    calendarSource = new CalendarSource(baseDate);
+  public IcsSearcher(String calendarFileName, TimeZone timeZone, Date referenceDate) {
+    calendarSource = new CalendarSource(referenceDate);
     _calendarFileName = calendarFileName;
     _timeZone = timeZone;
   }
