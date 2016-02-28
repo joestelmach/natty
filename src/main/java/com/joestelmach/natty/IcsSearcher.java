@@ -22,10 +22,16 @@ public class IcsSearcher {
   private net.fortuna.ical4j.model.Calendar _holidayCalendar;
   private String _calendarFileName;
   private TimeZone _timeZone;
-  
-  public IcsSearcher(String calendarFileName, TimeZone timeZone) {
+  private CalendarSource calendarSource;
+
+  public IcsSearcher(String calendarFileName, TimeZone timeZone, Date referenceDate) {
+    calendarSource = new CalendarSource(referenceDate);
     _calendarFileName = calendarFileName;
     _timeZone = timeZone;
+  }
+
+  public IcsSearcher(String calendarFileName, TimeZone timeZone) {
+    this(calendarFileName, timeZone, new Date());
   }
 
   public Map<Integer, Date> findDates(int startYear, int endYear, String eventSummary) {
@@ -66,12 +72,12 @@ public class IcsSearcher {
           DateTime date = ((Period) p).getStart();
           
           // this date is at the date of the holiday at 12 AM UTC
-          Calendar utcCal = CalendarSource.getCurrentCalendar();
+          Calendar utcCal = calendarSource.getCurrentCalendar();
           utcCal.setTimeZone(TimeZone.getTimeZone(GMT));
           utcCal.setTime(date);
           
           // use the year, month and day components of our UTC date to form a new local date
-          Calendar localCal = CalendarSource.getCurrentCalendar();
+          Calendar localCal = calendarSource.getCurrentCalendar();
           localCal.setTimeZone(_timeZone);
           localCal.set(Calendar.YEAR, utcCal.get(Calendar.YEAR));
           localCal.set(Calendar.MONTH, utcCal.get(Calendar.MONTH));

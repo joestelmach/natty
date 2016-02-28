@@ -14,6 +14,7 @@ import java.util.List;
  */
 public abstract class AbstractTest {
   private static Calendar _calendar;
+  protected static CalendarSource calendarSource;
   protected static Parser _parser;
 
 
@@ -27,7 +28,7 @@ public abstract class AbstractTest {
    */
   @Before
   public void before() {
-    CalendarSource.setBaseDate(null);
+    calendarSource = new CalendarSource();
   }
   
   /**
@@ -36,8 +37,8 @@ public abstract class AbstractTest {
    * @param value
    * @return
    */
-  protected List<Date> parseCollection(String value) {
-    List<DateGroup> dateGroup = _parser.parse(value);
+  protected List<Date> parseCollection(Date referenceDate, String value) {
+    List<DateGroup> dateGroup = _parser.parse(value, referenceDate);
     return dateGroup.isEmpty() ? new ArrayList<Date>() : dateGroup.get(0).getDates();
   }
   
@@ -47,8 +48,8 @@ public abstract class AbstractTest {
    * @param value
    * @return
    */
-  protected Date parseSingleDate(String value) {
-    List<Date> dates = parseCollection(value);
+  protected Date parseSingleDate(String value, Date referenceDate) {
+    List<Date> dates = parseCollection(referenceDate, value);
     Assert.assertEquals(1, dates.size());
     return dates.get(0);
   }
@@ -62,9 +63,13 @@ public abstract class AbstractTest {
    * @param day
    * @param year
    */
-  protected void validateDate(String value, int month, int day, int year) {
-    Date date = parseSingleDate(value);
+  protected void validateDate(Date referenceDate, String value, int month, int day, int year) {
+    Date date = parseSingleDate(value, referenceDate);
     validateDate(date, month, day, year);
+  }
+
+  protected void validateDate(String value, int month, int day, int year) {
+    validateDate(new Date(), value, month, day, year);
   }
   
   /**
@@ -92,8 +97,8 @@ public abstract class AbstractTest {
    * @param minutes
    * @param seconds
    */
-  protected void validateTime(String value, int hours, int minutes, int seconds) {
-    Date date = parseSingleDate(value);
+  protected void validateTime(Date referenceDate, String value, int hours, int minutes, int seconds) {
+    Date date = parseSingleDate(value, referenceDate);
     validateTime(date, hours, minutes, seconds);
   }
   
@@ -126,10 +131,10 @@ public abstract class AbstractTest {
    * @param minutes
    * @param seconds
    */
-  protected void validateDateTime(String value, int month, int day, int year, 
+  protected void validateDateTime(Date referenceDate, String value, int month, int day, int year,
       int hours, int minutes, int seconds) {
     
-    Date date = parseSingleDate(value);
+    Date date = parseSingleDate(value, referenceDate);
     validateDateTime(date, month, day, year, hours, minutes, seconds);
   }
   

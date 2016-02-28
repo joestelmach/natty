@@ -26,15 +26,15 @@ public class RecurrenceTest extends AbstractTest {
   public void testRelative() throws Exception {
     Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT, 
         DateFormat.SHORT).parse("3/3/2011 12:00 am");
-    CalendarSource.setBaseDate(reference);
+    calendarSource = new CalendarSource(reference);
     
-    DateGroup group = _parser.parse("every friday until two tuesdays from now").get(0);
+    DateGroup group = _parser.parse("every friday until two tuesdays from now", reference).get(0);
     Assert.assertEquals(1, group.getDates().size());
     validateDate(group.getDates().get(0), 3, 4, 2011);
     Assert.assertTrue(group.isRecurring());
     validateDate(group.getRecursUntil(), 3, 15, 2011);
     
-    group = _parser.parse("every saturday or sunday").get(0);
+    group = _parser.parse("every saturday or sunday", reference).get(0);
     Assert.assertEquals(2, group.getDates().size());
     validateDate(group.getDates().get(0), 3, 5, 2011);
     validateDate(group.getDates().get(1), 3, 6, 2011);
