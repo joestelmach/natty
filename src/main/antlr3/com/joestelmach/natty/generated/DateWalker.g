@@ -8,7 +8,8 @@ options {
 @header { package com.joestelmach.natty.generated; }
 
 @members {
-  private com.joestelmach.natty.WalkerState _walkerState = new com.joestelmach.natty.WalkerState();
+  private com.joestelmach.natty.WalkerState _walkerState;
+  private java.util.Date baseDate;
 
   @Override
   protected Object recoverFromMismatchedToken(IntStream input, int ttype, BitSet follow)
@@ -22,7 +23,14 @@ options {
     throw e;
   }
 
+  public void setBaseDate(java.util.Date baseDate) {
+    this.baseDate = baseDate;
+  }
+
   public com.joestelmach.natty.WalkerState getState() {
+    if(_walkerState==null) {
+      _walkerState = new com.joestelmach.natty.WalkerState(baseDate);
+    }
     return _walkerState;
   }
 }

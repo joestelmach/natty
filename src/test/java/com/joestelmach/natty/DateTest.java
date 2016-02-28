@@ -24,323 +24,323 @@ public class DateTest extends AbstractTest {
   
   @Test
   public void testFormal() {
-    validateDate("1978-01-28", 1, 28, 1978);
-    validateDate("2009-10-10", 10, 10, 2009);
-    validateDate("1980-1-2", 1, 2, 1980);
-    validateDate("12/12/12", 12, 12, 2012);
-    validateDate("3/4", 3, 4, Calendar.getInstance().get(Calendar.YEAR));
-    validateDate("sun, 11/21/2010", 11, 21, 2010);
-    validateDate("in october 2006", 10, 1, 2006);
-    validateDate("feb 1979", 2, 1, 1979);
-    validateDate("jan '80", 1, 1, 1980);
-    validateDate("2006-Jun-16", 6, 16, 2006);
-    validateDate("28-Feb-2010", 2, 28, 2010);
-    validateDate("9-Apr", 4, 9, Calendar.getInstance().get(Calendar.YEAR));
-    validateDate("jan 10, '00", 1, 10, 2000);
+    validateDate(new Date(), "1978-01-28", 1, 28, 1978);
+    validateDate(new Date(), "2009-10-10", 10, 10, 2009);
+    validateDate(new Date(), "1980-1-2", 1, 2, 1980);
+    validateDate(new Date(), "12/12/12", 12, 12, 2012);
+    validateDate(new Date(), "3/4", 3, 4, Calendar.getInstance().get(Calendar.YEAR));
+    validateDate(new Date(), "sun, 11/21/2010", 11, 21, 2010);
+    validateDate(new Date(), "in october 2006", 10, 1, 2006);
+    validateDate(new Date(), "feb 1979", 2, 1, 1979);
+    validateDate(new Date(), "jan '80", 1, 1, 1980);
+    validateDate(new Date(), "2006-Jun-16", 6, 16, 2006);
+    validateDate(new Date(), "28-Feb-2010", 2, 28, 2010);
+    validateDate(new Date(), "9-Apr", 4, 9, Calendar.getInstance().get(Calendar.YEAR));
+    validateDate(new Date(), "jan 10, '00", 1, 10, 2000);
   }
   
   @Test
   public void testRelaxed() {
-    validateDate("oct 1, 1980", 10, 1, 1980);
-    validateDate("oct. 1, 1980", 10, 1, 1980);
-    validateDate("oct 1,1980", 10, 1, 1980);
-    validateDate("1st oct in the year '89", 10, 1, 1989);
-    validateDate("thirty first of december '80", 12, 31, 1980);
-    validateDate("the first of december in the year 1980", 12, 1, 1980);
-    validateDate("the 2 of february in the year 1980", 2, 2, 1980);
-    validateDate("the 2nd of february in the year 1980", 2, 2, 1980);
-    validateDate("the second of february in the year 1980", 2, 2, 1980);
-    validateDate("jan. 2nd", 1, 2, Calendar.getInstance().get(Calendar.YEAR));
-    validateDate("sun, nov 21 2010", 11, 21, 2010);
-    validateDate("Second Monday in October 2017", 10, 9, 2017);
-    validateDate("2nd thursday in sept. '02", 9, 12, 2002);
+    validateDate(new Date(), "oct 1, 1980", 10, 1, 1980);
+    validateDate(new Date(), "oct. 1, 1980", 10, 1, 1980);
+    validateDate(new Date(), "oct 1,1980", 10, 1, 1980);
+    validateDate(new Date(), "1st oct in the year '89", 10, 1, 1989);
+    validateDate(new Date(), "thirty first of december '80", 12, 31, 1980);
+    validateDate(new Date(), "the first of december in the year 1980", 12, 1, 1980);
+    validateDate(new Date(), "the 2 of february in the year 1980", 2, 2, 1980);
+    validateDate(new Date(), "the 2nd of february in the year 1980", 2, 2, 1980);
+    validateDate(new Date(), "the second of february in the year 1980", 2, 2, 1980);
+    validateDate(new Date(), "jan. 2nd", 1, 2, Calendar.getInstance().get(Calendar.YEAR));
+    validateDate(new Date(), "sun, nov 21 2010", 11, 21, 2010);
+    validateDate(new Date(), "Second Monday in October 2017", 10, 9, 2017);
+    validateDate(new Date(), "2nd thursday in sept. '02", 9, 12, 2002);
   }
   
   @Test
   public void testExplicitRelative() throws Exception {
     Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("2/28/2011");
-    CalendarSource.setBaseDate(reference);
-    
-    validateDate("final thursday in april", 4, 28, 2011);
-    validateDate("final thurs in sep", 9, 29, 2011);
-    validateDate("4th february ", 2, 4, 2011);
+    calendarSource = new CalendarSource(reference);
+
+    validateDate(reference, "final thursday in april", 4, 28, 2011);
+    validateDate(reference, "final thurs in sep", 9, 29, 2011);
+    validateDate(reference, "4th february ", 2, 4, 2011);
   }
   
   @Test
   public void testRelative() throws Exception {
     Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("2/28/2011");
-    CalendarSource.setBaseDate(reference);
-    
-    validateDate("yesterday", 2, 27, 2011);
-    validateDate("tomorrow", 3, 1, 2011);
-    validateDate("tmr", 3, 1, 2011);
-    validateDate("in 3 days", 3, 3, 2011);
-    validateDate("3 days ago", 2, 25, 2011);
-    validateDate("in 3 weeks", 3, 21, 2011);
-    validateDate("four weeks ago", 1, 31, 2011);
-    validateDate("in 3 months", 5, 28, 2011);
-    validateDate("three months ago", 11, 28, 2010);
-    validateDate("in 3 years", 2, 28, 2014);
-    validateDate("seven years ago", 2, 28, 2004);
-    validateDate("60 years ago", 2, 28, 1951);
-    validateDate("32 days ago", 1, 27, 2011);
-    validateDate("320 days ago", 4, 14, 2010);
-    validateDate("1200 days ago", 11, 16, 2007);
-    validateDate("365 days from now", 2, 28, 2012);
-    validateDate("100 months now", 6, 28, 2019);
-    validateDate("100 years from now", 2, 28, 2111);
-    validateDate("next monday", 3, 7, 2011);
-    validateDate("next mon", 3, 7, 2011);
-    validateDate("4 mondays from now", 3, 28, 2011);
-    validateDate("4 mondays from today", 3, 28, 2011);
-    validateDate("next weekend", 3, 12, 2011);
-    validateDate("six mondays ago", 1, 17, 2011);
-    validateDate("last monday", 2, 21, 2011);
-    validateDate("last mon", 2, 21, 2011);
-    validateDate("this past mon", 2, 21, 2011);
-    validateDate("this coming mon", 3, 7, 2011);
-    validateDate("this upcoming mon", 3, 7, 2011);
-    validateDate("next thurs", 3, 10, 2011);
-    validateDate("next month", 3, 28, 2011);
-    validateDate("last month", 1, 28, 2011);
-    validateDate("next week", 3, 7, 2011);
-    validateDate("last week", 2, 21, 2011);
-    validateDate("next year", 2, 28, 2012);
-    validateDate("last year", 2, 28, 2010);
-    validateDate("tues this week", 3, 1, 2011);
-    validateDate("tuesday this week", 3, 1, 2011);
-    validateDate("tuesday next week", 3, 8, 2011);
-    validateDate("this september", 9, 1, 2011);
-    validateDate("in a september", 9, 1, 2011);
-    validateDate("in an october", 10, 1, 2011);
-    validateDate("september", 9, 1, 2011);
-    validateDate("last september", 9, 1, 2010);
-    validateDate("next september", 9, 1, 2011);
-    validateDate("january", 1, 1, 2011);
-    validateDate("last january", 1, 1, 2011);
-    validateDate("next january", 1, 1, 2012);
-    validateDate("next february", 2, 1, 2012);
-    validateDate("last february", 2, 1, 2010);
-    validateDate("february ", 2, 1, 2011);
-    validateDate("in a year", 2, 28, 2012);
-    validateDate("in a week", 3, 7, 2011);
-    validateDate("the saturday after next", 3, 19, 2011);
-    validateDate("the monday after next", 3, 14, 2011);
-    validateDate("the monday after next monday", 3, 14, 2011);
-    validateDate("the monday before May 25", 5, 23, 2011);
-    validateDate("the 2nd monday before May 25", 5, 16, 2011);
-    validateDate("3 mondays after May 25", 6, 13, 2011);
-    validateDate("tuesday before last", 2, 15, 2011);
-    validateDate("a week from now", 3, 7, 2011);
-    validateDate("a month from today", 3, 28, 2011);
-    validateDate("a week after this friday", 3, 11, 2011);
-    validateDate("a week from this friday", 3, 11, 2011);
-    validateDate("two weeks from this friday", 3, 18, 2011);
-    validateDate("the second week after this friday", 3, 18, 2011);
-    validateDate("It's gonna snow! How about skiing tomorrow", 3, 1, 2011);
-    validateDate("A week on tuesday", 3, 8, 2011);
-    validateDate("A month ago", 1, 28, 2011);
-    validateDate("A week ago", 2, 21, 2011);
-    validateDate("A year ago", 2, 28, 2010);
-    validateDate("this month", 2, 28, 2011);
-    validateDate("current month", 2, 28, 2011);
-    validateDate("current year", 2, 28, 2011);
-    validateDate("first monday in 1 month", 3, 7, 2011);
-    validateDate("first monday of month in 1 month", 3, 7, 2011);
-    validateDate("first monday of 1 month", 3, 7, 2011);
-    validateDate("first monday in 2 months", 4, 4, 2011);
-    validateDate("first monday of 2 months", 4, 4, 2011);
-    validateDate("first monday of month 2 months", 4, 4, 2011);
-    validateDate("first monday of month in 2 months", 4, 4, 2011);
-    validateDate("first monday in 3 months", 5, 2, 2011);
-    validateDate("first monday of 3 months", 5, 2, 2011);
-    validateDate("first monday of month in 3 months", 5, 2, 2011);
-    validateDate("1 year 9 months from now", 11, 28, 2012);
-    validateDate("1 year 9 months 1 day from now", 11, 29, 2012);
-    validateDate("2 years 4 months ago", 10, 28, 2008);
-    validateDate("2 years 4 months 5 days ago", 10, 23, 2008);
+    calendarSource = new CalendarSource(reference);
+
+    validateDate(reference, "yesterday", 2, 27, 2011);
+    validateDate(reference, "tomorrow", 3, 1, 2011);
+    validateDate(reference, "tmr", 3, 1, 2011);
+    validateDate(reference, "in 3 days", 3, 3, 2011);
+    validateDate(reference, "3 days ago", 2, 25, 2011);
+    validateDate(reference, "in 3 weeks", 3, 21, 2011);
+    validateDate(reference, "four weeks ago", 1, 31, 2011);
+    validateDate(reference, "in 3 months", 5, 28, 2011);
+    validateDate(reference, "three months ago", 11, 28, 2010);
+    validateDate(reference, "in 3 years", 2, 28, 2014);
+    validateDate(reference, "seven years ago", 2, 28, 2004);
+    validateDate(reference, "60 years ago", 2, 28, 1951);
+    validateDate(reference, "32 days ago", 1, 27, 2011);
+    validateDate(reference, "320 days ago", 4, 14, 2010);
+    validateDate(reference, "1200 days ago", 11, 16, 2007);
+    validateDate(reference, "365 days from now", 2, 28, 2012);
+    validateDate(reference, "100 months now", 6, 28, 2019);
+    validateDate(reference, "100 years from now", 2, 28, 2111);
+    validateDate(reference, "next monday", 3, 7, 2011);
+    validateDate(reference, "next mon", 3, 7, 2011);
+    validateDate(reference, "4 mondays from now", 3, 28, 2011);
+    validateDate(reference, "4 mondays from today", 3, 28, 2011);
+    validateDate(reference, "next weekend", 3, 12, 2011);
+    validateDate(reference, "six mondays ago", 1, 17, 2011);
+    validateDate(reference, "last monday", 2, 21, 2011);
+    validateDate(reference, "last mon", 2, 21, 2011);
+    validateDate(reference, "this past mon", 2, 21, 2011);
+    validateDate(reference, "this coming mon", 3, 7, 2011);
+    validateDate(reference, "this upcoming mon", 3, 7, 2011);
+    validateDate(reference, "next thurs", 3, 10, 2011);
+    validateDate(reference, "next month", 3, 28, 2011);
+    validateDate(reference, "last month", 1, 28, 2011);
+    validateDate(reference, "next week", 3, 7, 2011);
+    validateDate(reference, "last week", 2, 21, 2011);
+    validateDate(reference, "next year", 2, 28, 2012);
+    validateDate(reference, "last year", 2, 28, 2010);
+    validateDate(reference, "tues this week", 3, 1, 2011);
+    validateDate(reference, "tuesday this week", 3, 1, 2011);
+    validateDate(reference, "tuesday next week", 3, 8, 2011);
+    validateDate(reference, "this september", 9, 1, 2011);
+    validateDate(reference, "in a september", 9, 1, 2011);
+    validateDate(reference, "in an october", 10, 1, 2011);
+    validateDate(reference, "september", 9, 1, 2011);
+    validateDate(reference, "last september", 9, 1, 2010);
+    validateDate(reference, "next september", 9, 1, 2011);
+    validateDate(reference, "january", 1, 1, 2011);
+    validateDate(reference, "last january", 1, 1, 2011);
+    validateDate(reference, "next january", 1, 1, 2012);
+    validateDate(reference, "next february", 2, 1, 2012);
+    validateDate(reference, "last february", 2, 1, 2010);
+    validateDate(reference, "february ", 2, 1, 2011);
+    validateDate(reference, "in a year", 2, 28, 2012);
+    validateDate(reference, "in a week", 3, 7, 2011);
+    validateDate(reference, "the saturday after next", 3, 19, 2011);
+    validateDate(reference, "the monday after next", 3, 14, 2011);
+    validateDate(reference, "the monday after next monday", 3, 14, 2011);
+    validateDate(reference, "the monday before May 25", 5, 23, 2011);
+    validateDate(reference, "the 2nd monday before May 25", 5, 16, 2011);
+    validateDate(reference, "3 mondays after May 25", 6, 13, 2011);
+    validateDate(reference, "tuesday before last", 2, 15, 2011);
+    validateDate(reference, "a week from now", 3, 7, 2011);
+    validateDate(reference, "a month from today", 3, 28, 2011);
+    validateDate(reference, "a week after this friday", 3, 11, 2011);
+    validateDate(reference, "a week from this friday", 3, 11, 2011);
+    validateDate(reference, "two weeks from this friday", 3, 18, 2011);
+    validateDate(reference, "the second week after this friday", 3, 18, 2011);
+    validateDate(reference, "It's gonna snow! How about skiing tomorrow", 3, 1, 2011);
+    validateDate(reference, "A week on tuesday", 3, 8, 2011);
+    validateDate(reference, "A month ago", 1, 28, 2011);
+    validateDate(reference, "A week ago", 2, 21, 2011);
+    validateDate(reference, "A year ago", 2, 28, 2010);
+    validateDate(reference, "this month", 2, 28, 2011);
+    validateDate(reference, "current month", 2, 28, 2011);
+    validateDate(reference, "current year", 2, 28, 2011);
+    validateDate(reference, "first monday in 1 month", 3, 7, 2011);
+    validateDate(reference, "first monday of month in 1 month", 3, 7, 2011);
+    validateDate(reference, "first monday of 1 month", 3, 7, 2011);
+    validateDate(reference, "first monday in 2 months", 4, 4, 2011);
+    validateDate(reference, "first monday of 2 months", 4, 4, 2011);
+    validateDate(reference, "first monday of month 2 months", 4, 4, 2011);
+    validateDate(reference, "first monday of month in 2 months", 4, 4, 2011);
+    validateDate(reference, "first monday in 3 months", 5, 2, 2011);
+    validateDate(reference, "first monday of 3 months", 5, 2, 2011);
+    validateDate(reference, "first monday of month in 3 months", 5, 2, 2011);
+    validateDate(reference, "1 year 9 months from now", 11, 28, 2012);
+    validateDate(reference, "1 year 9 months 1 day from now", 11, 29, 2012);
+    validateDate(reference, "2 years 4 months ago", 10, 28, 2008);
+    validateDate(reference, "2 years 4 months 5 days ago", 10, 23, 2008);
   }
   
   @Test
   public void testRange() throws Exception {
     Date reference = DateFormat.getDateInstance(DateFormat.SHORT).parse("1/02/2011");
-    CalendarSource.setBaseDate(reference);
-    
-    List<Date> dates = parseCollection("monday to friday");
+    calendarSource = new CalendarSource(reference);
+
+    List<Date> dates = parseCollection("monday to friday", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 1, 7, 2011);
     
-    dates = parseCollection("1999-12-31 to tomorrow");
+    dates = parseCollection("1999-12-31 to tomorrow", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 12, 31, 1999);
     validateDate(dates.get(1), 1, 3, 2011);
     
-    dates = parseCollection("now to 2010-01-01");
+    dates = parseCollection("now to 2010-01-01", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 1, 1, 2010);
     
-    dates = parseCollection("jan 1 to 2");
+    dates = parseCollection("jan 1 to 2", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 1, 2011);
     validateDate(dates.get(1), 1, 2, 2011);
     
-    dates = parseCollection("may 2nd to 5th");
+    dates = parseCollection("may 2nd to 5th", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 5, 2, 2011);
     validateDate(dates.get(1), 5, 5, 2011);
     
-    dates = parseCollection("1/3 to 2/3");
+    dates = parseCollection("1/3 to 2/3", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 2, 3, 2011);
     
-    dates = parseCollection("2/3 to in one week");
+    dates = parseCollection("2/3 to in one week", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 2, 3, 2011);
     validateDate(dates.get(1), 1, 9, 2011);
     
-    dates = parseCollection("first day of may to last day of may");
+    dates = parseCollection("first day of may to last day of may", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 5, 1, 2011);
     validateDate(dates.get(1), 5, 31, 2011);
     
-    dates = parseCollection("feb 28th or 2 days after");
+    dates = parseCollection("feb 28th or 2 days after", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 2, 28, 2011);
     validateDate(dates.get(1), 3, 2, 2011);
     
-    dates = parseCollection("tomorrow at 10 and monday at 11");
+    dates = parseCollection("tomorrow at 10 and monday at 11", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 1, 3, 2011);
     
-    dates = parseCollection("tomorrow at 10 through tues at 11");
+    dates = parseCollection("tomorrow at 10 through tues at 11", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 1, 4, 2011);
     
-    dates = parseCollection("first day of 2009 to last day of 2009");
+    dates = parseCollection("first day of 2009 to last day of 2009", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 1, 2009);
     validateDate(dates.get(1), 12, 31, 2009);
     
-    dates = parseCollection("first to last day of 2008");
+    dates = parseCollection("first to last day of 2008", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 1, 2008);
     validateDate(dates.get(1), 12, 31, 2008);
     
-    dates = parseCollection("first to last day of september");
+    dates = parseCollection("first to last day of september", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 9, 1, 2011);
     validateDate(dates.get(1), 9, 30, 2011);
     
-    dates = parseCollection("first to last day of this september");
+    dates = parseCollection("first to last day of this september", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 9, 1, 2011);
     validateDate(dates.get(1), 9, 30, 2011);
     
-    dates = parseCollection("first to last day of 2 septembers ago");
+    dates = parseCollection("first to last day of 2 septembers ago", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 9, 1, 2009);
     validateDate(dates.get(1), 9, 30, 2009);
     
-    dates = parseCollection("first to last day of 2 septembers from now");
+    dates = parseCollection("first to last day of 2 septembers from now", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 9, 1, 2012);
     validateDate(dates.get(1), 9, 30, 2012);
     
-    dates = parseCollection("for 5 days");
+    dates = parseCollection("for 5 days", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 1, 7, 2011);
     
-    dates = parseCollection("for ten months");
+    dates = parseCollection("for ten months", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 11, 2, 2011);
     
-    dates = parseCollection("for twenty-five years");
+    dates = parseCollection("for twenty-five years", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 1, 2, 2036);
 
-    dates = parseCollection("2 and 4 months");
+    dates = parseCollection("2 and 4 months", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);
 
-    dates = parseCollection("in 2 to 4 months");
+    dates = parseCollection("in 2 to 4 months", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);
 
-    dates = parseCollection("for 2 to 4 months");
+    dates = parseCollection("for 2 to 4 months", reference);
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 3, 2, 2011);
     validateDate(dates.get(2), 5, 2, 2011);
 
-    dates = parseCollection("next 2 to 4 months");
+    dates = parseCollection("next 2 to 4 months", reference);
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 3, 2, 2011);
     validateDate(dates.get(2), 5, 2, 2011);
 
-    dates = parseCollection("2 to 4 months from now");
+    dates = parseCollection("2 to 4 months from now", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);
 
-    dates = parseCollection("last 2 to 4 months");
+    dates = parseCollection("last 2 to 4 months", reference);
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 11, 2, 2010);
     validateDate(dates.get(2), 9, 2, 2010);
 
-    dates = parseCollection("past 2 to 4 months");
+    dates = parseCollection("past 2 to 4 months", reference);
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 11, 2, 2010);
     validateDate(dates.get(2), 9, 2, 2010);
 
-    dates = parseCollection("2 to 4 months ago");
+    dates = parseCollection("2 to 4 months ago", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 11, 2, 2010);
     validateDate(dates.get(1), 9, 2, 2010);
 
-    dates = parseCollection("2 or 3 days ago");
+    dates = parseCollection("2 or 3 days ago", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 12, 31, 2010);
     validateDate(dates.get(1), 12, 30, 2010);
 
-    dates = parseCollection("1 to 2 days");
+    dates = parseCollection("1 to 2 days", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 1, 3, 2011);
     validateDate(dates.get(1), 1, 4, 2011);
 
-    dates = parseCollection("I want to go shopping in Knoxville, TN in the next five to six months.");
+    dates = parseCollection("I want to go shopping in Knoxville, TN in the next five to six months.", reference);
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 6, 2, 2011);
     validateDate(dates.get(2), 7, 2, 2011);
 
-    dates = parseCollection("I want to watch the fireworks in the next two to three months.");
+    dates = parseCollection("I want to watch the fireworks in the next two to three months.", reference);
     Assert.assertEquals(3, dates.size());
     validateDate(dates.get(0), 1, 2, 2011);
     validateDate(dates.get(1), 3, 2, 2011);
     validateDate(dates.get(2), 4, 2, 2011);
 
-    dates = parseCollection("september 7th something");
+    dates = parseCollection("september 7th something", reference);
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 9, 7, 2011);
     
-    dates = parseCollection("september 7th something happened here");
+    dates = parseCollection("september 7th something happened here", reference);
     Assert.assertEquals(1, dates.size());
     validateDate(dates.get(0), 9, 7, 2011);
     
-    dates = parseCollection("bla bla bla 2 and 4 month");
+    dates = parseCollection("bla bla bla 2 and 4 month", reference);
     Assert.assertEquals(2, dates.size());
     validateDate(dates.get(0), 3, 2, 2011);
     validateDate(dates.get(1), 5, 2, 2011);
@@ -356,10 +356,10 @@ public class DateTest extends AbstractTest {
     // Same time as
     // 2012, June 2, Saturday, 10 p.m. in US/Pacific GMT -7
     Calendar earlySunday = new GregorianCalendar(2012, 5, 3, 1, 0);
-    CalendarSource.setBaseDate(earlySunday.getTime());
+    calendarSource = new CalendarSource(earlySunday.getTime());
 
     // Run
-    Date result = parser.parse("Sunday at 10am").get(0).getDates().get(0);
+    Date result = parser.parse("Sunday at 10am", earlySunday.getTime()).get(0).getDates().get(0);
 
     // Validate
     // Result should be June 3, 2012

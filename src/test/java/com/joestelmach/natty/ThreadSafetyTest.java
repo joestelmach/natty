@@ -54,13 +54,12 @@ public class ThreadSafetyTest extends AbstractTest {
     }
 
     public void run() {
-      CalendarSource.setBaseDate(baseDate);
       try {
         // Immitate some long running task.
         Thread.sleep(100);
       } catch (Exception e) { }
       String newDate = "4/4/2012";
-      Date parsed = _parser.parse(newDate).get(0).getDates().get(0);
+      Date parsed = _parser.parse(newDate, baseDate).get(0).getDates().get(0);
       validateThread(parsed, baseMinute);
       numOfCorrectResults.incrementAndGet();
     }

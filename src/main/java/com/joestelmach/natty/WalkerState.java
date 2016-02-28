@@ -28,6 +28,7 @@ public class WalkerState {
   private static final String HOLIDAY_ICS_FILE = "/holidays.ics";
   private static final String SEASON_ICS_FILE = "/seasons.ics";
 
+  private CalendarSource calendarSource;
   private GregorianCalendar _calendar;
   private TimeZone _defaultTimeZone;
   private int _currentYear;
@@ -44,6 +45,11 @@ public class WalkerState {
    * the next hour from the current time
    */
   public WalkerState() {
+    this(new Date());
+  }
+
+  public WalkerState(Date baseDate) {
+    calendarSource = new CalendarSource(baseDate);
     resetCalendar();
     _dateGroup = new DateGroup();
   }
@@ -675,6 +681,6 @@ public class WalkerState {
    * @return the current calendar
    */
   protected GregorianCalendar getCalendar() {
-    return CalendarSource.getCurrentCalendar();
+    return calendarSource.getCurrentCalendar();
   }
 }

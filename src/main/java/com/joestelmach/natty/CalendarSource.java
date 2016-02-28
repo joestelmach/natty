@@ -12,17 +12,19 @@ import java.util.GregorianCalendar;
  * @author Joe Stelmach
  */
 public class CalendarSource {
-  private static ThreadLocal<Date> _baseDate = new ThreadLocal<Date>();
+  private Date _baseDate;
 
-  public static void setBaseDate(Date baseDate) {
-    _baseDate.set(baseDate);
+  public CalendarSource() {
+    this._baseDate = new Date();
   }
 
-  public static GregorianCalendar getCurrentCalendar() {
+  public CalendarSource(Date baseDate) {
+    this._baseDate = baseDate;
+  }
+
+  public GregorianCalendar getCurrentCalendar() {
     GregorianCalendar calendar = new GregorianCalendar();
-    if(_baseDate.get() != null) {
-      calendar.setTime(_baseDate.get());
-    }
+    calendar.setTime(_baseDate);
     return calendar;
   }
 }
