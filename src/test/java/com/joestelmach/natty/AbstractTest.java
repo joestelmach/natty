@@ -37,8 +37,8 @@ public abstract class AbstractTest {
    * @param value
    * @return
    */
-  protected List<Date> parseCollection(Date baseDate, String value) {
-    List<DateGroup> dateGroup = _parser.parse(value, baseDate);
+  protected List<Date> parseCollection(Date referenceDate, String value) {
+    List<DateGroup> dateGroup = _parser.parse(value, referenceDate);
     return dateGroup.isEmpty() ? new ArrayList<Date>() : dateGroup.get(0).getDates();
   }
   
@@ -48,8 +48,8 @@ public abstract class AbstractTest {
    * @param value
    * @return
    */
-  protected Date parseSingleDate(String value, Date baseDate) {
-    List<Date> dates = parseCollection(baseDate, value);
+  protected Date parseSingleDate(String value, Date referenceDate) {
+    List<Date> dates = parseCollection(referenceDate, value);
     Assert.assertEquals(1, dates.size());
     return dates.get(0);
   }
@@ -63,8 +63,8 @@ public abstract class AbstractTest {
    * @param day
    * @param year
    */
-  protected void validateDate(Date baseDate, String value, int month, int day, int year) {
-    Date date = parseSingleDate(value, baseDate);
+  protected void validateDate(Date referenceDate, String value, int month, int day, int year) {
+    Date date = parseSingleDate(value, referenceDate);
     validateDate(date, month, day, year);
   }
 
@@ -97,8 +97,8 @@ public abstract class AbstractTest {
    * @param minutes
    * @param seconds
    */
-  protected void validateTime(Date baseDate, String value, int hours, int minutes, int seconds) {
-    Date date = parseSingleDate(value, baseDate);
+  protected void validateTime(Date referenceDate, String value, int hours, int minutes, int seconds) {
+    Date date = parseSingleDate(value, referenceDate);
     validateTime(date, hours, minutes, seconds);
   }
   
@@ -131,10 +131,10 @@ public abstract class AbstractTest {
    * @param minutes
    * @param seconds
    */
-  protected void validateDateTime(Date baseDate, String value, int month, int day, int year,
+  protected void validateDateTime(Date referenceDate, String value, int month, int day, int year,
       int hours, int minutes, int seconds) {
     
-    Date date = parseSingleDate(value, baseDate);
+    Date date = parseSingleDate(value, referenceDate);
     validateDateTime(date, month, day, year, hours, minutes, seconds);
   }
   

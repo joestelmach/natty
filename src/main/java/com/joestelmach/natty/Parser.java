@@ -215,7 +215,7 @@ public class Parser {
         nodes = new CommonTreeNodeStream(tree);
         nodes.setTokenStream(stream);
         DateWalker walker = new DateWalker(nodes);
-        walker.setBaseDate(referenceDate);
+        walker.setReferenceDate(referenceDate);
         walker.getState().setDefaultTimeZone(_defaultTimeZone);
         walker.parse();
         _logger.info("AST: " + tree.toStringTree());

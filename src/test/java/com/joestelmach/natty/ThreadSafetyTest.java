@@ -44,12 +44,12 @@ public class ThreadSafetyTest extends AbstractTest {
 
   private class Tester implements Runnable {
 
-    private Date baseDate;
+    private Date referenceDate;
     private int baseMinute;
 
     public Tester(int baseMinute) throws Exception {
       String date = String.format("3/3/2011 1:%02d am", baseMinute);
-      this.baseDate = dateFormat.parse(date);
+      this.referenceDate = dateFormat.parse(date);
       this.baseMinute = baseMinute;
     }
 
@@ -59,7 +59,7 @@ public class ThreadSafetyTest extends AbstractTest {
         Thread.sleep(100);
       } catch (Exception e) { }
       String newDate = "4/4/2012";
-      Date parsed = _parser.parse(newDate, baseDate).get(0).getDates().get(0);
+      Date parsed = _parser.parse(newDate, referenceDate).get(0).getDates().get(0);
       validateThread(parsed, baseMinute);
       numOfCorrectResults.incrementAndGet();
     }

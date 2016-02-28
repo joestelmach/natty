@@ -23,7 +23,7 @@ options {
     throw e;
   }
 
-  public void setBaseDate(java.util.Date referenceDate) {
+  public void setReferenceDate(java.util.Date referenceDate) {
     this.referenceDate = referenceDate;
   }
 
