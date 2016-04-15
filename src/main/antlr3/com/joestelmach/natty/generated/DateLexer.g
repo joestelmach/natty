@@ -3,7 +3,7 @@ lexer grammar DateLexer;
 @header { package com.joestelmach.natty.generated; }
 
 @members {
-  private org.slf4j.Logger _logger =
+  private static org.slf4j.Logger _logger =
     org.slf4j.LoggerFactory.getLogger(com.joestelmach.natty.generated.DateLexer.class);
 
   @Override

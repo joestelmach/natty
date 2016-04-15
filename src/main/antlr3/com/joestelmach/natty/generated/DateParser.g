@@ -41,7 +41,7 @@ tokens {
 }
 
 @members {
-  private org.slf4j.Logger _logger =
+  private static org.slf4j.Logger _logger =
     org.slf4j.LoggerFactory.getLogger(com.joestelmach.natty.generated.DateParser.class);
 
   @Override
