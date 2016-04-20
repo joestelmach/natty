@@ -8,6 +8,9 @@ options {
 @header { package com.joestelmach.natty.generated; }
 
 @members {
+  private static org.slf4j.Logger _logger =
+    org.slf4j.LoggerFactory.getLogger(com.joestelmach.natty.generated.DateWalker.class);
+
   private com.joestelmach.natty.WalkerState _walkerState;
   private java.util.Date referenceDate;
 
@@ -21,6 +24,11 @@ options {
   public Object recoverFromMismatchedSet(IntStream Input, RecognitionException e, BitSet follow)
       throws RecognitionException {
     throw e;
+  }
+
+  @Override
+  public void emitErrorMessage(String msg) {
+    _logger.error(msg);
   }
 
   public void setReferenceDate(java.util.Date referenceDate) {

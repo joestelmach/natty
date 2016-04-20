@@ -14,6 +14,11 @@ lexer grammar DateLexer;
       _logger.debug(message);
     }
   }
+
+  @Override
+  public void emitErrorMessage(String msg) {
+    _logger.error(msg);
+  }
 }
 
 // ********** date rules ********** 
