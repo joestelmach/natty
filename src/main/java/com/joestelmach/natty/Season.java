@@ -27,7 +27,8 @@ public enum Season {
   }
 
   public static Season fromSummary(String summary) {
-    if(summary == null) return null;
-    return lookup.get(summary);
+	  if(summary == null || "".equalsIgnoreCase(summary.trim())) return null;
+	  //if(summary == null) return null;
+	  return lookup.get(summary);
   }
 }
