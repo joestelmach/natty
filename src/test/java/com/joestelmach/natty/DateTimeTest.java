@@ -87,6 +87,14 @@ public class DateTimeTest extends AbstractTest {
     validateDateTime(reference, "wed evening at 8:30", 3, 2, 2011, 20, 30, 0);
     validateDateTime(reference, "750 minutes from now", 2, 24, 2011, 12, 30, 0);
     validateDateTime(reference, "1500 minutes from now", 2, 25, 2011, 1, 0, 0);
+    validateDateTime(reference, "50 seconds ago", 2, 23, 2011, 23, 59, 10);
+    validateDateTime(reference, "110 seconds ago", 2, 23, 2011, 23, 58, 10);
+    validateDateTime(reference, "6110 seconds ago", 2, 23, 2011, 22, 18, 10);
+    validateDateTime(reference, "86400 seconds ago", 2, 23, 2011, 0, 0, 0);
+    validateDateTime(reference, "86401 seconds ago", 2, 22, 2011, 23, 59, 59);
+    validateDateTime(reference, "86401 seconds ago", 2, 22, 2011, 23, 59, 59);
+    validateDateTime(reference, "2678400 seconds ago", 1, 24, 2011, 0, 0, 0);
+    validateDateTime(reference, "2678401 seconds ago", 1, 23, 2011, 23, 59, 59);
   }
 
   @Test
