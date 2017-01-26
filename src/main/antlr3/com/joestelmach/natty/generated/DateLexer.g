@@ -8,9 +8,11 @@ lexer grammar DateLexer;
 
   @Override
   public void displayRecognitionError(String[] tokenNames, RecognitionException re) {
-    String message = getErrorHeader(re);
-    try { message += getErrorMessage(re, tokenNames); } catch(Exception e) {}
-    _logger.debug(message);
+    if (_logger.isDebugEnabled()) {
+      String message = getErrorHeader(re);
+      try { message += getErrorMessage(re, tokenNames); } catch(Exception e) {}
+      _logger.debug(message);
+    }
   }
 }
 
