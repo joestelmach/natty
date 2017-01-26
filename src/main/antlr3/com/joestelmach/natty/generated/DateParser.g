@@ -38,6 +38,8 @@ tokens {
 
 @header {
   package com.joestelmach.natty.generated;
+  
+  import java.io.IOException;
 }
 
 @members {
@@ -46,9 +48,21 @@ tokens {
 
   @Override
   public void displayRecognitionError(String[] tokenNames, RecognitionException re) {
-    String message = getErrorHeader(re);
-    try { message += getErrorMessage(re, tokenNames); } catch(Exception e) {}
-    _logger.debug(message);
+    if (_logger.isDebugEnabled()) {
+      String message = getErrorHeader(re);
+      try { message += getErrorMessage(re, tokenNames); } catch(Exception e) {}
+      _logger.debug(message);
+    }
+  }
+
+  @Override
+  public void reportError(IOException e) {
+    _logger.error("Unexpected IO error", e);
+  }
+
+  @Override
+  public void emitErrorMessage(String msg) {
+    _logger.error(msg);
   }
 }
 

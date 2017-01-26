@@ -43,11 +43,11 @@ public class IcsSearcher {
         _holidayCalendar = new CalendarBuilder().build(fin);
         
       } catch (IOException e) {
-        _logger.error("Couln't open " + _calendarFileName);
+        _logger.error("Couln't open {}", _calendarFileName);
         return holidays;
         
       } catch (ParserException e) {
-        _logger.error("Couln't parse " + _calendarFileName);
+        _logger.error("Couln't parse {}", _calendarFileName);
         return holidays;
       }
     }
@@ -59,7 +59,7 @@ public class IcsSearcher {
       period = new Period(from, to);
       
     } catch (ParseException e) {
-      _logger.error("Invalid start or end year: " + startYear + ", " + endYear, e);
+      _logger.error("Invalid start or end year: {}, {}", startYear, endYear, e);
       return holidays;
     }
     

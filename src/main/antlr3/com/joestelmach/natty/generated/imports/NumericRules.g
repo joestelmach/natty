@@ -7,7 +7,23 @@ options {
 tokens {
   INT;
 }
-  
+
+@members {
+  private static org.slf4j.Logger _logger =
+    org.slf4j.LoggerFactory.getLogger(com.joestelmach.natty.generated.DateParser_NumericRules.class);
+
+  @Override
+  public void reportError(IOException e) {
+    _logger.error("Unexpected IO error", e);
+  }
+
+  @Override
+  public void emitErrorMessage(String msg) {
+    _logger.error(msg);
+  }
+}
+
+
 // ********** numeric rules **********
 
 // a number between 00 and 59 inclusive, with a mandatory 0 prefix before numbers 0-9
