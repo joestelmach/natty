@@ -781,7 +781,7 @@ season
       season_name relaxed_year_prefix relaxed_year
         -> ^(EXPLICIT_SEEK season_name relaxed_year)
     
-  | season_name
+  | { !input.LT(1).getText().endsWith("s") }? season_name
     -> ^(SEEK DIRECTION[">"] SEEK_BY["by_day"] INT["1"] season_name)
   ;
   

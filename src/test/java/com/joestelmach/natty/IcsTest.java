@@ -24,8 +24,10 @@ public class IcsTest extends AbstractTest {
     calendarSource = new CalendarSource(reference);
     
     validateDate(reference, "spring", 3, 20, 2012);
+    ensureNoDate(reference, "springs");
     validateDate(reference, "summer", 6, 21, 2011);
     validateDate(reference, "fall", 9, 23, 2011);
+    ensureNoDate(reference, "falls");
     validateDate(reference, "autumn", 9, 23, 2011);
     validateDate(reference, "winter", 12, 22, 2011);
   }

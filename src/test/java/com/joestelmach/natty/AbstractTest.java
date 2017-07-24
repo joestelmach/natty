@@ -53,6 +53,16 @@ public abstract class AbstractTest {
     Assert.assertEquals(1, dates.size());
     return dates.get(0);
   }
+
+  /**
+   * Parses the given value, asserting that no date is produced.
+   * 
+   * @param value
+   */
+  protected void ensureNoDate(Date referenceDate, String value) {
+    List<DateGroup> dateGroup = _parser.parse(value, referenceDate);
+    Assert.assertTrue(dateGroup.isEmpty());
+  }
   
   /**
    * Asserts that the given string value parses down to the given 
