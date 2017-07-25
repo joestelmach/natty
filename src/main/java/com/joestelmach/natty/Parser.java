@@ -16,12 +16,12 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * 
+ *
  * @author Joe Stelmach
  */
 public class Parser {
   private TimeZone _defaultTimeZone;
-  
+
   private static final Logger _logger = LoggerFactory.getLogger(Parser.class);
 
   /**
@@ -48,18 +48,18 @@ public class Parser {
   public Parser(TimeZone defaultTimeZone) {
     _defaultTimeZone = defaultTimeZone;
   }
-  
+
   /**
    * Creates a new parser with no explicit default time zone (default will be US/Eastern)
    */
   public Parser() {
     _defaultTimeZone = TimeZone.getDefault();
   }
-  
+
   /**
    * Parses the given input value for one or more groups of
    * date alternatives
-   * 
+   *
    * @param value
    * @return
    */
@@ -82,15 +82,15 @@ public class Parser {
     ANTLRInputStream input = null;
     try {
       input = new ANTLRNoCaseInputStream(new ByteArrayInputStream(value.getBytes()));
-      
+
     } catch (IOException e) {
       _logger.error("could not lex input", e);
     }
     DateLexer lexer = new DateLexer(input);
-    
+
     // collect all sub-token streams that may include date information
     List<TokenStream> streams = collectTokenStreams(new CommonTokenStream(lexer));
-    
+
     // and parse each of them
     List<DateGroup> groups = new ArrayList<DateGroup>();
     TokenStream lastStream = null;
@@ -100,7 +100,7 @@ public class Parser {
       DateGroup group = singleParse(stream, value, referenceDate);
       while((group == null || group.getDates().size() == 0) && tokens.size() > 0) {
         if(group == null || group.getDates().size() == 0) {
-          
+
           // we have two options:
           // 1. Continuously remove tokens from the end of the stream and re-parse.  This will
           //    recover from the case of an extraneous token at the end of the token stream.
@@ -174,12 +174,12 @@ public class Parser {
     }
     return true;
   }
-  
+
   /**
    * Parses the token stream for a SINGLE date time alternative.  This
    * method assumes that the entire token stream represents date and or
    * time information (no extraneous tokens)
-   * 
+   *
    * @param stream
    * @return
    */
@@ -187,7 +187,7 @@ public class Parser {
 	DateGroup group = null;
 	List<Token> tokens = ((NattyTokenSource) stream.getTokenSource()).getTokens();
 	if(tokens.isEmpty()) return group;
-		
+
     StringBuilder tokenString = new StringBuilder();
     for(Token token:tokens) {
       tokenString.append(DateParser.tokenNames[token.getType()]);
@@ -195,16 +195,16 @@ public class Parser {
     }
 
     try {
-      // parse 
+      // parse
       ParseListener listener = new ParseListener();
       DateParser parser = new DateParser(stream, listener);
       DateParser.parse_return parseReturn = parser.parse();
-      
+
       Tree tree = (Tree) parseReturn.getTree();
 
       // we only continue if a meaningful syntax tree has been built
       if(tree.getChildCount() > 0) {
-        _logger.info("PARSE: " + tokenString.toString());
+        _logger.debug("PARSE: {}" , tokenString);
 
         // rewrite the tree (temporary fix for http://www.antlr.org/jira/browse/ANTLR-427)
         CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
@@ -218,7 +218,7 @@ public class Parser {
         walker.setReferenceDate(referenceDate);
         walker.getState().setDefaultTimeZone(_defaultTimeZone);
         walker.parse();
-        _logger.info("AST: " + tree.toStringTree());
+        _logger.debug("AST: {}", tree.toStringTree());
 
         // run through the results and append the parse information
         group = walker.getState().getDateGroup();
@@ -248,18 +248,18 @@ public class Parser {
 
     return group;
   }
-  
+
   /**
-   * Scans the given token global token stream for a list of sub-token 
-   * streams representing those portions of the global stream that 
+   * Scans the given token global token stream for a list of sub-token
+   * streams representing those portions of the global stream that
    * may contain date time information
-   * 
+   *
    * @param stream
    * @return
    */
   private List<TokenStream> collectTokenStreams(TokenStream stream) {
-    
-    // walk through the token stream and build a collection 
+
+    // walk through the token stream and build a collection
     // of sub token streams that represent possible date locations
     List<Token> currentGroup = null;
     List<List<Token>> groups = new ArrayList<List<Token>>();
@@ -306,8 +306,8 @@ public class Parser {
     if(currentGroup != null) {
       addGroup(currentGroup, groups);
     }
-    
-    _logger.info("STREAM: " + tokenString.toString());
+
+    _logger.debug("STREAM: {}", tokenString);
     List<TokenStream> streams = new ArrayList<TokenStream>();
     for(List<Token> group:groups) {
       if(!group.isEmpty()) {
@@ -316,7 +316,7 @@ public class Parser {
         for (Token token : group) {
           builder.append(DateParser.tokenNames[token.getType()]).append(" ");
         }
-        _logger.info(builder.toString());
+        _logger.debug(builder.toString());
 
         streams.add(new CommonTokenStream(new NattyTokenSource(group)));
       }
