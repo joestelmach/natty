@@ -307,7 +307,7 @@ public class Parser {
       addGroup(currentGroup, groups);
     }
     
-    _logger.info("STREAM: " + tokenString.toString());
+    _logger.debug("STREAM: " + tokenString.toString());
     List<TokenStream> streams = new ArrayList<TokenStream>();
     for(List<Token> group:groups) {
       if(!group.isEmpty()) {
@@ -316,7 +316,7 @@ public class Parser {
         for (Token token : group) {
           builder.append(DateParser.tokenNames[token.getType()]).append(" ");
         }
-        _logger.info(builder.toString());
+        _logger.debug(builder.toString());
 
         streams.add(new CommonTokenStream(new NattyTokenSource(group)));
       }
