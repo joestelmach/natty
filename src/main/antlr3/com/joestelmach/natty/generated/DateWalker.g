@@ -78,7 +78,7 @@ week_index
   ;
   
 explicit_date
-  : ^(EXPLICIT_DATE ^(MONTH_OF_YEAR month=INT) ^(DAY_OF_MONTH dom=INT) 
+  : ^(EXPLICIT_DATE ^(MONTH_OF_YEAR month=INT) ^(DAY_OF_MONTH dom=INT)
         (^(DAY_OF_WEEK dow=INT))? (^(YEAR_OF year=INT))?)
     {_walkerState.setExplicitDate($month.text, $dom.text, $dow.text, $year.text);}
   ;

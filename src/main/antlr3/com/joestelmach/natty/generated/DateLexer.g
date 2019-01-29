@@ -16,38 +16,67 @@ lexer grammar DateLexer;
 
 // ********** date rules ********** 
 
-JANUARY   : 'january'   's'?  | 'jan' DOT?;
-FEBRUARY  : 'february'  's'?  | 'feb' DOT?;
-MARCH     : 'march'     'es'? | 'mar' DOT?;
-APRIL     : 'april'     's'?  | 'apr' DOT?;
-MAY       : 'may'       's'?;
-JUNE      : 'june'      's'?  | 'jun' DOT?;
-JULY      : 'july'      's'?  | 'jul' DOT?;
-AUGUST    : 'august'    's'?  | 'aug' DOT?;
-SEPTEMBER : 'september' 's'?  | 'sep' DOT? | 'sept' DOT?;
-OCTOBER   : 'october'   's'?  | 'oct' DOT?;
-NOVEMBER  : 'november'  's'?  | 'nov' DOT?;
-DECEMBER  : 'december'  's'?  | 'dec' DOT?;
+JANUARY   : 'january'   's'?  | 'jan' DOT?
+| '\u044f\u043d\u0432\u0430\u0440\u044c' | '\u044f\u043d\u0432' DOT? | '\u044f\u043d\u0432\u0430\u0440\u044f';
+FEBRUARY  : 'february'  's'?  | 'feb' DOT?
+| '\u0444\u0435\u0432\u0440\u0430\u043b\u044c' | '\u0444\u0435\u0432' DOT? | '\u0444\u0435\u0432\u0440\u0430\u043b\u044f';
+MARCH     : 'march'     'es'? | 'mar' DOT?
+| '\u043c\u0430\u0440\u0442' | '\u043c\u0430\u0440' DOT? | '\u043c\u0430\u0440\u0442\u0430';
+APRIL     : 'april'     's'?  | 'apr' DOT?
+| '\u0430\u043f\u0440\u0435\u043b\u044c' | '\u0430\u043f\u0440' DOT? | '\u0430\u043f\u0440\u0435\u043b\u044f';
+MAY       : 'may'       's'?
+| '\u043c\u0430\u0439' | '\u043c\u0430\u044f';
+JUNE      : 'june'      's'?  | 'jun' DOT?
+| '\u0438\u044e\u043d\u044c' | '\u0438\u044e\u043d' DOT? | '\u0438\u044e\u043d\u044f';
+JULY      : 'july'      's'?  | 'jul' DOT?
+| '\u0438\u044e\u043b\u044c' | '\u0438\u044e\u043b' DOT? | '\u0438\u044e\u043b\u044f';
+AUGUST    : 'august'    's'?  | 'aug' DOT?
+| '\u0430\u0432\u0433\u0443\u0441\u0442' | '\u0430\u0432\u0433' DOT? | '\u0430\u0432\u0433\u0443\u0441\u0442\u0430';
+SEPTEMBER : 'september' 's'?  | 'sep' DOT? | 'sept' DOT?
+| '\u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044c' | '\u0441\u0435\u043d' DOT? | '\u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044f';
+OCTOBER   : 'october'   's'?  | 'oct' DOT?
+| '\u043e\u043a\u0442\u044f\u0431\u0440\u044c' | '\u043e\u043a\u0442' DOT? | '\u043e\u043a\u0442\u044f\u0431\u0440\u044f';
+NOVEMBER  : 'november'  's'?  | 'nov' DOT?
+| '\u043d\u043e\u044f\u0431\u0440\u044c' | '\u043d\u043e\u044f' DOT? | '\u043d\u043e\u044f\u0431\u0440\u044f';
+DECEMBER  : 'december'  's'?  | 'dec' DOT?
+| '\u0434\u0435\u043a\u0430\u0431\u0440\u044c' | '\u0434\u0435\u043a' DOT? | '\u0434\u0435\u043a\u0430\u0431\u0440\u044f';
+
   
-SUNDAY    : 'sunday'    's'?  | 'sun' DOT?  | 'suns' DOT?;
-MONDAY    : 'monday'    's'?  | 'mon' DOT?  | 'mons' DOT?;
-TUESDAY   : 'tuesday'   's'?  | 'tues' DOT? | 'tue' DOT?;
-WEDNESDAY : 'wednesday' 's'?  | 'wed' DOT?  | 'weds' DOT?;
-THURSDAY  : 'thursday'  's'?  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thurs' DOT?;
-FRIDAY    : 'friday'    's'?  | 'fri' DOT?  | 'fris' DOT?;
-SATURDAY  : 'saturday'  's'?  | 'sat' DOT?  | 'sats' DOT?  | 'weekend';
+SUNDAY    : 'sunday'    's'?  | 'sun' DOT?  | 'suns' DOT?
+| '\u0432\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u044c\u0435' | '\u0432\u0441' DOT? | '\u0432\u0441\u043a\u0440' DOT?;
+MONDAY    : 'monday'    's'?  | 'mon' DOT?  | 'mons' DOT?
+| '\u043f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a' | '\u043f\u043d' DOT? | '\u043f\u043e\u043d' DOT?;
+TUESDAY   : 'tuesday'   's'?  | 'tues' DOT? | 'tue' DOT?
+| '\u0432\u0442\u043e\u0440\u043d\u0438\u043a' | '\u0432\u0442' DOT? | '\u0432\u0442\u0440' DOT?;
+WEDNESDAY : 'wednesday' 's'?  | 'wed' DOT?  | 'weds' DOT?
+| '\u0441\u0440\u0435\u0434\u0430' | '\u0441\u0440' DOT?;
+THURSDAY  : 'thursday'  's'?  | 'thur' DOT? | 'thu' DOT?   | 'thus' DOT? | 'thurs' DOT?
+| '\u0447\u0435\u0442\u0432\u0435\u0440\u0433' | '\u0447\u0442' DOT? | '\u0447\u0442\u0432' DOT?;
+FRIDAY    : 'friday'    's'?  | 'fri' DOT?  | 'fris' DOT?
+| '\u043f\u044f\u0442\u043d\u0438\u0446\u0430' | '\u043f\u0442' DOT?;
+SATURDAY  : 'saturday'  's'?  | 'sat' DOT?  | 'sats' DOT?  | 'weekend'
+| '\u0441\u0443\u0431\u0431\u043e\u0442\u0430' | '\u0441\u0431' DOT? | '\u0441\u0431\u0442' DOT?;
 
-HOUR   : 'hour'   | 'hours'   | 'hr' DOT?  | 'hrs' DOT?;
-MINUTE : 'minute' | 'minutes' | 'min' DOT? | 'mins' DOT?;
-DAY    : 'day'    | 'days' ;
-WEEK   : 'week'   | 'weeks'   | 'wks' DOT?;
-MONTH  : 'month'  | 'months';
-YEAR   : 'year'   | 'year' SINGLE_QUOTE? 's' | 'yrs' DOT?;
+HOUR   : 'hour'   | 'hours'   | 'hr' DOT?  | 'hrs' DOT?
+| '\u0447\u0430\u0441' | '\u0447\u0430\u0441\u0430' | '\u0447\u0430\u0441\u043e\u0432';
+MINUTE : 'minute' | 'minutes' | 'min' DOT? | 'mins' DOT?
+| '\u043c\u0438\u043d\u0443\u0442\u0430' | '\u043c\u0438\u043d\u0443\u0442' | '\u043c\u0438\u043d\u0443\u0442\u044b';
+DAY    : 'day'    | 'days'
+| '\u0434\u0435\u043d\u044c' | '\u0434\u043d\u0435\u0439' | '\u0434\u043d\u044f';
+WEEK   : 'week'   | 'weeks' | 'wks' DOT?
+| '\u043d\u0435\u0434\u0435\u043b\u044f' | '\u043d\u0435\u0434\u0435\u043b\u0438' | '\u043d\u0435\u0434\u0435\u043b\u044e' ;
+MONTH  : 'month'  | 'months'
+| '\u043c\u0435\u0441\u044f\u0446' | '\u043c\u0435\u0441\u044f\u0446\u0430' | '\u043c\u0435\u0441\u044f\u0446\u0435\u0432';
+YEAR   : 'year'   | 'year' SINGLE_QUOTE? 's' | 'yrs' DOT?
+| '\u0433\u043e\u0434' | '\u0433\u043e\u0434\u0430' | '\u043b\u0435\u0442';
 
-TODAY     : 'today';
-TOMORROW  : 'tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow' | 'tmr';
+TODAY     : 'today'
+| '\u0441\u0435\u0433\u043e\u0434\u043d\u044f';
+TOMORROW  : 'tomorow' | 'tomorrow' | 'tommorow' | 'tommorrow' | 'tmr'
+| '\u0437\u0430\u0432\u0442\u0440\u0430';
 TONIGHT   : 'tonight'; 
-YESTERDAY : 'yesterday';
+YESTERDAY : 'yesterday'
+| '\u0432\u0447\u0435\u0440\u0430';
 
 // ********** recurrence rules **********
 
@@ -211,30 +240,30 @@ SIXTEEN   : 'sixteen';
 SEVENTEEN : 'seventeen';
 EIGHTEEN  : 'eighteen' | 'eightteen';
 NINETEEN  : 'nineteen';
-TWENTY    : 'twenty';
-THIRTY    : 'thirty';
+TWENTY    : 'twenty' | '\u0434\u0432\u0430\u0434\u0446\u0430\u0442\u044c';
+THIRTY    : 'thirty' | '\u0442\u0440\u0438\u0434\u0446\u0430\u0442\u044c';
 
-FIRST          : 'first';
-SECOND         : 'second' | 'seconds' | 'sec' | 'secs';
-THIRD          : 'third';
-FOURTH         : 'fourth';
-FIFTH          : 'fifth';
-SIXTH          : 'sixth';
-SEVENTH        : 'seventh';
-EIGHTH         : 'eighth';
-NINTH          : 'ninth';
-TENTH          : 'tenth';
-ELEVENTH       : 'eleventh';
-TWELFTH        : 'twelfth';
-THIRTEENTH     : 'thirteenth';
-FOURTEENTH     : 'fourteenth';
-FIFTEENTH      : 'fifteenth';
-SIXTEENTH      : 'sixteenth';
-SEVENTEENTH    : 'seventeenth';
-EIGHTEENTH     : 'eighteenth';
-NINETEENTH     : 'nineteenth';
-TWENTIETH      : 'twentieth';
-THIRTIETH      : 'thirtieth';
+FIRST          : 'first' | '\u043f\u0435\u0440\u0432\u043e\u0433\u043e';
+SECOND         : 'second' | 'seconds' | 'sec' | 'secs' | '\u0432\u0442\u043e\u0440\u043e\u0433\u043e';
+THIRD          : 'third' | '\u0442\u0440\u0435\u0442\u044c\u0435\u0433\u043e';
+FOURTH         : 'fourth' | '\u0447\u0435\u0442\u0432\u0451\u0440\u0442\u043e\u0433\u043e' | '\u0447\u0435\u0442\u0432\u0435\u0440\u0442\u043e\u0433\u043e';
+FIFTH          : 'fifth' | '\u043f\u044f\u0442\u043e\u0433\u043e';
+SIXTH          : 'sixth' | '\u0448\u0435\u0441\u0442\u043e\u0433\u043e';
+SEVENTH        : 'seventh' | '\u0441\u0435\u0434\u044c\u043c\u043e\u0433\u043e';
+EIGHTH         : 'eighth' | '\u0432\u043e\u0441\u044c\u043c\u043e\u0433\u043e';
+NINTH          : 'ninth' | '\u0434\u0435\u0432\u044f\u0442\u043e\u0433\u043e';
+TENTH          : 'tenth' | '\u0434\u0435\u0441\u044f\u0442\u043e\u0433\u043e';
+ELEVENTH       : 'eleventh' | '\u043e\u0434\u0438\u043d\u0430\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
+TWELFTH        : 'twelfth' | '\u0434\u0432\u0435\u043d\u0430\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
+THIRTEENTH     : 'thirteenth' | '\u0442\u0440\u0438\u043d\u0430\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
+FOURTEENTH     : 'fourteenth' | '\u0447\u0435\u0442\u044b\u0440\u043d\u0430\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
+FIFTEENTH      : 'fifteenth' | '\u043f\u044f\u0442\u043d\u0430\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
+SIXTEENTH      : 'sixteenth' | '\u0448\u0435\u0441\u0442\u043d\u0430\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
+SEVENTEENTH    : 'seventeenth' | '\u0441\u0435\u043c\u043d\u0430\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
+EIGHTEENTH     : 'eighteenth' | '\u0432\u043e\u0441\u0435\u043c\u043d\u0430\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
+NINETEENTH     : 'nineteenth' | '\u0434\u0435\u0432\u044f\u0442\u043d\u0430\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
+TWENTIETH      : 'twentieth' | '\u0434\u0432\u0430\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
+THIRTIETH      : 'thirtieth' | '\u0442\u0440\u0438\u0434\u0446\u0430\u0442\u043e\u0433\u043e';
 
 // ********** suffixes **********
 ST : 'st';
@@ -317,11 +346,11 @@ fragment HOG    : 'hog';
 
 // ********** season specific **********
 
-WINTER : 'winter' 's'?;
+WINTER : 'winter' 's'? | '\u0437\u0438\u043c\u0430';
 FALL   : 'fall'   's'?;
-AUTUMN : 'autumn' 's'?;
-SPRING : 'spring' 's'?;
-SUMMER : 'summer' 's'?;
+AUTUMN : 'autumn' 's'? | '\u043e\u0441\u0435\u043d\u044c';
+SPRING : 'spring' 's'? | '\u0432\u0435\u0441\u043d\u0430';
+SUMMER : 'summer' 's'? | '\u043b\u0435\u0442\u043e';
   
 UNKNOWN
   : UNKNOWN_CHAR
