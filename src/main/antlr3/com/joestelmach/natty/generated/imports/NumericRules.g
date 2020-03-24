@@ -8,6 +8,18 @@ tokens {
   INT;
 }
   
+
+@parser::members {
+  private static org.slf4j.Logger _logger =
+    org.slf4j.LoggerFactory.getLogger(com.joestelmach.natty.generated.DateParser_NumericRules.class);
+
+  @Override
+  public void displayRecognitionError(String[] tokenNames, RecognitionException re) {
+    String message = getErrorHeader(re);
+    try { message += getErrorMessage(re, tokenNames); } catch(Exception e) {}
+    _logger.debug(message);
+  }
+}
 // ********** numeric rules **********
 
 // a number between 00 and 59 inclusive, with a mandatory 0 prefix before numbers 0-9
@@ -186,4 +198,3 @@ int_1_to_9
 int_1_to_5
   : INT_1  | INT_2  | INT_3  | INT_4  | INT_5 
   ;
-  
