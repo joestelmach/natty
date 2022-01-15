@@ -16,7 +16,7 @@ Started with [a thread in the original project](https://github.com/joestelmach/n
 Plan / Priorities (as of January 2022):
 
 1. Set up basic technicalities of the fork - Maven release process, CI (Continuous Integration), etc. Release version `1.0.0` with (possibly) the same code
-as the fork root, but under new name, etc.
+as the fork root, but under new name, consider renaming packages and artifacts to use `natty-parser` as the moniker, etc.
 2. Start accepting contributions (PRs), encourage the community to solve [issues reported in the original repo]( 
 https://github.com/joestelmach/natty/issues)
 3. Decide on the overall vision of the project - at this point it's hard to tell, but I think a conscious decision on what is gonna be supported would be
