@@ -1,41 +1,40 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.joestelmach</groupId>
+  <groupId>natty-parser</groupId>
   <artifactId>natty</artifactId>
   <packaging>jar</packaging>
   <version>0.14-SNAPSHOT</version>
   <name>Natty Date Parser</name>
   <description>natural language date parser</description>
-  <url>http://natty.joestelmach.com</url>
+  <url>https://github.com/natty-parser/natty</url>
   
   <licenses>
     <license>
       <name>MIT License</name>
-      <url>LICENSE</url>
+      <url>https://opensource.org/licenses/MIT</url>
     </license>
   </licenses>
   
   <scm>
-    <connection>scm:git:git@github.com:joestelmach/natty.git</connection>
-    <url>scm:git:git@github.com:joestelmach/natty.git</url>
-    <developerConnection>scm:git:git@github.com:joestelmach/natty.git</developerConnection>  
+    <connection>scm:git:git@github.com:natty-parser/natty.git</connection>
+    <url>scm:git:git@github.com:natty-parser/natty.git</url>
+    <developerConnection>scm:git:git@github.com:natty-parser/natty.git</developerConnection>
   </scm>
   
   <developers>
     <developer>
-      <id>joe</id>
-      <name>Joe Stelmach</name>
-      <email>joestelmach@gmail.com</email>
-      <url>http://github.com/joestelmach</url>
+      <id>mccartney</id>
+      <name>Greg Oledzki</name>
+      <url>http://github.com/mccartney</url>
       <roles>
         <role>developer</role>
       </roles>
-      <timezone>-5</timezone>
+      <timezone>1</timezone>
     </developer>
   </developers>
   
   <properties>
-    <grammar.dir>${basedir}/src/main/antlr3/com/joestelmach/natty/generated</grammar.dir>
+    <grammar.dir>${basedir}/src/main/antlr3/org/natty/generated</grammar.dir>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <additionalparam>-Xdoclint:none</additionalparam>
@@ -98,7 +97,7 @@
         <configuration>
           <filesets>
             <fileset>
-              <directory>src/main/java/com/joestelmach/natty/generated</directory>
+              <directory>src/main/java/org/natty/generated</directory>
               <includes>
                 <include>**/*.java</include>
               </includes>
@@ -122,14 +121,14 @@
             </goals>
             <configuration>
               <debug>true</debug>
-              <libDirectory>src/main/antlr3/com/joestelmach/natty/generated/imports</libDirectory>
+              <libDirectory>src/main/antlr3/org/natty/generated/imports</libDirectory>
               <outputDirectory>src/main/java</outputDirectory>
               <includes>
-                <include>com/joestelmach/natty/generated/DateLexer.g</include> 
-                <include>com/joestelmach/natty/generated/DateParser.g</include> 
+                <include>org/natty/generated/DateLexer.g</include>
+                <include>org/natty/generated/DateParser.g</include>
               </includes>
               <excludes>
-                <exclude>com/joestelmach/natty/generated/imports/NumericRules.g</exclude> 
+                <exclude>org/natty/generated/imports/NumericRules.g</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -142,11 +141,11 @@
             <configuration>
               <debug>false</debug>
               <outputDirectory>src/main/java</outputDirectory>
-              <libDirectory>src/main/antlr3/com/joestelmach/natty/generated/imports</libDirectory>
+              <libDirectory>src/main/antlr3/org/natty/generated/imports</libDirectory>
               <excludes>
-                <exclude>com/joestelmach/natty/generated/DateLexer.g</exclude> 
-                <exclude>com/joestelmach/natty/generated/DateParser.g</exclude> 
-                <exclude>com/joestelmach/natty/generated/imports/NumericRules.g</exclude> 
+                <exclude>org/natty/generated/DateLexer.g</exclude>
+                <exclude>org/natty/generated/DateParser.g</exclude>
+                <exclude>org/natty/generated/imports/NumericRules.g</exclude>
               </excludes>
             </configuration>
           </execution>
