@@ -20,7 +20,8 @@ Plan / Priorities (as of January 2022):
 as the fork root, but under new name, consider renaming packages and artifacts to use `natty-parser` as the moniker, etc.
 3. Start accepting contributions (PRs), encourage the community to solve [issues reported in the original repo]( 
 https://github.com/joestelmach/natty/issues)
-4. Decide on the overall vision of the project - at this point it's hard to tell, but I think a conscious decision on what is gonna be supported would be
+4. Consider switching to Gradle (as this is a build tool which is modern and I am familiar with)
+5. Decide on the overall vision of the project - at this point it's hard to tell, but I think a conscious decision on what is gonna be supported would be
 great - i.e. focus on i18n, customization, stability, or what?
 
 ## Contibutions
