@@ -1,6 +1,7 @@
 package com.joestelmach.natty;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.text.DateFormat;
@@ -18,6 +19,7 @@ public class TimeZoneTest extends AbstractTest {
   }
 
   @Test
+  @Ignore("https://github.com/natty-parser/natty/issues/1")
   public void testSpecific() throws Exception {
     Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT,
         DateFormat.SHORT).parse("5/19/2012 12:00 am");

@@ -2,6 +2,7 @@ package com.joestelmach.natty;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.text.DateFormat;
@@ -24,6 +25,7 @@ public class DateTimeTest extends AbstractTest {
   }
 
   @Test
+  @Ignore("https://github.com/natty-parser/natty/issues/1")
   public void testSpecific() throws Exception {
     Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT,
         DateFormat.SHORT).parse("5/19/2012 12:00 am");
@@ -46,6 +48,7 @@ public class DateTimeTest extends AbstractTest {
   }
 
   @Test
+  @Ignore("https://github.com/natty-parser/natty/issues/1")
   public void testRelative() throws Exception {
     Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT,
         DateFormat.SHORT).parse("2/24/2011 12:00 am");
