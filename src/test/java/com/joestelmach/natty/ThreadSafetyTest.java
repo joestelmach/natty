@@ -8,6 +8,7 @@ import java.util.TimeZone;
 
 import org.junit.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.BeforeClass;
 
@@ -28,6 +29,7 @@ public class ThreadSafetyTest extends AbstractTest {
   }
 
   @Test
+  @Ignore("https://github.com/natty-parser/natty/issues/1")
   public void testManyThreads() throws Exception {
     Thread[] threads = new Thread[NUM_OF_THREADS];
     for (int i = 0; i < NUM_OF_THREADS; i++) {
