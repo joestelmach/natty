@@ -3,7 +3,7 @@
   <groupId>io.github.natty-parser</groupId>
   <artifactId>natty</artifactId>
   <packaging>jar</packaging>
-  <version>0.14-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>Natty Date Parser</name>
   <description>natural language date parser</description>
   <url>https://github.com/natty-parser/natty</url>
@@ -65,7 +65,7 @@
         <extensions>true</extensions>
         <configuration>
           <serverId>ossrh</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
           <autoReleaseAfterClose>true</autoReleaseAfterClose>
         </configuration>
       </plugin>
@@ -200,29 +200,26 @@
             </executions>
           </plugin>
           
-          <!-- generate javadoc.jar -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.10.4</version>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>2.2.1</version>
             <executions>
               <execution>
-                <id>attach-javadocs</id>
+                <id>attach-sources</id>
                 <goals>
-                  <goal>jar</goal>
+                  <goal>jar-no-fork</goal>
                 </goals>
               </execution>
             </executions>
           </plugin>
-      
-          <!-- generate sources.jar -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>3.0.1</version>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.9.1</version>
             <executions>
               <execution>
-                <id>attach-sources</id>
+                <id>attach-javadocs</id>
                 <goals>
                   <goal>jar</goal>
                 </goals>
