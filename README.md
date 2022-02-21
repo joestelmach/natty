@@ -24,6 +24,10 @@ DONE
 6. Decide on the overall vision of the project - at this point it's hard to tell, but I think a conscious decision on what is gonna be supported would be
 great - i.e. focus on i18n, customization, stability, or what?
 
+## Commitment
+
+I hope for open collaboration and contributions from others. To me it's totally a side-project, not the core activity. Yet, I can commit to being (fairly) responsive and inclusive.
+
 ## Contibutions
 
 Are more then welcome. Feel free to reach out (e.g. by creating an issue in this repo) to offer your support and ideas. I am happy to include more
