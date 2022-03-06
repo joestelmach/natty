@@ -13,7 +13,7 @@ Originally written by Joel Stelmach at https://github.com/joestelmach/natty and 
 
 Started with [a thread in the original project](https://github.com/joestelmach/natty/issues/274). The aim is to try providing maintenance for the library.
 
-Plan / Priorities (as of January 2022):
+Plan / Priorities (as of March 2022):
 
 1. ~~Release version `1.0.0` with (possibly) the same code as the fork root, but under new name, consider renaming packages and artifacts to use `natty-parser` as the moniker, etc.~~
 DONE
