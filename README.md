@@ -13,7 +13,7 @@ Originally written by Joel Stelmach at https://github.com/joestelmach/natty and 
 
 Started with [a thread in the original project](https://github.com/joestelmach/natty/issues/274). The aim is to try providing maintenance for the library.
 
-Plan / Priorities (as of March 2022):
+Plan / Priorities (as of November 2022):
 
 1. ~~Release version `1.0.0` with (possibly) the same code as the fork root, but under new name, consider renaming packages and artifacts to use `natty-parser` as the moniker, etc.~~
 DONE
@@ -24,6 +24,10 @@ DONE
 6. Decide on the overall vision of the project - at this point it's hard to tell, but I think a conscious decision on what is gonna be supported would be
 great - i.e. focus on i18n, customization, stability, or what?
 
+## Known issues from the parent project
+
+See [issues](issues.md)
+
 ## Commitment
 
 I hope for open collaboration and contributions from others. To me it's totally a side-project, not the core activity. Yet, I can commit to being (fairly) responsive and inclusive.
@@ -31,6 +35,6 @@ I hope for open collaboration and contributions from others. To me it's totally 
 ## Contibutions
 
 Are more then welcome. Feel free to reach out (e.g. by creating an issue in this repo) to offer your support and ideas. I am happy to include more
-maintainers.
+maintainers. Tag @mccartney if no response for 2-3 days (I might have missed that).
 
 I see this project potentially being welcoming to many, incl. quite junior and inexperienced developers, who would like to learn and contribute.
