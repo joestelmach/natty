@@ -2,7 +2,6 @@ package org.natty;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.text.DateFormat;
@@ -25,10 +24,9 @@ public class DateTimeTest extends AbstractTest {
   }
 
   @Test
-  @Ignore("https://github.com/natty-parser/natty/issues/1")
   public void testSpecific() throws Exception {
     Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT,
-        DateFormat.SHORT).parse("5/19/2012 12:00 am");
+        DateFormat.SHORT).parse("5/19/2012, 12:00 am");
     calendarSource = new CalendarSource(reference);
 
     validateDateTime(reference, "1st oct in the year '89 1300 hours", 10, 1, 1989, 13, 0, 0);
@@ -48,10 +46,9 @@ public class DateTimeTest extends AbstractTest {
   }
 
   @Test
-  @Ignore("https://github.com/natty-parser/natty/issues/1")
   public void testRelative() throws Exception {
     Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT,
-        DateFormat.SHORT).parse("2/24/2011 12:00 am");
+        DateFormat.SHORT).parse("2/24/2011, 12:00 am");
     calendarSource = new CalendarSource(reference);
 
     validateDateTime(reference, "seven years ago at 3pm", 2, 24, 2004, 15, 0, 0);

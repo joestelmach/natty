@@ -8,7 +8,6 @@ import java.util.TimeZone;
 import junit.framework.Assert;
 import org.junit.BeforeClass;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -24,10 +23,9 @@ public class RecurrenceTest extends AbstractTest {
   }
  
   @Test
-  @Ignore("https://github.com/natty-parser/natty/issues/1")
   public void testRelative() throws Exception {
     Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT, 
-        DateFormat.SHORT).parse("3/3/2011 12:00 am");
+        DateFormat.SHORT).parse("3/3/2011, 12:00 am");
     calendarSource = new CalendarSource(reference);
     
     DateGroup group = _parser.parse("every friday until two tuesdays from now", reference).get(0);
