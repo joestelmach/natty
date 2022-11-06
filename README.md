@@ -15,7 +15,7 @@ Maven:
 <dependency>
   <groupId>io.github.natty-parser</groupId>
   <artifactId>natty</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
