@@ -9,6 +9,18 @@ syntax information.
 
 Originally written by Joel Stelmach at https://github.com/joestelmach/natty and developed between 2010 and 2017. Abandoned since then.
 
+## Usage
+Maven:
+```
+<dependency>
+  <groupId>io.github.natty-parser</groupId>
+  <artifactId>natty</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+or [consult maven.org](https://search.maven.org/artifact/io.github.natty-parser/natty) for other build systems.
+
 ## Idea behind the fork
 
 Started with [a thread in the original project](https://github.com/joestelmach/natty/issues/274). The aim is to try providing maintenance for the library.
