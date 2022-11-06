@@ -3,7 +3,7 @@
   <groupId>io.github.natty-parser</groupId>
   <artifactId>natty</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>Natty Date Parser</name>
   <description>natural language date parser</description>
   <url>https://github.com/natty-parser/natty</url>
@@ -217,6 +217,9 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <version>3.4.1</version>
+	    <configuration>
+	      <doclint>none</doclint>  <!-- Turnoff all checks -->
+	    </configuration>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
