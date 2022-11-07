@@ -1,6 +1,8 @@
 package org.natty;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -24,8 +26,9 @@ public class RecurrenceTest extends AbstractTest {
  
   @Test
   public void testRelative() throws Exception {
-    Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT, 
-        DateFormat.SHORT).parse("3/3/2011, 12:00 am");
+
+    final LocalDateTime refDateTime = LocalDateTime.of(2011, 3, 3, 12, 00, 00);
+    Date reference = Timestamp.valueOf(refDateTime);
     calendarSource = new CalendarSource(reference);
     
     DateGroup group = _parser.parse("every friday until two tuesdays from now", reference).get(0);

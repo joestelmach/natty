@@ -3,7 +3,9 @@ package org.natty;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -19,8 +21,8 @@ public class TimeZoneTest extends AbstractTest {
 
   @Test
   public void testSpecific() throws Exception {
-    Date reference = DateFormat.getDateTimeInstance(DateFormat.SHORT,
-        DateFormat.SHORT).parse("5/19/2012, 12:00 am");
+    final LocalDateTime refDateTime = LocalDateTime.of(2012, 5, 19, 12, 00, 00);
+    Date reference = Timestamp.valueOf(refDateTime);
     calendarSource = new CalendarSource(reference);
 
     validateDateTime(reference, "2011-06-17T07:00:00Z", 6, 17, 2011, 3, 0, 0);

@@ -1,6 +1,8 @@
 package org.natty;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -48,14 +50,14 @@ public class ThreadSafetyTest extends AbstractTest {
     private int baseMinute;
 
     public Tester(int baseMinute) throws Exception {
-      String date = String.format("3/3/2011, 1:%02d am", baseMinute);
-      this.referenceDate = dateFormat.parse(date);
+      final LocalDateTime refDateTime = LocalDateTime.of(2011, 3, 3, 1, baseMinute, 0);
+      this.referenceDate = Timestamp.valueOf(refDateTime);
       this.baseMinute = baseMinute;
     }
 
     public void run() {
       try {
-        // Immitate some long running task.
+        // Imitate some long running task.
         Thread.sleep(100);
       } catch (Exception e) { }
       String newDate = "4/4/2012";
