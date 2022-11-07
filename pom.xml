@@ -260,6 +260,12 @@
       <version>1.7.33</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.4.4</version>
+    </dependency>
     
     <dependency>
       <groupId>junit</groupId>
