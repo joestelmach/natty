@@ -31,7 +31,7 @@ public class DateGroup {
 
   /**
    * Adds a date to this group
-   * @param date
+   * @param date the date
    */
   public void addDate(Date date) {
     _dates.add(date);
@@ -77,7 +77,7 @@ public class DateGroup {
 
   /**
    * The line within the fullText this date group is found on
-   * @return
+   * @return line number
    */
   public int getLine() {
     return _line;
