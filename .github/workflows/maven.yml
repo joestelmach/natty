@@ -11,6 +11,7 @@ jobs:
     name: Java ${{ matrix.java_version }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         java_version: ['8', '11', '17']
 
