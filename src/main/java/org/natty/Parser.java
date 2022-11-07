@@ -59,7 +59,7 @@ public class Parser {
   /**
    * Parses the given input value for one or more groups of date alternatives
    * 
-   * @param value the date tor parse
+   * @param value the date to parse
    * @return list of date alternatives
    */
   public List<DateGroup> parse(String value) {
