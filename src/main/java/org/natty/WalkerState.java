@@ -63,8 +63,8 @@ public class WalkerState {
    * seeks to a specified day of the week in the past or future.
    * 
    * @param direction the direction to seek: two possibilities 
-   *    '<' go backward 
-   *    '>' go forward
+   *    '&lt;' go backward
+   *    '&gt;' go forward
    *    
    * @param seekType the type of seek to perform (by_day or by_week)
    *     by_day means we seek to the very next occurrence of the given day
@@ -142,8 +142,8 @@ public class WalkerState {
   }
   
   /**
-   * 
-   * @param year
+   * Seek to the given year
+   * @param year the year to seek to.
    */
   public void seekToYear(String year) {
     int yearInt = Integer.parseInt(year);
@@ -158,8 +158,8 @@ public class WalkerState {
    * seeks to a particular month
    * 
    * @param direction the direction to seek: two possibilities 
-   *    '<' go backward 
-   *    '>' go forward
+   *    '&lt;' go backward
+   *    '&gt;' go forward
    *    
    * @param seekAmount the amount to seek.  Must be guaranteed to parse as an integer
    *     
@@ -197,12 +197,12 @@ public class WalkerState {
    * seeks by a span of time (weeks, months, etc)
    * 
    * @param direction the direction to seek: two possibilities 
-   *    '<' go backward 
-   *    '>' go forward
+   *    '&lt;' go backward
+   *    '&gt;' go forward
    *    
    * @param seekAmount the amount to seek.  Must be guaranteed to parse as an integer
    *     
-   * @param span
+   * @param span the span to seek by, one of DAY, WEEK, MONTH, YEAR, HOUR, MINUTE, SECOND
    */
   public void seekBySpan(String direction, String seekAmount, String span) {
     if(span.startsWith(SEEK_PREFIX)) span = span.substring(3);
@@ -234,12 +234,7 @@ public class WalkerState {
       null;
     if(field > 0) _calendar.add(field, seekAmountInt * sign);
   }
-  
-  /**
-   * 
-   * @param index
-   * @param dayOfWeek
-   */
+
   public void setDayOfWeekIndex(String index, String dayOfWeek) {
     int indexInt = Integer.parseInt(index);
     assert(indexInt > 0 && indexInt < 6);
@@ -314,7 +309,7 @@ public class WalkerState {
   }
   
   /**
-   * Sets the the time of day
+   * Sets the time of day
    * 
    * @param hours the hours to set.  Must be guaranteed to parse as an 
    *     integer between 0 and 23
@@ -395,9 +390,9 @@ public class WalkerState {
 
   /**
    * Seeks to the given holiday within the given year
-   * 
-   * @param holidayString
-   * @param yearString
+   * @see Holiday
+   * @param holidayString the name of the holiday as per Holiday enum
+   * @param yearString the year
    */
   public void seekToHolidayYear(String holidayString, String yearString) {
     Holiday holiday = Holiday.valueOf(holidayString);
@@ -423,8 +418,8 @@ public class WalkerState {
   /**
    * Seeks to the given season within the given year
    * 
-   * @param seasonString
-   * @param yearString
+   * @param seasonString The season to seek to
+   * @param yearString The year
    */
   public void seekToSeasonYear(String seasonString, String yearString) {
     Season season = Season.valueOf(seasonString);
