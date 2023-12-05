@@ -1,9 +1,11 @@
 .classpath
 .settings
 .project
+.gradle
 workspace.xml
 bin
 target
+build/
 src/main/java/org/natty/generated/*
 src/main/java/*.tokens
 src/main/antlr/org/natty/generated/DebugDateParser.g
