@@ -1,0 +1,61 @@
+
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'antlr'
+
+    alias(libs.plugins.nebula.release)
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    api libs.antlr.runtime
+    api libs.ical4j
+    api libs.slf4j.api
+
+    antlr libs.antlr
+
+    testImplementation libs.slf4j.log4j12
+    testImplementation libs.logback.classic
+    testImplementation libs.junit
+    testImplementation libs.antlr.gunit
+
+}
+
+description = 'Natty Date Parser'
+
+generateGrammarSource {
+
+    arguments += ["-visitor",
+                  "-listener",
+                  "-long-messages",
+                  "-lib", "src/main/antlr/org/natty/generated/imports"
+    ]
+    outputDirectory =  file("${project.buildDir}/generated-src/antlr/")
+    source "src/main/antlr"
+    include "org/natty/generated/DateLexer.g"
+    include "org/natty/generated/DateParser.g"
+
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc).configureEach {
+    options.encoding = 'UTF-8'
+}
