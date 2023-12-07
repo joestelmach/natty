@@ -15,7 +15,7 @@ Maven:
 <dependency>
   <groupId>io.github.natty-parser</groupId>
   <artifactId>natty</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 
@@ -50,3 +50,11 @@ Are more then welcome. Feel free to reach out (e.g. by creating an issue in this
 maintainers. Tag @mccartney if no response for 2-3 days (I might have missed that).
 
 I see this project potentially being welcoming to many, incl. quite junior and inexperienced developers, who would like to learn and contribute.
+
+## Build
+
+Builds are done using the gradle wrapper. All that's need is a JDK (8 or upwards) to be installed on the machine.
+
+```shell
+./gradlew build
+```
